@@ -1,0 +1,25 @@
+<h3 class="NewHeader">
+   Sub Categories
+   <i class="fa fa-times" aria-hidden="true" style="float: right !important;margin-right:10px;font-size: 19px;    cursor: pointer;" (click)="close()"></i>
+</h3>
+
+<div class="col-sm-12 margin-top-10">
+  <div class="table-responsive">
+      <table matSort matSortActive="JobCode" matSortDirection="asc" class="table table-bordered table-hover">
+          <thead class="tbl-head">
+              <tr class="tr-grid-header">
+                  <th class="text-center">Select</th>
+                  <th class="text-center">Sub Category Name</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let item of items">
+
+                  <td class="text-center"><input type="checkbox"></td>
+                  <td class="text-center">{{item.name}}</td>
+
+              </tr>
+          </tbody>
+      </table>
+  </div>
+</div>

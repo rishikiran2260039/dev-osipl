@@ -1,0 +1,76 @@
+<div class="NewHeader">
+  <h1 mat-dialog-title>
+    Ledger
+  </h1>
+</div>
+<div class="row" style="margin-bottom: 10px;">
+  <div class="col-lg-10">
+    <div class="row">
+      <div class="col-lg-3">
+        <input class="form-control" class="form-control" placeholder="Select Date" (keypress)="false"
+          [owlDateTimeTrigger]="dt1" [owlDateTime]="dt1" name="dt1">
+        <owl-date-time [pickerType]="'calendar'" #dt1></owl-date-time>
+      </div>
+      <div class="col-lg-3">
+        <mat-select class="form-control" placeholder="Select Type">
+          <mat-option [value]="0">Deposit</mat-option>
+          <mat-option [value]="1">Recovery</mat-option>
+        </mat-select>
+      </div>
+      <div class="col-lg-3">
+        <input type="number" class="form-control" placeholder="Enter Amount">
+      </div>
+      <div class="col-lg-3">
+        <input type="text" class="form-control" placeholder="Enter Reference">
+      </div>
+
+    </div>
+  </div>
+
+  <div class="col-lg-2">
+    <button mat-raised-button class="pull-right btn-primary">Save</button>
+  </div>
+
+</div>
+
+
+<div class="row">
+
+  <div class="col-xs-12">
+    <div id="divQuotesGrid" class="table-responsive">
+      <table matSort id="example2" class="table table-bordered table-hover">
+        <thead class="tbl-head">
+          <tr>
+            <th class="text-center">Date</th>
+            <th class="text-center">Type</th>
+            <th class="text-center">Amount</th>
+            <th class="text-center">Refrence</th>
+            <th class="text-center">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of items">
+
+            <td style="text-align: center!important;"> {{item.date}}</td>
+            <td style="text-align: center!important;"> {{item.type}}</td>
+            <td style="text-align: center!important;"> {{item.amount}}</td>
+            <td style="text-align: center!important;"> {{item.refrence}}</td>
+            <td class="text-center">
+              <a style="cursor: pointer;margin-right:10px; " matTooltip="Update Item">
+                <i class="fa fa-edit" style="color: cornflowerblue"></i>
+              </a>
+              <a><i class="fa fa-trash red" matTooltip="Delete Item" style="cursor: pointer;"></i></a>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<mat-dialog-actions class="col-sm-12" align="end">
+  <button mat-raised-button class="CancelClass" (click)="close()">
+    <mat-icon>cancel</mat-icon>&nbsp;Close
+  </button>
+</mat-dialog-actions>

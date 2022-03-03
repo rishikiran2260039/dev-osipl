@@ -1,0 +1,125 @@
+
+<div class="container-fluid">
+  <div class="w-100">
+    <div class="row">
+        <div class="col-xs-12" style="margin-bottom: 15px;">
+            <div class="pills">
+                <ul class="nav nav-pills" style="margin-bottom: -25px;">
+                    <li routerLinkActive="active" routerLink="/purchase/material-requirement/opening-stock">
+                      <a mat-raised-button class="navtabWidth" style="margin-top: 10px;">
+                        Opening Stock
+                      </a>
+                    </li>
+                    <li routerLinkActive="active" routerLink="/purchase/material-requirement/stock-reconcilliation">
+                        <a mat-raised-button class="navtabWidth" style="margin-top: 10px;">
+                          Stock Reconcilliation
+                        </a>
+                    </li>
+                    <li routerLinkActive="active" routerLink="/purchase/material-requirement/stock-adjustments">
+                        <a mat-raised-button class="navtabWidth" style="margin-top: 10px;">
+                          Stock Adjustments
+                        </a>
+                    </li>     
+                    <li routerLinkActive="active" routerLink="/purchase/material-requirement/inventory-analysis">
+                        <a mat-raised-button class="navtabWidth" style="margin-top: 10px;">
+                          Inventory Analysis
+                        </a>
+                    </li>  
+                    <li routerLinkActive="active" routerLink="/purchase/material-requirement/reorder-levels" style="margin-left:3px!important">
+                      <a mat-raised-button class="navtabWidth" style="margin-top: 10px;">
+                          Reorder Levels
+                      </a>
+                  </li>                            
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+  <div class="flex-p">
+    <div class="row wrap">
+        <div class="col-sm-12 no-padding">
+            <div class="row-wrap">
+                <div class="w-100">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="pills">
+                              
+                                <ul class="nav nav-pills pull-right">
+                                    <li routerLink="/purchase/material-requirement/stock-reconcilliation">
+                                        <a mat-raised-button class="navtabWidth"><mat-icon>arrow_left_alt</mat-icon>
+                                            Back
+                                        </a>
+                                    </li>                             
+                                </ul>
+                                <!-- <button mat-raised-button class="pull-right  btn-primary margin-right-10"
+                              (click)="openGridColumnsDialog()">
+                             <mat-icon>grid_on</mat-icon> Grid Columns
+                              </button> -->
+                              <button mat-raised-button class="pull-right  btn-primary" style="margin-right: 8px;">
+                                <mat-icon>download</mat-icon> Download CSV
+                              </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+  <div class="row" >
+    <div class="col-xs-12" style="overflow-x: auto">
+      <div id="grid-table-container" class="table-responsive" >
+        <table matSort id="example2" class="table table-bordered table-hover" style="margin-left: 0px!important;">
+          <thead class="tbl-head">
+            <tr>
+                <th class="text-center">Item Name</th>
+                <th class="text-center">Item Code</th>
+                <th class="text-center">Item Category</th>
+                <th class="text-center">Item Sub Category</th>
+                <th class="text-center">Brand</th>
+                <th class="text-left" style="width: 100px;">Length</th>
+                <th class="text-left" style="width: 100px;">Width</th>
+                <th class="text-left" style="width: 100px;">Height</th>
+                <th class="text-center">Thickness</th>
+                <th class="text-center">Physical Stock</th>
+                <th class="text-center">Book Stock</th>
+                <th class="text-center">Variance</th>
+                <th class="text-center">Opening Stock </th>
+                <th class="text-center">Incoming</th>
+                <th class="text-center">Issues</th>
+                <th class="text-center">Adjustments</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of items">
+              <td class="text-center">{{item.partCode}}</td>
+              <td class="text-center">{{item.part}}</td>
+              <td class="text-center">{{item.partModel}}</td>
+              <td class="text-center">{{item.eqptCode}}</td>
+              <td class="text-center">{{item.partMake}}</td>
+              <td class="text-left" style="width: 100px;">{{item.length}}</td>
+              <td class="text-left" style="width: 100px;">{{item.width}}</td>
+              <td class="text-left" style="width: 100px;">{{item.height}}</td>
+              <td class="text-center">{{item.thickness}}</td>
+              <td class="text-center">{{item.pstock}}</td>
+              <td class="text-center">{{item.bstock}}</td>
+              <td class="text-center">{{item.vary}}</td>
+              <td class="text-center">{{item.ostock}}</td>
+              <td class="text-center">{{item.icom}}</td>
+              <td class="text-center">{{item.issue}}</td>
+              <td class="text-center">{{item.adj}}</td>
+            </tr>
+          </tbody>
+        </table>
+        <button class="mine" mat-fab (click)="scrollGrid('right');" >
+          <mat-icon style="color:#37474f">fast_forward</mat-icon>
+        </button>
+        <button class="mine" mat-fab style="margin-right: 78px !important;" (click)="scrollGrid('left');">
+          <mat-icon style="color:#37474f">fast_rewind</mat-icon>
+        </button>
+        <mat-paginator [pageSizeOptions]="[5, 10, 25, 50, 100]" showFirstLastButtons></mat-paginator>
+      </div>
+    </div>
+  </div>
+</div>

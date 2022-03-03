@@ -1,0 +1,200 @@
+<div class="NewHeader" style="background-color:#286ba5 !important; height: 50px;">
+  <h1 mat-dialog-title>
+    Upload BOQ
+  </h1>
+</div>
+<mat-horizontal-stepper [linear]="isLinear" #stepper>
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <Span style="margin-bottom: 15px;">Please upload the BOQ excel sheet from here.</Span>
+      <ng-template matStepLabel>Upload File</ng-template>
+
+      <input type="file" style="margin-top: 15px;">
+      <mat-dialog-actions align="end">
+        <button mat-button class="add-dark-hover btn-danger" (click)="close()"><i
+            class="material-icons">highlight_off</i>
+          Discard</button>
+        <button mat-button matStepperNext class="btn-primary">Next <i
+            class="material-icons">arrow_forward_ios</i></button>
+      </mat-dialog-actions>
+
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup" label="Map Columns">
+    <div style="margin-bottom: 15px !important;">
+      <span style="margin-bottom:15px ;">The select boxes in right column are the fields in the uploaded BOQ file.
+        Please match the required fields on the left to the respective fields in the uploaded file.</span>
+    </div>
+
+    <form [formGroup]="secondFormGroup">
+
+      <div class="row">
+        <div class="col-xs-12">
+
+          <div id="grid-table-container" class="table-responsive">
+            <table matSort id="example2" class="table table-bordered table-hover">
+              <thead class="tbl-head">
+                <tr>
+                  <th>Mapped Fields</th>
+                  <th class="text-center">Input Columns in Raw Sheet</th>
+
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of items" style="height:50px !important;">
+                  <td style="min-width: 70px !important;vertical-align: middle;">
+                    {{item.fields}}
+
+                  </td>
+                  <!-- <td style="text-align: center!important;">{{item.projectNumber}}</td> -->
+                  <td *ngIf=" item.fields != 'Category'" class="text-center">
+
+                    <mat-select placeholder="Select Input" class="placeholder form-control " name="Client">
+
+                      <mat-option>Sequence</mat-option>
+                      <mat-option>Quantity</mat-option>
+                      <mat-option>Price</mat-option>
+                      <mat-option>Item Name</mat-option>
+                      <mat-option>Unit</mat-option>
+
+                    </mat-select>
+                  </td>
+
+                  <td *ngIf=" item.fields == 'Category'" class="text-center">
+
+                    <mat-select placeholder="Select Input" class="placeholder form-control " name="Client">
+
+                      <mat-option>Electrical</mat-option>
+                      <mat-option>Mechanical</mat-option>
+                      <mat-option>Civil</mat-option>
+                      <mat-option>Plumbing</mat-option>
+                      <mat-option>Electrical</mat-option>
+
+                    </mat-select>
+                  </td>
+
+                </tr>
+
+              </tbody>
+            </table>
+
+          </div>
+        </div>
+      </div>
+
+      <mat-dialog-actions align="end">
+        <button mat-button class="add-dark-hover btn-danger" (click)="close()"><i
+          class="material-icons">highlight_off</i>
+        Discard</button>
+        <!-- <button  mat-raised-button style="background-color: grey;color: white;" matStepperPrevious><i class="material-icons">arrow_back_ios</i> Previous</button> -->
+        <button mat-button matStepperPrevious style="background-color: grey; color: white;"><i
+            class="material-icons">arrow_back_ios</i>Previous</button>
+        <button mat-button matStepperNext class="btn-primary">Next <i
+            class="material-icons">arrow_forward_ios</i></button>
+      </mat-dialog-actions>
+    </form>
+  </mat-step>
+
+  <mat-step>
+    <div style="margin-bottom: 15px !important;">
+      <Span style="margin-bottom: 15px !important;">Please enter the list of serial numbers that represent categories in
+        the uploaded BOQ sheet.</Span>
+    </div>
+
+    <ng-template matStepLabel>Map Categories</ng-template>
+
+    <textarea name="" id="" cols="95" rows="3"></textarea>
+
+
+    <mat-dialog-actions align="end">
+      <button mat-button class="add-dark-hover btn-danger" (click)="close()"><i
+        class="material-icons">highlight_off</i>
+      Discard</button>
+      <!-- <button  mat-raised-button  style="background-color: grey;color: white;" matStepperPrevious><i class="material-icons">arrow_back_ios</i> Previous</button> -->
+      <button mat-button matStepperPrevious style="background-color: grey; color: white;"><i
+          class="material-icons">arrow_back_ios</i>Previous</button>
+      <button mat-button matStepperNext class="btn-primary">Next <i
+          class="material-icons">arrow_forward_ios</i></button>
+    </mat-dialog-actions>
+  </mat-step>
+
+
+  <mat-step>
+    <ng-template matStepLabel>Preview</ng-template>
+
+    <h3>Preview the upload and confirm</h3>
+    <span>Total Records : 456</span><br>
+    <span>Records Imported : 453</span><br>
+    <span>Incomplete Records : 3</span><br>
+    <span><a style="color: blue;">Click here </a> </span> <span> to see incomplete records</span>
+
+    <div class="row" style="margin-top: 15px;">
+      <div class="col-xs-12">
+        <div id="grid-table-container" class="table-responsive" style="height:200px !important;">
+          <table matSort id="example2" class="table table-bordered table-hover">
+            <thead class="tbl-head">
+              <tr>
+                <th rowspan="2">Serial #</th>
+                <th rowspan="2">Category</th>
+                <th rowspan="2">Description</th>
+                <th colspan="5" class="text-center">Material</th>
+                <th colspan="5" class="text-center">Labor</th>
+              </tr>
+              <tr>
+                <th>Total Quantity</th>
+                <th>Unit Rate</th>
+                <th>Billed</th>
+                <th>Paid</th>
+                <th>Pending</th>
+                <th>Total Quantity</th>
+                <th>Unit Rate</th>
+                <th>Billed</th>
+                <th>Paid</th>
+                <th>Pending</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of items2">
+                <td style="min-width: 70px !important;">
+                  {{item.serial}}
+
+                </td>
+                <!-- <td style="text-align: center!important;">{{item.projectNumber}}</td> -->
+                <td>{{item.category}}</td>
+                <td>{{item.description}}</td>
+                <!-- <td class="text-center">{{item.unit}}</td> -->
+                <td class="text-center">{{item.qty}}</td>
+                <td class="text-center">{{item.rate}}</td>
+                <td class="text-center">{{item.billed}}</td>
+                <td class="text-center">{{item.paid}}</td>
+                <td class="text-center">{{item.pending}}</td>
+                <td class="text-center">{{item.qty}}</td>
+                <td class="text-center">{{item.rate}}</td>
+                <td class="text-center">{{item.billed}}</td>
+                <td class="text-center">{{item.paid}}</td>
+                <td class="text-center">{{item.pending}}</td>
+              </tr>
+
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+    </div>
+
+
+    <mat-dialog-actions align="end">
+      <!-- <button  mat-raised-button  style="background-color: grey;color: white;" matStepperPrevious><i class="material-icons">arrow_back_ios</i> Previous</button> -->
+      <button mat-button matStepperPrevious style="background-color: grey; color: white;"><i
+          class="material-icons">arrow_back_ios</i>Previous</button>
+      <button mat-button class="add-dark-hover btn-danger" (click)="close()"><i class="material-icons">highlight_off</i>
+        Discard</button>
+      <button mat-button matStepperNext class="add-dark-hover btn-success" (click)="close()"><i
+          class="material-icons">check</i> Confirm</button>
+    </mat-dialog-actions>
+  </mat-step>
+
+
+
+
+</mat-horizontal-stepper>

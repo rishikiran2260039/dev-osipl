@@ -1,0 +1,68 @@
+<div class="NewHeader">
+  <h1 mat-dialog-title>
+    {{data ? 'Update' : 'Add'}} Requisition
+    <!-- Add Requisition -->
+  </h1>
+</div>
+<div mat-dialog-content>
+  <div class="row">
+    <div class="col-xs-12">
+      <div id="grid-table-container" class="table-responsive">
+        <div class="form-group col-sm-5">
+          <label class="col-sm-5 add-member-label">Subject:
+          </label>
+          <div class="col-sm-7">
+            <input class="form-control" class="form-control" placeholder="Subject " style="margin-left: 0px;">
+          </div>
+
+        </div>
+        <table matSort id="example2" class="table table-bordered table-hover">
+          <thead class="tbl-head">
+            <tr>
+              <th style="width: 90px !important;">Select Item</th>
+              <th class="text-center">Quantity</th>
+
+              <th class="text-center">Required By</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <mat-select class="form-control" placeholder="Select Item">
+                  <mat-option>Brick</mat-option>
+                  <mat-option>Cement</mat-option>
+                  <mat-option>Steel</mat-option>
+                  <mat-option>Stone</mat-option>
+                  <mat-option>Concrete</mat-option>
+                </mat-select>
+
+              </td>
+              <!-- <td style="text-align: center!important;">{{item.projectNumber}}</td> -->
+
+              <td style="text-align: center!important;">
+                <input type="number" class="form-control">
+
+              </td>
+              <td style="text-align: center!important;">
+                <input type="date" class="form-control">
+              </td>
+
+            </tr>
+
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+  </div>
+</div>
+<mat-dialog-actions align="end">
+  <button mat-raised-button class="btn-primary">
+    <mat-icon>send</mat-icon><span> Save</span>
+  </button>
+  <button mat-raised-button class="add-dark-hover btn-default" (click)="close()">
+    <mat-icon>cancel</mat-icon>
+    Cancel
+  </button>
+</mat-dialog-actions>

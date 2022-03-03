@@ -1,0 +1,33 @@
+<div class="NewHeader" style="background-color:#286ba5 !important; height: 50px;">
+  <h1 mat-dialog-title>
+    Add Notes
+  </h1>
+</div>
+
+<div mat-dialog-content>
+  <form class="form-horizontal">
+    <div style="padding: 0px 30px !important;">
+      <div class="form-group">
+        <div class="col-sm-12">
+          <label style="font-weight: bold;">
+            STN Ref:
+          </label>
+          <span style="font-weight: bold;">&nbsp;
+            STO/OTP-OM/OCT-19/10001
+          </span>
+        </div>
+        <div class="col-sm-12">
+          <textarea type="text" maxlength="300" class="form-control" style="height: 150px;" >
+            Transferring an entire account works through a centralized system called the Automated Customer Account Transfer Service, or ACATS. If you have stock held in a different way, like bought directly from a company or held through a paper stock certificate, you can generally transfer this to a brokerage too.</textarea>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<mat-dialog-actions align="end">
+
+  <button mat-raised-button class="btn-success" (click)="close()">Save</button>
+  <button mat-raised-button class="add-dark-hover btn-default" (click)="close()">Cancel</button>
+</mat-dialog-actions> 
+
+

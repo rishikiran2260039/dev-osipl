@@ -1,0 +1,118 @@
+<div fxLayout="row wrap" #resizedDiv style="margin-right: 10px !important;">
+  <div class="flex-p w-100" >
+
+
+      <div class="row" style="margin-bottom:7px;">
+          <div class="col-xs-6 ">
+          </div>
+          <div class="col-xs-6 ">
+              <div class="flex-p">
+                
+             
+    <button  style="margin-bottom:10px;" mat-raised-button class="pull-right btn-primary" (click)="openAddUpdate()" >
+      <mat-icon>add</mat-icon> Add Update
+  </button>
+          
+                    
+          </div>
+          
+        </div>
+        </div>            
+<div class="row">
+ 
+  <div class="col-xs-12">
+      <div id="grid-table-container" class="table-responsive">
+          <table matSort id="example2" class="table table-bordered table-hover">
+              <thead class="tbl-head">
+                  <tr>
+                      <th class="text-center" rowspan="2" style="min-width: 100px !important;">Date</th>
+                      <th class="text-center" colspan="2">Local</th>
+                      <th class="text-center" colspan="2" >Banswara</th>
+                      <th class="text-center" rowspan="2">Shuttering</th>
+                      <th class="text-center" rowspan="2">Total</th>
+                      <th class="text-center" colspan="6">Work</th>
+                      <th class="text-center" colspan="4">Cement</th>
+                      <th class="text-center" rowspan="2">Bricks</th>
+                      <th class="text-center" rowspan="2">Stone</th>
+                      <th class="text-center" rowspan="2">Aggregate</th>
+                      <th class="text-center" rowspan="2">Sand</th>
+                      <th class="text-center" rowspan="2">Ply for Shuttering</th>
+                      <th class="text-center" rowspan="2">Steel</th>
+                      <th class="text-center" rowspan="2">Remarks</th>
+                      <!-- <th class="text-center" style="width: 112px!important;">Actions</th> -->
+                  </tr>
+                  <tr>
+                    <th class="text-center" >Karigar</th>
+                    <th class="text-center" >Labour</th>
+                    <th class="text-center" >Karigar</th>
+                    <th class="text-center" >Labour</th>
+                    <th class="text-center" >Plaster</th>
+                    <th class="text-center" >Chunai</th>
+                    <th class="text-center" >Brick Work</th>
+                    <th class="text-center" >RCC / Shuttering</th>
+                    <th class="text-center" >Clading (Sqft)</th>
+                    <th class="text-center" >Shortcreting</th>
+                    <th class="text-center" >O/B</th>
+                    <th class="text-center" >Rec.</th>
+                    <th class="text-center" >Exp.</th>
+                    <th class="text-center" >Balance</th>
+
+
+
+
+
+                </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let item of items">
+                      <td class="text-center">{{item.date}}</td>
+                      <td class="text-center">{{item.nill}}</td>
+                      <td class="text-center">{{item.nill}}</td>
+                      <td class="text-center">{{item.nill}}</td>
+                      <td class="text-center">{{item.nill}}</td>
+                      <td class="text-center">{{item.nill}}</td>
+                      <td class="text-center">{{item.nill}}</td>
+                      <td class="text-center">{{item.nill}}</td>
+                      <td class="text-center">{{item.nill}}</td>
+                      <td class="text-center">{{item.nill}}</td>
+                      <td class="text-center">{{item.nill}}</td>
+                      <td class="text-center">{{item.nill}}</td>
+                      <td class="text-center">{{item.nill}}</td>
+                      <td class="text-center">{{item.nill}}</td>
+                      <td class="text-center">{{item.nill}}</td>
+                      <td class="text-center">{{item.nill}}</td>
+                      <td class="text-center">{{item.nill}}</td>
+                      <td class="text-center">{{item.nill}}</td>
+                      <td class="text-center">{{item.nill}}</td>
+                      <td class="text-center">{{item.nill}}</td>
+                      <td class="text-center">{{item.nill}}</td>
+                      <td class="text-center">{{item.nill}}</td>
+                      <td class="text-center">{{item.nill}}</td>
+                      <td class="text-center">{{item.remarks}}</td>
+
+      <!-- <td  class="text-center">
+          <a style="cursor: pointer;margin-right:10px; " >
+              <i class="fa fa-edit" style="color: cornflowerblue"></i>
+          </a>
+          <a ><i class="fa fa-trash red"   style="cursor: pointer;"></i></a>
+      </td>  -->
+  </tr>
+ 
+</tbody>
+</table>
+<mat-paginator 
+[pageSizeOptions]="[5, 10, 25, 50, 100]"
+showFirstLastButtons></mat-paginator>
+</div>
+</div>
+</div>
+
+  </div>
+</div>
+
+
+
+
+
+
+

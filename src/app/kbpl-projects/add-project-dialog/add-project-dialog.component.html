@@ -1,0 +1,387 @@
+
+
+<h1 mat-dialog-title class="custom-header" style="background-color:#286ba5 !important;height:70px;font-weight: bold !important;">{{ data ? 'Update' : 'Add'}} Project Details</h1>
+<mat-horizontal-stepper [linear]="isLinear" #stepper>
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Overview</ng-template>
+      <form class="form-horizontal">
+        <div class="row" style="margin-top: 15px;">
+          <div class="col-6">
+            <div class="form-group">
+              <label class="control-label col-sm-5 " >Select Client : </label>
+             <div class="col-sm-7">
+              <mat-select class="form-control" placeholder="Select Client">
+                <mat-option [value]="0">
+                  Dr.Reddys
+                </mat-option>
+                <mat-option [value]="1">
+                  Raheja
+                </mat-option>
+                <mat-option [value]="2">
+                  Tata
+                </mat-option>
+              </mat-select>
+            </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-5 " >Enter Project Name :</label>
+              <div class="col-sm-7">
+                <input class="form-control" placeholder="Enter Project Name" type="text">
+              </div>
+              </div>
+              <div class="form-group">
+                <label class="control-label col-sm-5 " >Enter GST Number :</label>
+      <div class="col-sm-7">
+        <input class="form-control" placeholder="Enter GST Number" type="text">
+      </div>
+              </div>
+              <div class="form-group">
+                <label class="control-label col-sm-5 " >Project Area (SQM) :</label>
+                <div class="col-sm-7">
+                  <input class="form-control" placeholder="Enter Project Area(sqm)" type="text">
+      </div>
+              </div>
+            <div class="form-group">
+              <label class="control-label col-sm-5 " >PO Reference :</label>
+              <div class="col-sm-7">
+                <input class="form-control" placeholder="Enter PO Reference" type="text">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-5 " >PO Received Date :</label>
+      <div class="col-sm-7">
+        <input type="date" class="form-control" placeholder="Enter PO Received Date ">
+      </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-5 " >PO / LOI Date :</label>
+       <div class="col-sm-7">
+        <input type="date" class="form-control" placeholder="Enter PO / LOI Date Date ">
+      </div>
+            </div>
+          </div>
+          <div class="col-6">
+            
+        <div class="form-group">
+          <label class="control-label col-sm-5 " >PO Value :</label>
+   <div class="col-sm-7">
+    <input class="form-control" placeholder="Enter PO Value" type="text">
+  </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-5 " >Insurance Details :</label>
+          <div class="col-sm-7">
+            <input class="form-control" placeholder="Enter Insurance Details" type="text">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-5 " >Start Date :</label>
+   <div class="col-sm-7">
+    <input type="date" class="form-control" placeholder="Enter Start Date ">
+   
+  </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-5 " >Target Date :</label>
+   <div class="col-sm-7">
+    <input type="date" class="form-control" placeholder="Enter Target Date ">
+  </div>
+        </div>
+        
+        <div class="form-group">
+          <label class="control-label col-sm-5 " >Project Notes :</label>
+   <div class="col-sm-7">
+    <textarea style="max-height: 200px;" class="form-control" placeholder="Enter Project Notes"></textarea>
+  </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-5 " >PMC Name :</label>
+   <div class="col-sm-7">
+    <input class="form-control" placeholder="Enter PMC Name" type="text">
+  </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-5 " >Architect Name :</label>
+   <div class="col-sm-7">
+    <input class="form-control" placeholder="Enter Architect Name" type="text">
+  </div>
+        </div>
+          </div>
+        </div>
+       
+    
+        
+      </form>
+      
+      <mat-dialog-actions align="end">
+        <button mat-raised-button matStepperNext type="button" class="add-hover btn-success pull-right"><mat-icon>save</mat-icon>&nbsp;Save</button>
+        <button mat-raised-button class="add-hover btn-default pull-right" matStepperNext type="button" ><span >Next</span><mat-icon>chevron_right</mat-icon></button>
+        <button mat-raised-button type="button" class="add-dark-hover btn-default pull-right" (click)="close()"><mat-icon>cancel</mat-icon>&nbsp;Close</button>
+     </mat-dialog-actions>
+     
+    </form>
+  </mat-step>
+
+
+  <mat-step [stepControl]="secondFormGroup">
+    <ng-template matStepLabel>Addresses</ng-template>
+    <form class="form-horizontal">
+      <div class="row" style="margin-top: 15px;">
+        <div class="col-4" >
+          <div style="padding: 15px;"> 
+            <div style="margin-top: 10px;margin-bottom: 10px;" >
+              <h3>Project Address:</h3>
+              <span>Enter Project Address</span>
+            </div>
+       
+            <div class="form-group">
+              <label class="control-label col-sm-5 " >Project Address :</label>
+              <div class="col-sm-7">
+                <textarea class="form-control" placeholder="Enter Project Address" ></textarea>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-5 " >Project City :</label>
+              <div class="col-sm-7">
+                <input class="form-control" placeholder="Enter Project City" type="text">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-5 " >Project State :</label>
+              <div class="col-sm-7">
+                <input class="form-control" placeholder="Enter Project State" type="text">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-5 " >Project PIN :</label>
+              <div class="col-sm-7">
+                <input class="form-control" placeholder=" Enter Project PIN" type="text">
+              </div>
+            </div>
+          </div>
+     
+   
+        </div>
+     
+        <div  class="col-4" >
+          <div style="padding: 15px;">
+            <div style="margin-top: 10px;margin-bottom: 10px;">
+              <h3>Billing Address:</h3>
+              <input type="checkbox" ><span style="margin-left: 20px;">Same As Project Address</span>
+            </div>
+          
+            <!-- <span>Enter Address details</span> -->
+            <!-- <div class="form-group">
+              <h3 class="control-label col-sm-5 " >Billing Address :</h3>
+              <div class="col-sm-7">
+                <input type="checkbox" ><span style="margin-left: 20px;">Same As Project Address</span>
+              </div>
+            </div> -->
+            <div class="form-group">
+              <label class="control-label col-sm-5 " >Billing Address :</label>
+              <div class="col-sm-7">
+                <textarea class="form-control" placeholder="Enter Billing Address" ></textarea>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-5 " >Billing City :</label>
+              <div class="col-sm-7">
+                <input class="form-control" placeholder="Enter Billing City" type="text">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-5 " >Billing State :</label>
+              <div class="col-sm-7">
+                <input class="form-control" placeholder="Enter Billing State" type="text">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-5 " >Billing PIN :</label>
+              <div class="col-sm-7">
+                <input class="form-control" placeholder="Enter Billing PIN" type="text">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-5 " >Billing Notes :</label>
+              <div class="col-sm-7">
+                <textarea class="form-control" placeholder="Enter Billing Notes"></textarea>
+              </div>
+            </div>
+          </div>
+     
+        </div>
+  
+        <div class="col-4" >
+          <div style="padding: 15px;">
+            <div style="margin-top: 10px;margin-bottom: 10px;">
+              <h3>Shipping Address:</h3>
+              <input type="checkbox" ><span style="margin-left: 20px;">Same As Billing Address</span>
+            </div>
+          
+            <!-- <div class="form-group">
+              <label class="control-label col-sm-5 " >Shipping Details :</label>
+              <div class="col-sm-7">
+                <input type="checkbox" ><span style="margin-left: 20px;">Same As Billing Details</span>
+              </div>
+            </div> -->
+            <div class="form-group">
+              <label class="control-label col-sm-5 " >Shipping Address :</label>
+              <div class="col-sm-7">
+                <textarea class="form-control" placeholder="Enter Shipping Address"></textarea>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-5 " >Shipping City :</label>
+              <div class="col-sm-7">
+                <input class="form-control" placeholder="Enter Shipping City" type="text">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-5 " >Shipping State :</label>
+              <div class="col-sm-7">
+                <input class="form-control" placeholder="Enter Shipping State" type="text">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-5 " >Shipping PIN :</label>
+              <div class="col-sm-7">
+                <input class="form-control" placeholder=" Enter Shipping PIN" type="text">
+              </div>
+            </div>
+          </div>
+      
+        </div>
+     
+      </div>
+       
+    
+      
+      
+    </form>
+    <mat-dialog-actions align="end" style="margin-top: 20px;">
+      <button mat-raised-button class="add-hover btn-default pull-right" matStepperPrevious type="button" ><mat-icon>chevron_left</mat-icon><span >Previous</span></button>
+      <button mat-raised-button class="add-hover btn-default pull-right" matStepperNext type="button" ><span >Next</span><mat-icon>chevron_right</mat-icon></button>
+      <button mat-raised-button matStepperNext type="button" class="add-hover btn-success pull-right" ><mat-icon>save</mat-icon>&nbsp;Save</button>
+      <button mat-raised-button type="button" class="add-dark-hover btn-default pull-right" (click)="close()"><mat-icon>cancel</mat-icon>&nbsp;Close</button>
+   </mat-dialog-actions>
+    
+ 
+  <!-- <mat-dialog-actions align="end">
+    <button  mat-raised-button color="primary" matStepperPrevious><mat-icon>keyboard_backspace</mat-icon> Back</button>
+    
+    <button  mat-raised-button  class="add-dark-hover btn-success" (click)="close()" ><mat-icon>done</mat-icon> Submit</button>
+  </mat-dialog-actions> -->
+   
+  </mat-step>
+     
+  
+  <mat-step [stepControl]="thirdFormGroup">
+    <ng-template matStepLabel>Other Details</ng-template>
+    <form class="form-horizontal">
+      <div class="row">
+        <div class="col-6">
+          <div class="form-group">
+            <label class="control-label col-sm-5" > Cost Consultant Name :</label>
+            <div class="col-sm-7">
+              <input class="form-control" placeholder="Enter Contact Name" type="text">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-5 " > Cost Consultant Email :</label>
+            <div class="col-sm-7">
+              <input class="form-control" placeholder="Enter Email" type="text">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-5 " >Cost Consultant Mobile :</label>
+            <div class="col-sm-7">
+              <input class="form-control" placeholder="Enter Mobile Number" type="text">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-5 " >Cost Consultant Landline :</label>
+            <div class="col-sm-7">
+              <input class="form-control" placeholder="Enter Landline Number" type="text">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-5 " >Client Contact Name :</label>
+            <div class="col-sm-7">
+              <input class="form-control" placeholder="Enter Contact Name" type="text">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-5 " >Client Email :</label>
+            <div class="col-sm-7">
+              <input class="form-control" placeholder="Enter Email" type="text">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-5 " >Client Mobile :</label>
+            <div class="col-sm-7">
+              <input class="form-control" placeholder="Enter Mobile Number" type="text">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-5 " >Client Landline :</label>
+            <div class="col-sm-7">
+              <input class="form-control" placeholder="Enter Landline Number" type="text">
+            </div>
+          </div>
+        </div>
+       
+        <div class="col-6">
+          <div class="form-group">
+            <label class="control-label col-sm-5 " >Project Director :</label>
+            <div class="col-sm-7">
+              <input class="form-control" placeholder="Enter Project Director Name" type="text">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-5 " >Project Manager :</label>
+            <div class="col-sm-7">
+              <input class="form-control" placeholder="Enter Project Manager Name" type="text">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-5 " >Project Code :</label>
+            <div class="col-sm-7">
+              <input class="form-control" placeholder="Enter Project Code" type="text">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-5 " >Upload SOW Details :</label>
+            <div class="col-sm-7">
+              <input   type="file">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-5 " >Upload BG Details :</label>
+            <div class="col-sm-7">
+              <input   type="file">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-5 " >Upload BOCW Details :</label>
+            <div class="col-sm-7">
+              <input   type="file">
+            </div>
+          </div>
+        </div>
+      </div>
+   
+      
+      
+    </form>
+  <mat-dialog-actions align="end">
+    <button mat-raised-button class="add-hover btn-default pull-right" matStepperPrevious type="button" ><mat-icon>chevron_left</mat-icon><span >Previous</span></button>
+    <button mat-raised-button class="add-hover btn-primary pull-right"  (click)="close()"><mat-icon>send</mat-icon>&nbsp;Submit</button>
+    <button mat-raised-button type="button" class="add-dark-hover btn-default pull-right" (click)="close()"><mat-icon>cancel</mat-icon>&nbsp;Close</button>
+ </mat-dialog-actions>
+    
+
+   
+  </mat-step>
+
+</mat-horizontal-stepper>

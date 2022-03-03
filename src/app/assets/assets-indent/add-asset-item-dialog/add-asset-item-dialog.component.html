@@ -1,0 +1,48 @@
+<h1 mat-dialog-title class="custom-header" style="background-color:#286ba5 !important;height:50px">{{ data ? 'Update' : 'Add'}} New Item</h1>
+<form>
+  <div mat-dialog-content>
+    <div class="col-sm-12">
+
+      <div class="form-group ">
+        <div class="row">
+          <label class="col-sm-12">Asset Class</label>
+          <div class="col-sm-12">
+            <mat-select placeholder="Select Asset Class" class="form-control">
+              <mat-option>volvo</mat-option>
+              <mat-option>Caterpillar</mat-option>
+              <mat-option>Kirloskar</mat-option>
+              <mat-option>Ashok Leyland</mat-option>
+              <mat-option> Tata</mat-option>
+          </mat-select>
+          </div>
+        </div>
+     </div> 
+  
+  
+        <div class="form-group" >
+          <label class="control-label col-lg-12 col-md-12 col-sm-12 col-xs-12 add-member-label" style="margin-left: -15px !important;">Enter Qty Required: </label>
+          <input type="text" class="form-control" placeholder="Enter Qty Required">
+        </div>
+
+        <div class="form-group" >
+          <label class="control-label col-lg-12 col-md-12 col-sm-12 col-xs-12 add-member-label" style="margin-left: -15px !important;">Special Instructions: </label>
+          <textarea id="txtid" name="txtname" rows="4" class="form-control" id="step" placeholder="Enter Special Instructions">
+          </textarea>
+        </div>
+
+        
+    </div>
+      
+
+    </div>
+    <div class="col-sm-12" style="margin-left: -1%;margin-bottom: 3%;">
+    <mat-dialog-actions align="center"  class="pull-right" style="margin-top: 5px;">
+      <button mat-raised-button class="add-hover btn-primary pull-right" type="submit"><mat-icon>send</mat-icon>&nbsp;Save</button>
+      <button mat-raised-button type="button" class="add-dark-hover btn-default pull-right" (click)="close()"><mat-icon>cancel</mat-icon>&nbsp;Cancel</button>
+  </mat-dialog-actions>
+  </div>
+</form>
+
+
+
+

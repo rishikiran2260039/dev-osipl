@@ -1,0 +1,390 @@
+
+
+<h1 mat-dialog-title class="custom-header" style="background-color:#286ba5 !important;height:60px;font-weight: bold !important;">{{ data ? 'Update' : 'Add'}} Vendor Details</h1>
+<mat-horizontal-stepper [linear]="isLinear" #stepper>
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Overview</ng-template>
+      <form class="form-horizontal">
+        <div class="row" style="margin-top: 15px;">
+          <div class="col-6">
+          
+            <div class="form-group">
+              <label class="control-label col-sm-5 " >Enter Vendor Name :</label>
+              <div class="col-sm-7">
+                <input class="form-control" placeholder="Enter Vendor Name" type="text">
+              </div>
+              </div>
+              <div class="form-group">
+                <label class="control-label col-sm-5 " >Enter Vendor Code :</label>
+      <div class="col-sm-7">
+        <input class="form-control" placeholder="Enter Vendor Code" type="text">
+      </div>
+              </div>
+              <div class="form-group">
+                <label class="control-label col-sm-5 " >Status Of Organization :</label>
+                <div class="col-sm-7">
+                  <input class="form-control" placeholder="Enter Status Of Organization" type="text">
+      </div>
+              </div>
+            <div class="form-group">
+              <label class="control-label col-sm-5 " >Year Established :</label>
+              <div class="col-sm-7">
+                <input class="form-control" placeholder="Enter Year Established" type="text">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-5 " >Core Business :</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" placeholder="Enter Core Business">
+      </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-5 " >Registered Office Address :</label>
+       <div class="col-sm-7">
+        <input type="text" class="form-control" placeholder="Enter Registered Office Address">
+      </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-5 " >Branches & Address :</label>
+       <div class="col-sm-7">
+        <input type="text" class="form-control" placeholder="Enter Branches & Address">
+      </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-5 " >Email :</label>
+       <div class="col-sm-7">
+        <input class="form-control" placeholder="Enter Email" type="text">
+      </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-5 " >Website Link :</label>
+       <div class="col-sm-7">
+        <input class="form-control" placeholder="Enter Website Link" type="text">
+      </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-5 " >Scope of Work :</label>
+              <div class="col-sm-7">
+                <input class="form-control" placeholder="Enter Scope of Work" type="text">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-5 " >Clients/Projects :</label>
+       <div class="col-sm-7">
+        <input type="text" class="form-control" placeholder="Enter Clients/Projects ">
+       
+      </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div>
+              <label style="text-decoration: underline;margin-bottom: 15px;font-size: medium;">Contact Details (Primary)</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-5" >Proprietor / Partner :</label>
+              <div class="col-sm-7">
+                <input class="form-control" placeholder="Enter Name (Proprietor/Partner)" type="text">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-5 " > Designation :</label>
+              <div class="col-sm-7">
+                <input class="form-control" placeholder="Enter Designation" type="text">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-5 " >Landmark :</label>
+              <div class="col-sm-7">
+                <input class="form-control" placeholder="Enter Landmark" type="text">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-5 " >Mobile :</label>
+              <div class="col-sm-7">
+                <input class="form-control" placeholder="Enter Mobile" type="text">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-5 " >Email :</label>
+              <div class="col-sm-7">
+                <input class="form-control" placeholder="Enter Email" type="text">
+              </div>
+            </div>
+            <!-- <div class="form-group">
+              <label class="control-label col-sm-5 " >REGISTRATION UNDER SHOP & ESTABLISHMENT & LABOUR ACT :</label>
+              <div class="col-sm-7">
+                <input class="form-control" placeholder="Enter Details" type="text">
+              </div>
+            </div> -->
+            <div>
+              <label style="text-decoration: underline;margin-bottom: 15px;font-size: medium;">Contact Details (Secondary)</label>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-5" >Proprietor / Partner  :</label>
+              <div class="col-sm-7">
+                <input class="form-control" placeholder="Enter Name (Proprietor/Partner)" type="text">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-5 " > Designation :</label>
+              <div class="col-sm-7">
+                <input class="form-control" placeholder="Enter Designation" type="text">
+              </div>
+            </div>
+       
+            <div class="form-group">
+              <label class="control-label col-sm-5 " >Mobile :</label>
+              <div class="col-sm-7">
+                <input class="form-control" placeholder="Enter Mobile" type="text">
+              </div>
+            </div>
+          </div>
+        </div>
+       
+    
+        
+      </form>
+      
+      <mat-dialog-actions align="end">
+        <button mat-raised-button matStepperNext type="button" class="add-hover btn-success pull-right"><mat-icon>save</mat-icon>&nbsp;Save</button>
+        <button mat-raised-button class="add-hover btn-default pull-right" matStepperNext type="button" ><span >Next</span><mat-icon>chevron_right</mat-icon></button>
+        <button mat-raised-button type="button" class="add-dark-hover btn-default pull-right" (click)="close()"><mat-icon>cancel</mat-icon>&nbsp;Close</button>
+     </mat-dialog-actions>
+     
+    </form>
+  </mat-step>
+
+
+  <mat-step [stepControl]="secondFormGroup">
+    <ng-template matStepLabel>QHS Details</ng-template>
+    <form class="form-horizontal">
+      <div class="row" style="margin-top: 15px;">
+        <table class="table table-bordered table-hover">
+          <thead class="tbl-head">
+              <tr class="tr-grid-header">
+                  <th style="width: 100px;">Referemce #</th>
+                  <th class="text-left" style="width: 250px;">Description</th>
+                  <th class="text-center" style="width: 100px;">Tick If Applicable</th>
+                  <th class="text-center" style="width: 150px;">Attach Document</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let item of values">
+                  <td class="text-left">{{item.ref}}</td>
+                  <td class="text-left">{{item.des}}</td>
+                  <td class="text-center"><input type="checkbox"></td>
+                  <td class="text-center">
+                    <a style="color: blue;cursor: pointer;" *ngIf="item.SOW == 'View'" target="_blank" href="http://www.africau.edu/images/default/sample.pdf" routerLinkActive="router-link-active" >View</a>
+                   
+                    <a mwlConfirmationPopover
+                    *ngIf="item.SOW == 'View'" 
+                    [popoverTitle]="popoverTitle"
+                    [popoverMessage]="popoverMessage"
+                    placement="left"
+                    (confirm)="deleteUser()"
+                    (cancel)="cancelClicked = true"
+                   >
+                    <i style="cursor: pointer;" title="Delete BOM" class="fa fa-trash red"></i>
+                </a>
+                <a style="color: blue;cursor: pointer;" *ngIf="item.SOW == 'Add'" (click)="uploaddoc()" routerLinkActive="router-link-active" >Add</a>
+                    
+                  </td>
+        
+              </tr>
+          
+          </tbody>
+      </table>
+      </div>
+       
+    
+      
+      
+    </form>
+    <mat-dialog-actions align="end" style="margin-top: 20px;">
+      <button mat-raised-button class="add-hover btn-default pull-right" matStepperPrevious type="button" ><mat-icon>chevron_left</mat-icon><span >Previous</span></button>
+      <button mat-raised-button class="add-hover btn-default pull-right" matStepperNext type="button" ><span >Next</span><mat-icon>chevron_right</mat-icon></button>
+      <button mat-raised-button matStepperNext type="button" class="add-hover btn-success pull-right" ><mat-icon>save</mat-icon>&nbsp;Save</button>
+      <button mat-raised-button type="button" class="add-dark-hover btn-default pull-right" (click)="close()"><mat-icon>cancel</mat-icon>&nbsp;Close</button>
+   </mat-dialog-actions>
+    
+ 
+  <!-- <mat-dialog-actions align="end">
+    <button  mat-raised-button color="primary" matStepperPrevious><mat-icon>keyboard_backspace</mat-icon> Back</button>
+    
+    <button  mat-raised-button  class="add-dark-hover btn-success" (click)="close()" ><mat-icon>done</mat-icon> Submit</button>
+  </mat-dialog-actions> -->
+   
+  </mat-step>
+     
+  
+  <mat-step [stepControl]="thirdFormGroup">
+    <ng-template matStepLabel>Statutory Details</ng-template>
+    <form class="form-horizontal">
+      <div class="row">
+      
+        <table class="table table-bordered table-hover">
+          <thead class="tbl-head">
+              <tr class="tr-grid-header">
+                  <th style="width: 100px;">Referemce #</th>
+                  <th class="text-left" style="width: 250px;">Description</th>
+                  <th class="text-center" style="width: 100px;">Tick If Applicable</th>
+                  <th class="text-center" style="width: 150px;">Attach Document</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let item of values2">
+                  <td class="text-left">{{item.ref}}</td>
+                  <td class="text-left">{{item.des}}</td>
+                  <td class="text-center"><input type="checkbox"></td>
+                  <td class="text-center">
+                    <a style="color: blue;cursor: pointer;" *ngIf="item.SOW == 'View'" target="_blank" href="http://www.africau.edu/images/default/sample.pdf" routerLinkActive="router-link-active" >View</a>
+                   
+                    <a mwlConfirmationPopover
+                    *ngIf="item.SOW == 'View'" 
+                    [popoverTitle]="popoverTitle"
+                    [popoverMessage]="popoverMessage"
+                    placement="left"
+                    (confirm)="deleteUser()"
+                    (cancel)="cancelClicked = true"
+                   >
+                    <i style="cursor: pointer;" title="Delete BOM" class="fa fa-trash red"></i>
+                </a>
+                <a style="color: blue;cursor: pointer;" *ngIf="item.SOW == 'Add'" (click)="uploaddoc()" routerLinkActive="router-link-active" >Add</a>
+                    
+                  </td>
+        
+              </tr>
+          
+          </tbody>
+      </table>
+      </div>
+   
+      
+      
+    </form>
+    <mat-dialog-actions align="end" style="margin-top: 20px;">
+      <button mat-raised-button class="add-hover btn-default pull-right" matStepperPrevious type="button" ><mat-icon>chevron_left</mat-icon><span >Previous</span></button>
+      <button mat-raised-button class="add-hover btn-default pull-right" matStepperNext type="button" ><span >Next</span><mat-icon>chevron_right</mat-icon></button>
+      <button mat-raised-button matStepperNext type="button" class="add-hover btn-success pull-right" ><mat-icon>save</mat-icon>&nbsp;Save</button>
+      <button mat-raised-button type="button" class="add-dark-hover btn-default pull-right" (click)="close()"><mat-icon>cancel</mat-icon>&nbsp;Close</button>
+   </mat-dialog-actions>
+    
+
+   
+  </mat-step>
+  <mat-step [stepControl]="fourthFormGroup">
+    <form [formGroup]="fourthFormGroup">
+      <ng-template matStepLabel>Category Details</ng-template>
+      <form class="form-horizontal">
+        <div class="row" style="margin-top: 15px;">
+          <table class="table table-bordered table-hover">
+            <thead class="tbl-head">
+                <tr class="tr-grid-header">
+                    <th style="width: 100px;">Referemce #</th>
+                    <th class="text-left" style="width: 250px;">Description</th>
+                    <th class="text-center" style="width: 100px;">Tick If Applicable</th>
+                    <th class="text-center" style="width: 150px;">Attach Document</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of values3">
+                    <td class="text-left">{{item.ref}}</td>
+                    <td class="text-left">{{item.des}}</td>
+                    <td class="text-center"><input type="checkbox"></td>
+                    <td class="text-center">
+                      <a style="color: blue;cursor: pointer;" *ngIf="item.SOW == 'View'" target="_blank" href="http://www.africau.edu/images/default/sample.pdf" routerLinkActive="router-link-active" >View</a>
+                     
+                      <a mwlConfirmationPopover
+                      *ngIf="item.SOW == 'View'" 
+                      [popoverTitle]="popoverTitle"
+                      [popoverMessage]="popoverMessage"
+                      placement="left"
+                      (confirm)="deleteUser()"
+                      (cancel)="cancelClicked = true"
+                     >
+                      <i style="cursor: pointer;" title="Delete BOM" class="fa fa-trash red"></i>
+                  </a>
+                  <a style="color: blue;cursor: pointer;" *ngIf="item.SOW == 'Add'" (click)="uploaddoc()" routerLinkActive="router-link-active" >Add</a>
+                      
+                    </td>
+          
+                </tr>
+            
+            </tbody>
+        </table>
+        </div>
+       
+    
+        
+      </form>
+      
+      <mat-dialog-actions align="end" style="margin-top: 20px;">
+        <button mat-raised-button class="add-hover btn-default pull-right" matStepperPrevious type="button" ><mat-icon>chevron_left</mat-icon><span >Previous</span></button>
+        <button mat-raised-button class="add-hover btn-default pull-right" matStepperNext type="button" ><span >Next</span><mat-icon>chevron_right</mat-icon></button>
+        <button mat-raised-button matStepperNext type="button" class="add-hover btn-success pull-right" ><mat-icon>save</mat-icon>&nbsp;Save</button>
+        <button mat-raised-button type="button" class="add-dark-hover btn-default pull-right" (click)="close()"><mat-icon>cancel</mat-icon>&nbsp;Close</button>
+     </mat-dialog-actions>
+
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="fifthFormGroup">
+    <form [formGroup]="fifthFormGroup">
+      <ng-template matStepLabel>Bank Details</ng-template>
+      <form class="form-horizontal">
+        <div class="row" style="margin-top: 15px;">
+          <div class="col-6">
+            <div class="form-group">
+              <label class="control-label col-sm-5" >Account Name :</label>
+              <div class="col-sm-7">
+                <input class="form-control" placeholder="Enter Account Name" type="text">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-5 " > Account Number :</label>
+              <div class="col-sm-7">
+                <input class="form-control" placeholder="Enter Account Number" type="text">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-5 " >Account type :</label>
+              <div class="col-sm-7">
+                <input class="form-control" placeholder="Enter Account type" type="text">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-5 " >Bank Name :</label>
+              <div class="col-sm-7">
+                <input class="form-control" placeholder="Enter Bank Name" type="text">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-5 " >Branch :</label>
+              <div class="col-sm-7">
+                <input class="form-control" placeholder="Enter Branch" type="text">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-5 " >IFSC Code :</label>
+              <div class="col-sm-7">
+                <input class="form-control" placeholder="Enter IFSC Code" type="text">
+              </div>
+            </div>
+          
+          </div>
+        </div>
+       
+    
+        
+      </form>
+      
+      <mat-dialog-actions align="end">
+        <button mat-raised-button class="add-hover btn-default pull-right" matStepperPrevious type="button" ><mat-icon>chevron_left</mat-icon><span >Previous</span></button>
+        <button mat-raised-button class="add-hover btn-primary pull-right"  (click)="close()"><mat-icon>send</mat-icon>&nbsp;Submit</button>
+        <button mat-raised-button type="button" class="add-dark-hover btn-default pull-right" (click)="close()"><mat-icon>cancel</mat-icon>&nbsp;Close</button>
+     </mat-dialog-actions>
+        
+     
+    </form>
+  </mat-step>
+</mat-horizontal-stepper>

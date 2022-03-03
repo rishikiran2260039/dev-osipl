@@ -1,0 +1,289 @@
+<div class="w-100">
+  <div class="flex-p">
+      <div class="row wrap">
+          <div class="col-sm-12 no-padding">
+              <div class="row-wrap">
+                  <div class="w-100">
+                      <div class="row">
+                          <div class="col-xs-12" style="margin-bottom: 15px;">
+                              <div class="pills">
+                                  <ul class="nav nav-pills" style="margin-left: 10px;margin-bottom: -25px;">
+                                  
+                                      <li routerLinkActive="active" routerLink="/vendor-mgnt/order-status">
+                                        <a mat-raised-button class="navtabWidth" style="margin-top: 10px;">
+                                          Order Status
+                                        </a>
+                                      </li>
+                                      <li routerLinkActive="active" routerLink="/vendor-mgnt/po-bill-status">
+                                        <a mat-raised-button class="navtabWidth" style="margin-top: 10px;">
+                                          PO / Bill Status
+                                        </a>
+                                      </li>
+                                      <li routerLinkActive="active" routerLink="/vendor-mgnt/payables">
+                                        <a mat-raised-button class="navtabWidth" style="margin-top: 10px;">
+                                          Payables
+                                        </a>
+                                      </li>
+                                   </ul>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<div class="container-fluid">
+  <div fxLayout="row wrap" #resizedDiv>
+    <div class="flex-p w-100 sizeAlign">
+      <div class="row" style="margin-bottom:14px;margin-right: -23px;">
+        <div class="col-sm-12"> 
+          <!-- <button mat-raised-button class="pull-right  btn-default margin-right-10"
+          routerLink="/purchase/procurement/rfq">
+             <mat-icon>chevron_left</mat-icon> Back
+          </button> 
+          <button mat-raised-button class="pull-right  btn-primary margin-right-10"
+            (click)="addnewitem()">
+               <mat-icon>add</mat-icon> Add New Item
+          </button> -->
+          <button mat-raised-button class="pull-right  btn-primary" style="margin-right: 8px;"  (click)="openGridColumnsDialog()">
+            <mat-icon>grid_on</mat-icon> Grid Columns
+          </button>
+          <button mat-raised-button color="primary" class="pull-right filters-hover margin-right-10"
+          (click)="filterToggle = !filterToggle">
+          <mat-icon>filter_list</mat-icon> Filter
+        </button>
+          <!-- <button mat-raised-button class="pull-right  btn-default margin-right-10" (click)="uploadExcelDialog()">
+            Upload CSV
+          </button> -->
+        </div>
+      </div>
+      <div fxLayout="row wrap" *ngIf="filterToggle" style="margin-bottom: 10px">
+        <div fxFlex="100" fxFlex.gt-sm fxFlex.sm class="flex-p w-100 margins">
+          <mat-card class="filter">
+            <mat-card-content>
+              <div class="row">
+                <div class="col-sm-4">
+                  <div class="col-sm-4 newMarginClass">
+                    Select Client :
+                  </div>
+                  <div class="col-sm-8">
+                    <mat-select class="form-control" placeholder="Select Client">
+                      <mat-option [value]="0">Raj</mat-option>
+                      <mat-option [value]="1">Teja</mat-option>
+                      <mat-option [value]="2">Krishna</mat-option>
+                      <mat-option [value]="3">Sai</mat-option>
+                      <mat-option [value]="3">Neeraja</mat-option>
+                    </mat-select>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="col-sm-4 newMarginClass">
+                    Select Project :
+                  </div>
+                  <div class="col-sm-8">
+                    <mat-select class="form-control" placeholder="Select Project">
+                      <mat-option [value]="0">104202101</mat-option>
+                    
+                    </mat-select>
+                  </div>
+                </div>
+                 <div class="col-sm-4">
+                  <div class="col-sm-4 newMarginClass">
+                    Select Vendor:
+                  </div>
+                  <div class="col-sm-8">
+                    <mat-select class="form-control" placeholder="Select Vendor">
+                      <mat-option [value]="0">Jat Furniture</mat-option>
+                    </mat-select>
+                  </div>
+                </div>
+               
+              </div>
+              <div class="row" style="padding-top:10px !important">
+             
+               
+  
+                <div class="col-sm-4">
+                  <div class="col-sm-4 newMarginClass">
+                    From Year :
+                  </div>
+                  <div class="col-sm-8">
+                    <mat-select class="form-control" placeholder="Select Year">
+                      <mat-option [value]="0">2016</mat-option>
+                      <mat-option [value]="1">2017</mat-option>
+                      <mat-option [value]="2">2018</mat-option>
+                      <mat-option [value]="3">2019</mat-option>
+                      <mat-option [value]="4">2020</mat-option>
+                      <mat-option [value]="5">2021</mat-option>
+                      <mat-option [value]="6">2022</mat-option>
+                    </mat-select>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="col-sm-4 newMarginClass">
+                    To Year :
+                  </div>
+                  <div class="col-sm-8">
+                    <mat-select class="form-control" placeholder="Select Year">
+                      <mat-option [value]="0">2016</mat-option>
+                      <mat-option [value]="1">2017</mat-option>
+                      <mat-option [value]="2">2018</mat-option>
+                      <mat-option [value]="3">2019</mat-option>
+                      <mat-option [value]="4">2020</mat-option>
+                      <mat-option [value]="5">2021</mat-option>
+                      <mat-option [value]="6">2022</mat-option>
+                    </mat-select>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="col-sm-4 newMarginClass">
+                    From Month :
+                  </div>
+                  <div class="col-sm-8">
+                    <mat-select class="form-control" placeholder="Select Month">
+                      <mat-option [value]="0">JANUARY</mat-option>
+                      <mat-option [value]="1">FEBUARY</mat-option>
+                      <mat-option [value]="2">MARCH</mat-option>
+                      <mat-option [value]="3">APRIL</mat-option>
+                      <mat-option [value]="4">MAY</mat-option>
+                      <mat-option [value]="5">JUNE</mat-option>
+                      <mat-option [value]="6">JULY</mat-option>
+                      <mat-option [value]="7">AUGUST</mat-option>
+                      <mat-option [value]="8">SEPTEMBER</mat-option>
+                      <mat-option [value]="9">OCTUBER</mat-option>
+                      <mat-option [value]="10">NOVEMBER</mat-option>
+                      <mat-option [value]="11">DECEMBER</mat-option>
+                    </mat-select>
+                  </div>
+                </div>
+              </div>
+              <div class="row" style="padding-top:10px !important">
+                <div class="col-sm-4">
+                  <div class="col-sm-4 newMarginClass">
+                    To Month :
+                  </div>
+                  <div class="col-sm-8">
+                    <mat-select class="form-control" placeholder="Select Month">
+                      <mat-option [value]="0">JANUARY</mat-option>
+                      <mat-option [value]="1">FEBUARY</mat-option>
+                      <mat-option [value]="2">MARCH</mat-option>
+                      <mat-option [value]="3">APRIL</mat-option>
+                      <mat-option [value]="4">MAY</mat-option>
+                      <mat-option [value]="5">JUNE</mat-option>
+                      <mat-option [value]="6">JULY</mat-option>
+                      <mat-option [value]="7">AUGUST</mat-option>
+                      <mat-option [value]="8">SEPTEMBER</mat-option>
+                      <mat-option [value]="9">OCTUBER</mat-option>
+                      <mat-option [value]="10">NOVEMBER</mat-option>
+                      <mat-option [value]="11">DECEMBER</mat-option>
+                    </mat-select>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  
+                </div>
+               
+                <div class="col-sm-4">
+                  <a (click)="filterToggle = !filterToggle" class="pull-right"
+                style="font-size: 25px; cursor: pointer; margin-left: 5px;">
+                <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+              </a>
+                <button mat-raised-button class="pull-right btn-primary" style="margin-left: 10px;">
+                  Search
+                </button>
+                <button mat-raised-button class="pull-right" style="background-color:#37474f; color:#fff !important;">
+                   Clear
+                </button>
+                </div>
+              </div>
+           
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+    <div class="row" >
+      <div class="col-xs-12" style="overflow-x: auto">
+        <div id="grid-table-container" class="table-responsive" >
+          <table matSort id="example2" class="table table-bordered table-hover" style="margin-left: 0px!important;">
+            <thead class="tbl-head">
+              <tr>
+               
+                <th class="text-left">PO.NO</th>
+                <th class="text-left">PO.Date</th>
+                <th class="text-left"> Vendor Name</th>
+                <th class="text-left">Type of Contract</th>
+                <th class="text-left">Particulars</th>
+                <th class="text-left">Qty </th>
+                <th class="text-left">Unit </th>
+                <th class="text-center">Rate </th>
+                <th class="text-center">Total Amount</th>
+                <th class="text-center">GST </th>
+                <th class="text-center">Project Name </th>
+                <th class="text-center">Project Code </th>
+                <th class="text-center">Bill No</th>
+                <th class="text-center">Bill Date</th>
+                <th class="text-center">Bill Qty</th>
+                <th class="text-center">Bill Basic Amount</th>
+                <th class="text-center">Transportation </th>
+                <th class="text-center">Other Charges </th>
+                <th class="text-center">Total </th>
+                <th class="text-center">GST Claimed </th>
+                <th class="text-center">Bill Value with tax </th>
+                <th class="text-center">PO status </th>
+                <th class="text-center">Balance PO Amount</th>
+                <th class="text-center">PO Excess</th>
+                <th class="text-center">PO short close </th>
+                <th class="text-center">Processed to Directors </th>
+                <th class="text-center">Processed to Accounts </th>
+                <th class="text-center">PO Raised Month </th>
+                <th class="text-center">PO Processed Month</th>
+                <th class="text-center">Remarks </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of items"> 
+                <td class="text-left">{{item.pono }}</td>
+                <td class="text-left">{{item.podate}}</td>
+                <td class="text-left">{{item.vendorName}}</td>  
+                <td class="text-left">{{item.typeContracts}}</td>
+                <td class="text-left">{{item.particulars}}</td>
+                <td class="text-left">{{item.qty}}</td>
+                <td class="text-left">{{item.unit}}</td> 
+                <td class="text-center">{{item.rate}}</td>          
+                <td style="text-align: center!important;">
+                  {{item.totalamount}}</td> 
+                  <td class="text-center">{{item.gst}}</td>  
+                  <td class="text-center">{{item.projectname}}</td>  
+                  <td class="text-center">{{item.projectcode}}</td>  
+                  <td class="text-center">{{item.Billno}}</td>  
+                  <td class="text-center">{{item.billdate}}</td>  
+                  <td class="text-center">{{item.billqty}}</td>  
+                  <td class="text-center">{{item.billamountbasic}}</td>  
+                  <td class="text-center">{{item.trans}}</td>  
+                  <td class="text-center">{{item.othercharges}}</td>  
+                  <td class="text-center">{{item.total}}</td> 
+                  <td class="text-center">{{item.gstclaimed}}</td>  
+                  <td class="text-center">{{item.billvaluestatus}}</td>  
+                  <td class="text-center">{{item.postatus}}</td>  
+                  <td class="text-center">{{item.balancepoamount}}</td>  
+                  <td class="text-center">{{item.poexcess}}</td>  
+                  <td class="text-center">{{item.poshortclose}}</td>  
+                  <td class="text-center">{{item.processedtodirectors}}</td>  
+                  <td class="text-center">{{item.processtoaccounts}}</td>  
+                  <td class="text-center">{{item.roraised}}</td>  
+                  <td class="text-center">{{item.poprocessedmth}}</td>  
+                  <td class="text-center">{{item.remarks}}</td>  
+              </tr>
+            </tbody>
+          </table>
+          
+     
+          
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+  </div>

@@ -1,0 +1,180 @@
+<!-- 
+<div class="row-wrap mt-4">
+  <div class="w-100">      
+      <div class="row">
+          <div class="col-xs-12">
+              <div class="pills">
+                  <ul class="nav nav-pills" style="margin-left: 10px;">
+                      <li>
+                          <a mat-raised-button class="navtabWidth" (click)="navigatePage(1)" [ngClass]="{'tabColor' : tabNumber == 1}">
+                              Quote
+                          </a>
+                      </li>
+                      <li>
+                          <a mat-raised-button class="navtabWidth" (click)="navigatePage(2)" [ngClass]="{'tabColor' : tabNumber == 2}">
+                               Administration
+                          </a>
+                      </li>
+                      <li>
+                          <a mat-raised-button class="navtabWidth" (click)="navigatePage(3)" [ngClass]="{'tabColor' : tabNumber == 3}">
+                              Research
+                          </a>
+                      </li>
+                      <li>
+                          <a mat-raised-button class="navtabWidth" (click)="navigatePage(4)" [ngClass]="{'tabColor' : tabNumber == 4}">
+                              Field
+                          </a>
+                      </li>
+                      <li>
+                        <a mat-raised-button class="navtabWidth" (click)="navigatePage(5)" [ngClass]="{'tabColor' : tabNumber == 5}">
+                            Drafting
+                        </a>
+                    </li>
+                    <li>
+                      <a mat-raised-button class="navtabWidth" (click)="navigatePage(6)" [ngClass]="{'tabColor' : tabNumber == 6}">
+                          Quality Control
+                      </a>
+                  </li> 
+                  <li>
+                    <a mat-raised-button class="navtabWidth" (click)="navigatePage(7)" [ngClass]="{'tabColor' : tabNumber == 7}">
+                        Management
+                    </a>
+                </li>
+                <li>
+                  <a mat-raised-button class="navtabWidth" (click)="navigatePage(8)" [ngClass]="{'tabColor' : tabNumber == 8}">
+                      Calculations
+                  </a>
+              </li>
+                  </ul>
+              </div>
+          </div>
+          
+      </div>
+  </div>
+</div>
+
+
+
+ -->
+ <div class="col-sm-12">
+    <div class="pull-right col-sm-1 no-padding">
+
+        <button mat-raised-button color="primary" style="position: relative; left: 7px;margin-bottom:12px" class="pull-right filter-hover" (click)="filterToggle = !filterToggle">
+            <mat-icon>filter_list</mat-icon> Filter
+        </button>
+    </div>
+</div>
+
+<div class="no-padding col-sm-12">
+  <form >
+      <div fxLayout="row wrap" *ngIf="filterToggle">
+          <div fxFlex="100" fxFlex.gt-sm fxFlex.sm class="flex-p w-100">
+              <mat-card class="filter">
+                  <mat-card-content>
+                    <div class="row">
+                      <div class="col-sm-4">
+                        <div class="col-sm-4 newMarginClass">
+                          Select Site:
+                        </div>
+                        <div class="col-sm-8">
+                          <!-- <input type="text" placeholder="Enter Keyword" class="form-control"> -->
+                          <mat-select class="form-control" placeholder="--Please Select Site--">
+                            <mat-option class='option' [value]="0">Sector 56</mat-option>
+                            <mat-option [value]="1">Lansdowne</mat-option>
+                            <mat-option [value]="2">Newton</mat-option>
+                            <!-- <mat-option [value]="3">Kenneth McKee</mat-option> -->
+                          </mat-select>
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="col-sm-4 newMarginClass">
+                          Select Contract:
+                        </div>
+                        <div class="col-sm-8">
+                          <mat-select class="form-control" placeholder="--Please Select Contract--">
+                            <mat-option class='option' [value]="0"> Landscapin</mat-option>
+                            <mat-option [value]="1">Club House</mat-option>
+                            <mat-option [value]="2">Restaurant</mat-option>
+                            <mat-option [value]="3">Parking Lot</mat-option>
+                          </mat-select>
+                        </div>
+                      </div>
+                    
+                      <div class="col-sm-4">
+                        <div class="col-sm-4 newMarginClass">
+                          Select User:
+                        </div>
+                        <div class="col-sm-8">
+                          <mat-select class="form-control" placeholder="--Please Select User--">
+                            <mat-option class='option' [value]="0">All</mat-option>
+                            <mat-option [value]="1">Mark</mat-option>
+                            <mat-option [value]="2">Binton</mat-option>
+                          </mat-select>
+                        </div>
+                      </div>
+                    </div>
+            
+                    <div class="row" style="padding-top:10px !important">
+                      <div class="col-sm-4">
+                        <div class="col-sm-4 newMarginClass" style="margin-top: 4px;">
+                          Select Task:
+                        </div>
+                        <div class="col-sm-8">
+                          <mat-select class="form-control" placeholder="--Please Select Task--">
+                            <mat-option class='option' [value]="0"> Administration</mat-option>
+                            <mat-option [value]="1">Research</mat-option>
+                            <mat-option [value]="2">Field</mat-option>
+                            <mat-option [value]="3">Drafting</mat-option>
+                          </mat-select>
+                        </div>
+                      </div>
+                      <div class="col-sm-4" style="padding-top:10px !important">
+                          <div class="col-sm-4 newMarginClass" style="margin-top: 4px;">
+                            To Date:
+                          </div>
+                          <div class="col-sm-8">
+                            <input class="form-control" class="form-control" placeholder="MM/DD/YYYY" (keypress)="false"
+                              [owlDateTimeTrigger]="dt1" [owlDateTime]="dt1" name="dt1">
+                            <owl-date-time [pickerType]="'calendar'" #dt1></owl-date-time>
+                          </div>
+                        </div>
+              
+                        <div class="col-sm-4" style="padding-top:10px !important">
+                          <div class="col-sm-4 newMarginClass" style="margin-top: 4px;">
+                            From Date:
+                          </div>
+                          <div class="col-sm-8">
+                            <input class="form-control" class="form-control" placeholder="MM/DD/YYYY" (keypress)="false"
+                              [owlDateTimeTrigger]="dt2" [owlDateTime]="dt2" name="dt2">
+                            <owl-date-time [pickerType]="'calendar'" #dt2></owl-date-time>
+                          </div>
+                        </div>
+                        <div class="col-sm-4" style="padding-top:10px !important;margin-left:870px">
+                          <div class="col-lg-1" style="margin-left:62% !important;">
+                              <button mat-raised-button class="pull-right btn-primary">
+                                <mat-icon>youtube_searched_for</mat-icon> Search
+                              </button>
+                  
+                            </div>
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="margin-left: -18px;">
+                              <button mat-raised-button style="background-color:#37474f; color:#fff !important;">
+                                <mat-icon>settings_backup_restore</mat-icon> Clear
+                              </button>
+                  
+                            </div>
+                            <a class="col-lg-1 col-md-1 col-sm-1 col-xs-1" (click)="filterToggle = !filterToggle" class="pull-right"
+                              style="font-size: 25px; cursor: pointer; margin-left: 5px;">
+                              <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+                            </a>
+                        </div>
+
+            
+                    </div>
+                    
+                  </mat-card-content>
+                </mat-card>
+          </div>
+      </div>
+  </form>
+</div>
+ <router-outlet></router-outlet>

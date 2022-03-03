@@ -1,0 +1,239 @@
+<div class="col-sm-12">
+    <div class="col-sm-7 no-padding">
+        <div class="col-sm-4 no-padding">
+            <mat-form-field appearance="outline" color="warn">
+                <mat-label>Site</mat-label>
+                <mat-select>
+                    <mat-option value="[0]">
+                        001.Default
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="col-sm-4 no-padding">
+            <mat-form-field appearance="outline" color="warn">
+                <mat-label>SOW</mat-label>
+                <mat-select>
+                    <mat-option value="[1]">
+                        A.Default
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="col-sm-2 no-padding">
+        <button (click)="openSowwDailog()" mat-raised-button class="pull-right margin-top-10"
+            style="margin-right:-364px;background-color: rgb(40 107 165);color:white">
+            <mat-icon>add</mat-icon> Add Action
+        </button>
+    </div>
+    <mat-card class="col-sm-12 custom-layout">
+        <div class="col-sm-5">
+            <div class="col-sm-6">
+                <label>Site:</label>
+                <span>&nbsp;&nbsp;Default</span>
+            </div>
+            <div class="col-sm-6">
+                <label>SOW:</label>
+                <span>&nbsp;&nbsp;A.Default</span>
+            </div>
+        </div>
+        <div class="col-sm-7">
+
+            <div class="col-sm-4">
+                <label>Budget:</label>
+                <span>&nbsp;&nbsp;0Hrs
+                    (0.00)</span>
+            </div>
+
+            <div class="col-sm-4">
+                <label>Planned:</label>
+                <span>&nbsp;&nbsp;0.50Hrs
+                    ($30.0)</span>
+            </div>
+            <div class="col-sm-3 no-padding">
+                <label>Actual:</label>
+                <span>&nbsp;&nbsp;0.00Hrs
+                    ($0.00)</span>
+            </div>
+            <div class="col-sm-1 no-padding">
+                <mat-icon class="pull-right" style="cursor:pointer;color: #2da3ff;" (click)="openSowDailog()">
+                    edit</mat-icon>
+            </div>
+        </div>
+        <div class="col-sm-5 margin-top-10">
+            <div class="col-sm-6">
+                <label>Quoted Total:</label>
+                <span>&nbsp;&nbsp;0.00</span>
+            </div>
+            <div class="col-sm-6">
+                <label>Project Type:</label>
+                <span>&nbsp;&nbsp;-</span>
+            </div>
+
+        </div>
+        <div class="col-sm-7 margin-top-10">
+            <div class="col-sm-4">
+                <label>Status:</label>
+                <span>&nbsp;&nbsp;Open</span>
+            </div>
+            <div class="col-sm-4">
+                <label>Is Awarded:</label>
+                <span>&nbsp;&nbsp;No</span>
+            </div>
+            <div class="col-sm-4 no-padding">
+                <label class="">Fee Structure:</label>
+                <span>&nbsp;&nbsp;-</span>
+            </div>
+        </div>
+    </mat-card>
+
+    <mat-card class="col-sm-12 margin-top-10">
+        <div class="w-100">
+            <div class="row">
+                <div class="col-sm-12" style="padding: 15px !important; margin-top: 10px;margin-bottom: 20px;">
+                    <div class="col-sm-12" style="padding: 0px !important; margin-top: 10px;">
+                        <p-accordion 
+                            class="customAccordian">
+                            <p-accordionTab class="sowdescription-p-accodian">
+                                <p-header class="col-sm-11 pull-right" style="padding-left: 22px;">
+                                    SOW Description
+                                </p-header>
+                                <div>
+
+                                </div>
+                            </p-accordionTab>
+                            <p-accordionTab class="expenses-new-p">
+                                <p-header class="col-sm-11 pull-right" style="padding-left: 22px;">
+                                    Expenses
+                                    <div class="pull-right">
+                                        <label>Total:</label>
+                                        <span> &nbsp; $0.00</span>
+                                    </div>
+                                </p-header>
+
+                                <table class="table table-bordered table-striped table-hover"
+                                    style="margin-bottom:15px !important;">
+                                    <thead>
+                                        <tr class="thead-color">
+                                            <th>
+                                                Expense
+                                            </th>
+                                            <th class="text-center">
+                                                Rate
+                                            </th>
+                                            <th class="text-center">
+                                                Quantity
+                                            </th>
+
+                                            <th class="text-center">
+                                                Total
+                                            </th>
+
+                                            <th class="text-center">
+                                                Docs
+                                            </th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+
+                                        <tr>
+                                            <td colspan="5" class="text-center">
+                                                No Data Found
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </p-accordionTab>
+                            <p-accordionTab *ngFor="let item of taskData" [selected]="item.selected">
+                                <p-header class="col-sm-11 pull-right" style="padding-left: 0px;">
+                                    <div class="col-sm-3">
+                                        <label>Task:</label>
+                                        <span>&nbsp;
+                                            {{item.taskName}}
+                                        </span>
+                                    </div>
+                                    <div class="col-sm-3">
+
+                                        <label>Budget Hours:</label>
+                                        <span>&nbsp;
+                                            12Hrs($0.00)
+                                        </span>
+                                    </div>
+                                    <div class="col-sm-3">
+
+                                        <label>Budget Amount:</label>
+                                        <span>&nbsp; {{'800' | currency}}</span>
+                                    </div>
+
+                                </p-header>
+                                <div class="table-responsive" id="{{item.id}}">
+                                    <table id="example2"
+                                        class="table table-bordered table-striped table-hover no-padding"
+                                        style="margin-bottom: 10px !important">
+                                        <thead>
+                                            <tr _ngcontent-c21="" class="custom-thead-budget">
+                                                <th _ngcontent-c21="" style="min-width: 300px;">Action</th>
+                                                <th _ngcontent-c21="" style="min-width: 300px;">Job Code
+                                                    (Title)</th>
+                                                <th _ngcontent-c21="" class="text-center" style="min-width: 100px;">Rate
+                                                </th>
+                                                <th _ngcontent-c21="">Planned</th>
+                                                <th _ngcontent-c21="" class="text-center" style="min-width: 100px;">
+                                                    Budget</th>
+                                                <th _ngcontent-c21="" class="text-center" style="min-width: 80px;">
+                                                    Delete</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngIf="item.Data?.length == 0">
+
+                                                <td style="text-align: center;" colspan="7">
+                                                    No records Found
+                                                </td>
+                                            </tr>
+                                            <tr *ngFor="let tData of item.Data; let i = index">
+                                                <td> <input type="number" value="tData.notes" class="form-control"
+                                                        placeholder="Enter Action">
+                                                </td>
+                                                <td>
+                                                    <mat-select class="form-control" placeholder="Job Code"
+                                                        (selectionChange)="jobCodeChange($event.value, item.id, tData.id)">
+                                                        <mat-option *ngFor="let item of jobcode" [value]="item.rate">
+                                                            {{item.jobcode}}
+                                                        </mat-option>
+                                                    </mat-select>
+                                                </td>
+                                                <td class="text-center" style="vertical-align: middle">
+                                                    {{tData.rate | currency}} </td>
+                                                <td> <input type="number" [(ngModel)]="tData.quantity"
+                                                        (ngModelChange)="getQuantityValue(tData.quantity, item.id, tData.id)"
+                                                        class="form-control" placeholder="Enter Planned Hours"> </td>
+                                                <td class="text-center" style="vertical-align: middle">
+                                                    {{tData.total | currency}}</td>
+                                                <td class="text-center" style="vertical-align: middle">
+                                                    <a class="delete-job-code" matTooltip="Delete Entry">
+                                                        <i class="fa fa-trash"></i>
+                                                    </a>
+                                                </td>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </p-accordionTab>
+
+
+                        </p-accordion>
+                    </div>
+                </div>
+            </div>
+            <div class="flex-p">
+            </div>
+        </div>
+    </mat-card>
+</div>

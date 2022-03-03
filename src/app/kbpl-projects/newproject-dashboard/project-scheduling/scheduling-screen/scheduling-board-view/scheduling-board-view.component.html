@@ -1,0 +1,364 @@
+<div style="margin-top: 20px !important; overflow:hidden">
+    <div class="col-sm-12 padding-15">
+        <div class="row">
+            <div class="col-sm-12 no-padding">
+                <div class="col-sm-4">
+                    <mat-slide-toggle [(ngModel)]="showw" class="custom-color" style="margin-top: 5px;margin-left: 20px;"
+                    (click)="changeAssigned($event)"> Assigned</mat-slide-toggle>
+
+                <mat-slide-toggle [(ngModel)]="show" class="custom-color" style="margin-top: 5px;margin-left: 20px;"
+                    (change)="toggle()">{{show ? 'Hide': 'Show'}} Weekend</mat-slide-toggle>
+                </div>
+
+                <div class="col-sm-3" style="padding-top:9px!important; padding-left: 9px; padding-bottom: 9px;">
+                    <!-- <span style="border: inset 2px #ea8e73e0; background: #fff; margin-left: 10px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> -->
+                    <mat-checkbox style="border: inset 2px #ea8e73e0; background: #fff; margin-left: 10px">
+                    </mat-checkbox>&nbsp;&nbsp;
+                    &nbsp;&nbsp;<span style="color:black">Awaiting Master Approval</span>
+                </div>
+
+
+                <mat-button-toggle-group style="bottom: 4px; float: right;">
+                    <mat-button-toggle>All (44)</mat-button-toggle>
+                    <mat-button-toggle>Day View (14)</mat-button-toggle>
+                    <mat-button-toggle>Last Week (10)</mat-button-toggle>
+                    <mat-button-toggle>This Week (10)</mat-button-toggle>
+                    <mat-button-toggle> Next Week (10)</mat-button-toggle>
+                </mat-button-toggle-group>
+
+
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="">
+        <div *ngIf="assigned || unassigned" class="col-sm-2 no-padding" style="padding: 0px !important;">
+
+            <table *ngIf="unassigned" style="width:215px;padding: 0px !important;"
+                class="table table-striped  table-hover">
+                <thead class="tbl-head">
+                    <tr class="tr-grid-header text-center">
+                        <th class="text-center">Unassigned Actions</th>
+                    </tr>
+                </thead>
+                <tbody class="fixed-h-w-s">
+                    <tr>
+                        <div class="drag-container">
+                            <div class="section-heading"></div>
+
+                            <div cdkDropList [cdkDropListData]="actionSchedulingList"
+                                [cdkDropListConnectedTo]="connectedTo" class="item-list min-ht">
+
+                                <mat-card cdkDrag id="unassigned"
+                                    (dblclick)="highlightUnscheduledAction(action.ManageActionId)"
+                                    class="item-box space-tab-master BoldTextRed"
+                                    *ngFor="let action of actionSchedulingList; let j = index" style="border-radius: 6px!important;    touch-action: none;
+                                    -webkit-user-drag: none;
+                                    -webkit-tap-highlight-color: transparent;
+                                    user-select: none;" [ngClass]="getStatusClass(action)"
+                                    [class.pending-grey]="!(action.DueDate)">
+                                    <div class="move-handle" cdkDragHandle>
+                                        <svg width="24px" fill="currentColor" viewBox="0 0 24 24" style="width: 18px;">
+                                            <path
+                                                d="M10 9h4V6h3l-5-5-5 5h3v3zm-1 1H6V7l-5 5 5 5v-3h3v-4zm14 2l-5-5v3h-3v4h3v3l5-5zm-9 3h-4v3H7l5 5 5-5h-3v-3z">
+                                            </path>
+                                            <path d="M0 0h24v24H0z" fill="none"></path>
+                                        </svg>
+                                    </div>
+                                    <span class="font-9 col-sm-5 no-padding"
+                                        style="padding: 0px !important;">{{(action.DueDate) ? (action.DueDate |
+                                        date: 'yyyy-MM-dd') : 'Pending'}}</span>
+                                    <span class="font-9 col-sm-7 no-padding"
+                                        style="padding: 0px !important;">{{action.TaskName}}</span>
+                                    <span style="text-align: left;" class="font-11 col-sm-5 no-padding"
+                                        style="padding: 0px !important;">{{action.QuoteNo}}</span>
+                                    <span style="text-align: left;" class="font-11 col-sm-7 no-padding"
+                                        style="padding: 0px !important;">{{action.PlannedHours.toFixed(2)}}hrs
+                                        <span style="color: red;"> {{(action.TotalScheduledHours > 0 &&
+                                            action.UnScheduled == true) ? ( '(' +action.TotalScheduledHours.toFixed(2) +
+                                            ' hrs)') : ''}}</span>
+                                    </span>
+                                    <span style="text-align: left;" class="font-11 col-sm-12 no-padding"
+                                        style="padding: 0px !important;">{{action.SiteName}}</span>
+                                    <span class="font-9 col-sm-11 no-padding"
+                                        style="padding: 0px !important;">{{action.ProjectManagerName}}</span>
+                                    <i class="fa fa-arrow-circle-right col-sm-1 no-padding arrow-sched"
+                                        style="padding: 0px !important;"
+                                        (click)="scheduleUnassignedAction(action.ManageActionId,action.TotalScheduledHours, action.ScheduledActionsCount)"></i>
+                                </mat-card>
+
+                                <div *ngIf="actionSchedulingList?.length == 0" style="text-align: center !important"> No
+                                    data available </div>
+                            </div>
+                        </div>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table *ngIf="assigned" style="width:215px;padding: 0px !important;"
+                class="table table-striped  table-hover">
+                <thead class="tbl-head">
+                    <tr class="tr-grid-header text-center">
+                        <th class="text-center">Assigned Actions</th>
+                    </tr>
+                </thead>
+                <tbody class="fixed-h-w-s">
+                    <tr>
+                        <div class="drag-container">
+                            <div class="section-heading"></div>
+
+                            <div cdkDropList [cdkDropListData]="actionSchedulingList"
+                                [cdkDropListConnectedTo]="connectedTo" class="item-list min-ht">
+
+                                <mat-card cdkDrag id="unassigned"
+                                    (dblclick)="highlightUnscheduledAction(action.ManageActionId)"
+                                    class="item-box space-tab-master BoldTextRed"
+                                    *ngFor="let action of actionSchedulingList; let j = index" style="border-radius: 6px!important;    touch-action: none;
+                                  -webkit-user-drag: none;
+                                  -webkit-tap-highlight-color: transparent;
+                                  user-select: none;" [ngClass]="getStatusClass(action)"
+                                    [class.pending-grey]="!(action.DueDate)">
+                                    <div class="move-handle" cdkDragHandle>
+                                        <svg width="24px" fill="currentColor" viewBox="0 0 24 24" style="width: 18px;">
+                                            <path
+                                                d="M10 9h4V6h3l-5-5-5 5h3v3zm-1 1H6V7l-5 5 5 5v-3h3v-4zm14 2l-5-5v3h-3v4h3v3l5-5zm-9 3h-4v3H7l5 5 5-5h-3v-3z">
+                                            </path>
+                                            <path d="M0 0h24v24H0z" fill="none"></path>
+                                        </svg>
+                                    </div>
+                                    <span class="font-9 col-sm-5 no-padding"
+                                        style="padding: 0px !important;">{{(action.DueDate) ? (action.DueDate |
+                                        date: 'yyyy-MM-dd') : 'Pending'}}</span>
+                                    <span class="font-9 col-sm-7 no-padding"
+                                        style="padding: 0px !important;">{{action.TaskName}}</span>
+                                    <span style="text-align: left;" class="font-11 col-sm-5 no-padding"
+                                        style="padding: 0px !important;">{{action.QuoteNo}}</span>
+                                    <span style="text-align: left;" class="font-11 col-sm-7 no-padding"
+                                        style="padding: 0px !important;">{{action.PlannedHours.toFixed(2)}}hrs
+                                        <span style="color: red;"> {{(action.TotalScheduledHours > 0 &&
+                                            action.UnScheduled == true) ? ( '(' +action.TotalScheduledHours.toFixed(2) +
+                                            ' hrs)') : ''}}</span>
+                                    </span>
+                                    <span style="text-align: left;" class="font-11 col-sm-12 no-padding"
+                                        style="padding: 0px !important;">{{action.SiteName}}</span>
+                                    <span class="font-9 col-sm-11 no-padding"
+                                        style="padding: 0px !important;">{{action.ProjectManagerName}}</span>
+                                    <i class="fa fa-arrow-circle-right col-sm-1 no-padding arrow-sched"
+                                        style="padding: 0px !important;"
+                                        (click)="scheduleUnassignedAction(action.ManageActionId,action.TotalScheduledHours, action.ScheduledActionsCount)"></i>
+                                </mat-card>
+
+                                <div *ngIf="actionSchedulingList?.length == 0" style="text-align: center !important"> No
+                                    data available </div>
+                            </div>
+                        </div>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div [ngClass]="assigned || unassigned ? 'col-sm-10' : 'col-sm-12'" class="no-padding"
+            style="padding: 0px !important;" #scrollEl cdk-scrollable>
+            <div class="col-sm-12 table-responsive no-padding" style="padding: 0px !important;" id="actioncalendar"
+                cdkDropListGroup>
+                <table *ngFor="let user of scheduledActionsByWeek, let i = index"
+                    class="table table-bordered table-hover" style="margin-bottom:10px">
+                    <thead class="tbl-head">
+                        <tr class="tr-grid-header">
+                            <th>User</th>
+                            <ng-container *ngFor="let date of user.ActionScheduledOnDate">
+                                <th *ngIf="(!date.strDate.includes('Sat')|| show ) && (!date.strDate.includes('Sun') || show )"
+                                    [@slideInOut]="orientation">
+                                    {{date.strDate}}
+                                </th>
+                            </ng-container>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td rowspan="2" class="week-min-width"
+                                style="vertical-align: middle; max-width:75px!important; min-width:75px!important">
+                                <b>{{user.UserName}}</b>
+                            </td>
+                            <ng-container *ngFor="let date of user.ActionScheduledOnDate;let j = index">
+                                <td #autoscroll [@slideInOut]="orientation"
+                                    *ngIf="(date.Day != 'Saturday'||show) && (date.Day != 'Sunday' || show)" cdkDropList
+                                    [cdkDropListConnectedTo]="connectedTo" [cdkDropListData]="date.ActionsList"
+                                    id="{{user.UserId}}|{{date.Date}}"
+                                    (cdkDropListDropped)="drop($event, user.UserId, date.Date,user.JobCodeIds)"
+                                    [ngClass]="{'bg-gray' : date.Day == 'Saturday' || date.Day == 'Sunday'}">
+                                    <div style="width: 185px!important">
+                                        <ng-container *ngFor="let action of date.ActionsList">
+                                            <mat-card
+                                                id="{{action.ActionDetailId}}|{{action.TimeSheetStatus}}|{{action.ManageActionId}}|{{action.JobCodeId}}"
+                                                (dblclick)="openAddPhoneNotesDialog(action.ActionId, action.ActionDetailId, action.TimeSheetStatus)"
+                                                cdkDrag style="width:100%" class="item-box space-tab"
+                                                [ngClass]="getStatusClass(action)"
+                                                [class.review-border]="action.IsReviewed == false">
+                                                <div class="move-handle" cdkDragHandle>
+                                                    <svg width="24px" fill="currentColor" viewBox="0 0 24 24"
+                                                        style="width: 18px;">
+                                                        <path
+                                                            d="M10 9h4V6h3l-5-5-5 5h3v3zm-1 1H6V7l-5 5 5 5v-3h3v-4zm14 2l-5-5v3h-3v4h3v3l5-5zm-9 3h-4v3H7l5 5 5-5h-3v-3z">
+                                                        </path>
+                                                        <path d="M0 0h24v24H0z" fill="none"></path>
+                                                    </svg>
+                                                </div>
+                                                <span class="font-9 col-sm-5 no-padding"
+                                                    style="padding: 0px !important;    text-align: initial;;">{{action.DueDate}}</span>
+                                                <span class="font-9 col-sm-7 no-padding"
+                                                    style="padding: 0px !important;    text-align: initial;;">{{action.TaskName}}</span>
+                                                <span style="text-align: left;" class="font-11 col-sm-5 no-padding"
+                                                    style="padding: 0px !important;    text-align: initial;;">{{action.QuoteNo}}</span>
+                                                <span style="text-align: left;" class="font-11 col-sm-7 no-padding"
+                                                    style="padding: 0px !important;    text-align: initial;;">{{action.AssignedHours
+                                                    != null ?
+                                                    action.AssignedHours.toFixed(2) : '-'}}hrs ({{action.RemainingHours
+                                                    != null ? action.RemainingHours.toFixed(2) + ' hrs' : '-'}})</span>
+                                                <span style="text-align: left;" class="font-11 col-sm-11 no-padding"
+                                                    style="padding: 0px !important;    text-align: initial;;">{{action.SiteName}}</span>
+                                                <span class="font-9 col-sm-11 no-padding"
+                                                    style="padding: 0px !important;">{{action.ProjectManager}}</span>
+                                                <i (click)="openAddPhoneNotesDialog(action.ActionId, action.ActionDetailId, action.TimeSheetStatus)"
+                                                    class="fa fa-arrow-circle-right col-sm-1 no-padding arrow-sched"></i>
+                                            </mat-card>
+                                        </ng-container>
+                                    </div>
+                                </td>
+                            </ng-container>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr class="cust-foot" style="background-color: #f4cb36c2 !important;" *ngIf="user.UserId != 0">
+                            <td>Total</td>
+                            <ng-container *ngFor="let date of user.ActionScheduledOnDate">
+                                <th [@slideInOut]="orientation"
+                                    *ngIf="(date.Day != 'Saturday'||show) && (date.Day != 'Sunday' || show)"
+                                    class="text-center">
+                                    <div class="col-sm-12">
+                                        <span class="col-sm-6 b-r c-grey">{{date.TotalHours.toFixed(2)}} Hrs</span>
+                                        <span class="col-sm-6 c-grey">{{date.TotalWorkedHours ?
+                                            date.TotalWorkedHours.toFixed(2) : '$ 0.00'}}</span>
+                                    </div>
+                                </th>
+                            </ng-container>
+
+                        </tr>
+                    </tfoot>
+                </table>
+                <div *ngIf="scheduledActionsByWeek?.length == 0" style="text-align: center !important"> No data
+                    available </div>
+            </div>
+
+
+
+        </div>
+        <!-- <div [ngClass]="{'col-sm-7': !isMenuOn, 'col-sm-12': isMenuOn}" *ngIf="showDay" class="no-padding">
+            <div class="col-sm-12 table-responsive inner no-padding" id="actioncalendar"
+                style="height: 500px !important;">
+                <table *ngFor="let user of scheduledActionsByWeek, let i = index"
+                    class="table table-striped table-bordered table-hover">
+                    <thead class="tbl-head">
+                        <tr *ngIf="i == 0" class="tr-grid-header">
+                            <th>User</th>
+                            <th *ngFor="let date of user.ActionScheduledOnDate">{{date.strDate}}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngIf="user.UserId == 0">
+                            <td colspan="2" style="text-align: center !important">No data available</td>
+                        </tr>
+                        <tr *ngIf="user.UserId != 0">
+                            <td width="20%" rowspan="2" class="week-min-width" style="vertical-align: middle;">
+                                <b>{{user.UserName}}</b>
+                            </td>
+                            <td *ngFor="let date of user.ActionScheduledOnDate" cdkDropList
+                                [cdkDropListConnectedTo]="connectedTo" [cdkDropListData]="date.ActionsList"
+                                id="{{user.UserId}}|{{date.Date}}"
+                                (cdkDropListDropped)="drop($event, user.UserId, date.Date, user.JobCodeIds)"
+                                [ngClass]="{'bg-gray' : date.Day == 'Saturday' || date.Day == 'Sunday'}">
+  
+                                <div style="width: 165px!important">
+                                    <ng-container *ngFor="let action of date.ActionsList">
+  
+                                        <mat-card id="{{action.ActionDetailId}}"
+                                            *ngIf="action.TimeSheetStatus == 'Completed' || action.TimeSheetStatus == 'In Progress'"
+                                            (dblclick)="openAddPhoneNotesDialog(action.ActionId, action.ActionDetailId, action.TimeSheetStatus)"
+                                            style="width:100%" class="item-box space-tab"
+                                            [ngClass]="getStatusClass(action)">
+                                            <span style="position: relative; bottom: 2px;"
+                                                class="font-9 col-sm-7 no-padding">{{action.DueDate}}</span>
+                                            <span style="position: relative; right: 7px;"
+                                                class="font-9 col-sm-5 no-padding">{{action.TaskName}}</span>
+                                            <span style="text-align: left;"
+                                                class="font-11 col-sm-6 no-padding">{{action.QuoteNo}}</span>
+                                            <span
+                                                class="font-11 col-sm-4 no-padding">{{action.AssignedHours.toFixed(2)}}hrs</span>
+                                            <i (click)="openAddPhoneNotesDialog(action.ActionId, action.ActionDetailId, action.TimeSheetStatus)"
+                                                class="fas fa-arrow-circle-right col-sm-2 no-padding"
+                                                style="font-size: 18px !important; vertical-align: top !important;cursor: pointer !important;"></i>
+                                            <span class="font-9 col-sm-12 no-padding">{{action.ProjectManager}}</span>
+                                        </mat-card>
+  
+                                        <mat-card id="{{action.ActionDetailId}}"
+                                            *ngIf="action.TimeSheetStatus != 'Completed' && action.TimeSheetStatus != 'In Progress'"
+                                            cdkDrag
+                                            (dblclick)="openAddPhoneNotesDialog(action.ActionId, action.ActionDetailId, action.TimeSheetStatus)"
+                                            style="width:100%" class="item-box space-tab"
+                                            [ngClass]="getStatusClass(action)">
+                                            <span style="position: relative; bottom: 2px;"
+                                                class="font-9 col-sm-7 no-padding">{{action.DueDate}}</span>
+                                            <span style="position: relative; right: 7px;"
+                                                class="font-9 col-sm-5 no-padding">{{action.TaskName}}</span>
+                                            <span style="text-align: left;"
+                                                class="font-11 col-sm-6 no-padding">{{action.QuoteNo}}</span>
+                                            <span
+                                                class="font-11 col-sm-4 no-padding">{{action.AssignedHours.toFixed(2)}}hrs</span>
+                                            <i (click)="openAddPhoneNotesDialog(action.ActionId, action.ActionDetailId, action.TimeSheetStatus)"
+                                                class="fas fa-arrow-circle-right col-sm-2 no-padding"
+                                                style="font-size: 18px !important; vertical-align: top !important;cursor: pointer !important;"></i>
+                                            <span class="font-9 col-sm-12 no-padding">{{action.ProjectManager}}</span>
+                                        </mat-card>
+  
+                                    </ng-container>
+                                </div>
+  
+                                </td>
+                        </tr>
+                        <tr *ngIf="user.UserId != 0">
+                            <td *ngFor="let date of user.ActionScheduledOnDate">
+                                {{date.Availability}} <br>
+                                <p *ngFor="let holiday of date.Holidays" title="{{holiday.holidayFor}}"
+                                    style="margin-right: 5px; height: 12px; width: 12px; display: inline-block; background-color: orange; cursor: pointer; border-radius: 50%;">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                <p *ngFor="let leave of date.Leaves"
+                                    title="{{leave.vc_absence_type}}, {{leave.vc_reason}}"
+                                    style="margin-right: 5px; height: 12px; width: 12px; display: inline-block; cursor: pointer; border-radius: 50%;"
+                                    [ngClass]="{'redColor': leave.is_approved == false && leave.is_declined == true, 'greenColor': leave.is_approved == true && leave.is_declined == false, 'grayColor': leave.is_approved == false && leave.is_declined == false}">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr class="cust-foot" style="background-color: #f4cb36c2 !important;" *ngIf="user.UserId != 0">
+                            <td class="text-center">Total</td>
+                            <th *ngFor="let date of user.ActionScheduledOnDate" class="text-center">
+  
+                                <div class="col-sm-12">
+                                    <span class="col-sm-6 b-r c-grey">{{date.TotalHours.toFixed(2)}} Hrs</span>
+                                    <span class="col-sm-6 c-grey">{{date.TotalWorkedHours ?
+                                        date.TotalWorkedHours.toFixed(2) : '$ 0.00'}}</span>
+                                </div>
+                        </tr>
+                    </tfoot>
+                </table>
+                <div *ngIf="scheduledActionsByWeek?.length == 0" style="text-align: center !important"> No data
+                    available </div>
+            </div>
+        </div> -->
+    </div>
+
+</div>

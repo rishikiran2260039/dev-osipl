@@ -1,0 +1,119 @@
+<div class="container-fluid">
+  <div class="w-100">
+    <div class="row">
+        <div class="col-xs-12" style="margin-bottom: 15px;">
+            <div class="pills">
+                <ul class="nav nav-pills" style="margin-left: 10px;margin-bottom: -25px;">
+                    <li routerLinkActive="active" routerLink="/purchase/servicecontracts/indent">
+                        <a mat-raised-button class="navtabWidth" 
+                        style="margin-top: 10px;">
+                           Indent
+                        </a>
+                    </li>
+                    <li routerLinkActive="active" routerLink="/purchase/servicecontracts/RfqServicecontracts">  
+                        <a mat-raised-button class="navtabWidth" 
+                        style="margin-top: 10px;">
+                            RFQ
+                        </a>
+                    </li>
+                    <li routerLinkActive="active" routerLink="/purchase/servicecontracts/QuotationsServicecontracts">
+                      <a mat-raised-button class="navtabWidth" style="margin-top: 10px;">
+                        Quotations
+                      </a>
+                    </li>
+                   
+                    <li routerLinkActive="active" routerLink="/purchase/servicecontracts/work-orders">
+                        <a mat-raised-button class="navtabWidth" style="margin-top: 10px;">
+                          Work Orders
+                        </a>
+                    </li>
+                    
+                    <li routerLinkActive="active" routerLink="/purchase/servicecontracts/service-challans">
+                        <a mat-raised-button class="navtabWidth" style="margin-top: 10px;">
+                          Service Challans
+                        </a>
+                    </li> 
+                    <li routerLinkActive="active" routerLink="/purchase/servicecontracts/arn">
+                      <a mat-raised-button class="navtabWidth" style="margin-top: 10px;">
+                        ARN
+                      </a>
+                  </li> 
+                        
+                                               
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+  <div fxLayout="row wrap" #resizedDiv>
+    <div class="flex-p w-100 sizeAlign">
+      <div class="row" style="margin-bottom:23px;">
+        <div class="col-sm-12"> 
+          <button mat-raised-button class="pull-right  btn-default margin-right-10"
+          routerLink="/purchase/servicecontracts/arn"> 
+             <mat-icon>chevron_left</mat-icon> Back
+          </button>
+        </div>
+      </div>
+    <div class="row" >
+      <div class="col-xs-12" style="overflow-x: auto">
+        <div id="grid-table-container" class="table-responsive" >
+          <table matSort id="example2" class="table table-bordered table-hover" style="margin-left: 0px!important;">
+            <thead class="tbl-head">
+              <tr>
+                <th class="text-center">Action</th>
+                <th class="text-center">Select</th>
+                <th class="text-left">Item Name</th>
+                <th class="text-left">Item Code</th>
+                <th class="text-left">Item Category</th>
+                <th class="text-left">Item Sub Category</th>
+                <th class="text-center">Order Qty</th>
+                <th class="text-left">Previous Receipts</th>
+                <th class="text-left">Current Receipt</th>
+                <th class="text-center">Qty Recived</th>
+                <th class="text-center">Qty Accepted</th>
+                <th class="text-center">Qty Declined</th>
+                <th class="text-left">Remarks</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of items">
+                <td class="text-center">
+                  <a style="cursor: pointer;margin-right:0px;margin-left: -5px; " matTooltip="Edit Challan">
+                    <i class="fa fa-edit" style="color: cornflowerblue; cursor: pointer;" (click)="addqalogedit()"></i>
+                  </a>
+                 
+                </td>
+                <td class="text-center"><input type="checkbox" ></td>
+                <td class="text-left">{{item.itemname}}</td>
+                <td class="text-left">{{item.itemcode}}</td>
+                <td class="text-left">{{item.category}}</td>
+                <td class="text-left">{{item.subcategory}}</td>
+                <td class="text-center">{{item.orderqty}}</td>
+                <td class="text-left">{{item.previousreceipt}}</td>
+                <td class="text-left">{{item.currentreceipt}}</td>
+                <td class="text-center">{{item.qtyrecived}}</td>
+                <td class="text-center">{{item.qtyaccepted}}</td>
+                <td class="text-center">{{item.qtydeclined}}</td>
+                <td class="text-left" style="min-width: 230px ;">{{item.remarks}}</td>
+              </tr>
+            </tbody>
+          </table>
+          
+          <button class="mine" mat-fab (click)="scrollGrid('right');" >
+            <mat-icon style="color:#37474f">fast_forward</mat-icon>
+          </button>
+
+          <button class="mine" mat-fab style="margin-right: 78px !important;" (click)="scrollGrid('left');">
+            <mat-icon style="color:#37474f">fast_rewind</mat-icon>
+          </button>
+          
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+  </div>
+
+      
+

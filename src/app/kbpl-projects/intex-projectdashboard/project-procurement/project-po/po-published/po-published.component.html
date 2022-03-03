@@ -1,0 +1,412 @@
+<div class="container-fluid" >
+  <div fxLayout="row wrap" #resizedDiv>
+    <div class="flex-p w-100 sizeAlign">
+      <div class="row" style="margin-bottom:15px;margin-top: -23px;">
+        <div class="col-xs-6 ">
+        </div>
+        <div class="col-xs-6 " style="margin-left:-10px">
+          <button mat-raised-button color="primary" class="pull-right filters-hover margin-right-10"
+          (click)="filterToggle = !filterToggle">
+          <mat-icon>filter_list</mat-icon> Filter
+        </button>
+  
+        </div>
+      </div>
+      
+      <div fxLayout="row wrap" *ngIf="filterToggle">
+        <div fxFlex="100" fxFlex.gt-sm fxFlex.sm class="flex-p w-100 margins">
+          <mat-card class="filter">
+            <mat-card-content>
+              <div class="row">
+                <div class="col-sm-4">
+                  <div class="col-sm-4 newMarginClass">
+                    PO Ref:
+                  </div>
+                  <div class="col-sm-8">
+                    <mat-select name="" id="" class="form-control" placeholder="Select PO Ref">
+                      <mat-option [value]=0>OM/BHL/OCT/19-20/1077</mat-option>
+                      <mat-option [value]=1>OM/BHL/OCT/19-20/1078</mat-option>
+                      <mat-option [value]=2>OM/BHL/OCT/19-20/1079</mat-option>
+                      <mat-option [value]=3>OM/BHL/OCT/19-20/1080</mat-option>
+                      <mat-option [value]=4>OM/BHL/OCT/19-20/1081</mat-option>
+                      
+                    </mat-select>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="col-sm-4 newMarginClass">
+                    PO Date:
+                  </div>
+                  <div class="col-sm-8">
+                    <input type="date" id="" class="form-control" placeholder="Enter Vendor">
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="col-lg-1" style="margin-left: 130px;">
+                    <button mat-raised-button class="pull-right btn-primary">
+                      <mat-icon>youtube_searched_for</mat-icon> Search
+                    </button>
+                  </div>
+                  <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                    <button mat-raised-button style="background-color:#37474f; color:#fff !important">
+                      <mat-icon>settings_backup_restore</mat-icon> Clear
+                    </button>
+                  </div>
+                  <a (click)="filterToggle = !filterToggle" class="pull-right"
+                    style="font-size: 25px; cursor: pointer; margin-left: 5px;">
+                    <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </div>
+    </div>
+  
+  
+      <div class="row">
+        <div class="col-xs-12">
+          <div id="grid-table-container" class="table-responsive">
+            <table matSort id="example2" class="table table-bordered table-hover">
+              <thead class="tbl-head">
+                <tr>
+                  <th class="text-left">PO Ref</th>
+                  <!-- <th class="text-left">Vendor Name</th> -->
+                  <th class="text-center">PO Date</th>
+                  <th class="text-left">InVoice#</th>
+                  <th class="text-center">Requisition</th>
+                  <th class="text-center">Items</th>
+                  <th class="text-left">Amount</th>
+                  <th class="text-left">Billed</th>
+                  <th class="text-center">Delivery Date</th>
+                  <!-- <th class="text-center">Revise | Resend</th> -->
+                  <!-- <th class="text-center">Approval</th> -->
+                  <th class="text-left">Paid Amount</th>
+                  <th class="text-left">Balance</th>
+                  <!-- <th class="text-center">Terms</th> -->
+                  <th class="text-center" style="width: 175px!important;">
+                    Actions</th>
+              
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of items">
+                  <td class="text-left">{{item.poref}}</td>
+                  <!-- <td class="text-left">{{item.Name}}</td> -->
+                  <td class="text-center">{{item.podate}}</td>
+                  <td class="text-left"  >{{item.InVoice}}</td>
+                  <td class="text-center"  
+                  style="cursor: pointer;color: blue;" 
+                  (click)="requsitionpop()">{{item.requisition}}
+                </td>
+                  <td class="text-center"  
+                  style="cursor: pointer;color: blue;" 
+                  (click)="itemspop()">{{item.items}}
+                </td>
+                  <td class="text-left">{{item.Amount}}</td>
+
+                  <td class="text-left">{{item.Billed}}</td>
+
+                  <!-- <td class="text-center"><mat-icon 
+                    style="color: dodgerblue;font-size: 22px;cursor: pointer;"
+                     (click)="reviseresend()">arrow_right_alt</mat-icon>
+                    </td> -->
+                  <td class="text-center">{{item.deliverydate}}</td>
+                  <!-- <td class="text-center"><input type="checkbox" ></td> -->
+                  <td class="text-left"  >{{item.Paid}}</td>
+                  <td class="text-left">
+                  {{item.balance}}</td>
+                  
+                  <td class="text-center ">
+                   
+                    <!-- <a style="cursor: pointer;color: dodgerblue;" (click)="foreclose()"
+                     matTooltip="View">
+                     <mat-icon> view _list </mat-icon>
+                    </a> -->
+                    <a  style="cursor: pointer;" matTooltip="View" (click)="foreclose()" >
+                      <mat-icon style="color: dodgerblue; margin-right: 10px; font-size: 22px;" >view_list</mat-icon>
+                    </a>
+                    
+                    <a  style="cursor: pointer;" matTooltip="Send">
+                      <mat-icon style="color: green;font-size: 22px;  margin-right: 10px;" >send</mat-icon>
+                    </a>
+                    
+                    <a  style="cursor: pointer;" matTooltip="Archive">
+                      <mat-icon> move_to_inbox </mat-icon>
+                    </a>
+                  </td>
+                  
+       
+                
+                </tr>
+              </tbody>
+            </table>
+            <mat-paginator [pageSizeOptions]="[5, 10, 25, 50, 100]" showFirstLastButtons></mat-paginator>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- previous code using the accordians -->
+
+
+
+
+<!-- <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12" style="padding: 15px !important;margin-bottom: 20px;">
+        <div class="col-sm-12" style="padding: 0px !important;">
+          <p-accordion class="customAccordian" (onClose)="onTabClose($event)" (onOpen)="onTabOpen($event)">
+            <p-accordionTab *ngFor="let item of taskData" [selected]="item.selected">
+              <p-header class="col-sm-11" style="padding-left: 0px;">
+                <div class="col-sm-4" style="margin-left: 30px;">
+                  <label>Ref No.:</label>
+                  <span>&nbsp;
+                    {{item.taskName}}
+                  </span>
+                </div>
+                <div class="col-sm-3" style="margin-left: 30px;">
+                  <label>Category:</label>
+                  <span>&nbsp;
+                    {{item.ref}}
+                  </span>
+                </div>
+                <div class="col-sm-2" style="margin-left: 30px;">
+                  <label>Items:</label>
+                  <span>&nbsp; {{item.totalBudgetCostSOW}}</span>
+                </div>
+              </p-header>
+              <div class="table-responsive" id="{{item.id}}">
+                <table id="example2" class="table table-bordered table-striped table-hover no-padding"
+                  style="margin-bottom: 10px !important">
+                  <thead>
+                    <tr _ngcontent-c21="" class="custom-thead-budget">
+                      <th _ngcontent-c21="" style="min-width: 200px;">PO Ref#</th>
+                      <th _ngcontent-c21="" style="min-width: 200px;">Vendor</th>
+                      <th _ngcontent-c21="" style="min-width: 100px;" class="text-center">Items</th>
+                      <th _ngcontent-c21="" style="min-width: 100px;">Delivery Day(s)</th>
+                      <th _ngcontent-c21="" style="min-width: 80px;">Value</th>
+                      <th _ngcontent-c21="" style="min-width: 80px;" class="text-center">Requisition Qty</th>
+                      <th _ngcontent-c21="" style="min-width: 80px;" class="text-center">Order Qty</th>
+                      <th _ngcontent-c21="" style="min-width: 80px;" class="text-center">Approval</th>
+                      <th _ngcontent-c21="" style="min-width: 80px;" class="text-center">Terms</th>
+                      <th _ngcontent-c21="" style="min-width: 80px;">Publish</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngIf="item.Data?.length == 0">
+
+                      <td style="text-align: center;" colspan="7">
+                        No records Found
+                      </td>
+                    </tr>
+                    <tr *ngFor="let tData of item.Data; let i = index">
+                      <td>OM/BHL/OCT/19-20/1077
+                      </td>
+                      <td>Menon Bearings Ltd</td>
+                      
+                      <td  style =" color: blue; cursor: pointer;" routerLink="/purchase/view-item-po" class="text-center">3</td>
+                      <td class="text-center">
+                        2 Day(s)</td>
+                      <td class="text-center"> 25,000.00</td>
+                      <td class="text-center">120</td>
+                      <td class="text-center">100</td>
+                      <td class="text-center"><input type="checkbox"></td>
+                      <td style="color: blue;cursor: pointer;" class="text-center">View</td>
+                      <td class="text-center">
+                        <label style="color: blue;">Send</label><br>
+                        <label style="color: red;">Delayed</label>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </p-accordionTab>
+
+          </p-accordion>
+        </div>
+      </div>
+    </div>
+    <div class="flex-p">
+    </div>
+  </div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- previous code with accordians -->
+
+<!-- <div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12" style="padding: 15px !important;margin-bottom: 20px;">
+      <div class="col-sm-12" style="padding: 0px !important;">
+        <p-accordion class="customAccordian" (onClose)="onTabClose($event)" (onOpen)="onTabOpen($event)">
+          <p-accordionTab *ngFor="let item of taskData" [selected]="item.selected">
+            <p-header class="col-sm-11" style="padding-left: 0px;">
+              <div class="col-sm-4" style="margin-left: 30px;">
+                <label>Ref No.:</label>
+                <span>&nbsp;
+                  {{item.taskName}}
+                </span>
+              </div>
+              <div class="col-sm-3" style="margin-left: 30px;">
+                <label>Category:</label>
+                <span>&nbsp;
+                  {{item.ref}}
+                </span>
+              </div>
+            
+              <div class="col-sm-2" style="margin-left: 30px;">
+                <label>Items:</label>
+                <span>&nbsp; {{item.totalBudgetCostSOW}}</span>
+              </div>
+            </p-header>
+            <div class="table-responsive" id="{{item.id}}">
+              <table id="example2" class="table table-bordered table-striped table-hover no-padding"
+                style="margin-bottom: 10px !important">
+                <thead>
+                  <tr _ngcontent-c21="" class="custom-thead-budget">
+                    <th _ngcontent-c21="" style="min-width: 200px;">PO Ref#</th>
+                    <th _ngcontent-c21="" style="min-width: 200px;">PO Date</th>
+                    <th _ngcontent-c21="" style="min-width: 200px;">Vendor</th>
+                    
+                    <th _ngcontent-c21="" style="min-width: 100px;">Items</th>
+                    <th _ngcontent-c21="" style="min-width: 100px;">PO Due Date</th>
+                    <th _ngcontent-c21="" style="min-width: 100px;">Delivery Day(s)</th>
+                    <th _ngcontent-c21="" style="min-width: 80px;">Value</th>
+                    <th _ngcontent-c21="" style="min-width: 80px;">Approval</th>
+                    <th _ngcontent-c21="" style="min-width: 80px;">Revise | Resend</th>
+                    <th _ngcontent-c21="" style="min-width: 80px;">Foreclose</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngIf="item.Data?.length == 0">
+
+                    <td style="text-align: center;" colspan="7">
+                      No records Found
+                    </td>
+                  </tr>
+                  <tr *ngFor="let tData of item.Data; let i = index">
+                    <td style="color:blue; cursor: pointer;" (click)="changesmade()">OM/BHL/OCT/19-20/1077
+                    </td>
+                    <td>16-Oct-2019
+                    </td>
+                    <td>Menon Bearings Ltd</td>
+                    
+                    <td style =" color: blue; cursor: pointer;" routerLink="/purchase/view-item-po">3</td>
+                    <td>16-Oct-2019
+                    </td>
+                    <td class="text-center">
+                      2 Day(s)</td>
+                    <td> 25,000.00</td>
+                    <td style="color:blue; cursor: pointer;" (click)="Approvalbystage()">View</td>
+                    <td class="text-center" style="color:blue; cursor: pointer;" (click)="reviseresend()"><mat-icon>arrow_right_alt</mat-icon></td>
+                    <td class="text-center" style="color:blue; cursor: pointer;" (click)="foreclose()">
+                      Foreclose
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </p-accordionTab>
+
+        </p-accordion>
+      </div>
+    </div>
+  </div>
+  <div class="flex-p">
+  </div>
+</div> -->

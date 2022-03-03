@@ -1,0 +1,50 @@
+<div class="NewHeader" style="background-color:#286ba5 !important; height: 50px;">
+  <h1 mat-dialog-title>
+    Invoice Details
+  </h1>
+</div>
+<div fxLayout="row wrap" #resizedDiv>
+    <div class="flex-p w-100 sizeAlign">
+      <div class="row">
+        <div class="col-xs-12">
+          <div id="grid-table-container" class="table-responsive">
+            <label>Gate Pass No.:</label>
+             <span>&nbsp;
+              OM/GP/APR-20/10008 
+             </span>
+             <label style="margin-left: 20px;">Con. Ref No.:</label>
+             <span>&nbsp;
+              OM/CON/APR-20/1012
+             </span>
+            <table matSort id="example2" class="table table-bordered table-hover">
+              <thead class="tbl-head">
+                <tr>				
+                  <th class="text-center"> PO Ref#</th>
+                  <th class="text-center">Invoice#</th>
+                  <th class="text-center">Invoice Value</th>
+                  <th class="text-center">Invoice Date</th>
+                 
+                  <th class="text-center" >Document</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of items">
+                  <td class="text-center" style="color: blue;cursor: pointer;" (click)="changesmadeinconsignment()">{{item.PORef }}</td>
+                  <td class="text-center">{{item.Invoice }}</td>
+                  <td class="text-center">{{item.InvoiceValue }}</td>
+                  <td class="text-center">{{item.InvoiceDate}}</td>
+                 
+                  <td class="text-center" matTooltip="Download Doc"><i class="fa fa-download" aria-hidden="true"></i></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <mat-dialog-actions align="end">
+    <button mat-raised-button class="btn-primary" (click)="close()"><mat-icon>send</mat-icon><span >Save</span></button>
+    <button mat-raised-button class="add-dark-hover btn-default" (click)="close()"><mat-icon>cancel</mat-icon> Close</button>
+  </mat-dialog-actions>

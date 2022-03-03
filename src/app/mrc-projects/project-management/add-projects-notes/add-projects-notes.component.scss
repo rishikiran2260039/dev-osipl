@@ -1,0 +1,11 @@
+.field-required {
+    border-color: #ec1010 !important;
+}
+::ng-deep .errorClass{
+    .ui-calendar{
+        .ui-inputtext{
+            border: solid 1px red !important;
+
+        }
+    }
+}

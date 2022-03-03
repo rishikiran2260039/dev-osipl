@@ -1,0 +1,744 @@
+<div class="container-fluid pl-2 mb-5">
+
+
+
+  <div class="row ml-1 mr-2 py-4 mt-4" style="border: 1px solid lightgray; 
+  background-color:#8deeb7;">
+
+    <div class="col-sm-3">
+      <div class="row">
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h3 class="text-center">
+            Usha International Ltd</h3>
+        </div>
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h5 class="text-center ">Vendor Allas</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-3">
+      <div class="row">
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h3 class="text-center">1</h3>
+        </div>
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h5 class="text-center text-secondary">Consignment Arrived</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-3">
+      <div class="row">
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h3 class="text-center">3</h3>
+        </div>
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h5 class="text-center text-secondary"> No.of PO's</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-3">
+      <div class="row">
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h3 class="text-center">3</h3>
+        </div>
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h5 class="text-center text-secondary">No.of Invoices</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row ml-1 mr-2 pt-3 pb-2" style="background-color: rgb(235, 235, 235);">
+    <div class="col-sm-12">
+      <div *ngIf="tableNumber == 0 || tableNumber == 2 || tableNumber == 3 || tableNumber == 4" class="pull-right align-items-center justify-content-center" style="color: cornflowerblue; cursor: pointer;" (click)="openTable(1)">
+        <mat-icon class="pull-right align-items-center justify-content-center" style="font-size: medium;">keyboard_arrow_down</mat-icon>
+        <h5 class="pull-right align-items-center justify-content-center">Details</h5>
+      </div>
+
+      <div *ngIf="tableNumber == 1" class="pull-right align-items-center justify-content-center" style="color: cornflowerblue; cursor: pointer;" (click)="openTable(0)">
+        <mat-icon class="pull-right align-items-center justify-content-center" style="font-size: medium;">keyboard_arrow_up</mat-icon>
+        <h5 class="pull-right align-items-center justify-content-center">Details</h5>
+      </div>
+    </div>
+
+
+
+    <div *ngIf="tableNumber == 1" class="col-xs-12 px-4 py-2" style="overflow-x: auto">
+      <div id="grid-table-container" class="table-responsive" >
+        <table matSort id="example2" class="table table-bordered table-hover" style="margin-left: 0px!important;">
+          <thead class="tbl-head">
+            <tr _ngcontent-c21="" class="custom-thead-budget">
+              <th _ngcontent-c21="" class="text-center" style="min-width: 200px;">
+                Store Name</th>
+              <th _ngcontent-c21="" class="text-center" style="min-width: 200px;">Con. Ref. No</th>
+              <th _ngcontent-c21="" class="text-center" style="min-width: 200px;">Status</th>
+              <th _ngcontent-c21="" style="min-width: 100px;" class="text-center" >PO Ref. No</th>
+              <th _ngcontent-c21="" class="text-center" style="min-width: 100px;" >PO Date</th> 
+              <th _ngcontent-c21="" style="min-width: 80px;">PO Value</th>
+              <th _ngcontent-c21="" class="text-center" style="min-width: 80px;">PO Balance Value</th>
+              <th _ngcontent-c21="" class="text-center" style="min-width: 80px;">QA Log</th>
+              <th _ngcontent-c21="" class="text-center" style="min-width: 80px;">Waybill</th>
+              <th _ngcontent-c21="" style="min-width: 80px;">Invoice</th> 
+              <th _ngcontent-c21="" style="min-width: 80px;">Approved</th> 
+          </thead>
+
+          <tbody class="bg-white">
+            <tr>
+              <td class="text-center">Backhoe Loader Store</td>
+              <td class="text-center"   style="color: blue;cursor: pointer;" routerLink="/projects/projectdashboard/project-procurement/consignments/active" >OM/GRN/APR-20/1001</td>
+              <td class="text-center">Consigment In-Transit</td>
+              <td class="text-center"  style="color: blue; cursor: pointer;"><a routerLink="/projects/projectdashboard/project-procurement/po/pending" style="color: blue;">OM/BHL/JAN/18-19/REV7</a></td> 
+              <td class="text-center">05-Apr-2019</td>
+              <td class="text-center">37,845</td>
+              <td class="text-center">37,845</td>
+              <td class="text-center"  style="color: blue; cursor: pointer;"><a routerLink="/projects/Qalog" style="color: blue;">5</a></td> 
+              <td class="text-center"  style="cursor: pointer;" ><mat-icon >file_upload</mat-icon></td>
+              <td  class="text-center" style="cursor: pointer;"><mat-icon>file_upload</mat-icon></td>
+              <td class="text-center"><input type="checkbox"></td>   
+            </tr>
+
+
+            <tr>
+              <td class="text-center">Bulldozer</td>
+              <td class="text-center"   style="color: blue;cursor: pointer;" routerLink="/projects/projectdashboard/project-procurement/consignments/active" >OM/GRN/APR-20/10012</td>
+              <td class="text-center">Consigment In-Transit</td>
+              <td class="text-center"  style="color: blue; cursor: pointer;"><a routerLink="/projects/projectdashboard/project-procurement/po/pending" style="color: blue;">OM/BHL/JAN/18-19/REV5</a></td> 
+              <td class="text-center">06-jun-2019</td>
+              <td class="text-center">40000</td>
+              <td class="text-center">40000</td>
+              <td class="text-center"  style="color: blue; cursor: pointer;"><a routerLink="/projects/Qalog" style="color: blue;">6</a></td> 
+              <td class="text-center"  style="cursor: pointer;" ><mat-icon >file_upload</mat-icon></td>
+              <td  class="text-center" style="cursor: pointer;"><mat-icon>file_upload</mat-icon></td>
+              <td class="text-center"><input type="checkbox"></td>   
+            </tr>
+
+            <tr>
+              <td class="text-center">Crane</td>
+              <td class="text-center"   style="color: blue;cursor: pointer;" routerLink="/projects/projectdashboard/project-procurement/consignments/active" >OM/GRN/APR-20/1003</td>
+              <td class="text-center">Consigment In-Transit</td>
+              <td class="text-center"  style="color: blue; cursor: pointer;"><a routerLink="/projects/projectdashboard/project-procurement/po/pending" style="color: blue;">OM/BHL/JAN/18-19/REV6</a></td> 
+              <td class="text-center">05-Apr-2020</td>
+              <td class="text-center">45000</td>
+              <td class="text-center">45000</td>
+              <td class="text-center"  style="color: blue; cursor: pointer;"><a routerLink="/projects/Qalog" style="color: blue;">7</a></td> 
+              <td class="text-center"  style="cursor: pointer;" ><mat-icon >file_upload</mat-icon></td>
+              <td  class="text-center" style="cursor: pointer;"><mat-icon>file_upload</mat-icon></td>
+              <td class="text-center"><input type="checkbox"></td>   
+            </tr>
+
+
+
+          </tbody>
+        </table>
+        
+      </div>
+    </div>
+  </div>
+
+
+  <!--Second one starts from here -->
+
+
+  <div class="row ml-1 mr-2 py-4 mt-4" style="border: 1px solid 
+  lightgray; background-color: #70afee;">
+
+    <div class="col-sm-3">
+      <div class="row">
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h3 class="text-center">Rane Holdings Ltd</h3>
+        </div>
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h5 class="text-center ">Vendor Allas</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-3">
+      <div class="row">
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h3 class="text-center">0</h3>
+        </div>
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h5 class="text-center text-secondary">Consignment Arrived</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-3">
+      <div class="row">
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h3 class="text-center">3</h3>
+        </div>
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h5 class="text-center text-secondary"> No.of PO's</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-3">
+      <div class="row">
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h3 class="text-center">4</h3>
+        </div>
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h5 class="text-center text-secondary">No.of Invoices</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row ml-1 mr-2 pt-3 pb-2" style="background-color: rgb(235, 235, 235);">
+    <div class="col-sm-12">
+      <div *ngIf="tableNumber == 0 || tableNumber == 1 || tableNumber == 3 || tableNumber == 4" class="pull-right align-items-center justify-content-center" style="color: cornflowerblue; cursor: pointer;" (click)="openTable(2)">
+        <mat-icon class="pull-right align-items-center justify-content-center" style="font-size: medium;">keyboard_arrow_down</mat-icon>
+        <h5 class="pull-right align-items-center justify-content-center">Details</h5>
+      </div>
+
+      <div *ngIf="tableNumber == 2" class="pull-right align-items-center justify-content-center" style="color: cornflowerblue; cursor: pointer;" (click)="openTable(0)">
+        <mat-icon class="pull-right align-items-center justify-content-center" style="font-size: medium;">keyboard_arrow_up</mat-icon>
+        <h5 class="pull-right align-items-center justify-content-center">Details</h5>
+      </div>
+    </div>
+
+
+<!--Table == 2-->
+    <div *ngIf="tableNumber == 2" class="col-xs-12 px-4 py-2" style="overflow-x: auto">
+      <div id="grid-table-container" class="table-responsive" >
+        <table  matSort id="example2" class="table table-bordered table-hover" style="margin-left: 0px!important;">
+          <thead class="tbl-head">
+            <tr _ngcontent-c21="" class="custom-thead-budget">
+              <th _ngcontent-c21="" class="text-center" style="min-width: 200px;">Strore Name</th>
+              <th _ngcontent-c21="" class="text-center" style="min-width: 200px;">Con. Ref. No</th>
+              <th _ngcontent-c21="" class="text-center" style="min-width: 200px;">Status</th>
+              <th _ngcontent-c21="" style="min-width: 100px;" class="text-center" >PO Ref. No</th>
+              <th _ngcontent-c21="" class="text-center" style="min-width: 100px;" >PO Date</th> 
+              <th _ngcontent-c21="" style="min-width: 80px;">PO Value</th>
+              <th _ngcontent-c21="" class="text-center" style="min-width: 80px;">PO Balance Value</th>
+              <th _ngcontent-c21="" class="text-center" style="min-width: 80px;">QA Log</th>
+              <th _ngcontent-c21="" class="text-center" style="min-width: 80px;">Waybill</th>
+              <th _ngcontent-c21="" style="min-width: 80px;">Invoice</th> 
+              <th _ngcontent-c21="" style="min-width: 80px;">Approved</th> 
+          </thead>
+
+          <tbody class="bg-white">
+            <tr>
+              <td class="text-center">Backhoe Loader Store</td>
+              <td class="text-center"   style="color: blue;cursor: pointer;" routerLink="/projects/projectdashboard/project-procurement/consignments/active" >OM/GRN/APR-20/1001</td>
+              <td class="text-center">Consigment In-Transit</td>
+              <td class="text-center"  style="color: blue; cursor: pointer;"><a routerLink="/projects/projectdashboard/project-procurement/po/pending" style="color: blue;">OM/BHL/JAN/18-19/REV7</a></td> 
+              <td class="text-center">05-Apr-2019</td>
+              <td class="text-center">37,845</td>
+              <td class="text-center">37,845</td>
+              <td class="text-center"  style="color: blue; cursor: pointer;"><a routerLink="/projects/Qalog" style="color: blue;">5</a></td> 
+              <td class="text-center"  style="cursor: pointer;" ><mat-icon >file_upload</mat-icon></td>
+              <td  class="text-center" style="cursor: pointer;"><mat-icon>file_upload</mat-icon></td>
+              <td class="text-center"><input type="checkbox"></td>   
+            </tr>
+
+
+            <tr>
+              <td class="text-center">Bulldozer</td>
+              <td class="text-center"   style="color: blue;cursor: pointer;" routerLink="/projects/projectdashboard/project-procurement/consignments/active" >OM/GRN/APR-20/10012</td>
+              <td class="text-center">Consigment In-Transit</td>
+              <td class="text-center"  style="color: blue; cursor: pointer;"><a routerLink="/projects/projectdashboard/project-procurement/po/pending" style="color: blue;">OM/BHL/JAN/18-19/REV5</a></td> 
+              <td class="text-center">06-jun-2019</td>
+              <td class="text-center">40000</td>
+              <td class="text-center">40000</td>
+              <td class="text-center"  style="color: blue; cursor: pointer;"><a routerLink="/projects/Qalog" style="color: blue;">6</a></td> 
+              <td class="text-center"  style="cursor: pointer;" ><mat-icon >file_upload</mat-icon></td>
+              <td  class="text-center" style="cursor: pointer;"><mat-icon>file_upload</mat-icon></td>
+              <td class="text-center"><input type="checkbox"></td>   
+            </tr>
+
+            <tr>
+              <td class="text-center">Crane</td>
+              <td class="text-center"   style="color: blue;cursor: pointer;" routerLink="/projects/projectdashboard/project-procurement/consignments/active" >OM/GRN/APR-20/1003</td>
+              <td class="text-center">Consigment In-Transit</td>
+              <td class="text-center"  style="color: blue; cursor: pointer;"><a routerLink="/projects/projectdashboard/project-procurement/po/pending" style="color: blue;">OM/BHL/JAN/18-19/REV6</a></td> 
+              <td class="text-center">05-Apr-2020</td>
+              <td class="text-center">45000</td>
+              <td class="text-center">45000</td>
+              <td class="text-center"  style="color: blue; cursor: pointer;"><a routerLink="/projects/Qalog" style="color: blue;">7</a></td> 
+              <td class="text-center"  style="cursor: pointer;" ><mat-icon >file_upload</mat-icon></td>
+              <td  class="text-center" style="cursor: pointer;"><mat-icon>file_upload</mat-icon></td>
+              <td class="text-center"><input type="checkbox"></td>   
+            </tr>
+
+
+
+          </tbody>
+        </table>
+        
+      </div>
+    </div>
+  </div>
+
+
+
+  
+  <!--Third one starts from here -->
+
+
+  <div class="row ml-1 mr-2 py-4 mt-4" style="border: 1px solid 
+  lightgray; background-color: #95a2af;">
+
+    <div class="col-sm-3">
+      <div class="row">
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h3 class="text-center">Minda Industries Ltd</h3>
+        </div>
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h5 class="text-center ">Vendor Allas</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-3">
+      <div class="row">
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h3 class="text-center">0</h3>
+        </div>
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h5 class="text-center text-secondary">Consignment Arrived</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-3">
+      <div class="row">
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h3 class="text-center">3</h3>
+        </div>
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h5 class="text-center text-secondary"> No.of PO's</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-3">
+      <div class="row">
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h3 class="text-center">4</h3>
+        </div>
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h5 class="text-center text-secondary">No.of Invoices</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row ml-1 mr-2 pt-3 pb-2" style="background-color: rgb(235, 235, 235);">
+    <div class="col-sm-12">
+      <div *ngIf="tableNumber == 0 || tableNumber == 1 || tableNumber == 2 || tableNumber == 4" class="pull-right align-items-center justify-content-center" style="color: cornflowerblue; cursor: pointer;" (click)="openTable(3)">
+        <mat-icon class="pull-right align-items-center justify-content-center" style="font-size: medium;">keyboard_arrow_down</mat-icon>
+        <h5 class="pull-right align-items-center justify-content-center">Details</h5>
+      </div>
+
+      <div *ngIf="tableNumber == 3" class="pull-right align-items-center justify-content-center" style="color: cornflowerblue; cursor: pointer;" (click)="openTable(0)">
+        <mat-icon class="pull-right align-items-center justify-content-center" style="font-size: medium;">keyboard_arrow_up</mat-icon>
+        <h5 class="pull-right align-items-center justify-content-center">Details</h5>
+      </div>
+    </div>
+
+
+
+    <div *ngIf="tableNumber == 3" class="col-xs-12 px-4 py-2" style="overflow-x: auto">
+      <div id="grid-table-container" class="table-responsive" >
+        <table matSort id="example2" class="table table-bordered table-hover" style="margin-left: 0px!important;">
+          <thead class="tbl-head">
+            <tr _ngcontent-c21="" class="custom-thead-budget">
+              <th _ngcontent-c21="" class="text-center" style="min-width: 200px;">Strore Name</th>
+              <th _ngcontent-c21="" class="text-center" style="min-width: 200px;">Con. Ref. No</th>
+              <th _ngcontent-c21="" class="text-center" style="min-width: 200px;">Status</th>
+              <th _ngcontent-c21="" style="min-width: 100px;" class="text-center" >PO Ref. No</th>
+              <th _ngcontent-c21="" class="text-center" style="min-width: 100px;" >PO Date</th> 
+              <th _ngcontent-c21="" style="min-width: 80px;">PO Value</th>
+              <th _ngcontent-c21="" class="text-center" style="min-width: 80px;">PO Balance Value</th>
+              <th _ngcontent-c21="" class="text-center" style="min-width: 80px;">QA Log</th>
+              <th _ngcontent-c21="" class="text-center" style="min-width: 80px;">Waybill</th>
+              <th _ngcontent-c21="" style="min-width: 80px;">Invoice</th> 
+              <th _ngcontent-c21="" style="min-width: 80px;">Approved</th> 
+          </thead>
+
+          <tbody class="bg-white">
+            <tr>
+              <td class="text-center">Backhoe Loader Store</td>
+              <td class="text-center"   style="color: blue;cursor: pointer;" routerLink="/projects/projectdashboard/project-procurement/consignments/active" >OM/GRN/APR-20/1001</td>
+              <td class="text-center">Consigment In-Transit</td>
+              <td class="text-center"  style="color: blue; cursor: pointer;"><a routerLink="/projects/projectdashboard/project-procurement/po/pending" style="color: blue;">OM/BHL/JAN/18-19/REV7</a></td> 
+              <td class="text-center">05-Apr-2019</td>
+              <td class="text-center">37,845</td>
+              <td class="text-center">37,845</td>
+              <td class="text-center"  style="color: blue; cursor: pointer;"><a routerLink="/projects/Qalog" style="color: blue;">5</a></td> 
+              <td class="text-center"  style="cursor: pointer;" ><mat-icon >file_upload</mat-icon></td>
+              <td  class="text-center" style="cursor: pointer;"><mat-icon>file_upload</mat-icon></td>
+              <td class="text-center"><input type="checkbox"></td>   
+            </tr>
+
+
+            <tr>
+              <td class="text-center">Bulldozer</td>
+              <td class="text-center"   style="color: blue;cursor: pointer;" routerLink="/projects/projectdashboard/project-procurement/consignments/active" >OM/GRN/APR-20/10012</td>
+              <td class="text-center">Consigment In-Transit</td>
+              <td class="text-center"  style="color: blue; cursor: pointer;"><a routerLink="/projects/projectdashboard/project-procurement/po/pending" style="color: blue;">OM/BHL/JAN/18-19/REV5</a></td> 
+              <td class="text-center">06-jun-2019</td>
+              <td class="text-center">40000</td>
+              <td class="text-center">40000</td>
+              <td class="text-center"  style="color: blue; cursor: pointer;"><a routerLink="/projects/Qalog" style="color: blue;">6</a></td> 
+              <td class="text-center"  style="cursor: pointer;" ><mat-icon >file_upload</mat-icon></td>
+              <td  class="text-center" style="cursor: pointer;"><mat-icon>file_upload</mat-icon></td>
+              <td class="text-center"><input type="checkbox"></td>   
+            </tr>
+
+            <tr>
+              <td class="text-center">Crane</td>
+              <td class="text-center"   style="color: blue;cursor: pointer;" routerLink="/projects/projectdashboard/project-procurement/consignments/active" >OM/GRN/APR-20/1003</td>
+              <td class="text-center">Consigment In-Transit</td>
+              <td class="text-center"  style="color: blue; cursor: pointer;"><a routerLink="/projects/projectdashboard/project-procurement/po/pending" style="color: blue;">OM/BHL/JAN/18-19/REV6</a></td> 
+              <td class="text-center">05-Apr-2020</td>
+              <td class="text-center">45000</td>
+              <td class="text-center">45000</td>
+              <td class="text-center"  style="color: blue; cursor: pointer;"><a routerLink="/projects/Qalog" style="color: blue;">7</a></td> 
+              <td class="text-center"  style="cursor: pointer;" ><mat-icon >file_upload</mat-icon></td>
+              <td  class="text-center" style="cursor: pointer;"><mat-icon>file_upload</mat-icon></td>
+              <td class="text-center"><input type="checkbox"></td>   
+            </tr>
+
+
+
+          </tbody>
+        </table>
+        
+      </div>
+    </div>
+  </div>
+
+
+  <!--fourth one starts from here -->
+
+
+  <div class="row ml-1 mr-2 py-4 mt-4" style="border: 1px solid lightgray; 
+  background-color: #95a2af;">
+
+    <div class="col-sm-3">
+      <div class="row">
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h3 class="text-center">Menon Bearings Ltd</h3>
+        </div>
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h5 class="text-center ">Vendor Allas</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-3">
+      <div class="row">
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h3 class="text-center">0</h3>
+        </div>
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h5 class="text-center text-secondary">Consignment Arrived</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-3">
+      <div class="row">
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h3 class="text-center">2</h3>
+        </div>
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h5 class="text-center text-secondary"> No.of PO's</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-3">
+      <div class="row">
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h3 class="text-center">2</h3>
+        </div>
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h5 class="text-center text-secondary">No.of Invoices</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row ml-1 mr-2 pt-3 pb-2" style="background-color: rgb(235, 235, 235);">
+    <div class="col-sm-12">
+      <div *ngIf="tableNumber == 0 || tableNumber == 1 || tableNumber == 2 || tableNumber == 3" class="pull-right align-items-center justify-content-center" style="color: cornflowerblue; cursor: pointer;" (click)="openTable(4)">
+        <mat-icon class="pull-right align-items-center justify-content-center" style="font-size: medium;">keyboard_arrow_down</mat-icon>
+        <h5 class="pull-right align-items-center justify-content-center">Details</h5>
+      </div>
+
+      <div *ngIf="tableNumber == 4" class="pull-right align-items-center justify-content-center" style="color: cornflowerblue; cursor: pointer;" (click)="openTable(0)">
+        <mat-icon class="pull-right align-items-center justify-content-center" style="font-size: medium;">keyboard_arrow_up</mat-icon>
+        <h5 class="pull-right align-items-center justify-content-center">Details</h5>
+      </div>
+    </div>
+
+
+
+    <div *ngIf="tableNumber == 4" class="col-xs-12 px-4 py-2" style="overflow-x: auto">
+      <div id="grid-table-container" class="table-responsive" >
+        <table matSort id="example2" class="table table-bordered table-hover" style="margin-left: 0px!important;">
+          <thead class="tbl-head">
+            <tr _ngcontent-c21="" class="custom-thead-budget">
+              <th _ngcontent-c21="" class="text-center" style="min-width: 200px;">Strore Name</th>
+              <th _ngcontent-c21="" class="text-center" style="min-width: 200px;">Con. Ref. No</th>
+              <th _ngcontent-c21="" class="text-center" style="min-width: 200px;">Status</th>
+              <th _ngcontent-c21="" style="min-width: 100px;" class="text-center" >PO Ref. No</th>
+              <th _ngcontent-c21="" class="text-center" style="min-width: 100px;" >PO Date</th> 
+              <th _ngcontent-c21="" style="min-width: 80px;">PO Value</th>
+              <th _ngcontent-c21="" class="text-center" style="min-width: 80px;">PO Balance Value</th>
+              <th _ngcontent-c21="" class="text-center" style="min-width: 80px;">QA Log</th>
+              <th _ngcontent-c21="" class="text-center" style="min-width: 80px;">Waybill</th>
+              <th _ngcontent-c21="" style="min-width: 80px;">Invoice</th> 
+              <th _ngcontent-c21="" style="min-width: 80px;">Approved</th> 
+          </thead>
+
+          <tbody class="bg-white">
+            <tr>
+              <td class="text-center">Backhoe Loader Store</td>
+              <td class="text-center"   style="color: blue;cursor: pointer;" routerLink="/projects/projectdashboard/project-procurement/consignments/active" >OM/GRN/APR-20/1001</td>
+              <td class="text-center">Consigment In-Transit</td>
+              <td class="text-center"  style="color: blue; cursor: pointer;"><a routerLink="/projects/projectdashboard/project-procurement/po/pending" style="color: blue;">OM/BHL/JAN/18-19/REV7</a></td> 
+              <td class="text-center">05-Apr-2019</td>
+              <td class="text-center">37,845</td>
+              <td class="text-center">37,845</td>
+              <td class="text-center"  style="color: blue; cursor: pointer;"><a routerLink="/projects/Qalog" style="color: blue;">5</a></td> 
+              <td class="text-center"  style="cursor: pointer;" ><mat-icon >file_upload</mat-icon></td>
+              <td  class="text-center" style="cursor: pointer;"><mat-icon>file_upload</mat-icon></td>
+              <td class="text-center"><input type="checkbox"></td>   
+            </tr>
+
+
+            <tr>
+              <td class="text-center">Bulldozer</td>
+              <td class="text-center"   style="color: blue;cursor: pointer;" routerLink="/projects/projectdashboard/project-procurement/consignments/active" >OM/GRN/APR-20/10012</td>
+              <td class="text-center">Consigment In-Transit</td>
+              <td class="text-center"  style="color: blue; cursor: pointer;"><a routerLink="/projects/projectdashboard/project-procurement/po/pending" style="color: blue;">OM/BHL/JAN/18-19/REV5</a></td> 
+              <td class="text-center">06-jun-2019</td>
+              <td class="text-center">40000</td>
+              <td class="text-center">40000</td>
+              <td class="text-center"  style="color: blue; cursor: pointer;"><a routerLink="/projects/Qalog" style="color: blue;">6</a></td> 
+              <td class="text-center"  style="cursor: pointer;" ><mat-icon >file_upload</mat-icon></td>
+              <td  class="text-center" style="cursor: pointer;"><mat-icon>file_upload</mat-icon></td>
+              <td class="text-center"><input type="checkbox"></td>   
+            </tr>
+
+            <tr>
+              <td class="text-center">Crane</td>
+              <td class="text-center"   style="color: blue;cursor: pointer;" routerLink="/projects/projectdashboard/project-procurement/consignments/active" >OM/GRN/APR-20/1003</td>
+              <td class="text-center">Consigment In-Transit</td>
+              <td class="text-center"  style="color: blue; cursor: pointer;"><a routerLink="/projects/projectdashboard/project-procurement/po/pending" style="color: blue;">OM/BHL/JAN/18-19/REV6</a></td> 
+              <td class="text-center">05-Apr-2020</td>
+              <td class="text-center">45000</td>
+              <td class="text-center">45000</td>
+              <td class="text-center"  style="color: blue; cursor: pointer;"><a routerLink="/projects/Qalog" style="color: blue;">7</a></td> 
+              <td class="text-center"  style="cursor: pointer;" ><mat-icon >file_upload</mat-icon></td>
+              <td  class="text-center" style="cursor: pointer;"><mat-icon>file_upload</mat-icon></td>
+              <td class="text-center"><input type="checkbox"></td>   
+            </tr>
+
+
+
+          </tbody>
+        </table>
+        
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <!-- <div class="container-fluid"> 
+  <div class="row">
+    <div class="col-sm-12" style="padding: 15px !important;margin-bottom: 20px;">
+      <div class="col-sm-12" style="padding: 0px !important;">
+        <p-accordion class="customAccordian" (onClose)="onTabClose($event)" (onOpen)="onTabOpen($event)">
+          <p-accordionTab *ngFor="let item of taskData" [selected]="item.selected">
+            <p-header class="col-sm-11 " style="padding-left: 0px;">
+              <div class="col-sm-4">
+                <label>Vendor Allas:</label>
+                <span>&nbsp;
+                  {{item.taskName}}
+                </span>
+              </div>
+              <div class="col-sm-2" style="margin-left: 10px!important;">
+                <label>No. of PO's:</label>
+                <span>&nbsp;
+                  {{item.ref}}
+                </span>
+              </div>
+              <div class="col-sm-2" style="margin-left: 10px!important;">
+                <label>No. of Items:</label>
+                <span>&nbsp; {{item.target_date}}</span>
+              </div>
+              <div class="col-sm-2" style="margin-left: 10px!important;">
+                <label>Items Qty:</label>
+                <span>&nbsp; {{item.totalBudgetCostSOW}}</span>
+              </div>
+            </p-header>
+
+            <div class="table-responsive" id="{{item.id}}">
+            
+              <table id="example2" class="table table-bordered table-striped table-hover no-padding"
+                style="margin-bottom: 10px !important">
+                
+                <thead>
+                  <tr _ngcontent-c21="" class="custom-thead-budget">
+                    <th _ngcontent-c21="" class="text-center" style="min-width: 200px;">Consignment Reference</th>
+                    <th _ngcontent-c21="" class="text-center" style="min-width: 200px;">GRN Ref</th>
+                    <th _ngcontent-c21="" class="text-center" style="min-width: 200px;">Date Shipped</th>
+                    <th _ngcontent-c21="" style="min-width: 100px;" class="text-center" >Items</th>
+
+                    <th _ngcontent-c21="" class="text-center" style="min-width: 100px;" >Purchase Orders</th>
+                    
+                    <th _ngcontent-c21="" style="min-width: 80px;">Delivery Date</th>
+                    <th _ngcontent-c21="" class="text-center" style="min-width: 80px;">Con. Details</th>
+
+                    <th _ngcontent-c21="" class="text-center" style="min-width: 80px;">Status</th>
+                    <th _ngcontent-c21="" class="text-center" style="min-width: 80px;">Actions</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr *ngIf="item.Data?.length == 0">
+
+                    <td style="text-align: center;" colspan="7">
+                      No records Found
+                    </td>
+                  </tr>
+               
+                  <tr *ngFor="let tData of item.Data; let i = index">
+                    <td class="text-center">DEL1037272/768</td>
+                    <td class="text-center"   style="color: blue;cursor: pointer;" routerLink="/purchase/inventory-management/grn/store-incharge" >OM/GRN/APR-20/1001</td>
+                    <td class="text-center">16-07-2021</td>
+                    <td class="text-center" (click)="Itempop()"  style="color: blue;cursor: pointer;">5</td>
+
+                    <td class="text-center"  (click)="Purchasepop()" style="cursor: pointer;color: blue;" >3</td>
+                    
+                    <td class="text-center">09-08-2021</td>
+
+                    <td class="text-center"  style="color: blue; cursor: pointer;"><a routerLink="/purchase/WayBillRequistionPackingList/ConsignmentWaybill" style="color: blue;">View</a></td>
+                    
+                    <td class="text-center">In Transit</td>
+                    <td class="text-center"  style="cursor: pointer"  ><mat-icon mat-raised-button matTooltip="Send To Archive"  > move_to_inbox </mat-icon  ></td>
+                      
+                  </tr>
+
+                  <tr *ngFor="let tData of item.Data; let i = index">
+                    <td class="text-center">DEL1037272/786</td>
+                    <td class="text-center"   style="color: blue;cursor: pointer;" routerLink="/purchase/inventory-management/grn/store-incharge" >OM/GRN/APR-20/1003</td>
+                    <td class="text-center">26-07-2021</td>
+                    <td class="text-center" (click)="Itempop()"  style="color: blue;cursor: pointer;">2</td>
+
+
+                    <td class="text-center" (click)="Purchasepop()" style="cursor: pointer;color: blue;">9</td>
+                   
+                    <td class="text-center">04-08-2021</td>
+                    <td class="text-center"  style="color: blue; cursor: pointer;"><a routerLink="/purchase/WayBillRequistionPackingList/ConsignmentWaybill" style="color: blue;">View</a></td>
+
+                    <td class="text-center">At Destination</td>
+                    <td class="text-center"  style="cursor: pointer"  ><mat-icon mat-raised-button matTooltip="Send To Archive"  > move_to_inbox </mat-icon  ></td>
+
+                    
+                  </tr>
+                  
+                  <tr *ngFor="let tData of item.Data; let i = index">
+                    <td class="text-center">DEL1037272/732</td>
+                    <td class="text-center"   style="color: blue;cursor: pointer;" routerLink="/purchase/inventory-management/grn/store-incharge" >OM/GRN/APR-20/1004</td>
+                    <td class="text-center">24-07-2021</td>
+                    <td class="text-center" (click)="Itempop()"  style="color: blue;cursor: pointer;">6</td>
+
+                    <td class="text-center" (click)="Purchasepop()" style="cursor: pointer;color: blue;">7</td>
+                   
+                    
+                    <td class="text-center">01-08-2021</td>
+                    <td class="text-center"  style="color: blue; cursor: pointer;"><a routerLink="/purchase/WayBillRequistionPackingList/ConsignmentWaybill" style="color: blue;">View</a></td>
+
+
+                    <td class="text-center">Out of Deleivery</td>
+                    <td class="text-center"  style="cursor: pointer"  ><mat-icon mat-raised-button matTooltip="Send To Archive"  > move_to_inbox </mat-icon  ></td>
+
+                    
+                  </tr>
+                  
+                  <tr *ngFor="let tData of item.Data; let i = index">
+                    <td class="text-center">DEL1037272/616</td>
+                    <td class="text-center"   style="color: blue;cursor: pointer;" routerLink="/purchase/inventory-management/grn/store-incharge" >OM/GRN/APR-20/1005</td>
+                    <td class="text-center">09-07-2021</td>
+                    <td class="text-center" (click)="Itempop()" style="cursor: pointer;color: blue;">8</td>
+
+
+                    <td class="text-center" (click)="Purchasepop()" style="cursor: pointer;color: blue;">3</td>
+                   
+                    <td class="text-center">02-08-2021</td>
+                    <td class="text-center"  style="color: blue; cursor: pointer;"><a routerLink="/purchase/WayBillRequistionPackingList/ConsignmentWaybill" style="color: blue;">View</a></td>
+
+                    <td class="text-center">Delivered</td>
+                    <td class="text-center"  style="cursor: pointer"  ><mat-icon mat-raised-button matTooltip="Send To Archive"  > move_to_inbox </mat-icon  ></td>
+
+                    
+                  </tr>
+
+                  <tr *ngFor="let tData of item.Data; let i = index">
+                    <td class="text-center">DEL1037272/321</td>
+                    <td class="text-center"   style="color: blue;cursor: pointer;" routerLink="/purchase/inventory-management/grn/store-incharge" >OM/GRN/APR-20/1006</td>
+                    <td class="text-center">10-07-2021</td>
+                    <td class="text-center" (click)="Itempop()" style="cursor: pointer;color: blue;">9</td>
+
+                    <td class="text-center" (click)="Purchasepop()" style="cursor: pointer;color: blue;">2</td>
+                    
+                    
+                    <td class="text-center">03-08-2021</td>
+                    <td class="text-center"  style="color: blue; cursor: pointer;"><a routerLink="/purchase/WayBillRequistionPackingList/ConsignmentWaybill" style="color: blue;">View</a></td>
+
+                    <td class="text-center">Returned</td>
+                                        <td class="text-center"  style="cursor: pointer"  ><mat-icon mat-raised-button matTooltip="Send To Archive"  > move_to_inbox </mat-icon  ></td>
+
+                                        
+                  </tr>
+                  
+                </tbody>
+              </table>
+            </div>
+          </p-accordionTab>
+        </p-accordion>
+      </div>
+    </div>
+  </div>
+</div> -->

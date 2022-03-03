@@ -1,0 +1,179 @@
+<div fxLayout="row wrap" #resizedDiv>
+  <div class="flex-p w-100" style="width: 99% !important">
+    <div class="table-responsive sizeAlign">
+      <table
+        id="example2"
+        style="margin-top: 10px"
+        class="table table-bordered table-hover table-striped"
+      >
+        <thead class="tbl-head">
+          <tr class="tr-grid-header">
+            <th>Name</th>
+            <th>Description</th>
+            <th>Previous Value</th>
+            <th>New Value</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of tableList">
+            <td>{{ item.name }}</td>
+            <td>{{ item.description }}</td>
+            <td>{{ item.old_value }}</td>
+            <td>
+              <div *ngIf="item.name == 'Time Zone'">
+                <select class="form-control" id="email">
+                  <option>--Select--</option>
+                  <option value="AST">AST</option>
+                  <option value="IST">IST</option>
+                  <option value="CST">CST</option>
+                  <option value="MST">MST</option>
+                  <option value="PST">PST</option>
+                  <option value="ADT">ADT</option>
+                  <option value="EDT">EDT</option>
+                  <option value="PST">PST</option>
+                  <option value="MDT">MDT</option>
+                  <option value="PDT">PDT</option>
+                </select>
+              </div>
+              <div *ngIf="item.name == 'Grid Length'">
+                <select class="form-control" id="email">
+                  <option>--Select--</option>
+                  <option value="10">10</option>
+                  <option value="25">25</option>
+                  <option value="50">50</option>
+                  <option value="100">100</option>
+                </select>
+              </div>
+              <div *ngIf="item.name == 'Notification Email'">
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="Enter Notification Email"
+                />
+              </div>
+              <div *ngIf="item.name == 'Prospect Follow-up Days'">
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="Enter Prospect Follow-up Days"
+                />
+              </div>
+              <div *ngIf="item.name == 'Project Follow-up Days'">
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="Enter Opportunity Follow-up Days"
+                />
+              </div>
+              <div *ngIf="item.name == 'High Value Threshold'">
+                <input
+                  type="number"
+                  class="form-control"
+                  id="email"
+                  placeholder="Enter High Value Threshold"
+                />
+              </div>
+              <div *ngIf="item.name == 'Medium Value Threshold'">
+                <input
+                  type="number"
+                  class="form-control"
+                  id="email"
+                  placeholder="Enter Medium Value Threshold"
+                />
+              </div>
+
+              <div *ngIf="item.name == 'Low Value Cutoff'">
+                <input
+                  type="number"
+                  class="form-control"
+                  id="email"
+                  placeholder="Enter Low Value Cutoff"
+                />
+              </div>
+
+              <div *ngIf="item.name == 'Slow Moving Quantity'">
+                <input
+                  type="number"
+                  class="form-control"
+                  id="email"
+                  placeholder="Enter Slow Moving Quantity"
+                />
+              </div>
+
+              <div *ngIf="item.name == 'Fast Moving Quantity'">
+                <input
+                  type="number"
+                  class="form-control"
+                  id="email"
+                  placeholder="Enter Fast Moving Quantity"
+                />
+              </div>
+
+              <div *ngIf="item.name == 'Bad Dept Threshold'">
+                <input
+                  type="number"
+                  class="form-control"
+                  id="email"
+                  placeholder="Enter Bad Dept Threshold"
+                />
+              </div>
+              <div *ngIf="item.name == 'Purchase Manager Email'">
+                <input
+                  type="number"
+                  class="form-control"
+                  id="email"
+                  placeholder="Enter Purchase Manager Email"
+                />
+              </div>
+              <div *ngIf="item.name == 'Finance Manager Email'">
+                <input
+                  type="number"
+                  class="form-control"
+                  id="email"
+                  placeholder="Enter Finance Manager Email"
+                />
+              </div>
+              <div *ngIf="item.name == 'Admin Manager Email'">
+                <input
+                  type="number"
+                  class="form-control"
+                  id="email"
+                  placeholder="Enter Admin Manager Email"
+                />
+              </div>
+              <div *ngIf="item.name == 'System Administrator Email'">
+                <input
+                  type="number"
+                  class="form-control"
+                  id="email"
+                  placeholder="Enter System Administrator Email"
+                />
+              </div>
+            </td>
+            <td>
+              <a
+                style="margin-right: 10px"
+                class="status"
+                mwlConfirmationPopover
+                [popoverTitle]="popoverStatusTitle"
+                [popoverMessage]="popoverStatusMessage"
+                placement="left"
+                (confirm)="saveSettings()"
+                (cancel)="cancelClicked = true"
+              >
+                Save
+              </a>
+            </td>
+
+
+          
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

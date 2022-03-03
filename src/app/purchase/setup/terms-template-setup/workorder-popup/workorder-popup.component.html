@@ -1,0 +1,59 @@
+<div class="NewHeader" style="background-color:#286ba5 !important; height: 50px;">
+  <h1 mat-dialog-title>
+    {{ data ? 'Update' : 'Add'}}  Template
+  </h1>
+</div>
+
+
+
+
+
+
+<div mat-dialog-content>
+  <form class="form-horizontal">
+    <div style="padding: 0px 30px !important;">
+      <div class="form-group">
+        <p class="control-label col-sm-4 add-member-label">Type:</p>
+        <div class="col-sm-8">
+          <mat-select class="form-control" placeholder="Select">
+            <mat-option [value]="0">Work Order</mat-option>
+            <mat-option [value]="0">Purchase Order</mat-option>
+          </mat-select>
+        </div>
+      </div>
+      <div class="form-group">
+        <p class="control-label col-sm-4 add-member-label">Subject:</p>
+        <div class="col-sm-8">
+          <mat-select class="form-control" placeholder="Select">
+            <mat-option [value]="0">DEFINITIONS & INTERPRETATION</mat-option>
+            <mat-option [value]="0">RELATIONSHIP OF THE PARTIES</mat-option>
+            <mat-option [value]="0">SERVICES</mat-option>
+            <mat-option [value]="0">TAX EXEMPTION</mat-option>
+            <mat-option [value]="0">CONTRACT PRICE AND INVOICES</mat-option>
+            <mat-option [value]="0">GST</mat-option>
+            <mat-option [value]="0">INDEMNITY</mat-option>
+            <mat-option [value]="0">WARRANTY CLAUSE</mat-option>
+            <mat-option [value]="0">WARRANTY FOR BUILDING DEFECTS</mat-option>
+            <mat-option [value]="0">SUSPENSION OF SERVICES AND COMPLETION DATE</mat-option>
+            <mat-option [value]="0">TERMINATION</mat-option>
+            <mat-option [value]="0">FORCE MAJEURE</mat-option>
+            <mat-option [value]="0">INSURANCE</mat-option>
+            <mat-option [value]="0">CONFIDENTIALITY</mat-option>
+          </mat-select>
+        </div>
+      </div>
+      <div class="form-group">
+        <p class="control-label col-sm-4 add-member-label">Narration:</p>
+        <div class="col-sm-8">
+          <textarea type="text" maxlength="300" class="form-control" style="height: 150px;" >Work Orders: “Agreement” means the Work Order, all schedules and other attachments to it, and these terms and conditions;“Completion Date” means the completion date set out in the Work Order;“Contract Price” means the amount(s) payable for the Services as set out in the Work Order (as adjusted from time to time in accordance with this Agreement.</textarea>
+        </div>
+      </div>
+      
+    </div>
+  </form>
+</div>
+<mat-dialog-actions align="end">
+
+  <button mat-raised-button class="btn-success" (click)="close()">Submit</button>
+  <button mat-raised-button class="add-dark-hover btn-default" (click)="close()">Cancel</button>
+</mat-dialog-actions>

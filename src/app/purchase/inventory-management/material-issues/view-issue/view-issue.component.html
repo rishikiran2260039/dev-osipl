@@ -1,0 +1,187 @@
+<div class="container-fluid">
+<div class="w-100">
+  <div class="flex-p">
+  <mat-drawer-container>
+  <mat-drawer-content>
+  <mat-card class="col-sm-12" style="background-color: #dbe8f3 !important;width: 98.7%; padding: 10px 0px !important; margin-left:0px!important">
+    <div class="col-sm-5">
+      <div class="col-sm-5 no-padding">
+        <label>Job Card No.:</label>
+        <span>&nbsp;&nbsp;210000</span>
+      </div>
+      <div class="col-sm-7 no-padding">
+        <label>Job Card Date:</label>
+        <span>&nbsp;&nbsp;10-Apr-2020</span>
+      </div>
+    </div>
+    <div class="col-sm-7">
+      <div class="col-sm-4 no-padding">
+        <label>Maintenance Type:</label>
+        <span>&nbsp;&nbsp;Preventative</span>
+      </div>
+  
+      <div class="col-sm-4 no-padding">
+        <label>Equipment Type:</label>
+        <span>&nbsp;&nbsp;Car</span>
+      </div>
+      <div class="col-sm-3 no-padding">
+        <label>Equipment Make:</label>
+        <span>&nbsp;&nbsp;Volvo
+        </span>
+      </div>
+      <div class="col-sm-1 no-padding">
+        <mat-icon class="pull-right" style="cursor:pointer;color: #2da3ff;">
+          edit</mat-icon>
+      </div>
+    </div>
+    <div class="w-100"></div>
+    <div class="col-sm-5">
+      <div class="col-sm-5 no-padding">
+        <label>Equipment Model:</label>
+        <span>&nbsp;&nbsp;XC60 D4</span>
+      </div>
+      <div class="col-sm-7 no-padding">
+        <label>Door No.:</label>
+        <span>&nbsp;&nbsp;4</span>
+      </div>
+    </div>
+    <div class="col-sm-7">
+      <div class="col-sm-4 no-padding">
+        <label>HMR</label>
+        <span>&nbsp;&nbsp;N/A</span>
+      </div>
+  
+      <div class="col-sm-4 no-padding">
+        <label>KMR</label>
+        <span>&nbsp;&nbsp;N/A</span>
+      </div>
+      <div class="col-sm-3 no-padding"></div>
+      <div class="col-sm-1 no-padding"></div>
+    </div>
+  </mat-card>
+  </mat-drawer-content>
+  </mat-drawer-container>
+  </div>
+  </div>
+  
+<div class="flex-p">
+    <div class="row wrap">
+        <div class="col-sm-12 no-padding">
+            <div class="row-wrap">
+                <div class="w-100">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="pills">
+                                <ul class="nav nav-pills pull-right">
+                                    <li routerLink="/purchase/inventory-management/material-issues/active">
+                                        <a mat-raised-button class="navtabWidth">
+                                            Back
+                                        </a>
+                                    </li>    
+                                    <li (click)="updateIssue(null)">
+                                      <a mat-raised-button class="navtabWidth btn-primary">
+                                          Add Issue Slip
+                                      </a>
+                                  </li>                             
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+  
+  
+  <div fxLayout="row wrap" #resizedDiv>
+    <div class="flex-p w-100 sizeAlign">
+      <div class="row">
+        <div class="col-xs-12">
+          <div id="grid-table-container" class="table-responsive">
+            <table matSort id="example2" class="table table-bordered table-hover">
+              <thead class="tbl-head">
+                <tr>
+                  <th class="text-center">Sl No.</th>
+                  <th class="text-center">Material Issue#</th>
+                  <th class="text-center">Material Issue Date</th>
+                  <th class="text-center">Issued By</th>
+                  <th class="text-center">Issued To</th>
+                  <th class="text-center">Fitment Details</th>
+                  <th class="text-center">Fitment Status </th>
+                  <th class="text-center">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of items">
+                  <td class="text-center">{{item.slNo}}</td>
+                  <td class="text-center">{{item.matIssue}}</td>
+                  <td class="text-center">{{item.issueDate}}</td>
+                  <td class="text-center">{{item.issuedBy}}</td>
+                  <td class="text-center">{{item.issuedTo}}</td>
+                  <td class="text-center">{{item.fitment}}</td>
+                  <td style="min-width: 70px !important; text-align: center!important;">{{item.fitmentStatus}}</td>
+                  <td class="text-center" style="font-size: 18px;">
+                    <a style="cursor: pointer;margin-right:10px; " matTooltip="Update Issue Slip" (click)="updateIssue(item)">
+                      <i class="fa fa-edit" style="color: cornflowerblue"></i>
+                    </a>
+                    <a><i class="fa fa-trash red" matTooltip="Delete Issue" style="cursor: pointer;"></i></a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+  </div>
+  
+  <div>
+    <h2 class="flex-p w-100">Activity Log</h2>
+  </div>
+  
+  <div fxLayout="row wrap">
+    <div class="flex-p w-100 sizeAlign">
+      <div class="row">
+        <div class="col-xs-12">
+          <div id="grid-table-container" class="table-responsive">
+            <table matSort id="example2" class="table table-bordered table-hover">
+              <thead class="tbl-head">
+                <tr>
+                  <th class="text-center">Data&Time</th>
+                  <th class="text-left">Stage </th>
+                  <th class="text-center">Reference</th>
+                  <th class="text-left">Action</th>
+                  <th class="text-left">User</th>
+                  <th class="text-left">Remarks</th>
+                  <th class="text-center">Download Doc</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of items2">
+  
+                  <td class="text-center">{{item.date}}</td>
+                  <td style="text-align: left!important;">{{item.stage}}</td>
+                  <td style="text-align: center!important;">{{item.reference}}</td>
+                  <td style="text-align: center!important;">{{item.action}}</td>
+                  <td style="text-align: left!important;">{{item.user}}</td>
+                  <td style="text-align: left!important;">{{item.remarks}}</td>
+                  <td style="text-align: center!important;"><mat-icon>download</mat-icon></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+  </div>
+
+</div>
+  
+  
+  
+  
+  
+  

@@ -1,0 +1,69 @@
+<!-- <h1 mat-dialog-title class="custom-header" 
+style="background-color:#286ba5 
+!important;height:50px;font-weight: bold 
+!important;">Item Details
+</h1> -->
+<div class="container-fluid">
+  <div fxLayout="row wrap" #resizedDiv>
+    <div class="flex-p w-100 sizeAlign">
+      <!-- <div class="row" style="margin-bottom:23px;">
+        <div class="col-sm-12"> 
+          <button mat-raised-button class="pull-right  btn-default margin-right-10"
+          routerLink="/purchase/material-management/requisition">
+             <mat-icon>chevron_left</mat-icon> Back
+          </button>
+          <button mat-raised-button class="pull-right  btn-primary margin-right-10"
+             (click)="openGridColumnsDialog()">
+             <mat-icon>grid_on</mat-icon> Grid Columns
+          </button>
+          <button mat-raised-button class="pull-right  btn-primary margin-right-10"
+            (click)="addnewitem(null)">
+               <mat-icon>add</mat-icon> Add New Item
+          </button>
+        </div>
+      </div> -->
+    <div class="row" >
+      <div class="col-xs-12" style="overflow-x: auto">
+        <div id="grid-table-container" class="table-responsive" >
+          
+          <table matSort id="example2" 
+          class="table table-bordered table-hover" 
+          style="margin-left: 0px!important;">
+            <thead class="tbl-head">
+              <tr>
+               
+        
+                <th class="text-center">Part Number	</th>
+                <th class="text-center">Part Name</th>
+                <th class="text-center">Serial Number</th>
+                <th class="text-center">Action</th>
+          
+               
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of items">
+                
+                <td class="text-center">{{item.PartNumberz}}</td>
+                <td class="text-center">{{item.PartNamez}}</td>
+                <td class="text-center">{{item.Serialnumber}}</td>
+                <td class="text-center">{{item.Action}}</td>
+<!--                 
+                <td class="text-center">{{item.OrderQty}}</td>
+                <td class="text-center">{{item.AvailQty}}</td>
+                <td class="text-center">{{item.unitprice}}</td>
+                <td class="text-center">{{item.DeliveryDate}}</td> -->
+              </tr>
+            </tbody>
+          </table>
+          
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+  <div class="col-sm-12">
+    <mat-dialog-actions align="end"  class="pull-right" style="margin-top: 5px;">
+      <button mat-raised-button type="button" class="add-dark-hover btn-default pull-right" ><mat-icon>cancel</mat-icon>&nbsp;Close</button>
+  </mat-dialog-actions>
+</div>

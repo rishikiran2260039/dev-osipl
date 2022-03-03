@@ -1,0 +1,79 @@
+<div class="container-fluid">
+  <div fxLayout="row wrap" #resizedDiv>
+    <div class="flex-p w-100 sizeAlign">
+      <div class="row" style="margin-bottom:23px;">
+        <div class="col-xs-6 ">
+        </div>
+        <div class="col-xs-6 ">
+          <div class="flex-p">
+            <button mat-raised-button class="pull-right  btn-primary" (click)="addadjustments(null)">
+               Add Adjustments
+            </button>
+      
+          </div>
+  
+        </div>
+      </div>
+    <div class="row" >
+      <div class="col-xs-12" style="overflow-x: auto">
+        <div id="grid-table-container" class="table-responsive" >
+          <table matSort id="example2" class="table table-bordered table-hover" style="margin-left: 0px!important;">
+            <thead class="tbl-head">
+              <tr>
+                <th class="text-center">Actions</th>
+                <th class="text-center">Adjustment Date</th> 
+                <th class="text-center">Done by</th>
+                <th class="text-center">Part #</th>
+                <th class="text-center">Part Name </th>
+                <th class="text-center">Part Make </th>
+                <th class="text-center">Part Model </th>
+                <th class="text-center">Eqpt Code</th>
+                <th  class="text-center">Eqpt Name</th>
+                <th class="text-center">Eqpt Make</th>
+                <th class="text-center">Eqpt Model</th>
+                <th class="text-center">Physical Stock  </th>
+                <th class="text-center">Previous Stock </th>
+                <th class="text-center">Adjustment Qty  </th>
+                <th class="text-center">Revised Book Stock </th>
+               
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of items">
+                <td class="text-center" style="font-size: 18px;">
+                  <a style="cursor: pointer;margin-right:10px; " matTooltip="Update Item" (click)="addadjustments(item)"> 
+                    <i class="fa fa-edit" style="color: cornflowerblue" ></i>
+                  </a>
+                  <a><i class="fa fa-trash red" matTooltip="Delete Item" style="cursor: pointer;"></i></a>
+                </td>
+                <td class="text-center">{{item.AdjustmentDate}}</td>
+                <td class="text-center">{{item.Doneby}}</td>
+                <td class="text-center">{{item.Part}}</td>
+                <td class="text-center">{{item.PartName}}</td>
+                <td class="text-center">{{item.PartMake}}</td>
+                <td class="text-center">{{item.PartModel}}</td>
+                <td class="text-center">{{item.EqptCode }}</td>
+                <td class="text-center">{{item.EqptName }}</td>
+                <td class="text-center">{{item.EqptMake}}</td>
+                <td class="text-center">{{item.EqptModel}}</td>
+                <td class="text-center">{{item.PhysicalStock}}</td>
+                <td class="text-center">{{item.PreviousStock }}</td>
+                <td class="text-center">{{item.AdjustmentQty}}</td>
+                <td class="text-center">{{item.RevisedBookStock}}</td>
+                
+              </tr>
+            </tbody>
+          </table>
+          <button class="mine" mat-fab (click)="scrollGrid('right');" >
+            <mat-icon style="color:#37474f">fast_forward</mat-icon>
+          </button>
+          <button class="mine" mat-fab style="margin-right: 78px !important;" (click)="scrollGrid('left');">
+            <mat-icon style="color:#37474f">fast_rewind</mat-icon>
+          </button>
+          <mat-paginator [pageSizeOptions]="[5, 10, 25, 50, 100]" showFirstLastButtons></mat-paginator>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+  </div>

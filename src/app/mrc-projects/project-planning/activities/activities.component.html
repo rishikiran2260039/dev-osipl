@@ -1,0 +1,187 @@
+<div class="flex-p" style="padding-bottom: 20px;">
+    <div class="row wrap">
+        <div class="col-sm-12">
+            <div class="col-sm-6 pull-right no-padding" style="margin-right: -10px;">
+                <button style="margin-bottom:10px;margin-right: 14px;" mat-raised-button class="pull-right  btn-primary"
+                    (click)="openActivityDialog('Add')">
+                    <mat-icon>add</mat-icon> Add Action
+                </button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div fxLayout="row wrap" style="padding-bottom: 30px;">
+    <div class="col-sm-12 w-100">
+        <div class="col-sm-3">
+            <div class="col-sm-12" style="padding-left:0px;">
+                <mat-card class="col-sm-12" style="background: #3b7bb882 !important">
+                    <p-tree [value]="files" class="ptreecustom" selectionMode="single" [(selection)]="selectedFile">
+                    </p-tree>
+                </mat-card>
+            </div>
+            <!-- </mat-drawer> -->
+        </div>
+
+        <div class="col-sm-9">
+            <div class="col-sm-13">
+                <!-- <mat-card class="col-sm-12" style="background: #dbe8f3 !important;">
+                    <div class="col-sm-3">
+                        <label> Category :</label>
+                        <span>&nbsp;&nbsp;Quote</span>
+                    </div>
+                    <div class="col-sm-3">
+                        <label>Line Item :</label>
+                        <span>&nbsp;&nbsp;Hydraulic Excavator</span>
+                    </div>
+                    <div class="col-sm-3">
+                        <label>Number of Activities :</label>
+                        <span>&nbsp;&nbsp;4 </span>
+                    </div>
+                    <div class="col-sm-3">
+                        <label class="col-sm-6">Due Date:</label>
+                        <span>&nbsp;&nbsp;24-10-2020 </span>
+                    </div>
+                </mat-card> -->
+                <mat-card class="col-sm-12 margin-top-10">
+                    <div class="w-100">
+                        <div class="row">
+                            <!-- <p-accordionTab > -->
+                            <!-- <p-header class="col-sm-11 pull-right" style="padding-left: 0px;"> -->
+                            <mat-card (click)="open = !open" class="col-sm-12 custom-layout">
+                                <div class="col-sm-5">
+                                    <div class="col-sm-6">
+                                        <label>Site:</label>
+                                        <span>&nbsp;&nbsp;Sipcot Industrial Park</span>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label>SOW:</label>
+                                        <span>&nbsp;&nbsp; A. SRPR</span>
+                                    </div>
+                                </div>
+                                <div class="col-sm-7">
+
+                                    <div class="col-sm-4">
+                                        <label>Budget:</label>
+                                        <span>&nbsp;&nbsp;
+                                            47Hrs ($6,845.70)</span>
+                                    </div>
+
+                                    <div class="col-sm-4">
+                                        <label>Planned:</label>
+                                        <span>&nbsp;&nbsp;
+                                            11.50Hrs ($1,075.00)</span>
+                                    </div>
+                                    <div class="col-sm-3 no-padding">
+                                        <label>Actual:</label>
+                                        <span>&nbsp;&nbsp;0.00Hrs
+                                            ($0.00)</span>
+                                    </div>
+                                    <div class="col-sm-1 no-padding">
+                                        <mat-icon class="pull-right" style="cursor:pointer;color: #2da3ff;">
+                                            edit</mat-icon>
+                                    </div>
+                                </div>
+                                <div class="col-sm-5 margin-top-10">
+                                    <div class="col-sm-6">
+                                        <label>Quoted Total:</label>
+                                        <span>&nbsp;&nbsp;$6,846.00</span>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label>Project Type:</label>
+                                        <span>&nbsp;&nbsp;Engineering</span>
+                                    </div>
+
+                                </div>
+                                <div class="col-sm-7 margin-top-10">
+                                    <div class="col-sm-4">
+                                        <label>Status:</label>
+                                        <span>&nbsp;&nbsp;Open</span>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <label>Is Awarded:</label>
+                                        <span>&nbsp;&nbsp;Awarded</span>
+                                    </div>
+                                    <div class="col-sm-4 no-padding">
+                                        <label class="">Fee Structure:</label>
+                                        <span>&nbsp;&nbsp;Fixed Rate</span>
+                                    </div>
+                                </div>
+                            </mat-card>
+
+                            <!-- </p-header> -->
+                            <div class="table-responsive" style="margin-top: 20px;">
+                                <table matSort id="example2" class="table table-bordered table-hover">
+                                    <thead class="tbl-head">
+                                        <tr>
+                                            <th class="text-center">Task</th>
+                                            <th>Action</th>
+                                            <th>Job Code</th>
+                                            <th>Rate</th>
+                                            <th class="text-left">Planned</th>
+                                            <th class="text-left">Due Date</th>
+                                            <th class="text-center">Assigned To</th>
+                                            <th class="text-center">Assigned</th>
+                                            <th class="text-center">Actual</th>
+                                            <th class="text-center">Cost</th>
+                                            <th class="text-center">Worked</th>
+                                            <th class="text-center">Rem</th>
+                                            <th class="text-center">Scheduled</th>
+                                            <th class="text-center">Date</th>
+                                            <th class="text-center">Status </th>
+                                            <th class="text-center" style="min-width: 112px!important;">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td style="min-width: 50px !important;">
+                                                Quote
+                                            </td>
+                                            <td style="text-align: left!important;">1st draft corrections</td>
+                                            <td>LCAD1</td>
+                                            <td style="width: 50px;">
+                                                $75
+                                            </td>
+                                            <td style="text-align: left!important;">5.00</td>
+                                            <td style="text-align: left!important;">30-05-2021</td>
+
+                                            <td style="min-width: 70px !important;">
+                                                sachin
+                                            </td>
+                                            <td style="text-align: center!important;">5.0</td>
+                                            <td style="text-align: center!important;">5.0</td>
+                                            <td style="text-align: center!important;">$500</td>
+                                            <td style="text-align: center!important;">5.0</td>
+                                            <td style="text-align: center!important;">0.0</td>
+                                            <td style="text-align: center!important;">12-05-2021</td>
+                                            <td style="text-align: center!important;">12-05-2021</td>
+                                            <td style="text-align: center!important;">Approved</td>
+                                            <td class="text-center">
+                                                <a style="cursor: pointer;margin-right:0px; "
+                                                    matTooltip="Update Contract Details"
+                                                    (click)="openActivityDialog('Add')">
+                                                    <i class="fa fa-edit"
+                                                        style="color: cornflowerblue;font-size:18px"></i>
+                                                </a>
+                                                <a><i class="fa fa-trash red" matTooltip="Delete Contract"
+                                                        style="cursor: pointer;font-size:18px;margin-left:0px"></i></a>
+
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- </p-accordionTab> -->
+                        </div>
+                        <div class="flex-p">
+                        </div>
+                    </div>
+                </mat-card>
+            </div>
+        </div>
+        <!-- </mat-drawer-container> -->
+
+    </div>
+</div>

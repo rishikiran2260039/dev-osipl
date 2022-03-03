@@ -1,0 +1,45 @@
+<div class="NewHeader ">
+  <h1 mat-dialog-title>
+    Contracts
+  </h1>
+</div>
+<div>
+</div> 
+<div class="row" style="margin-top:20px">
+  <div class="col-sm-12">
+      <div id="grid-table-container" class="table-responsive">
+        <p><b>Contractor Name: </b> GV Contractors</p>
+          <table matSort id="example2" class="table table-bordered table-hover">
+              <thead class="tbl-head">
+                  <tr>
+                      <th>Contract Name</th>
+                      <th>Contract #</th>
+                      <th>Client</th>
+                      <th>Status</th>
+                      <th class="text-center">Start Date</th>
+                      <th class="text-center">Target Date</th>
+                      <th class="text-center">Completion</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let item of values">
+                      <td>{{item.contractname}}</td>
+                      <td><a style="color: cornflowerblue;"
+                        routerLink="/contracts/project-management" (click)="close()">{{item.contractno}}</a></td>
+                      <td>{{item.client}}</td>
+                      <td>{{item.status}}</td>
+                      <td class="text-center">{{item.startDate}}</td>
+                      <td class="text-center">{{item.targetDate}}</td>
+                      <td class="text-center">{{item.completion}}</td>
+  </tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+
+<mat-dialog-actions align="end">
+  
+    <button mat-raised-button class="add-dark-hover btn-default" (click)="close()"><mat-icon>cancel</mat-icon> Close</button>
+</mat-dialog-actions> 

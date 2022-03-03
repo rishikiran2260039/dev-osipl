@@ -1,0 +1,68 @@
+<div class="NewHeader">
+  <h1 mat-dialog-title>
+      <span>{{ data ? 'Update' : 'Add' }} Store Name </span>
+  </h1>
+</div>
+
+  <form class="form-horizontal">
+      <div mat-dialog-content>
+        <!-- <div class="form-group">
+          <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Store Name: </label>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+              <mat-select class="form-control" placeholder="Select Store Name">             
+                  <mat-option value="1">Select</mat-option>
+                  <mat-option value="2">Backhoe Loader Store</mat-option>
+                  <mat-option value="3">Bulldozer</mat-option>
+                  <mat-option value="4">Crane</mat-option>
+                  <mat-option value="5">Dumper Store</mat-option> 
+                  <mat-option value="6">Dumper Store - Mercedes Benz</mat-option>   
+                  <mat-option value="7">Dumper Store - Scania Volvo</mat-option>   
+                  <mat-option value="8">Dumper Store - Volvo</mat-option>   
+              </mat-select>
+          </div>
+      </div> -->
+      <div class="form-group">
+          <label class="control-label col-sm-4 add-member-label">Store Name:</label>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+              <input type="text" class="form-control"placeholder="Add Store Name">
+          </div>
+      </div>
+
+      <!-- <div class="form-group">
+          <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Store Code:
+          </label>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+              <input type="text" class="form-control" placeholder="Enter Store Code">
+          </div>
+      </div> -->
+      <!-- <div class="form-group">
+          <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label">Store Incharge: </label>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+              <input type="email" class="form-control" id="email" placeholder="Enter Store Incharge" >
+          </div>
+      </div> -->
+      <!-- <div class="form-group">
+          <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Technical Eng.:
+          </label>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <input type="email" class="form-control" id="email" placeholder="Enter Technical Eng" >
+          </div>
+      </div> -->
+      <!-- <div class="form-group">
+        <label class="control-label col-sm-4 add-member-label">Description:</label>
+        <div class="col-sm-8 col-md-8 col-sm-8 col-xs-8">
+          <textarea class="form-control txtarea" placeholder="Enter Description" rows="2" required></textarea>
+        </div>
+      </div> -->
+      
+  </div>
+      <mat-dialog-actions align="end">
+        <button mat-raised-button class="btn-primary" type="button" (click)="close()">
+          <mat-icon>send</mat-icon><span> Save</span>
+        </button>
+          <button mat-raised-button (click)="close()"  type="button" style="color: rgb(7, 10, 7); background-color: #e0e0e0;">
+              <mat-icon>cancel</mat-icon> Close
+            </button>
+            
+      </mat-dialog-actions>
+  </form>

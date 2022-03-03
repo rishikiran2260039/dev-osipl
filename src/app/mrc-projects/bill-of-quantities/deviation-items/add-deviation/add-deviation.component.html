@@ -1,0 +1,105 @@
+<div class="NewHeader" style="background-color:#286ba5 !important; height: 50px;">
+  <h1 mat-dialog-title>
+    {{data ? 'Update' : 'Add'}} Item
+    <!-- Add New Item -->
+  </h1>
+</div>
+<div mat-dialog-content>
+  <form class="form-horizontal">
+
+    
+    <div class="form-group">
+      <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label">Category Name: </label>
+      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+
+   
+
+        <mat-select name="" id="" class="form-control" placeholder="Select Category">
+          <mat-option [value] = "0">Electrical</mat-option>
+          <mat-option [value] = "1">Mechanical</mat-option>
+          <mat-option [value] = "2">Plumbing</mat-option>
+
+        </mat-select>
+    </div>
+  </div>
+      <div class="form-group">
+          <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Serial #: </label>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+              <input type="text" class="form-control" placeholder="Enter Serial #" required>
+          </div>
+      </div>
+     
+      <div class="form-group">
+        <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Item #: </label>
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+          <input type="text" class="form-control" placeholder="Enter Item #"  required>
+         
+        </div>
+    </div>
+      <div class="form-group">
+          <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Item Description: </label>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <input type="text" class="form-control" placeholder="Enter Item Description"  required>
+           
+          </div>
+      </div>
+      
+      <div class="form-group">
+          <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Unit: </label>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+              <input type="text" class="form-control" placeholder="Enter Unit"  required>
+          </div>
+      </div>
+      <div class="form-group">
+          <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Quantity Proposed : </label>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+              <input type="email" email class="form-control" placeholder="Enter Quantity Proposed "  required>
+          </div>
+      </div>
+     
+    <div class="form-group">
+        <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label">Quantity Approved : </label>
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+          <input type="email" class="form-control" placeholder="Enter Quantity Approved "  >
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Rate Proposed: </label>
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <input type="text" class="form-control" placeholder="Enter Rate Proposed" required>
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Rate Approved: </label>
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <input type="text" class="form-control" placeholder="Enter Rate Approved"  required>
+        </div>
+    </div>
+    <!-- <div class="form-group">
+        <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" >Status: </label>
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+           <mat-select class="form-control" placeholder = "Select Status" class="placeholder ">
+             <mat-option>Approved</mat-option>
+             <mat-option>Pending</mat-option>
+             <mat-option>Declined</mat-option>
+           </mat-select>
+        </div>
+    </div> -->
+    <div class="form-group">
+      <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label">Status: </label>
+      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+          <mat-select name="" id="" class="form-control" placeholder="Select Status"  >
+            <mat-option [value] = "0">Approved</mat-option>
+            <mat-option [value] = "1">Pending</mat-option>
+            <mat-option [value] = "2">Declined</mat-option>
+          </mat-select>
+      </div>
+  </div>
+  
+  </form>
+</div>
+<mat-dialog-actions align="end">
+  <button mat-raised-button class="btn-primary" (click)="close()"><mat-icon>send</mat-icon><span >Save</span></button>
+  <button mat-raised-button class="add-dark-hover btn-default" (click)="close()"><mat-icon>cancel</mat-icon> Close</button>
+</mat-dialog-actions>

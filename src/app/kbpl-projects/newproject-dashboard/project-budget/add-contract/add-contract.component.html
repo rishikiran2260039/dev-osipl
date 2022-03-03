@@ -1,0 +1,69 @@
+<div class="NewHeader">
+  <h1 mat-dialog-title>
+    Add SOW
+  </h1>
+</div>
+
+<div mat-dialog-content>
+    <form class="form-horizontal">
+        
+        <div class="form-group">
+          <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Site: </label>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <mat-select class="form-control" placeholder="Select Site">
+              <mat-option [value]="0">
+                Sector 56
+              </mat-option>
+              <mat-option [value]="1">
+                Lansdowne
+              </mat-option>
+              <mat-option [value]="2">
+                Newton
+              </mat-option>
+            </mat-select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Contract: </label>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <mat-select class="form-control" placeholder="Select Contract">
+              <mat-option [value]="0">
+                24788A
+              </mat-option>
+              <mat-option [value]="1">
+                34788A
+              </mat-option>
+              <mat-option [value]="2">
+                44788A
+              </mat-option>
+              <mat-option [value]="3">
+                54788A
+              </mat-option>
+            </mat-select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-4 add-member-label">Task title: </label>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+              <input type="email" class="form-control" id="email" placeholder="Enter Task title">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-4 add-member-label">Budget: </label>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+              <input type="email" class="form-control" id="email" placeholder="Enter Budget">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Remarks: </label>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <textarea class="form-control txtarea" placeholder="Enter Remarks" rows="2"
+            formControlName="address" required></textarea>
+          </div>
+      </div>
+    </form>
+</div>
+<mat-dialog-actions align="end">
+    <button mat-raised-button style="background-color: #d1d1d1; color: black;" [mat-dialog-close]="'test'"><mat-icon>send</mat-icon><span> Save</span></button>
+    <button mat-raised-button class="CancelClass" (click)="close()"><mat-icon>cancel</mat-icon> Close</button>
+</mat-dialog-actions> 

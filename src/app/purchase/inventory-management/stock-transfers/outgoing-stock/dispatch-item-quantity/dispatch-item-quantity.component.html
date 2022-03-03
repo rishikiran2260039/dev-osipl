@@ -1,0 +1,179 @@
+<div class="container-fluid">
+  <div class="flex-p" style="margin:0px!important; padding:0px!important">
+    <div class="row wrap">
+        <div class="col-sm-12 no-padding">
+            <div class="row-wrap">
+                <div class="w-100">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="pills">
+                                <ul class="nav nav-pills pull-right">
+                                    <li routerLink="/purchase/inventory-management/stock-transfers/outgoingstock">
+                                        <a mat-raised-button class="navtabWidth"><mat-icon>arrow_left_alt</mat-icon>
+                                            Back
+                                        </a>
+                                    </li>                             
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  
+  <div class="w-100" >
+  <div class="flex-p">
+  <mat-drawer-container>
+  <mat-drawer-content>
+  <mat-card class="col-sm-12" style="background-color: #dbe8f3 !important;width: 100%;">
+    <div class="col-sm-4">
+      <div class="col-sm-8 no-padding">
+        <label>Requested Project:</label>
+        <span>&nbsp;&nbsp;Singrauli</span>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="col-sm-8 no-padding">
+        <label>STO#:</label>
+        <span>&nbsp;&nbsp;STO/OM-OTP/OCT-19/10003</span>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="col-sm-8 no-padding">
+        <label>STO Date:</label>
+        <span>&nbsp;&nbsp;12-Oct-2019</span>
+      </div>
+    </div>
+  </mat-card>
+  </mat-drawer-content>
+  </mat-drawer-container>
+  </div>
+  </div>
+  
+  
+  <div fxLayout="row wrap" #resizedDiv>
+    <div class="flex-p w-100 sizeAlign">
+      <div class="row">
+        <div class="col-xs-12">
+          <div id="grid-table-container" class="table-responsive">
+            <table matSort id="example2" class="table table-bordered table-hover">
+              <thead class="tbl-head">
+                <tr>
+                  <th class="text-center">Sl No.</th>
+                  <th class="text-center">Part No.</th>
+                  <th class="text-center">Part Name</th>
+                  <th class="text-center">Store Name</th>
+                  <th class="text-center">Make (Vendor Code)</th>
+                  <th class="text-center">Location</th>
+                  <th class="text-center">Approved Transfer QTY</th>
+                  <th class="text-center">Balance Transfer QTY</th>
+                  <th class="text-center">Dispatch QTY</th>
+                </tr>
+              </thead>
+              <tbody>
+                <td class="text-center">1.</td>
+                <td class="text-center">EAS10002</td>
+                <td class="text-center">A/C FITER</td>
+                <td class="text-center">Dumpers & Machinery</td>
+                <td class="text-center">Cat (-)</td>
+                <td class="text-center">Rck-21-Rw-21-Bn-21</td>
+                <td class="text-center">7</td>
+                <td class="text-center">7</td>
+                <td class="text-center"><input type="text"></td>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+  </div>
+  
+  <h2 class="flex-p w-100">Transportation Details</h2>
+
+<mat-card>
+  <mat-card-content>
+  <div class="col-sm-12">
+    <label class="col-sm-4">Vehicle used for Transportation:</label>
+    <div class="col-sm-8 px-5">
+      <div class="col-sm-2"><input name="1" type="radio"><label>Private </label></div>
+      <div class="col-sm-2"><input name="1" type="radio"><label>Own</label></div>
+    </div>
+  </div>
+
+  <div class="col-sm-12 mt-5">
+    <label class="col-sm-4">L.R / Bilty / R.R / Docket No.:</label>
+    <div class="col-sm-8 px-5">
+      <input type="text" style="width: 250px; height: 30px;" placeholder="Enter L.R / Bilty / R.R / Docket No.">
+    </div>
+  </div>
+
+  <div class="col-sm-12 mt-5">
+    <label class="col-sm-4">L.R / Bilty / R.R / Docket Document:</label>
+    <div class="col-sm-8 px-5">
+      <input type="file"  style="width: 250px; height: 30px;" placeholder="Select File">
+    </div>
+  </div>
+
+  <div class="col-sm-12 mt-5">
+    <label class="col-sm-4">  Transporter / Courier Name:</label>
+    <div class="col-sm-8 px-5">
+      <input type="text"  style="width: 250px; height: 30px;" placeholder=" Transporter / Courier Name">
+    </div>
+  </div>
+
+  <div class="col-sm-12 mt-5">
+    <label class="col-sm-4">Transporter Contact No.:</label>
+    <div class="col-sm-8 px-5">
+      <input type="text"  style="width: 250px; height: 30px;" placeholder="Transporter Contact No.">
+    </div>
+  </div>
+
+  <div class="col-sm-12 mt-5">
+    <label class="col-sm-4">Transportation Charges:</label>
+    <div class="col-sm-8 px-5">
+        <div class="col-sm-2"><input name="1" type="radio"><label>Paid</label></div>
+        <div class="col-sm-2"><input name="1" type="radio"><label>To Pay</label></div>
+    </div>
+  </div>
+
+  <div class="col-sm-12 mt-5">
+    <label class="col-sm-4">Transportation Cost:</label>
+    <div class="col-sm-8 px-5">
+      <input type="text"  style="width: 250px; height: 30px;" placeholder="Select File">
+    </div>
+  </div>
+
+  <div class="col-sm-12 mt-5">
+    <label class="col-sm-4">Vehicle Number:</label>
+    <div class="col-sm-8 px-5">
+      <input type="text"  style="width: 250px; height: 30px;" placeholder="Vehicle Number">
+    </div>
+  </div>
+
+  <div class="col-sm-12 mt-5">
+    <label class="col-sm-4">Transporter Registration Code:</label>
+    <div class="col-sm-8 px-5">
+      <input type="text"  style="width: 250px; height: 30px;" placeholder="Transporter Registration Code">
+    </div>
+  </div>
+
+  <div class="col-sm-12 mt-5">
+    <label class="col-sm-4">Driver Name :</label>
+    <div class="col-sm-8 px-5">
+      <input type="text"  style="width: 250px; height: 30px;" placeholder="Driver Name">
+    </div>
+  </div>
+
+  <div class="col-sm-12 mt-5">
+    <label class="col-sm-4">Driver Contact No.:</label>
+    <div class="col-sm-8 px-5">
+      <input type="text"  style="width: 250px; height: 30px;" placeholder="Driver Contact No.">
+    </div>
+  </div>
+  </mat-card-content>
+  </mat-card>
+
+  </div>

@@ -1,0 +1,64 @@
+<h1 mat-dialog-title class="custom-header" 
+style="background-color:#286ba5 !important;height:50px;font-weight: bold !important;">
+Bulk Details</h1>
+ <div class="container-fluid">
+                
+               
+                
+                <div class="container-fluid" style="margin-top: 15px;">
+                  <div fxLayout="row wrap" #resizedDiv>
+                    <div class="flex-p w-100 sizeAlign">
+                     <div class="row">
+                        <div class="col-xs-12">
+                         
+                            
+                          
+                          <div id="grid-table-container" class="table-responsive">
+                            <table matSort id="example2" class="table table-bordered table-hover">
+                              <thead class="tbl-head">
+                                <tr>
+                                  <!-- <th _ngcontent-c21="" style="min-width: 200px;" class="text-center">Item Name</th>
+                                  <th _ngcontent-c21="" style="min-width: 200px;" class="text-center">Item Code</th>
+                                  
+                                  <th _ngcontent-c21="" style="min-width: 100px;" class="text-center">Part Number</th>
+                                  <th _ngcontent-c21="" style="min-width: 80px;" class="text-center">Part Make</th> -->
+                                  <th _ngcontent-c21="" style="min-width: 80px;" class="text-center">Quantity</th>
+                                  <th _ngcontent-c21="" style="min-width: 80px;" class="text-center">Unit Rate</th>
+                                  <th _ngcontent-c21="" style="min-width: 80px;" class="text-center">Unit Shipping Cost</th>
+                                  <!-- <th _ngcontent-c21="" style="min-width: 80px;">Approval</th>
+                                  <th _ngcontent-c21="" style="min-width: 80px;">Publish</th> -->
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                <tr *ngFor="let item of items">
+                                  <!-- <td class="text-center">{{item.VendorName }}</td>
+                                  <td class="text-center">{{item.Code }}</td>
+
+
+    
+                                  
+                                  <td class="text-center">{{item.MOQ }}</td>
+                                  <td class="text-center">{{item.UnitRate }}</td> -->
+                                  <td class="text-center">{{item.UnitShippingCost }}</td>
+                                  <td class="text-center">{{item.Bulk }}</td>
+                                  <td class="text-center">{{item.OpenOrders }}</td>
+                                  
+                                  
+                                </tr>
+                              </tbody>
+                            </table>
+                            
+                           
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  </div>
+                  <mat-dialog-actions align="end">
+                    <button mat-raised-button class="add-hover btn-primary" type="submit" (click)="close()"><mat-icon>send</mat-icon>&nbsp;Save</button>
+                    <button mat-raised-button type="button" class="add-dark-hover btn-default" (click)="close()"><mat-icon>cancel</mat-icon>&nbsp;Cancel</button>
+                </mat-dialog-actions>
+</div>
+                
+                

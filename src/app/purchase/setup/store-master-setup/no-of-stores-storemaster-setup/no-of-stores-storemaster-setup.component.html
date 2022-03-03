@@ -1,0 +1,96 @@
+<div class="container-fluid" >
+  <div fxLayout="row wrap" #resizedDiv>
+    <div class="flex-p w-100 sizeAlign">
+
+      <div class="row" style="margin-bottom:7px;margin-top:20px">
+          <div class="col-sm-6 ">
+        
+          </div>
+          <div class="col-sm-6">
+                   <button mat-raised-button class="pull-right add-hover btn-default"  routerLink="/purchase/setup/storemaster-setup">
+                    <mat-icon>chevron_left</mat-icon> Back
+                  </button>
+                  <button mat-raised-button class="pull-right add-hover btn-primary" style="margin-right: 5px;" (click)="addstore(null)">
+                      <mat-icon>add</mat-icon> Add Store Name
+                  </button>
+                  <!-- <button mat-raised-button color="primary" style="margin-right: 5px;" class="pull-right filters-hover "
+                      (click)="filterToggle = !filterToggle">
+                      <mat-icon>filter_list</mat-icon> Filter
+                  </button> -->
+          </div>
+        </div>
+
+        <div class="row" style="margin-top:20px">
+          <div class="col-sm-12" style="margin-left:10px">
+          <div id="grid-table-container" class="table-responsive">
+              <table matSort id="example2" class="table table-bordered table-hover">
+                  <thead class="tbl-head">
+                      <tr>
+                          <th >Store Name</th>
+                          <th class="text-center">Available Items</th>
+                          <th class="text-center">Status</th>
+                          <th class="text-center" style="width: 112px!important;">Actions</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr *ngFor="let item of values">
+                          
+                          <td >{{item.storename}}</td>
+                          <td class="text-center" (click)="avialbleitemspopup()" style="color: blue;cursor: pointer;">{{item.availableitems}}</td>
+                          <!-- <td class="text-center">
+                              <a style="color:blue" target="_blank" (click)="openstoreIncharge(null)"
+                                  matTooltip="Click to View Store Incharge Details">{{item.storeincharge}}</a>
+                          </td> -->
+          
+                          <!-- <td class="text-center">
+                              <a style="color:blue" (click)="openTechnical(null)" target="_blank"
+                                  matTooltip="Click to View Technical Engineer Details">{{item.technical}}</a>
+                          </td> -->
+          
+                          <!-- <td class="text-center">
+                              <a style="color:blue" (click)="openPoemails(null)" target="_blank"
+                                  matTooltip="Click to View PoEmails Details">{{item.poemails}}</a>
+                          </td> -->
+          
+                          <!-- <td class="text-center">
+                              <a style="color:blue" (click)="openSpares(null)" target="_blank"
+                                  matTooltip="Click to View Spares Details">{{item.spares}}</a>
+                          </td> -->
+          
+                          <!-- <td class="text-center">
+                              <a style="color:blue" (click)="openType(null)" target="_blank"
+                                  matTooltip="Click to View Type Details">{{item.type}}</a>
+                          </td> -->
+          
+                          <!-- <td class="text-center">
+                              <a style="color:blue" routerLink="/purchase/setup/location-setup/floor-location-setup">{{item.location}}</a>
+                          </td> -->
+          
+                          <td style="text-align: center !important;">
+                              <a [ngStyle]="{'color': item.status? 'blue' : 'red','cursor':'pointer'}"
+                                  mwlConfirmationPopover [popoverTitle]="popoverStatusTitle"
+                                  [popoverMessage]="popoverStatusMessage" placement="left"
+                                  (confirm)="saveStatus();item.status=!item.status" (cancel)="cancelClicked = true">
+                                  {{item.status?'Active':'Inactive'}}
+                              </a>
+                          </td>
+          
+                          <td class="text-center editDel">
+                              <a style="cursor: pointer;margin-right:0px;margin-left: -5px; "
+                                  matTooltip="Update Project" (click)="addstore(item)">
+                                  <i class="fa fa-edit" style="color: cornflowerblue"></i>
+                              </a>
+                              <a><i class="fa fa-trash red" matTooltip="Delete Project"
+                                      style="cursor: pointer;"></i></a>
+                          </td>
+                      </tr>
+                  </tbody>
+              </table>
+              <mat-paginator [length]="totalSize" [pageIndex]="currentPage" [pageSize]="pageSize"
+                  [pageSizeOptions]="[5, 10, 25, 50, 100]" showFirstLastButtons></mat-paginator>
+          </div>
+        </div>
+      </div>
+   </div>
+</div>
+</div>

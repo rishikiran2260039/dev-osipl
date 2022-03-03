@@ -1,0 +1,113 @@
+<div class="container-fluid">
+  <div class="flex-p" style="margin:0px!important; padding:0px!important">
+    <div class="row wrap">
+        <div class="col-sm-12 no-padding">
+            <div class="row-wrap">
+                <div class="w-100">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="pills">
+                                <ul class="nav nav-pills pull-right">
+                                    <li routerLink="/purchase/inventory-management/stock-transfers/outgoingstock">
+                                        <a mat-raised-button class="navtabWidth"><mat-icon>arrow_left_alt</mat-icon>
+                                            Back
+                                        </a>
+                                    </li>                             
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  
+  <div class="w-100" >
+  <div class="flex-p">
+  <mat-drawer-container>
+  <mat-drawer-content>
+  <mat-card class="col-sm-12" style="background-color: #dbe8f3 !important;width: 100%;">
+    <div class="col-sm-4">
+      <div class="col-sm-10 no-padding">
+        <label>Request No.:</label>
+        <span>&nbsp;&nbsp;STO/OM-OTP/OCT-19/10003</span>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="col-sm-10 no-padding">
+        <label>Request Date:</label>
+        <span>&nbsp;&nbsp;12-Oct-2019</span>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="col-sm-10 no-padding">
+        <label>Sending Project:</label>
+        <span>&nbsp;&nbsp;Option Matrix</span>
+      </div>
+    </div>
+    <div class="w-100"></div>
+    <div class="col-sm-4 mt-5">
+      <div class="col-sm-10 no-padding">
+        <label>Equipment Type:</label>
+        <span>&nbsp;&nbsp;Backhoe Loader</span>
+      </div>
+    </div>
+    <div class="col-sm-4 mt-5">
+      <div class="col-sm-10 no-padding">
+        <label>Equipment Make:</label>
+        <span>&nbsp;&nbsp;Tata</span>
+      </div>
+    </div>
+    <div class="col-sm-4 mt-5">
+      <div class="col-sm-10 no-padding">
+        <label>Equipment Model:</label>
+        <span>&nbsp;&nbsp;D85ESS 86 | D85ESS 86</span>
+      </div>
+    </div>
+  </mat-card>
+  </mat-drawer-content>
+  </mat-drawer-container>
+  </div>
+  </div>
+  
+  <div fxLayout="row wrap" #resizedDiv>
+    <div class="flex-p w-100 sizeAlign">
+      <div class="row">
+        <div class="col-xs-12">
+          <div id="grid-table-container" class="table-responsive">
+            <table matSort id="example2" class="table table-bordered table-hover">
+              <thead class="tbl-head">
+                <tr>
+                  <th class="text-center">Sl No.</th>
+                  <th class="text-center">Item No.</th>
+                  <th class="text-center">Item Name</th>
+                  <th class="text-center">Total Stock Qty</th>
+                  <th class="text-center">Surplus Stock Qty</th>
+                  <th class="text-center">Required Qty</th>
+                  <th class="text-center">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of items">
+                <td class="text-center">{{item.slNo}}</td>
+                <td class="text-center">{{item.itemNo}}</td>
+                <td class="text-center">{{item.itemName}}</td>
+                <td class="text-center">{{item.totalQty}}</td>
+                <td class="text-center">{{item.surplusQty}}</td>
+                <td class="text-center">{{item.requiredQty}}</td>
+                <td class="text-center" style="font-size: 18px;">
+                  <a style="cursor:no-drop;margin-right:10px; ">
+                    <i class="fa fa-edit" style="color: cornflowerblue"></i>
+                  </a>
+                  <a><i class="fa fa-trash red" style="cursor:no-drop;"></i></a>
+                </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

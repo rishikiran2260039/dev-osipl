@@ -1,0 +1,49 @@
+<div class="NewHeader" style="background-color:#286ba5 !important; height: 50px;">
+  <h1 mat-dialog-title>
+    Activity Log
+  </h1>
+</div>
+<div fxLayout="row wrap" #resizedDiv>
+    <div class="flex-p w-100 sizeAlign">
+      <div class="row">
+        <div class="col-xs-12">
+          <div id="grid-table-container" class="table-responsive">
+            <label>Gate Pass No.:</label>
+            <span>&nbsp;
+             OM/GP/APR-20/10008 
+            </span>
+            <table matSort id="example2" class="table table-bordered table-hover">
+              <thead class="tbl-head">
+                <tr>			
+                  <th class="text-center">Date&Time</th>
+                  <th class="text-center">Stage</th>
+                  <th class="text-center">Reference No.</th>
+                  <th class="text-center">Activity</th>
+            
+                  <th class="text-center">User</th>
+                  <th class="text-center" style="width: 100px!important;">Remarks</th>
+                  
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of items">
+                  <td class="text-center">{{item.date }}</td>
+                  <td class="text-center">{{item.stage }}</td>
+                  <td class="text-center">{{item.Reference }}</td>
+                  <td class="text-center">{{item.Activity}}</td>
+                  <td class="text-center">{{item.user}}</td>
+                  <td class="text-center">{{item.remarks}}</td>
+                 
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <mat-dialog-actions align="end">
+    <button mat-raised-button class="btn-primary" (click)="close()"><mat-icon>send</mat-icon><span >Save</span></button>
+    <button mat-raised-button class="add-dark-hover btn-default" (click)="close()"><mat-icon>cancel</mat-icon> Close</button>
+  </mat-dialog-actions>

@@ -1,0 +1,66 @@
+<div class="NewHeader">
+  <h1 mat-dialog-title>
+    Add Work Order
+  </h1>
+</div>
+<div mat-dialog-content>
+  <form class="form-horizontal">
+      <div class="form-group">
+          <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Select Vendor: </label>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <mat-select class="form-control" placeholder = "Select Vendor">
+              <mat-option>M/s Power Solutions</mat-option>
+              <mat-option>Bharath Powers</mat-option>
+              <mat-option>Tata Steels</mat-option>
+              <mat-option>First Choice Pvt Ltd</mat-option>
+            </mat-select>
+          </div>
+      </div>
+      <div class="form-group">
+          <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label">Item Name: </label>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <input type="text" class="form-control" placeholder="Enter Item Name" required>
+
+          </div>
+      </div>
+      <div class="form-group">
+          <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Item Description: </label>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <input type="text" class="form-control" placeholder="Enter Item Description" required>
+           
+          </div>
+      </div>
+      
+      <div class="form-group">
+          <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Unit: </label>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+              <input type="text" class="form-control" placeholder="Enter Unit" required>
+          </div>
+      </div>
+      <div class="form-group">
+          <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Rate : </label>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+              <input type="email" email class="form-control" placeholder="Enter Rate " required>
+          </div>
+      </div>
+     
+    <div class="form-group">
+        <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label">Date : </label>
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+          <input type="date" class="form-control" placeholder="Enter Date ">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Rate Remarks: </label>
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <input type="text" class="form-control" placeholder="Enter Remarks" required>
+        </div>
+    </div>
+    
+  
+  </form>
+</div>
+<mat-dialog-actions align="end">
+  <button mat-raised-button class="btn-primary" ><mat-icon>send</mat-icon><span > Save</span></button>
+  <button mat-raised-button class="add-dark-hover btn-default" (click)="close()"><mat-icon>cancel</mat-icon> Cancel</button>
+</mat-dialog-actions>

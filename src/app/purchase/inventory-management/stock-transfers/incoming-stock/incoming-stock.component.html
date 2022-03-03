@@ -1,0 +1,130 @@
+<div class="row-wrap">
+  <div class="flex-p w-100">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="row" style="margin-bottom:5px;">
+        
+          <div class="col-xs-12" style="padding-right: 18px !important;margin-top: -25px !important;">
+            <div class="flex-p">
+              <button mat-raised-button color="primary" class="pull-right filters-hover margin-right-10"
+                (click)="filterToggle = !filterToggle">
+                <mat-icon>filter_list</mat-icon> Filter
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div fxLayout="row wrap"  *ngIf="filterToggle"  style="margin-bottom: 5px; padding-top: 5px;"  >
+  <div fxFlex="100" fxFlex.gt-sm fxFlex.sm class="flex-p w-100 margins">
+    <mat-card class="filter">
+      <mat-card-content>
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="col-sm-4 newMarginClass ">
+              Project:
+            </div>
+            <div class="col-sm-8">
+              <mat-select class="form-control" placeholder="ALL">
+                <mat-option [value]="0">ALL</mat-option>
+                <mat-option [value]="1">Legacy Project</mat-option>
+                <mat-option [value]="2">Singrouli</mat-option>
+                
+              </mat-select>
+            </div>
+          </div>
+          <div class="col-sm-8" >
+            <div class="col-lg-1" style="margin-left:80% !important;">
+              <button mat-raised-button class="pull-right btn-primary">
+                Go
+              </button>
+  
+            </div>
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="margin-left: -18px;">
+              <button mat-raised-button style="background-color:#37474f; color:#fff !important;">
+                Reset
+              </button>
+  
+            </div>
+          </div>
+        </div>
+
+       
+        <div class="row" >
+          
+          <a (click)="filterToggle = !filterToggle" class="pull-right"
+            style="font-size: 25px; cursor: pointer; margin-left: 5px;">
+            <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+          </a>
+
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
+
+<div class="container-fluid" style="margin-top: 10px;">
+  <div fxLayout="row wrap" #resizedDiv>
+    <div class="flex-p w-100 sizeAlign ">
+      
+      
+      <div class="row">
+        <div class="col-xs-12">
+          <div id="grid-table-container" class="table-responsive">
+            <table matSort id="example2" class="table table-bordered table-hover">
+              <thead class="tbl-head">
+                <tr>
+                  <th class="text-center">Serial No.</th>
+                  <th class="text-center">Sending Project</th>
+                  <th class="text-center">Receiving Store</th>
+                  <th class="text-center">STO Ref#</th>
+                  <th class="text-center">Invoice/Dc #</th>
+                  <th class="text-center">Status</th>
+                  <th class="text-center" style="width: 100px;">SRN Form</th>
+                  <th class="text-center">SRN</th>
+                  <th class="text-center">Activity Log</th>
+                
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <!-- <td style="text-align: left!important;">{{item.Vendor}}</td>
+                  <td style="text-align: left!important;">{{item.GatePass }}</td>
+                  <td style="text-align: center!important;">{{item.ConRef }}</td>
+                  
+                  <td (click)="invoicedetailsdialogue()" style="color:blue;cursor: pointer;">{{item.InvNo}}</td>
+                  <td (click)="transporterdetailsdialogue()" style="text-align: center !important;color:blue; cursor: pointer;">{{item.TransporterDetails}}</td>
+                  
+                  <td style="text-align: center !important;">{{item.IssueDate }} </td>
+                  <td>
+                    <mat-icon>print</mat-icon>
+                  </td>
+                  <td style="min-width: 70px !important; text-align: center!important;">
+                    {{item.CloseGP}}
+                  </td>
+                  <td (click)="Activitylogdialogue()"  style="color:blue;cursor: pointer; min-width: 70px !important; text-align: center!important;">
+                    {{item.ActivityLog}}
+                  </td>
+                  <td style="min-width: 70px !important; text-align: center!important;">
+                    {{item.Status}}
+                  </td> -->
+                  <td colspan="10" class="text-center">
+                    No data available
+                  </td>
+                  
+                </tr>
+              </tbody>
+            </table>
+            <mat-paginator [pageSizeOptions]="[5, 10, 25, 50, 100]" showFirstLastButtons></mat-paginator>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  

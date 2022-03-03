@@ -1,0 +1,514 @@
+<div class="w-100">
+  <div class="flex-p">
+      <div class="row wrap">
+          <div class="col-sm-12 no-padding">
+              <div class="row-wrap">
+                  <div class="w-100">
+                      <div class="row">
+                          <div class="col-xs-12" style="margin-bottom: 15px;">
+                              <div class="pills">
+                                  <ul class="nav nav-pills" style="margin-left: 10px;margin-bottom: -25px;">
+                                      <li routerLinkActive="active" routerLink="/purchase/procurement/indent">
+                                          <a mat-raised-button class="navtabWidth" style="margin-top: 10px;">
+                                              Purchase Indent (5)
+                                          </a>
+                                      </li>
+                                      <li routerLinkActive="active" routerLink="/purchase/procurement/rfq">  
+                                          <a mat-raised-button class="navtabWidth" style="margin-top: 10px;">
+                                              RFQ (4)
+                                          </a>
+                                      </li>
+                                      <li routerLinkActive="active" routerLink="/purchase/procurement/quotaions">
+                                        <a mat-raised-button class="navtabWidth" style="margin-top: 10px;">
+                                          Quotations (5)
+                                        </a>
+                                      </li>
+                                      <li routerLinkActive="active" routerLink="/purchase/procurement/purchase-orders">
+                                          <a mat-raised-button class="navtabWidth" style="margin-top: 10px;">
+                                            Purchase Orders (15)
+                                          </a>
+                                      </li>
+                                      <li routerLinkActive="active" routerLink="/purchase/procurement/consignments">
+                                          <a mat-raised-button class="navtabWidth" style="margin-top: 10px;">
+                                            Consignments (4)
+                                          </a>
+                                      </li>  
+                                                                
+                                  </ul>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="w-100">
+    <div class="flex-p">
+        <div class="row wrap">
+            <div class="col-sm-12 no-padding">
+                <div class="row-wrap">
+                    <div class="w-100">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <div class="pills">
+                                    <ul class="nav nav-pills" >
+                                      <li routerLinkActive="active" routerLink="/purchase/procurement/purchase-orders/unpublished-po">
+                                        <a mat-raised-button class="navtabWidth" style="margin-top: 10px;">
+                                          Pending (5)
+                                        </a>
+                                      </li>
+                                        <li routerLinkActive="active" routerLink="/purchase/procurement/purchase-orders/published-po">
+                                            <a mat-raised-button class="navtabWidth" style="margin-top: 10px;">
+                                                Published (5)
+                                            </a>
+                                        </li>
+                                        <li routerLinkActive="active" routerLink="/purchase/procurement/purchase-orders/archived-po">
+                                            <a mat-raised-button class="navtabWidth" style="margin-top: 10px;">
+                                              Archives (5)
+                                            </a>
+                                        </li>                           
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                              <div class="col-xs-6 ">
+                              </div>
+                              <div class="col-xs-6 ">
+                                <div class="">
+                                  <!-- <button mat-raised-button color="primary" class="pull-right filters-hover margin-right-10 mt-3"
+                                    (click)="filterToggle = !filterToggle">
+                                    <mat-icon>filter_list</mat-icon> Filter
+                                  </button> -->
+                              </div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  
+  <!-- <div fxLayout="row wrap" *ngIf="filterToggle">
+      <div fxFlex="100" fxFlex.gt-sm fxFlex.sm class="flex-p w-100 margins">
+        <mat-card class="filter">
+          <mat-card-content>
+            <div class="row">
+              <div class="col-sm-4">
+                <div class="col-sm-4 newMarginClass">
+                  Work Order:
+                </div>
+                <div class="col-sm-8">
+                  <input type="text" placeholder="Search by any record" class="form-control">
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="col-sm-4 newMarginClass">
+                  Vendor:
+                </div>
+                <div class="col-sm-8">
+                  <input type="text" id="" class="form-control" placeholder="Enter Vendor">
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="col-lg-1" style="margin-left: 130px;">
+                  <button mat-raised-button class="pull-right btn-primary">
+                    <mat-icon>youtube_searched_for</mat-icon> Search
+                  </button>
+                </div>
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                  <button mat-raised-button style="background-color:#37474f; color:#fff !important">
+                    <mat-icon>settings_backup_restore</mat-icon> Clear
+                  </button>
+                </div>
+                <a (click)="filterToggle = !filterToggle" class="pull-right"
+                  style="font-size: 25px; cursor: pointer; margin-left: 5px;">
+                  <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+  </div> -->
+  
+  </div>
+ 
+<div class="row" style="margin-bottom:7px;">
+  <div class="col-xs-2 ">
+    <div class="switchToggle pull-left" style=" margin-left:5px; margin-top: 25px;">
+      <input type="checkbox" id="switch">
+      <label for="switch">Toggle</label>
+  </div>
+  </div>
+  <div class="col-xs-10 ">
+      <div class="flex-p">
+
+          <button mat-raised-button  class="pull-right  margin-right-10" style="margin-left: 15px;"
+          routerLink="/purchase/procurement/purchase-orders/unpublished-po"
+             >
+              <mat-icon>chevron_left</mat-icon> Back
+          </button> 
+          <button  mat-raised-button  class="btn-success pull-right" style="margin-left: 15px;">
+            Load From Template
+         </button>
+         <mat-select style="width: 20%;margin-left: 15px;margin-top: 10px;" class="form-control pull-right"   placeholder="Select Template" >&nbsp;
+         
+          <mat-option value="PO Terms Templates"  >PO Terms Templates</mat-option>
+          <mat-option value="Service Terms Templates"> Service Terms Templates</mat-option>
+        </mat-select>
+        <label  class="pull-right" style="margin-top: 10px;">Select Template  :</label>
+      </div>
+
+  </div>
+</div>
+
+
+<div *ngIf="displayDashboard" style="margin-left:5px" >
+
+
+ <div fxLayout="row wrap" #resizedDiv  >
+  <div class="flex-p w-100 sizeAlign">
+    <div class="row">
+      <div class="col-xs-12">
+     
+       <div id="grid-table-container" class="table-responsive" >
+          <table id="example2" class="table table-bordered">
+            <thead class="tbl-head">
+                <tr class="tr-grid-header">
+                    <th class="text-center">Select</th>
+                    <th class="text-center" >Subject</th>
+                    <th class="text-center">Narration</th>
+                    <!-- <th style="width:90px" class="text-center">Actions</th> -->
+                </tr>
+            </thead>
+            <tbody>
+              
+              <tr *ngFor="let item of items1">
+                  <ng-container>
+                    <td class="text-center" ><input type="checkbox"></td>
+                    <td>{{item.subject}}</td>
+                    <td>{{item.narration}}</td>
+                    <!-- <td class="text-center editDel">
+                      <a style="cursor: pointer;margin-right:10px; " matTooltip="Update Project" (click)="purhaseorderpop(item)">
+                          <i class="fa fa-edit" style="color: cornflowerblue"></i>
+                      </a>
+                      <a><i class="fa fa-trash red" matTooltip="Delete Project"
+                              style="cursor: pointer;"></i></a>
+                  </td> -->
+                  </ng-container> 
+                </tr>
+            </tbody>
+        </table>
+          
+        </div>
+        
+      </div>
+    </div>
+
+  </div>
+  
+</div>
+
+<!-- 
+  
+
+  <button mat-raised-button  class="btn-success margin-right-10 " style="margin-left: 15px;" >
+        <mat-icon><span class="material-icons-outlined">
+            save
+          </span></mat-icon>Save
+  </button>
+  <button mat-raised-button  class="btn-success margin-right-10" (click)="potermspop()">
+     Save New Template
+  </button> -->
+
+</div>
+
+
+
+<div  *ngIf="!displayDashboard" style="margin-left:5px">
+
+  <div fxLayout="row wrap" #resizedDiv  >
+    <div class="flex-p w-100 sizeAlign">
+      <div class="row">
+        <div class="col-xs-12">
+          
+         <div id="grid-table-container" class="table-responsive" >
+          <table id="example2" class="table table-bordered">
+            <thead class="tbl-head">
+                <tr class="tr-grid-header">
+                    <th class="text-center">Select</th>
+                    <th class="text-center" >Subject</th>
+                    <th class="text-center">Narration</th>
+                    <!-- <th style="width:90px" class="text-center">Actions</th> -->
+                </tr>
+            </thead>
+            <tbody>
+              
+              <tr *ngFor="let item of items2">
+                  <ng-container>
+                    <td class="text-center" ><input type="checkbox"></td>
+                    <td>{{item.subject}}</td>
+                    <td>{{item.narration}}</td>
+                    <!-- <td class="text-center editDel">
+                      <a style="cursor: pointer;margin-right:10px; " matTooltip="Update Project" (click)="workorderpop(item)">
+                          <i class="fa fa-edit" style="color: cornflowerblue"></i>
+                      </a>
+                      <a><i class="fa fa-trash red" matTooltip="Delete Project"
+                              style="cursor: pointer;"></i></a>
+                  </td> -->
+                  </ng-container> 
+                </tr>
+            </tbody>
+        </table>
+            
+          </div>
+          
+        </div>
+      </div>
+  
+    </div>
+    
+  </div>
+  
+
+  <!-- <button mat-raised-button  class="btn-success margin-right-10" style="margin-left: 15px;">
+    <mat-icon><span class="material-icons-outlined">
+        save
+      </span></mat-icon>Save
+  </button>
+  <button mat-raised-button  class="btn-success margin-right-10" (click)="servtermspop()" >
+   Save New Template
+  </button> -->
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="flex-p" style="padding-top: 0px !important;">
+  <div class="row wrap">
+    <div class="col-xs-12" style="margin-top: 15px;">
+      <button mat-raised-button *ngIf="displayDashboard" class="btn-primary pull-right"
+        (click)="changeDisplay()">
+         Service Terms Templates
+      </button>
+
+      <button mat-raised-button *ngIf="!displayDashboard" class="btn-primary pull-right"
+        (click)="changeDisplay()">
+        PO Terms Templates
+      </button>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="displayDashboard" >
+
+
+ <div fxLayout="row wrap" #resizedDiv >
+  <div class="flex-p w-100 sizeAlign">
+    <div class="row">
+      <div class="col-xs-12">
+        <button mat-raised-button style=" color:#fff !important;cursor: pointer;margin-bottom: 5px;" class="pull-right  btn-success" matTooltip="Add "  (click)="allFields.push(1)" >
+          <mat-icon>add</mat-icon> 
+        </button>
+        <button mat-raised-button style=" color:#fff !important;cursor: pointer;margin-bottom: 5px;margin-right: 5px;" class="pull-right  btn-primary" matTooltip="Download"   >
+          <mat-icon>download</mat-icon> Download Template
+        </button>
+        
+        
+        <div id="grid-table-container" class="table-responsive" >
+          <table id="example2" class="table table-bordered">
+            <thead class="tbl-head">
+                <tr class="tr-grid-header">
+                    <th class="text-center">Select</th>
+                    <th class="text-center" >Subject</th>
+                    <th class="text-center">Narration</th>
+                    <th class="text-center">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+              
+              <tr *ngFor="let item of allFields;let i = index;">
+                  <ng-container>
+                    <td class="text-center" ><input type="checkbox"></td>
+                      <td  >
+                        <mat-select class="form-control" placeholder="Subject">
+                          <mat-option value=[1]>ACKNOWLEDGEMENT COPY</mat-option>
+                          <mat-option value=[2]>DELIVERY DATE</mat-option>
+                          <mat-option value=[3]>PAYMENT TERMS</mat-option>
+                          <mat-option value=[4]>TAX EXEMPTION</mat-option>
+                          <mat-option value=[5]>EXPORT LICENCE</mat-option>
+                          <mat-option value=[6]>RISK OF LOSS</mat-option>
+                          <mat-option value=[7]>FITNESS OF GOODS/PACKING</mat-option>
+                          <mat-option value=[8]>WARRANTY CLAUSE</mat-option>
+                          <mat-option value=[9]>FORCE MAJEURE</mat-option>
+                          <mat-option value=[10]>INDEMNIFICATION</mat-option>
+                          <mat-option value=[11]>ASSIGNMENT AND INSOLVENCY</mat-option>
+                          <mat-option value=[12]>USE OF NAME, EMBLEM OR OFFICIAL SEAL OF THE WHO</mat-option>
+                          <mat-option value=[13]>ARBITRATION</mat-option>
+                          <mat-option value=[14]>PRIVILEGES AND IMMUNITIES</mat-option>
+                          
+                        </mat-select>
+                      </td>
+                      <td class="text-center" style="cursor:pointer;color: blue;"  (click)="narrationspoppoterms()"><mat-icon>info</mat-icon></td>
+                      
+                        <td class="text-center">
+                            <a ><i class="fa fa-save green" matTooltip="Save RFQ" style="cursor: pointer;"  ></i></a>
+                            <a *ngIf="allFields.length > 1"><i class="fa fa-trash red" matTooltip="Delete RFQ" (click)="removeItem(i)" style="cursor: pointer;"></i></a>
+                        </td>
+                  </ng-container> 
+                </tr>
+            </tbody>
+        </table>
+          
+        </div>
+        
+      </div>
+    </div>
+
+  </div>
+  
+</div>
+
+
+  
+
+  <button mat-raised-button  class="btn-success margin-right-10 " style="margin-left: 15px;" >
+        <mat-icon><span class="material-icons-outlined">
+            save
+          </span></mat-icon>Save
+  </button>
+  <button mat-raised-button  class="btn-success margin-right-10" (click)="potermspop()">
+     Save New Template
+  </button>
+
+</div>
+
+
+
+<div  *ngIf="!displayDashboard" >
+
+  <div fxLayout="row wrap" #resizedDiv>
+    <div class="flex-p w-100 sizeAlign">
+      <div class="row">
+        <div class="col-xs-12">
+          
+          <button mat-raised-button style=" color:#fff !important;cursor: pointer;margin-bottom: 5px;" class="pull-right  btn-success" matTooltip="Add "  (click)="allFields.push(1)" >
+            <mat-icon>add</mat-icon> 
+          </button>
+          <button mat-raised-button style=" color:#fff !important;cursor: pointer;margin-bottom: 5px;margin-right: 5px;" class="pull-right  btn-primary" matTooltip="Download"   >
+            <mat-icon>download</mat-icon> Download Template
+          </button>
+          <div id="grid-table-container" class="table-responsive" >
+            <table id="example2" class="table table-bordered">
+              <thead class="tbl-head">
+                  <tr class="tr-grid-header">
+                      <th class="text-center">Select</th>
+                      <th class="text-center" >Subject</th>
+                      <th class="text-center">Narration</th>
+                      <th class="text-center">Actions</th>
+                  </tr>
+              </thead>
+              <tbody>
+                
+                <tr *ngFor="let item of allFields;let i = index;">
+                    <ng-container>
+                      <td class="text-center" ><input type="checkbox"></td>
+                        <td  >
+                          <mat-select class="form-control" placeholder="Subject">
+                            <mat-option value=[1]>DEFINITIONS & INTERPRETATION</mat-option>
+                            <mat-option value=[2]>RELATIONSHIP OF THE PARTIES</mat-option>
+                            <mat-option value=[3]>SERVICES</mat-option>
+                            <mat-option value=[4]>CONTRACT PRICE AND INVOICES</mat-option>
+                            <mat-option value=[5]>GST</mat-option>
+                            <mat-option value=[6]>INDEMNITY</mat-option>
+                            <mat-option value=[7]>WARRANTIES</mat-option>
+                            <mat-option value=[8]>WARRANTY FOR BUILDING DEFECTS</mat-option>
+                            <mat-option value=[9]>SUSPENSION OF SERVICES AND COMPLETION DATE</mat-option>
+                            <mat-option value=[10]>TERMINATION</mat-option>
+                            <mat-option value=[11]>FORCE MAJEURE</mat-option>
+                            <mat-option value=[12]>INSURANCE</mat-option>
+                            <mat-option value=[13]>CONFIDENTIALITY</mat-option>
+                            <mat-option value=[14]>MISCELLANEOUS</mat-option>
+                            
+                          </mat-select>
+                        </td>
+                        <td class="text-center" style="cursor:pointer;color: blue;" (click)="narrationspopservterms()"><mat-icon>info</mat-icon></td>
+                        
+                          <td class="text-center">
+                              <a ><i class="fa fa-save green" matTooltip="Save RFQ" style="cursor: pointer;"  ></i></a>
+                              <a *ngIf="allFields.length > 1"><i class="fa fa-trash red" matTooltip="Delete RFQ" (click)="removeItem(i)" style="cursor: pointer;"></i></a>
+                          </td>
+                    </ng-container> 
+                  </tr>
+              </tbody>
+          </table>
+            
+          </div>
+          
+        </div>
+      </div>
+  
+    </div>
+    
+  </div>
+  
+
+  <button mat-raised-button  class="btn-success margin-right-10" style="margin-left: 15px;">
+    <mat-icon><span class="material-icons-outlined">
+        save
+      </span></mat-icon>Save
+  </button>
+  <button mat-raised-button  class="btn-success margin-right-10" (click)="servtermspop()" >
+   Save New Template
+  </button>
+
+
+</div> -->
+  

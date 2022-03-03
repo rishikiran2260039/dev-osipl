@@ -1,0 +1,66 @@
+<div class="NewHeader">
+  <h1 mat-dialog-title>
+    List Of Projects (Amazon)
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <div id="divQuotesGrid" class="table-responsive">
+      <!-- <p><b>List Of Projects: </b>(Amazon)</p> -->
+      <table matSort id="example2" class="table table-bordered table-hover">
+        <thead class="tbl-head">
+          <tr>
+            <!-- <th class="text-center">Project Name</th> -->
+            <th >Project Code</th>
+            <th>Project Location</th>
+            <th class="text-center">Start Date</th>
+            <th class="text-center">End Date</th>
+            <th class="text-center">Number Of PO</th>
+            <th class="text-center">Number Of WO</th>
+
+   
+
+            <th class="text-center">Status</th>
+            <!-- <th class="text-center">% Completion</th> -->
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of totalProjects">
+            <!-- <td style="text-align: center!important;">{{item.projectname}}</td> -->
+            <td ><a style="color:blue;" (click)="close()" href="/#/projects/projectdashboard/project-procurement/indents" target="_blank" >{{item.projectname}}</a></td>
+            <td >{{item.taskStatus}}</td>
+            <td style="text-align: center!important;">{{item.targetDate}}</td>
+            <td style="text-align: center!important;">{{item.eta}}</td>
+            <td style="text-align: center!important;">{{item.po}}</td>
+            <td style="text-align: center!important;">{{item.wo}}</td>
+
+            <td style="text-align: center!important;">{{item.status1}}</td>
+
+
+            <!-- <td class="text-center">
+              <a
+              [ngClass]="item.status1 ? 'status1' : 'status1 Red'"
+              mwlConfirmationPopover
+              [popoverTitle]="popoverStatusTitle"
+              [popoverMessage]="popoverStatusMessage"
+              placement="left"
+              (confirm)="cancelClicked = true"
+              (cancel)="cancelClicked = true">
+              {{item.status1?'Active':'Inactive'}}
+              </a>
+           </td> -->
+            <!-- <td style="text-align: center!important;">{{item.perCompletion}}</td> -->
+          </tr>
+          
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<mat-dialog-actions class="col-sm-12" align="end">
+  <button mat-raised-button class="btn-default" (click)="close()">
+    <mat-icon>cancel</mat-icon>&nbsp;Close
+  </button>
+</mat-dialog-actions>

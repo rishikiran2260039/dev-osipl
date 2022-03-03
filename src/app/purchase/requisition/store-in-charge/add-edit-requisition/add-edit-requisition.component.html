@@ -1,0 +1,119 @@
+<h1 mat-dialog-title class="custom-header" style="background-color:#286ba5 !important;height:50px">    {{data ? 'Update': 'Add'}} Requisition</h1>
+<form>
+<div mat-dialog-content>
+  <div class="col-sm-12" style="font-size: 20px; margin-left: -5px!important;">
+    <label>Contract Name:</label> <span>&nbsp;&nbsp;P-12564 (Gautham Adani)</span>
+  </div>
+<div class="col-sm-12">
+    <div class="row">
+      <div class="form-group col-sm-6">
+        <div class="row">
+            <label class="col-sm-12 add-member-label">Requisition Number: </label>
+            <div class="col-sm-12">
+              <mat-select class="form-control" placeholder="Select Requisition Number">
+                <mat-option value="1">OM/REQ/SPA-FEB-19/1057</mat-option>
+                <mat-option value="2">OM/REQ/SPA/APR-20/1005</mat-option>
+                <mat-option value="3">OM/REQ/SPA-FEB-19/1041</mat-option>
+                <mat-option value="4">OM/REQ/SPA/FEB-21/1077</mat-option>
+                <mat-option value="5">OM/REQ/SPA/MAR-21/1086</mat-option>
+              </mat-select>
+            </div>
+        </div>
+    </div>
+        <div class="form-group col-sm-6">
+            <div class="row">
+                <label class="col-sm-12 add-member-label">Requistion Date: </label>
+                <div class="col-sm-12">
+                  <input type="date" class="form-control" placeholder="Enter requistion date">
+                </div>
+            </div>
+        </div>
+        <div class="form-group col-sm-6">
+            <div class="row">
+                <label class="col-sm-12 add-member-label">Requistion Title</label>
+                <div class="col-sm-12">
+                  <input class="form-control" placeholder="Enter Requisition Title" type="text">
+                </div>
+            </div>
+
+        </div>
+        <div class="form-group col-sm-6">
+            <div class="row">
+                <label class="col-sm-12 add-member-label">Requistion Category: </label>
+                <div class="col-sm-12">
+                    <mat-select class="form-control" placeholder="select Requistion Category">
+                      <mat-option value="1">Dump Truck</mat-option>
+                      <mat-option value="2">Backhoe Loader</mat-option>
+                    </mat-select>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group col-sm-6">
+          <div class="row">
+              <label class="col-sm-12 add-member-label">Sub Category: </label>
+              <div class="col-sm-12">
+                  <mat-select class="form-control" placeholder="select Requistion Category">
+                    <mat-option value="1">Breakdown Repairs(Emergency)</mat-option>
+                    <mat-option value="2">Runnin Maintanance</mat-option>
+                    <mat-option value="3">Service Repairs</mat-option>
+                  </mat-select>
+              </div>
+          </div>
+      </div>
+
+        
+        <div class="form-group col-sm-6">
+            <div class="row">
+                <label class="col-sm-12 add-member-label">Make/Model&Door no.: </label>
+                <div class="col-sm-12">
+                  <input class="form-control" placeholder="Enter Make/Model&Door no." type="date">
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group col-sm-6">
+            <div class="row">
+                <label class="col-sm-12">View/ Add items: </label>
+                <div class="col-sm-12">
+                  <input type="text" class="form-control" placeholder="Enter Requistion title">
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group col-sm-6">
+          <div class="row">
+              <label class="col-sm-12">Approval Status: </label>
+              <div class="col-sm-12">
+                <mat-select class="form-control" placeholder="select Requistion Category">
+                  <mat-option value="1">Pending</mat-option>
+                  <mat-option value="2">Done</mat-option>
+                  <mat-option value="3">Partial</mat-option>
+                  <mat-option value="4">Cancelled</mat-option>
+                  <mat-option value="5">Declined</mat-option>
+                </mat-select>
+              </div>
+          </div>
+      </div>
+
+        <div class="form-group col-sm-6">
+          <div class="row">
+              <label class="col-sm-12">Required By: </label>
+              <div class="col-sm-12">
+                <input type="date" placeholder="Enter date" class="form-control">
+              </div>
+          </div>
+        </div>
+
+
+    </div>
+</div>
+      
+
+    </div>
+
+    <mat-dialog-actions align="center">
+        <button mat-raised-button class="add-hover btn-primary" type="submit"><mat-icon>send</mat-icon>&nbsp;Save</button>
+        <button mat-raised-button type="button" class="add-dark-hover btn-default" (click)="close()"><mat-icon>cancel</mat-icon>&nbsp;Cancel</button>
+    </mat-dialog-actions>
+</form>

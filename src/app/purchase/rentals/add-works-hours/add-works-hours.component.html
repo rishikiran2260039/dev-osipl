@@ -1,0 +1,58 @@
+<div class="NewHeader">
+  <h1 mat-dialog-title>
+    {{data ? 'Update' : 'Add'}} Invoice
+  </h1>
+</div>
+
+<div mat-dialog-content>
+  <form class="form-horizontal">
+
+    <div class="form-group">
+      <label class="control-label col-sm-4 add-member-label">Invoice References: </label>
+      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+        <input type="email" class="form-control" id="email" placeholder="Enter Invoice References">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-4 add-member-label">Billed Amount: </label>
+      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+        <input type="email" class="form-control" id="email" placeholder="Enter Billed Amount">
+      </div>
+    </div>
+
+    <div class="form-group" *ngIf = " data == null">
+      <label class="control-label col-sm-4 add-member-label">Select Invoice: </label>
+      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+        <input type="file" >
+      </div>
+    </div>
+    
+    <div class="form-group" *ngIf = " data != null">
+      <label class="control-label col-sm-4 add-member-label">Payment Reference: </label>
+      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+        <input type="email" class="form-control" id="email" placeholder="Enter Payment Reference">
+      </div>
+    </div>
+
+    <div class="form-group" *ngIf = " data != null">
+      <label class="control-label col-sm-4 add-member-label">Paid Aamount: </label>
+      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+        <input type="email" class="form-control" id="email" placeholder="Enter Paid Aamount:">
+      </div>
+    </div>
+  
+
+
+   
+
+  </form>
+</div>
+<mat-dialog-actions align="end">
+  <button mat-raised-button class="btn-primary" [mat-dialog-close]="'test'">
+    <mat-icon>send</mat-icon><span>Save</span>
+  </button>
+  <button mat-raised-button class="add-dark-hover btn-default" (click)="close()">
+    <mat-icon>cancel</mat-icon>Close
+  </button>
+</mat-dialog-actions>

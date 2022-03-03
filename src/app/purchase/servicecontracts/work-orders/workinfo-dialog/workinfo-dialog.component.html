@@ -1,0 +1,43 @@
+<div class="NewHeader" style="background-color:#286ba5 !important; height: 50px;">
+  <h1 mat-dialog-title>
+    Construction Work Details
+  </h1>
+</div>
+
+<div mat-dialog-content>
+  <form class="form-horizontal">
+    <div style="padding: 0px 30px !important;">
+      <div class="form-group">
+        <p class="control-label col-sm-4 add-member-label">Type of Construction Job</p>
+        <div class="col-sm-8">
+          <textarea type="text" maxlength="200" class="form-control" >Civil Works on Camden Road Upgrade, Demolition and grading complete. Now some Labour Required before Work can Begin on Road.</textarea>
+        </div>
+      </div>
+      <div class="form-group">
+        <p class="control-label col-sm-4 add-member-label">Plumbing Required</p>
+        <div class="col-sm-8">
+          <textarea type="text" maxlength="200" class="form-control" >No Plumbing Required</textarea>
+        </div>
+      </div>
+      <div class="form-group">
+        <p class="control-label col-sm-4 add-member-label">Electrical Installations Required</p>
+        <div class="col-sm-8">
+          <textarea type="text" maxlength="200" class="form-control" >Electrical Installations Required for Power Supply , M&E Works Letter in the Project</textarea>
+        </div>
+      </div>
+      <div class="form-group">
+        <p class="control-label col-sm-4 add-member-label">Materials Required</p>
+        <div class="col-sm-8">
+          <textarea type="text" maxlength="200" class="form-control" >Basic Plant & Equipment, 2x skip bins, Temporary Fencing,Traffic Cones</textarea>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<mat-dialog-actions align="end">
+
+  <button mat-raised-button class="btn-success" (click)="close()">Submit</button>
+  <button mat-raised-button class="add-dark-hover btn-default" (click)="close()">Cancel</button>
+</mat-dialog-actions>
+
+

@@ -1,0 +1,39 @@
+<app-project-dashboard></app-project-dashboard>
+<div class="row-wrap">
+  <div class="w-100">
+    <div fxLayout="row">
+      <div class="col-xs-12">
+        <div class="pills">
+          <ul class="nav nav-pills" style="margin-top: 15px;">
+            <li routerLinkActive="active">
+              <a mat-raised-button class="navtabWidth" [routerLink]="['/contracts/project-dashboard/documents-and-drawing/correspondence']">
+                <mat-icon>grid_on</mat-icon> Correspondence
+              </a>
+            </li>
+            <li routerLinkActive="active">
+              <a mat-raised-button class="navtabWidth" [routerLink]="['/contracts/project-dashboard/documents-and-drawing/drawing-register']">
+                <mat-icon>crop_square</mat-icon> Drawing Register
+              </a>
+            </li>
+            <!-- <li routerLinkActive="active">
+              <a mat-raised-button class="navtabWidth" [routerLink]="['/mrc/contracts/project-dashboard/documents-and-drawing/quotations']">
+                <mat-icon>attach_money </mat-icon> Quotations
+              </a>
+            </li>
+            <li routerLinkActive="active">
+              <a mat-raised-button class="navtabWidth" [routerLink]="['/mrc/contracts/project-dashboard/documents-and-drawing/tender']">
+                <mat-icon>business </mat-icon> Tender
+              </a>
+            </li>
+            <li routerLinkActive="active">
+              <a mat-raised-button class="navtabWidth" [routerLink]="['/mrc/contracts/project-dashboard/documents-and-drawing/work-orders']">
+                <mat-icon> settings_applications</mat-icon> Work Orders
+              </a>
+            </li> -->
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

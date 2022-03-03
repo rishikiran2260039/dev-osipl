@@ -1,0 +1,128 @@
+<div class="NewHeader">
+  <h1 mat-dialog-title>
+    Add RFQ
+  </h1>
+</div>
+<mat-horizontal-stepper [linear]="isLinear" #stepper>
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>RFQ Details</ng-template>
+     
+      <form class="form-horizontal">
+        <div class="form-group">
+          <label class="control-label col-sm-4 add-member-label">Select Vendor Type #: </label>
+          <div class="col-sm-8">
+           <mat-select class="form-control" placeholder="Select Vendor Type">
+             <mat-option>Subcontractor</mat-option>
+             <mat-option>Supplier</mat-option>
+           </mat-select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-4 add-member-label">Select Vendor: </label>
+          <div class="col-sm-8">
+            <mat-select class="form-control" placeholder="Select Vendor">
+              <mat-option>M/s Power Solutions</mat-option>
+              <mat-option>Bharat Powers</mat-option>
+              <mat-option>Tata Steels</mat-option>
+              <mat-option>First Choice Pvt Ltd</mat-option>
+            </mat-select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-4 add-member-label">Version: </label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control" id="step" placeholder="Enter Version">
+          </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-4 add-member-label">Reference: </label>
+            <div class="col-sm-8">
+              <input type="text" class="form-control" id="step" placeholder="Enter Reference">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-4 add-member-label">Subject: </label>
+            <div class="col-sm-8">
+              <input type="text" class="form-control" id="step" placeholder="Enter Subject">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-4 add-member-label">Remarks: </label>
+            <div class="col-sm-8">
+              <input type="text" class="form-control" id="step" placeholder="Enter Remarks">
+            </div>
+          </div>
+        <div class="form-group">
+          <label class="control-label col-sm-4 add-member-label">Upload: </label>
+          <div class="col-sm-8">
+            <input type="file">
+          </div>
+        </div>
+        
+        
+      </form>
+       <mat-dialog-actions align="end">
+        <button mat-button matStepperNext  class="btn-primary"><mat-icon>arrow_right_alt</mat-icon> Next</button>
+      </mat-dialog-actions>
+     
+    </form>
+  </mat-step>
+
+
+  <mat-step>
+    <ng-template matStepLabel>Select BOQ Items</ng-template>
+    
+    <div class="row" style="margin-top: 15px;">
+      <div class="col-xs-12">
+          <div id="grid-table-container" class="table-responsive">
+                  <table id="example2" class="table table-bordered table-hover" style="width: 100%;">
+                      <thead class="tbl-head">
+                          <tr class="tr-grid-header">
+                              <th class="text-center" style="width: 20px !important;">Select</th>
+                              <th >Serial #</th>
+                              <th>Category</th>
+                              <th > Description</th>
+                              <th class="text-center">Unit</th>
+                              <th class="text-center">Quantity</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                        
+                          <tr *ngFor="let item of items">
+                              <td style="text-align: center !important">
+                                  <mat-checkbox [checked]="item.is_checked"
+                                      ></mat-checkbox>
+                              </td>
+                              <td style="min-width: 70px !important;">
+                                {{item.serial}}
+                          
+                        </td>
+                        <!-- <td style="text-align: center!important;">{{item.projectNumber}}</td> -->
+                        <td>{{item.category }}</td>
+                        <td>{{item.description }}</td>
+                        <td style="text-align: center!important;">{{item.unit }}</td>
+                        <td style="text-align: center!important;">{{item.qty }}</td>
+                          </tr>
+                      </tbody>
+                  </table>
+                
+              </div>
+          </div>
+      </div>
+ 
+  <mat-dialog-actions align="end">
+    <button  mat-raised-button color="primary" matStepperPrevious><mat-icon>keyboard_backspace</mat-icon> Back</button>
+    
+    <button  mat-raised-button  class="add-dark-hover btn-success" (click)="close()" ><mat-icon>done</mat-icon> Submit</button>
+  </mat-dialog-actions>
+  </mat-step>
+
+ 
+
+
+
+
+
+
+</mat-horizontal-stepper>

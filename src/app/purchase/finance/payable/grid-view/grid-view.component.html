@@ -1,0 +1,284 @@
+
+
+
+
+<div class="row ">
+  <div class="col-sm-6 ">
+
+  </div>
+  <div class="col-sm-6 ">
+    <div class="pull-right">
+
+      <button mat-raised-button class="pull-right add-hover" (click)="addpayables(null)" style="color:white; background:#3b7bb8;margin-right:10px">
+        <mat-icon>add</mat-icon> Add Payable
+      </button>
+      
+      <button mat-raised-button color="primary" class="pull-right filters-hover margin-right-10"
+      (click)="filterToggle = !filterToggle">
+      <mat-icon>filter_list</mat-icon> Filter
+    </button>
+    </div>
+  </div>
+</div>
+<div fxLayout="row wrap"  *ngIf="filterToggle"  style="margin-bottom: 10px; padding-top: 10px;"  >
+  <div fxFlex="100" fxFlex.gt-sm fxFlex.sm class="flex-p w-100 margins">
+    <mat-card class="filter">
+      <mat-card-content>
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="col-sm-4 newMarginClass">
+              Select Project:
+            </div>
+            <div class="col-sm-8">
+              <mat-select class="form-control" placeholder="Select Project" required>
+                <mat-option [value]="0">Raheja Group</mat-option>
+                <mat-option [value]="1">Manjeera Group</mat-option>
+                <mat-option [value]="2">Reva Group </mat-option>
+                <mat-option [value]="3">Asian Group</mat-option>
+      
+              </mat-select>
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="col-sm-4 newMarginClass">
+              Select Order Type:
+            </div>
+            <div class="col-sm-8">
+              <mat-select class="form-control" placeholder="Select Order Type" required>
+                <mat-option [value]="0">PO</mat-option>
+                <mat-option [value]="1">WO</mat-option>
+                <mat-option [value]="2">Rental</mat-option>
+      
+              </mat-select>
+            </div>
+          </div>
+
+
+          <div class="col-sm-4">
+            <div class="col-sm-4 newMarginClass">
+              Select Vendor:
+            </div>
+            <div class="col-sm-8">
+              <mat-select class="form-control" placeholder="Select Vendor" required>
+                <mat-option [value]="0">Raheja</mat-option>
+                <mat-option [value]="1">Manjeera</mat-option>
+                <mat-option [value]="2">Reva group</mat-option>
+                <mat-option [value]="3">Asian</mat-option>
+      
+              </mat-select>
+            </div>
+          </div>
+
+
+          
+          <div class="col-sm-4" style="margin-top: 10px;">
+            <div class="col-sm-4 newMarginClass">
+              Select Status:
+            </div>
+            <div class="col-sm-8">
+              <mat-select class="form-control" placeholder="Select Status" required>
+                <mat-option [value]="0">Submitted</mat-option>
+                <mat-option [value]="0">Partial Payment</mat-option>
+                <mat-option [value]="0">Fully Paid</mat-option>
+                <mat-option [value]="0">Not Yet Due</mat-option>
+                <mat-option [value]="0">Overdue</mat-option>
+              </mat-select>
+            </div>
+          </div>
+
+          <div class="col-sm-4"  style="margin-top: 10px;">
+            <div class="col-sm-4 newMarginClass">
+              Date Type:
+            </div>
+            <div class="col-sm-8">
+              <mat-select class="form-control" placeholder="Select  Date Type" required>
+                <mat-option [value]="0">Invoice Date</mat-option>
+                <mat-option [value]="0">Due Date</mat-option>
+                <mat-option [value]="0">Payment Date</mat-option>
+              </mat-select>
+            </div>
+          </div>
+
+          <div class="col-sm-4" style="margin-top: 10px;">
+            <div class="col-sm-4 newMarginClass">
+                From Date:
+            </div>
+            <div class="col-sm-8">
+                <input type="date" class="form-control">
+            </div>
+        </div>
+        <div class="col-sm-4" style="margin-top: 10px;">
+            <div class="col-sm-4 newMarginClass">
+                To Date:
+            </div>
+            <div class="col-sm-8">
+                <input type="date" class="form-control">
+            </div>
+        </div>
+          
+        
+
+        
+        
+        
+        </div>
+
+        <div class="row" style="padding-top:10px !important">
+          <div class="col-sm-4" style="margin-top: 4px;">
+            <div class="col-sm-4 newMarginClass">
+            
+                 </div>
+
+            <div class="col-sm-8">
+              <!-- <mat-select class="form-control" placeholder="Select Status">
+                <mat-option [value]="0">ALL</mat-option>
+              </mat-select> -->
+            </div>
+         
+          </div>
+          <div class="col-sm-6" style="margin-left: 200px;">
+       
+            <a (click)="filterToggle = !filterToggle" class="pull-right"
+            style="font-size: 25px; cursor: pointer; margin-left: 5px">
+            <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+          </a>
+            <button mat-raised-button class="pull-right btn-primary">
+              <mat-icon>youtube_searched_for</mat-icon> Search
+            </button>
+         
+
+        
+            <button mat-raised-button class="pull-right btn-default margin-right-10">
+              <mat-icon>settings_backup_restore</mat-icon> Clear
+            </button>
+          
+          </div>
+        </div>
+        <div class="row" >
+          
+
+
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+<div fxLayout="row wrap" style="margin-top: 15px;">
+  <div class="table-responsive">
+    <table id="example2" class="table table-bordered table-hover" style="margin-left:14px;width: 99%;max-width: 99%;margin-bottom: 20px;">
+      <thead class="tbl-head">
+        <tr class="tr-grid-header">
+          <th class="text-center">Invoice Reference</th>
+          <th>Project Code</th>
+          <th>Project Name</th>
+          <th>Order Type</th>
+          <th>Order Reference</th>
+          <!-- <th>Reference</th> -->
+
+          <th> Due Date</th>
+         
+          <th>Approval</th>  
+          <th>Billed</th>      
+          <th class="text-center">Transport Charges</th>
+          <th class="text-center">Other Charges</th>    
+          <th>Paid</th>       
+          <th>Status </th>
+          <th style="width: 200px;">Payment Reference</th>
+          <th>Sent To Directors</th>
+          <th>Sent To Accounts </th>
+          <th class="text-center" style="width: 110px;">Invoice</th>
+          <th  class="text-center" style="width: 110px;">Actions </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let items of tableList">
+          <td class="text-center">
+            <!-- <a style="color:blue; cursor:pointer;" target="_blank">{{ items.pay }}</a> -->
+            {{items.ref}}
+          </td>
+          <td>
+              {{ items.projectCode }}
+          </td>
+          <td>
+            {{ items.projectName }}
+        </td>
+
+          <td>
+            <!-- <a style="color:blue;cursor: pointer;"  target="_blank" > {{ items.invoice }}</a> -->
+            {{ items.type }}
+          </td>
+          <td>
+              {{ items.ref }}
+          </td>
+
+          <!-- <td>
+            {{ items.orderRef }}
+        </td> -->
+          <td>
+            {{ items.due }}
+          </td>
+          <td class="style text-center"><mat-checkbox disabled></mat-checkbox></td>
+        <td>
+          {{ items.inv }}
+        </td>
+        <td>
+          {{ items.trans }}
+        </td>
+        <td>
+          {{ items.others }}
+        </td>
+        <td>
+          {{ items.paid }}
+        </td>
+        <td>
+          {{ items.status }}
+        </td>
+        <td>
+          {{ items.rem }}
+        </td>
+        <td>
+          {{ items.datedirector }}
+        </td>
+        <td>
+          {{ items.dateaccounts }}
+        </td>
+        <td class="text-center">
+          <a style="color: blue;cursor: pointer;" *ngIf="items.Inv == 'View'" target="_blank" href="http://www.africau.edu/images/default/sample.pdf" routerLinkActive="router-link-active" >View</a>
+         
+          <a mwlConfirmationPopover
+          *ngIf="items.Inv == 'View'" 
+          [popoverTitle]="popoverTitle"
+          [popoverMessage]="popoverMessage"
+          placement="left"
+          (confirm)="deleteUser()"
+          (cancel)="cancelClicked = true"
+         >
+          <i style="cursor: pointer;" title="Delete Invoice" class="fa fa-trash red"></i>
+      </a>
+      <a style="color: blue;cursor: pointer;" *ngIf="items.Inv == 'Add'" (click)="uploaddoc()" routerLinkActive="router-link-active" >Add</a>
+          
+        </td>
+        <td class="text-center" style="font-size: 18px;">
+          <a style="cursor: pointer;margin-right:10px; " matTooltip="View" (click)="addpayables(items)">
+            <i class="fa fa-view" style="color: cornflowerblue"></i>
+          </a>
+          <a style="cursor: pointer;margin-right:10px; " matTooltip="Update Item" (click)="addpayables(items)">
+            <i class="fa fa-edit" style="color: cornflowerblue"></i>
+          </a>
+          <a mwlConfirmationPopover
+          [popoverTitle]="popoverTitle"
+          [popoverMessage]="popoverMessage"
+          placement="left"
+          (confirm)="deleteUser()"
+          (cancel)="cancelClicked = true"
+         >
+            <i class="fa fa-trash red" matTooltip="Delete Item" style="cursor: pointer;"></i></a>
+        </td>
+
+        </tr>
+      </tbody>
+    </table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 50, 100]" showFirstLastButtons></mat-paginator>
+  </div>
+</div>

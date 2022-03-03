@@ -1,0 +1,69 @@
+<div fxLayout="row wrap" #resizedDiv>
+    <div class="flex-p w-100 sizeAlign" style="margin-top: 20px;">
+
+        <span>Total Photos : 1237</span><br>
+        <span>Last Updated : 17 Nov 2020</span><br>
+        <span>First Updated : 1 June 2020</span>
+        <div class="flex-p" style="padding-bottom: 20px;">
+            <div class="row wrap">
+                <div class="col-sm-12">
+                    <div class="col-sm-6 pull-right no-padding" style="margin-right: -10px;padding: 0px;">
+                        <!-- <button style="margin-bottom:10px;margin-right: 14px;" mat-raised-button
+                            class="pull-right  btn-primary" (click)="openActivityDialog('Add')">
+                            <mat-icon>add</mat-icon> Add Action
+                        </button> -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div fxLayout="row wrap" style="padding-bottom: 30px;">
+            <div class="col-sm-12 w-100" style="padding: 0px;">
+                <div class="col-sm-3" style="padding: 0px;">
+                    <div class="col-sm-12" style="padding-left:0px;">
+                        <!-- <mat-card class="col-sm-12" style="background: #3b7bb882 !important"> -->
+                        <p-tree [value]="files" class="ptreecustom" selectionMode="single" [(selection)]="selectedFile">
+                        </p-tree>
+                        <!-- </mat-card> -->
+                    </div>
+                    <!-- </mat-drawer> -->
+                </div>
+
+                <div class="col-sm-9">
+                    <div class="col-sm-12" style="margin-bottom: 10px;">
+                        <mat-card class="col-sm-3 ">
+                            <img style="height: 250px;width: 230px;" src="assets/photo-1.jpg">
+                        </mat-card>
+                        <div class="col-sm-1"></div>
+                        <mat-card class="col-sm-3 ">
+                            <img style="height: 250px;width: 230px;" src="assets/photo-2.jpg">
+                        </mat-card>
+                        <div class="col-sm-1"></div>
+                        <mat-card class="col-sm-3 ">
+                            <img style="height: 250px;width: 230px;" src="assets/photo-3.jpg">
+                        </mat-card>
+                        <div class="col-sm-1"></div>
+
+                    </div>
+                    <div class="col-sm-12">
+                        <mat-card class="col-sm-3 ">
+                            <img style="height: 250px;width: 230px;" src="assets/photo-4.png">
+                        </mat-card>
+                        <div class="col-sm-1"></div>
+                        <mat-card class="col-sm-3 ">
+                            <img style="height: 250px;width: 230px;" src="assets/photo-5.jpg">
+                        </mat-card>
+                        <div class="col-sm-1"></div>
+                        <mat-card class="col-sm-3 ">
+                            <img style="height: 250px;width: 230px;" src="assets/photo-6.jpg">
+                        </mat-card>
+                        <div class="col-sm-1"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>

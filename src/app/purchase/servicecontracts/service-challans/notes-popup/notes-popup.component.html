@@ -1,0 +1,38 @@
+<div class="NewHeader" style="background-color:#286ba5 !important; height: 50px;">
+  <h1 mat-dialog-title style="padding-left: 10px;"> NOTES  </h1>
+</div>
+
+
+
+<div mat-dialog-content>
+  <form class="form-horizontal">
+    <div style="padding: 0px 30px !important;">
+      <div class="form-group">
+        <div class="col-sm-12">
+          <label style="font-weight: bold;">
+  
+          </label>
+          <span style="font-weight: bold;">&nbsp;
+        
+          </span>
+        </div>
+
+        <div class="col-sm-12"  >
+          <textarea type="text" style="padding-left: 10px;" maxlength="300" class="form-control" style="height: 150px;" >
+            Goods being supplied on approval.
+            Goods being transported for job work.
+            Transportation of goods from one warehouse to another warehouse of the supplier.
+            Goods supply: Supply of Cement and Iron, where the quantity of supply from the place of supplier is not known at the time of supply.
+            Transportation of goods in a semi-assembled state.
+          </textarea>
+       
+          </div>
+      </div>
+    </div>
+  </form>
+</div>
+<mat-dialog-actions align="end">
+
+  <button mat-raised-button class="btn-success" (click)="close()">UPDATE</button>
+  <button mat-raised-button class="add-dark-hover btn-default" (click)="close()">Cancel</button>
+</mat-dialog-actions>

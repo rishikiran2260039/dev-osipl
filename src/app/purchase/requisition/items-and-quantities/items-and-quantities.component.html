@@ -1,0 +1,141 @@
+<div class="w-100">
+  <div class="row">
+      <div class="col-xs-12" style="margin-bottom: 15px;">
+          <div class="pills"style="margin-left: 10px;">
+              <ul class="nav nav-pills" style="margin-left: 10px;margin-bottom: -25px;">
+                  <li routerLinkActive="active" routerLink="/purchase/procurement/indent">
+                      <a mat-raised-button class="navtabWidth" style="margin-top: 10px;">
+                          Purchase Indent
+                      </a>
+                  </li>
+                  <li routerLinkActive="active" routerLink="/purchase/procurement/rfq">  
+                      <a mat-raised-button class="navtabWidth" style="margin-top: 10px;">
+                          RFQ
+                      </a>
+                  </li>
+                  <li routerLinkActive="active" routerLink="/purchase/procurement/quotaions">
+                    <a mat-raised-button class="navtabWidth" style="margin-top: 10px;">
+                      Quotations
+                    </a>
+                  </li>
+                  <li routerLinkActive="active" routerLink="/purchase/procurement/purchase-orders">
+                      <a mat-raised-button class="navtabWidth" style="margin-top: 10px;">
+                        Purchase Orders
+                      </a>
+                  </li>
+                  <li routerLinkActive="active" routerLink="/purchase/procurement/consignments">
+                      <a mat-raised-button class="navtabWidth" style="margin-top: 10px;">
+                        Consignments
+                      </a>
+                  </li>  
+                                            
+              </ul>
+          </div>
+      </div> 
+  </div>
+</div>
+<div class="container-fluid">
+  <div fxLayout="row wrap" #resizedDiv>
+    <div class="flex-p w-100 sizeAlign">
+      <div class="row" style="margin-bottom:23px;">
+        <div class="col-sm-12"> 
+          <button mat-raised-button class="pull-right  btn-default margin-right-10"
+          routerLink="/purchase/procurement/indent">
+             <mat-icon>chevron_left</mat-icon> Back
+          </button>
+          <!-- <button mat-raised-button class="pull-right  btn-primary margin-right-10"
+             (click)="openGridColumnsDialog()">
+             <mat-icon>grid_on</mat-icon> Grid Columns
+          </button> -->
+          <button mat-raised-button class="pull-right  btn-primary margin-right-10"
+            (click)="addnewitem(null)">
+               <mat-icon>add</mat-icon> Add New Item
+          </button> 
+          <button mat-raised-button class="pull-right  btn-default" style="margin-right: 8px;" (click)="dowloadExcelFile()">
+            <mat-icon>download</mat-icon> Download Sample 
+          </button>
+          <button mat-raised-button class="pull-right  btn-default margin-right-10" (click)="uploadExcelDialog()">
+            <mat-icon>cloud_upload</mat-icon> Upload CSV
+          </button>
+        </div>
+      </div>
+    <div class="row" >
+      <div class="col-xs-12" style="overflow-x: auto">
+        <div id="grid-table-container" class="table-responsive" >
+          <table matSort id="example2" class="table table-bordered table-hover" style="margin-left: 0px!important;">
+            <thead class="tbl-head">
+              <tr>
+                <th class="text-center">Actions</th>
+                <th class="text-left">Item Name</th>
+                <th class="text-left">Item Code</th>
+                <th class="text-left">Brand</th>
+                <th class="text-left">Category</th>
+                <th class="text-left">Sub Category</th>
+                <th class="text-left">Length</th>
+                <th class="text-left">Width</th>
+                <th class="text-left">Height</th>
+                <th class="text-center">Thickness</th>
+                <th class="text-center">UOM</th>
+                <th class="text-center">Quantity Required </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of items">
+                <td class="text-center">
+                  <a style="cursor: pointer;margin-right:0px;margin-left: -5px; " matTooltip="Edit ">
+                    <i class="fa fa-edit" style="color: cornflowerblue; cursor: pointer;" (click)="addnewitem(item)"></i>
+                  </a>
+                  <a mwlConfirmationPopover
+                  [popoverTitle]="popoverTitle"
+                  [popoverMessage]="popoverMessage"
+                  placement="right"
+                  (confirm)="deleteUser()"
+                  (cancel)="cancelClicked = true">
+                   <i class="fa fa-trash red" matTooltip="Delete " style="cursor: pointer;"></i></a>
+                </td>
+                <td class="text-left">{{item.ItemName }}</td>
+                <td class="text-left">{{item.ItemCode}}</td>
+                <td class="text-left">{{item.Make}}</td>
+                <td style="text-align: left!important;">{{item.Category }}</td>
+                <td style="text-align: left!important;">{{item.SubCategory}}</td>
+                <td class="text-left">{{item.length}}</td>
+                <td class="text-left">{{item.width}}</td>
+                <td class="text-left">{{item.height}}</td>
+                <td style="text-align: center!important;">{{item.thickness}}</td>
+                <td class="text-center">{{item.uom}}</td>               
+                <td style="text-align: center!important;">
+                  {{item.QuantityRequired}}</td>       
+                       
+
+                <!-- <td class="text-center">{{item.AdjustmentDate}}</td>
+                <td class="text-center">{{item.Doneby}}</td>
+                <td class="text-center">{{item.PartModel}}</td>
+                <td class="text-center">{{item.EqptCode }}</td>
+                <td class="text-center">{{item.EqptName }}</td>
+                <td class="text-center">{{item.PhysicalStock}}</td>
+                <td class="text-center">{{item.PreviousStock }}</td>
+                <td class="text-center">{{item.AdjustmentQty}}</td>
+                <td class="text-center">{{item.RevisedBookStock}}</td> -->
+                
+              </tr>
+            </tbody>
+          </table>
+          
+          <button class="mine" mat-fab (click)="scrollGrid('right');" >
+            <mat-icon style="color:#37474f">fast_forward</mat-icon>
+          </button>
+
+          <button class="mine" mat-fab style="margin-right: 78px !important;" 
+          (click)="scrollGrid('left');">
+            <mat-icon style="color:#37474f">fast_rewind</mat-icon>
+          </button>
+          
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+  </div>
+
+      
+

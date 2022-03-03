@@ -1,0 +1,83 @@
+<div class="NewHeader">
+  <h1 mat-dialog-title>
+    Add Issue
+  </h1>
+</div>
+<div mat-dialog-content>
+  <form class="form-horizontal">
+      <div class="form-group">
+          <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Reference #: </label>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+              <input type="text" class="form-control" placeholder="Enter Reference" required>
+          </div>
+      </div>
+      <div class="form-group">
+          <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label">Subject: </label>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <input type="text" class="form-control" placeholder="Enter Subject" required>
+
+          </div>
+      </div>
+      <div class="form-group">
+          <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Description: </label>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+           
+            <textarea type="text" class="form-control" placeholder="Enter Description" required></textarea>
+          </div>
+      </div>
+      
+      <div class="form-group">
+          <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Department: </label>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <mat-select class="form-control" placeholder = "Select Department" >
+              <mat-option>Electrical</mat-option>
+              <mat-option>Earth Work</mat-option>
+              <mat-option>Plumbing</mat-option>
+            </mat-select>
+             
+          </div>
+      </div>
+      <div class="form-group">
+          <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Target Date : </label>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <input type="date" class="form-control" placeholder="Enter Target Date" required>
+          </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Incharge: </label>
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+          <mat-select class="form-control" placeholder = "Select Incharge" >
+            <mat-option>Parmeet</mat-option>
+            <mat-option>Rakesh</mat-option>
+            <mat-option>Suman</mat-option>
+          </mat-select>
+           
+        </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Priority: </label>
+      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+        <mat-select class="form-control" placeholder = "Select Priority" >
+          <mat-option>High</mat-option>
+          <mat-option>Medium</mat-option>
+          <mat-option>Low</mat-option>
+        </mat-select>
+         
+      </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Upload File : </label>
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+      <input type="file"  required>
+    </div>
+</div>
+
+   
+  </form>
+</div>
+<mat-dialog-actions align="end">
+  <button mat-raised-button class="btn-primary" ><mat-icon>send</mat-icon><span > Save</span></button>
+  <button mat-raised-button class="add-dark-hover btn-default" (click)="close()"><mat-icon>cancel</mat-icon> Cancel</button>
+</mat-dialog-actions>

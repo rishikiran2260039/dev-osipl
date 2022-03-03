@@ -1,0 +1,109 @@
+<div class="NewHeader" style="background-color:#286ba5 !important; height: 50px;">
+  <h1 mat-dialog-title>
+    Edit Stock Transfer Request
+  </h1>
+</div>
+
+<!-- <div class="col-sm-4">
+  <div class="col-sm-4 newMarginClass">
+    Vendor:
+  </div>
+  <div class="col-sm-8">
+    <mat-select class="form-control" placeholder="Select Vendor">
+      <mat-option [value]="0">Dinesh constructions</mat-option>
+      <mat-option [value]="1">menon Bearings Ltd</mat-option>
+      <mat-option [value]="2">Minda Industries</mat-option>
+      <mat-option [value]="3">Rene Holdings Ltd</mat-option>
+      <mat-option [value]="3">Usha International Ltd</mat-option>
+    </mat-select>
+  </div>
+</div> -->
+
+<div mat-dialog-content>
+  <form class="form-horizontal">
+    <div style="padding: 0px 30px !important;">
+      <div class="form-group">
+        <p class="control-label col-sm-4 add-member-label">Request Title:</p>
+        <div class="col-sm-8">
+          <input type="text" placeholder="Required 50 Items" maxlength="50" class="form-control">
+        </div>
+      </div>
+      <div class="form-group">
+        <p class="control-label col-sm-4 add-member-label">Sending Project:</p>
+        <div class="col-sm-8">
+          <mat-select class="form-control" placeholder="Select">
+            <mat-option [value]="0">Select</mat-option>
+            <mat-option [value]="0">Demo Project</mat-option>
+            <mat-option [value]="1">Dobari Test Project</mat-option>
+            <mat-option [value]="2">Dudhichua project</mat-option>
+            <mat-option [value]="3">Khadia</mat-option>
+            <mat-option [value]="3">Lakhanpur OCP</mat-option>
+            <mat-option [value]="3">Legacy Project</mat-option>
+            <mat-option [value]="3">Singrauli</mat-option>
+            <mat-option [value]="3">Stock Jharkhand</mat-option>
+          </mat-select>
+        </div>
+        
+      </div>
+      <div class="form-group">
+        <p class="control-label col-sm-4 add-member-label ">Category:</p>
+        <div class="col-sm-8">
+          <mat-select class="form-control" placeholder="Select">
+            <mat-option [value]="0">Select</mat-option>
+            <mat-option [value]="0">SpareParts</mat-option>
+            <mat-option [value]="1">Materials</mat-option>
+            <mat-option [value]="2">Types</mat-option>
+            </mat-select>
+        </div>
+      </div>
+      <div class="form-group">
+        <p class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 ">Equipment Type:
+        </p>
+        <div class="col-sm-8">
+          <mat-select class="form-control " placeholder="Select" style="cursor :no-drop ;" disabled>
+            <mat-option [value]="0">Select</mat-option>
+           
+          </mat-select>
+        </div>
+      </div>
+      <div class="form-group">
+        <p class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 " for="pwd">Equipment Make:</p>
+        <div class="col-sm-8">
+          <mat-select class="form-control" placeholder="Select" style="cursor :no-drop" disabled>
+            <mat-option [value]="0">Select</mat-option>
+           </mat-select>
+        </div>
+      </div>
+      <div class="form-group">
+        <p class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 " for="pwd">Equipment Model:</p>
+        <div class="col-sm-8">
+          <mat-select class="form-control" placeholder="Select" style="cursor :no-drop" disabled>
+            <mat-option [value]="0">Select</mat-option>
+           </mat-select>
+        </div>
+      </div>
+      <div class="form-group">
+        <p class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label">Receiving Store:
+        </p>
+        <div class="col-sm-8">
+          <mat-select class="form-control" placeholder="Select">
+            <mat-option [value]="0">Select</mat-option>
+            <mat-option [value]="0">Dumper Store-Mercedes Benz</mat-option>
+            <mat-option [value]="1">Dumper Store-Volvo</mat-option>
+            <mat-option [value]="2">Dumper Store Primary</mat-option>
+            <mat-option [value]="3">Dumpers & Machinery</mat-option>
+            <mat-option [value]="3">Materials Store</mat-option>
+            </mat-select>
+        </div>
+      </div>
+     
+    </div>
+  </form>
+</div>
+<mat-dialog-actions align="end">
+
+  <button mat-raised-button class="btn-success" (click)="close()">Save</button>
+  <button mat-raised-button class="add-dark-hover btn-default" (click)="close()">Cancel</button>
+</mat-dialog-actions>
+
+

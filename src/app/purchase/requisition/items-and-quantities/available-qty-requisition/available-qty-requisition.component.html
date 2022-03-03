@@ -1,0 +1,200 @@
+
+
+<div fxLayout="row wrap" #resizedDiv style="margin-top: 20px;">
+  <div class="flex-p w-100 sizeAlign">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="col-sm-12" style="margin-bottom: 5px;">
+          
+          <!-- <div class="col-sm-6">
+            <div class="col-sm-5">
+              <label>RFQ Title:</label>
+            </div>
+            <div class="col-sm-7">
+              <input type="text"  placeholder="Enter RFQ Title" class="form-control">
+            </div>
+          </div> -->
+          <button mat-raised-button class="pull-right  btn-default margin-right-10"
+          routerLink="/purchase/Itemsandquantites">
+             <mat-icon>chevron_left</mat-icon> Back
+          </button>
+        </div>
+        <div id="grid-table-container" class="table-responsive" style="margin-left: 10px;">
+          
+            
+          <!-- <table matSort id="example2" class="table table-bordered table-hover">
+            <thead class="tbl-head">
+              <tr>
+                <th class="text-center">Item Name:</th>
+                <th >Item Code:</th>
+                <th >Requisition Ref:</th>
+                <th >Required Qty</th>
+                <th >Required By</th>
+                <th class="text-center">Actions</th>
+              
+              </tr>
+            </thead>
+            <tbody>
+              <tr >
+                <td>
+                  <input type="text" value="Volvo" style="width: 100px;"  >
+                </td>
+                <td>
+                  <input type="text" value="	FMX480" style="width: 100px;"  >
+                </td>
+                <td>
+                  <input type="text" value=" OM/REQ/SPA-FEB-19/1057	" style="width: 100px;"  >
+                </td>
+                <td>
+                  <input type="text" value="50" style="width: 100px;" >
+                </td>
+                <td>
+                  <input type="text" value="3-06-2021" style="width: 100px;" >
+                </td>
+                <td class="text-center">
+                  <a  ><i class="fa fa-plus"   style="cursor: pointer; color: green;"></i></a>
+                </td>
+              </tr>
+              <tr *ngFor="let item of items">
+                <td>
+                  <input type="text" value="" style="width: 100px;"  >
+                </td>
+                <td>
+                  <input type="text" value="" style="width: 100px;"  >
+                </td>
+                <td>
+                  <input type="text" value="" style="width: 100px;"  >
+                </td>
+                <td>
+                  <input type="text" value="" style="width: 100px;" >
+                </td>
+                <td>
+                  <input type="text" value="" style="width: 100px;" >
+                </td>
+                <td class="text-center">
+                  <a  ><i class="fa fa-plus" *ngIf = "item.add==1" (click)="copy('lookup')" style="cursor: pointer; color: green;"></i><i *ngIf = "item.add==2" class="fa fa-trash" style="cursor: pointer; color: red;"></i></a>
+                </td>
+              </tr>
+              
+              
+              
+            </tbody>
+          </table> -->
+
+
+          <!-- new code -->
+
+          <table id="example2" class="table table-bordered">
+            <thead class="tbl-head" style="background-color: black;color: white;">
+                <tr class="tr-grid-header" >
+                    <th class="text-center">Item Name</th>
+                    <th class="text-center" >Item Code</th>
+                    <th class="text-center" >Part Number</th>
+                    <th class="text-center" >Part Make</th>
+                    <th class="text-center" >Quantity</th>
+                    <th class="text-center" >Unit Price</th>
+                    <th class="text-center" >Amount</th>
+                    <th class="text-center">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+              <tr style="background-color:powderblue ;">
+                <ng-container>
+                  <td  >Volvo</td>
+                    <td  >FMX480</td>
+                    <td  >B229900003680</td>
+                    <td >	Komatsu</td>
+                    <td ><input type="text"  value="25" class="form-control" ></td>
+                    <td ><input type="text"  value="1370" class="form-control"></td>
+                    <td ><input type="text"  value="34250" class="form-control"></td>
+                      <td class="text-center">
+                        <a><i class="fa fa-plus DarkBlue" matTooltip="Add" (click)="allFields.push(1)" style="cursor: pointer;"></i></a>
+                      </td>
+                </ng-container> 
+              </tr>
+              <tr *ngFor="let item of allFields;let i = index;" style="background-color:#D3D3D3 ; ">
+                  <ng-container>
+                    <td  >Volvo</td>
+                      <td  >FMX480</td>
+                      <td  >B229900003680</td>
+                      <td >	Komatsu</td>
+                      <td ><input type="text"  value="200" class="form-control"></td>
+                      <td ><input type="text"  value="1100" class="form-control"></td>
+                      <td ><input type="text"  value="220000" class="form-control"></td>
+                        <td class="text-center">
+                            <a> <i class="fa fa-save green" matTooltip="Save RFQ" style="cursor: pointer;"  ></i></a>
+                            <a ><i class="fa fa-trash red" matTooltip="Delete RFQ" (click)="removeItem(i)" style="cursor: pointer;"></i></a>
+                        </td>
+                  </ng-container> 
+                </tr>
+                <!-- 2nd  -->
+                <tr style="background-color:powderblue ;">
+                  <ng-container>
+                    <td  >Caterpillar</td>
+                      <td  >D85ESS 17</td>
+                      <td  >421-60-35170</td>
+                      <td >	Caterpillar</td>
+                      <td ><input type="text"  value="150" class="form-control"></td>
+                      <td ><input type="text"  value="1000" class="form-control"></td>
+                      <td ><input type="text"  value="150000" class="form-control"></td>
+                        <td class="text-center">
+                          <a><i class="fa fa-plus DarkBlue" matTooltip="Add" (click)="allFields1.push(1)" style="cursor: pointer;"></i></a>
+                        </td>
+                  </ng-container> 
+                </tr>
+                <tr *ngFor="let item of allFields1;let j = index;" style="background-color:#D3D3D3 ; " >
+                    <ng-container>
+                      <td  >Caterpillar</td>
+                        <td  >D85ESS 17</td>
+                        <td  >421-60-35170</td>
+                        <td >	Caterpillar</td>
+                        <td ><input type="text"  value="200" class="form-control"></td>
+                        <td ><input type="text"  value="2500" class="form-control"></td>
+                        <td ><input type="text"  value="500000" class="form-control"></td>
+                          <td class="text-center">
+                              <a> <i class="fa fa-save green" matTooltip="Save RFQ" style="cursor: pointer;"  ></i></a>
+                              <a ><i class="fa fa-trash red" matTooltip="Delete RFQ" (click)="removeItem1(j)" style="cursor: pointer;"></i></a>
+                          </td>
+                    </ng-container> 
+                  </tr>
+                  <!-- 3rd -->
+                  <tr style="background-color:powderblue ;">
+                    <ng-container>
+                      <td  >Mercedes</td>
+                        <td  >All Models</td>
+                        <td  >B229900003680</td>
+                        <td >	Kirloskar</td>
+                        <td ><input type="text"  value="220" class="form-control"></td>
+                        <td ><input type="text"  value="1500" class="form-control"></td>
+                        <td ><input type="text"  value="330000" class="form-control"></td>
+                          <td class="text-center">
+                            <a><i class="fa fa-plus DarkBlue" matTooltip="Add" (click)="allFields2.push(1)" style="cursor: pointer;"></i></a>
+                          </td>
+                    </ng-container> 
+                  </tr>
+                  <tr *ngFor="let item of allFields2;let k = index;" style="background-color:#D3D3D3 ; ">
+                      <ng-container>
+                        <td  >Mercedes</td>
+                          <td  >All Models</td>
+                          <td  >B229900003680</td>
+                          <td >	Kirloskar</td>
+                          <td ><input type="text"  value="30" class="form-control"></td>
+                          <td ><input type="text"  value="2000" class="form-control"></td>
+                          <td ><input type="text"  value="60000" class="form-control"></td>
+                            <td class="text-center">
+                                <a> <i class="fa fa-save green" matTooltip="Save RFQ" style="cursor: pointer;"  ></i></a>
+                                <a ><i class="fa fa-trash red" matTooltip="Delete RFQ" (click)="removeItem2(k)" style="cursor: pointer;"></i></a>
+                            </td>
+                      </ng-container> 
+                    </tr>
+            </tbody>
+        </table>
+          
+        </div>
+      </div>
+    </div>
+
+  </div>
+  
+</div>
+

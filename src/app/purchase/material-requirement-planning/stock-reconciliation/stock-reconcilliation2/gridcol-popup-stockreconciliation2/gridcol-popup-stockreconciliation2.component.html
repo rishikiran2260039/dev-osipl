@@ -1,0 +1,35 @@
+<div class="NewHeader">
+  <h1 mat-dialog-title>Grid View Configuration </h1>
+</div> 
+<p>Please select the required columns in the grid, to view grid with specific columns</p>
+<div mat-dialog-content style="overflow:hidden!important;">
+  <form class="form-horizontal" novalidate  style="margin-top:10px">
+    <mat-checkbox  class="col-sm-4" >From Date</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >To Date</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >Part #</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >Part Code</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >Part Make</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >Part Model</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >Eqpt Code</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >Eqpt Make</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >Eqpt Model</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >Last Received</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >Opening Stock</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >Incoming Stock	</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >Material Issues</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >In</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >Out</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >Book Stock</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >Physical Stock</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >Varience</mat-checkbox>
+   
+  </form>
+</div>
+
+<mat-dialog-actions align="end">
+  <button mat-raised-button class="btn-primary" (click)="close()"><mat-icon>send</mat-icon>Configure</button>
+  <button mat-raised-button class="CancelClass" (click)="close()"><mat-icon>cancel</mat-icon>Cancel</button>
+</mat-dialog-actions>
+
+
+

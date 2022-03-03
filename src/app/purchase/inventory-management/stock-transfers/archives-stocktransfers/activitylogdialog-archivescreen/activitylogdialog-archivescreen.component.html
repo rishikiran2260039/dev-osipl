@@ -1,0 +1,48 @@
+<div class="NewHeader" style="background-color:#286ba5 !important; height: 50px;">
+  <h1 mat-dialog-title>
+    Activity Log - STO/OM-LGP/FEB-21/10009
+  </h1>
+</div>
+
+<div fxLayout="row wrap">
+  <div class="flex-p w-100 sizeAlign">
+    <div class="row">
+      <div class="col-xs-12">
+        <div id="grid-table-container" class="table-responsive" style="margin-left: 10px;">
+          <table matSort id="example2" class="table table-bordered table-hover">
+            <thead class="tbl-head">
+              <tr>
+                <th class="text-center">Data&Time</th>
+                <th  class="text-center">Stage </th>
+                <th class="text-center">Status</th>
+                <th  class="text-center">User</th>
+                <th  class="text-center">Remarks</th>
+                <th  class="text-center">Download Documents</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of items2">
+
+                <td class="text-center">{{item.date}}</td>
+                <td  class="text-center">{{item.stage}}</td>
+                <td  class="text-center">{{item.Status}}</td>
+                
+                <td  class="text-center">{{item.User}}</td>
+                <td  class="text-center">{{item.remarks}}</td>
+                <td  class="text-center" matTooltip="Download Doc" style="cursor:pointer;color:blue">{{item.documentdonwload}}<mat-icon>download</mat-icon></td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="col-xs-12">
+  <mat-dialog-actions class="pull-right" >
+    <button mat-raised-button class="add-dark-hover btn-default pull-right" (click)="close()">Close</button>
+  </mat-dialog-actions>
+</div>

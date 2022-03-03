@@ -1,0 +1,72 @@
+
+<div class="container-fluid">
+  <div fxLayout="row wrap" #resizedDiv>
+    <div class="flex-p w-100 sizeAlign">
+      <div class="row" style="margin-bottom:23px;">
+        <div class="col-sm-12"> 
+          
+          <button mat-raised-button class="pull-right  btn-default margin-right-10"
+          routerLink="/purchase/servicecontracts/RfqServicecontracts">
+          <!-- routerLink="/purchase/servicecontracts/RfqServicecontracts"> -->
+             <mat-icon>chevron_left</mat-icon> Back
+          </button>
+          
+          <button mat-raised-button class="pull-right  btn-primary margin-right-10"
+            (click)="Quotesscreenadd(null)">
+               <mat-icon>add</mat-icon> Add 
+          </button>
+        </div>
+      </div>
+    <div class="row" >
+      <div class="col-xs-12" style="overflow-x: auto">
+        <div id="grid-table-container" class="table-responsive" >
+          <table matSort id="example2" class="table table-bordered table-hover" style="margin-left: 0px!important;">
+            <thead class="tbl-head">
+              <tr>
+               
+                <th class="text-left">Item Name</th>
+               
+                <th class="text-left">Part #</th>
+               
+                <th class="text-left">Part Make </th>
+                <th class="text-center">Required qty</th>
+                <th class="text-left">Required By</th>
+                <th class="text-left">Previous Quote</th>
+                <th class="text-left">Quote Amount</th>
+                <th class="text-left">Status</th>
+                <th  class="text-center">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of items">
+                <td class="text-left">{{item.ItemName }}</td>
+                <td class="text-left">{{item.Part}}</td>
+                <td class="text-left">{{item.PartMake}}</td>
+                <td style="text-align: center!important;">{{item.QuantityRequired}}</td> 
+                <td class="text-center">{{item.RequiredBy}}</td>
+                <td class="text-center">{{item.PreviousQuote}}</td>
+                <td class="text-center">{{item.QuoteAmount}}</td>
+                <td class="text-center">{{item.status}}</td>
+                <td class="text-center editDel">
+                  <a style="cursor: pointer;margin-right:10px; " matTooltip="Update Item">
+                    <i class="fa fa-edit" style="color: cornflowerblue" (click)="Quotesscreenadd(item)"></i>
+                  </a>
+                  <a><i class="fa fa-trash red" matTooltip="Delete Item" style="cursor: pointer;"></i></a>
+                 
+                </td>
+                
+              </tr>
+            </tbody>
+          </table>
+          
+        </div>
+        
+      </div>
+    </div>
+    </div>
+  </div>
+  
+  </div>
+
+      
+

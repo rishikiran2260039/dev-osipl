@@ -1,0 +1,38 @@
+
+<div class="NewHeader">
+  <h1 mat-dialog-title> Add New Version</h1>
+</div>
+<div mat-dialog-content>
+  
+  <form class="form-horizontal">
+
+    <div class="form-group">
+      <label class="control-label col-sm-4 add-member-label">Drawing Name: </label>
+      <div class="col-sm-8">
+        <input type="text" class="form-control" id="step" placeholder="Enter Drawing Name">
+      </div>
+    </div>
+    
+    
+    <div class="form-group">
+      <label class="control-label col-sm-4 add-member-label">Version: </label>
+      <div class="col-sm-8">
+        <input type="text" class="form-control" id="step" placeholder="Enter Version">
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label class="control-label col-sm-4 add-member-label">Upload: </label>
+      <div class="col-sm-8">
+        <input type="file">
+      </div>
+    </div>
+
+    
+  </form>
+</div>
+<mat-dialog-actions align="end">
+  <button mat-raised-button class="btn-primary" (click)="saveStep()" [mat-dialog-close]="'test'"><mat-icon>send</mat-icon><span *ngIf="user"> Save</span><span
+    *ngIf="!user">Update</span></button>
+    <button mat-raised-button class="CancelClass" (click)="close()"><mat-icon>cancel</mat-icon> Close</button>
+  </mat-dialog-actions> 

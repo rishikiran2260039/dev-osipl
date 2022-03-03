@@ -1,0 +1,482 @@
+<div fxLayout="row" style="margin-top: 15px;">
+  <div class=" col-lg-3">
+    <div class="flex-p">
+      <mat-card style="background-color: #007ad914;">
+        <mat-icon style="font-size: 50px;margin-top: 10px; color: #007ad9;">business_center</mat-icon>
+        <mat-card-header style="margin-left:120px">
+
+          <mat-card-subtitle style="margin-top: -65px;">
+            <h2>19</h2>
+          </mat-card-subtitle>
+          <mat-card-subtitle>
+            <h3>Total Projects</h3>
+          </mat-card-subtitle>
+        </mat-card-header>
+      </mat-card>
+    </div>
+  </div>
+
+  <div class="col-lg-3">
+    <div class="flex-p">
+      <mat-card style="background-color: #0cf80c29;">
+        <mat-icon style="font-size: 50px;margin-top: 10px; color: green;">checklist</mat-icon>
+        <mat-card-header style="margin-left:140px">
+
+          <mat-card-subtitle style="margin-top: -65px;">
+            <h2>15</h2>
+          </mat-card-subtitle>
+          <mat-card-subtitle>
+            <h3>Active Projects</h3>
+          </mat-card-subtitle>
+        </mat-card-header>
+      </mat-card>
+    </div>
+  </div>
+  <div class="col-lg-3">
+    <div class="flex-p">
+      <mat-card style="background-color: #ffd74099;">
+        <mat-icon style="font-size: 50px;margin-top: 10px; color: #bc970a;">attach_money</mat-icon>
+        <mat-card-header style="margin-left:140px">
+
+          <mat-card-subtitle style="margin-top: -65px">
+            <h2>45</h2>
+          </mat-card-subtitle>
+          <mat-card-subtitle>
+            <h4>Open Purchase Indents</h4>
+          </mat-card-subtitle>
+        </mat-card-header>
+      </mat-card>
+    </div>
+  </div>
+  <div class="col-lg-3">
+    <div class="flex-p">
+      <mat-card style="background-color: #ffa5003b;">
+        <mat-icon style="font-size: 50px;margin-top: 10px; color: #ff6152;">money_off</mat-icon>
+        <mat-card-header style="margin-left:140px">
+          <mat-card-subtitle style="margin-top: -65px">
+            <h2>
+            32
+            </h2>
+          </mat-card-subtitle>
+          <mat-card-subtitle>
+            <h3>Open Service Indents</h3>
+          </mat-card-subtitle>
+        </mat-card-header>
+
+      </mat-card>
+    </div>
+  </div>
+</div>
+
+<div class="row-wrap">
+  <div class="flex-p w-100">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="row" style="margin-bottom:7px;">
+          <div class="col-xs-6 ">
+            <div class="flex-p">
+              <app-kbpl-projects></app-kbpl-projects>
+            </div>
+          </div>
+          <div class="col-xs-6" style="padding-right: 18px !important;">
+            <div class="flex-p">
+              <a mat-raised-button class="pull-right  btn-primary " href="../../../../../assets/data/MONTHLYPOFORMAT.pdf" target="_blank" >
+            
+                <mat-icon>assignment</mat-icon> Summary</a>
+       
+              <button mat-raised-button class="pull-right  btn-primary margin-right-10" (click)="openAddProjectDialog(null)">
+                <mat-icon>add</mat-icon> Add Project
+              </button>
+              <!-- <button mat-raised-button class="pull-right  btn-primary margin-right-10"
+                (click)="openGridColumnsDialog()">
+                <mat-icon>grid_on</mat-icon> Grid Columns
+              </button> -->
+              <button mat-raised-button color="primary" class="pull-right filters-hover margin-right-10"
+                (click)="filterToggle = !filterToggle">
+                <mat-icon>filter_list</mat-icon> Filter
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div fxLayout="row wrap" *ngIf="filterToggle" style="margin-bottom: 10px">
+          <div fxFlex="100" fxFlex.gt-sm fxFlex.sm class="flex-p w-100 margins">
+            <mat-card class="filter">
+              <mat-card-content>
+                <div class="row">
+                  <div class="col-sm-4">
+                    <div class="col-sm-4 newMarginClass">
+                      Client :
+                    </div>
+                    <div class="col-sm-8">
+                      <mat-select class="form-control" placeholder="Select Client">
+                        <mat-option [value]="0">Raj</mat-option>
+                        <mat-option [value]="1">Teja</mat-option>
+                        <mat-option [value]="2">Krishna</mat-option>
+                        <mat-option [value]="3">Sai</mat-option>
+                        <mat-option [value]="3">Neeraja</mat-option>
+                      </mat-select>
+                    </div>
+                  </div>
+                  <!-- <div class="col-sm-4">
+                    <div class="col-sm-4 newMarginClass">
+                      Project Manager:
+                    </div>
+                    <div class="col-sm-8">
+                      <mat-select class="form-control" placeholder="Select Client">
+                        <mat-option [value]="0">Raj</mat-option>
+                        <mat-option [value]="1">Teja</mat-option>
+                        <mat-option [value]="2">Krishna</mat-option>
+                        <mat-option [value]="3">Sai</mat-option>
+                        <mat-option [value]="3">Neeraja</mat-option>
+                      </mat-select>
+                    </div>
+                  </div> -->
+                  <div class="col-sm-4">
+                    <div class="col-sm-4 newMarginClass">
+                      Status:
+                    </div>
+                    <div class="col-sm-8">
+                      <mat-select class="form-control" placeholder="Select Status">
+                        <mat-option [value]="0">Initiated</mat-option>
+                        <mat-option [value]="1">In Progress</mat-option>
+                        <mat-option [value]="2">Awarded</mat-option>
+                        <mat-option [value]="3">Completed</mat-option>
+                        <mat-option [value]="3">On Hold</mat-option>
+                      </mat-select>
+                    </div>
+                  </div>
+                  <div class="col-sm-4" style="margin-top: 4px;">
+                    <div class="col-sm-4 newMarginClass">
+                      Date Type:
+                    </div>
+                    <mat-radio-group aria-label="Select an option">
+                      <mat-radio-button value="2" style="margin-left: 8px;" checked>Start </mat-radio-button>
+                      <mat-radio-button value="3" style="margin-left: 25px;">Target</mat-radio-button>
+                    </mat-radio-group>
+                    </div>
+                </div>
+
+                <div class="row" style="padding-top:10px !important">
+               
+                  <div class="col-sm-4">
+                    <div class="col-sm-4 newMarginClass">
+                     State:
+                    </div>
+                    <div class="col-sm-8">
+                    <mat-select class="form-control" placeholder="Select State">
+                      <mat-option *ngFor="let item of state">{{item}}</mat-option>
+                    </mat-select>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-4">
+                    <div class="col-sm-4 newMarginClass">
+                      From Date:
+                    </div>
+                    <div class="col-sm-8">
+                      <input class="form-control" class="form-control" placeholder="MM/DD/YYYY" (keypress)="false"
+                        [owlDateTimeTrigger]="dt7" [owlDateTime]="dt7" name="dt7">
+                      <owl-date-time [pickerType]="'calendar'" #dt7></owl-date-time>
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="col-sm-4 newMarginClass">
+                      To Date:
+                    </div>
+                    <div class="col-sm-8">
+                      <input class="form-control" class="form-control" placeholder="MM/DD/YYYY" (keypress)="false"
+                        [owlDateTimeTrigger]="dt6" [owlDateTime]="dt6" name="dt6">
+                      <owl-date-time [pickerType]="'calendar'" #dt6></owl-date-time>
+                    </div>
+                  </div>
+               
+                </div>
+                <div class="col-sm-12" style="margin-top: 10px;">
+                  <a (click)="filterToggle = !filterToggle" class="pull-right"
+                  style="font-size: 25px; cursor: pointer; margin-left: 5px;">
+                  <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+                </a>
+                  <button mat-raised-button class="pull-right btn-primary" style="margin-left: 10px;">
+                    <mat-icon>youtube_searched_for</mat-icon> Search
+                  </button>
+                  <button mat-raised-button class="pull-right" style="background-color:#37474f; color:#fff !important;">
+                    <mat-icon>settings_backup_restore</mat-icon> Clear
+                  </button>
+                  
+                 
+
+                </div>
+              </mat-card-content>
+            </mat-card>
+          </div>
+        </div>
+
+        <div class="row" style="margin-top:20px">
+          <div class="col-xs-12" style="margin-left:10px">
+            <div id="grid-table-container" class="table-responsive" style="width:99.2%">
+              <table matSort id="example2" class="table table-bordered table-hover" style="border-collapse: collapse;">
+                <thead class="tbl-head">
+                  <tr>
+
+                    <th class="text-left">Project Code</th>
+                    <th class="text-left">Project Name</th>
+                    <th class="text-left">Client Name</th>
+                    <th class="text-center">Handover</th>
+                    <th class="text-center">Reports</th>
+                    <th class="text-center">Notes</th>
+                    <th class="text-center">Docs</th>
+                    <th class="text-center">BOM</th>
+                    <th class="text-center">More Details</th>
+                    <th class="text-center" style="width: 200px!important;">Status</th>
+                    <th class="text-center" style="width: 112px!important;">Actions</th>
+
+                    <!-- <th class="text-left">Project Name</th>
+                    <th>Client</th>
+                    <th>GST Number</th>
+                    <th>Project Area (SQM)</th>
+                    <th>PO Reference</th>
+                    <th>PO Received Date</th>
+                    <th>PO / LOI Date</th>
+                    <th>PO Value</th>
+                    <th>Insurance Details</th>
+                    <th>Start Date</th>
+                    <th>Target Date</th>
+                    <th>Scope of Work</th>
+                    <th>PMC Name</th>
+                    <th>Architect Name</th>
+                    <th>Project Address</th>
+                    <th>Project City</th>
+                    <th>Project State</th>
+                    <th>Project PIN</th>
+                    <th>Billing Address</th>
+                    <th>Billing City</th>
+                    <th>Billing State</th>
+                    <th>Billing PIN</th>
+                    <th>Billing Notes</th>
+                    <th>Shipping Address</th>
+                    <th>Shipping City</th>
+                    <th>Shipping State</th>
+                    <th>Shipping PIN</th>
+                    <th>Cost Consultant Name</th>
+                    <th>Cost Consultant Email</th>
+                    <th>Cost Consultant Landline</th>
+                    <th>Cost Mobile</th>
+                    <th>Client  Name</th>
+                    <th>Client  Email</th>
+                    <th>Client  Landline</th>
+                    <th>Client Mobile</th>
+                    <th>Project Director</th>
+                    <th>Project Manager</th>
+                    <th>Project Code</th>
+                    <th>SOW File</th>
+                    <th>BG Details</th>
+                    <th>BOCW Details</th>
+
+
+                    <th class="text-center">Status</th>
+
+                    <th class="text-center" style="width: 112px!important;">Actions</th> -->
+                  </tr>
+                </thead>
+                <tbody *ngFor="let item of values;let i = index">
+                  <tr >
+                    <td>{{item.ProjectCode}}</td>                    
+                    <td  style="color: blue;cursor: pointer;" routerlink="/purchase/procurement/indent" routerLinkActive="router-link-active">{{item.ProjectName}}</td>
+                    <td>{{item.clientName}}</td>
+                    <td class="text-center" style="color: blue;cursor: pointer;" routerLink="/projects/project-handover" routerLinkActive="router-link-active" >{{item.handover}}</td>
+                    <td class="text-center" style="color: blue;cursor: pointer;" routerLink="/projects/project-reports/daily" >{{item.reports}}</td>
+                    <td class="text-center" style="cursor:pointer;color: blue;" (click)="notes()"><mat-icon>info</mat-icon></td>
+                    <td class="text-center" style="color: blue;cursor: pointer;" (click)="opendocs()">{{item.docs}}</td>
+                    <td class="text-center">
+                      <a style="color: blue;cursor: pointer;" *ngIf="item.SOW == 'View'" target="_blank" href="http://www.africau.edu/images/default/sample.pdf" routerLinkActive="router-link-active" >View</a>
+                     
+                      <a mwlConfirmationPopover
+                      *ngIf="item.SOW == 'View'" 
+                      [popoverTitle]="popoverTitle"
+                      [popoverMessage]="popoverMessage"
+                      placement="left"
+                      (confirm)="deleteUser()"
+                      (cancel)="cancelClicked = true"
+                     >
+                      <i style="cursor: pointer;" title="Delete BOM" class="fa fa-trash red"></i>
+                  </a>
+                  <a style="color: blue;cursor: pointer;" *ngIf="item.SOW == 'Add'" (click)="uploaddoc()" routerLinkActive="router-link-active" >Add</a>
+                      
+                    </td>
+                    <td class="text-center" (click)="showmoredetails(item)" style="color: blue;cursor: pointer;" [ngStyle]="{'display': status == item.ProjectCode ? '' : 'none'}" >Hide</td>
+                    <td class="text-center" (click)="showmoredetails(item)" style="color: blue;cursor: pointer;" [ngStyle]="{'display': status != item.ProjectCode ? '' : 'none'}" >Show</td>
+          
+
+                    <td style="text-align: center!important;">
+                      <mat-select [style.background]="item.stageColour" 
+                        [(value)]="item.Status" placeholder="Select Status" class='form-control'>
+                        <ng-container *ngFor='let option of statusOptions'>
+                          <mat-option [style.background]="option.colorCode" class='option' [value]="option.value">
+                            {{option.name}}</mat-option>
+                        </ng-container>
+                      </mat-select>
+                    </td> 
+
+                    <td class="text-center editDel">
+                      <a style="cursor: pointer;margin-right:0px;margin-left: -5px; " matTooltip="Update Project" (click)="openAddProjectDialog(item)">
+                        <i class="fa fa-edit" style="color: cornflowerblue"></i>
+                      </a>
+                
+                      <a mwlConfirmationPopover
+                          [popoverTitle]="popoverTitle"
+                          [popoverMessage]="popoverMessage"
+                          placement="left"
+                          (confirm)="deleteUser()"
+                          (cancel)="cancelClicked = true">
+                          <i style="cursor: pointer;" title="Delete Project" class="fa fa-trash red"></i>
+                      </a>
+                    </td>
+
+                  </tr>
+                  <tr [ngStyle]="{'display': status == item.ProjectCode ? '' : 'none'}" >
+                    <td colspan="11">
+                      <div class="pills">
+                        <ul class="nav nav-pills" style="margin-left: 10px;">
+                          
+                           <li routerLinkActive="active">
+                                <a mat-raised-button style="color: white;" [ngStyle]="{'background-color': innerscreenname=='Overview' ? '#808080' : '#ffffff'}" (click)="daily('Overview')" id="Overview"  class="navtabWidth" style="margin-top: 10px;">
+                                    Overview
+                                </a>
+                            </li> 
+                            <li routerLinkActive="active">
+                              <a mat-raised-button style="color: white;" [ngStyle]="{'background-color': innerscreenname=='Addresses' ? '#808080' : '#ffffff'}" (click)="daily('Addresses')" id="Addresses"  class="navtabWidth" style="margin-top: 10px;">
+                               Addresses
+                              </a>
+                            </li>
+                            <li routerLinkActive="active">
+                              <a mat-raised-button style="color: white;" [ngStyle]="{'background-color': innerscreenname=='Certificates' ? '#808080' : '#ffffff'}" (click)="daily('Certificates')" id="Addresses"  class="navtabWidth" style="margin-top: 10px;">
+                               Cerificates
+                              </a>
+                            </li>
+                        
+                        </ul>
+                    </div>
+                    <div>
+                      <div *ngIf="innerscreenname == 'Overview'" style="margin-top: 40px;">
+                        <div class="row">
+                          <div class="col-6">
+                            <label class="control-label col-sm-2" >GST Number</label><label class="control-label col-sm-1" >:</label><h3> {{item.GSTNumber}}</h3>
+                            <label class="control-label col-sm-2" >Project Name</label><label class="control-label col-sm-1" >:</label><h3> {{item.ProjectName}}</h3>
+                            <label class="control-label col-sm-2" >PO Reference</label><label class="control-label col-sm-1" >:</label><h3> {{item.POReference}}</h3>
+                            <label class="control-label col-sm-2" >PO Received Date</label><label class="control-label col-sm-1" >:</label><h3> {{item.POReceivedDate}}</h3>
+                            <label class="control-label col-sm-2" >PO/LOI Date</label><label class="control-label col-sm-1" >:</label><h3> {{item.POLOIDate}}</h3>
+                            <label class="control-label col-sm-2" >PO Value</label><label class="control-label col-sm-1" >:</label><h3> {{item.POValue}}</h3>
+                            <label class="control-label col-sm-2" >Insurance Details</label><label class="control-label col-sm-1" >:</label><h3> {{item.InsuranceDetails}}</h3>
+                            <label class="control-label col-sm-2" >Start Date</label><label class="control-label col-sm-1" >:</label><h3> {{item.StartDate}}</h3>
+                            <label class="control-label col-sm-2" >Target Date</label><label class="control-label col-sm-1" >:</label><h3> {{item.TargetDate}}</h3>
+                            <label class="control-label col-sm-2" >Scope of Work</label><label class="control-label col-sm-1" >:</label><h3> {{item.ScopeofWork}}</h3>
+                            <label class="control-label col-sm-2" >PMC Name</label><label class="control-label col-sm-1" >:</label><h3> {{item.PMCName}}</h3>
+                            <label class="control-label col-sm-2" >Architect Name</label><label class="control-label col-sm-1" >:</label><h3> {{item.ArchitectName}}</h3>     
+                            <label class="control-label col-sm-2" >Project Director</label><label class="control-label col-sm-1" >:</label><h3> {{item.ProjectDirector}}</h3>
+                            <label class="control-label col-sm-2" >Project Manager</label><label class="control-label col-sm-1" >:</label><h3> {{item.ProjectManager}}</h3>     
+                            
+                          </div>
+                          <div class="col-6">
+                            <div>
+                              <label style="text-decoration: underline;margin-bottom: 15px;">Cost Consultant Details</label>
+                            </div>
+                             <!-- <label class="control-label col-sm-2" >Cost Consultant</label><label class="control-label col-sm-1" >:</label><h3 style="margin:10px;"> {{item.GSTNumber}}</h3> -->
+                             <label class="control-label col-sm-2" >Name</label><label class="control-label col-sm-1" >:</label><h3 > {{item.CostConsultantName}}</h3>
+                             <label class="control-label col-sm-2" >Email</label><label class="control-label col-sm-1" >:</label><h3 > {{item.CostConsultantEmail}}</h3>
+                             <label class="control-label col-sm-2" >Mobile</label><label class="control-label col-sm-1" >:</label><h3 > {{item.CostConsultantMobile}}</h3>
+                             <label class="control-label col-sm-2" >Landline</label><label class="control-label col-sm-1" >:</label><h3 > {{item.CostConsultantLandline}}</h3>
+                             <div>
+                               <label style="text-decoration: underline;margin-bottom: 15px;margin-top: 10px;">Client Details</label>
+                             </div>
+                             <label class="control-label col-sm-2" >Name</label><label class="control-label col-sm-1" >:</label><h3 > {{item.ClientName}}</h3>
+                             <label class="control-label col-sm-2" >Email</label><label class="control-label col-sm-1" >:</label><h3 > {{item.ClientEmail}}</h3>
+                             <label class="control-label col-sm-2" >Mobile</label><label class="control-label col-sm-1" >:</label><h3 > {{item.ClientMobile}}</h3>
+                             <label class="control-label col-sm-2" >Landline</label><label class="control-label col-sm-1" >:</label><h3 > {{item.ClientLandline}}</h3>
+                             
+                          </div>
+                        </div>
+                         
+                        </div>
+                      <div *ngIf="innerscreenname == 'Addresses'" style="margin-top: 40px;">
+                        <div class="row">
+                          <div class="col-6">
+                            <div>
+                              <label style="text-decoration: underline;margin-bottom: 15px;">Project Address</label>
+                            </div>
+                             <!-- <label class="control-label col-sm-2" >Cost Consultant</label><label class="control-label col-sm-1" >:</label><h3 style="margin:10px;"> {{item.GSTNumber}}</h3> -->
+                             <label class="control-label col-sm-2" >Address</label><label class="control-label col-sm-1" >:</label><h3 > {{item.ProjectAddress}}</h3>
+                             <label class="control-label col-sm-2" >City</label><label class="control-label col-sm-1" >:</label><h3 > {{item.ProjectCity}}</h3>
+                             <label class="control-label col-sm-2" >State</label><label class="control-label col-sm-1" >:</label><h3 > {{item.ProjectState}}</h3>
+                             <label class="control-label col-sm-2" >PIN</label><label class="control-label col-sm-1" >:</label><h3 > {{item.ProjectPIN}}</h3>
+                             <div>
+                               <label style="text-decoration: underline;margin-bottom: 15px;margin-top: 10px;">Billing Address</label>
+                             </div>
+                             <label class="control-label col-sm-2" >Address</label><label class="control-label col-sm-1" >:</label><h3 > {{item.BillingAddress}}</h3>
+                             <label class="control-label col-sm-2" >City</label><label class="control-label col-sm-1" >:</label><h3 > {{item.BillingCity}}</h3>
+                             <label class="control-label col-sm-2" >State</label><label class="control-label col-sm-1" >:</label><h3 > {{item.BillingState}}</h3>
+                             <label class="control-label col-sm-2" >PIN</label><label class="control-label col-sm-1" >:</label><h3 > {{item.BillingPIN}}</h3>
+                             <div>
+                              <label style="text-decoration: underline;margin-bottom: 15px;margin-top: 10px;">Shipping Address</label>
+                            </div>
+                            <label class="control-label col-sm-2" >Address</label><label class="control-label col-sm-1" >:</label><h3 > {{item.ShippingAddress}}</h3>
+                            <label class="control-label col-sm-2" >City</label><label class="control-label col-sm-1" >:</label><h3 > {{item.ShippingCity}}</h3>
+                            <label class="control-label col-sm-2" >State</label><label class="control-label col-sm-1" >:</label><h3 > {{item.ShippingState}}</h3>
+                            <label class="control-label col-sm-2" >PIN</label><label class="control-label col-sm-1" >:</label><h3 > {{item.ShippingPIN}}</h3>
+                            
+                          </div>
+                        </div>
+                     
+                      </div>
+                      <div *ngIf="innerscreenname == 'Certificates'" style="margin-top: 40px;">
+              
+                        <table class="table table-bordered table-hover">
+                          <thead class="tbl-head">
+                              <tr class="tr-grid-header">
+                             
+                                 
+                                  <th class="text-left" style="width: 200px;">Description</th>
+                                  <th class="text-left" style="width: 200px;">Date</th>
+                                  <th  class="text-left" style="width: 200px;">PO Reference</th>
+                                  <th class="text-left" style="width: 200px;">Vendor</th>
+                                  <th class="text-center" style="width: 200px;">Document</th>
+                              
+                              </tr>
+                          </thead>
+                          <tbody>
+                              <tr *ngFor="let item of certs">
+                                 
+                                  <td class="text-left">{{item.des}}</td>
+                                  <td class="text-left">{{item.date}}</td>
+                                  <td class="text-left">{{item.poref}}</td>
+                                  <td class="text-left">{{item.vendor}}</td>
+                                  <td class="text-center"><a href="../../../../../assets/leedcertificate.pdf" target="_blank"><mat-icon>download</mat-icon></a></td>
+                           
+                             
+                              </tr>
+                              <tr *ngIf="certs ==null || certs.length ==0">
+                                <td colspan="5" class="text-center">No data available</td>
+                            </tr>
+                          </tbody>
+                      </table>
+                      <mat-paginator [length]="totalSize" [pageIndex]="currentPage" [pageSize]="pageSize"
+                      [pageSizeOptions]="[10, 25, 50, 100]" showFirstLastButtons></mat-paginator>
+                      </div>
+              
+                     
+                    </div>
+                    </td>
+                </tr>
+                </tbody>
+              </table>
+      
+            </div>
+          </div>
+        </div>
+        <mat-paginator [length]="totalSize" [pageIndex]="currentPage" [pageSize]="pageSize"
+        [pageSizeOptions]="[10, 25, 50, 100]" showFirstLastButtons></mat-paginator>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,174 @@
+<h1 mat-dialog-title class="custom-header" style="font-weight: 300; margin-bottom: 10px !important;background-color:#286ba5 !important;height:50px">
+  Update Contract Status</h1>
+  <form [formGroup]="stageModelForm" >
+
+<div mat-dialog-content>
+<div class="col-sm-12">
+  
+    <div class="row" style="margin-top: 10px">
+        <div class="form-group col-sm-12">
+            <div class="row">
+                <div class="form-group col-sm-4">
+                    <label class=" col-sm-12 control-label">Contract Number: </label>
+                    <div class="col-sm-12">
+                      <span class="control-label">
+                         24174</span>
+                    </div>
+                  </div>
+                  <div class="form-group col-sm-4">
+                    <label class=" col-sm-12 control-label">Contract Status: </label>
+                    <div class="col-sm-12">
+                        <span class="control-label">Completed</span>
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                      <label class=" col-sm-12 control-label add-member-label">Activity Date: </label>
+                      <div class="col-sm-12">
+                        <input class="form-control" class="form-control" placeholder="MM/DD/YYYY" (keypress)="false" [owlDateTimeTrigger]="dt1" [owlDateTime]="dt1" name="dt1"  style="margin-left: 2px;">
+                        <owl-date-time [pickerType]="'calendar'" #dt1></owl-date-time>
+                        <mat-error
+                                  *ngIf="stageModelForm.controls.followUpDate.errors?.required && stageModelForm.controls.followUpDate.touched">
+                                  Please enter activity date</mat-error>
+                      </div>
+                  </div>
+            </div>
+
+            <div class="row" style="margin-left: -14px;margin-top: 15px;">
+              <div class="col-sm-12 no-padding">
+              <div class="form-group col-sm-4">
+                <!-- <label class=" col-sm-12 control-label add-member-label">Project Rating: </label> -->
+                <!-- <div class="col-sm-12">
+                  <mat-radio-group formControlName="rating" (change)="onRatingSelection($event)">
+                    <mat-radio-button class="col-sm-5 no-padding"  [checked]="stageModelForm.controls.rating.value == 1" [value]="1" style="font-weight:400 !important"><span style="font-weight:400 !important">Positive</span></mat-radio-button>
+                    <mat-radio-button class="col-sm-5 no-padding"  [checked]="stageModelForm.controls.rating.value == 2" [value]="2" style="font-weight:400 !important"><span style="font-weight:400 !important">Negative</span></mat-radio-button>
+                </mat-radio-group>
+                <mat-error class="col-sm-12 no-padding">Please select rating</mat-error>
+                </div> -->
+              </div>
+              <!-- <div class="form-group col-sm-4">
+                <label class=" col-sm-12 control-label add-member-label">Invoice Total: </label>
+                <div class="col-sm-12">
+                  30 USD
+                 </div>
+              </div> -->
+
+              <!-- <div class="form-group col-sm-8">
+                <label class=" col-sm-12 control-label add-member-label">Description: </label>
+                <div class="col-sm-12" style="padding-right: 0px !important;">
+                    <textarea maxlength="999"
+                     formControlName="description" placeholder="Enter Description"
+                      class="form-control"
+                      [ngClass]="{'field-required':((stageModelForm.controls.description.value == null || stageModelForm.controls.description.value == '') && stageModelForm.controls.description.touched)}"
+                       rows="2" style="height: auto !important;"
+                        ng-reflect-name="Enter description"></textarea>
+                    <mat-error
+                            *ngIf="(stageModelForm.controls.description.value == null || stageModelForm.controls.description.value == '') && stageModelForm.controls.description.touched">
+                            Please enter description</mat-error>
+                </div>
+          </div> -->
+            </div>
+            <!-- <div class="col-sm-12 no-padding">
+              
+          </div> -->
+
+          <!-- <div class="col-sm-12" style="padding-right: 0px;">
+            <label class="col-sm-6 control-label">Project Summary: </label>
+            <div class="col-sm-6">
+              <label class="control-label pull-right" style="background-color: yellow;">50 USD</label>
+              <label class="control-label pull-right">Awarded Total:&nbsp;</label>
+              
+            </div>
+            
+          </div> -->
+          
+          <!-- <div class="col-sm-12" style="padding-right: 0px;">
+            <div class="table-responsive w-100 flex-p">
+              <table class="table table-bordered table-hover">
+                <thead class="tbl-head">
+                  <tr class="tr-grid-header">
+                    <th class="text-center">
+                      <mat-checkbox [checked]="allCheckboxSelected" [disabled]="true" color='warn'></mat-checkbox>
+                    </th>
+                    <th class="text-center">Site</th>
+                    <th class="text-center">SOW</th>
+                    <th class="text-center">Status</th>
+                    <th class="text-center">Awarded Total</th>
+                    <th class="text-center">Actual Total</th>
+                    <th class="text-center">Invoice Total</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of SOWs">
+                    <td  class="text-center">
+                      <mat-checkbox [disabled]="true" color='warn' [checked]="item.bt_isApproved"></mat-checkbox>
+                    </td>
+                    <td  class="text-center">{{item.vc_site_name}}</td>
+                    <td  class="text-center">{{item.vc_sow_name}}</td>
+                    <td  class="text-center">{{item.sowStatus}}</td>
+                    <td  class="text-center">{{item.dec_quoted_amount !=null ?item.bt_isApproved == true ? (item.dec_quoted_amount | currency:'USD'):'$0.00':'$0.00' }}</td>
+                    <td  class="text-center">{{item.ActualTotal !=null ?(item.ActualTotal | currency:'USD'):'$0.00' }}</td>
+                    <td  class="text-center">{{item.invoicedTotal !=null ?(item.invoicedTotal | currency:'USD'):'$0.00' }}</td>
+                  </tr>
+                  <tr >
+                    <td class="text-center" colspan="7">No data available</td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div> -->
+
+        </div>
+            <div class="col-sm-12 no-padding" style="margin-left:-35px;margin-top: 10px;">
+            
+              <div class="form-group col-sm-9">
+                  <label class=" col-sm-12 control-label add-member-label">Remarks: </label>
+                  <div class="col-sm-12">
+                      <!-- <textarea maxlength="999"
+                       formControlName="remarks" placeholder="Enter Remarks"
+                        class="form-control-text-area"
+                        [ngClass]="{'field-required':(stageModelForm.controls.remarks.errors?.required && stageModelForm.controls.remarks.touched)}"
+                         matInput
+                         rows="2" style="height: 50px !important;max-height: 100px !important;"
+                          ng-reflect-name="Enter remarks"></textarea> -->
+                          <textarea maxlength="999" formControlName="remarks" placeholder="Enter Remarks" class="form-control customtext" rows="2" ></textarea>
+                      <mat-error
+                              *ngIf="stageModelForm.controls.remarks.errors?.required && stageModelForm.controls.remarks.touched">
+                              Please enter remarks</mat-error>
+                  </div>
+            </div>
+
+          <!-- <div  class="form-group col-sm-3" style="padding-left: 26px;">
+            <label class=" col-sm-12 control-label">Updated By: </label>
+            <div class="col-sm-12">
+              <span class="control-label">
+               Sai</span>
+            </div>
+          </div> -->
+
+        </div>
+            <!-- <div class="row" > -->
+                  <!-- <div class="col-sm-12"style="margin-left:10px">
+                      <label class="add-member-label" id="example-radio-group-label">Select one of the options from below: </label>
+                    </div> -->
+                    <!-- <div class="col-sm-12" style="margin-left:15px"> -->
+                      <!-- <mat-radio-group formControlName="option" (change)="onOptionSelection($event)">
+                          <mat-radio-button class="col-sm-6 no-padding" *ngFor="let item of quoteStageOptions"  [checked]="stageModelForm.controls.option.value == item.int_quote_kanban_option_id" [value]="item.int_quote_kanban_option_id" style="font-weight:400 !important"><span style="font-weight:400 !important">{{item.vc_option_name}}</span></mat-radio-button>
+                      </mat-radio-group> -->
+                      <!-- <mat-error class="col-sm-12 no-padding">Please select option</mat-error> -->
+                    <!-- </div> -->
+            <!-- </div> -->
+          </div>
+      </div>
+  
+  </div>
+  </div>
+  <mat-dialog-actions align="center">
+    <button mat-raised-button class="add-dark-hover btn-default" type="button" (click)="close()">
+      <mat-icon>cancel</mat-icon> &nbsp;Cancel
+    </button>
+    <button mat-raised-button class="add-hover btn-primary" type="submit" (click)="close()">
+      <mat-icon>send</mat-icon>&nbsp;Save
+    </button>
+ 
+  </mat-dialog-actions>
+  </form>

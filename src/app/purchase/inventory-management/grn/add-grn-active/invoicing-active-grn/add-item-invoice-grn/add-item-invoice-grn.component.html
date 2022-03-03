@@ -1,0 +1,140 @@
+<!-- <h1 mat-dialog-title class="custom-header" style="background-color:#286ba5 !important;height:50px">{{ data ? 'Update' : 'Add'}} Invoice</h1>
+<form>
+  <div mat-dialog-content>
+    <div class="col-sm-12">
+      <div class="col-sm-6"> 
+        <div class="form-group ">
+          <div class="row">
+            <label class="col-sm-12 add-member-label">PO Reference:</label>
+              <div class="col-sm-12">
+                <mat-select placeholder="Select PO Reference" class="form-control">
+                  <mat-option value="1">OM/BHL/OCT/19-20/1077</mat-option>
+                  <mat-option value="1">OM/BHL/OCT/19-20/1078</mat-option>
+                  <mat-option value="1">OM/BHL/OCT/19-20/1079</mat-option>
+                  <mat-option value="1">OM/BHL/OCT/19-20/1080</mat-option>
+                  <mat-option value="1">OM/BHL/OCT/19-20/1081</mat-option>
+                  <mat-option value="1">OM/BHL/OCT/19-20/1082</mat-option>
+               </mat-select>
+              </div>
+          </div>
+       </div>
+  
+
+       <div class="form-group" >
+        <label class="control-label col-lg-12 col-md-12 col-sm-12 col-xs-12 add-member-label" style="margin-left: -15px !important;">Invoice Reference:</label>
+        <input type="text" class="form-control" placeholder="Enter Invoice Reference" >
+       </div>
+        
+       <div class="form-group" >
+        <label class="control-label col-lg-12 col-md-12 col-sm-12 col-xs-12 add-member-label" style="margin-left: -15px !important;">Billed Amount:</label>
+        <input type="text" class="form-control" placeholder="Enter Billed Amount" >
+       </div>
+    
+       <div class="form-group" >
+        <label class="control-label col-lg-12 col-md-12 col-sm-12 col-xs-12 add-member-label" style="margin-left: -15px !important;">Paid Amount:</label>
+        <input type="text" class="form-control" placeholder="Enter Paid Amount" >
+       </div>
+       <div class="form-group" *ngIf="data != null" >
+        <label class="control-label col-lg-12 col-md-12 col-sm-12 col-xs-12 add-member-label" style="margin-left: -15px !important;">Paid Amount:</label>
+        <textarea  class="form-control" placeholder="Enter Payment Refernce" ></textarea>
+       </div>
+       <div class="form-group" >
+         <label class="control-label col-lg-12 col-md-12 col-sm-12 col-xs-12 add-member-label" style="margin-left: -15px !important;">Upload file:</label>
+         <input type="file" name="fileToUpload" id="fileToUpload">
+
+       </div>
+   
+  
+
+
+      </div>
+
+      
+    </div>
+      
+
+    </div>
+
+    <mat-dialog-actions align="end">
+        <button mat-raised-button class="add-hover btn-primary" type="submit" (click)="close()"><mat-icon>send</mat-icon>&nbsp;Save</button>
+        <button mat-raised-button type="button" class="add-dark-hover btn-default" (click)="close()"><mat-icon>cancel</mat-icon>&nbsp;Cancel</button>
+    </mat-dialog-actions>
+</form>
+
+
+
+ -->
+ <div class="NewHeader">
+  <h1 mat-dialog-title>
+    {{ data ? 'Update' : 'Add'}} Invoice
+  </h1>
+</div>
+
+<div mat-dialog-content>
+    <form class="form-horizontal">
+      <div class="form-group">
+        <label class="control-label col-sm-4 add-member-label">PO Reference : </label>
+        <div class="col-sm-8 margin-bottom-15px">
+          <mat-select placeholder="Select PO Reference" class="form-control">
+            <mat-option value="1">OM/BHL/OCT/19-20/1077</mat-option>
+            <mat-option value="1">OM/BHL/OCT/19-20/1078</mat-option>
+            <mat-option value="1">OM/BHL/OCT/19-20/1079</mat-option>
+            <mat-option value="1">OM/BHL/OCT/19-20/1080</mat-option>
+            <mat-option value="1">OM/BHL/OCT/19-20/1081</mat-option>
+            <mat-option value="1">OM/BHL/OCT/19-20/1082</mat-option>
+         </mat-select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-4 add-member-label">Invoice Reference : </label>
+        <div class="col-sm-8 margin-bottom-15px">
+          <input type="text" class="form-control" placeholder="Enter Invoice Reference">
+        </div>
+    </div>
+    <div class="form-group">
+     <label class="control-label col-sm-4 add-member-label">Billed Amount : </label>
+     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 margin-bottom-15px">              
+            
+      <input type="text" class="form-control" placeholder="Enter Billed Amount">
+         
+     </div>
+    </div>
+    <div class="form-group" >
+      <label class="control-label col-sm-4 add-member-label">Transport Charges : </label>
+      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 margin-bottom-15px">              
+             
+       <input type="text" class="form-control" placeholder="Enter Transport Charges">
+          
+      </div>
+     </div>
+    <div class="form-group" >
+     <label class="control-label col-sm-4 add-member-label">Other Charges : </label>
+     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 margin-bottom-15px">              
+            
+      <input type="text" class="form-control" placeholder="Enter Other Charges">
+         
+     </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-4 add-member-label">Due Date : </label>
+      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 margin-bottom-15px">              
+             
+       <input type="date" class="form-control" placeholder="Enter Due Date">
+          
+      </div>
+     </div>
+    <div class="form-group">
+      <label class="control-label col-sm-4 add-member-label">Upload File : </label>
+      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 margin-bottom-15px">              
+             
+        <input type="file" name="fileToUpload" id="fileToUpload">
+          
+      </div>
+     </div>
+
+    </form>
+</div>
+<mat-dialog-actions align="end" style="padding-bottom: 10px;">
+    <button mat-raised-button class="btn-primary"  [mat-dialog-close]="'test'"><mat-icon>send</mat-icon><span>Save</span></button>
+    <button mat-raised-button class="add-dark-hover btn-default" (click)="close()"><mat-icon>cancel</mat-icon>Close</button>
+</mat-dialog-actions> 

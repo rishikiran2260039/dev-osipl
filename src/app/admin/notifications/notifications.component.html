@@ -1,0 +1,25 @@
+<div fxLayout="row wrap" style="margin-left: 13px;">
+  <div class="table-responsive">
+      <table id="example2" class="table table-bordered table-hover" >
+          <thead class="tbl-head">
+              <tr class="tr-grid-header">
+                  <th class="text-center">Active</th>
+                  <th>Notifications</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let applicant of tableList">
+                  <td class="text-center">
+                    <input type="checkbox">
+                  </td>
+                  <td>{{applicant.subject}}
+              
+                  </td>
+      </tr>
+  </tbody>
+</table>
+      <mat-paginator  
+          [pageSizeOptions]="[5, 10, 25, 50, 100]" showFirstLastButtons>
+      </mat-paginator>
+  </div>
+</div>

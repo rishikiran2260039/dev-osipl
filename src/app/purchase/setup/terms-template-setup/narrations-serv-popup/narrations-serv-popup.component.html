@@ -1,0 +1,40 @@
+<div class="NewHeader" style="background-color:#286ba5 !important; height: 50px;">
+  <h1 mat-dialog-title>
+    Edit Details
+  </h1>
+</div>
+
+
+
+<div mat-dialog-content>
+  <form class="form-horizontal">
+    <div style="padding: 0px 30px !important;">
+      <div class="form-group">
+        <div class="col-sm-12">
+          <label style="font-weight: bold;">
+            Subject:
+          </label>
+          <span style="font-weight: bold;">&nbsp;
+            DEFINITIONS & INTERPRETATION
+          </span>
+        </div>
+        <div class="col-sm-12">
+          <textarea type="text" maxlength="300" class="form-control" style="height: 150px;" >Work Orders: The Service Provider warrants that it will promptly make good any defects or omissions in the
+            Services that become apparent within 6 months of the Date of Completion at the Service
+            Provider’s expense.
+            2. If there are any such defects or omissions then Option matrix will give the Service Provider written
+            notice to make good such defects omissions as soon as possible and will give the Service
+            Provider reasonable access for that purpose, and with all other terms of clause 3 of this
+            Agreement to apply to the provision of those make good works.</textarea>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<mat-dialog-actions align="end">
+
+  <button mat-raised-button class="btn-success" (click)="close()">Save</button>
+  <button mat-raised-button class="add-dark-hover btn-default" (click)="close()">Cancel</button>
+</mat-dialog-actions>
+
+

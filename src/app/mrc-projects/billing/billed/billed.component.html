@@ -1,0 +1,75 @@
+<div class="w-100">
+  <div class="flex-p">
+    <div class="row wrap">
+      <div class="col-sm-12 no-padding">
+        <div class="row">
+          <div class="col-xs-12">
+            <div id="grid-table-container" class="table-responsive">
+              <table matSort id="example2" class="table table-bordered table-hover">
+                <thead class="tbl-head">
+                  <tr>
+                    <th>Site</th>
+                    <th>SOW</th>
+                    <th>
+                      Fees Structure
+                    </th>
+                    <th>
+                      Task
+                    </th>
+                    <th>
+                      Action
+                    </th>
+                    <th>
+                      Job Code
+                    </th>
+                    <th>
+                      Expense Code
+                    </th>
+                    <th>
+                      Worked
+                    </th>
+                    <th> Total</th>
+
+                    <th> Expense</th>
+                    <th>Budget Total</th>
+                    <th>Quoted Total</th>
+                    <th>Billed</th>
+                    <th>Remaining
+                      Unbilled</th>
+                    <th> Invoice No.</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  
+                  <tr *ngFor="let item of items">
+                    <td>
+                      {{item.site}}
+                    </td>
+                    <td>
+                      {{item.sow}}
+                    </td>
+                    <td>{{item.fees }}</td>
+                    <td>{{item.task}}</td>
+                    <td>{{item.action }}</td>
+                    <td>{{item.jobCode}}</td>
+                    <td>{{item.expenseCode }}</td>
+                    <td>{{item.worked }}</td>
+                    <td>{{item.total}}</td>
+                    <td>{{item.expense}}</td>
+                    <td>{{item.budgetTotal }}</td>
+                    <td>{{item.quotedTotal }}</td>
+                    <td>{{item.billed}}</td>
+                    <td>{{item.unbilled}}</td>
+                    <td>{{item.invoiceNo}}</td>
+                  </tr>
+
+                </tbody>
+              </table>
+              <mat-paginator [pageSizeOptions]="[5, 10, 25, 50, 100]" showFirstLastButtons></mat-paginator>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

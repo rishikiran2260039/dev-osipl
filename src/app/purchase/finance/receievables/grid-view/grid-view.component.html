@@ -1,0 +1,65 @@
+<div fxLayout="row wrap" style="width: 98.5%; margin-top: 15px;">
+  <div class="table-responsive" style="overflow-x: hidden;">
+    <table id="example2" class="table table-bordered table-hover" style="margin-left:18px;width: 99%;max-width: 99%;margin-bottom: 20px;">
+      <thead class="tbl-head">
+        <tr class="tr-grid-header">
+          <th>Date</th>
+          <th>Invoice #</th>
+          <th>Client</th>
+          <th>Contract #</th>       
+          <th>Amount (INR)</th>          
+          <th>Due Date</th>  
+          <th class="text-center">Payments</th>
+          <th>Paid</th>
+          <th>Balance</th>
+          <th class="text-center">Status</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let items of tableList">
+          <td>
+              {{ items.date }}
+          </td>
+          <td>
+            <!-- <a style="color:blue;cursor: pointer;"  target="_blank" > {{ items.invoice }}</a> -->
+            {{ items.invoice }}
+          </td>
+          <td>
+              {{ items.cus }}
+          </td>
+          <td>
+            {{ items.order }}
+          </td>
+          <td>
+            {{ items.amount }}
+        </td>
+        <td>
+          {{ items.dueDate }}
+        </td>
+        <td class="text-center">
+          <a style="color:blue; cursor:pointer;" routerLink="/accounting/receivables/add-payables">{{ items.paym }}</a>
+        </td>
+        <td>
+          {{ items.paid }}
+        </td>
+        <td>
+          {{ items.bal }}
+        </td>
+        <td style="text-align: center!important;">
+          <mat-select [style.background]="items.stageColour" style="min-width: 120px;"
+            [(value)]="items.Status" placeholder="--Select Stage --" class='form-control'>
+            <ng-container *ngFor='let option of statusOptions'>
+              <mat-option [style.background]="option.colorCode" class='option' [value]="option.value"
+                (click)="openQuotes(null)">
+                {{option.name}}</mat-option>
+            </ng-container>
+          </mat-select>
+        </td>
+
+        </tr>
+      </tbody>
+    </table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 50, 100]" showFirstLastButtons></mat-paginator>
+  </div>
+</div>

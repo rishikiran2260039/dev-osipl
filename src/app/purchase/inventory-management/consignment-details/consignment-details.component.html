@@ -1,0 +1,327 @@
+<div class="flex-p">
+  <div class="row wrap">
+      <div class="col-sm-12 no-padding">
+          <div class="row-wrap">
+              <div class="w-100">
+                  <div class="row">
+                      <div class="col-xs-12">
+                          <div class="pills">
+                              <ul class="nav nav-pills pull-right">
+                                  <li routerLink="/purchase/material-management/purchase-orders/unpublished-po">
+                                      <a mat-raised-button class="navtabWidth" >
+                                          Back
+                                      </a>
+                                  </li>                             
+                              </ul>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<div class="w-100" style="margin-left: 10px!important;">
+  <div class="flex-p">
+  <mat-drawer-container>
+  <mat-drawer-content>
+  <mat-card class="col-sm-12" style="background-color: #dbe8f3 !important;width: 98.7%; padding: 10px 0px !important;">
+    <div class="col-sm-4" style="margin-bottom: 10px;">
+      <label style="margin-left: 10px;">Vendor Name:</label>
+      <span>&nbsp;&nbsp;Usha International Ltd</span>
+    </div>
+    <div class="w-100"></div>
+    <div class="col-sm-8">
+      <div class="col-sm-5 no-padding">
+        <label>Branch Name:</label>
+        <span>&nbsp;&nbsp;Hyderabad - Ayyapa Scty</span>
+      </div>
+      <div class="col-sm-7 no-padding">
+        <label>Con. Ref. No.:</label>
+        <span>&nbsp;&nbsp;OM/CON/APR-20/1001</span>
+      </div>
+    </div>
+    <div class="col-sm-12">
+      <div class="col-sm-4 no-padding">
+        <label>Gate Pass:</label>
+        <span>&nbsp;&nbsp;
+          OM/GP/APR-20/10001 </span>
+      </div>
+  
+      <div class="col-sm-4 no-padding">
+        <label>Store:</label>
+        <span>&nbsp;&nbsp;
+          Dumpers & Machinery</span>
+      </div>
+      
+    </div>
+  </mat-card>
+  </mat-drawer-content>
+  </mat-drawer-container>
+  </div>
+  </div>
+
+  
+
+<div fxLayout="row wrap" #resizedDiv>
+  <div class="flex-p w-100 sizeAlign">
+    <!-- <div class="row" style="margin-bottom:23px;">
+      <div class="col-xs-6 ">
+      </div>
+      <div class="col-xs-6 " style="margin-left:-10px">
+        <div class="flex-p">
+          <button mat-raised-button class="pull-right  btn-primary" (click)="opencontactDialog()">
+            <mat-icon>add</mat-icon> Add Requisition
+          </button>
+
+          <button mat-raised-button color="primary" class="pull-right filters-hover margin-right-10"
+            (click)="filterToggle = !filterToggle">
+            <mat-icon>filter_list</mat-icon> Filter
+          </button>
+
+        </div>
+
+      </div>
+    </div> -->
+
+    <!-- <div fxLayout="row wrap" *ngIf="filterToggle">
+      <div fxFlex="100" fxFlex.gt-sm fxFlex.sm class="flex-p w-100 margins">
+        <mat-card class="filter">
+          <mat-card-content>
+            <div class="row">
+              <div class="col-sm-4">
+                <div class="col-sm-4 newMarginClass">
+                  Keyword:
+                </div>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" placeholder="Enter Keyword">
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="col-sm-4 newMarginClass">
+                  Resource Type:
+                </div>
+                <div class="col-sm-8">
+                  <mat-select name="" id="" class="form-control" placeholder="Select Resource type">
+                    <mat-option [value]=0>Raw Materials</mat-option>
+                    <mat-option [value]=1>Machinery</mat-option>
+                    <mat-option [value]=2>Plants</mat-option>
+                    <mat-option [value]=3>Tools</mat-option>
+                    <mat-option [value]=4>No. of Workers</mat-option>
+                    <mat-option [value]=5>Subcontractors</mat-option>
+                    <mat-option [value]=6>Agencies</mat-option>
+
+                  </mat-select>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="col-sm-4 newMarginClass">
+                  Resource Name:
+                </div>
+                <div class="col-sm-8">
+                  <mat-select class="form-control" placeholder="Search by Resource name">
+                    <mat-option>Crane</mat-option>
+                    <mat-option>Screws</mat-option>
+                    <mat-option>EarthMover</mat-option>
+                    <mat-option>Concreat Mixer</mat-option>
+                    <mat-option>Power Crane</mat-option>
+                  </mat-select>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="row" style="padding-top:10px !important">
+
+              <div class="col-lg-1" style="margin-left:80%!important;">
+                <button mat-raised-button class="pull-right btn-primary">
+                  <mat-icon>youtube_searched_for</mat-icon> Search
+                </button>
+              </div>
+              <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="margin-left: -18px;">
+                <button mat-raised-button style="background-color:#37474f; color:#fff !important">
+                  <mat-icon>settings_backup_restore</mat-icon> Clear
+                </button>
+              </div>
+              <a (click)="filterToggle = !filterToggle" class="pull-right"
+                style="font-size: 25px; cursor: pointer; margin-left: 5px;">
+                <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+              </a>
+
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div> -->
+
+
+    <div class="row">
+      <div class="col-xs-12">
+        <div id="grid-table-container" class="table-responsive" style="margin-left: 10px;">
+          <table matSort id="example2" class="table table-bordered table-hover">
+            <thead class="tbl-head">
+              <tr>  						
+                <th class="text-center">Sl No.</th>
+                <th class="text-center">PO Ref#</th>
+                <th class="text-center">Invoice#</th>
+                <th class="text-center">GRN No#</th>
+                <th class="text-center">Waybill</th>
+                <th class="text-center">Status</th>
+                <th class="text-center">GRN Form</th>
+                <th class="text-center">GRN</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of items">
+                <td class="text-center">{{item.slNo}}</td>
+                <td class="text-center">{{item.PORef}}</td>
+                <td class="text-center">{{item.Invoice}}</td>
+                <td class="text-center">{{item.GRNNo}}</td>
+                <td class="text-center">{{item.Waybill}}</td>
+                <td class="text-center">{{item.Status}}</td>
+                <td class="text-center"><mat-icon>print</mat-icon></td>
+                <td class="text-center">{{item.GRN}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div style="margin-left: 15px;">
+  <h3 class="flex-p w-100">Activity Log</h3>
+</div>
+
+<div fxLayout="row wrap">
+  <div class="flex-p w-100 sizeAlign">
+    <!-- <div class="row" style="margin-bottom:23px;">
+      <div class="col-xs-6 ">
+      </div>
+      <div class="col-xs-6 " style="margin-left:-10px">
+        <div class="flex-p">
+          <button mat-raised-button class="pull-right  btn-primary" (click)="opencontactDialog()">
+            <mat-icon>add</mat-icon> Add Requisition
+          </button>
+
+          <button mat-raised-button color="primary" class="pull-right filters-hover margin-right-10"
+            (click)="filterToggle = !filterToggle">
+            <mat-icon>filter_list</mat-icon> Filter
+          </button>
+
+        </div>
+
+      </div>
+    </div> -->
+
+    <!-- <div fxLayout="row wrap" *ngIf="filterToggle">
+      <div fxFlex="100" fxFlex.gt-sm fxFlex.sm class="flex-p w-100 margins">
+        <mat-card class="filter">
+          <mat-card-content>
+            <div class="row">
+              <div class="col-sm-4">
+                <div class="col-sm-4 newMarginClass">
+                  Keyword:
+                </div>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" placeholder="Enter Keyword">
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="col-sm-4 newMarginClass">
+                  Resource Type:
+                </div>
+                <div class="col-sm-8">
+                  <mat-select name="" id="" class="form-control" placeholder="Select Resource type">
+                    <mat-option [value]=0>Raw Materials</mat-option>
+                    <mat-option [value]=1>Machinery</mat-option>
+                    <mat-option [value]=2>Plants</mat-option>
+                    <mat-option [value]=3>Tools</mat-option>
+                    <mat-option [value]=4>No. of Workers</mat-option>
+                    <mat-option [value]=5>Subcontractors</mat-option>
+                    <mat-option [value]=6>Agencies</mat-option>
+
+                  </mat-select>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="col-sm-4 newMarginClass">
+                  Resource Name:
+                </div>
+                <div class="col-sm-8">
+                  <mat-select class="form-control" placeholder="Search by Resource name">
+                    <mat-option>Crane</mat-option>
+                    <mat-option>Screws</mat-option>
+                    <mat-option>EarthMover</mat-option>
+                    <mat-option>Concreat Mixer</mat-option>
+                    <mat-option>Power Crane</mat-option>
+                  </mat-select>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="row" style="padding-top:10px !important">
+
+              <div class="col-lg-1" style="margin-left:80%!important;">
+                <button mat-raised-button class="pull-right btn-primary">
+                  <mat-icon>youtube_searched_for</mat-icon> Search
+                </button>
+              </div>
+              <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="margin-left: -18px;">
+                <button mat-raised-button style="background-color:#37474f; color:#fff !important">
+                  <mat-icon>settings_backup_restore</mat-icon> Clear
+                </button>
+              </div>
+              <a (click)="filterToggle = !filterToggle" class="pull-right"
+                style="font-size: 25px; cursor: pointer; margin-left: 5px;">
+                <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+              </a>
+
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div> -->
+
+
+    <div class="row">
+      <div class="col-xs-12">
+        <div id="grid-table-container" class="table-responsive" style="margin-left: 10px;">
+          <table matSort id="example2" class="table table-bordered table-hover">
+            <thead class="tbl-head">
+              <tr> 
+                <th class="text-center">Data&Time</th>
+                <th class="text-left">Stage </th>
+                <th class="text-center">Reference No.</th>
+                <th class="text-left">Activity</th>
+                <th class="text-left">User</th>
+                <th class="text-left">Remarks</th>
+                <th class="text-center">Download Document</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of items2">
+
+                <td class="text-center">{{item.date}}</td>
+                <td style="text-align: left!important;">{{item.stage}}</td>
+                <td style="text-align: center!important;">{{item.ReferenceNo}}</td>
+                <td style="text-align: left!important;">
+                  <span>{{item.Activity}}</span>
+                </td>
+                <td style="text-align: left!important;">{{item.User}}</td>
+                <td style="text-align: left!important;">{{item.Remarks}}</td>
+                <td style="text-align: center!important;"><mat-icon>download</mat-icon></td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

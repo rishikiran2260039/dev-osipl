@@ -1,0 +1,83 @@
+<div class="NewHeader" style=" background-color: #286ba5 !important; height: 50px;">
+  <h1 mat-dialog-title>
+    {{data ? 'Update' : 'Add'}} Payment
+  </h1>
+</div>
+<div mat-dialog-content>
+  <form class="form-horizontal">
+    <div class="form-group">
+      <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Amount : </label>
+      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+        <input type="text" class="form-control" placeholder="Enter Amount" required>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Mode : </label>
+      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+        <mat-select placeholder="Select Mode Of Payment" class="form-control" required >
+        <mat-option value="1">UPI</mat-option>
+        <mat-option value="2">NEFT</mat-option>
+        <mat-option value="3">CARD TRANSACTIONS</mat-option>
+        <mat-option value="4">RTGS</mat-option>
+        </mat-select>
+   
+      </div>
+    </div> 
+
+  <!--  <div class="form-group">
+      <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd" >Mode:</label>
+      <mat-select placeholder="Select Item Code" class="form-control" required >
+        <mat-option value="1">FMX480</mat-option>
+        <mat-option value="2">D85ESS 17</mat-option>
+        <mat-option value="3">All Models</mat-option>
+        <mat-option value="4">ACTROS 4841K</mat-option>
+        <mat-option value="5">D85ESS 86</mat-option>
+        </mat-select>
+    </div>
+   -->
+
+    <div class="form-group">
+      <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Reference No. :
+      </label>
+      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+        <input type="text" class="form-control" placeholder="Enter Reference No." required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Payment Remarks : </label>
+      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+        <textarea class="form-control txtarea" placeholder="Enter Remarks" rows="2" formControlName="address"
+          required></textarea>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Date : </label>
+      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+        <!-- <input type="text" class="form-control" placeholder="Enter Markup" required> -->
+        <input class="form-control" class="form-control" placeholder="MM/DD/YYYY" (keypress)="false"
+          [owlDateTimeTrigger]="dt2" [owlDateTime]="dt2" name="dt2">
+        <owl-date-time [pickerType]="'calendar'" #dt2></owl-date-time>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Time: </label>
+      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+        <!-- <input type="text" class="form-control" placeholder="Enter Line Item" required> -->
+        <timepicker [(ngModel)]="mytime" [showSpinners]="false"></timepicker>
+      </div>
+    </div>
+
+
+  </form>
+
+
+</div>
+<mat-dialog-actions align="end" style="margin-bottom:-15px">
+  <button mat-raised-button class="btn-primary" (click)="close()">
+    <mat-icon>send</mat-icon><span> Save</span>
+  </button>
+  <button mat-raised-button class="add-dark-hover btn-default" (click)="close()">
+    <mat-icon>cancel</mat-icon> Close
+  </button>
+</mat-dialog-actions>

@@ -1,0 +1,39 @@
+<div class="NewHeader" style="background-color:#286ba5 !important; height: 50px;">
+  <h1 mat-dialog-title>
+    Documents for SRN #: BGR/LGP/SRN/FEB-21/1001
+  </h1>
+</div>
+
+<div fxLayout="row wrap" #resizedDiv>
+  <div class="flex-p w-100 sizeAlign">
+   
+
+    <div class="row">
+      <div class="col-xs-12">
+        <div id="grid-table-container" class="table-responsive">
+          <table matSort id="example2" class="table table-bordered table-hover">
+            <thead class="tbl-head">
+              <tr>
+                <th class="text-center">Waybill</th>
+                <th class="text-center">LR</th>
+                <th class="text-center">Signed SRN</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of items">
+                <td class="text-center"  class="text-center" style="color: blue;cursor: pointer;" (click)="close()">{{item.Waybill}}<mat-icon>download</mat-icon></td>
+                <td class="text-center">{{item.LR}}</td>
+                <td class="text-center" style="color: blue; cursor: pointer;" (click)="pdf()">{{item.Signed}}<mat-icon>download</mat-icon></td>
+                </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="col-xs-12">
+    <mat-dialog-actions class="pull-right" >
+      <button mat-raised-button class="add-dark-hover btn-default pull-right" (click)="close()">Close</button>
+    </mat-dialog-actions>
+  </div>

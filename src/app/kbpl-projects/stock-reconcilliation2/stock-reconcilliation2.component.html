@@ -1,0 +1,90 @@
+<div class="container-fluid">
+  <div class="flex-p">
+    <div class="row wrap">
+        <div class="col-12 p-0">
+            <!-- <div class="row-wrap">
+                <div class="w-100">
+                    <div class="row">
+                        <div class="col-xs-12"> -->
+                            <div class="pills">
+                              
+                                <ul class="nav nav-pills pull-right">
+                                    <li routerLink="/projects/projectdashboard/project-inventorycontrol/stockreconciliation">
+                                        <a mat-raised-button class="navtabWidth"><mat-icon>arrow_left_alt</mat-icon>
+                                            Back
+                                        </a>
+                                    </li>                             
+                                </ul>
+                                <button mat-raised-button class="pull-right  btn-primary mr-3"
+                              (click)="openGridColumnsDialog()">
+                             <mat-icon>grid_on</mat-icon> Grid Columns
+                              </button>
+                            </div>
+                        <!-- </div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+  </div>
+
+  <div class="row" >
+    <div class="col-xs-12" style="overflow-x: auto">
+      <div id="grid-table-container" class="table-responsive" >
+        <table matSort id="example2" class="table table-bordered table-hover" style="margin-left: 0px!important;">
+          <thead class="tbl-head">
+            <tr>
+              <th class="text-center">From Date</th>
+              <th class="text-center">To Date</th>
+              <th class="text-center">Part#</th>
+              <th class="text-center">Part Code</th>
+              <th class="text-center">Part Make</th>
+              <th class="text-center">Part Model</th>
+              <th class="text-center">Eqpt Code</th>
+              <th class="text-center">Eqpt Make</th>
+              <th class="text-center">Eqpt Model</th>
+              <th class="text-center">Last Received</th>
+              <th class="text-center">Opening Stock</th>
+              <th class="text-left">Incoming Stock</th>
+              <th class="text-center">Material Issues</th>
+              <th class="text-center">In</th>
+              <th class="text-center">Out</th>
+              <th class="text-center">Book Stock</th>
+              <th class="text-center">Physical Stock</th>
+              <th class="text-center">Varience</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of items">
+              <td class="text-center">{{item.fromDate}}</td>
+              <td class="text-center">{{item.toDate}}</td>
+              <td class="text-center">{{item.part}}</td>
+              <td class="text-center">{{item.partCode}}</td>
+              <td class="text-center">{{item.partMake}}</td>
+              <td class="text-center">{{item.partModel}}</td>
+              <td class="text-center">{{item.eqptCode}}</td>
+              <td class="text-center">{{item.eqptMake}}</td>
+              <td class="text-center">{{item.eqptModel}}</td>
+              <td class="text-center">{{item.lastReceived}}</td>
+              <td class="text-center">{{item.openingStock}}</td>
+              <td class="text-center">{{item.incomingStock}}</td>
+              <td class="text-center">{{item.materialIssue}}</td>
+              <td class="text-center">{{item.in}}</td>
+              <td class="text-center">{{item.out}}</td>
+              <td class="text-center">{{item.bookStock}}</td>
+              <td class="text-center">{{item.physicalStock}}</td>
+              <td class="text-center">{{item.varience}}</td>
+            </tr>
+          </tbody>
+        </table>
+        <button class="mine" mat-fab (click)="scrollGrid('right');" >
+          <mat-icon style="color:#37474f">fast_forward</mat-icon>
+        </button>
+        <button class="mine" mat-fab style="margin-right: 78px !important;" (click)="scrollGrid('left');">
+          <mat-icon style="color:#37474f">fast_rewind</mat-icon>
+        </button>
+        <mat-paginator [pageSizeOptions]="[5, 10, 25, 50, 100]" showFirstLastButtons></mat-paginator>
+      </div>
+    </div>
+  </div>
+</div>

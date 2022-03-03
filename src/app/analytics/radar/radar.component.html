@@ -1,0 +1,212 @@
+<div fxLayout="row">
+  <div class="col-xs-6"></div>
+  <div class="col-xs-6">
+    <div class="flex-p">
+
+      <button mat-raised-button color="primary" class="pull-right filters-hover" (click)="filterToggle = !filterToggle">
+
+        <mat-icon>filter_list</mat-icon> Filter
+
+      </button>
+
+    </div>
+  </div> 
+</div>
+
+<!-- Filter show/hide -->
+<div fxLayout="row wrap" *ngIf="filterToggle" class="sizeAlign">
+  <div fxFlex="100" fxFlex.gt-sm fxFlex.sm class="flex-p w-100 margins">
+    <mat-card class="filter">
+      <mat-card-content>
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="col-sm-4 newMarginClass" style="margin-top: 5px;">Select Client:</div>
+            <div class="col-sm-8">
+              <mat-select placeholder=" Select Client Name" class="form-control" required >
+                <mat-option value="1">Usha International Ltd</mat-option>
+                <mat-option value="2">Mallikarjuna Rao</mat-option>
+                <mat-option value="3">Arnold D Cruz	</mat-option>
+                <mat-option value="4">Axel adler</mat-option>
+                <mat-option value="5">Amit Constructions</mat-option>
+              </mat-select>
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="col-sm-4 newMarginClass" style="margin-top: 5px;"> Select Project:</div>
+            <div class="col-sm-8">
+              <mat-select placeholder=" Select Project" class="form-control" multiple  required >
+                <mat-option value="1">Usha International Ltd</mat-option>
+                <mat-option value="2">Mallikarjuna Rao</mat-option>
+                <mat-option value="3">Arnold D Cruz	</mat-option>
+                <mat-option value="4">Axel adler</mat-option>
+                <mat-option value="5">Amit Constructions</mat-option>
+              </mat-select>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="col-sm-4 newMarginClass" style="margin-top: 5px;">From Month:</div>
+            <div class="col-sm-8">
+              <input type="date" placeholder="Search by Project Type" class="form-control">
+            </div>
+          </div>
+
+          <div class="col-sm-4" style="margin-top: 5px;">
+            <div class="col-sm-4 newMarginClass" style="margin-top: 5px;">From Year:</div>
+            <div class="col-sm-8">
+              <input type="date" placeholder="Search by State" class="form-control">
+            </div>
+          </div>
+
+          <div class="col-sm-4" style="margin-top: 5px;">
+            <div class="col-sm-4 newMarginClass" style="margin-top: 5px;">To Month:</div>
+            <div class="col-sm-8">
+              <input type="date" placeholder="Search by State" class="form-control">
+            </div>
+          </div>
+
+          <div class="col-sm-4" style="margin-top: 5px;">
+            <div class="col-sm-4 newMarginClass" style="margin-top: 5px;">To Year:</div>
+            <div class="col-sm-8">
+              <input type="date" placeholder="Search by State" class="form-control">
+            </div>
+          </div>
+          <div class="col-sm-4">
+  
+          </div>
+          <div class="col-sm-4">
+  
+          </div>
+          <div class="col-sm-4" style="margin-top: 15px;">
+
+            <div class="col-lg-1" style="margin-left: 150px">
+              <button mat-raised-button class="pull-right btn-primary">
+                <mat-icon>youtube_searched_for</mat-icon> Search
+              </button>
+            </div>
+
+            <div class="col-lg-1" style="margin-top: 5px;">
+              <button mat-raised-button style="background-color:#37474f; color:#fff !important;margin-top: -5px">
+                <mat-icon>settings_backup_restore</mat-icon> Clear
+              </button>
+            </div>
+
+            <a (click)="filterToggle = !filterToggle" class="pull-right"
+              style="font-size: 25px; cursor: pointer; margin-left: 5px; margin-right: 114px;margin-top: 5px;">
+              <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+            </a>
+
+          </div>
+
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
+<div class="row col-12 m-0 mt-3 p-0">
+
+  <div class="row col-sm-12">
+    <div class="col-6">
+          <div class="chart-header" style="vertical-align: middle;margin-left: 15px;margin-right: -13px;">
+        <p style="font-size: 17px; vertical-align: middle;"> PO / WO / Rentals Details (Rs in Lacs) </p>
+      </div>
+    <div class="row">
+        <div class="col-sm-12" style="margin-right:5%;height: 400px;width:1250px;vertical-align: middle;">
+          <ngx-charts-bar-horizontal-stacked  [scheme]="colorScheme" [results]="POWOdata" [legend]="showLegend"
+          [xAxis]="true" [yAxis]="true"
+           [showXAxisLabel]="true"
+          [showYAxisLabel]="true" 
+        >
+          </ngx-charts-bar-horizontal-stacked>
+        </div>
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="chart-header" style="vertical-align: middle;margin-left: 15px;margin-right: -13px;">
+  <p style="font-size: 17px; vertical-align: middle;">Supply / Sub Con / MEP Purchase Distribution</p>
+</div>
+<div class="row">
+  <div class="col-sm-12" style="margin-right:5%;height: 400px;width:1250px;vertical-align: middle;">
+    <ngx-charts-pie-chart [scheme]="colorScheme" [results]="single" [legend]="showLegend"
+    [explodeSlices]="explodeSlices" [labels]="showLabels" [doughnut]="doughnut" [gradient]="gradient">
+  </ngx-charts-pie-chart>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- 2 -->
+<div class="row col-sm-12">
+  <div class="col-6">
+        <div class="chart-header" style="vertical-align: middle;margin-left: 15px;margin-right: -13px;">
+      <p style="font-size: 17px; vertical-align: middle;"> Pending / Open Indents</p>
+    </div>
+  <div class="row">
+      <div class="col-sm-12" style="margin-right:5%;height: 400px;width:1250px;vertical-align: middle;">
+        <ngx-charts-bar-horizontal-stacked  [scheme]="colorScheme" [results]="POWostackchart" [legend]="showLegend"
+        [xAxis]="true" [yAxis]="true"
+         [showXAxisLabel]="true"
+        [showYAxisLabel]="true" 
+        >
+        </ngx-charts-bar-horizontal-stacked>
+      </div>
+  </div>
+</div>
+<div class="col-6">
+  <div class="chart-header" style="vertical-align: middle;margin-left: 15px;margin-right: -13px;">
+<p style="font-size: 17px; vertical-align: middle;">Pending PO's vs GRN</p>
+</div>
+<div class="row" style="margin-right: -30px;">
+  <div class="col-xs-12" style="overflow-x: auto">
+    <div id="grid-table-container" class="table-responsive" >
+      <table matSort id="example2" class="table table-bordered table-hover" style="margin-left: 15px!important;">
+        <thead class="tbl-head">
+          <tr>
+            <th class="text-left">Project</th>
+            <th class="text-left">Total PO</th>
+            <th class="text-left">PO Closed</th>
+            <th class="text-left">Consignments</th>
+            <th class="text-left">GRN Closed</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of items">
+           
+            <td class="text-left">{{item.project }}</td>
+            <td class="text-center">{{item.totalpo}}</td>
+            <td class="text-center">{{item.poclosed}}</td>  
+            <td class="text-center">{{item.consig}}</td>
+            <td class="text-center">{{item.grnclosed}}</td>   
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- <div class="container sample">
+  <div class="options vertical">
+      <span id="legendTitle">Global Electricity Demand by Energy Use</span>
+      <igx-item-legend #legend></igx-item-legend>
+  </div>
+
+  <div class="container">
+      <igx-pie-chart height="100%"
+          width="100%"
+          [dataSource]="data"
+          [legend]="legend"
+          valueMemberPath="Value"
+          labelMemberPath="Label"
+          labelsPosition="BestFit"
+          radiusFactor="0.7">
+      </igx-pie-chart>
+  </div>
+</div> -->
+
+
+</div>
+
+

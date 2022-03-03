@@ -1,0 +1,42 @@
+<div class="NewHeader">
+  <h1 mat-dialog-title>
+    Manage Site
+  </h1>
+</div>
+
+<div mat-dialog-content>
+    <form class="form-horizontal">
+        <h3 style="margin-left: -6px;">Site Name</h3>
+        <div class="form-group">
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                <input type="email" class="form-control" id="email" value="Lanesdowne">
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+              <button mat-raised-button style="background-color: #286ba5; color: white;"><mat-icon>edit</mat-icon></button>
+              <button mat-raised-button style="background-color: #f44336; color: white; margin-left: 8px;"><mat-icon>delete</mat-icon></button>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                <input type="email" class="form-control" id="email" value="Sector 56">
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+              <button mat-raised-button style="background-color: #286ba5; color: white;"><mat-icon>edit</mat-icon></button>
+              <button mat-raised-button style="background-color: #f44336; color: white; margin-left: 8px;"><mat-icon>delete</mat-icon></button>
+            </div>
+        </div>
+        <div class="form-group" id="site">
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                <input type="email" class="form-control" id="email" value="Newton">
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+              <button mat-raised-button style="background-color: #286ba5; color: white;"><mat-icon>edit</mat-icon></button>
+              <button mat-raised-button style="background-color: #f44336; color: white; margin-left: 8px;"><mat-icon>delete</mat-icon></button>
+            </div>
+        </div>
+    </form>
+</div>
+<mat-dialog-actions align="end">
+    <button mat-raised-button style="background-color: #286ba5; color: white;" [mat-dialog-close]="'test'"><mat-icon>send</mat-icon><span> Save</span></button>
+    <button mat-raised-button class="CancelClass" (click)="close()"><mat-icon>cancel</mat-icon> Close</button>
+</mat-dialog-actions> 

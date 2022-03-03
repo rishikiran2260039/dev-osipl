@@ -1,0 +1,69 @@
+<div class="NewHeader">
+  <h1 mat-dialog-title>
+    Add Material Budget
+  </h1>
+</div>
+<div mat-dialog-content>
+  <form class="form-horizontal">
+      <div class="form-group">
+          <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Serial: </label>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+              <input type="text" class="form-control" placeholder="Enter Serial" required>
+          </div>
+      </div>
+      <div class="form-group">
+          <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label">Category: </label>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <mat-select class="form-control" placeholder = "Select Category" >
+              <mat-option>Furniture</mat-option>
+              <mat-option>Plumbing</mat-option>
+              <mat-option>Flooring</mat-option>
+            </mat-select>
+          </div>
+      </div>
+      <div class="form-group">
+          <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Item: </label>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <mat-select class="form-control" placeholder = "Select Item">
+              <mat-option>Work Tables</mat-option>
+              <mat-option>Doors</mat-option>
+              <mat-option>Flush Pipes</mat-option>
+              <mat-option>Tiles</mat-option>
+            </mat-select>
+           
+          </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Unit: </label>
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <input type="text" class="form-control" placeholder="Enter Unit" required>
+        </div>
+    </div>
+      
+      <div class="form-group">
+          <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Quantity: </label>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+              <input type="text" class="form-control" placeholder="Enter Quantity" required>
+          </div>
+      </div>
+      <div class="form-group">
+          <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Budget: </label>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <input type="text" class="form-control" placeholder="Enter Budget in thousands" required>
+          </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Upload Material Sheet: </label>
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+          <input type="file" multiple required>
+        </div>
+    </div>
+
+
+   
+  </form>
+</div>
+<mat-dialog-actions align="end">
+  <button mat-raised-button class="btn-primary" ><mat-icon>send</mat-icon><span > Save</span></button>
+  <button mat-raised-button class="add-dark-hover btn-default" (click)="close()"><mat-icon>cancel</mat-icon> Cancel</button>
+</mat-dialog-actions>

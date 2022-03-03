@@ -1,0 +1,201 @@
+<div class="row-wrap">
+  <div class="flex-p w-100">
+      <div class="row">
+          <div class="col-xs-12">
+              <div class="row" style="margin-bottom:7px;">
+                  <div class="col-xs-4 ">
+                      <div class="flex-p">
+                      </div>
+                  </div>
+                  <div class="col-xs-8 " style="margin-left:-10px">
+                      <div class="flex-p">
+                          <button mat-raised-button class="pull-right  btn-primary"
+                              (click)="openAddContractorDialog()">
+                              <mat-icon>add</mat-icon> Add Contractor
+                          </button>
+                          <button mat-raised-button color="primary" class="pull-right filters-hover margin-right-10"
+                              (click)="filterToggle = !filterToggle">
+                              <mat-icon>filter_list</mat-icon> Filter
+                          </button>
+
+                      </div>
+
+                  </div>
+              </div>
+
+              <div fxLayout="row wrap" *ngIf="filterToggle">
+                  <div fxFlex="100" fxFlex.gt-sm fxFlex.sm class="flex-p w-100 margins">
+                      <mat-card class="filter">
+                          <mat-card-content>
+                              <div class="row">
+                                  <div class="col-sm-4">
+                                      <div class="col-sm-4 newMarginClass">
+                                          Keyword:
+                                      </div>
+                                      <div class="col-sm-8">
+                                          <input type="text" class="form-control" placeholder="Search by Keyword" />
+
+                                      </div>
+                                  </div>
+                                  <div class="col-sm-4">
+                                      <div class="col-sm-4 newMarginClass">
+                                          City:
+                                      </div>
+                                      <div class="col-sm-8">
+                                          <mat-select class="form-control" placeholder="Search by City">
+                                              <mat-option [value]="0">Hyderabad</mat-option>
+                                              <mat-option [value]="1">Bangalore</mat-option>
+                                              <mat-option [value]="2">Chennai</mat-option>
+                                              <mat-option [value]="3">Gurugram</mat-option>
+                                              <mat-option [value]="4">Agra</mat-option>
+                                              <mat-option [value]="5">Ahmedabad</mat-option>
+
+                                          </mat-select>
+                                      </div>
+                                  </div>
+                                  <div class="col-sm-4">
+                                      <div class="col-sm-4 newMarginClass">
+                                          State:
+                                      </div>
+                                      <div class="col-sm-8">
+                                          <mat-select class="form-control" placeholder="Search by State">
+                                              <mat-option [value]="0">Karnataka</mat-option>
+                                              <mat-option [value]="1">Tamil Nadu</mat-option>
+                                              <mat-option [value]="2">Telangana</mat-option>
+                                              <mat-option [value]="3">Haryana</mat-option>
+                                              <mat-option [value]="4">Uttar Pradesh</mat-option>
+                                              <mat-option [value]="5">Gujarat</mat-option>
+                                          </mat-select>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="row" style="padding-top: 10px;">
+                                  <div class="col-sm-4">
+                                      <div class="col-sm-4 newMarginClass">
+                                          Status:
+                                      </div>
+                                      <div class="col-sm-8">
+                                          <mat-select class="form-control" placeholder="Search by Status">
+                                              <mat-option [value]="0">Active</mat-option>
+                                              <mat-option [value]="1">Inactive</mat-option>
+                                          </mat-select>
+                                      </div>
+                                  </div>
+                                  <div class="col-sm-4">
+
+                                  </div>
+
+                                  <div class="col-lg-1" style="margin-top: 20px;margin-left:195px!important;">
+                                      <button mat-raised-button class="pull-right btn-primary">
+                                          <mat-icon>youtube_searched_for</mat-icon> Search
+                                      </button>
+                                  </div>
+                                  <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"
+                                      style="margin-top: 20px;margin-left: -18px;">
+                                      <button mat-raised-button
+                                          style="background-color:#37474f; color:#fff !important">
+                                          <mat-icon>settings_backup_restore</mat-icon> Clear
+                                      </button>
+                                  </div>
+                                  <a (click)="filterToggle = !filterToggle" class="pull-right"
+                                      style="margin-top: 20px;font-size: 25px; cursor: pointer; margin-left: 5px;">
+                                      <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+                                  </a>
+                              </div>
+                          </mat-card-content>
+                      </mat-card>
+                  </div>
+              </div>
+
+              <!-- Table -->
+              <div class="row" style="margin-top:20px;">
+                  <div class="col-xs-12" style="margin-left:8px">
+                      <div id="grid-table-container" class="table-responsive" style="width: 99%;">
+                          <table matSort id="example2" class="table table-bordered table-hover">
+                              <thead class="tbl-head">
+                                  <tr>
+                                      <th>Contractor Name</th>
+                                      <th>Contact Name</th>
+                                      <th>Email</th>
+                                      <th class="text-center">Phone</th>
+                                      <th>Street Address</th>
+                                      <th>City</th>
+                                      <th>State</th>
+                                      <th class="text-left">Country</th>
+                                      <th class="text-center">Postal code</th>
+                                      <th class="text-center" style="min-width:100px">Contracts</th>
+                                      <th class="text-center" style="min-width:100px">Date Created</th>
+                                      <th class="text-center">Status</th>
+                                      <th class="text-center" style="width: 112px!important;">Actions</th>
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                  <tr *ngFor="let item of values">
+                                      <td>{{item.contractor}}</td>
+
+                                      <td>
+                                          {{item.contact}}
+                                      </td>
+                                      <td>
+                                          {{item.email}}
+
+                                      </td>
+                                      <td class="text-center">
+                                          {{item.phone}}
+
+                                      </td>
+                                      <td>
+                                          {{item.address}}
+
+                                      </td>
+                                      <td>
+                                          {{item.city}}
+
+                                      </td>
+                                      <td>
+                                          {{item.state}}
+
+                                      </td>
+                                      <td>
+                                          {{item.country}}
+
+                                      </td>
+                                      <td class="text-center">
+                                          {{item.postalcode}}
+
+                                      </td>
+                                      <td class="text-center">
+                                          <a style="color:blue;text-decoration:underline"
+                                              (click)="openContractsDialog()">{{item.contratcs}}</a>
+
+                                      </td>
+                                      <td class="text-center" style="min-width: 100px !important;">
+                                          {{item.date}}
+
+                                      </td>
+
+                                      <td [ngStyle]="{'color': item.status=='Active'? 'blue' : 'red'}"
+                                          style="text-align: center !important;">
+                                          {{item.status}}
+                                      </td>
+                                      <td class="text-center editDel">
+                                          <a style="cursor: pointer;margin-right:10px; " matTooltip="Update Project"
+                                              (click)="openAddCategory2(item)">
+                                              <i class="fa fa-edit" style="color: cornflowerblue"></i>
+                                          </a>
+                                          <a><i class="fa fa-trash red" matTooltip="Delete Project"
+                                                  style="cursor: pointer;"></i></a>
+                                      </td>
+                                  </tr>
+                              </tbody>
+                          </table>
+                          <mat-paginator [length]="totalSize" [pageIndex]="currentPage" [pageSize]="pageSize"
+                              [pageSizeOptions]="[5, 10, 25, 50, 100]" showFirstLastButtons></mat-paginator>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+  </div>
+</div>

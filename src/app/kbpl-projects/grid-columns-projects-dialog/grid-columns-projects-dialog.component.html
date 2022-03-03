@@ -1,0 +1,91 @@
+<div class="NewHeader">
+  <h1 mat-dialog-title>Grid View Configuration </h1>
+</div> 
+<p>Please select the required columns in the grid, to view grid with specific columns</p>
+<div mat-dialog-content style="overflow:hidden!important;">
+  <form class="form-horizontal" novalidate  style="margin-top:10px">
+    <!-- <mat-checkbox  class="col-sm-4" >Project #</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >Project Name</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >Project Type</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >Project Manager</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >Contact Name</mat-checkbox>
+
+    <mat-checkbox  class="col-sm-4" >Email</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >Phone</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >Handover</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >Reports</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >Start Date</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >Target Date</mat-checkbox>
+
+    <mat-checkbox  class="col-sm-4" >Budget</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >GST No</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >Scope of Work</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >PO/WO No</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >Insurance Details,</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >BG details</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >BOCW details</mat-checkbox> -->
+    <!-- <mat-checkbox class="col-sm-4" >Status</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >Actions</mat-checkbox>
+
+    <mat-checkbox class="col-sm-4">Client</mat-checkbox>
+    <mat-checkbox class="col-sm-4">Project Name</mat-checkbox>
+    <mat-checkbox class="col-sm-4">GST Number</mat-checkbox>
+    <mat-checkbox class="col-sm-4">Project Area (SQM)</mat-checkbox>
+    <mat-checkbox class="col-sm-4">PO Reference</mat-checkbox>
+    <mat-checkbox class="col-sm-4">PO Received Date</mat-checkbox>
+    <mat-checkbox class="col-sm-4">PO / LOI Date</mat-checkbox>
+    <mat-checkbox class="col-sm-4">PO Value</mat-checkbox>
+    <mat-checkbox class="col-sm-4">Insurance Details</mat-checkbox>
+    <mat-checkbox class="col-sm-4">Start Date</mat-checkbox>
+    <mat-checkbox class="col-sm-4">Target Date</mat-checkbox>
+    <mat-checkbox class="col-sm-4">Scope of Work</mat-checkbox>
+    <mat-checkbox class="col-sm-4">PMC Name</mat-checkbox>
+    <mat-checkbox class="col-sm-4">Architect Name</mat-checkbox>
+    <mat-checkbox class="col-sm-4">Project Address</mat-checkbox>
+    <mat-checkbox class="col-sm-4">Project City</mat-checkbox>
+    <mat-checkbox class="col-sm-4">Project State</mat-checkbox>
+    <mat-checkbox class="col-sm-4">Project PIN</mat-checkbox>
+    <mat-checkbox class="col-sm-4">Billing Address</mat-checkbox>
+    <mat-checkbox class="col-sm-4">Billing City</mat-checkbox>
+    <mat-checkbox class="col-sm-4">Billing State</mat-checkbox>
+    <mat-checkbox class="col-sm-4">Billing PIN</mat-checkbox>
+    <mat-checkbox class="col-sm-4">Billing Notes</mat-checkbox>
+    <mat-checkbox class="col-sm-4">Shipping Address</mat-checkbox>
+    <mat-checkbox class="col-sm-4">Shipping City</mat-checkbox>
+    <mat-checkbox class="col-sm-4">Shipping State</mat-checkbox>
+    <mat-checkbox class="col-sm-4">Shipping PIN</mat-checkbox>
+    <mat-checkbox class="col-sm-4">Cost Consultant Name</mat-checkbox>
+    <mat-checkbox class="col-sm-4">Cost Consultant Email</mat-checkbox>
+    <mat-checkbox class="col-sm-4">Cost Consultant Landline</mat-checkbox>
+    <mat-checkbox class="col-sm-4">Cost Mobile</mat-checkbox>
+    <mat-checkbox class="col-sm-4">Client  Name</mat-checkbox>
+    <mat-checkbox class="col-sm-4">Client  Email</mat-checkbox>
+    <mat-checkbox class="col-sm-4">Client  Landline</mat-checkbox>
+    <mat-checkbox class="col-sm-4">Client Mobile</mat-checkbox>
+    <mat-checkbox class="col-sm-4">Project Director</mat-checkbox>
+    <mat-checkbox class="col-sm-4">Project Manager</mat-checkbox>
+    <mat-checkbox class="col-sm-4">Project Code</mat-checkbox>
+    <mat-checkbox class="col-sm-4">SOW File</mat-checkbox>
+    <mat-checkbox class="col-sm-4">BG Details</mat-checkbox>
+    <mat-checkbox class="col-sm-4">BOCW Details</mat-checkbox> -->
+
+    <mat-checkbox class="col-sm-4">Project Code</mat-checkbox>
+    <mat-checkbox class="col-sm-4">Project Name</mat-checkbox>
+    <mat-checkbox class="col-sm-4">Client Name</mat-checkbox>
+    <mat-checkbox class="col-sm-4">Handovers</mat-checkbox>
+    <mat-checkbox class="col-sm-4">Reports</mat-checkbox>
+    <mat-checkbox class="col-sm-4">Docs</mat-checkbox>
+    <mat-checkbox class="col-sm-4">BOM</mat-checkbox>
+    <mat-checkbox class="col-sm-4">More Details</mat-checkbox>
+    <mat-checkbox class="col-sm-4" >Status</mat-checkbox>
+    <mat-checkbox class="col-sm-4" >Actions</mat-checkbox>
+   
+  </form>
+</div>
+
+<mat-dialog-actions align="end">
+  <button mat-raised-button class="btn-primary" (click)="close()"><mat-icon>send</mat-icon>Configure</button>
+  <button mat-raised-button class="CancelClass" (click)="close()"><mat-icon>cancel</mat-icon>Cancel</button>
+</mat-dialog-actions>
+
+

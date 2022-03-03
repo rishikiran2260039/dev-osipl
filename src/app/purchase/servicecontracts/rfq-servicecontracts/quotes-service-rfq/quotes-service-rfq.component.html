@@ -1,0 +1,99 @@
+<div class="container-fluid">
+  <div fxLayout="row wrap" #resizedDiv>
+    <div class="flex-p w-100 sizeAlign">
+      <div class="row" style="margin-bottom:23px;">
+        <div class="col-sm-12"> 
+          <button mat-raised-button class="pull-right  btn-default margin-right-10"
+          routerLink="/purchase/servicecontracts/RfqServicecontracts">
+             <mat-icon>chevron_left</mat-icon> Back
+          </button>
+        </div>
+      </div>
+    <div class="row" >
+      <div class="col-xs-12" style="overflow-x: auto">
+        <div id="grid-table-container" class="table-responsive" >
+          <table id="example2" class="table table-bordered">
+            <thead class="tbl-head">
+                <tr class="tr-grid-header" >
+                  <th >Job Code</th>
+                    <th>Job Code Name</th>
+                    <th >Service Category</th>
+                    <th  >Remarks</th>
+                    <th class="text-center">Quote</th>
+                    <th >Valid Till</th>
+                </tr>
+            </thead>
+            <tbody>
+              <tr >
+                <ng-container>
+                  <td  >FMX480</td>
+                  <td  >Volvo</td>
+                    <td >Heavy Tools</td>
+                    <td >	Need to qualify QA test</td>
+                    <td class="text-center">200</td>
+                    <td>23-07-2021</td>
+                </ng-container> 
+              </tr>
+              <tr >
+                  <ng-container>
+                    <td  >Volvo</td>
+                      <td  >FMX480</td>
+                      <td >Heavy Tools</td>
+                      <td >	Complaince over Material issues - to be delivered on time</td>
+                      <td class="text-center">100</td>
+                      <td>24-07-2021</td>
+                  </ng-container> 
+                </tr>
+                <!-- 2nd  -->
+                <tr >
+                  <ng-container>
+                    <td  >Caterpillar</td>
+                      <td  >D85ESS 17</td>
+                      <td >Hand and Power tools</td>
+                      <td >	 Material issues - to be delivered on time</td>
+                      <td class="text-center">290</td>
+                      <td>26-07-2021</td>
+                  </ng-container> 
+                </tr>
+                <tr *ngFor="let item of allFields1;let j = index;">
+                    <ng-container>
+                      <td  >Caterpillar</td>
+                        <td  >D85ESS 17</td>
+                        <td >Hand and Power tools</td>
+                        <td >	Need for high performance materials</td>
+                        <td class="text-center">250</td>
+                        <td>25-07-2021</td>
+                    </ng-container> 
+                  </tr>
+                  <!-- 3rd -->
+                  <tr >
+                    <ng-container>
+                      <td  >Mercedes</td>
+                        <td  >All Models</td>
+                        <td >Consumables and Building Materials</td>
+                        <td >high performance materials</td>
+                        <td class="text-center">240</td>
+                        <td>26-07-2021</td>
+                    </ng-container> 
+                  </tr>
+                  <tr *ngFor="let item of allFields2;let k = index;" >
+                      <ng-container>
+                        <td  >Mercedes</td>
+                          <td  >All Models</td>
+                          <td >Consumables and Building Materials</td>
+                          <td >	Need to qualify QA test</td>
+                          <td class="text-center">150</td>
+                          <td>28-07-2021</td>
+                      </ng-container> 
+                    </tr>
+            </tbody>
+        </table>   
+          
+        </div>
+        
+      </div>
+    </div>
+    </div>
+  </div>
+  
+  </div>

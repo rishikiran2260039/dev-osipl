@@ -1,0 +1,54 @@
+<div class="container-fluid">
+<div fxLayout="row wrap" #resizedDiv>
+  <div class="flex-p w-100 sizeAlign">
+    <div class="row">
+      <div class="col-xs-12">
+        <div id="grid-table-container" class="table-responsive">
+          <table matSort id="example2" class="table table-bordered table-hover">
+            <thead class="tbl-head">
+              <tr>
+                <th class="text-left">Requisition No.</th>
+                <th class="text-left">Requisition Date</th>
+                <th class="text-center">Requisition Title</th>
+                <th class="text-left">Requisition Category & Sub Category</th>
+                <th class="text-left">Make / Model & Door No.</th>
+                <th class="text-center">View/Approve Items</th>
+                <th class="text-center" style="width: 100px;">Required By</th>
+                <th class="text-center">Approval Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of items">
+                <td style="text-align: left!important;">{{item.requisition_no }}</td>
+                <td style="text-align: left!important;">{{item.requisition_date }}</td>
+                <td style="text-align: center!important;">{{item.requisition_title }}</td>
+                <td style="text-align: left!important;">
+                  <span>{{item.requisition_category }}</span><br>
+                  <span>{{item.sub_category }}</span>
+                </td>
+                <td style="text-align: left!important;">{{item.make }} | {{item.door_no}}</td>
+                <td style="min-width: 70px !important;cursor: pointer; text-align: center!important;color: dodgerblue;" routerLink="/purchase/approve-item" matTooltip="Click to view item">
+                  {{item.view}}
+                </td>
+                <td style="min-width: 70px !important; text-align: center!important;">
+                  {{item.required}}
+                </td>
+                <td style="text-align: center!important;">
+                  <mat-select [style.background]="item.stageColour" style="min-width: 120px;" [(value)]="item.Status"
+                    (selectionChange)="changeStatus($event.value)" placeholder="--Select Stage --" class='form-control'>
+                    <ng-container *ngFor='let option of statusOptions'>
+                      <mat-option [style.background]="option.colorCode" class='option' [value]="option.value">
+                        {{option.name}}</mat-option>
+                    </ng-container>
+                  </mat-select>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <mat-paginator [pageSizeOptions]="[5, 10, 25, 50, 100]" showFirstLastButtons></mat-paginator>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

@@ -1,0 +1,86 @@
+
+  
+<div class="container-fluid">
+  
+  <div fxLayout="row wrap" #resizedDiv>
+    <div class="flex-p w-100 sizeAlign">
+      
+    <div class="row" >
+      <div class="col-xs-12" style="overflow-x: auto">
+        <div id="grid-table-container" class="table-responsive" >
+          <button mat-raised-button  class="pull-right btn-default" style="margin-bottom: 10px;"
+      [routerLink]="['/purchase/procurement/purchase-orders/published-po']" routerLinkActive="router-link-active" >
+             <mat-icon>chevron_left</mat-icon> Back
+          </button>
+          <button mat-raised-button class="pull-right  btn-primary margin-right-10"
+         >
+          <mat-icon>grid_on</mat-icon> Grid Columns
+      </button>
+          <table matSort id="example2" 
+          class="table table-bordered table-hover" 
+          style="margin-left: 0px!important;">
+            <thead class="tbl-head">
+              <tr>
+               
+               
+                <th class="text-left">Indent Ref.	</th>
+                <th class="text-left">Item Name</th>
+                <th class="text-left">Item Code</th>
+                <th class="text-left">Item category</th>
+                <th class="text-left">Item Sub Category</th>
+                <th class="text-left">Brand</th>
+                <th class="text-left">Length</th>
+                <th class="text-left">Width</th>
+                <th class="text-left">Height</th>
+                <th class="text-left">Thickness</th>
+                <th class="text-center">Required Qty</th>
+                <th class="text-left">Available Qty</th>
+                <th class="text-left">Order Qty</th>
+                <th class="text-center">Unit Price(₹)</th>
+                <th class="text-left">UoM</th>
+                <th class="text-center">Long Lead</th>
+                <th class="text-center"> Default GST Rate (%)</th>
+                <th class="text-center">Total Price(₹)</th>
+                <th class="text-center">Required By</th>
+                <th class="text-center">Delivery Date</th>
+        
+               
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of items">
+              
+                <td class="text-left">{{item.ReqRef}}</td>
+                <td class="text-left">{{item.ItemName}}</td>
+                <td class="text-left">{{item.ItemCode}}</td>
+                <td class="text-left">{{item.cat}}</td>
+                <td class="text-left">{{item.subcat}}</td>
+                <td class="text-left">{{item.brand}}</td>
+                <td class="text-left">{{item.length}}</td>
+                <td class="text-left">{{item.width}}</td>
+                <td class="text-left">{{item.height}}</td>
+                <td class="text-left">{{item.thick}}</td>
+                <td class="text-center">{{item.RequiredQty}}</td>
+                <td class="text-center">{{item.AvailQty}}</td>
+                <td class="text-center">{{item.OrderQty}}</td>
+               
+                <td class="text-center">{{item.unitprice}}</td>
+                <td class="text-center">{{item.uom}}</td>
+                <td class="text-center">{{item.unitprice1}}</td>
+                <td class="text-center">{{item.DeliveryDate}}</td>
+                <td class="text-center">{{item.DeliveryDate}}</td>
+             
+                
+              </tr>
+            </tbody>
+          </table>
+          
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+
+      
+
+</div>

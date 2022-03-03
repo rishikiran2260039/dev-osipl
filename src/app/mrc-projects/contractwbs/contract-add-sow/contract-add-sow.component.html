@@ -1,0 +1,133 @@
+<h1 mat-dialog-title class="custom-header" style="background-color:#286ba5 !important;height:50px">Add Contract</h1>
+<form>
+<div mat-dialog-content>
+<div class="col-sm-12">
+
+  <div class="row">
+      <div class="row">
+          <label class="col-sm-12" style="font-size:16px">Contract Ref: 2478BA</label>
+        </div>
+  </div>
+
+    <div class="row">
+      <div class="form-group col-sm-6">
+        <div class="row">
+            <label class="col-sm-12 add-member-label">Select Site: </label>
+            <div class="col-sm-12">
+                <mat-select placeholder="--Select Site--" class="form-control">
+                    <mat-option value="1">Sector 56</mat-option>
+                    <mat-option value="2">Lansdown</mat-option>
+                    <mat-option value="3">Newton</mat-option>
+                </mat-select>
+            </div>
+        </div>
+    </div>
+        <div class="form-group col-sm-6">
+            <div class="row">
+                <label class="col-sm-12 add-member-label">SOW name: </label>
+                <div class="col-sm-12">
+                  <mat-select placeholder="--Select SOW--" class="form-control">
+                    <mat-option value="1">A.SRPR</mat-option>
+                    <mat-option value="2">A.BRPR</mat-option>
+                    <mat-option value="3">OMPR</mat-option>
+                </mat-select>
+                </div>
+            </div>
+        </div>
+        <div class="form-group col-sm-6">
+            <div class="row">
+                <label class="col-sm-12 add-member-label">Budget Hours: </label>
+                <div class="col-sm-12">
+                  <input class="form-control" placeholder="Enter Hours" type="text">
+                </div>
+            </div>
+
+        </div>
+        <div class="form-group col-sm-6">
+            <div class="row">
+                <label class="col-sm-12 add-member-label">Budget Total: </label>
+                <div class="col-sm-12">
+                    <input class="form-control" placeholder="Enter Total" type="text">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="form-group col-sm-6">
+            <div class="row">
+                <label class="col-sm-12 add-member-label">Quote: </label>
+                <div class="col-sm-12">
+                  <input class="form-control" placeholder="Enter Quote" type="text">
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group col-sm-6">
+            <div class="row">
+                <label class="col-sm-12">Contract type: </label>
+                <div class="col-sm-12">
+                  <mat-select placeholder="--Select Contract type--" class="form-control">
+                    <mat-option value="1">Land Scape</mat-option>
+                    <mat-option value="2">Club Housing</mat-option>
+                    <mat-option value="3">Restaurent</mat-option>
+                </mat-select>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group col-sm-6">
+          <div class="row">
+              <label class="col-sm-12">Status: </label>
+              <div class="col-sm-12">
+                <mat-select placeholder="--Select Status--" class="form-control">
+                  <mat-option value="1">Open</mat-option>
+                  <mat-option value="2">Closed</mat-option>
+                  <mat-option value="3">Pending</mat-option>
+                </mat-select>
+              </div>
+          </div>
+        </div>
+
+        <div class="form-group col-sm-6">
+          <div class="row">
+              <label class="col-sm-12 add-member-label">Contractor Name: </label>
+              <div class="col-sm-12">
+                <input class="form-control" placeholder="Enter Contractor Name" type="text">
+              </div>
+          </div>
+      </div>
+
+      <div class="form-group col-sm-6">
+        <div class="row">
+            <label class="col-sm-12 add-member-label">Contract Reference: </label>
+            <div class="col-sm-12">
+              <input class="form-control" placeholder="Enter Contract Reference" type="text">
+            </div>
+        </div>
+    </div>
+
+
+    <div class="form-group col-sm-6">
+      <div class="row">
+          <label class="col-sm-12">Fee Structure: </label>
+          <div class="col-sm-12">
+            <mat-radio-group aria-label="Select an option">
+              <mat-radio-button value="0" style="margin-left: 0px;" checked>Fixed Rate&nbsp;&nbsp; </mat-radio-button>
+              <mat-radio-button value="1" style="margin-left: 0px;">Time & Expense&nbsp;&nbsp;</mat-radio-button>
+            </mat-radio-group>
+          </div>
+      </div>
+    </div>
+
+
+    </div>
+</div>
+      
+
+    </div>
+
+    <mat-dialog-actions align="center">
+        <button mat-raised-button class="add-hover btn-primary" type="submit"><mat-icon>send</mat-icon>&nbsp;Save</button>
+        <button mat-raised-button type="button" class="add-dark-hover btn-default" (click)="close()"><mat-icon>cancel</mat-icon>&nbsp;Cancel</button>
+    </mat-dialog-actions>
+</form>

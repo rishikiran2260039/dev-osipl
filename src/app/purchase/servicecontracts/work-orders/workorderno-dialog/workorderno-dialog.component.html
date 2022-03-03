@@ -1,0 +1,184 @@
+<div class="flex-p">
+  <div class="row wrap">
+      <div class="col-sm-12 no-padding">
+          <div class="row-wrap">
+              <div class="w-100">
+                  <div class="row">
+                      <div class="col-xs-12">
+                          <div class="pills">
+                              <ul class="nav nav-pills pull-right">
+                                  <li routerLink="/purchase/servicecontracts/work-orders">
+                                      <a mat-raised-button class="navtabWidth" style="margin-top: -10px;">
+                                          Back
+                                      </a>
+                                  </li>                             
+                              </ul>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+<div class="w-100" style="margin-left: 10px!important;">
+  <div class="flex-p">
+  <mat-drawer-container>
+  <mat-drawer-content>
+  <mat-card class="col-sm-12" style="background-color: #dbe8f3 !important;width: 98.7%; padding: 10px 0px !important;">
+    <!-- <div class="col-sm-12" style="margin-bottom: 10px;">
+      <label style="margin-left: 10px;">Requisition Title:</label>
+      <span>&nbsp;&nbsp;CHECK RC CONDITIONS</span>
+    </div> -->
+    
+    <div class="col-sm-12">
+      <div class="col-sm-4">
+        
+          <label>Vendor Name:</label>
+          <span>&nbsp;&nbsp;Usha International Ltd</span>
+       
+      </div>
+      <div class="col-sm-4">
+        
+          <label>Branch Name</label>
+          <span>&nbsp;&nbsp;12 Peterson Drive,Sydney</span>
+       
+      </div>
+      <div class="col-sm-4">
+       
+          <label>Work Order Number</label>
+          <span>&nbsp;
+            WO-019</span>
+       
+      </div>
+    </div>
+    
+  </mat-card>
+  </mat-drawer-content>
+  </mat-drawer-container>
+  </div>
+  </div>
+
+ 
+<div fxLayout="row wrap" #resizedDiv>
+  <div class="flex-p w-100 sizeAlign">
+    <div class="row">
+      <div class="col-xs-12">
+         <div class="col-sm-12">
+           <div class="col-sm-6">
+             <h2 class="flex-p w-100">Service and Labour Details</h2>
+           </div>
+           <div class="col-sm-6">
+            <button type="button" class="btn btn-success pull-right" (click)="servicelabor(null)"><mat-icon>add</mat-icon></button>
+            </div>
+          </div>
+        <div id="grid-table-container" class="table-responsive" style="margin-left: 10px;">
+          <table matSort id="example2" class="table table-bordered table-hover">
+            <thead class="tbl-head">
+              <tr>
+                <th class="text-center">Service and Labor Description</th>
+                <th class="text-center">Work Code</th>
+                <th class="text-center">Qty</th>
+                <th class="text-center">Hours</th>
+                <th class="text-center">Rate($/hrs)</th>
+                <th >Amount($)</th>
+                <th class="text-center">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of items">
+                <td class="text-center">{{item.Service}}</td>
+                <td class="text-center">{{item.WorkCode}}</td>
+                <td class="text-center">{{item.Qty}}</td>
+                <td class="text-center">{{item.Hours}}</td>
+                <td class="text-center">{{item.Rate}}</td>
+                <td >{{item.Amount}}</td>
+                <td class="text-center editDel">
+                  <a style="cursor: pointer;margin-right:10px; " matTooltip="Update Item"
+                  >
+                    <i class="fa fa-edit" style="color: cornflowerblue" (click)="servicelabor(item)"  ></i>
+                  </a>
+                  <a><i class="fa fa-trash red" matTooltip="Delete Item" style="cursor: pointer;"></i></a>
+                </td>
+              </tr>
+              <tr>
+                
+                 
+                 <td colspan="5" style="text-align: right !important; font-weight: bold;"  >Total</td>
+                 <td >2350</td>
+                 <td ></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+<div fxLayout="row wrap">
+  <div class="flex-p w-100 sizeAlign">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="col-sm-12">
+          <div class="col-sm-6">
+            <h2 class="flex-p w-100">Parts and Material Details</h2>
+          </div>
+          <div class="col-sm-6">
+            <button type="button" class="btn btn-success pull-right" (click)="Partsandmaterial(null)"><mat-icon>add</mat-icon></button>
+          </div>
+        </div>
+        <div id="grid-table-container" class="table-responsive" style="margin-left: 10px;">
+          <table matSort id="example2" class="table table-bordered table-hover">
+            <thead class="tbl-head">
+              <tr>
+                <th>Parts and Material</th>
+                <th class="text-center">Qty</th>
+                <th class="text-center">Price(per Unit)</th>
+                <th>Amount</th>
+                <th class="text-center">Actions</th>
+               
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of items2">
+
+                <td >{{item.Parts}}</td>
+                <td style="text-align:  center!important;">{{item.Qty}}</td>
+                <td style="text-align: center!important;">{{item.Price}}</td>
+                <td >{{item.Amount}}</td>
+                <td class="text-center editDel">
+                  <a style="cursor: pointer;margin-right:10px; " matTooltip="Update Item"
+                  >
+                    <i class="fa fa-edit" style="color: cornflowerblue" (click)="Partsandmaterial(item)"></i>
+                  </a>
+                  <a><i class="fa fa-trash red" matTooltip="Delete Item" style="cursor: pointer;"></i></a>
+                </td>
+                
+              </tr>
+              <tr>
+                
+                <td colspan="3"  style="text-align: right !important; font-weight: bold;" >Total</td>
+                <td >3000</td>
+                <td ></td>
+             </tr>
+              <tr>
+                
+                <td colspan="3"  style="text-align: right !important; font-weight: bold;" >Sub-Total</td>
+                <td >5350</td>
+                <td ></td>
+             </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

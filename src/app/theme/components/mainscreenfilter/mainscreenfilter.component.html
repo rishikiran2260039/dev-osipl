@@ -1,0 +1,56 @@
+<button mat-icon-button [matMenuTriggerFor]="userMenu" #userMenuTrigger="matMenuTrigger">
+  <!-- <mat-icon title="Universal Filter">search</mat-icon> -->
+  <i class="fa fa-filter" aria-hidden="true" style="font-size: 20px;"></i>
+</button>
+
+<mat-menu #userMenu="matMenu" [overlapTrigger]="false" class="toolbar-dropdown-menu user-menu">
+    <!--<span (mouseleave)="userMenuTrigger.closeMenu()">-->
+    <mat-toolbar color="primary" class="new-class" style="height:60px!important;">
+        <div fxLayout="row" fxLayoutAlign="space-around center" class="user-info">
+            <h3 style="align-items: center;">Global Filter</h3>
+        </div>
+    </mat-toolbar>
+
+    <a mat-menu-item style="margin-top: 15px;">
+        <!-- <mat-icon>power_settings_new</mat-icon> -->
+        <mat-select placeholder="Select Client" class="form-control" (click)="$event.stopPropagation()">
+            <mat-option *ngFor="let option of customers" [value]="option.id">{{option.value}}</mat-option>
+        </mat-select>
+        <!-- <span>Select Zone</span>  -->
+    </a>
+    <a mat-menu-item style="margin-top: 15px;">
+        <!-- <mat-icon>power_settings_new</mat-icon> -->
+        <mat-select placeholder="Select Project" class="form-control" (click)="$event.stopPropagation()">
+            <mat-option *ngFor="let option of customers" [value]="option.id">{{option.value}}</mat-option>
+        </mat-select>
+        <!-- <span>Select Zone</span>  -->
+    </a>
+    <a mat-menu-item style="margin-top: 15px;">
+      <!-- <mat-icon>power_settings_new</mat-icon> -->
+      <mat-select placeholder="Select Vendor" class="form-control" (click)="$event.stopPropagation()">
+          <mat-option *ngFor="let option of customers" [value]="option.id">{{option.value}}</mat-option>
+      </mat-select>
+      <!-- <span>Select Zone</span>  -->
+  </a>
+  <div style="margin: 15px;">
+    <button mat-raised-button class="btn-success" style="margin-left: 14%;">
+     Apply
+    </button>
+    <button mat-raised-button class="btn-default" style="margin-left: 15px;">
+      Cancel
+     </button>
+    <!-- <button type="button" class="btn btn-success btn-xs" style="font-size: 10px !important;margin-left: 20%;">Apply</button>
+    <button type="button" class="btn btn-default btn-xs" style="font-size: 10px !important;margin-left: 15px;">Cancel</button> -->
+  </div>
+
+    <!--</span>-->
+    <!-- <div class="row">
+      <div class="col-6">
+        <button type="button" class="btn btn-success btn-xs" style="font-size: 10px !important;">Apply</button>
+      </div>
+      <div class="col-6">
+        <button type="button" class="btn btn-default btn-xs" style="font-size: 10px !important;">Cancel</button>
+
+      </div>
+    </div> -->
+    </mat-menu>

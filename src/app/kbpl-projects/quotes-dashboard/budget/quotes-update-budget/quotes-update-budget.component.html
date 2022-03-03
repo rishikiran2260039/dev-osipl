@@ -1,0 +1,125 @@
+<h1 mat-dialog-title class="custom-header" style="background-color:#286ba5 !important;height:50px">Update Budget</h1>
+<form>
+<div mat-dialog-content>
+<div class="col-sm-12">
+    <div class="row">
+      <div class="form-group col-sm-6">
+        <div class="row">
+            <label class="col-sm-12 add-member-label">Site: </label>
+            <div class="col-sm-12">
+              <mat-select class="form-control" placeholder="Select Site">
+                <mat-option value="1">Sector 56</mat-option>
+                <mat-option value="2">Lansdown</mat-option>
+                <mat-option value="3">Newton</mat-option>
+              </mat-select>
+            </div>
+        </div>
+    </div>
+        <div class="form-group col-sm-6">
+            <div class="row">
+                <label class="col-sm-12 add-member-label">contract#: </label>
+                <div class="col-sm-12">
+                  <mat-select class="form-control" placeholder="Select Contract">
+                    <mat-option value="1">2478BA</mat-option>
+                    <mat-option value="2">3278BA</mat-option>
+                    <mat-option value="3">4578BA</mat-option>
+                    <mat-option value="4">2578BA</mat-option>
+                    <mat-option value="5">6578BA</mat-option>
+                  </mat-select>
+                </div>
+            </div>
+        </div>
+        <div class="form-group col-sm-6">
+            <div class="row">
+                <label class="col-sm-12 add-member-label">Contractor: </label>
+                <div class="col-sm-12">
+                  <mat-select class="form-control" placeholder="Select Contractor">
+                    <mat-option value="1">MRC</mat-option>
+                    <mat-option value="2">Bacon</mat-option>
+                    <mat-option value="3">Newton</mat-option>
+                    <mat-option value="4">Alibaba</mat-option>
+                    <mat-option value="5">Salim</mat-option>
+                  </mat-select>
+                </div>
+            </div>
+
+        </div>
+        <div class="form-group col-sm-6">
+            <div class="row">
+                <label class="col-sm-12 add-member-label">Tasks: </label>
+                <div class="col-sm-12">
+                    <input class="form-control" placeholder="Enter Tasks" type="text">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="form-group col-sm-6">
+            <div class="row">
+                <label class="col-sm-12 add-member-label">Budget: </label>
+                <div class="col-sm-12">
+                  <input class="form-control" placeholder="Enter Budget" type="text">
+                </div>
+            </div>
+        </div>
+
+
+        <div class="form-group col-sm-6">
+          <div class="row">
+              <label class="col-sm-12 add-member-label">Paid: </label>
+              <div class="col-sm-12">
+                <input class="form-control" placeholder="Enter Paid amount" type="text">
+              </div>
+          </div>
+      </div>
+
+
+      <div class="form-group col-sm-6">
+        <div class="row">
+            <label class="col-sm-12 add-member-label">Invoiced: </label>
+            <div class="col-sm-12">
+              <input class="form-control" placeholder="Enter Invoiced amount" type="text">
+            </div>
+        </div>
+    </div>
+
+
+    <div class="form-group col-sm-6">
+      <div class="row">
+          <label class="col-sm-12 add-member-label">Claimed: </label>
+          <div class="col-sm-12">
+            <input class="form-control" placeholder="Enter Claimed amount" type="text">
+          </div>
+      </div>
+  </div>
+
+        <div class="form-group col-sm-6">
+            <div class="row">
+                <label class="col-sm-12">Completion: </label>
+                <div class="col-sm-12">
+                  <input type="text" class="form-control" placeholder="Enter Completion Percentage">
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group col-sm-6">
+          <div class="row">
+              <label class="col-sm-12">Status: </label>
+              <div class="col-sm-12">
+                <input class="form-control" type="text" placeholder="Enter Status">
+              </div>
+          </div>
+        </div>
+
+
+    </div>
+</div>
+      
+
+    </div>
+
+    <mat-dialog-actions align="center">
+        <button mat-raised-button class="add-hover btn-primary" type="submit"><mat-icon>send</mat-icon>&nbsp;Save</button>
+        <button mat-raised-button type="button" class="add-dark-hover btn-default" (click)="close()"><mat-icon>cancel</mat-icon>&nbsp;Cancel</button>
+    </mat-dialog-actions>
+</form>

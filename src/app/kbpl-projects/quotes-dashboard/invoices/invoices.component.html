@@ -1,0 +1,39 @@
+<div class="row-wrap">
+  <div class="w-100">      
+      <div class="row">
+          <div class="col-xs-12" style="margin-bottom: 15px;">
+              <div class="pills">
+                  <ul class="nav nav-pills" style="margin-left: 10px;">
+                      <li routerLinkActive="active" [routerLink]="['/projects/quotes-dashboard/invoices/new-invoice']">
+                          <a mat-raised-button class="navtabWidth">
+                            <mat-icon>attach_money</mat-icon>
+                            &nbsp;Invoices
+                          </a>
+                      </li>
+                      <li routerLinkActive="active" [routerLink]="['/projects/quotes-dashboard/invoices/new-unbilled']">
+                          <a mat-raised-button class="navtabWidth" >
+                            <mat-icon>money_off</mat-icon>
+                            &nbsp;Unbilled
+                          </a>
+                      </li>
+                      <li routerLinkActive="active" [routerLink]="['/projects/quotes-dashboard/invoices/new-activity-log']">
+                          <a mat-raised-button class="navtabWidth" >
+                            <mat-icon>schedule</mat-icon>
+                            &nbsp;Activity Log
+                          </a>
+                      </li>
+                    <li routerLinkActive="active" [routerLink]="['/projects/quotes-dashboard/invoices/new-billed']">
+                      <a mat-raised-button class="navtabWidth">
+                        <mat-icon>attach_money</mat-icon>
+                        &nbsp;Billed
+                      </a>
+                  </li>
+                  </ul>
+              </div>
+          </div>
+          <router-outlet></router-outlet>
+      </div>
+  </div>
+</div>
+
+

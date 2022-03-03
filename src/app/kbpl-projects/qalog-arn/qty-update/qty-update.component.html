@@ -1,0 +1,61 @@
+<div class="NewHeader">
+  <h1 mat-dialog-title >
+    {{ data ? 'Update' : 'Add' }} Item
+  </h1>
+</div>
+<form>
+<div mat-dialog-content  class="change" style="height: 170px;overflow: hidden !important;">
+<div class="col-sm-12">
+  <div class="col-sm-6">
+    <div class="row">
+      <label class="col-sm-12 add-member-label">Qty Received:</label>
+      <div class="col-sm-12">
+        <input class="form-control" placeholder="Enter Qty Received" type="text">
+      </div>
+    </div>
+  
+    <div class="row">
+      <label class="col-sm-12 add-member-label">Qty Accepted:</label>
+      <div class="col-sm-12">
+        <input type="text" class="form-control" placeholder="Enter Qty Accepted">
+      </div>
+     </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="row">
+      <label class="col-sm-12 add-member-label">Qty Declined:</label>
+      <div class="col-sm-12">
+        <input class="form-control" placeholder="Enter Qty Declined" type="text">
+      </div>
+     </div>
+    <div class="row">
+      <label class="col-sm-12">Remarks</label>
+      <div class="col-sm-12">
+        <input type="text" placeholder="Enter Remarks" class="form-control">
+      </div>
+     </div>
+    
+     <!-- <div class="row">
+      <label class="col-sm-12 add-member-label">Submitted By</label>
+      <div class="col-sm-12">
+        <input class="form-control" placeholder="Enter Name" type="text">
+      </div>
+     </div>  -->
+    
+     <!-- <div class="row">
+      <label class="col-sm-12 add-member-label">Approved By</label>
+      <div class="col-sm-12">
+        <input class="form-control" placeholder="Enter Name" type="text">
+      </div>
+     </div>  -->
+  </div>
+  <div class="col-sm-12">
+    <mat-dialog-actions align="center"  class="pull-right" style="margin-top: 5px;">
+      <button mat-raised-button class="add-hover btn-primary pull-right" type="submit"><mat-icon>send</mat-icon>&nbsp;Save</button>
+      <button mat-raised-button type="button" class="add-dark-hover btn-default pull-right" (click)="close()"><mat-icon>cancel</mat-icon>&nbsp;Cancel</button>
+  </mat-dialog-actions>
+  </div>
+    
+</div>
+</div>
+</form>

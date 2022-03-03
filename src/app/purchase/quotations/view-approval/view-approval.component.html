@@ -1,0 +1,43 @@
+<h3 mat-dialog-title class="NewHeader">Approvals By Stage - OM/REQ/SPA-FEB-19/1042</h3>
+<div fxLayout="row wrap" #resizedDiv>
+  <div class="flex-p w-100 sizeAlign">
+    <div class="row">
+      <div class="col-xs-12">
+        <div id="grid-table-container" class="table-responsive" style="margin-left: 10px;">
+          <table matSort id="example2" class="table table-bordered table-hover">
+            <thead class="tbl-head">
+              <tr>
+                <th class="text-left">Date And Time</th>
+                <th class="text-left">Stage</th>
+                <th class="text-center">Status</th>
+                <th class="text-left">User</th>
+                <th class="text-left">Remarks </th>
+                <th class="text-center">Download Document</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of items">
+
+                <td style="text-align: left!important;">{{item.date}}</td>
+                <td style="text-align: left!important;">{{item.stage}}</td>
+                <td style="text-align: center!important;">{{item.status}}</td>
+                <td style="text-align: left!important;">
+                  <span>{{item.user}}</span><br>
+                </td>
+                <td style="text-align: left!important;">{{item.remarks}}</td>
+                <td style="min-width: 70px !important;cursor: pointer; text-align: center!important;" matTooltip="Download">
+                  Download
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div mat-dialog-action style="margin-top: 20px;">
+  <button mat-raised-button class="add-hover btn-primary pull-right" style="margin: 1%;" (click)="close()" ><mat-icon>send</mat-icon>Save</button>
+  <button mat-raised-button class="add-hover btn-primary pull-right" style="margin: 1%;" (click)="close()"><mat-icon>cancel</mat-icon>&nbsp;Cancel</button>
+</div>

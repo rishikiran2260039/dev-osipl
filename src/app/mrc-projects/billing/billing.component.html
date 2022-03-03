@@ -1,0 +1,38 @@
+<app-project-dashboard></app-project-dashboard>
+<div class="row-wrap">
+  <div class="w-100">
+    <div fxLayout="row">
+      <div class="col-xs-12">
+        <div class="pills">
+          <ul class="nav nav-pills" style="margin-top: 15px;">
+            <!-- <li routerLinkActive="active">
+              <a mat-raised-button class="navtabWidth" [routerLink]="['/mrc/contracts/project-dashboard/billing/client-ra-bills']">
+                <mat-icon>grid_on</mat-icon> Client RA Bills
+              </a>
+            </li> -->
+
+            <li routerLinkActive="active">
+              <a mat-raised-button class="navtabWidth"
+                [routerLink]="['/contracts/project-dashboard/billing/bills']">
+                <mat-icon>account_balance_wallet</mat-icon> Claims
+              </a>
+            </li>
+            <li routerLinkActive="active">
+              <a mat-raised-button class="navtabWidth"
+                [routerLink]="['/contracts/project-dashboard/billing/activity-log']">
+                <mat-icon>work_outline</mat-icon> Invoices
+              </a>
+            </li>
+            <li routerLinkActive="active">
+              <a mat-raised-button class="navtabWidth"
+                [routerLink]="['/contracts/project-dashboard/billing/unbilled']">
+                <mat-icon>money_off</mat-icon> Allocations
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

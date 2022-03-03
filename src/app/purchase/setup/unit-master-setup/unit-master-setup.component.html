@@ -1,0 +1,99 @@
+<div class="row" style="margin-bottom:7px;margin-top: 10px;">
+  <div class="col-sm-6 ">
+
+  </div>
+  <div class="col-sm-6">
+        <button mat-raised-button class="pull-right add-hover btn-primary margin-right-10" (click)="openActionTypeDialog(null)">
+          <mat-icon>add</mat-icon> Add Unit
+      </button>
+      <button mat-raised-button  color="primary" class="filters-hover pull-right margin-right-10" style="color: #f3f3f3;"
+      (click)="filterToggle = !filterToggle">
+      <mat-icon>filter_list</mat-icon> Filter
+       </button> 
+  </div>
+</div>
+<div class="container-fluid" style="padding: 0% !important;">
+    <div fxLayout="row wrap" *ngIf="filterToggle" class="sizeAlign">
+      <div fxFlex="100" fxFlex.gt-sm fxFlex.sm class="flex-p w-100 margins">
+        <mat-card class="filter">
+          <mat-card-content>
+            <div class="row">
+    
+          
+              <div class="col-sm-4" style="margin-top: 10px;">
+                <div class="col-sm-4 newMarginClass" style="margin-top: 5px;">Keyword:</div>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" placeholder="Enter Keyword">
+                  </div>
+              </div>
+              <div class="col-sm-8" style="margin-top: 10px;">
+    
+           
+                <a (click)="filterToggle = !filterToggle" class="pull-right"
+                  style="font-size: 25px; cursor: pointer; margin-left: 5px">
+                  <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+                </a>
+                  <button mat-raised-button class="pull-right btn-primary">
+                    <mat-icon>youtube_searched_for</mat-icon> Search
+                  </button>
+               
+    
+              
+                  <button mat-raised-button class="pull-right btn-default margin-right-10">
+                    <mat-icon>settings_backup_restore</mat-icon> Clear
+                  </button>
+                
+    
+    
+              </div>
+    
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  
+  </div>   
+<div class="row" style="margin-top: 20px;">
+<div class="col-sm-12">
+    <div id="grid-table-container" class="table-responsive">
+        <table matSort id="example2" class="table table-bordered table-hover">
+            <thead class="tbl-head">
+                <tr>
+                  <th>Unit Code</th>
+                  <th>Unit Description</th>
+                  <th class="text-center">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of items">
+
+                  <td>{{item.code}}</td>
+                      
+                  <td>
+                      {{item.des}}
+                  </td>
+
+                  <td class="text-center">
+                      <a  class="edit-icon" (click)="openActionTypeDialog(item)">
+                          <i class="fa fa-edit"></i>
+                      </a>
+                      <a mwlConfirmationPopover
+                      [popoverTitle]="popoverTitle"
+                      [popoverMessage]="popoverMessage"
+                      placement="left"
+                      (confirm)="deleteUser()"
+                      (cancel)="cancelClicked = true">
+                      <i style="cursor: pointer;" title="Delete" class="fa fa-trash red"></i>
+                  </a>
+
+                  </td>
+
+                </tr>
+            </tbody>
+        </table>
+        <mat-paginator [length]="totalSize" [pageIndex]="currentPage" [pageSize]="pageSize"
+            [pageSizeOptions]="[5, 10, 25, 50, 100]" showFirstLastButtons></mat-paginator>
+    </div>
+</div>
+</div>

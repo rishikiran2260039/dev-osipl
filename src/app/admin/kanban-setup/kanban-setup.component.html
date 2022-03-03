@@ -1,0 +1,102 @@
+<div class="row">
+  <div class="pills">
+    <!-- <ul class="nav nav-pills" style=" margin-left: 32px; margin-top: 23px;">
+        <li routerLinkActive="active" routerLink="/mrc/admin/quotes-kanban">
+            <a mat-raised-button  style="background-color:#e0e0e0" class="navtabWidth">
+                Quotes
+            </a>
+        </li>
+        <li routerLinkActive="active" routerLink="/mrc/admin/kanban">
+          <a mat-raised-button  style="background-color:#e0e0e0" class="navtabWidth">
+          Projects
+          </a>
+        </li> -->
+     
+        <!-- <li routerLinkActive="active" routerLink="project-types">
+          <a mat-raised-button class="navtabWidth">
+            Project Types
+          </a>
+        </li> -->
+        <!-- <li routerLinkActive="active" routerLink="actions">
+            <a mat-raised-button class="navtabWidth">
+              Actions
+            </a>
+        </li> -->
+    
+    <!-- </ul> -->
+</div>
+  <div class="col-xs-12">
+      <div class="row" style="margin-bottom:7px;">
+        
+          <div class="col-xs-6 ">
+              
+
+          </div>
+
+          <div class="col-xs-6" style="padding-right: 18px !important;">
+              <div class="flex-p">
+                
+                <!-- <button mat-raised-button class="pull-right btn-primary" style="margin-left: 10px;color:white; background:#3b7bb8" (click)="openGridColumnsDialog()">
+                    <mat-icon>view_column</mat-icon> Grid Columns
+                </button> -->
+                <button mat-raised-button class="pull-right btn-primary" (click)="openleadDialog()">
+                    <mat-icon>add</mat-icon> Add Stage
+                </button>
+                <!-- <button mat-raised-button color="primary" class="pull-right filters-hover margin-right-10" (click)="filterToggle = !filterToggle">
+                    <mat-icon>filter_list</mat-icon> Filter
+                </button> -->
+                
+            </div>
+              
+          </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row" style="margin-top:20px">
+    <div class="col-xs-12" style="margin-left:10px">
+        <div id="grid-table-container" class="table-responsive" >
+            <table matSort id="example2 " class="table table-bordered table-hover">
+                <thead class="tbl-head" >
+                    <tr>
+                      <th>Stage Name</th>
+                      <th class="text-center">Status</th>
+                      <th class="text-center">Actions</th>
+                    </tr>
+                </thead>
+                <tbody cdkDropList  (cdkDropListDropped)="drop($event)">
+                    <tr *ngFor="let item of items" cdkDrag style="cursor: move;">
+                      <td><i aria-hidden="true" class="fa fa-arrows" *cdkDragPlaceholder titile="Move column"></i> {{ item.project }}</td>
+                      <td class="text-center">  
+                         <a [ngStyle]="{'color': item.Status? 'blue' : 'red','cursor':'pointer'}"
+                        mwlConfirmationPopover [popoverTitle]="popoverStatusTitle"
+                        [popoverMessage]="popoverStatusMessage" placement="left"
+                        (confirm)="saveStatus(item);item.Status=!item.Status" (cancel)="cancelClicked = true">
+                        <span *ngIf="!item.Status" style="color:red">Inactive</span>
+                        <span *ngIf="item.Status">Active</span></a>
+                      </td>  
+                      <td  class="text-center editDel">
+                          <a style="cursor: pointer;margin-right:10px;"  (click)="openleadDialog()" matTooltip="Update Project" >
+                              <i class="fa fa-edit" style="color: blue"></i>
+                          </a>
+                          <a ><i class="fa fa-trash red" matTooltip="Delete Project"  style="cursor: pointer;"></i></a>
+                      </td>  
+                </tr>
+            </tbody>
+            </table>
+           
+           
+            <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+              <!-- <div class="example-box" *ngFor="let item of items" cdkDrag> -->
+                <!-- <div class="example-custom-placeholder" *cdkDragPlaceholder></div> -->
+                <!-- {{item.project}} -->
+              <!-- </div> -->
+            </div>
+
+          <!-- <mat-paginator [length]="totalSize" [pageIndex]="currentPage" [pageSize]="pageSize"
+          [pageSizeOptions]="[5, 10, 25, 50, 100]"
+          showFirstLastButtons></mat-paginator> -->
+      </div>
+    </div>
+  </div>

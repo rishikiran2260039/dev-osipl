@@ -1,0 +1,100 @@
+<div class="NewHeader">
+  <h1 mat-dialog-title>
+     {{ data ? 'Update' : 'Add'}} Item
+  </h1>
+</div>
+
+<div mat-dialog-content>
+    <form class="form-horizontal">
+  
+    <div class="form-group">
+     <label class="control-label col-sm-4 add-member-label">Asset Name : </label>
+     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 margin-bottom-15px">              
+            
+      <input type="text" class="form-control" placeholder="Enter Asset Name">
+         
+     </div>
+    </div>
+    <div class="form-group">
+     <label class="control-label col-sm-4 add-member-label">Asset Code: </label>
+     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 margin-bottom-15px">              
+            
+      <input type="text" class="form-control" placeholder="Enter Asset Code">
+         
+     </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-4 add-member-label">Asset OEM : </label>
+      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 margin-bottom-15px">              
+            
+        <input type="text" class="form-control" placeholder="Enter Asset OEM">
+           
+       </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-4 add-member-label">Asset Model : </label>
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 margin-bottom-15px">              
+          
+      <input type="text" class="form-control" placeholder="Enter Asset Model">
+         
+     </div>
+</div>
+
+<div class="form-group">
+  <label class="control-label col-sm-4 add-member-label">Quantity : </label>
+  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 margin-bottom-15px">              
+        
+    <input type="text" class="form-control" placeholder="Enter Quantity">
+       
+   </div>
+</div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-4 ">Date of Manufacture : </label>
+      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 margin-bottom-15px">              
+         
+       <input type="date" class="form-control" placeholder="Enter length">
+      </div>
+     </div>
+     <div class="form-group">
+      <label class="control-label col-sm-4 ">Date of Purchase : </label>
+      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 margin-bottom-15px">              
+         
+       <input type="date" class="form-control" placeholder="Enter Date of Purchase">
+      </div>
+     </div>
+     <div class="form-group">
+      <label class="control-label col-sm-4 ">Description : </label>
+      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 margin-bottom-15px">              
+         
+       <textarea rows="2" placeholder="Enter Description" class="form-control"></textarea>
+      </div>
+     </div>
+     <div class="form-group">
+      <label class="control-label col-sm-4 ">PO Ref : </label>
+      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 margin-bottom-15px">              
+         
+       <input type="text" class="form-control" placeholder="Enter PO Ref">
+      </div>
+     </div>
+     <div class="form-group">
+      <label class="control-label col-sm-4 add-member-label">Vendor Name : </label>
+      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 margin-bottom-15px">              
+         
+       <input type="text" class="form-control" placeholder="Enter Vendor Name">
+      </div>
+     </div>
+     <div class="form-group">
+      <label class="control-label col-sm-4 add-member-label">Condition : </label>
+      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 margin-bottom-15px">              
+         
+       <input type="text" class="form-control" placeholder="Enter Condition">
+      </div>
+     </div>
+
+    </form>
+</div>
+<mat-dialog-actions align="end" style="padding-bottom: 10px;">
+    <button mat-raised-button class="btn-primary"  [mat-dialog-close]="'test'"><mat-icon>send</mat-icon><span>Save</span></button>
+    <button mat-raised-button class="add-dark-hover btn-default" (click)="close()"><mat-icon>cancel</mat-icon>Close</button>
+</mat-dialog-actions> 

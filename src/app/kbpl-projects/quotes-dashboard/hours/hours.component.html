@@ -1,0 +1,156 @@
+<div class="col-sm-12">
+  <div class="pull-right col-sm-1 no-padding">
+
+      <button mat-raised-button color="primary" style="position: relative; left: 28px;" class="pull-right filter-hover" (click)="filterToggle = !filterToggle">
+          <mat-icon>filter_list</mat-icon> Filter
+      </button>
+  </div>
+</div>
+<div class="no-padding col-sm-12"> 
+  <form style="width: 1370px;margin-left: -14px;">
+      <div fxLayout="row wrap"  *ngIf="filterToggle">
+          <div fxFlex="100" fxFlex.gt-sm fxFlex.sm class="flex-p w-100">
+              <mat-card class="filter">
+                  <mat-card-content>
+                      <div class="row col-sm-12">
+                          <div class="col-sm-3">
+                              <div class="col-sm-3 no-padding" style="margin-top: 6px !important;">Site:</div>
+                              <div class="col-sm-9 no-padding">
+                                  <mat-select placeholder="--Please Select--" class='form-control'>
+                                      <mat-option class='option'></mat-option>
+                                  </mat-select>
+                              </div>
+                          </div>
+                          <div class="col-sm-3">
+                              <div class="col-sm-3 no-padding" style="margin-top: 6px !important;">SOW:</div>
+                              <div class="col-sm-9 no-padding">
+                                  <mat-select placeholder="--Please Select--" class='form-control'>
+                                      <mat-option class='option'></mat-option>
+                                  </mat-select>
+                              </div>
+                          </div>
+                          <div class="col-sm-3">
+                              <div class="col-sm-3 no-padding" style="margin-top: 6px !important;">Task:</div>
+                              <div class="col-sm-9 no-padding">
+                                  <mat-select multiple placeholder="--Please Select--" class='form-control'>
+                                      <mat-option #allSelectedTasks [value]="0">Select All</mat-option>
+                                      <mat-option class='option'></mat-option>
+                                  </mat-select>
+                              </div>
+                          </div>
+                          <div class="col-sm-3">
+                              <div class="col-sm-3 no-padding" style="margin-top: 6px !important;">Action Type:</div>
+                              <div class="col-sm-9 no-padding">
+                                  <mat-select multiple placeholder="--Please Select--" class='form-control'>
+                                      <mat-option #allSelectedActions [value]="0">Select All</mat-option>
+                                      <mat-option class='option'></mat-option>
+                                  </mat-select>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="row col-sm-12" style="margin-top: 10px;">
+                          <div class="col-sm-3">
+                              <div class="col-sm-3 no-padding" style="margin-top: 6px !important;">User:</div>
+                              <div class="col-sm-9 no-padding">
+                                  <mat-select multiple placeholder="--Please Select--" class='form-control'>
+                                      <mat-option #allSelectedUsers [value]="0">Select All</mat-option>
+                                      <mat-option class='option'></mat-option>
+                                  </mat-select>
+                              </div>
+                          </div>
+                          <div class="col-sm-3">
+                              <div class="col-sm-3 no-padding" style="margin-top: 6px !important;">From Date:</div>
+                              <div class="col-sm-9 no-padding">
+                                <input class="form-control" class="form-control" placeholder="MM/DD/YYYY" (keypress)="false"
+                                [owlDateTimeTrigger]="dt1" [owlDateTime]="dt1" name="dt1">
+                              <owl-date-time [pickerType]="'calendar'" #dt1></owl-date-time>
+                              </div>
+                          </div>
+                          <div class="col-sm-3">
+                              <div class="col-sm-3 no-padding" style="margin-top: 6px !important;">To Date:</div>
+                              <div class="col-sm-9 no-padding">
+                                <input class="form-control" class="form-control" placeholder="MM/DD/YYYY" (keypress)="false"
+                                [owlDateTimeTrigger]="dt2" [owlDateTime]="dt2" name="dt2">
+                              <owl-date-time [pickerType]="'calendar'" #dt2></owl-date-time>
+                              </div>
+                          </div>
+                          <div class="col-sm-3">
+                              <div style="margin-left: 65px;">
+                                <div class="col-lg-1" style="margin-left:30% !important;">
+                                    <button mat-raised-button class="pull-right btn-primary">
+                                      <mat-icon>youtube_searched_for</mat-icon> Search
+                                    </button>
+                        
+                                  </div>
+                                  <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="margin-left: -18px;">
+                                    <button mat-raised-button style="background-color:#37474f; color:#fff !important;">
+                                      <mat-icon>settings_backup_restore</mat-icon> Clear
+                                    </button>
+                        
+                                  </div>
+                                  <a (click)="filterToggle = !filterToggle" class="pull-right"
+                                    style="font-size: 25px; cursor: pointer; margin-left: 5px;">
+                                    <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+                                  </a>
+                              
+                          </div>
+                          </div>
+                      </div>
+                  </mat-card-content>
+              </mat-card>
+          </div>
+      </div>
+  </form>
+</div>
+
+<div class="table-responsive w-100 flex-p">
+  <table id="example2" class="table table-bordered table-hover">
+      <thead class="tbl-head">
+          <tr class="tr-grid-header">
+              <th class="vert-align-mid" style="min-width: 71px !important;">Date</th>
+              <th class="vert-align-mid" style="width:90px">User Name</th>
+              <th class="vert-align-mid" style="width:90px">Job Code</th>
+              <th class="vert-align-mid">Site</th>
+              <th class="vert-align-mid">SOW</th>
+              <th class="vert-align-mid">Task</th>
+              <th class="vert-align-mid">Action</th>
+              <th class="vert-align-mid" style="width:105px">Action Status</th>
+              <th>
+                Planned Hrs</th>
+            <th>
+                Assigned Hrs</th>
+            <th>
+                Worked Hrs</th>
+            <th>
+                Rem. Hrs</th>
+              <th class="vert-align-mid">Actual</th>
+              <th class="vert-align-mid" style="min-width: 57px !important;">Notes</th>
+              <th class="vert-align-mid" style="min-width: 85px !important;">Due Date</th>
+              <th class="vert-align-mid" style="min-width: 67px;">Manage</th>
+              <th style=" min-width: 100px !important;">Created Date</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+          </tr>
+          <tr style="background-color: #f4cb36c2 !important;">
+              <td colspan="9">
+                  <b>Page wise approved hours & costs: 0.00Hrs($0.00) </b>
+              </td>
+              <td></td>
+              <td></td>
+              <td colspan="3">
+                  
+              </td>
+              <td colspan="4" style="text-align: right;"><b>Total Approved Cost: $0.00</b></td>
+          </tr>
+          <tr>
+              <td colspan="18" class="text-center">
+                  No Data Available
+              </td>
+          </tr>
+      </tbody>
+  </table>
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 50, 100]" showFirstLastButtons></mat-paginator>
+
+</div>

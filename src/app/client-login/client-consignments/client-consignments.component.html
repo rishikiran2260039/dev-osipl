@@ -1,0 +1,36 @@
+<button mat-raised-button  class="pull-right btn-default margin-right-10"
+[routerLink]="['/client-login/long-leads']" routerLinkActive="router-link-active" >
+       <mat-icon>chevron_left</mat-icon> Back
+    </button>
+
+    
+<div class="col-sm-12 margin-top-10" style="padding-left: 20px; padding-right: 10px;">
+  <div class="table-responsive">
+      <table  class="table table-bordered table-hover">
+          <thead class="tbl-head">
+              <tr class="tr-grid-header">
+                  <th class="text-center" style="width: 150px;">Date</th>
+                  <th style="width: 250px;">PO/WO Reference</th>
+                  <th style="width: 150px;">Delivery Challan Ref</th>
+                  <th class="text-center" style="width: 150px;">Items</th>
+                  <th class="text-center" style="width: 150px;">Status</th>
+                  <th class="text-center" style="width: 150px;">GRN Date Date</th>
+         
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let item of items">
+
+                  <td class="text-center">{{item.date}}</td>
+
+                  <td>{{item.ref}}</td>
+                  <td>{{item.delref}}</td>
+                  <td class="text-center" style="color: blue;cursor: pointer;"  [routerLink]="['/client-login/items']" routerLinkActive="router-link-active" >{{item.items}}</td>
+                  <td class="text-center">{{item.status}}</td>
+                  <td class="text-center">{{item.grndate}}</td>
+                  
+              </tr>
+          </tbody>
+      </table>
+  </div>
+</div>

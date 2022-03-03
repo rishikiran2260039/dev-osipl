@@ -1,0 +1,235 @@
+<div fxLayout="row" style="margin-top: 15px;">
+  <div class=" col-lg-3">
+    <div class="flex-p">
+      <mat-card style="background-color: #007ad914;">
+        <mat-icon style="font-size: 50px;margin-top: 10px; color: #007ad9;">assessment</mat-icon>
+        <!-- <mat-icon style="font-size: 50px;margin-top: 10px;">monetization_on</mat-icon> -->
+        <mat-card-header style="margin-left:65px">
+
+          <mat-card-subtitle style="margin-top: -65px;">
+            <h2>63%</h2>
+          </mat-card-subtitle>
+          <mat-card-subtitle>
+            <h3>Compliance Rate</h3>
+          </mat-card-subtitle>
+        </mat-card-header>
+      </mat-card>
+    </div>
+  </div>
+
+  <div class="col-lg-3">
+    <div class="flex-p">
+      <mat-card style="background-color: #0cf80c29;">
+        <mat-icon style="font-size: 50px;margin-top: 10px; color: green;">checklist</mat-icon>
+        <mat-card-header style="margin-left:80px">
+
+          <mat-card-subtitle style="margin-top: -65px;">
+            <h2>$6,000</h2>
+          </mat-card-subtitle>
+          <mat-card-subtitle>
+            <h3>Procurement ROI</h3>
+          </mat-card-subtitle>
+        </mat-card-header>
+      </mat-card>
+    </div>
+  </div>
+  
+  <div class="col-lg-3">
+    <div class="flex-p">
+      <mat-card style="background-color: #FDE58A;">
+        <mat-icon style="font-size: 45px;margin-top: 10px; color: #BC970A;">calendar_today
+        </mat-icon>
+        <mat-card-header style="margin-left:90px">
+
+          <mat-card-subtitle style="margin-top: -65px">
+            <h2>
+              17.0
+            </h2>
+          </mat-card-subtitle>
+          <mat-card-subtitle>
+            <h3>Lead Time(Days)</h3>
+          </mat-card-subtitle>
+        </mat-card-header>
+
+      </mat-card>
+    </div>
+  </div>
+  <div class="col-lg-3">
+    <div class="flex-p">
+      <mat-card style="background-color: #ffa5003b;">
+        <mat-icon style="font-size: 50px;margin-top: 10px; color: #ff6152;">warning
+        </mat-icon>
+        <mat-card-header style="margin-left:100px">
+
+          <mat-card-subtitle style="margin-top: -65px">
+            <h2>
+              2.3%
+            </h2>
+          </mat-card-subtitle>
+          <mat-card-subtitle>
+            <h3>Defect Rate</h3>
+          </mat-card-subtitle>
+        </mat-card-header>
+
+      </mat-card>
+    </div>
+  </div>
+
+
+</div>
+
+
+
+
+<div class="container-fluid" style="margin-top: 15px;">
+  <div fxLayout="row wrap" #resizedDiv>
+    <div class="flex-p w-100 sizeAlign">
+     <div class="row">
+        <div class="col-xs-12">
+          <div class="col-xs-12">
+            <div class="col-xs-12">
+              <div class="col-xs-6" style="margin-top: 10px;">
+                <div class="form-group ">
+                  <p class="control-label col-sm-4 add-member-label">Indent approval:</p>
+                  <div class="col-sm-8">
+                    <mat-select class="form-control" placeholder="Select">
+                      <mat-option [value]="0">All</mat-option>
+                      <mat-option [value]="0">Approved</mat-option>
+                      <mat-option [value]="1">Declined</mat-option>
+                    </mat-select>
+                  </div>
+                  
+                </div>
+              </div>
+              <div class="col-xs-6">
+                <div class="col-xs-9">
+                  <div class="form-group " style="margin-top: 10px;">
+                    <!-- <p class="control-label col-sm-4 add-member-label" style="margin-top: 10px;" >
+                      Search by key word :</p> -->
+                    <div class="col-sm-5 pull-right" style="margin-right: 50px;">  
+                      <input class="search__input" style=" width:170%" type="text" placeholder="Search by keyword">  </div>
+                  </div>
+                  <!-- <button mat-raised-button class="pull-right  btn-success col-sm-2"  >
+                     GO
+                  </button> -->
+                </div>
+                <div class="col-xs-3 p-3">
+                  <button mat-raised-button class="pull-right  btn-primary" (click)="addrequisition(null)" style="margin-bottom: 10px;margin-right: -15px !important;">
+                    <mat-icon>add</mat-icon> Add Indent
+                    </button>
+                </div>
+              </div>  
+              </div>
+          </div>
+
+          <div id="grid-table-container" class="table-responsive">
+            <table matSort id="example2" class="table table-bordered table-hover">
+              <thead class="tbl-head">
+                <tr>
+                  <th class="text-center" style="width: 112px!important;">
+                    Actions</th> 
+                  <th class="text-left">Indent Title</th>
+
+                  <th class="text-left">Indent Ref.</th>
+                  <th class="text-center">Indent Date</th>
+                  <th class="text-center">Items</th>
+                  <!-- <th class="text-left">Requisition Category & Sub Category</th>
+                  <th class="text-left">Make / Model & Door No.</th> -->
+                  
+                  <th class="text-center" style="width: 100px;">Target Date</th>
+                  <th class="text-left" style="width: 100px;">Submitted By</th>
+                  <th class="text-left" style="width: 100px;">Approved By</th>
+                  <th class="text-left" style="width: 100px;">Approval</th>
+                  <!-- <th class="text-center">Approval Status</th>-->
+                 
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of items">
+                  <td class="text-center editDel">
+                    <a style="cursor: pointer;margin-right:10px; " matTooltip="Update Item"
+                    (click)="addrequisition(item)">
+                      <i class="fa fa-edit" style="color: cornflowerblue"></i>
+                    </a>
+                    <a><i class="fa fa-trash red" matTooltip="Delete Item" style="cursor: pointer;"></i></a>
+                  </td>
+                  <td style="text-align: left!important;">{{item.requisition_title }}</td>
+
+                  <td style="text-align: left!important;">{{item.requisition_no }}</td>
+                  <td style="text-align: center!important;">{{item.requisition_date }}</td>
+                  <td style="text-align: center !important;cursor: pointer;color: blue;" routerLinkActive="active" routerLink="/projects/projectdashboard/project-servicecontracts/items">{{item.item}}</td>
+ 
+                  <td style="min-width: 70px !important; text-align: center!important;">
+                    {{item.required}}
+                  </td>
+                  <td style="min-width: 70px !important; width: 180px; text-align: left!important;">
+                    {{item.Submittedby}}
+                  </td>
+                  <td style="min-width: 70px !important; width: 180px; text-align: left!important;">
+                    {{item.Approvedby}}
+                  </td>
+                  <td class="text-center">
+                    <input type="checkbox" style="color: green;">
+                  </td>
+
+                  <!-- <td style="text-align: center!important;">
+                    <mat-select [style.background]="item.stageColour" style="min-width: 120px;" [(value)]="item.Status"
+                      (selectionChange)="changeStatus($event.value)" placeholder="--Select Stage --" class='form-control'>
+                      <ng-container *ngFor='let option of statusOptions'>
+                        <mat-option [style.background]="option.colorCode" class='option' [value]="option.value">
+                          {{option.name}}</mat-option>
+                      </ng-container>
+                    </mat-select>
+                  </td> -->
+                  
+                </tr>
+              </tbody>
+            </table>
+            <mat-paginator [pageSizeOptions]="[5, 10, 25, 50, 100]" showFirstLastButtons></mat-paginator>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+
+
+
+
+<!-- <div class="container-fluid" class="col-lg-2 col-sm-2 col-md-2 col-xs-2 " style="margin-top: 25px;">
+    <div fxLayout="row wrap" #resizedDiv>
+      <div class="flex-p w-100 sizeAlign">
+        <div class="row">
+          <div class="col-xs-12" style="margin-bottom: 15px;">
+              <div class="pills">
+                  <ul class="nav nav-pills " style="max-width: 100% !important;" >
+                      <li routerLinkActive="active" routerLink="/purchase/material-management/requisition/Overview">
+                          <a mat-raised-button class="navtabWidth "  style="width: 155px; text-align: left !important;" >
+                            Overview
+                          </a>
+                      </li>
+                                                  
+                  </ul>
+                  <br>
+                  <ul class="nav nav-pills" >
+                    <li style="margin-top: -12px;" routerLinkActive="active" routerLink="/purchase/material-management/requisition/Itemsandquantites">
+                      <a mat-raised-button class="navtabWidth"  >
+                        Items & Quantities
+                      </a>
+                    </li>                            
+                </ul>
+              </div>
+          </div>
+      </div>
+
+      </div>
+    </div>
+  </div>
+
+ 
+  <div class="col-lg-10 col-sm-10 col-md-10 col-xs-10">
+    <router-outlet></router-outlet>
+  </div> -->
+

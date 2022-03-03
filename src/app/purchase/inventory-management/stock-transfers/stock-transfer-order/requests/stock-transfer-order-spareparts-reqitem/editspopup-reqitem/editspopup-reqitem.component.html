@@ -1,0 +1,97 @@
+<h1 mat-dialog-title class="custom-header" style="background-color:#286ba5 !important;height:50px">Add Adjustments</h1>
+<form>
+  <div mat-dialog-content>
+     <div class="col-sm-12">
+    
+      <div class="col-sm-6">
+        <div class="form-group col-sm-12">
+          <div class="row">
+            <label class="col-sm-12 add-member-label">Request No.: </label>
+              <div class="col-sm-12">
+                <mat-select placeholder="Request No." class="form-control">
+                  <mat-option>STO/OTP-OM/OCT-19/10001</mat-option>
+                  <mat-option>STO/OTP-OM/OCT-19/10004</mat-option>
+                  <mat-option>STO/OTP-OM/OCT-19/10005</mat-option>
+                  <mat-option>STO/OTP-OM/OCT-19/10007</mat-option>
+                  <mat-option>STO/OTP-OM/OCT-19/10008</mat-option>
+                  <mat-option>STO/OTP-OM/MAR-21/10010</mat-option>
+              </mat-select>
+              </div>
+          </div>
+       </div>
+        <div class="form-group col-sm-12">
+            <div class="row">
+                <label class="col-sm-12 add-member-label">Request Date:</label>
+                <div class="col-sm-12">
+                  <mat-select placeholder="Enter Request Date:" class="form-control">
+                    <mat-option>07-Oct-2019</mat-option>
+                    <mat-option>14-Oct-2019</mat-option>
+                    <mat-option>15-Oct-2019</mat-option>
+                    <mat-option>21-Oct-2019</mat-option>
+                    <mat-option>21-Oct-2019</mat-option>
+                    <mat-option>04-Mar-2021</mat-option>
+                </mat-select>
+                </div>
+            </div>
+        </div>
+        <div class="form-group col-sm-12">
+            <div class="row">
+              <label class="col-sm-12 add-member-label">Sending Project:</label>
+              <div class="col-sm-12">
+                <mat-select placeholder="Enter Sending Project:" class="form-control">
+                  <mat-option>Singrauli</mat-option>
+                  
+              </mat-select>
+              </div>
+            </div>
+
+        </div>
+        
+        
+      </div>
+        
+      <div class="col-sm-6">
+        <div class="form-group col-sm-12">
+          <div class="row">
+            <label class="col-sm-12 add-member-label">Equipment Type:</label>
+            <div class="col-sm-12">
+              <mat-select placeholder="Enter Equipment Type:" class="form-control">
+                <mat-option>Backhoe Loader</mat-option>
+            </mat-select>
+            </div>
+          </div>
+
+        </div>
+        <div class="form-group col-sm-12">
+          <div class="row">
+            <label class="col-sm-12 add-member-label">Equipment Make:</label>
+            <div class="col-sm-12">
+              <mat-select placeholder="Enter Equipment Make:" class="form-control">
+                <mat-option>Tata</mat-option>
+            </mat-select>
+            </div>
+          </div>
+
+        </div>
+        <div class="form-group col-sm-12">
+          <div class="row">
+            <label class="col-sm-12 add-member-label">Equipment Model:</label>
+            <div class="col-sm-12">
+              <mat-select placeholder="Enter Equipment Model:" class="form-control">
+                <mat-option> D85ESS 87</mat-option>
+             </mat-select>
+            </div>
+          </div>
+        </div>
+      
+      </div> 
+    </div>
+      
+
+  </div>
+
+    <mat-dialog-actions align="center">
+        <button mat-raised-button class="add-hover btn-primary" type="submit" (click)="close()"><mat-icon>send</mat-icon>&nbsp;Save</button>
+        <button mat-raised-button type="button" class="add-dark-hover btn-default" (click)="close()"><mat-icon>cancel</mat-icon>&nbsp;Cancel</button>
+    </mat-dialog-actions>
+</form>

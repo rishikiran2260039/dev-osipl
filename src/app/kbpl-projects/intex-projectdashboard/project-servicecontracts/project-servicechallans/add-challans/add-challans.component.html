@@ -1,0 +1,88 @@
+<div class="NewHeader">
+  <h1 mat-dialog-title >
+    {{ data ? 'Update' : 'Add' }} Challan
+  </h1>
+</div>
+
+<form>
+
+  <div mat-dialog-content>
+
+    <div class="form-group" style="margin-top:10px">
+      <label class="control-label col-sm-4 add-member-label" style="margin-top:10px">Challan Ref.</label>
+      <div class="col-sm-8  " style="margin-top:10px">
+        <input class="form-control" placeholder="Enter Challan Ref." type="text">
+      </div>
+  </div>
+  <div class="form-group" style="margin-top:10px">
+    <label class="control-label col-sm-4 add-member-label" style="margin-top:10px">Select Work Order</label>
+    <div class="col-sm-8  " style="margin-top:10px">
+      <mat-select class=' select-option form-control ' placeholder="-- Select Work Order --">
+          <mat-option >WO-019</mat-option>
+          <mat-option >	WO-051</mat-option>
+          <mat-option >	WO-079</mat-option>
+          <mat-option >WO-786</mat-option>   
+          <mat-option >	WO-081</mat-option>
+          <mat-option >WO-084</mat-option>   
+      </mat-select>
+    </div>
+   </div>
+  <div class="form-group " style="margin-top:10px">
+    <label class="control-label col-sm-4 add-member-label" style="margin-top:10px">Release Date: </label>
+    <div class="col-sm-8" style="margin-top:10px">
+      <input type="date" class="form-control" placeholder="Enter Release Date ">
+    </div>
+</div>
+<!-- <div class="form-group" style="margin-top:10px">
+  <label class="control-label col-sm-4 add-member-label" style="margin-top:10px">Select Vendor</label>
+  <div class="col-sm-8  " style="margin-top:10px">
+    <input class="form-control" placeholder="Enter Vendor Name" type="text">
+  </div>
+</div> -->
+<div class="form-group" style="margin-top:10px">
+  <label class="control-label col-sm-4 add-member-label" style="margin-top:10px">Select Vendor</label>
+  <div class="col-sm-8  " style="margin-top:10px">
+    <mat-select class=' select-option form-control ' placeholder="-- Select Vendor --">
+        <mat-option >TATA HITACHI</mat-option>
+        <mat-option >	GV Contractor</mat-option>
+        <mat-option >	HBVC Systems</mat-option>
+        <mat-option >CaterPillar</mat-option>   
+    </mat-select>
+  </div>
+ </div>
+<div class="form-group" style="margin-top:10px">
+  <label class="control-label col-sm-4 add-member-label" style="margin-top:10px">Target Date</label>
+  <div class="col-sm-8  " style="margin-top:10px">
+    <input type="date" placeholder="Enter Target date" class="form-control">
+  </div>
+</div>
+<div class="form-group" style="margin-top:10px">
+  <label class="control-label col-sm-4 add-member-label" style="margin-top:10px">Remarks</label>
+  <div class="col-sm-8  " style="margin-top:10px">
+    <input class="form-control" placeholder="Enter Remarks" type="text">
+  </div>
+</div>
+<div class="form-group" style="margin-top:10px">
+  <label class="control-label col-sm-4 add-member-label" style="margin-top:10px">Description: </label>
+  <div class="col-sm-8 " style="margin-top:10px">
+     <textarea class="form-control txtarea" placeholder="Enter Description" rows="4"
+     formControlName="address" required></textarea>
+  </div>
+</div>
+      
+  </div>
+
+  <mat-dialog-actions align="center" style="padding-top: 17px !important;">
+      <button 
+        (click)="close()" mat-raised-button style="background: #286ba5 !important" class="add-hover btn-success">
+          <mat-icon>send</mat-icon>
+          <span>&nbsp;Save</span>
+      </button>
+
+      <button (click)="close()" mat-raised-button class="add-dark-hover btn-default">
+          <mat-icon>cancel</mat-icon>
+          <span>&nbsp;Cancel</span>
+      </button>
+
+  </mat-dialog-actions>
+</form>

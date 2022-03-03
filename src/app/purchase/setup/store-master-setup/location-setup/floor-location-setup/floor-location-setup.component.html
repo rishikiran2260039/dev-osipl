@@ -1,0 +1,197 @@
+<div class="col-sm-12">
+
+  <div class="row" style="margin-bottom:7px;">
+      <div class="col-xs-4 " style="margin-top: 10px;">
+        <span style="font-size: 18px;font-weight: bold; margin-right: 8px;margin-left: -8px">Store:</span>
+                    <span style="font-size: 16px; margin-right: 50px"> Backhoe Loader Store </span>
+      </div>
+      <div class="col-xs-8">
+          <div class="flex-p">
+
+              <button mat-raised-button class="pull-right add-hover btn-primary" (click)="openleadDialog(null)">
+                  <mat-icon>add</mat-icon> Add New Store
+              </button>
+              <button mat-raised-button class="pull-right  margin-right-10 btn-primary"
+              style="background-color:#337ab7">
+              <mat-icon>cloud_download</mat-icon> Upload Excel
+          </button>
+              <button mat-raised-button class="pull-right margin-right-10 btn-primary"
+              style="background-color:#337ab7">
+              <mat-icon>cloud_download</mat-icon> Download Sample Excel
+          </button>
+
+
+          </div>
+
+      </div>
+  </div>
+
+  <!-- <div fxLayout="row wrap" *ngIf="filterToggle" style="margin-bottom: 10px">
+    <div fxFlex="100" fxFlex.gt-sm fxFlex.sm class="flex-p w-100 margins">
+      <mat-card class="filter">
+        <mat-card-content>
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="col-sm-4 newMarginClass">
+                Keyword:
+              </div>
+              <div class="col-sm-8">
+                <input type="text" placeholder="Enter Keyword" class="form-control">
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="col-sm-4 newMarginClass">
+                Project Manager:
+              </div>
+              <div class="col-sm-8">
+                <mat-select class="form-control" placeholder="--Please Select--">
+                  <mat-option class='option' [value]="0">All</mat-option>
+                  <mat-option [value]="1">Andrew jones</mat-option>
+                  <mat-option [value]="2">James Smith</mat-option>
+                  <mat-option [value]="3">Kenneth McKee</mat-option>
+                </mat-select>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="col-sm-4 newMarginClass">
+                Account Manager:
+              </div>
+              <div class="col-sm-8">
+                <mat-select class="form-control" placeholder="--Please Select--">
+                  <mat-option class='option' [value]="0">All</mat-option>
+                  <mat-option [value]="1">Mark</mat-option>
+                  <mat-option [value]="2">Binton</mat-option>
+                </mat-select>
+              </div>
+            </div>
+          </div>
+
+          <div class="row" style="padding-top:10px !important">
+            <div class="col-sm-4" style="margin-top: 4px;">
+              <div class="col-sm-4 newMarginClass">
+                Client Name:
+              </div>
+              <div class="col-sm-8">
+                <input type="text" placeholder="Enter Client Name" class="form-control">
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="col-sm-4 newMarginClass">
+                Project Type:
+              </div>
+              <div class="col-sm-8">
+                <mat-select class="form-control" placeholder="--Please Select--">
+                  <mat-option class='option' [value]="0">All</mat-option>
+                  <mat-option [value]="1">Andrew jones</mat-option>
+                  <mat-option [value]="2">James Smith</mat-option>
+                  <mat-option [value]="3">Kenneth McKee</mat-option>
+                </mat-select>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="col-sm-4 newMarginClass">
+                Quote Status:
+              </div>
+              <div class="col-sm-8">
+                <mat-select class="form-control" placeholder="--Please Select--">
+                  <mat-option class='option' [value]="0">All</mat-option>
+                  <mat-option [value]="1">Andrew jones</mat-option>
+                  <mat-option [value]="2">James Smith</mat-option>
+                  <mat-option [value]="3">Kenneth McKee</mat-option>
+                </mat-select>
+              </div>
+            </div>
+            <div class="col-sm-4" style="padding-top:10px !important">
+              <div class="col-sm-4 newMarginClass" style="margin-top: 4px;">
+                To Date:
+              </div>
+              <div class="col-sm-8">
+                <input class="form-control" class="form-control" placeholder="MM/DD/YYYY" (keypress)="false"
+                  [owlDateTimeTrigger]="dt1" [owlDateTime]="dt1" name="dt1">
+                <owl-date-time [pickerType]="'calendar'" #dt1></owl-date-time>
+              </div>
+            </div>
+
+            <div class="col-sm-4" style="padding-top:10px !important">
+              <div class="col-sm-4 newMarginClass" style="margin-top: 4px;">
+                From Date:
+              </div>
+              <div class="col-sm-8">
+                <input class="form-control" class="form-control" placeholder="MM/DD/YYYY" (keypress)="false"
+                  [owlDateTimeTrigger]="dt2" [owlDateTime]="dt2" name="dt2">
+                <owl-date-time [pickerType]="'calendar'" #dt2></owl-date-time>
+              </div>
+            </div>
+            <div class="col-sm-4" style="padding-top:10px !important">
+              <div class="col-sm-4 newMarginClass" style="margin-top: 4px;">
+                Date Type:
+              </div>
+              <mat-radio-group aria-label="Select an option">
+                <mat-radio-button value="0" style="margin-left: 0px;" checked>PM&nbsp;&nbsp; </mat-radio-button>
+                <mat-radio-button value="1" style="margin-left: 0px;">AM&nbsp;&nbsp;</mat-radio-button>
+                <mat-radio-button value="2" style="margin-left: 0px;">Both&nbsp;&nbsp;</mat-radio-button>
+                <mat-radio-button value="3" style="margin-left: 0px;">ALL&nbsp;&nbsp;</mat-radio-button>
+              </mat-radio-group>
+            </div>
+          </div>
+          <div class="row" style="padding-top:10px !important">
+
+            <div class="col-lg-1" style="margin-left:80% !important;">
+              <button mat-raised-button class="pull-right btn-primary">
+                <mat-icon>youtube_searched_for</mat-icon> Search
+              </button>
+
+            </div>
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="margin-left: -18px;">
+              <button mat-raised-button style="background-color:#37474f; color:#fff !important;">
+                <mat-icon>settings_backup_restore</mat-icon> Clear
+              </button>
+
+            </div>
+            <a (click)="filterToggle = !filterToggle" class="pull-right"
+              style="font-size: 25px; cursor: pointer; margin-left: 5px;">
+              <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+            </a>
+
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div> -->
+
+  <div class="row" style="margin-top:20px">
+      <div class="col-sm-12"  style="padding: 0px !important;">
+          <div id="grid-table-container" class="table-responsive">
+              <table matSort id="example2" class="table table-bordered table-hover">
+                  <thead class="tbl-head">
+                      <tr>
+                          <th>Floor Name</th>
+                          <th >Floor Location</th>
+                          <th class="text-center" style="width: 112px!important;">Actions</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr *ngFor="let item of values">
+
+                          <td>{{item.floorname}}</td>
+
+                          <td >{{item.floorlocation}}</td>
+
+                          <td class="text-center editDel">
+                              <a style="cursor: pointer;margin-right:0px;margin-left: -5px; "
+                                  matTooltip="Update Project" (click)="openleadDialog(item)">
+                                  <i class="fa fa-edit" style="color: cornflowerblue"></i>
+                              </a>
+                              <a><i class="fa fa-trash red" matTooltip="Delete Project"
+                                      style="cursor: pointer;"></i></a>
+                          </td>
+                      </tr>
+                  </tbody>
+              </table>
+              <mat-paginator [length]="totalSize" [pageIndex]="currentPage" [pageSize]="pageSize"
+                  [pageSizeOptions]="[5, 10, 25, 50, 100]" showFirstLastButtons></mat-paginator>
+          </div>
+      </div>
+  </div>
+
+</div>

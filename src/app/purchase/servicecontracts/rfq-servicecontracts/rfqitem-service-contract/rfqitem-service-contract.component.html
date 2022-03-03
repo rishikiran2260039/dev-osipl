@@ -1,0 +1,85 @@
+<div class="container-fluid">
+  <div fxLayout="row wrap" #resizedDiv>
+    <div class="flex-p w-100 sizeAlign">
+      <div class="row" style="margin-bottom:23px;">
+        <div class="col-sm-12"> 
+          <button mat-raised-button class="pull-right  btn-default margin-right-10"
+          routerLink="/purchase/servicecontracts/RfqServicecontracts">
+             <mat-icon>chevron_left</mat-icon> Back
+          </button>
+        
+          <button mat-raised-button class="pull-right  btn-primary margin-right-10"
+            (click)="addnewitem()">
+               <mat-icon>add</mat-icon> Add New Job Code
+          </button>
+          <button mat-raised-button class="pull-right  btn-default" style="margin-right: 8px;" (click)="dowloadExcelFile()">
+            <mat-icon>download</mat-icon> Download Sample
+          </button>
+          <button mat-raised-button class="pull-right  btn-default margin-right-10" (click)="uploadExcelDialog()">
+            Upload CSV
+          </button> 
+        </div> 
+      </div>
+    <div class="row" >
+      <div class="col-xs-12" style="overflow-x: auto">
+        <div id="grid-table-container" class="table-responsive" >
+          <table matSort id="example2" class="table table-bordered table-hover" style="margin-left: 0px!important;">
+            <thead class="tbl-head">
+              <tr>
+                <th class="text-left">Job Code</th>
+                <th class="text-left">Job Name</th>
+                <th class="text-left">Service Catagory</th>
+                <th class="text-left"> UoM </th>
+                <th class="text-left"> Quantity Required </th>
+                <th class="text-left"> Remarks </th>
+                <th class="text-center">Actions</th>
+
+
+                
+
+                <!-- <th class="text-center">Adjustment Date</th> 
+                <th class="text-center">Done by</th>
+                <th class="text-center">Part Model </th>
+                <th class="text-center">Eqpt Code</th>
+                <th  class="text-center">Eqpt Name</th>
+                <th class="text-center">Physical Stock  </th>
+                <th class="text-center">Previous Stock </th>
+                <th class="text-center">Adjustment Qty  </th>
+                <th class="text-center">Revised Book Stock </th>
+                <th class="text-center">Actions</th>
+                <th class="text-left">Quantity Required</th> -->
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of items">
+                <td class="text-left">{{item.ItemCode}}</td>
+                <td class="text-left">{{item.ItemName }}</td>
+                <td class="text-left">{{item.itemCategory}}</td>
+                <td class="text-left">{{item.uom}}</td>
+                <td class="text-left">{{item.QuantityRequired}}</td>
+                <td class="text-left">{{item.remarks}}</td>
+                  <td class="text-center">
+                    <a style="cursor: pointer;margin-right:0px;margin-left: -5px; " matTooltip="Edit ">
+                      <i class="fa fa-edit" style="color: cornflowerblue; cursor: pointer;" (click)="addnewitem(item)"></i>
+                    </a>
+                    <a mwlConfirmationPopover
+                    [popoverTitle]="popoverTitle"
+                    [popoverMessage]="popoverMessage"
+                    placement="left"
+                    (confirm)="deleteUser()"
+                    (cancel)="cancelClicked = true"
+                   >
+                      <i class="fa fa-trash red" matTooltip="Delete " style="cursor: pointer;"></i></a>
+                  </td>        
+              </tr>
+            </tbody>
+          </table>
+          
+      
+          
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+  </div>

@@ -1,0 +1,48 @@
+
+<div class="NewHeader">
+  <h1 mat-dialog-title>
+    Assign Required Items
+  </h1>
+</div>
+<div mat-dialog-content>
+  <div class="row">
+    <div class="col-xs-12">
+        <div id="grid-table-container" class="table-responsive">
+          <p><b>Category:</b> Earth Work</p>
+            <table matSort id="example2" class="table table-bordered table-hover">
+                <thead class="tbl-head">
+                    <tr>
+                      <th class="text-center">Actiivty#</th>
+                      <th>Activity</th>
+                      <th class="text-center">Planned Hours</th>
+                      <th class="text-center">Actual Hours</th>
+                      <th class="text-center">Expected Complete Date</th>
+                      <th class="text-center">Actual Complete Date</th> 
+                       
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of items">
+
+                      <td style="text-align: center!important;">{{item.activityNo}}</td>
+                      <td>{{item.activity}}</td>
+                      <td style="text-align: center!important;">{{item.planHours}}</td>
+                      <td style="text-align: center!important;">{{item.actHours}}</td>
+                      <td style="text-align: center!important;">{{item.expDate}}</td>
+                      <td style="text-align: center!important;">{{item.actDate}}</td>
+                      
+                  
+                    
+    </tr>
+   
+  </tbody>
+  </table>
+ 
+  </div>
+  </div>
+  </div>
+</div>
+<mat-dialog-actions align="end">
+  <!-- <button mat-raised-button class="btn-primary" ><mat-icon>send</mat-icon><span > Save</span></button> -->
+  <button mat-raised-button class="add-dark-hover btn-default" (click)="close()"><mat-icon>cancel</mat-icon>Cancel</button>
+</mat-dialog-actions>

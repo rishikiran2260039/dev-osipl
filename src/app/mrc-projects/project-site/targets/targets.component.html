@@ -1,0 +1,152 @@
+<div fxLayout="row wrap" #resizedDiv>
+  <div class="flex-p w-100 sizeAlign">
+
+
+<div class="row" style="margin-bottom:7px;">
+  <div class="col-xs-6 ">
+  </div>
+  <div class="col-xs-6 ">
+      <div class="flex-p">
+       
+        <button mat-raised-button class="pull-right  btn-primary" style="margin-left:10px;" (click)="addlabour()">
+          <mat-icon>add</mat-icon> Add Labour Budget
+      </button> 
+      <button mat-raised-button class="pull-right  btn-primary" (click)="addmaterial()">
+        <mat-icon>add</mat-icon> Add Material Budget
+    </button>     
+    <button mat-raised-button color="primary" class="pull-right filters-hover margin-right-10"
+            (click)="filterToggle = !filterToggle">
+            <mat-icon>filter_list</mat-icon> Filter
+        </button>      
+  </div>
+  
+</div>
+</div>
+
+<!-- Filter -->
+<div fxLayout="row wrap" *ngIf="filterToggle">
+  <div fxFlex="100" fxFlex.gt-sm fxFlex.sm class="flex-p w-100 margins">
+      <mat-card class="filter">
+          <mat-card-content>
+              <div class="row">
+                  <div class="col-sm-3">
+                      <div class="col-sm-4 newMarginClass">
+                          Keyword: 
+                      </div>
+                      <div class="col-sm-8">
+                          <input type="text" placeholder="Search by any record" class="form-control" >
+                      </div>
+                  </div>
+                  <div class="col-sm-3">
+                      <div class="col-sm-4 newMarginClass">
+                          Category: 
+                      </div>
+                      <div class="col-sm-8">
+                          <mat-select name="" id="" class="form-control" placeholder="Select Category">
+                              <mat-option>Furniture</mat-option>
+                              <mat-option>Plumbing</mat-option>
+                              <mat-option>Flooring</mat-option>
+                            </mat-select> 
+                          </div>
+                  </div>
+                  <div class="col-sm-3">
+                    <div class="col-sm-4 newMarginClass">
+                        Item: 
+                    </div>
+                    <div class="col-sm-8">
+                      <input type="text" placeholder="Search by Item" class="form-control" >
+
+                      </div>
+                </div>
+                <div class="col-sm-3">                  
+                    <div class="col-lg-1" style="margin-left: 130px;" >
+                        <button mat-raised-button  class="pull-right btn-primary"><mat-icon>youtube_searched_for</mat-icon> Search</button>
+                    </div>
+                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" >
+                        <button mat-raised-button style="background-color:#37474f; color:#fff !important" ><mat-icon>settings_backup_restore</mat-icon> Clear</button>
+                    </div>
+                    <a (click)="filterToggle = !filterToggle" class="pull-right" style="font-size: 25px; cursor: pointer; margin-left: 5px;">
+                        <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+                    </a>   
+                    </div>                   
+              </div>
+          </mat-card-content>
+      </mat-card>
+  </div>
+</div>
+
+
+
+
+<div class="row">
+  <div class="col-xs-12">
+      <div id="grid-table-container" class="table-responsive">
+          <table matSort id="example2" class="table table-bordered table-hover">
+              <thead class="tbl-head">
+                  <tr>
+                      <th class="text-center">Serial</th>
+                      <th >Category</th>
+                      
+                      <th >Item</th>
+                      <th class="text-center">Unit</th>
+                      <th class="text-center">Quantity</th>
+                      <th class="text-center">Material</th>
+                      <th class="text-center">Labour</th>
+                      <th class="text-center" style="width:110px;">Budget</th>
+                     
+                    
+                      <th class="text-center" style="width: 120px!important;">Actions</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let item of items">
+                      <td style="min-width: 70px !important; text-align: center!important;">
+                          {{item.serial}}
+                    
+                  </td>
+                  <!-- <td style="text-align: center!important;">{{item.projectNumber}}</td> -->
+                  
+                  <td >{{item.category }}</td>
+                  <td >{{item.item }}</td>
+                  <td style="text-align: center!important;">{{item.unit }}</td>
+                  <td style="text-align: center!important;">{{item.quantity }}</td>
+                  <td style="text-align: center!important;"><a style="color: blue;cursor: pointer;" (click)="openmaterial()">{{item.materials }}</a> </td>
+                  <td style="text-align: center!important;">
+                    <a style="color: blue;cursor: pointer;" (click)="openlabour()">{{item.labour }}</a>
+                  </td>
+                  <td style="text-align: center!important;">{{item.budget }}</td>
+                
+                  
+      <td  class="text-center editDel">
+       
+      <a style="cursor: pointer;margin-right:10px; " matTooltip="Add File" (click)="addfile()">
+        <i class="fa fa-plus" style="color: cornflowerblue"></i>
+    </a>
+          <a style="cursor: pointer;margin-right:10px; " matTooltip="Update Item" >
+              <i class="fa fa-edit" style="color: cornflowerblue"></i>
+          </a>
+          <a ><i class="fa fa-trash red" matTooltip="Delete Item"  style="cursor: pointer;"></i></a>
+      </td> 
+  </tr>
+ 
+</tbody>
+</table>
+<mat-paginator
+[pageSizeOptions]="[5, 10, 25, 50, 100]"
+showFirstLastButtons></mat-paginator>
+<!-- <mat-paginator [length]="totalSize" [pageIndex]="currentPage" [pageSize]="pageSize"
+  [pageSizeOptions]="[5, 10, 25, 50, 100]" (page)="handlePage($event)"
+  showFirstLastButtons></mat-paginator> -->
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+  </div>
+</div>

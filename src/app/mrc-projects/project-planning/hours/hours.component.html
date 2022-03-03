@@ -1,0 +1,76 @@
+<div class="w-100">
+  <div class="flex-p">
+    <div class="row wrap">
+      <div class="col-sm-12 no-padding">
+        <!-- Table -->
+        <div class="row">
+          <div class="col-xs-12">
+            <div id="grid-table-container" class="table-responsive">
+              <table matSort id="example2" class="table table-bordered table-hover">
+                <thead class="tbl-head">
+                  <tr>
+                    <th rowspan="2">Date</th>
+                    <th rowspan="2" class="text-center">User Name</th>
+                    <th rowspan="2" class="text-center">Job Code</th>
+                    <th rowspan="2">Site</th>
+                    <th rowspan="2">Contract</th>
+                    <th rowspan="2">Task</th>
+                    <th rowspan="2">Action</th>
+                    <th rowspan="2">Action Status</th>
+                    <th colspan="4" class="text-center">Hours</th>
+                    <th rowspan="2">Actual</th>
+                    <th rowspan="2">Notes</th>
+                    <th rowspan="2">
+                      Due Date
+                    </th>
+                    <th rowspan="2">Created Date</th>
+                  </tr>
+                  <tr>
+                    <th>Plan</th>
+                    <th>Assigned</th>
+                    <th>Worked</th>
+                    <th>Remaining</th>
+                  </tr>
+                </thead>
+                <tbody>
+<<<<<<< HEAD
+                  <tr *ngFor="let item of items">
+                    <td>
+                      {{item.date}}
+                    </td>
+                    <td>
+                      {{item.username}}
+                    </td>
+                    <td>{{item.jobcode }}</td>
+                    <td>{{item.site }}</td>
+                    <td>{{item.contract}}</td>
+                    <td>{{item.task }}</td>
+                    <td>{{item.action }}</td>
+                    <td>{{item.actionStatus}}</td>
+                    <td>{{item.plan }}</td>
+                    <td>{{item.assigned }}</td>
+                    <td>{{item.worked}}</td>
+                    <td>{{item.remaining}}</td>
+                    <td>{{item.actual}}</td>
+                    <td style="text-align: center!important;"><a style="color: blue;cursor: pointer;"
+                        (click)="openitemDialog()">{{item.notes }}</a> </td>
+                    <td>{{item.dueDate }}</td>
+                    <td>{{item.createdDate }}</td>
+=======
+                  <tr>
+                    <td colspan="16">
+                      No Data Found
+                    </td>
+>>>>>>> c45905f703ec513ced9010e725b10e55269e635b
+                  </tr>
+
+                </tbody>
+              </table>
+              <mat-paginator [pageSizeOptions]="[5, 10, 25, 50, 100]" showFirstLastButtons></mat-paginator>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

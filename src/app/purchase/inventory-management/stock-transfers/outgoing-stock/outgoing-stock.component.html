@@ -1,0 +1,116 @@
+<div class="container-fluid">
+  <div class="row wrap">
+    <div class="col-xs-12">
+      <button mat-raised-button (click) = "filterToggle=!filterToggle"
+        class="btn-secondary pull-right"><mat-icon>filter_list</mat-icon>filter
+      </button>
+    </div>
+  </div>
+
+  <div fxLayout="row wrap" *ngIf="filterToggle">
+    <div fxFlex="100" fxFlex.gt-sm fxFlex.sm class="flex-p w-100 margins">
+      <mat-card class="filter">
+        <mat-card-content>
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="col-sm-4 newMarginClass">
+                Project : 
+              </div>
+              <div class="col-sm-8">
+                <mat-select placeholder="Select Project" class="form-control">
+                  <mat-option value="1">All</mat-option>
+                  <mat-option value="2">Singrouli</mat-option>
+                </mat-select>
+              </div>
+            </div>
+            <div class="col-sm-4">
+            <div class="col-lg-1" style="margin-left:20%!important;">
+              <button mat-raised-button class="pull-right btn-primary">
+                <mat-icon>youtube_searched_for</mat-icon> Search
+              </button>
+            </div>
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="margin-left: -18px;">
+              <button mat-raised-button style="background-color:#37474f; color:#fff !important">
+                <mat-icon>settings_backup_restore</mat-icon> Clear
+              </button>
+            </div>
+            <a (click)="filterToggle = !filterToggle" class="pull-right"
+              style="font-size: 25px; cursor: pointer; margin-left: 5px;">
+              <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+            </a>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12" style="padding: 15px !important;margin-bottom: 20px;">
+      <div class="col-sm-12" style="padding: 0px !important;">
+        <p-accordion class="customAccordian" (onClose)="onTabClose($event)" (onOpen)="onTabOpen($event)">
+          <p-accordionTab *ngFor="let item of taskData" [selected]="item.selected">
+            <p-header class="col-sm-11" style="padding-left: 0px;">
+              <div class="col-sm-4">
+                <label>Project Name:</label>
+                <span>&nbsp;
+                  {{item.taskName}}
+                </span>
+              </div>
+              <div class="col-sm-4">
+                <label>No. of Stock Tranfers:</label>
+                <span>&nbsp;
+                  {{item.ref}}
+                </span>
+              </div>
+              <div class="col-sm-3">
+                <label>No. of Items:</label>
+                <span>&nbsp; {{item.target_date}}</span>
+              </div>
+            </p-header>
+            <div class="table-responsive" id="{{item.id}}">
+              <table id="example2" class="table table-bordered table-striped table-hover no-padding"
+                style="margin-bottom: 10px !important">
+                <thead>
+                  <tr class="custom-thead-budget">
+                    <th class="text-center">STO No.</th>
+                    <th class="text-center">Date</th>
+                    <th class="text-center">STO Title</th>
+                    <th class="text-center">Categeory</th>
+                    <th class="text-center">STO Items |QTY</th>
+                    <th class="text-center">STO Items Packing List</th>
+                    <th class="text-center">Dispatch Balance Items|QTY</th>
+                    <th class="text-center">Foreclose</th>
+                    <th class="text-center">Dispatch Details</th>
+                    <th class="text-center">Approvals</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngIf="item.Data?.length == 0">
+
+                    <td style="text-align: center;" colspan="7">
+                      No records Found
+                    </td>
+                  </tr>
+                  <tr *ngFor="let tData of item.Data; let i = index">
+                    <td class="text-center" style="color: blue; cursor: pointer;" routerLink="/purchase/stock-transfer-order">STO/OM-OTP/OCT-19/10003</td>
+                    <td class="text-center">12-Oct-2019</td>
+                    <td class="text-center">NEED 200 ITEMS IMME...</td>
+                    <td class="text-center">Spare Parts</td>
+                    <td class="text-center">2 | 7</td>
+                    <td class="text-center" style="cursor: pointer;"><mat-icon>download</mat-icon></td>
+                    <td class="text-center" style="color: blue; cursor: pointer;" routerLink="/purchase/dispatch-quantity">1 | 7</td>
+                    <td class="text-center" style="color: blue;cursor: pointer;" (click)="foreclose()">Foreclose</td>
+                    <td class="text-center">0</td>
+                    <td class="text-center" style="color: blue;cursor: pointer;" (click)="approvalDialog()">View</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </p-accordionTab>
+        </p-accordion>
+      </div>
+    </div>
+  </div>
+
+</div>

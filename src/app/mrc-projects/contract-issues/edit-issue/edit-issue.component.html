@@ -1,0 +1,115 @@
+<h1 mat-dialog-title class="custom-header" style="background-color:#286ba5 !important;height:50px">Update Issue</h1>
+<form>
+<div mat-dialog-content>
+<div class="col-sm-12">
+    <div class="row">
+      <div class="form-group col-sm-6">
+        <div class="row">
+            <label class="col-sm-12 add-member-label">Requistion Number: </label>
+            <div class="col-sm-12">
+              <mat-select class="form-control" placeholder="Select Requisition Number">
+                <mat-option value="1">OM/REQ/SPA-FEB-19/1057</mat-option>
+                <mat-option value="2">OM/REQ/SPA/APR-20/1005</mat-option>
+                <mat-option value="3">OM/REQ/SPA-FEB-19/1041</mat-option>
+                <mat-option value="4">OM/REQ/SPA/FEB-21/1077</mat-option>
+                <mat-option value="5">OM/REQ/SPA/MAR-21/1086</mat-option>
+              </mat-select>
+            </div>
+        </div>
+    </div>
+        <div class="form-group col-sm-6">
+            <div class="row">
+                <label class="col-sm-12 add-member-label">Issue Date: </label>
+                <div class="col-sm-12">
+                  <input type="date" class="form-control" placeholder="Enter Issue Date">
+                </div>
+            </div>
+        </div>
+        <div class="form-group col-sm-6">
+            <div class="row">
+                <label class="col-sm-12 add-member-label">Items Issued: </label>
+                <div class="col-sm-12">
+                  <input class="form-control" placeholder="Enter Items Issued" type="text">
+                </div>
+            </div>
+
+        </div>
+        <div class="form-group col-sm-6">
+            <div class="row">
+                <label class="col-sm-12 add-member-label">Tasks: </label>
+                <div class="col-sm-12">
+                    <input class="form-control" placeholder="Enter Tasks" type="text">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="form-group col-sm-6">
+            <div class="row">
+                <label class="col-sm-12 add-member-label">Equipment Type: </label>
+                <div class="col-sm-12">
+                  <input class="form-control" placeholder="Enter Equipment Type" type="text">
+                </div>
+            </div>
+        </div>
+
+
+        <div class="form-group col-sm-6">
+          <div class="row">
+              <label class="col-sm-12 add-member-label">Equipment Make: </label>
+              <div class="col-sm-12">
+                <input class="form-control" placeholder="Enter Equipment Make" type="text">
+              </div>
+          </div>
+      </div>
+
+
+      <div class="form-group col-sm-6">
+        <div class="row">
+            <label class="col-sm-12 add-member-label">Equipment Model: </label>
+            <div class="col-sm-12">
+              <input class="form-control" placeholder="Enter Equipment Model" type="text">
+            </div>
+        </div>
+    </div>
+
+
+    <div class="form-group col-sm-6">
+      <div class="row">
+          <label class="col-sm-12 add-member-label">Planned Qty: </label>
+          <div class="col-sm-12">
+            <input class="form-control" placeholder="Enter Planned Quantity" type="text">
+          </div>
+      </div>
+  </div>
+
+        <div class="form-group col-sm-6">
+            <div class="row">
+                <label class="col-sm-12">Actual Qty: </label>
+                <div class="col-sm-12">
+                  <input type="text" class="form-control" placeholder="Enter Actual Quantity">
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group col-sm-6">
+          <div class="row">
+              <label class="col-sm-12">Remarks: </label>
+              <div class="col-sm-12">
+                <input class="form-control" type="text" placeholder="Enter Remarks">
+              </div>
+          </div>
+        </div>
+
+
+    </div>
+</div>
+      
+
+    </div>
+
+    <mat-dialog-actions align="center">
+        <button mat-raised-button class="add-hover btn-primary" type="submit"><mat-icon>send</mat-icon>&nbsp;Save</button>
+        <button mat-raised-button type="button" class="add-dark-hover btn-default" (click)="close()"><mat-icon>cancel</mat-icon>&nbsp;Cancel</button>
+    </mat-dialog-actions>
+</form>

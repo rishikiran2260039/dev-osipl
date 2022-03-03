@@ -1,0 +1,232 @@
+<div class="NewHeader" style=" background-color: #286ba5 !important; height: 50px;">
+  <h1 mat-dialog-title>
+    {{data ? 'Update' : 'Add'}} Payables
+  </h1>
+</div>
+<div mat-dialog-content>
+  <form class="form-horizontal">
+    <div class="row" style="margin-top: 15px;">
+      <div class="col-6">
+        <div class="form-group">
+          <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 " for="pwd">Vendor Name : </label>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <mat-select class="form-control" placeholder="Select Vendor" required>
+              <mat-option [value]="0">Raheja</mat-option>
+              <mat-option [value]="1">Manjeera</mat-option>
+              <mat-option [value]="2">Reva group</mat-option>
+              <mat-option [value]="3">Asian</mat-option>
+    
+            </mat-select>
+          </div>
+        </div>
+    
+        <div class="form-group">
+          <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 " for="pwd">Project Name : </label>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <mat-select class="form-control" placeholder="Select Project" required>
+              <mat-option [value]="0">Raheja Group</mat-option>
+              <mat-option [value]="1">Manjeera Group</mat-option>
+              <mat-option [value]="2">Reva Group </mat-option>
+              <mat-option [value]="3">Asian Group</mat-option>
+    
+            </mat-select>
+          </div>
+        </div>
+    
+       
+    
+        <div class="form-group">
+          <label class="control-label col-sm-4 add-member-label">Order Type</label>
+          <div class="col-sm-8">
+    
+            <mat-radio-group style="width: 100%;" class="example-radio-group"  (change)="changeRef($event)">
+              <mat-radio-button class="example-radio-button" *ngFor="let item of Types" [value]="item"
+                style="margin-right: 10px;">
+                {{item}}
+              </mat-radio-button>
+            </mat-radio-group>
+    
+    
+          </div>
+        </div>
+    
+        <div class="form-group">
+          <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Order Reference : </label>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <mat-select class="form-control" placeholder="Select Order Reference" required>
+              <mat-option [value]="0">#OD4327-2854-9646</mat-option>
+              <mat-option [value]="1">#OD4327-2854-9546</mat-option>
+              <mat-option [value]="2">#OD4327-2854-3985</mat-option>
+              <mat-option [value]="3">#OD4327-2854-0589 </mat-option>
+            </mat-select>
+          </div>
+        </div>
+
+        <div class="form-group" *ngIf = "refType == 'PO'">
+          <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">GRN Reference : </label>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <mat-select class="form-control" placeholder="Select GRN Reference" required>
+              <mat-option [value]="0">#OD4327-2854-9646</mat-option>
+              <mat-option [value]="1">#OD4327-2854-9546</mat-option>
+              <mat-option [value]="2">#OD4327-2854-3985</mat-option>
+              <mat-option [value]="3">#OD4327-2854-0589 </mat-option>
+            </mat-select>
+          </div>
+        </div>
+
+        <div class="form-group" *ngIf = "refType == 'WO'">
+          <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">ARN Reference : </label>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <mat-select class="form-control" placeholder="Select ARN Reference" required>
+              <mat-option [value]="0">#OD4327-2854-9646</mat-option>
+              <mat-option [value]="1">#OD4327-2854-9546</mat-option>
+              <mat-option [value]="2">#OD4327-2854-3985</mat-option>
+              <mat-option [value]="3">#OD4327-2854-0589 </mat-option>
+            </mat-select>
+          </div>
+        </div>
+
+        <div class="form-group" *ngIf = "refType == 'Rental'">
+          <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Contract Reference : </label>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <mat-select class="form-control" placeholder="Select Contract Reference" required>
+              <mat-option [value]="0">#OD4327-2854-9646</mat-option>
+              <mat-option [value]="1">#OD4327-2854-9546</mat-option>
+              <mat-option [value]="2">#OD4327-2854-3985</mat-option>
+              <mat-option [value]="3">#OD4327-2854-0589 </mat-option>
+            </mat-select>
+          </div>
+        </div>
+    
+        <div class="form-group">
+          <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Invoice Reference :
+          </label>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <input type="text" class="form-control" placeholder="Enter Invoice Reference" required>
+          </div>
+        </div>
+        <div class="form-group" *ngIf="data != null">
+          <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 " for="pwd">Sent To Directors :
+          </label>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <input type="date" class="form-control" placeholder="Enter Invoice Reference" required>
+          </div>
+        </div>
+        <div class="form-group" *ngIf="data != null">
+          <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 " for="pwd">Sent To Accounts :
+          </label>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <input type="date" class="form-control" placeholder="Enter Invoice Reference" required>
+          </div>
+        </div>
+    
+        <div class="form-group">
+          <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Invoice Due Date :
+          </label>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <input type="date" class="form-control" placeholder="DD/MM/YYYY">
+          </div>
+        </div>
+       </div>
+
+        <div class="col-6">
+
+          <div class="form-group" >
+            <label class="control-label col-sm-4 ">Approval : </label>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+              <input type="checkbox" 
+                class="form-check-input check-box">
+              
+            </div>
+          </div>
+      
+          <div class="form-group">
+            <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Amount Billed :
+            </label>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+              <input type="text" class="form-control" placeholder="Enter Amount Billed" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Transport Charges :
+            </label>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+              <input type="text" class="form-control" placeholder="Enter Transport Charges" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Other Charges :
+            </label>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+              <input type="text" class="form-control" placeholder="Enter Other Charges" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Paid Amount :
+            </label>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+              <input type="text" class="form-control" placeholder="Enter Paid Amount" required>
+            </div>
+          </div>
+      
+          <div class="form-group">
+            <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Status : </label>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+              <mat-select class="form-control" placeholder="Select Status" required>
+                <mat-option [value]="0">Submitted</mat-option>
+                <mat-option [value]="0">Partial Payment</mat-option>
+                <mat-option [value]="0">Fully Paid</mat-option>
+                <mat-option [value]="0">Not Yet Due</mat-option>
+                <mat-option [value]="0">Overdue</mat-option>
+              </mat-select>
+            </div>
+          </div>
+      
+      
+      
+       
+      
+          <div class="form-group">
+            <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Payment Reference : </label>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+              <!-- <input type="text" class="form-control" placeholder="Enter Amount Paid" required> -->
+              <textarea class="form-control txtarea" placeholder="Enter Payment Reference" rows="2"
+              required></textarea>
+            </div>
+          </div>
+          
+        </div>
+      
+      </div>
+
+</form>
+</div>
+
+
+
+
+
+
+  <!-- <form class="form-horizontal">
+
+
+
+    
+   
+
+
+  </form> -->
+
+
+
+
+
+
+<mat-dialog-actions align="end" style="margin-bottom:-15px">
+  <button mat-raised-button class="btn-primary" (click)="close()">
+    <mat-icon>send</mat-icon><span> Save</span>
+  </button>
+  <button mat-raised-button class="add-dark-hover btn-default" (click)="close()">
+    <mat-icon>cancel</mat-icon> Close
+  </button>
+</mat-dialog-actions>

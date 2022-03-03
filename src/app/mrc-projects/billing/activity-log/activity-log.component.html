@@ -1,0 +1,216 @@
+
+<div class="row"  style="margin-top:50px;width:100%;margin-left:-4px">
+  <div class="col-lg-3">
+      <div class="card bg-secondary text-white">
+          <div class="card-body">
+              <div class="d-flex no-block align-items-center">
+                  <a href="JavaScript: void(0);">
+                      <i class="display-6 cc ETH text-white" title="ETH"></i>
+                  </a>
+                  <div class="m-l-15 m-t-10">
+                      <h2 class="font-medium m-b-0 text-white">Total Billing</h2>
+                      <h3 class=" text-white">$2,150,000</h3>
+                  </div>
+              </div>
+          </div>
+      </div> 
+  </div>
+  <div class="col-lg-3">
+      <div class="card bg-success text-black">
+          <div class="card-body">
+              <div class="d-flex no-block align-items-center">
+                  <a href="JavaScript: void(0);">
+                      <i class="display-6 cc DASH-alt text-black" title="LTC"></i>
+                  </a>
+                  <div class="m-l-15 m-t-10">
+                      <h2 class="font-medium m-b-0 text-black">Total Collection</h2>
+                      <h3 class=" text-black">$18,00,000</h3>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="col-lg-3">
+      <div class="card bg-warning text-black">
+          <div class="card-body">
+              <div class="d-flex no-block align-items-center">
+                  <a href="JavaScript: void(0);">
+                      <i class="display-6 cc BTC-alt text-black" title="BTC"></i>
+                  </a>
+                  <div class="m-l-15 m-t-10">
+                      <h2 class="font-medium m-b-0 text-black">Total Due Amount</h2>
+                      <h3 class=" text-black">$3,00,000</h3>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="col-lg-3">
+      <div class="card bg-info text-white">
+          <div class="card-body">
+              <div class="d-flex no-block align-items-center">
+                  <a href="JavaScript: void(0);">
+                      <i class="display-6 cc AMP-alt text-white" title="AMP"></i>
+                  </a>
+                  <div class="m-l-15 m-t-10">
+                      <h2 class="font-medium m-b-0  text-white">Paid this Month</h2>
+                      <h3 class=" text-white">$50,000</h3>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<div fxLayout="row wrap">
+  <div class="w-100">
+      <div class="" style="margin-left: 18px;margin-top: 10px;margin-bottom: 10px;">
+          <div class="row wrap">
+              <div class="col-sm-12 margin-top-10 margin-bottom-10">
+                  <div class="col-sm-3 no-padding">
+                      <div class="pills w-100">
+                          <ul class="nav nav-pills ">
+
+                          </ul>
+                      </div>
+                  </div>
+                  <div class="col-sm-12">
+                      <div class="w-100">
+
+                          <button mat-raised-button color="primary" class="pull-right filters-hover margin-right-10"
+                              (click)="filterToggle = !filterToggle">
+                              <mat-icon>filter_list</mat-icon> Filter
+                          </button>
+                          <button mat-raised-button class="pull-right add-hover  margin-right-10 btn-primary"
+                              style="background-color:#337ab7">
+                              <mat-icon>cloud_download</mat-icon> Download CSV
+                          </button>
+
+                      </div>
+                  </div>
+              </div>
+
+
+              <div fxLayout="row wrap" *ngIf="filterToggle">
+                  <div fxFlex="100" fxFlex.gt-sm fxFlex.sm class="flex-p w-100 margins">
+                    <mat-card class="filter">
+                      <mat-card-content>
+                        <div class="row">
+                          <div class="col-sm-3" style="padding-bottom:10px !important">
+                            <div class="col-sm-4 newMarginClass">Keyword:</div>
+                            <div class="col-sm-8">
+                              <input type="text" class="form-control"
+                                placeholder="Search by Keyword">
+                            </div>
+                          </div>
+                          <div class="col-sm-3">
+                            <div class="col-sm-4 newMarginClass">By Dispatch Date:</div>
+                            <div class="col-sm-8">
+                              <input class="form-control" placeholder="MM/DD/YYYY" class="form-control" id="dob" [(ngModel)]="dateTime1" [owlDateTimeTrigger]="dt1" [owlDateTime]="dt1" name="dt1">
+                              <owl-date-time [pickerType]="'calendar'" #dt1><i class="fa fa-calendar" [owlDateTimeTrigger]="dt1"></i></owl-date-time>
+                            </div>
+                          </div>
+                          <div class="col-sm-3">
+                            <div class="col-sm-4 newMarginClass">By Delivery  Date:</div>
+                            <div class="col-sm-8">                   
+                            <input class="form-control" placeholder="MM/DD/YYYY" class="form-control" id="dob" [(ngModel)]="dateTime2" [owlDateTimeTrigger]="dt2" [owlDateTime]="dt2" name="dt2">
+                            <owl-date-time [pickerType]="'calendar'" #dt2><i class="fa fa-calendar" [owlDateTimeTrigger]="dt2"></i></owl-date-time>
+                            </div>
+                          </div>
+                          <div class="col-sm-3">
+                            <div class="col-sm-4 newMarginClass">By Status:</div>
+                            <div class="col-sm-8">
+                              <mat-select class="form-control" placeholder="Select Status">
+                                <mat-option [value]="0">Pending</mat-option>
+                                <mat-option [value]="1">Processing</mat-option>
+                                <mat-option [value]="0">Dispatched</mat-option>
+                                <mat-option [value]="1">Delivered</mat-option>
+                              </mat-select>
+                            </div>
+                          </div>
+                          <div class="col-sm-3" style="margin-top: 10px;margin-left: 1168px;">
+                          <div class="row" style="display: flex; justify-content: flex-end;">
+                            <div class="col-lg-1">
+                              <button mat-raised-button class="pull-right btn-primary">
+                                <mat-icon>youtube_searched_for</mat-icon> Search
+                              </button>
+                            </div>
+                            <div class="col-lg-1" style="margin-left:-14px">
+                              <button mat-raised-button style="background-color: #37474f; color: #fff !important">
+                                <mat-icon>settings_backup_restore</mat-icon> Clear
+                              </button>
+                            </div>
+                            <div class="col-lg-1 "style="margin-left:115px">
+                            <a (click)="filterToggle = !filterToggle" class="pull-right" 
+                              style="font-size: 25px; cursor: pointer;">
+                              <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                      </div>
+                          </div>
+                        </div>
+                      </mat-card-content>
+                    </mat-card>
+                  </div>
+                </div>
+
+          </div>
+      </div>
+  </div>
+</div>
+
+<div fxLayout="row wrap" style="width: 99%;">
+  <div class="table-responsive">
+    <table id="example2" class="table table-bordered table-hover" style="margin-left:10px;width: 99%;max-width: 99%;margin-bottom: 20px;">
+      <thead class="tbl-head">
+        <tr class="tr-grid-header">
+          <th>Date</th>
+          <th>Invoice #</th>
+          <th>Contractor</th>
+          <th>Order #</th>       
+          <th>Amount ($)</th>          
+          <th>Due Date</th>  
+          <th class="text-center">Payments</th>
+          <th>Paid</th>
+          <th>Balance</th>
+          <th>Send Invoice</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let items of tableList">
+          <td>
+              {{ items.date }}
+          </td>
+          <td>
+            <a style="color:blue;cursor: pointer;"  target="_blank" > {{ items.invoice }}</a>
+
+          </td>
+          <td>
+              {{ items.cus }}
+          </td>
+          <td>
+           {{ items.order }}
+          </td>
+          <td>
+            {{ items.amount }}
+        </td>
+        <td>
+          {{ items.dueDate }}
+        </td>
+        <td class="text-center">
+          <a style="color:blue; cursor:pointer;" (click)="addPayment()">{{ items.pay }}</a>
+        </td>
+        <td>
+          {{ items.paid }}
+        </td>
+        <td>
+          {{ items.bal }}
+        </td>
+        <td class="text-center"><i class="fa fa-paper-plane" aria-hidden="true" matTooltip="Send Invoice"></i></td>
+        </tr>
+      </tbody>
+    </table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 50, 100]" showFirstLastButtons></mat-paginator>
+  </div>
+</div>
+
+

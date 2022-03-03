@@ -1,0 +1,165 @@
+<div fxLayout="row" style="margin-top: 15px;">
+  <div class=" col-lg-3">
+    <div class="flex-p">
+      <mat-card style="background-color: #007ad914;">
+        <mat-icon style="font-size: 50px;margin-top: 10px; color: #007ad9;">incomplete_circle</mat-icon>
+        <!-- <mat-icon style="font-size: 50px;margin-top: 10px;">monetization_on</mat-icon> -->
+        <mat-card-header style="margin-left:120px">
+
+          <mat-card-subtitle style="margin-top: -65px;">
+            <h2>63%</h2>
+          </mat-card-subtitle>
+          <mat-card-subtitle>
+            <h3>Compliance Rate</h3>
+          </mat-card-subtitle>
+        </mat-card-header>
+      </mat-card>
+    </div>
+  </div>
+
+  <div class="col-lg-3">
+    <div class="flex-p">
+      <mat-card style="background-color: #0cf80c29;">
+        <mat-icon style="font-size: 50px;margin-top: 10px; color: green;">checklist</mat-icon>
+        <mat-card-header style="margin-left:140px">
+
+          <mat-card-subtitle style="margin-top: -65px;">
+            <h2>$6,000</h2>
+          </mat-card-subtitle>
+          <mat-card-subtitle>
+            <h3>Procurement ROI</h3>
+          </mat-card-subtitle>
+        </mat-card-header>
+      </mat-card>
+    </div>
+  </div>
+  
+  <div class="col-lg-3">
+    <div class="flex-p">
+      <mat-card style="background-color: #ffa5003b;">
+        <mat-icon style="font-size: 50px;margin-top: 10px; color: #ff6152;">calendar_today
+        </mat-icon>
+        <mat-card-header style="margin-left:140px">
+
+          <mat-card-subtitle style="margin-top: -65px">
+            <h2>
+              17.0
+            </h2>
+          </mat-card-subtitle>
+          <mat-card-subtitle>
+            <h3>Supplier Lead Time(Days)</h3>
+          </mat-card-subtitle>
+        </mat-card-header>
+
+      </mat-card>
+    </div>
+  </div>
+  <div class="col-lg-3">
+    <div class="flex-p">
+      <mat-card style="background-color: #ffa5003b;">
+        <mat-icon style="font-size: 50px;margin-top: 10px; color: #ff6152;">warning
+        </mat-icon>
+        <mat-card-header style="margin-left:140px">
+
+          <mat-card-subtitle style="margin-top: -65px">
+            <h2>
+              2.3%
+            </h2>
+          </mat-card-subtitle>
+          <mat-card-subtitle>
+            <h3>Supplier Defect Rate</h3>
+          </mat-card-subtitle>
+        </mat-card-header>
+
+      </mat-card>
+    </div>
+  </div>
+
+
+</div>
+
+
+
+
+<div class="container-fluid" style="margin-top: 15px;">
+  <div fxLayout="row wrap" #resizedDiv>
+    <div class="flex-p w-100 sizeAlign">
+     <div class="row">
+        <div class="col-xs-12">
+          <button mat-raised-button class="pull-right  btn-primary" (click)="addrequisition(null)" style="margin-bottom: 10px;">
+            <mat-icon>add</mat-icon> Add Requisition
+          </button>
+          <div id="grid-table-container" class="table-responsive">
+            <table matSort id="example2" class="table table-bordered table-hover">
+              <thead class="tbl-head">
+                <tr>
+                  <th class="text-center" style="width: 112px!important;">Actions</th> 
+                  <th class="text-left">Requisition Ref.</th>
+                  <th class="text-left">Requisition Date</th>
+                  <th class="text-center">Items</th>
+                  <th class="text-center">Requisition Title</th>
+                  <!-- <th class="text-left">Requisition Category & Sub Category</th>
+                  <th class="text-left">Make / Model & Door No.</th> -->
+                  
+                  <th class="text-center" style="width: 100px;">Target Date</th>
+                  <th class="text-center" style="width: 100px;">Submitted By</th>
+                  <th class="text-center" style="width: 100px;">Approved By</th>
+                  <th class="text-center" style="width: 100px;">Approve</th>
+                  <!-- <th class="text-center">Approval Status</th>-->
+                 
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of items">
+                  <td class="text-center editDel">
+                    <a style="cursor: pointer;margin-right:10px; " matTooltip="Update Item"
+                    (click)="addrequisition(item)">
+                      <i class="fa fa-edit" style="color: cornflowerblue"></i>
+                    </a>
+                    <a><i class="fa fa-trash red" matTooltip="Delete Item" style="cursor: pointer;"></i></a>
+                  </td>
+                  <td style="text-align: left!important;">{{item.requisition_no }}</td>
+                  <td style="text-align: left!important;">{{item.requisition_date }}</td>
+                  <td style="text-align: center !important;cursor: pointer;color: blue;">{{item.item}}</td>
+                  <td style="text-align: center!important;">{{item.requisition_title }}</td>
+                  <!-- <td style="text-align: left!important;">
+                    <span>{{item.requisition_category }}</span><br>
+                    <span>{{item.sub_category }}</span>
+                  </td> -->
+                  <!-- <td style="text-align: left!important;">{{item.make }} | {{item.door_no}}</td> -->
+                  <!-- <td routerLink="/purchase/add-item" style="min-width: 70px !important;cursor: pointer; text-align: center!important;color: dodgerblue;" matTooltip="Add/View item">
+                    {{item.view}}
+                  </td> -->
+                  <td style="min-width: 70px !important; text-align: center!important;">
+                    {{item.required}}
+                  </td>
+                  <td style="min-width: 70px !important; text-align: center!important;">
+                    {{item.Submittedby}}
+                  </td>
+                  <td style="min-width: 70px !important; text-align: center!important;">
+                    {{item.Approvedby}}
+                  </td>
+                  <td class="text-center">
+                    <input type="checkbox">
+                  </td>
+
+                  <!-- <td style="text-align: center!important;">
+                    <mat-select [style.background]="item.stageColour" style="min-width: 120px;" [(value)]="item.Status"
+                      (selectionChange)="changeStatus($event.value)" placeholder="--Select Stage --" class='form-control'>
+                      <ng-container *ngFor='let option of statusOptions'>
+                        <mat-option [style.background]="option.colorCode" class='option' [value]="option.value">
+                          {{option.name}}</mat-option>
+                      </ng-container>
+                    </mat-select>
+                  </td> -->
+                  
+                </tr>
+              </tbody>
+            </table>
+            <mat-paginator [pageSizeOptions]="[5, 10, 25, 50, 100]" showFirstLastButtons></mat-paginator>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>

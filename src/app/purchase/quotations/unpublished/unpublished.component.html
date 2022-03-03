@@ -1,0 +1,132 @@
+<div class="container-fluid">
+<div fxLayout="row wrap" #resizedDiv>
+  <div class="flex-p w-100 sizeAlign">
+    <div fxLayout="row wrap" *ngIf="filterToggle">
+      <div fxFlex="100" fxFlex.gt-sm fxFlex.sm class="flex-p w-100 margins">
+        <mat-card class="filter">
+          <mat-card-content>
+            <div class="row">
+              <div class="col-sm-4">
+                <div class="col-sm-4 newMarginClass">
+                  Keyword:
+                </div>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" placeholder="Enter Keyword">
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="col-sm-4 newMarginClass">
+                  Resource Type:
+                </div>
+                <div class="col-sm-8">
+                  <mat-select name="" id="" class="form-control" placeholder="Select Resource type">
+                    <mat-option [value]=0>Raw Materials</mat-option>
+                    <mat-option [value]=1>Machinery</mat-option>
+                    <mat-option [value]=2>Plants</mat-option>
+                    <mat-option [value]=3>Tools</mat-option>
+                    <mat-option [value]=4>No. of Workers</mat-option>
+                    <mat-option [value]=5>Subcontractors</mat-option>
+                    <mat-option [value]=6>Agencies</mat-option>
+
+                  </mat-select>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="col-sm-4 newMarginClass">
+                  Resource Name:
+                </div>
+                <div class="col-sm-8">
+                  <mat-select class="form-control" placeholder="Search by Resource name">
+                    <mat-option>Crane</mat-option>
+                    <mat-option>Screws</mat-option>
+                    <mat-option>EarthMover</mat-option>
+                    <mat-option>Concreat Mixer</mat-option>
+                    <mat-option>Power Crane</mat-option>
+                  </mat-select>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="row" style="padding-top:10px !important">
+
+              <div class="col-lg-1" style="margin-left:80%!important;">
+                <button mat-raised-button class="pull-right btn-primary">
+                  <mat-icon>youtube_searched_for</mat-icon> Search
+                </button>
+              </div>
+              <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="margin-left: -18px;">
+                <button mat-raised-button style="background-color:#37474f; color:#fff !important">
+                  <mat-icon>settings_backup_restore</mat-icon> Clear
+                </button>
+              </div>
+              <a (click)="filterToggle = !filterToggle" class="pull-right"
+                style="font-size: 25px; cursor: pointer; margin-left: 5px;">
+                <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+              </a>
+
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-xs-12">
+        <div id="grid-table-container" class="table-responsive">
+          <table matSort id="example2" class="table table-bordered table-hover">
+            <thead class="tbl-head">
+              <tr>
+                <th class="text-left">Requisition No.</th>
+                <th class="text-left">Requisition Date</th>
+                <th class="text-center">Requisition Title</th>
+                <th class="text-left">Requisition Category & Sub Category</th>
+                <th class="text-left">Make / Model & Door No.</th>
+                <th class="text-center">View Items</th>
+                <th class="text-center">Approvals</th>
+                <th class="text-center" style="width: 100px;">Required By</th>
+                <th class="text-center">Approval Status</th>
+                <th class="text-center" style="width: 112px!important;">Send Quotation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of items">
+
+                <td style="text-align: left!important;">{{item.requisition_no }}</td>
+                <td style="text-align: left!important;">{{item.requisition_date }}</td>
+                <td style="text-align: center!important;">{{item.requisition_title }}</td>
+                <td style="text-align: left!important;">
+                  <span>{{item.requisition_category }}</span><br>
+                  <span>{{item.sub_category }}</span>
+                </td>
+                <td style="text-align: left!important;">{{item.make }} | {{item.door_no}}</td>
+                <td routerLink="/purchase/view-item" style="min-width: 70px !important;cursor: pointer; text-align: center!important;color: dodgerblue;" matTooltip="Add/View item">
+                  {{item.view}}
+                </td>
+                <td class="text-center" style="color: blue; cursor: pointer;" (click)="opencontactDialog()" matTooltip="Show Approval">View</td>
+                <td style="min-width: 70px !important; text-align: center!important;">
+                  {{item.required}}
+                </td>
+                <td style="text-align: center!important;">
+                  <mat-select [style.background]="item.stageColour" style="min-width: 120px;" [(value)]="item.Status"
+                    (selectionChange)="changeStatus($event.value)" placeholder="--Select Stage --" class='form-control'>
+                    <ng-container *ngFor='let option of statusOptions'>
+                      <mat-option [style.background]="option.colorCode" class='option' [value]="option.value">
+                        {{option.name}}</mat-option>
+                    </ng-container>
+                  </mat-select>
+                </td>
+                <td class="text-center editDel">
+                  <i class="fa fa-paper-plane" aria-hidden="true" matTooltip="Send Quotation"></i>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <mat-paginator [pageSizeOptions]="[5, 10, 25, 50, 100]" showFirstLastButtons></mat-paginator>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

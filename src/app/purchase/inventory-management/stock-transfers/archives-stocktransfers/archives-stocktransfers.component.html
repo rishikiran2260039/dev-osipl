@@ -1,0 +1,87 @@
+<div class="container-fluid" >
+  <div fxLayout="row wrap" #resizedDiv>
+    <div class="flex-p w-100 sizeAlign">
+      <div class="col-xs-12 mt-3 mb-3 " style="margin-top: -25px !important;" >
+        <div class="col-sm-3">
+          
+        </div>
+        <div class="col-sm-3">
+          
+        </div>
+        <div class="col-sm-3">
+          <label class="add-memeber-label pull-right" style="margin-top: 5px !important;">Select Context:</label>
+        </div>
+        <div class="col-sm-3">
+          <div class="form-group">
+            <mat-select  placeholder="Select " class="form-control" required >
+              <mat-option value="1">Stock Transfer</mat-option>
+              <mat-option value="2">Service Challans</mat-option>
+              <mat-option value="3">GRN</mat-option>
+            </mat-select>
+          </div>
+        </div>
+      </div>
+     <div class="row">
+        <div class="col-xs-12">
+          <div id="grid-table-container" class="table-responsive">
+            <table matSort id="example2" class="table table-bordered table-hover">
+              <thead class="tbl-head">
+                <tr>
+                  <th >STN Ref.</th>
+                  <th >Date</th>
+                  <th>Request Title</th>
+                  <th >Source Project</th>
+                  <th>Source Location </th>
+                  <th >Receiving Project</th>
+                  <th >Destination</th>
+                  <th class="text-center">Notes</th>
+                  <th class="text-center">Items & Quantities</th>
+                  <th  class="text-center">Status</th>
+                  <!-- <th class="text-center" style="width: 112px!important;">Actions</th> -->
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of items">
+                  <td >{{item.stnref}}</td>
+                  <td >{{item.date}}</td>
+                  <td >{{item.requesttitle}}</td>
+                  <td >{{item.sourceproject}}</td>
+                  <td >{{item.sourcelocation}}</td>
+                  <td>{{item.receivingproject}}</td>
+                  <td >{{item.destination}}</td>
+                  <td class="text-center" style="cursor:pointer;color: blue;" (click)="note()"><mat-icon>info</mat-icon></td>
+                  <td class="text-center"  style="color: blue;cursor: pointer;" routerLink="/purchase/ItemsandquantitiesActiveStocktransfers">{{item.itemsandquantites}}</td>
+                  <td style="text-align: center!important;">
+                    <mat-select [style.background]="item.stageColour" style="min-width: 120px;"
+                        [(value)]="item.Status" 
+                        placeholder="--Select Stage --" class='form-control'>
+                        <ng-container *ngFor='let option of statusOptions'>
+                            <mat-option [style.background]="option.colorCode" class='option'
+                                [value]="option.value" >
+                                {{option.name}}</mat-option>
+                        </ng-container>
+                    </mat-select>
+                </td>
+                  <!-- <td class="text-center editDel">
+                    <a style="cursor: pointer;margin-right:10px; " matTooltip="Update Item"
+                    (click)="createstocktransferrequest(item)">
+                      <i class="fa fa-edit" style="color: cornflowerblue"></i>
+                    </a>
+                    <a><i class="fa fa-trash red" matTooltip="Delete Item" style="cursor: pointer;"></i></a>
+                  </td> -->
+                </tr>
+              </tbody>
+            </table>
+            <button class="mine" mat-fab (click)="scrollGrid('right');" >
+              <mat-icon style="color:#37474f">fast_forward</mat-icon>
+            </button>
+            <button class="mine" mat-fab style="margin-right: 78px !important;" (click)="scrollGrid('left');">
+              <mat-icon style="color:#37474f">fast_rewind</mat-icon>
+            </button>
+            <mat-paginator [pageSizeOptions]="[5, 10, 25, 50, 100]" showFirstLastButtons></mat-paginator>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>

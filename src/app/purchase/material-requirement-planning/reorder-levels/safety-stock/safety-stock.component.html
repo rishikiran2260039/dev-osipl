@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="col-xs-12">
+    <div id="grid-table-container" class="table-responsive" >
+      <table matSort id="example2" class="table table-bordered table-hover">
+        <thead class="tbl-head">
+          <tr>
+            <th class="text-center">SKU</th>
+            <th class="text-center">Max Daily Usage</th>
+            <th class="text-center">Avg Daily Usage</th>
+            <th class="text-center">Max Lead Time</th>
+            <th class="text-center">Avg Lead Time</th>
+            <th class="text-center">Safety Stock</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of items">
+            <td class="text-center">{{item.sku}}</td>
+            <td class="text-center">{{item.maxUsage}}</td>
+            <td class="text-center">{{item.avgUsage}}</td>
+            <td class="text-center">{{item.maxLeadTime}}</td>
+            <td class="text-center">{{item.avgLeadTime}}</td>
+            <td class="text-center">{{item.safetyS}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<mat-dialog-actions align="end">
+  <button mat-raised-button class="btn-primary" (click)="close()"><mat-icon>send</mat-icon><span >Save</span></button>
+  <button mat-raised-button class="add-dark-hover btn-default" (click)="close()"><mat-icon>cancel</mat-icon> Close</button>
+</mat-dialog-actions>

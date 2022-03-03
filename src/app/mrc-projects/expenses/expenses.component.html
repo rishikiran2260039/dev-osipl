@@ -1,0 +1,202 @@
+
+
+
+<div class="col-sm-12" style="margin-left:-11px">
+  <!-- <div class="col-sm-10">
+      <div class="col-sm-3">
+          <b>Total:</b> {{total | currency : 'USD'}}
+      </div>
+      <div class="col-sm-3">
+          <b>Grand Total:</b> {{grandTotal | currency : 'USD'}}
+      </div>
+  </div> -->
+  <div class="pull-right no-padding"  style="    margin-left: 11px;
+  margin-top: 10px;
+  margin-bottom: 10px;">
+
+      <button mat-raised-button color="primary" style="position: relative; left: 7px;" class="pull-right filter-hover" (click)="filterToggle = !filterToggle">
+          <mat-icon>filter_list</mat-icon> Filter
+      </button>
+  </div>
+</div>
+
+<div class="col-sm-12 no-padding">
+  <form [formGroup]="filterForm" (ngSubmit)="filterBy(filterForm.value)">
+      <div fxLayout="row wrap" *ngIf="filterToggle">
+          <div fxFlex="100" fxFlex.gt-sm fxFlex.sm class="flex-p w-100">
+              <mat-card class="filter">
+                  <mat-card-content>
+                      <div class="row col-sm-12">
+                          <div class="col-sm-3">
+                              <div class="col-sm-3 no-padding" style="margin-top: 6px !important;">Site:</div>
+                              <div class="col-sm-9 no-padding">
+                                  <mat-select (selectionChange)="getSows($event.value)" formControlName="siteId" placeholder="--Please Select--" class='form-control'>
+                                      <mat-option class='option' *ngFor='let item of allSites' [value]="item.siteId">{{item.siteName}}</mat-option>
+                                  </mat-select>
+                              </div>
+                          </div>
+                          <div class="col-sm-3">
+                              <div class="col-sm-3 no-padding" style="margin-top: 6px !important;">SOW:</div>
+                              <div class="col-sm-9 no-padding">
+                                  <mat-select formControlName="sowId" placeholder="--Please Select--" class='form-control'>
+                                      <mat-option class='option' *ngFor='let item of allSOWs' [value]="item.sowId">{{item.sowName}}</mat-option>
+                                  </mat-select>
+                              </div>
+                          </div>
+                          <div class="col-sm-3">
+                              <div class="col-sm-3 no-padding" style="margin-top: 6px !important;">Task:</div>
+                              <div class="col-sm-9 no-padding">
+                                  <mat-select multiple formControlName="taskId" placeholder="--Please Select--" class='form-control'>
+                                      <mat-option #allSelectedTasks (click)="toggleAllSelectionTasks()" [value]="0">Select All</mat-option>
+                                      <mat-option (click)="tosslePerOneTasks(allSelectedTasks.viewValue)" class='option' *ngFor='let item of allTasks' [value]="item.taskId">{{item.taskName}}</mat-option>
+                                  </mat-select>
+                              </div>
+                          </div>
+                          <div class="col-sm-3">
+                              <div class="col-sm-3 no-padding" style="margin-top: 6px !important;">Action Type:</div>
+                              <div class="col-sm-9 no-padding">
+                                  <mat-select multiple formControlName="actionName" placeholder="--Please Select--" class='form-control'>
+                                      <mat-option #allSelectedActions (click)="toggleAllSelectionActions()" [value]="0">Select All</mat-option>
+                                      <mat-option (click)="tosslePerOneActions(allSelectedActions.viewValue)" class='option' *ngFor='let item of allActions' [value]="item">{{item}}</mat-option>
+                                  </mat-select>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="row col-sm-12" style="margin-top: 10px;">
+                          
+                          <div class="col-sm-3">
+                              <div class="col-sm-3 no-padding" style="margin-top: 6px !important;">User:</div>
+                              <div class="col-sm-9 no-padding">
+                                  <mat-select multiple formControlName="userId" placeholder="--Please Select--" class='form-control'>
+                                      <mat-option #allSelectedUsers (click)="toggleAllSelectionUsers()" [value]="0">Select All</mat-option>
+                                      <mat-option (click)="tosslePerOneUsers(allSelected.viewValue)" class='option' *ngFor='let item of allUsers' [value]="item.userId">{{item.userName}}</mat-option>
+                                  </mat-select>
+                              </div>
+                          </div><div class="col-sm-3">
+                              <div class="col-sm-3 no-padding" style="margin-top: 6px !important;">From Date:</div>
+                              <div class="col-sm-9 no-padding">
+                                  <p-calendar formControlName="fromDate" dateFormat="yy-mm-dd"  [showOtherMonths]="true" [showIcon]="true"
+                                       appendTo="body">
+                                  </p-calendar>
+                              </div>
+                          </div>
+                          <div class="col-sm-3">
+                              <div class="col-sm-3 no-padding" style="margin-top: 6px !important;">To Date:</div>
+                              <div class="col-sm-9 no-padding">
+                                  <p-calendar formControlName="toDate" dateFormat="yy-mm-dd"  [showOtherMonths]="true" [showIcon]="true"
+                                  appendTo="body">
+                             </p-calendar>
+                              </div>
+                          </div>
+                          <div class="col-sm-3">
+                              <div style="margin-left: 65px;">
+                              <button mat-raised-button color="primary" class="add-hover btn-primary search">
+                                  <mat-icon>youtube_searched_for</mat-icon> Search
+                              </button>
+                              <button mat-raised-button (click)="resetFilter()" class="" style="margin: 0px 10px;">
+                              <mat-icon>settings_backup_restore</mat-icon> Reset
+                              </button>
+                              
+                              <a (click)="filterToggle = !filterToggle" class="" style="font-size: 25px;">
+                                  <i class="fas fa-angle-double-up" aria-hidden="true"></i>
+                              </a>
+                          </div>
+                          </div>
+                      </div>
+                  </mat-card-content>
+              </mat-card>
+          </div>
+      </div>
+  </form>
+</div>
+<div class="">
+  <div class="table-responsive w-100 flex-p">
+      
+      <table id="example2" class="table table-bordered table-hover" matSort (matSortChange)="sortData($event)" >
+          <thead *ngIf="loggedExpenses?.length > 0">
+              <tr  [ngClass]="loggedExpenses?.length > 7 ? 'less' : 'full'" style="background-color: #f4cb36c2 !important;">
+                  <td colspan="10" style="text-align: left;">
+                      <b>Page wise approved cost: {{total | currency : 'USD'}}</b>
+                  </td>
+                  <!-- <td class="text-center"><b>{{total | currency : 'USD'}}</b></td> -->
+                  <td colspan="5" style="text-align:right">
+                      <b>Total Approved Cost: {{grandTotal | currency : 'USD'}}</b>
+                  </td>
+                  <!-- <td class="text-center" colspan="2"><b>{{grandTotal | currency : 'USD'}}</b></td> -->
+              </tr>
+          </thead>
+          <thead class="tbl-head" [ngClass]="loggedExpenses?.length > 7 ? 'less' : 'full' ">
+              <tr class="tr-grid-header">
+                  <th mat-sort-header="11" class="vert-align-mid" style="min-width: 85px;">Date</th>
+                  <th mat-sort-header="12" class="vert-align-mid">User Name</th>
+                  <th mat-sort-header="4" class="vert-align-mid">Job Code</th>
+                  <th mat-sort-header="siteName" class="vert-align-mid">Site</th>
+                  <th mat-sort-header="sowName" class="vert-align-mid">SOW</th>
+                  <th mat-sort-header="3" class="vert-align-mid">Action</th>
+                  <th mat-sort-header="5" class="vert-align-mid">Expense Code</th>
+                  <th mat-sort-header="6" class="vert-align-mid">Limit Type </th>
+                  <th mat-sort-header="7" class="text-center vert-align-mid">Rate</th>
+                  <th mat-sort-header="8" class="text-center vert-align-mid">Quantity</th>
+                  <th class="text-center vert-align-mid">Total</th>
+                  <th class="vert-align-mid" style="min-width: 200px;">Notes</th>
+                  <th mat-sort-header="10" class="text-center vert-align-mid">Reimbursable</th>
+                  <!-- <th class="vert-align-mid">Updated By</th>
+                  <th class="vert-align-mid" style="min-width: 85px;">Updated Date</th> -->
+                  <!-- <th class="vert-align-mid">Approval Status</th> -->
+                  <th class="text-center vert-align-mid" style="min-width: 67px;">Manage</th>
+                  <th mat-sort-header="createdDate" rowspan="2" class="v-a-m" style=" min-width: 152px !important;">Created Date</th>
+
+
+
+                  <!-- <th style="min-width: 80px;" class="text-center">Manage</th> -->
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let item of loggedExpenses">
+                  <td>{{item.loggedDate | date : "dd-mm-yyyy"}}</td>
+                  <td>{{item.loggedBy}}</td>
+                  <td>{{item.jobCode}}</td>
+                  <td>{{item.siteName}}</td>
+                  <td>{{item.sowName}}</td>
+                  <td>{{item.manageActionName}}</td>
+                  <td>{{item.expenseCode}}</td>
+                  <td>{{item.limitType}}</td>
+                  <td class="text-center">{{item.expenseRate | currency : 'USD'}}</td>
+                  <td class="text-center">{{item.quantity}}</td>
+                  <td class="text-center">{{(item.expenseRate * item.quantity)| currency : 'USD'}}</td>
+                  <td >{{item.expenseDescription == null || item.expenseDescription == '' ? '-' : item.expenseDescription| slice:0:42}}<a *ngIf="item.notesCount > 1 || item.expenseDescription.length > 42" class="anchor" (click)="openMessagesDiolog(item)" style="font-size: 12px;">...view more</a ></td>
+                  <td class="text-center">{{item.isReimbursable ? 'Yes' : 'No'}}</td>
+                  <!-- <td>{{item.updatedBy}}</td>
+                  <td>{{item.updatedDate}}</td> -->
+                  <td class="text-center">
+                      <a [ngClass]="{'red': item.status == false, 'gray' : item.status == null, 'green':item.status == true}" style="vertical-align:middle" class="cursor-pointer" (click)="showUpdateDetailsDialog(item)">
+                          <mat-icon>{{item.status != null ? (item.status == true ? 'check_circle' : 'cancel') : 'info'}}</mat-icon>
+                      </a>
+                      <a [ngClass]="{'disable-custom-manage-color' :item.actionName == '-'}" [href]="'https://drive.google.com/drive/folders/' + (item.isAssigned ? item.googleDriveId : expenseFolderId)" target="_blank" matTooltip="Go to file location" style="margin-left: 7px;margin-right: 3px;">
+                          <img style="margin-bottom: 3px !important;" src="https://img.icons8.com/fluent/20/google-drive--v2.png"/>
+                          <!-- <i style="cursor: pointer;font-size:16px!important; color:green;" class="fas fa-file-export"></i> -->
+                      </a>  
+                  </td>
+                  
+                  <td>{{item.createdDate | date : 'dd-mm-yyyy, h:mm a'}}</td>
+              </tr>
+              <tr *ngIf="loggedExpenses?.length > 0" [ngClass]="loggedExpenses?.length > 7 ? 'less' : 'full'" style="background-color: #f4cb36c2 !important;">
+                  <td colspan="10" style="text-align: left;">
+                      <b>Page wise approved cost: {{total | currency : 'USD'}}</b>
+                  </td>
+                  <!-- <td class="text-center"><b>{{total | currency : 'USD'}}</b></td> -->
+                  <td colspan="5" style="text-align:right">
+                      <b>Total Approved Cost: {{grandTotal | currency : 'USD'}}</b>
+                  </td>
+              </tr>
+              <tr *ngIf="loggedExpenses?.length == 0">
+                  <td colspan="18" class="text-center">
+                      No Data Available
+                  </td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
+  <mat-paginator [length]="totalSize" [pageIndex]="currentPage" [pageSize]="pageSize" [pageSizeOptions]="[5, 10, 25, 50, 100]" (page)="handlePage($event)" showFirstLastButtons></mat-paginator>
+
+</div>

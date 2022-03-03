@@ -1,0 +1,38 @@
+<div class="NewHeader">
+  <i class="fa fa-times" aria-hidden="true" style="float: right !important;margin: 0 10px 0px 0;font-size: 17px;    cursor: pointer;" (click)="close()"></i>
+  <h3 style="margin-top: 4px;">
+    Items Issues
+  </h3>
+</div>
+
+<div fxLayout="row wrap">
+  <div class="">
+    <table id="example2" class="table table-bordered table-hover" style="margin-left:67px;width: 99%;max-width: 99%;margin-bottom: 20px;width:524px">
+      <thead class="tbl-head">
+        <tr class="tr-grid-header">
+          <th>Item Name</th>
+          <th>Quantity</th>         
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let items of tableList">
+          <td>
+              {{ items.name }}
+          </td>
+          <td style="text-align: center!important;">
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+              <input type="number" class="form-control" id="email" value="3">
+            </div>
+          </td>      
+
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+<mat-dialog-actions align="end">
+  <button mat-raised-button style="background-color: #286ba5; color: white;" [mat-dialog-close]="'test'"><mat-icon>send</mat-icon><span> Save</span></button>
+  <button mat-raised-button class="CancelClass" (click)="close()"><mat-icon>cancel</mat-icon> Close</button>
+</mat-dialog-actions> 

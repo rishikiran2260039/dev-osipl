@@ -1,0 +1,67 @@
+
+<div class="container-fluid">
+  <div fxLayout="row wrap" #resizedDiv>
+    <div class="flex-p w-100 sizeAlign">
+      <div class="row" style="margin-bottom:23px;">
+        <div class="col-sm-12"> 
+          <!-- <button mat-raised-button class="pull-right  btn-default margin-right-10"
+          routerLink="/purchase/material-management/requisition">
+             <mat-icon>chevron_left</mat-icon> Back
+          </button>
+          <button mat-raised-button class="pull-right  btn-primary margin-right-10"
+             (click)="openGridColumnsDialog()">
+             <mat-icon>grid_on</mat-icon> Grid Columns
+          </button> -->
+          <button mat-raised-button class="pull-right  btn-primary margin-right-10"
+          (click)="additem()">
+               <mat-icon>add</mat-icon> Add New Item
+          </button>
+        </div>
+      </div>
+      <!-- <button mat-raised-button class="pull-right  btn-primary margin-right-10" >
+        <mat-icon>add</mat-icon> Add Indent
+        </button>  -->
+    <div class="row" >
+    
+      <div class="col-xs-12" style="overflow-x: auto">
+        <div id="grid-table-container" class="table-responsive" >
+          
+          <table matSort id="example2" 
+          class="table table-bordered table-hover" 
+          style="margin-left: 0px!important;">
+            <thead class="tbl-head">
+              <tr>
+               
+        
+                <th class="text-center">Item Code</th>
+                <th class="text-left">Item Name</th>
+                <th class="text-left">Item Category</th>
+                <th class="text-center">Required Qty</th>
+               
+               
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of items">
+                
+                <td class="text-left">{{item.item_code}}</td>
+                <td class="text-left">{{item.item_name}}</td>
+                <td class="text-left">{{item.item_category}}</td>
+                <td class="text-center">{{item.Qty}}</td>
+               
+              </tr>
+            </tbody>
+          </table>
+          
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+  <div class="col-sm-12">
+  
+
+</div>
+
+      
+

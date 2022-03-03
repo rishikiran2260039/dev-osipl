@@ -1,0 +1,92 @@
+<div class="conatainer-fluid">
+  <div class="row col-12 mt-5">
+    <div class="col-6">
+        <div class="chart-header">
+          <p style="font-size: 17px">ABC Analysis</p>
+        </div>
+        <div class="flex-p">
+          <mat-card>
+            <div class="w-100 h-300p">
+              <ngx-charts-pie-chart [scheme]="colorScheme" [results]="two" [legend]="showLegend"
+                [explodeSlices]="explodeSlices" [labels]="showLabels" [doughnut]="doughnut" [gradient]="gradient"
+                (select)="onSelect($event)">
+              </ngx-charts-pie-chart>
+            </div>
+          </mat-card>
+        </div>
+    </div>
+    <div class="col-6">
+      <div style="margin-left: 2%">
+        <div class="chart-header">
+          <p style="font-size: 17px">XYZ Analysis</p>
+        </div>
+        <div class="flex-p">
+          <mat-card>
+            <div class="w-100 h-300p">
+              <ngx-charts-pie-chart [scheme]="colorScheme2" [results]="three" [legend]="showLegend"
+                [explodeSlices]="explodeSlices" [labels]="showLabels" [doughnut]="doughnut" [gradient]="gradient"
+                (select)="onSelect($event)">
+              </ngx-charts-pie-chart>
+            </div>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="container-fluid mt-3">
+    <h3>{{heading}}</h3>
+  </div> -->
+  <div class="row">
+    <div class="col-xs-6 ">
+      <div style="margin-left: 23px; margin-top: 31px;">
+        <h3>{{heading}}</h3>
+      </div>
+
+    </div>
+    <div class="col-xs-6 ">
+      <div class="flex-p">
+        <button mat-raised-button class="pull-right  btn-primary" style=" margin-right: 14px;margin-bottom: 10px;">
+          <mat-icon>download</mat-icon> Download CSV
+        </button>
+      </div>
+
+    </div>
+  </div>
+  <div class="container-fluid mt-1">
+    <div class="row">
+      <div class="col-xs-12">
+        <div id="grid-table-container" class="table-responsive">
+          <table matSort id="example2" class="table table-bordered table-hover">
+            <thead class="tbl-head">
+              <tr>
+                <th class="text-left">Part Number</th>
+                <th class="text-left">Part Name</th>
+                <th class="text-left">Eqpt Make</th>
+                <th class="text-left">Eqpt Model</th>
+                <th class="text-center">Average Unit Cost</th>
+                <th class="text-center">Available Qty</th>
+                <th class="text-center">Total Value</th>
+                <th class="text-center">Monthly Usage</th>
+                <th class="text-center">Item Class</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of items">
+                <td class="text-left">{{item.partnumber}}</td>
+                <td class="text-left">{{item.partname}}</td>
+                <td class="text-left">{{item.eqptmake}}</td>
+                <td class="text-left">{{item.eqptmodel}}</td>
+                <td class="text-center">{{item.avgunitcost}}</td>
+                <td class="text-center">{{item.availqty}}</td>
+                <td class="text-center">{{item.totalvalue}}</td>
+                <td class="text-center">{{item.monthlyusage}}</td>
+                <td class="text-center">{{item.class}}</td>
+              </tr>
+            </tbody>
+          </table>
+          <mat-paginator [pageSizeOptions]="[5, 10, 25, 50, 100]" showFirstLastButtons></mat-paginator>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

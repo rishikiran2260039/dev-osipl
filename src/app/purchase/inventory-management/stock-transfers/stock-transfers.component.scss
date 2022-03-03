@@ -1,0 +1,272 @@
+.mdc-button__icon{
+
+    cursor:pointer;
+    float:left;
+    height:27px;
+    margin:-28px 0 0 0;
+    text-align:center;
+    width:50px;
+    margin-top:-26px
+}
+.actionbutton{
+
+    background-color: #0c0c0c!important
+}
+
+.search {
+    &__container {
+        padding-top: 64px;
+    }
+    
+    &__title {
+        font-size: 22px;
+        font-weight: 900;
+        text-align: center;
+        color: #ff8b88;
+    }
+    
+    &__input {
+        width: 100%;
+        padding: 12px 24px;
+
+        background-color: transparent;
+        transition: transform 250ms ease-in-out;
+        font-size: 14px;
+        line-height: 18px;
+        
+        color: #575756;
+        background-color: transparent;
+        // background-image: url(http://mihaeltomic.com/codepen/input-search/ic_search_black_24px.svg); 
+ 
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-size: 18px 18px;
+        background-position: 95% center;
+        border-radius: 50px;
+        border: 1px solid #575756;
+        transition: all 250ms ease-in-out;
+        backface-visibility: hidden;
+        transform-style: preserve-3d;
+        
+        &::placeholder {
+            color: color(#575756 a(0.8));
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+        
+        &:hover,
+        &:focus {
+            padding: 12px 0;
+            outline: 0;
+            border: 1px solid transparent;
+            border-bottom: 1px solid #575756;
+            border-radius: 0;
+            background-position: 100% center;
+        }
+    }
+}
+
+.ifta-block {
+    padding: 20px 0px !important;
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    padding-top: 0px !important;
+}
+.newMarginClass {
+    margin-top: 7px !important;
+}
+.ifta-tabs-block {
+    border: 1px solid #ddd;
+    margin-top: 12px;
+    padding: 0px;
+}
+
+::ng-deep .nav-pills > li.active > a,
+::ng-deep .nav-pills > li.active > a:focus,
+::ng-deep .nav-pills > li.active > a:hover {
+    color: #fff;
+    background-color: #50636d !important;
+}
+
+::ng-deep .nav-stacked > li {
+    float: none;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.v-align-middle {
+    vertical-align: middle !important;
+}
+.upload {
+    margin-right: 10px;
+    height: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 0px 16px !important;
+}
+
+div.file {
+    position: relative;
+    overflow: hidden;
+}
+
+input.file {
+    position: absolute;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    opacity: 0;
+    right: 0;
+    top: 0;
+}
+
+.upload-icon {
+    padding-top: 5px;
+    padding-right: 30px !important;
+    vertical-align: text-bottom;
+}
+.ul {
+    list-style: none;
+}
+
+//   .btn-default {
+//     border-left-width: 0px!important;
+//       margin-left: 0px!important;
+//       padding-left: 70px!important;
+//       padding-right: 70px!important;
+//       padding-top: 10px!important;
+//       padding-bottom: 10px!important;
+//       border-right-width: 0px!important;
+//       border-bottom-width: 0px!important;
+//       border-top-width: 0px!important;
+//   }
+
+.ui-inputgroup {
+    margin-bottom: 10px;
+}
+.no-padding {
+    padding: 0px !important;
+}
+
+.row {
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+.ul li .btn {
+    width: 100%;
+}
+.ul li .btn.active {
+    color: #fff;
+    background-color: #50636d !important;
+    border: 1px solid #50636d;
+    // width: 100%;
+}
+
+.ul li input.active {
+    color: #fff;
+    background-color: #50636d !important;
+    border: 1px solid #1474a8;
+    min-width: 174px;
+    padding: 12px !important;
+}
+
+.btn {
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+}
+.list-group-item {
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.mat-drawer {
+    border-right: solid 0px rgba(0, 0, 0, 0.12) !important;
+}
+
+.newClasssss {
+    margin-top: 10px !important;
+}
+
+.fw-400 {
+    font-weight: 400;
+}
+.campaign-name {
+    padding: 0 12px;
+    font-weight: 400;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+
+.angular-with-newlines {
+    white-space: pre-wrap;
+}
+.routing-table-layout {
+    background: white;
+    border-radius: 8px;
+    height: auto;
+    // padding-bottom: 20px;
+    box-shadow: 0 0 2px 0 rgb(33, 40, 59);
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.routing-table-tab {
+    padding: 0 10px;
+    height: 45px;
+    border-bottom: 1px solid rgba(200, 200, 200, 1);
+    display: flex;
+    justify-content: flex-start;
+    .active {
+        color: black;
+        border-bottom: 3px solid rgb(51, 122, 183);
+    }
+}
+
+.routing-table-tab a {
+    font-size: 16px;
+    color: rgba(135, 135, 135, 1);
+    height: inherit;
+    padding: 12px 20px 0 20px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.routing-table-tab a:hover {
+    border-bottom: 3px solid rgba(150, 150, 150, 1);
+
+    // box-shadow: 0 3px 0 0 rgba(150, 150, 150, 1);
+}
+
+table {
+    width: 100%;
+    border-spacing: 0px;
+}
+
+th,
+td {
+    padding: 15px 25px;
+    border-top: 1px solid rgba(200, 200, 200, 1);
+    border-bottom: 1px solid rgba(200, 200, 200, 1);
+}
+
+td {
+    text-align: left;
+}
+
+.productName:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+::ng-deep .mat-tab-label-active {
+    background: transparent !important;
+}
+
+.newMarginClass {
+    margin-top: 7px;
+}

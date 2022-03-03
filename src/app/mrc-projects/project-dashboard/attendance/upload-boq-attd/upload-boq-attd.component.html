@@ -1,0 +1,28 @@
+<div class="NewHeader" style="background-color:#286ba5 !important; height: 50px;">
+  <h1 mat-dialog-title>
+    Upload Attendance
+  </h1>
+</div>
+
+<mat-horizontal-stepper [linear]="isLinear" #stepper>
+
+  <mat-step [stepControl]="firstFormGroup">
+
+    <form [formGroup]="firstFormGroup">
+      <Span style="margin-bottom: 15px;">Please upload the CSV file here.</Span>
+      <ng-template matStepLabel>Upload File</ng-template>
+
+      <input type="file" style="margin-top: 15px;">
+      <mat-dialog-actions align="end">
+        <button mat-button class="add-dark-hover btn-danger" (click)="close()"><i
+            class="material-icons">highlight_off</i>
+          Discard</button>
+        <!-- <button mat-button matStepperNext  class="btn-primary">Next <i class="material-icons">arrow_forward_ios</i></button> -->
+        <button mat-button matStepperNext class="add-dark-hover btn-success" (click)="close()"><i
+          class="material-icons">check</i> Upload</button>
+      </mat-dialog-actions>
+    </form>
+
+  </mat-step>
+
+</mat-horizontal-stepper>

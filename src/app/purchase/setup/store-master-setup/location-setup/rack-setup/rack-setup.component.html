@@ -1,0 +1,73 @@
+<div class="col-sm-12" style="padding: 0px !important;">
+  
+  <div class="row" style="margin-bottom:22px;">
+    <div class="col-xs-4 " style="margin-top: 10px;">
+      <span style="font-size: 18px;font-weight: bold; margin-right: 8px; padding-left: 15px">Store:</span>
+                  <span style="font-size: 16px; margin-right: 50px"> Backhoe Loader Store </span>
+    </div>
+    <div class="col-xs-8">
+        <div class="flex-p">
+
+            <button mat-raised-button class="pull-right add-hover btn-primary" (click)="openleadDialog(null)">
+                <mat-icon>add</mat-icon> Add New Rack
+            </button>
+            <button mat-raised-button class="pull-right  margin-right-10 btn-primary"
+            style="background-color:#337ab7">
+            <mat-icon>cloud_download</mat-icon> Upload Excel
+        </button>
+            <button mat-raised-button class="pull-right margin-right-10 btn-primary"
+            style="background-color:#337ab7">
+            <mat-icon>cloud_download</mat-icon> Download Sample Excel
+        </button>
+
+
+        </div>
+
+    </div>
+</div>
+
+  <div class="col-sm-4">
+    <div class="card" style="height: 250px;width:381px">
+      <div class="card-body">
+        <h2 class="card-title">Racks </h2><br />
+        <mat-icon style="color: rgb(194, 194, 21);margin-top:11px">folder</mat-icon>
+        <p>Rack 1 (Rck-1) (1)
+          <a style="cursor: pointer;margin-right:0px;margin-left: 5px; " (click)="openleadDialog(null)">
+            <i class="fa fa-edit" style="color: cornflowerblue;font-size: 17px;"></i>
+          </a>
+          <a><i class="fa fa-trash red" style="cursor: pointer;font-size: 17px;"></i></a>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card" style="height: 250px;width:381px">
+      <div class="card-body">
+        <h2 class="card-title">Rows
+          <button mat-raised-button class="btn-primary" (click)="openleadDialogg(null)"
+            style="width: 61px;margin-left: 210px;">
+            <mat-icon style="margin-left: -10px;width: 20px;">add</mat-icon> Add
+          </button>
+        </h2><br />
+        <mat-icon style="color: rgb(194, 194, 21);">folder</mat-icon>
+        <p>Row 1 (Rw-1) (1)
+          <a style="cursor: pointer;margin-right:0px;margin-left: 5px; " (click)="openleadDialogg(null)">
+            <i class="fa fa-edit" style="color: cornflowerblue;font-size: 17px;"></i>
+          </a>
+          <a><i class="fa fa-trash red" style="cursor: pointer;font-size: 17px;"></i></a>
+        </p>
+
+
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card" style="height: 250px;width:381px">
+      <div class="card-body">
+        <h2 class="card-title">Bin</h2>
+        <p>No Details Found</p>
+
+      </div>
+    </div>
+  </div>
+</div>

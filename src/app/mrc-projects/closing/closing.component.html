@@ -1,0 +1,44 @@
+<app-project-dashboard></app-project-dashboard>
+<div class="row-wrap">
+  <div class="w-100">
+    <div fxLayout="row">
+      <div class="col-xs-12">
+        <div class="pills">
+          <ul class="nav nav-pills" style="margin-top: 15px;">
+            <li routerLinkActive="active">
+              <a mat-raised-button class="navtabWidth" [routerLink]="['/contracts/project-dashboard/closure/defect-liability']">
+                <mat-icon>grid_on</mat-icon> Defect Liability
+              </a>
+            </li>
+            <li routerLinkActive="active">
+              <a mat-raised-button class="navtabWidth" [routerLink]="['/contracts/project-dashboard/closure/final-bill']">
+                <mat-icon>crop_square</mat-icon> Final Bill
+              </a>
+            </li>
+            <li routerLinkActive="active">
+              <a mat-raised-button class="navtabWidth" [routerLink]="['/contracts/project-dashboard/closure/guarentees']">
+                <mat-icon>business</mat-icon> Guarantees
+              </a>
+            </li>
+            <li routerLinkActive="active">
+              <a mat-raised-button class="navtabWidth" [routerLink]="['/contracts/project-dashboard/closure/inventory-shifting']">
+                <mat-icon>library_books</mat-icon> Inventory Shifting
+              </a>
+            </li>
+            <li routerLinkActive="active">
+              <a mat-raised-button class="navtabWidth" [routerLink]="['/contracts/project-dashboard/closure/reports']">
+                <mat-icon>group_add</mat-icon> Reports
+              </a>
+            </li>
+            <li routerLinkActive="active">
+              <a mat-raised-button class="navtabWidth" [routerLink]="['/contracts/project-dashboard/closure/returns']">
+                <mat-icon>assessment </mat-icon> Returns
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

@@ -1,0 +1,36 @@
+.margin-top-10 {
+    margin-top: 10px;
+}
+
+.margin-bottom-8 {
+    margin-bottom: 8px;
+}
+
+.vert-align-mid {
+    vertical-align: middle;
+}
+
+.blue {
+    color: rgb(36, 97, 177) !important;
+}
+
+.green {
+    color: rgb(18, 161, 83) !important;
+}
+
+.gray {
+    color: gray !important;
+}
+
+.red {
+    color: red !important;
+}
+::ng-deep .app.black-light .mat-pseudo-checkbox-checked,
+.app.black-light .mat-pseudo-checkbox-indeterminate,
+.app.black-light .mat-accent .mat-pseudo-checkbox-checked,
+.app.black-light .mat-accent .mat-pseudo-checkbox-indeterminate {
+    background: #2275d2 !important;
+}
+th {
+    background-color: #37474f !important;
+}

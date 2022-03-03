@@ -1,0 +1,147 @@
+<div class="flex-p" style="padding-top: 0px !important;">
+    <div class="row wrap">
+        <div class="col-xs-12" style="margin-bottom: 15px;">
+
+            <button mat-raised-button class="margin-right-10" style="color:white; background:#3b7bb8;"
+                >
+                <mat-icon>menu</mat-icon>
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="col-sm-2">
+    <div class="w-100">
+
+    <!-- <mat-drawer-container class="custom-sidenav" hasBackdrop="false" class="margin-top-10"> -->
+        <!-- <mat-drawer #drawer mode="side" opened="true"> -->
+            <div class="col-sm-12" style="margin-left:-20px;">
+                <p-tree [value]="files1" class="ptreecustom" selectionMode="single">
+                </p-tree>    
+            </div>
+        <!-- </mat-drawer> -->
+    <!-- </mat-drawer-container> -->
+    </div>
+</div>
+<div class="col-sm-10">
+            <div class="col-sm-12" style="margin-left: 20px;">
+                <mat-card class="col-sm-12 custom-layout" style="background-color: #dbe8f3;">
+                    <div class="col-sm-5">
+                        <div class="col-sm-6">
+                            <label>Site:</label>
+                            <span>&nbsp;&nbsp;Sipcot Industrial Park</span>
+                        </div>
+                        <div class="col-sm-6">
+                            <label>SOW:</label>
+                            <span>&nbsp;&nbsp; A. SRPR</span>
+                        </div>
+                    </div>
+                    <div class="col-sm-7">
+            
+                        <div class="col-sm-4">
+                            <label>Budget:</label>
+                            <span>&nbsp;&nbsp;
+                                47Hrs ($6,845.70)</span>
+                        </div>
+            
+                        <div class="col-sm-4">
+                            <label>Planned:</label>
+                            <span>&nbsp;&nbsp;
+                                11.50Hrs ($1,075.00)</span>
+                        </div>
+                        <div class="col-sm-3 no-padding">
+                            <label>Actual:</label>
+                            <span>&nbsp;&nbsp;0.00Hrs
+                                </span>
+                        </div>
+                        <div class="col-sm-1 no-padding">
+                            <mat-icon class="pull-right" style="cursor:pointer;color: #2da3ff;" (click)="openSowDailog()">
+                                edit</mat-icon>
+                        </div>
+                    </div>
+                    <div class="col-sm-5 margin-top-10">
+                        <div class="col-sm-6">
+                            <label>Quoted Total:</label>
+                            <span>&nbsp;&nbsp;$6,846.00</span>
+                        </div>
+                        <div class="col-sm-6">
+                            <label>Project Type:</label>
+                            <span>&nbsp;&nbsp;Engineering</span>
+                        </div>
+            
+                    </div>
+                    <div class="col-sm-7 margin-top-10">
+                        <div class="col-sm-4">
+                            <label>Status:</label>
+                            <span>&nbsp;&nbsp;Open</span>
+                        </div>
+                        <div class="col-sm-4">
+                            <label>Is Awarded:</label>
+                            <span>&nbsp;&nbsp;Awarded</span>
+                        </div>
+                        <div class="col-sm-4 no-padding">
+                            <label class="">Fee Structure:</label>
+                            <span>&nbsp;&nbsp;Fixed Rate</span>
+                        </div>
+                    </div>
+                </mat-card>
+                <mat-card class="col-sm-12 margin-top-10 p-0">
+                    
+                    <div class="table-responsive w-100 flex-p p-0">
+                        <table id="example2" class="table table-bordered table-hover">
+                            <thead class="tbl-head">
+                                <tr class="tr-grid-header">
+                                    
+                                    <th class="vert-align-mid">Task</th>
+                                    <th class="vert-align-mid">Action</th>
+                                    <th class="vert-align-mid">Job Code</th>
+                                    <th class="vert-align-mid">Rate</th>
+                                    <th class="vert-align-mid">Planned</th>
+                                    <th class="vert-align-mid">Due Date</th>
+                                    <th class="vert-align-mid">Assigned To</th>
+                                    <th class="vert-align-mid">Assigned</th>
+                                    <th class="vert-align-mid">Actual</th>
+                                    <th class="vert-align-mid">Cost</th>
+                                    <th class="vert-align-mid">Worked</th>
+                                    <th class="vert-align-mid">Remaining</th>
+                                    <th class="vert-align-mid">Scheduled</th>
+                                    <th class="vert-align-mid">Date</th>
+                                    <th class="vert-align-mid">Status</th>
+                                    <th class="vert-align-mid">Submitted</th>
+                                    <th class="vert-align-mid">Manage</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let item of items">
+                                    <td>{{item.task}}</td>
+                                    <td>{{item.action}}</td>
+                                    <td>{{item.jobCode}}</td>
+                                    <td>{{item.rate}}</td>
+                                    <td>{{item.planned}}</td>
+                                    <td>{{item.dueDate}}</td>
+                                    <td>{{item.assignedTo}}</td>
+                                    <td>{{item.assigned}}</td>
+                                    <td>{{item.actual}}</td>
+                                    <td>{{item.cost}}</td>
+                                    <td>{{item.worked}}</td>
+                                    <td>{{item.remaining}}</td>
+                                    <td>{{item.scheduled}}</td>
+                                    <td>{{item.date}}</td>
+                                    <td>{{item.status}}</td>
+                                    <td>{{item.submitted}}</td>
+                                    <td><i
+                                        (click)="openManageDialog()"
+                                        class="fa fa-arrow-circle-right"
+                                        style="cursor: pointer;font-size: 24px;color: #238b22e8;"></i>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <mat-paginator [pageSizeOptions]="[5, 10, 25, 50, 100]" showFirstLastButtons></mat-paginator>
+                    </div>
+
+                </mat-card>
+            </div>
+        <!-- </mat-drawer-content> -->
+    <!-- </mat-drawer-container> -->
+</div>

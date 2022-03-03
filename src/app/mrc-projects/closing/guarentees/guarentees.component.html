@@ -1,0 +1,155 @@
+
+
+<div fxLayout="row wrap" #resizedDiv>
+  <div class="flex-p w-100 sizeAlign">
+
+    <div style="margin-top: 25px !important;">
+
+
+        <span >Total Security : $500,000</span><br>
+      <span>Security Returned : $100,000</span><br>
+      <span>Security Holding Period after Completion : 4 months</span><br>
+      <span>Expected Settlement date : 01-02-2021</span><br>
+      <span>Next Disbursal Date : 01-12-2020</span><br>
+      
+      </div>
+
+
+
+<div class="row" style="margin-bottom:7px;">
+  <div class="col-xs-6 ">
+  </div>
+  <div class="col-xs-6 ">
+      <div class="flex-p">
+        
+  
+          <button  style="margin-bottom:10px;" mat-raised-button class="pull-right btn-primary" (click)="openAdd()" >
+              <mat-icon>add</mat-icon> Add Guarantee
+          </button>
+
+          <button mat-raised-button color="primary" class="pull-right filters-hover margin-right-10"
+            (click)="filterToggle = !filterToggle">
+            <mat-icon>filter_list</mat-icon> Filter
+        </button>  
+            
+  </div>
+  
+</div>
+</div>     
+
+
+<!-- Filter -->
+<div fxLayout="row wrap" *ngIf="filterToggle">
+    <div fxFlex="100" fxFlex.gt-sm fxFlex.sm class="flex-p w-100 margins">
+        <mat-card class="filter">
+            <mat-card-content>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="col-sm-4 newMarginClass">
+                            Keyword: 
+                        </div>
+                        <div class="col-sm-8">
+                            <input type="text" placeholder="Search by any record" class="form-control" >
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="col-sm-4 newMarginClass">
+                            Security: 
+                        </div>
+                        <div class="col-sm-8">
+                            <mat-select name="" id="" class="form-control" placeholder="Select Category">
+                                <mat-option>General Protection</mat-option>
+                                <mat-option>Insurance Protection</mat-option>
+                                <mat-option>Material Protection</mat-option>
+                              </mat-select> 
+                            </div>
+                    </div>
+                    <div class="col-sm-3">
+                      <div class="col-sm-4 newMarginClass">
+                          Return Date: 
+                      </div>
+                      <div class="col-sm-8">
+                        <input type="date" placeholder="Search by any record" class="form-control" >
+
+                        </div>
+                  </div>
+                  <div class="col-sm-3">                  
+                      <div class="col-lg-1" style="margin-left: 130px;" >
+                          <button mat-raised-button  class="pull-right btn-primary"><mat-icon>youtube_searched_for</mat-icon> Search</button>
+                      </div>
+                      <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" >
+                          <button mat-raised-button style="background-color:#37474f; color:#fff !important" ><mat-icon>settings_backup_restore</mat-icon> Clear</button>
+                      </div>
+                      <a (click)="filterToggle = !filterToggle" class="pull-right" style="font-size: 25px; cursor: pointer; margin-left: 5px;">
+                          <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+                      </a>   
+                      </div>                   
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+  </div>
+
+
+<div class="row">
+
+<div class="col-xs-12">
+    <div id="grid-table-container" class="table-responsive">
+        <table matSort id="example2" class="table table-bordered table-hover">
+            <thead class="tbl-head">
+                <tr>
+                    <th >Security</th>
+                    <th class="text-center">Return Date</th>
+                    <th class="text-center">Amount Due</th>
+                    <th class="text-center">Amount Received</th>
+                    
+                    <th class="text-center">Balance Amount</th>
+                    <th class="text-center">Expected Disbursal</th>
+                    <th class="text-center">Delay Period</th>
+                    <th class="text-center">Last Payment Received</th>
+                    <th class="text-center">Docs</th>
+                    <th class="text-center" style="width: 112px!important;">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of items">
+                    <td  style="min-width: 70px !important;"><a>
+                     {{item.security}}   
+                    </a>
+                </td>
+                <!-- <td style="text-align: center!important;">{{item.projectNumber}}</td> -->
+                <td style="text-align: center!important;">{{item.returndate}} </td>
+                <td style="text-align: center!important;">{{item.amountdue}} </td>
+                <td style="text-align: center!important;">{{item.amountreceived}} </td>
+                <td style="text-align: center!important;">{{item.balance}} </td>                  
+                <!--<td style="text-align: center!important;"><a style="cursor:pointer" href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" target="_blank"><mat-icon>visibility</mat-icon></a></td>-->
+                <td style="text-align: center!important;">{{item.disbursal}} </td>
+                <td style="text-align: center!important;">{{item.delay}} </td>
+                <td style="text-align: center!important;">{{item.payment}} </td>
+                
+                <td style="text-align: center!important;"><a style="color: blue;cursor: pointer;" (click)="opendocs()">{{item.docs}}</a>  </td>
+                
+               
+                
+
+    <td  class="text-center editDel">
+        <a style="cursor: pointer;margin-right:10px; " >
+            <i class="fa fa-edit" style="color: cornflowerblue"></i>
+        </a>
+        <a ><i class="fa fa-trash red"   style="cursor: pointer;"></i></a>
+    </td> 
+</tr>
+
+</tbody>
+</table>
+<mat-paginator 
+[pageSizeOptions]="[9, 10, 25, 50, 100]"
+showFirstLastButtons></mat-paginator>
+<!-- <mat-paginator [length]="totalSize" [pageIndex]="currentPage" [pageSize]="pageSize"
+[pageSizeOptions]="[5, 10, 25, 50, 100]" (page)="handlePage($event)"
+showFirstLastButtons></mat-paginator> -->
+</div>
+</div>
+</div>
+  </div>
+</div>

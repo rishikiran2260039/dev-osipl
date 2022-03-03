@@ -1,0 +1,74 @@
+<div class="container-fluid">
+  <div fxLayout="row wrap" #resizedDiv>
+    <div class="flex-p w-100 sizeAlign">
+      <div class="row" style="margin-bottom:23px;">
+        <div class="col-sm-12"> 
+          <button mat-raised-button class="pull-right  btn-default margin-right-10"
+          routerLink="/projects/projectdashboard/project-servicecontracts/arn">
+             <mat-icon>chevron_left</mat-icon> Back
+          </button>
+        </div>
+      </div>
+    <div class="row" >
+      <div class="col-xs-12" style="overflow-x: auto">
+        <div id="grid-table-container" class="table-responsive" >
+          <table matSort id="example2" class="table table-bordered table-hover" style="margin-left: 0px!important;">
+            <thead class="tbl-head">
+              <tr>
+                <th class="text-center">Action </th>
+                <th class="text-center">Select</th>
+                <th class="text-left">Item Name</th>
+                <th class="text-left">Item Code</th>
+                <th class="text-left">Item Category</th>
+                <th class="text-left">Item Sub Category</th>
+                <th class="text-center">Order Qty</th>
+                <th class="text-left">Previous Receipts</th>
+                <th class="text-left">Current Receipt</th>
+                <th class="text-center">Qty Recived</th>
+                <th class="text-center">Qty Accepted</th>
+                <th class="text-center">Qty Declined</th>
+                <th class="text-left">Remarks</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of items">
+                <td class="text-center editDel">
+                  <a style="cursor: pointer;margin-right:10px; " matTooltip="Update Item"
+                    (click)="addQtyUpdatePopup(item)">
+                      <i class="fa fa-edit" style="color: cornflowerblue"></i>
+                    </a>
+                    <!-- <a><i class="fa fa-trash red" matTooltip="Delete Item" style="cursor: pointer;"></i></a> -->
+                </td>
+                <td class="text-center"><input type="checkbox" ></td>
+                <td class="text-left">{{item.itemname}}</td>
+                <td class="text-left">{{item.itemcode}}</td>
+                <td class="text-left">{{item.category}}</td>
+                <td class="text-left">{{item.subcategory}}</td>
+                <td class="text-center">{{item.orderqty}}</td>
+                <td class="text-left">{{item.previousreceipt}}</td>
+                <td class="text-left">{{item.currentreceipt}}</td>
+                <td class="text-center">{{item.qtyrecived}}</td>
+                <td class="text-center">{{item.qtyaccepted}}</td>
+                <td class="text-center">{{item.qtydeclined}}</td>
+                <td class="text-left" style="min-width: 230px ;">{{item.remarks}}</td>
+              </tr>
+            </tbody>
+          </table>
+          
+          <button class="mine" mat-fab (click)="scrollGrid('right');" >
+            <mat-icon style="color:#37474f">fast_forward</mat-icon>
+          </button>
+
+          <button class="mine" mat-fab style="margin-right: 78px !important;" (click)="scrollGrid('left');">
+            <mat-icon style="color:#37474f">fast_rewind</mat-icon>
+          </button>
+          
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+  </div>
+
+      
+

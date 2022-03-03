@@ -1,0 +1,133 @@
+<h1 mat-dialog-title class="custom-header" style="background-color:#286ba5 !important;height:50px;font-weight: bold !important;">Item Details</h1>
+
+<div fxLayout="row wrap" #resizedDiv>
+  <div class="flex-p w-100 sizeAlign">
+    <div class="row">
+      <div class="col-xs-12">
+        <!-- <div class="col-sm-12" style="margin-bottom: 5px;">
+          <div class="col-sm-6">
+            <div class="col-sm-5">
+            <label>Select Vendor:</label>
+            </div>
+            <div class="col-sm-7">
+              <mat-select placeholder="Select " class="form-control" required >
+                <mat-option value="1">Usha International Ltd</mat-option>
+                <mat-option value="2">Mallikarjuna Rao</mat-option>
+                <mat-option value="3">Arnold D Cruz	</mat-option>
+                <mat-option value="4">Axel adler</mat-option>
+                <mat-option value="5">Amit Constructions</mat-option>
+              </mat-select>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="col-sm-5">
+            <label>Closure Date:</label>
+            </div>
+            <div class="col-sm-7">
+              <input type="date"  placeholder="Enter RFQ Title" class="form-control" style="width: 235px;">
+            </div>
+          </div>
+          
+        </div> -->
+        <div class="col-sm-12" style="margin-bottom: 5px;">
+          
+          <!-- <div class="col-sm-6">
+            <div class="col-sm-5">
+              <label>RFQ Title:</label>
+            </div>
+            <div class="col-sm-7">
+              <input type="text"  placeholder="Enter RFQ Title" class="form-control">
+            </div>
+          </div> -->
+          <button mat-raised-button style=" color:#fff !important;cursor: pointer;margin-bottom: 5px;" class="pull-right  btn-success" matTooltip="Add RFQ"  (click)="allFields.push(1)" >
+            <mat-icon>add</mat-icon> 
+          </button>
+        </div>
+        <div id="grid-table-container" class="table-responsive" style="margin-left: 10px;">
+          <table id="example2" class="table table-bordered">
+            <thead class="tbl-head">
+                <tr class="tr-grid-header">
+                    <th class="text-center">Item Name</th>
+                    <th class="text-center" >Item Code</th>
+                    <th class="text-center" >Part #</th>
+                    <th class="text-center" >Part Name</th>
+                    <th class="text-center" >Part Make</th>
+                    <th class="text-center">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+              
+              <tr *ngFor="let item of allFields;let i = index;">
+                  <ng-container>
+                    <td  >
+                      <mat-select placeholder="Item Name " class="form-control" required >
+                        <mat-option value="1">Volvo</mat-option>
+                        <mat-option value="2">Caterpillar</mat-option>
+                        <mat-option value="3">Mercedes</mat-option>
+                        <mat-option value="4">Tata</mat-option>
+                        <mat-option value="5">Volvo</mat-option>
+                      </mat-select>
+                    </td>
+                      <td  >
+                        <mat-select placeholder="Item Code " class="form-control" required >
+                          <mat-option value="1">FMX480</mat-option>
+                          <mat-option value="2">D85ESS 17</mat-option>
+                          <mat-option value="3">All Models</mat-option>
+                          <mat-option value="4">ACTROS 4841K</mat-option>
+                          <mat-option value="5">D85ESS 86</mat-option>
+                        </mat-select>
+                      </td>
+                      <td  >
+                       
+                          <mat-select placeholder="Part #" class="form-control" required >
+                            <mat-option value="1">B229900003680</mat-option>
+                            <mat-option value="2">421-60-35170	</mat-option>
+                            <mat-option value="3">B229900003680</mat-option>
+                            <mat-option value="4">421-60-35170	</mat-option>
+                            <mat-option value="5">521-60-34512</mat-option>
+                          </mat-select>
+                       
+                      </td>
+                      <td >
+                        
+                          <mat-select placeholder="Part Name" class="form-control" required >
+                            <mat-option value="1">Komatsu</mat-option>
+                            <mat-option value="2">volvo</mat-option>
+                            <mat-option value="3">Caterpillar</mat-option>
+                            <mat-option value="4">Kirloskar</mat-option>
+                            <mat-option value="5">Ashok Leyland</mat-option>
+                          </mat-select>
+                        
+                      </td>
+                      <td >
+                        
+                          <mat-select placeholder="Part Make" class="form-control" required >
+                            <mat-option value="1">volvo</mat-option>
+                            <mat-option value="2">Caterpillar</mat-option>
+                            <mat-option value="3">Kirloskar</mat-option>
+                            <mat-option value="4">Ashok Leyland</mat-option>
+                            <mat-option value="5">Tata</mat-option>
+                          </mat-select>
+                       
+                      </td>
+                        <td class="text-center">
+                            <a ><i class="fa fa-save green" matTooltip="Save Item" style="cursor: pointer;"  ></i></a>
+                            <a *ngIf="allFields.length > 1"><i class="fa fa-trash red" matTooltip="Delete Item" (click)="removeItem(i)" style="cursor: pointer;"></i></a>
+                        </td>
+                  </ng-container> 
+                </tr>
+            </tbody>
+        </table>
+          
+        </div>
+        <mat-dialog-actions align="end">
+          <button mat-raised-button class="add-hover btn-primary pull-right" type="submit" (click)="close()"><mat-icon>send</mat-icon>&nbsp;Submit</button>
+          <button mat-raised-button type="button" class="add-dark-hover btn-default pull-right" (click)="close()"><mat-icon>cancel</mat-icon>&nbsp;Cancel</button>
+      </mat-dialog-actions>
+      </div>
+    </div>
+
+  </div>
+  
+</div>
+

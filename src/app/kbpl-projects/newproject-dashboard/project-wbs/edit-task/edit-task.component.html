@@ -1,0 +1,59 @@
+<div class="NewHeader" style="background-color:#286ba5 !important; height: 50px;">
+  <h1 mat-dialog-title>
+    Edit Task
+  </h1>
+</div>
+<div mat-dialog-content>
+  <form class="form-horizontal">
+    <div class="form-group">
+      <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Select Site: </label>
+      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+        <mat-select placeholder="Select Site">
+          <mat-option>Sector 56</mat-option>
+          <mat-option>Lansdowne</mat-option>
+          <mat-option>Newton</mat-option>
+        </mat-select>
+      </div>
+  </div>
+
+  <div class="form-group">
+    <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Select Contract: </label>
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+      <mat-select placeholder="Select Contract">
+        <mat-option>MRC</mat-option>
+        <mat-option>Becon</mat-option>
+        <mat-option>Fastrack</mat-option>
+      </mat-select>
+    </div>
+</div>
+      <div class="form-group">
+          <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Task: </label>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+              <input type="text" class="form-control" placeholder="Enter Task"  required>
+          </div>
+      </div>
+      <div class="form-group">
+          <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label">BOQ Ref: </label>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <input type="text" class="form-control" placeholder="Enter BOQ Ref" required>
+
+          </div>
+      </div>
+      <div class="form-group">
+          <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Target Date: </label>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <input type="text" class="form-control" placeholder="Enter Target Date"  required>
+           
+          </div>
+      </div>
+  
+  </form>
+
+
+</div>
+<mat-dialog-actions align="end">
+  <button mat-raised-button class="btn-primary" (click)="close()"><mat-icon>send</mat-icon><span >Save</span></button>
+  <button mat-raised-button class="add-dark-hover btn-default" (click)="close()"><mat-icon>cancel</mat-icon> Close</button>
+</mat-dialog-actions>
+
+

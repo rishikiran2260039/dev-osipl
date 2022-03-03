@@ -1,0 +1,46 @@
+<div class="NewHeader">
+    <h1 mat-dialog-title>
+    View Material Budget
+    </h1>
+  </div>
+<div class="row">
+  <div class="col-xs-12">
+      <div id="grid-table-container" class="table-responsive">
+          <table matSort id="example2" class="table table-bordered table-hover">
+              <thead class="tbl-head">
+                  <tr>
+                      <th >Service Name</th>
+                      <th class="text-center">Quantity Required</th>
+                      
+                      <th class="text-center">Quantity Issued</th>
+                      <th class="text-center">Variance</th>
+                      <th class="text-center">Remarks</th>
+                     
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let item of items">
+                      <td style="min-width: 70px !important;">
+                          {{item.service}}
+                    
+                  </td>
+                  <!-- <td style="text-align: center!important;">{{item.projectNumber}}</td> -->
+                  
+                  <td style="text-align: center!important;">{{item.quantity }}</td>
+                  <td style="text-align: center!important;">{{item.issued }}</td>
+                  <td style="text-align: center!important;">{{item.variance }}</td>
+                  <td style="text-align: center!important;">{{item.remarks }}</td>
+                 
+  </tr>
+ 
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+
+<mat-dialog-actions align="end">
+  
+  <button mat-raised-button class="add-dark-hover btn-default" (click)="close()"><mat-icon>cancel</mat-icon> Close</button>
+</mat-dialog-actions>

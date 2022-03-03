@@ -1,0 +1,9 @@
+.nav{
+    display: flex;
+    flex-direction: column !important;
+}
+
+.nav-pills li{
+    width: 200px !important;
+    margin: 10px 0;
+}

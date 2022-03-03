@@ -1,0 +1,112 @@
+<div fxLayout="row wrap" #resizedDiv>
+  <div class="flex-p w-100">
+    <div class="row" style="margin-bottom:7px;">
+        <div class="col-xs-2 ">
+        </div>
+        <div class="col-xs-10 ">
+            <div class="flex-p">
+                <button mat-raised-button class="pull-right  btn-primary"  (click)="openEditDialog(null)">
+                    <mat-icon>person_add</mat-icon> Add Item
+                </button>
+               
+                <button mat-raised-button color="primary" class="pull-right filters-hover margin-right-10"
+                    (click)="filterToggle = !filterToggle">
+                    <mat-icon>filter_list</mat-icon> Filter
+                </button> 
+
+            </div>
+
+        </div>
+    </div>
+
+      <div class="row" style="margin-bottom:14px;">
+   
+      </div>
+
+      <div fxLayout="row wrap" *ngIf="filterToggle" style="margin-left: 5px;">
+          <div fxFlex="100" fxFlex.gt-sm fxFlex.sm class="flex-p">
+              <form [formGroup]="filterForm">
+              <mat-card class="filter">
+                  <mat-card-content>
+                      <div class="row col-sm-12">
+                          <div class="col-sm-4">
+                              <div class="col-sm-3 newMarginClass">
+                                  Keyword:
+                              </div>
+                              <div class="col-sm-9">
+                                  <input type="text" formControlName="Keyword" onCopy="return false" onPaste="return false" class="form-control"
+                                      placeholder="Search by keyword">
+                              </div>
+                          </div>
+                          <div class="col-sm-6">
+                            <a (click)="filterToggle = !filterToggle" class="pull-right"
+                            style="font-size: 25px; cursor: pointer; margin-left: 5px;">
+                            <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+                          </a>
+                            <button mat-raised-button class="pull-right btn-primary" style="margin-left: 10px;">
+                              <mat-icon>youtube_searched_for</mat-icon> Search
+                            </button>
+                            <button mat-raised-button class="pull-right" style="background-color:#37474f; color:#fff !important;">
+                              <mat-icon>settings_backup_restore</mat-icon> Clear
+                            </button>
+                          </div>
+                  
+                      
+                      </div>
+                  </mat-card-content>
+              </mat-card>
+          </form>
+          </div>
+      </div>
+    
+      <div fxLayout="row wrap" style="margin-left: 13px;">
+          <div class="table-responsive">
+              <table id="example2" class="table table-bordered table-hover" >
+                  <thead class="tbl-head">
+                      <tr class="tr-grid-header">
+                          <th class="text-center">Active</th>
+                          <th>Subject</th>
+                          <th class="text-center" style="width: 18%;">Download Template</th>
+                          <th class="text-center" style="width: 18%;">Document Required</th>
+                          <th class="text-center" style="width: 15%;">Actions</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr *ngFor="let applicant of tableList">
+                          <td class="text-center">
+                            <input type="checkbox">
+                          </td>
+                          <td>{{applicant.subject}}
+                      
+                          </td>
+                          <td class="text-center">
+                            <mat-icon style="color: blue;cursor: pointer;">download</mat-icon>
+                        </td>
+                          <td class="text-center">
+                            <input type="checkbox">
+                          </td>
+                         
+                      <td class="editDel text-center">
+                          <a title="Edit User" style="margin-right: 10px; cursor: pointer;" (click)="openEditDialog(applicant.intApplicantId)">
+                              <i class="fa fa-edit"></i>
+                          </a>
+                          <a mwlConfirmationPopover
+                          [popoverTitle]="popoverTitle"
+                          [popoverMessage]="popoverMessage"
+                          placement="left"
+                          (confirm)="deleteUser()"
+                          (cancel)="cancelClicked = true">
+                          <i style="cursor: pointer;" title="Delete User" class="fa fa-trash red"></i>
+                      </a>
+                      
+                  </td>
+              </tr>
+          </tbody>
+      </table>
+              <mat-paginator [length]="totalSize" [pageIndex]="currentPage" [pageSize]="pageSize" 
+                  [pageSizeOptions]="[5, 10, 25, 50, 100]" showFirstLastButtons>
+              </mat-paginator>
+          </div>
+      </div>
+  </div>
+</div>

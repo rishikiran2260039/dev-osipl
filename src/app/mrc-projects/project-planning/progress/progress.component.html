@@ -1,0 +1,223 @@
+<!-- <div class="row sizeAlign" style="margin-top: 15px;">
+  <div fxFlex="100" fxFlex.gt-sm="50" class=" col-lg-6">
+      <div class="flex-p"> 
+        <mat-card>
+          <mat-card-header fxLayoutAlign="center center">                
+            <mat-card-subtitle><h2>Completion By Hours</h2></mat-card-subtitle>
+          </mat-card-header>
+          <div class="w-100 h-300p">
+            <ngx-charts-pie-chart
+            [scheme]="colorScheme"
+            [results]="single"
+            [legend]="showLegend"
+            [explodeSlices]="explodeSlices"
+            [labels]="showLabels"
+            [doughnut]="doughnut"
+            [gradient]="gradient"
+            >
+          </ngx-charts-pie-chart>                  
+        </div>
+      </mat-card>
+    </div>
+  </div>
+  <div fxFlex="100" fxFlex.gt-sm="50" class="col-lg-6">
+    <div class="flex-p"> 
+      <mat-card>
+        <mat-card-header fxLayoutAlign="center center">                
+          <mat-card-subtitle><h2>Completion By Line Items</h2></mat-card-subtitle>
+        </mat-card-header>
+        <div class="w-100 h-300p">
+          <ngx-charts-pie-chart
+          [scheme]="colorScheme"
+          [results]="singles"
+          [legend]="showLegend"
+          [explodeSlices]="explodeSlices"
+          [labels]="showLabels"
+          [doughnut]="doughnut"
+          [gradient]="gradient"
+          >
+        </ngx-charts-pie-chart>                  
+      </div>
+    </mat-card>
+  </div>
+  </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-6">
+      <div style="margin-left: 2%;">
+        <div class="chart-header">
+          <p>Completion By Category</p>
+        </div>
+        <div style="display: block;">
+          <div style="height: 300px;" [chart]="tentureOfEmployees"></div>
+        </div>
+        <div align="center">
+          <p><span><i class="fa fa-stop" style="color: rgb(33, 101, 190);"></i> Category</span></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-6">
+      <div style="margin-left: 2%;">
+        <div class="chart-header">
+          <p>Completion Trend</p>
+        </div>
+
+        <div style="display: block;">
+          <div style="height: 300px;" [chart]="EmployeesOnboardingChart"> </div>
+        </div>
+        <div align="center">
+          <p><span><i class="fa fa-stop" style="color: rgb(33, 101, 192);"></i>Complete trend with respect to years</span></p>
+        </div>
+      </div>
+
+    </div>
+  </div> -->
+
+  
+<div fxLayout="row wrap" #resizedDiv>
+  <div class="flex-p w-100 sizeAlign">
+<div class="row" style="margin-bottom:7px;">
+  <div class="col-xs-6 ">
+  </div>
+  <div class="col-xs-6 ">
+      <div class="flex-p">
+        <button mat-raised-button class="pull-right  btn-primary" (click)="opencontactDialog(null)">
+            <mat-icon>add</mat-icon> Add Progress
+        </button>
+          
+          <button mat-raised-button color="primary" class="pull-right filters-hover margin-right-10"
+          (click)="filterToggle = !filterToggle">
+          <mat-icon>filter_list</mat-icon> Filter
+      </button>
+      
+  </div>
+  
+</div>
+</div>
+
+<!-- Filter -->
+<div fxLayout="row wrap" *ngIf="filterToggle">
+  <div fxFlex="100"  class="flex-p w-100">
+      <mat-card class="filter">
+          <mat-card-content>
+              <div class="row">
+                  
+                  <div class="col-sm-3">
+                      <div class="col-sm-4 newMarginClass">
+                          Keyword: 
+                      </div>
+                      <div class="col-sm-8">
+                          <input type="text" placeholder="Search by Keyword" class="form-control">
+                      </div>
+                  </div>
+                  <div class="col-sm-3">
+                    <div class="col-sm-4 newMarginClass">
+                        Category: 
+                    </div>
+                    <div class="col-sm-8">
+                      <mat-select class="form-control" placeholder="Search By Category">
+                        <mat-option [value]="0">Earth Work</mat-option>
+                        <mat-option [value]="1">Mechanical</mat-option>
+                        <mat-option [value]="2">Plumbing</mat-option>
+                        
+                       </mat-select>
+                    </div>
+                </div>
+                  <div class="col-sm-3">
+                      <div class="col-sm-4 newMarginClass">
+                          Due Date: 
+                      </div>
+                      <div class="col-sm-8">
+                        <input type="date" class="form-control" placeholder="Select Date">
+                        <!-- <mat-select class="form-control" placeholder="Search by Logged Name">
+                         <mat-option [value]="0">Robert</mat-option>
+                         <mat-option [value]="1">Jasveer</mat-option>
+                         <mat-option [value]="2">Parmeet</mat-option>
+                         <mat-option [value]="3">Harbajan</mat-option>
+                         
+                        </mat-select> -->
+                      </div>
+                  </div>
+                  <div class="col-sm-3">
+                     
+             
+                
+                <div class="col-lg-1" style="margin-left: 130px;" >
+                    <button mat-raised-button  class="pull-right btn-primary"><mat-icon>youtube_searched_for</mat-icon> Search</button>
+                </div>
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" >
+                    <button mat-raised-button style="background-color:#37474f; color:#fff !important" ><mat-icon>settings_backup_restore</mat-icon> Clear</button>
+                </div>
+                <a (click)="filterToggle = !filterToggle" class="pull-right" style="font-size: 25px; cursor: pointer; margin-left: 5px;">
+                    <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+                </a>
+                
+            
+                  </div>
+              </div>
+              
+             
+          </mat-card-content>
+      </mat-card>
+  </div>
+</div>
+
+
+<!-- Table -->
+<div class="row">
+  <div class="col-xs-12">
+      <div id="grid-table-container" class="table-responsive">
+          <table matSort id="example2" class="table table-bordered table-hover">
+              <thead class="tbl-head">
+                  <tr>
+                      <th>Category</th>
+                      <th >Category Description</th>
+                      <th >Item Name</th>     
+                      <th class="text-center">No. of Activities</th>                 
+                      <th class="text-center">Due Date</th>
+                      <th class="text-center">Completion Date</th>
+                      <th class="text-center" style="width: 112px!important;">Actions</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let item of items">
+                      <td>
+                          {{item.reqTitle}}
+                      </td>
+                      <td style="min-width: 70px !important;">
+                          {{item.status}}
+                    
+                  </td>
+                  <!-- <td style="text-align: center!important;">{{item.projectNumber}}</td> -->
+                  <td >{{item.loggedby }}</td>
+                  <td style="text-align: center!important;"><a style="color: blue;cursor: pointer;" (click)="openitemDialog()">{{item.items }}</a> </td>
+                  <td style="text-align: center!important;">{{item.requestdate }}</td>
+                  <td style="text-align: center!important;">{{item.approvedby}}</td>
+                  
+                  
+         
+                  
+      <td  class="text-center editDel">
+          <a style="cursor: pointer;margin-right:10px; " matTooltip="Update Item" (click)="opencontactDialog(item)">
+              <i class="fa fa-edit" style="color: cornflowerblue"></i>
+          </a>
+          <a ><i class="fa fa-trash red" matTooltip="Delete Item"  style="cursor: pointer;"(click)="openDeleteDialog(item)"></i></a>
+      </td> 
+  </tr>
+ 
+</tbody>
+</table>
+<mat-paginator
+[pageSizeOptions]="[5, 10, 25, 50, 100]"
+showFirstLastButtons></mat-paginator>
+<!-- <mat-paginator [length]="totalSize" [pageIndex]="currentPage" [pageSize]="pageSize"
+  [pageSizeOptions]="[5, 10, 25, 50, 100]" (page)="handlePage($event)"
+  showFirstLastButtons></mat-paginator> -->
+</div>
+</div>
+</div>
+
+  </div>
+</div>

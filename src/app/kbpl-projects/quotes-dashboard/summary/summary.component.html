@@ -1,0 +1,92 @@
+<div class="row wrap">
+  <div class="col-xs-12">
+    <button class="margin-right-10 pull-right" mat-raised-button style="color:white; background:#3b7bb8;"><mat-icon>expand_more</mat-icon></button>
+    <button class="margin-right-10 pull-right" mat-raised-button style="color:white; background:#f35353;"><mat-icon>expand_less</mat-icon></button>
+  </div>
+</div>
+
+
+<div class="col-sm-12 no-padding margin-top-10">
+  <p-accordion class="customAccordians">
+
+      <p-accordionTab class="expenses-new-p">
+          <p-header class="col-sm-11 pull-right" style="padding-left: 22px;">
+              001 Default
+          </p-header>
+
+          <table class="table table-bordered table-striped table-hover" style="margin-bottom:15px !important;">
+              <thead>
+                  <tr class="thead-color">
+                      <th>
+                          Name
+                      </th>
+                      <th class="text-center">
+                          Award Date
+                      </th>
+                      <th class="text-center">
+                          Awarded By
+                      </th>
+                      <th class="text-center">
+                          Close/Cancelled Date
+                      </th>
+                      <th class="text-center">
+                          Quoted
+                      </th>
+                      <th class="text-center">
+                        Awarded
+                      </th>
+                      <th class="text-center">
+                        Actual
+                      </th>
+                      <th class="text-center">
+                       Profit/Loss
+                      </th>
+                      <th class="text-center">
+                         Invoiced
+                      </th>
+                      <th class="text-center">
+                         Invoice
+                      </th>
+
+
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let items of items">
+                      <td>
+                          {{items.name}}
+                      </td>
+                      <td class="text-center">
+                          {{items.awardDate}}
+                      </td>
+                      <td class="text-center">
+                          {{items.awardBy}}
+                      </td>
+
+                      <td class="text-center">
+                          {{items.close}}
+                      </td>
+                      <td class="text-center">
+                          {{items.quoted}}
+                      </td>
+                      <td class="text-center">
+                          {{items.awarded}}
+                      </td>
+                      <td class="text-center">
+                          {{items.actual}}
+                      </td>
+                      <td class="text-center">
+                          {{items.profit}}
+                      </td>
+                      <td class="text-center">
+                          {{items.invoiced}}
+                      </td>
+                      <td class="text-center">
+                         {{items.invoice}}
+                      </td>
+                  </tr>
+              </tbody>
+          </table>
+      </p-accordionTab>
+  </p-accordion>
+</div>

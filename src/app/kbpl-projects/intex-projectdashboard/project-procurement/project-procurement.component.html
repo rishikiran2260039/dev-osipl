@@ -1,0 +1,38 @@
+ <div class="row-wrap">
+  <div class="w-100">
+    <div fxLayout="row">
+      <div class="col-xs-6">
+        <div class="pills">
+          <ul class="nav nav-pills" style="margin-left: 10px;">
+            <li routerLinkActive="active" routerLink="indents">
+                <a mat-raised-button class="navtabWidth">
+                  Indents
+                </a>
+            </li>
+            <li routerLinkActive="active" routerLink="po">
+                <a mat-raised-button class="navtabWidth" >
+                  Purchase Order 
+                </a>
+            </li>
+            <li routerLinkActive="active" routerLink="consignments">
+                <a mat-raised-button class="navtabWidth" >
+                  Consignments
+                </a>
+            </li>
+            <li routerLinkActive="active" routerLink="grn">
+              <a mat-raised-button class="navtabWidth" >
+                GRN
+              </a>
+          </li>
+          <li routerLinkActive="active" routerLink="materialissues">
+            <a mat-raised-button class="navtabWidth">
+              Material issues
+            </a>
+        </li>
+        </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

@@ -1,0 +1,200 @@
+<div class="conatainer-fluid">
+  <div class="row col-12 mt-5">
+    <div class="col-6">
+        <div class="chart-header">
+          <p style="font-size: 17px">ABC Analysis (By Value)</p>
+        </div>
+        <div class="flex-p">
+          <mat-card>
+            <div class="w-100 h-300p">
+              <ngx-charts-pie-chart [scheme]="colorScheme" [results]="two" [legend]="showLegend"
+                [explodeSlices]="explodeSlices" [labels]="showLabels" [doughnut]="doughnut" [gradient]="gradient"
+                (select)="onSelect($event)">
+              </ngx-charts-pie-chart>
+            </div>
+          </mat-card>
+        </div>
+    </div>
+    <div class="col-6">
+      <div style="margin-left: 2%">
+        <div class="chart-header">
+          <p style="font-size: 17px">XYZ Analysis (By Consumption)</p>
+        </div>
+        <div class="flex-p">
+          <mat-card>
+            <div class="w-100 h-300p">
+              <ngx-charts-pie-chart [scheme]="colorScheme2" [results]="three" [legend]="showLegend"
+                [explodeSlices]="explodeSlices" [labels]="showLabels" [doughnut]="doughnut" [gradient]="gradient"
+                (select)="onSelect($event)">
+              </ngx-charts-pie-chart>
+            </div>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="container-fluid mt-3">
+    <h3>{{heading}}</h3>
+  </div> -->
+  <div class="row">
+    <div class="col-xs-6 ">
+      <div style="margin-left: 23px; margin-top: 31px;">
+        <h3>{{heading}}</h3>
+      </div>
+
+    </div>
+    <div class="col-xs-6 ">
+      <div class="flex-p">
+        <button mat-raised-button color="primary" class="pull-right filters-hover" style="margin-right: 22px;"
+        (click)="filterToggle = !filterToggle">
+        <mat-icon>filter_list</mat-icon> Filter
+      </button>
+        <button mat-raised-button class="pull-right  btn-primary" style=" margin-right: 14px;margin-bottom: 10px;">
+          <mat-icon>download</mat-icon> Download CSV
+        </button>
+      </div>
+
+    </div>
+  </div>
+  <div fxLayout="row wrap" style="margin-right: 11px;">
+    <div fxFlex="100" fxFlex.gt-sm fxFlex.sm class="flex-p w-100" *ngIf="filterToggle">
+      <mat-card class="filter">
+        <mat-card-content>
+          <div class="row col-sm-12">
+            <div class="col-sm-4">
+              <div class="col-sm-4 newMarginClass">Search by Keyword:</div>
+              <div class="col-sm-8">
+                <input type="text" placeholder="Search by Keyword" class="form-control">
+              </div>
+            </div>
+
+            <div class="col-sm-4">
+              <div class="col-sm-5 newMarginClass">Select Item Category:</div>
+              <div class="col-sm-7">
+                <mat-select placeholder=" Select Item Category" class="form-control"  required >
+                  <mat-option value="1">Tiles</mat-option>
+                  <mat-option value="2">Wood</mat-option>
+                  <mat-option value="3">Pipes</mat-option>
+                  <mat-option value="4">Wood</mat-option>
+                  <mat-option value="5">Tiles</mat-option>
+                </mat-select>
+              </div>
+            </div>
+
+            <div class="col-sm-4">
+              <div class="col-sm-6 newMarginClass">Select Item Sub Category:</div>
+              <div class="col-sm-6">
+                <mat-select placeholder=" Select Sub Category" class="form-control"  required >
+                  <mat-option value="1">Flooring</mat-option>
+                  <mat-option value="2">Plywood</mat-option>
+                  <mat-option value="3">Plastic Pipes</mat-option>
+                  <mat-option value="4">Plywood</mat-option>
+                  <mat-option value="5">Flooring</mat-option>
+                </mat-select>
+              </div>
+            </div>
+
+            <div class="col-sm-4" style="margin-top: 7px;">
+              <div class="col-sm-4 newMarginClass">Select Brand:</div>
+              <div class="col-sm-8">
+                <mat-select placeholder=" Select Brand" class="form-control"  required >
+                  <mat-option value="1">Volvo</mat-option>
+                  <mat-option value="2">Caterpillar</mat-option>
+                  <mat-option value="3">Kirlosker</mat-option>
+                  <mat-option value="4">Ashok Layland</mat-option>
+                  <mat-option value="5">Volvo</mat-option>
+                </mat-select>
+              </div>
+            </div>
+
+          <div class="col-sm-4">
+              <!-- <div class="col-sm-4 newMarginClass">Search Availability:</div>
+              <div class="col-sm-8">
+                <mat-select class="form-control" placeholder="Select Availability">
+                  <mat-option [value]="0">
+                    Available
+                  </mat-option>
+                  <mat-option [value]="1">
+                    Low stock
+                  </mat-option>
+                  <mat-option [value]="2">
+                    Out of stock
+                  </mat-option>
+              </mat-select>
+              </div> -->
+            </div> 
+
+            <div class="col-sm-4" style="margin-top: 7px;">
+              <div class="col-lg-7" style="margin-left: 36px;">
+                <button mat-raised-button class="pull-right btn-primary">
+                  <mat-icon>youtube_searched_for</mat-icon> Search
+                </button>
+
+              </div>
+              <div class="col-lg-1">
+                <button mat-raised-button style="background-color:#37474f; color:#fff !important;">
+                  <mat-icon>settings_backup_restore</mat-icon> Clear
+                </button>
+
+              </div>
+              <a (click)="filterToggle = !filterToggle" class="pull-right"
+                style="font-size: 25px; cursor: pointer;">
+                <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+
+    </div>
+  </div>
+  <div class="container-fluid mt-1">
+    <div class="row">
+      <div class="col-xs-12">
+        <div id="grid-table-container" class="table-responsive">
+          <table matSort id="example2" class="table table-bordered table-hover">
+            <thead class="tbl-head">
+              <tr>
+                <th class="text-left">Item Code</th>
+                <th class="text-left">Item Name</th>
+                <th class="text-left">Item Category</th>
+                <th class="text-left">Item Sub Category</th>
+                <th class="text-center">Brand</th>
+                <th class="text-left" style="width: 100px;">Length</th>
+                <th class="text-left" style="width: 100px;">Width</th>
+                <th class="text-left" style="width: 100px;">Height</th>
+                <th class="text-center">Thicness</th>
+                <th class="text-center">UoM</th>
+                <th class="text-center">Unit Rate</th>
+                <th class="text-center">Available Qty</th>
+                <th class="text-center">Total Value</th>
+                <th class="text-center">MTD Incoming </th>
+                <th class="text-center">MTD Issues</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of items">
+                <td class="text-left">{{item.partnumber}}</td>
+                <td class="text-left">{{item.partname}}</td>
+                <td class="text-left">{{item.eqptmake}}</td>
+                <td class="text-left">{{item.eqptmodel}}</td>
+                <td class="text-center">{{item.brand}}</td>
+                <td class="text-left" style="width: 100px;">{{item.length}}</td>
+                <td class="text-left" style="width: 100px;">{{item.width}}</td>
+                <td class="text-left" style="width: 100px;">{{item.height}}</td>
+                <td class="text-center">{{item.thickness}}</td>
+                <td class="text-center">{{item.avgunitcost}}</td>
+                <td class="text-center">{{item.availqty}}</td>
+                <td class="text-center">{{item.totalvalue}}</td>
+                <td class="text-center">{{item.monthlyusage}}</td>
+                <td class="text-center">{{item.class}}</td>
+                <td class="text-center">{{item.mtd}}</td>
+              </tr>
+            </tbody>
+          </table>
+          <mat-paginator [pageSizeOptions]="[5, 10, 25, 50, 100]" showFirstLastButtons></mat-paginator>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,68 @@
+<div class="NewHeader">
+  <h1 mat-dialog-title>
+    Add Guarantee
+  </h1>
+</div>
+<div mat-dialog-content>
+  <form class="form-horizontal">
+      <div class="form-group">
+          <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Security Name </label>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+              <input type="text" class="form-control" placeholder="Enter Security Name" required>
+          </div>
+      </div>
+      <div class="form-group">
+          <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label">Return Date: </label>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <input type="date" class="form-control" placeholder="Enter Return Date" required>
+
+          </div>
+      </div>
+      <div class="form-group">
+          <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Amount Due: </label>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <input type="text" class="form-control" placeholder="Enter Amount Due" required>
+           
+          </div>
+      </div>
+      
+      <div class="form-group">
+          <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Amount Received: </label>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+              <input type="text" class="form-control" placeholder="Enter Amount Received" required>
+          </div>
+      </div>
+      <div class="form-group">
+          <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Balance Amount: </label>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+              <input type="email" email class="form-control" placeholder="Enter Balance Amount " required>
+          </div>
+      </div>
+     
+    <div class="form-group">
+        <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label">Expected Disbursal : </label>
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+          <input type="email" class="form-control" placeholder="Enter Disbursal ">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Delay Period: </label>
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <input type="text" class="form-control" placeholder="Enter Delay Period" required>
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Upload: </label>
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <input type="file" >
+        </div>
+    </div>
+    
+  
+  </form>
+</div>
+<mat-dialog-actions align="end">
+  <button mat-raised-button class="btn-primary" ><mat-icon>send</mat-icon><span > Save</span></button>
+  <button mat-raised-button class="add-dark-hover btn-default" (click)="close()"><mat-icon>cancel</mat-icon> Cancel</button>
+</mat-dialog-actions>

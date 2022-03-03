@@ -1,0 +1,59 @@
+<div class="NewHeader" style="background-color:#286ba5 !important; height: 50px;">
+  <h1 mat-dialog-title>
+    Add Claim
+  </h1>
+</div>
+
+
+<div mat-dialog-content>
+  <form class="form-horizontal">
+    <div style="padding: 0px 30px !important;">
+      
+      <div class="form-group">
+        <p class="control-label col-sm-4 add-member-label">Task:</p>
+        <div class="col-sm-8">
+          <mat-select class="form-control" placeholder="Select">
+            <mat-option [value]="0">Select</mat-option>
+            <mat-option [value]="0">Site Preparation</mat-option>
+            <mat-option [value]="1">Foundation</mat-option>
+            <mat-option [value]="2">Slab Work</mat-option>
+            <mat-option [value]="3">Electric Wiring</mat-option>
+            <mat-option [value]="3">Plumbing</mat-option>
+          </mat-select>
+        </div>
+        
+      </div>
+      <div class="form-group">
+        <p class="control-label col-sm-4 add-member-label ">Claim Ref:</p>
+        <div class="col-sm-8">
+          <mat-select class="form-control" placeholder="Select">
+            <mat-option [value]="0">Select</mat-option>
+            <mat-option [value]="0">2134544	</mat-option>
+            <mat-option [value]="1">5874565</mat-option>
+            <mat-option [value]="2">4587962	</mat-option>
+            <mat-option [value]="2">3658214	</mat-option>
+            <mat-option [value]="2">7852145	</mat-option>
+            </mat-select>
+        </div>
+      </div>
+      <div class="form-group">
+        <p class="control-label col-sm-4 add-member-label">Claim Subject:</p>
+        <div class="col-sm-8">
+          <input type="text" placeholder="Enter Claim Subject" maxlength="50" class="form-control">
+        </div>
+      </div>
+      <div class="form-group">
+        <p class="control-label col-sm-4 add-member-label">Claim Amount:</p>
+        <div class="col-sm-8">
+          <input type="text" placeholder="Enter Claim Amount" maxlength="50" class="form-control">
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<mat-dialog-actions align="end">
+
+  <button mat-raised-button class="btn-success"  (click)="close()">Save</button>
+  <button mat-raised-button class=" btn-danger" (click)="close()">Cancel</button>
+</mat-dialog-actions>
+

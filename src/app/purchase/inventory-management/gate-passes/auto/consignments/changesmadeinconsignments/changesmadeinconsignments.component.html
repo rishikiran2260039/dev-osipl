@@ -1,0 +1,50 @@
+<div class="NewHeader" style="background-color:#286ba5 !important; height: 50px;">
+  <h1 mat-dialog-title>
+    Changes Made
+  </h1>
+</div>       
+<div fxLayout="row wrap" #resizedDiv>
+    <div class="flex-p w-100 sizeAlign">
+      <div class="row">
+        <div class="col-xs-12">
+          <div id="grid-table-container" class="table-responsive">
+            <label>Changes Made:</label>
+             <span>&nbsp;
+              BGR/OM/BHL/APR/19-20/1004
+             </span>
+          
+            <table matSort id="example2" class="table table-bordered table-hover">
+              <thead class="tbl-head">          			
+                <tr>				
+                  <th class="text-center"> Purchase Order Number</th>
+                  <th class="text-center">Purchase Order
+                    Document</th>
+                  <th class="text-center">Justification
+                    Document</th>
+                  <th class="text-center">Modified By</th>
+                 
+                  <th class="text-center" >	Modified Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of items">
+                  <td class="text-center" >{{item.PON }}</td>
+                  <td class="text-center" matTooltip="Download Doc"><i class="fa fa-download" aria-hidden="true"></i></td>
+                  <td class="text-center">{{item.JD }}</td>
+                  <td class="text-center">{{item.MB }}</td>
+                  <td class="text-center">{{item.MD}}</td>
+                 
+                 
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <mat-dialog-actions align="end">
+    <button mat-raised-button class="btn-primary" (click)="close()"><mat-icon>send</mat-icon><span >Save</span></button>
+    <button mat-raised-button class="add-dark-hover btn-default" (click)="close()"><mat-icon>cancel</mat-icon> Close</button>
+  </mat-dialog-actions>

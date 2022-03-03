@@ -1,0 +1,123 @@
+<!-- <h1 mat-dialog-title class="custom-header" style="background-color:#286ba5 !important;height:50px;font-weight: bold !important;">Order Details</h1>
+ <div class="container-fluid">
+                
+               
+                
+                <div class="container-fluid" style="margin-top: 15px;">
+                  <div fxLayout="row wrap" #resizedDiv>
+                    <div class="flex-p w-100 sizeAlign">
+                     <div class="row">
+                        <div class="col-xs-12">
+                         
+                            
+                          
+                          <div id="grid-table-container" class="table-responsive">
+                            <table matSort id="example2" class="table table-bordered table-hover">
+                              <thead class="tbl-head">
+                                <tr>
+                                  <th _ngcontent-c21="" style="min-width: 200px;" class="text-center">PO Ref#</th>
+                                  <th _ngcontent-c21="" style="min-width: 200px;" class="text-center">Vendor</th>
+                                  
+                                 
+                                  <th _ngcontent-c21="" style="min-width: 100px;" class="text-center">Delivery Date</th>
+                                  <th _ngcontent-c21="" style="min-width: 80px;" class="text-center">Value</th>
+                          
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                <tr *ngFor="let item of items">
+                                  
+                                  <td class="text-center" routerLink="/purchase/material-management/purchase-orders/unpublished-po" (click)="close()" style="cursor:pointer;color: blue ;">{{item.PORef}}</td>
+                                  <td class="text-center">{{item.Vendor }}</td>
+                                  <td class="text-center">{{item.Delivery }}</td>
+                                  <td class="text-center">{{item.Value }}</td>
+                                  
+                                  
+                                </tr>
+                              </tbody>
+                            </table>
+                            
+                           
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  </div>
+                  <mat-dialog-actions align="end">
+                  
+                    <button mat-raised-button type="button" class="add-dark-hover btn-default" (click)="close()"><mat-icon>cancel</mat-icon>&nbsp;Close</button>
+                </mat-dialog-actions>
+</div>
+                
+                 -->
+
+                 <div class="NewHeader">
+                  <h1 mat-dialog-title>
+                    Documents
+                  </h1>
+                </div>
+                <div class="row">
+                  <div class="col-lg-8">
+                    <div class="row">
+                      <div class="col-lg-2"> <Span>Name  </Span></div>
+                      <div class="col-lg-6"><input type="text" class="form-control" placeholder="Enter Document Name"></div>
+                      <div class="col-lg-4"><input type="file"></div>
+                    </div>
+                  </div>
+                  
+                  <div class="col-lg-4">
+                    <button  mat-raised-button class="btn-primary"  style="margin-left: 60%;margin-bottom: 10px;">Add</button>
+                  </div>
+                 
+                </div>
+                
+                
+                <div class="row">
+                 
+                  <div class="col-xs-12">
+                    <div id="divQuotesGrid" class="table-responsive">
+                      <table matSort id="example2" class="table table-bordered table-hover">
+                        <thead class="tbl-head">
+                          <tr>
+                            <th class="text-center">Name</th>
+                           
+                            <th class="text-center">Document</th>
+                            <th class="text-center">Actions</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let item of items">
+                          
+                            <td style="text-align: center!important;" *ngIf="isedit != true"> {{item.name}}</td>
+                            <td style="text-align: center!important;" *ngIf="isedit == true"><input type="text" class="form-control" value="{{item.name}}"></td>
+                            <td style="text-align: center!important;"><a href="https://www.adobe.com/support/products/enterprise/knowledgecenter/media/c4611_sample_explain.pdf" target="_blank">View</a></td>
+                            <td  class="text-center">
+                              <a style="cursor: pointer;margin-right:10px; " matTooltip="Update Item" (click)="openProjectDialog(item)">
+                                  <i class="fa fa-edit" style="color: cornflowerblue"></i>
+                              </a>
+                              <a mwlConfirmationPopover
+                              [popoverTitle]="popoverTitle"
+                              [popoverMessage]="popoverMessage"
+                              placement="left"
+                              (confirm)="deleteUser()"
+                              (cancel)="cancelClicked = true">
+                              <i style="cursor: pointer;" title="Delete User" class="fa fa-trash red"></i>
+                          </a>
+                          </td> 
+                          </tr>
+                          
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                
+                <mat-dialog-actions align="end" style="padding-top: 0px !important;">
+                  <button mat-raised-button class="btn-default" (click)="close()"  *ngIf="isedit == true">
+                    <mat-icon>save</mat-icon>&nbsp;Save
+                  </button>
+                  <button mat-raised-button class="btn-default"  (click)="close()">
+                    <mat-icon>cancel</mat-icon>&nbsp;Close
+                  </button>
+                </mat-dialog-actions>

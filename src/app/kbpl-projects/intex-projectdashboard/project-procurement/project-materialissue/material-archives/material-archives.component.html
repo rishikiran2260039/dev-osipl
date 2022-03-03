@@ -1,0 +1,392 @@
+<div class="container-fluid">
+  <div class="row" >
+    <div class="col-xs-12" style="overflow-x: auto">
+      <div id="grid-table-container" class="table-responsive" >
+        <table matSort id="example2" class="table table-bordered table-hover">
+          <thead class="tbl-head">
+            <tr>
+              <th>Issue Request Ref</th>
+              <th class="text-center">Issue Date</th>
+              <th >Issued To</th>
+              <th class="text-center">Items</th>
+              <th class="text-center">Notes</th>
+              <th class="text-center">Status</th>
+              <!-- <th class="text-center">Actions</th> -->
+             
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of items">
+              <td>{{item.issuerequestref}}</td>
+              <td class="text-center">{{item.issuedate}}</td>
+              <td>{{item.issuedto}}</td>
+              <td class="text-center" style="cursor: pointer;color: blue" routerLink="/projects/projectdashboard/project-procurement/materialissues/archives/items">{{item.items}}</td>
+              <td class="text-center" style="cursor:pointer;color: blue;" (click)="notes()"><mat-icon>info</mat-icon></td>
+              <td style="text-align: center!important;">
+                <mat-select [style.background]="item.stageColour" style="min-width: 120px;"
+                    [(value)]="item.Status" 
+                    placeholder="--Select Stage --" class='form-control'>
+                    <ng-container *ngFor='let option of statusOptions'>
+                        <mat-option [style.background]="option.colorCode" class='option'
+                            [value]="option.value" >
+                            {{option.name}}</mat-option>
+                    </ng-container>
+                </mat-select>
+            </td>
+              <!-- <td class="text-center editDel">
+                <a style="cursor: pointer;margin-right:0px;margin-left: -5px; "
+                    matTooltip="Update " (click) = "addIssueDialog(item)">
+                    <i class="fa fa-edit" style="color: cornflowerblue"></i>
+                </a>
+                <a><i class="fa fa-trash red" matTooltip="Delete "
+                        style="cursor: pointer;"></i></a>
+                <a matTooltip="Archive"><mat-icon style="color: cornflowerblue;font-size: 18px;" >
+                   move_to_inbox </mat-icon></a>                                    
+               </td> -->
+            </tr>
+          </tbody>
+        </table>
+        <mat-paginator [pageSizeOptions]="[5, 10, 25, 50, 100]" showFirstLastButtons></mat-paginator>
+      </div>
+    </div>
+  </div>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- previous code -->
+<!-- <div class="container-fluid">
+  <div class="row wrap">
+    <div class="col-xs-12" style="margin-top: 15px;margin-bottom:10px;">
+
+
+        <button mat-raised-button (click) = "addIssueDialog(null)"
+          class="btn-primary pull-right">Add Issue
+        </button>
+    </div>
+  </div>
+  <div class="row" >
+    <div class="col-xs-12" style="overflow-x: auto">
+      <div id="grid-table-container" class="table-responsive" >
+        <table matSort id="example2" class="table table-bordered table-hover">
+          <thead class="tbl-head">
+            <tr>
+              <th class="text-center">Sl No.</th>
+              <th class="text-center">Job Card#</th>
+              <th class="text-center">Job Card Date</th>
+              <th class="text-center">Maintanance Type</th>
+              <th class="text-center">Equipment Type</th>
+              <th class="text-center">Equipment Make</th>
+              <th class="text-center">Equipment Model</th>
+              <th class="text-center">Door No.</th>
+              <th class="text-center">HMR</th>
+              <th class="text-center">KMR</th>
+              <th class="text-center">Material Issues</th>
+              <th class="text-center">Status</th>
+              <th class="text-cente">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of items">
+              <td class="text-center">{{item.slNo}}</td>
+              <td class="text-center">{{item.jobCard}}</td>
+              <td class="text-center">{{item.jobCardDate}}</td>
+              <td class="text-center">{{item.maintananaceType}}</td>
+              <td class="text-center">{{item.equipmentType}}</td>
+              <td class="text-center">{{item.equipmentMake}}</td>
+              <td class="text-center">{{item.equipmentModel}}</td>
+              <td class="text-center">{{item.doorNo}}</td>
+              <td class="text-center">{{item.hmr}}</td>
+              <td class="text-center">{{item.kmr}}</td>
+              <td class="text-center" style="color: blue; cursor: pointer;" matTooltip="Add/Update Issue" routerLink="/purchase/issue">{{item.issues}}</td>
+              <td class="text-center">{{item.status}}</td>
+              <td class="text-center" style="font-size: 18px;">
+                <a style="cursor: pointer;margin-right:10px; " matTooltip="Update Issue" (click) = "addIssueDialog(item)">
+                  <i class="fa fa-edit" style="color: cornflowerblue"></i>
+                </a>
+                <a><i class="fa fa-trash red" matTooltip="Delete Issue" style="cursor: pointer;"></i></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <mat-paginator [pageSizeOptions]="[5, 10, 25, 50, 100]" showFirstLastButtons></mat-paginator>
+      </div>
+    </div>
+  </div>
+
+  </div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- previous code -->
+<!-- <div class="container-fluid">
+  <div class="row wrap">
+    <div class="col-xs-12" style="margin-top: 15px;margin-bottom:10px;">
+        <button mat-raised-button (click) = "filterToggle=!filterToggle"
+          class="btn-secondary pull-right"><mat-icon>filter_list</mat-icon>filter
+        </button>
+    </div>
+  </div>
+
+  <div class="w-100" *ngIf="filterToggle">
+    <div class="flex-p">
+    <mat-drawer-container>
+    <mat-drawer-content>
+    <mat-card class="col-sm-12" style="background-color: #dbe8f3 !important;width: 98.7%; padding: 10px 0px !important; margin-left:0px!important">
+      <div class="col-sm-3">
+        <div class="col-sm-4 no-padding">
+          <label>Job Card No.:</label>
+        </div>
+        <div class="col-sm-8 no-padding">
+          <input type="text" placeholder="Enter Job Card Number" class="form-control">
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="col-sm-4 no-padding">
+          <label>Store.:</label>
+        </div>
+        <div class="col-sm-8 no-padding">
+          <mat-select placeholder="Select Store" class="form-control">
+            <mat-option value="2">All</mat-option>
+            <mat-option value="1">Dumpers & Mechinery</mat-option>
+          </mat-select>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="col-sm-4 no-padding">
+          <label>Equip. Type:</label>
+        </div>
+        <div class="col-sm-8 no-padding">
+          <mat-select placeholder="Select Equipment Type" class="form-control">
+            <mat-option value="1">All</mat-option>
+            <mat-option vlaue="2">Backhoe Loader</mat-option>
+            <mat-option value="3">Dump Truck</mat-option>
+          </mat-select>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="col-sm-4 no-padding">
+          <label>Equip. Make:</label>
+        </div>
+        <div class="col-sm-8 no-padding">
+          <mat-select placeholder="Select Equipment Make" class="form-control">
+            <mat-option value="1">All</mat-option>
+          </mat-select>
+        </div>
+      </div>
+      <div class="w-100"></div>
+      <div class="col-sm-3 mt-4" >
+        <div class="col-sm-4 no-padding">
+          <label>Equip. Model:</label>
+        </div>
+        <div class="col-sm-8 no-padding">
+          <mat-select placeholder="Select Equipment Model" class="form-control">
+            <mat-option value="1">All</mat-option>
+          </mat-select>
+        </div>
+      </div>
+      <div class="col-sm-3 mt-4">
+        <div class="col-sm-4 no-padding">
+          <label>Maintanance Type:</label>
+        </div>
+        <div class="col-sm-8 no-padding">
+          <mat-select placeholder="Select Equipment Type" class="form-control">
+            <mat-option value="1">All</mat-option>
+          </mat-select>
+        </div>
+      </div>
+      <div class="col-sm-3 mt-4">
+        <button mat-raised-button class="ml-5">Go</button>
+        <button mat-raised-button class="ml-5">Cancel</button>
+      </div>
+    </mat-card>
+    </mat-drawer-content>
+    </mat-drawer-container>
+    </div>
+    </div>
+
+    <div class="row mt-2">
+      <div class="col-xs-12" style="overflow-x: auto">
+        <div id="grid-table-container" class="table-responsive" >
+          <table matSort id="example2" class="table table-bordered table-hover">
+            <thead class="tbl-head">
+              <tr>
+                <th class="text-center">Sl No.</th>
+                <th class="text-center">Job Card#</th>
+                <th class="text-center">Job Card Date</th>
+                <th class="text-center">Store</th>
+                <th class="text-center">Maintanance Type</th>
+                <th class="text-center">Equipment Type</th>
+                <th class="text-center">Equipment Make</th>
+                <th class="text-center">Equipment Model</th>
+                <th class="text-center">Door No.</th>
+                <th class="text-center">HMR</th>
+                <th class="text-center">KMR</th>
+                <th class="text-center">Material Issues</th>
+                <th class="text-center">Repair Cost</th>
+                <th class="text-center">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td colspan="14" class="text-center">No Data Available</td>
+              </tr>
+            </tbody>
+          </table>
+          <mat-paginator [pageSizeOptions]="[5, 10, 25, 50, 100]" showFirstLastButtons></mat-paginator>
+        </div>
+      </div>
+    </div>
+</div> -->

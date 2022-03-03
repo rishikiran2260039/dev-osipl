@@ -1,0 +1,108 @@
+
+<div class="NewHeader">
+  <h1 mat-dialog-title>
+    New Request
+  </h1>
+</div>
+<mat-horizontal-stepper #stepper>
+    <mat-step>
+        <div mat-dialog-content>
+            <form class="form-horizontal">
+                <ng-template matStepLabel>General</ng-template>
+                <div class="form-group">
+                  <label class="control-label col-sm-4 add-member-label">Select Requisition : </label>
+                  <div class="col-sm-8">
+                    <mat-select placeholder="Select Requisition">
+                      <mat-option>OM/REQ/SPA-FEB-19/1057</mat-option>
+                      <mat-option>OM/REQ/SPA/APR-20/1005</mat-option>
+                      <mat-option>OM/REQ/SPA-FEB-19/1041</mat-option>
+                      <mat-option>OM/REQ/SPA/FEB-21/1077</mat-option>
+                      <mat-option>OM/REQ/SPA/MAR-21/1086</mat-option>
+                    </mat-select>
+                  </div>
+                </div>
+            
+                <div class="form-group">
+                  <label class="control-label col-sm-4 add-member-label">Issue Date : </label>
+                  <div class="col-sm-8">
+                    <input type="date" class="form-control" placeholder="DD/MM/YYYY">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-sm-4 add-member-label">Remarks : </label>
+                  <div class="col-sm-8">
+                    <input type="text" class="form-control" placeholder="Remark">
+                  </div>
+                </div>
+            </form>
+          </div>
+          <mat-dialog-actions class="col-sm-12" align="end">
+              <button mat-raised-button   [ngClass]="'btn-primary'" matStepperNext><mat-icon>arrow_forward</mat-icon>&nbsp;Proceed</button>
+
+              <button mat-raised-button class="CancelClass" (click)="close()">&nbsp;Close</button>
+            </mat-dialog-actions>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>List Of Items</ng-template>
+      <div class="row">
+        <div class="col-xs-12">
+            <div id="grid-table-container" class="table-responsive">
+              <table matSort id="example2" class="table table-bordered table-hover">
+                <thead class="tbl-head">
+                    <tr>
+                        <th>Select Item</th>
+                        <th>Available Quantity</th>
+                        <th>Issued Quantity</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let value of values">
+                    
+                        <td >
+                          <mat-select placeholder="Select Requisition">
+                            <mat-option>Backhoe Loader</mat-option>
+                            <mat-option>Swing Cylinder</mat-option>
+                            <mat-option>Stablizer Arm</mat-option>
+                          </mat-select>
+                        </td>
+                        <td >4</td>
+                        <td >3</td>
+                        <td class="text-center editDel">
+                          <a style="cursor: pointer;margin-right:10px; " matTooltip="Update Item"
+                            (click)="opencontactDialog1(item)">
+        
+                            <i class="fa fa-edit" style="color: cornflowerblue"></i>
+                          </a>
+                          <a><i class="fa fa-trash red" matTooltip="Delete Item" style="cursor: pointer;"></i></a>
+                        </td>                  
+                    </tr>
+   
+                </tbody>
+            </table>
+      
+          </div>
+        </div>
+      </div>
+              <mat-dialog-actions class="col-sm-12" align="end">
+                <!-- <button *ngIf="!project"mat-raised-button [disabled]="!projectForm.valid" 
+                  [ngClass]="!projectForm.valid ? '' : 'btn-primary'">
+                  <mat-icon>send</mat-icon>&nbsp;Save
+                </button>
+                <button *ngIf="project" mat-raised-button [disabled]="!projectForm.valid" 
+                  [ngClass]="!projectForm.valid ? '' : 'btn-primary'">
+                  <mat-icon>update</mat-icon>&nbsp;Update
+                </button> -->
+                <button mat-raised-button class="btn-primary" (click)="close()">
+                  &nbsp;Confirm
+                </button>
+                <button mat-raised-button class="CancelClass" (click)="close()">
+                  &nbsp;Close
+                </button>
+              </mat-dialog-actions>
+      </mat-step>
+ </mat-horizontal-stepper>
+
+
+
+

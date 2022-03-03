@@ -1,0 +1,322 @@
+<div class="NewHeader" style="background-color:#286ba5 !important;height:50px">
+  <h1 mat-dialog-title>
+
+    {{project ? 'Update': 'Add'}} Contracts
+  </h1>
+</div>
+<mat-horizontal-stepper #stepper>
+  <mat-step>
+    <div mat-dialog-content>
+      <form class="form-horizontal" novalidate [formGroup]="projectForm">
+        <ng-template matStepLabel>Contract Details</ng-template>
+
+        <div class="row" style="padding-left: 10px;padding-right: 10px;">
+          <div class="col-sm-6" style="padding-right: 15px !important;">
+            <div class="form-group">
+              <label class="control-label col-sm-4 add-member-label">Contract #:&nbsp;</label>
+              <div class="col-sm-8">
+                <input type="text" maxlength="50" class="form-control" placeholder="Enter Contract #"
+                  formControlName="contactName" required>
+                <div *ngIf="!contactName.valid && (contactName.dirty || contactName.touched)" class="error-text">
+                  <div *ngIf="contactName.errors.required">
+                    Contract # is required
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-4 add-member-label">Contract Name:&nbsp;</label>
+              <div class="col-sm-8">
+                <input type="text" maxlength="200" class="form-control" placeholder="Enter Contract name"
+                  formControlName="streetAddress" required>
+                <div *ngIf="!streetAddress.valid && (streetAddress.dirty || streetAddress.touched)" class="error-text">
+                  <div *ngIf="streetAddress.errors.required">
+                    Project Name is required
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-4 add-member-label">Project:&nbsp;</label>
+              <div class="col-sm-8">
+                <mat-select class="form-control" placeholder="Select Project">
+                  <mat-option [value]="0">Raheja</mat-option>
+                  <mat-option [value]="1">Amazon</mat-option>
+                  <mat-option [value]="2">Instant</mat-option>
+
+                </mat-select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-4 add-member-label">Site:&nbsp;</label>
+              <div class="col-sm-8">
+                <mat-select class="form-control" placeholder="Select Project">
+                  <mat-option [value]="0">Sector 56</mat-option>
+                  <mat-option [value]="1">Lansdowne</mat-option>
+                  <mat-option [value]="2">Newton</mat-option>
+
+                </mat-select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-4 add-member-label">SOW:&nbsp;</label>
+              <div class="col-sm-8">
+                <mat-select class="form-control" placeholder="Select Project">
+                  <mat-option [value]="0">Lanscaping</mat-option>
+                  <mat-option [value]="1">Club House</mat-option>
+                  <mat-option [value]="2">Restaurant</mat-option>
+
+                </mat-select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-4 add-member-label">Contract Type:&nbsp;</label>
+              <div class="col-sm-8">
+                <mat-radio-group>
+                  <mat-radio-button value="0">Internal </mat-radio-button>
+                  <mat-radio-button value="1" style="margin-left: 10px;">External</mat-radio-button>
+                </mat-radio-group>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-4 add-member-label">Letter of Award #:&nbsp;</label>
+              <div class="col-sm-8">
+                <input type="text" maxlength="50" class="form-control" placeholder="Enter Award Letter No"
+                  formControlName="jobTitle" required>
+                <div *ngIf="!jobTitle.valid && (jobTitle.dirty || jobTitle.touched)" class="error-text">
+                  <div *ngIf="jobTitle.errors.required">
+                    Award Letter No is required
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6" style="padding-left:15px !important;">
+            <div class="form-group">
+              <label class="control-label col-sm-4 add-member-label">Award Date:&nbsp;</label>
+              <div class="col-sm-8">
+
+                <div class="input-icon right">
+                  <input class="form-control" formControlName="awardDate" placeholder="MM/DD/YYYY" class="form-control"
+                    id="db" [owlDateTimeTrigger]="dt1" [owlDateTime]="dt1" name="dt1">
+                  <owl-date-time [pickerType]="'calendar'" #dt1></owl-date-time>
+                </div>
+
+                <div *ngIf="!awardDate.valid && (awardDate.dirty || awardDate.touched)" class="error-text">
+                  <div *ngIf="awardDate.errors.required">
+                    Award date is required
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-4 add-member-label">Agreement #:&nbsp;</label>
+              <div class="col-sm-8">
+                <input type="text" maxlength="50" class="form-control" placeholder="Enter Agreement No"
+                  formControlName="agreement" required>
+                <div *ngIf="!agreement.valid && (agreement.dirty || agreement.touched)" class="error-text">
+                  <div *ngIf="agreement.errors.required">
+                    Agreement No is required
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-4 add-member-label">Agreement Date:&nbsp;</label>
+              <div class="col-sm-8">
+
+                <div class="input-icon right">
+                  <input class="form-control" formControlName="agreementDate" placeholder="MM/DD/YYYY"
+                    class="form-control" id="db" [owlDateTimeTrigger]="dt2" [owlDateTime]="dt2" name="dt2">
+                  <owl-date-time [pickerType]="'calendar'" #dt2></owl-date-time>
+                </div>
+
+                <div *ngIf="!agreementDate.valid && (agreementDate.dirty || agreementDate.touched)" class="error-text">
+                  <div *ngIf="agreementDate.errors.required">
+                    Agreement date is required
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-4 add-member-label">Date of Start :&nbsp;</label>
+              <div class="col-sm-8">
+
+                <div class="input-icon right">
+                  <input class="form-control" formControlName="dateOfStart" placeholder="MM/DD/YYYY"
+                    class="form-control" id="db" [owlDateTimeTrigger]="dt3" [owlDateTime]="dt3" name="dt3">
+                  <owl-date-time [pickerType]="'calendar'" #dt3></owl-date-time>
+                </div>
+
+                <div *ngIf="!dateOfStart.valid && (dateOfStart.dirty || dateOfStart.touched)" class="error-text">
+                  <div *ngIf="dateOfStart.errors.required">
+                    Date of Start is required
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-4 add-member-label">Target Date :&nbsp;</label>
+              <div class="col-sm-8">
+
+                <div class="input-icon right">
+                  <input class="form-control" formControlName="targetDate" placeholder="MM/DD/YYYY" class="form-control"
+                    id="db" [owlDateTimeTrigger]="dt4" [owlDateTime]="dt4" name="dt4">
+                  <owl-date-time [pickerType]="'calendar'" #dt4></owl-date-time>
+                </div>
+
+                <div *ngIf="!targetDate.valid && (targetDate.dirty || targetDate.touched)" class="error-text">
+                  <div *ngIf="targetDate.errors.required">
+                    Target Date date is required
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-4 add-member-label">Estimated Budget :&nbsp;</label>
+              <div class="col-sm-8">
+                <input type="text" maxlength="50" class="form-control" placeholder="Enter Estimated Budget"
+                  formControlName="estimatedBudget" required>
+                <div *ngIf="!estimatedBudget.valid && (estimatedBudget.dirty || estimatedBudget.touched)"
+                  class="error-text">
+                  <div *ngIf="estimatedBudget.errors.required">
+                    Estimated Budget is required
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+
+
+
+      </form>
+    </div>
+    <mat-dialog-actions class="col-sm-12" align="end">
+      <button mat-raised-button [disabled]="!projectForm.valid" [ngClass]="!projectForm.valid ? '' : 'btn-primary'">
+        <mat-icon>arrow_forward</mat-icon>&nbsp;Proceed
+      </button>
+      <button mat-raised-button class="CancelClass" (click)="close()">
+        <mat-icon>cancel</mat-icon>&nbsp;Close
+      </button>
+    </mat-dialog-actions>
+  </mat-step>
+  <mat-step>
+    <div mat-dialog-content>
+      <form class="form-horizontal" novalidate [formGroup]="projectForm">
+        <ng-template matStepLabel>Client Details</ng-template>
+        <div class="form-group">
+          <label class="control-label col-sm-4 add-member-label">Client Name:&nbsp;</label>
+          <div class="col-sm-8">
+
+            <mat-select color="primary" placeholder="-- Select Client --" formControlName="Client" class="form-control"
+              required>
+              <mat-option *ngFor="let client of clients" [value]="client.id">{{client.name}}</mat-option>
+            </mat-select>
+
+            <div *ngIf="!Client.valid && (Client.dirty || Client.touched)" class="error-text">
+              <div *ngIf="Client.errors.required">
+                Client is required
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-4 add-member-label">Address:&nbsp;</label>
+          <div class="col-sm-8">
+            <textarea class="form-control txtarea" placeholder="Enter Address" rows="2" formControlName="address"
+              required></textarea>
+            <div *ngIf="!address.valid && (address.dirty || address.touched)" class="error-text">
+              <div *ngIf="address.errors.required">
+                Address is required
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-4 add-member-label">Email:&nbsp;</label>
+          <div class="col-sm-8">
+            <input type="text" maxlength="50" class="form-control" placeholder="Enter Email" formControlName="email"
+              required>
+            <div *ngIf="!email.valid && (email.dirty || email.touched)" class="error-text">
+              <div *ngIf="email.errors.required">
+                Email is required
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-4 add-member-label">Department:&nbsp;</label>
+          <div class="col-sm-8">
+            <input type="text" maxlength="50" class="form-control" placeholder="Enter Department"
+              formControlName="department" required>
+            <div *ngIf="!department.valid && (department.dirty || department.touched)" class="error-text">
+              <div *ngIf="department.errors.required">
+                Department is required
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-4 add-member-label">Eng In Charge:&nbsp;</label>
+          <div class="col-sm-8">
+            <input type="text" maxlength="50" class="form-control" placeholder="Enter Eng In Charge"
+              formControlName="engincharge" required>
+            <div *ngIf="!engincharge.valid && (engincharge.dirty || engincharge.touched)" class="error-text">
+              <div *ngIf="engincharge.errors.required">
+                Eng In Charge is required
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-4 add-member-label">Consultant Details:&nbsp;</label>
+          <div class="col-sm-8">
+            <input type="text" maxlength="50" class="form-control" placeholder="Enter Consultant Details"
+              formControlName="consultantdetails" required>
+            <div *ngIf="!consultantdetails.valid && (consultantdetails.dirty || consultantdetails.touched)"
+              class="error-text">
+              <div *ngIf="consultantdetails.errors.required">
+                Consultant Details is required
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-4 add-member-label">Associated Agency:&nbsp;</label>
+          <div class="col-sm-8">
+
+            <mat-select color="primary" placeholder="-- Select Client --" formControlName="associatedagency"
+              class="form-control" required>
+              <mat-option *ngFor="let client of clients" [value]="client.id">{{client.name}}</mat-option>
+            </mat-select>
+
+            <div *ngIf="!associatedagency.valid && (associatedagency.dirty || associatedagency.touched)"
+              class="error-text">
+              <div *ngIf="associatedagency.errors.required">
+                Associated Agency is required
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </form>
+    </div>
+    <mat-dialog-actions class="col-sm-12" align="end">
+      <button *ngIf="!project" mat-raised-button [disabled]="!projectForm.valid"
+        [ngClass]="!projectForm.valid ? '' : 'btn-primary'">
+        <mat-icon>send</mat-icon>&nbsp;Save
+      </button>
+      <button *ngIf="project" mat-raised-button [disabled]="!projectForm.valid"
+        [ngClass]="!projectForm.valid ? '' : 'btn-primary'">
+        <mat-icon>update</mat-icon>&nbsp;Update
+      </button>
+      <button mat-raised-button class="CancelClass" (click)="close()">
+        <mat-icon>cancel</mat-icon>
+        &nbsp;Close
+      </button>
+    </mat-dialog-actions>
+  </mat-step>
+</mat-horizontal-stepper>

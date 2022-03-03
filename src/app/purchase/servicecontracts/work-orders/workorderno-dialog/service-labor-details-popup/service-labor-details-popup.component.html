@@ -1,0 +1,52 @@
+<div class="NewHeader" style="background-color:#286ba5 !important; height: 50px;">
+  <h1 mat-dialog-title>
+    {{ data ? 'Update' : 'Add' }} Service And Labor Details
+  </h1>
+</div>
+
+<div mat-dialog-content>
+  <form class="form-horizontal">
+    <div style="padding: 0px 30px !important;">
+      <div class="form-group">
+        <p class="control-label col-sm-4 add-member-label">Service and Labor Description</p>
+        <div class="col-sm-8">
+          <input type="text" placeholder="Enter Service and Labor Description" maxlength="50" class="form-control">
+        </div>
+      </div>
+      <div class="form-group">
+        <p class="control-label col-sm-4 add-member-label">Work Code</p>
+        <div class="col-sm-8">
+          <input type="text" placeholder="Enter Work Code" maxlength="50" class="form-control">
+        </div>
+      </div>
+      <div class="form-group">
+        <p class="control-label col-sm-4 add-member-label">Qty</p>
+        <div class="col-sm-8">
+          <input type="text" placeholder="Enter Qty" maxlength="50" class="form-control">
+        </div>
+      </div>
+      <div class="form-group">
+        <p class="control-label col-sm-4 add-member-label">Hours</p>
+        <div class="col-sm-8">
+          <input type="text" placeholder="Enter Hours" maxlength="50" class="form-control">
+        </div>
+      </div>
+      <div class="form-group">
+        <p class="control-label col-sm-4 add-member-label">Rate($/hrs)</p>
+        <div class="col-sm-8">
+          <input type="text" placeholder="Enter Rate($/hrs)" maxlength="50" class="form-control">
+        </div>
+      </div>
+      
+      
+      
+    </div>
+  </form>
+</div>
+<mat-dialog-actions align="end">
+
+  <button mat-raised-button class="btn-success" (click)="close()">Submit</button>
+  <button mat-raised-button class="add-dark-hover btn-default" (click)="close()">Clear</button>
+</mat-dialog-actions>
+
+

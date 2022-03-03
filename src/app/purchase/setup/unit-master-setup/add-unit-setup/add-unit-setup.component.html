@@ -1,0 +1,33 @@
+<div class="NewHeader">
+  <h1 mat-dialog-title>
+      <span>{{ data ? 'Update' : 'Add'}} Unit</span>
+  </h1>
+</div>
+
+  <form class="form-horizontal">
+      <div mat-dialog-content>
+
+      <div class="form-group">
+          <label class="control-label col-sm-4 add-member-label">Unit Code: </label>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+              <input type="text" class="form-control" placeholder="Enter Unit Code">
+          </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-sm-4 add-member-label">Description:</label>
+        <div class="col-sm-8 col-md-8 col-sm-8 col-xs-8">
+          <textarea class="form-control txtarea" placeholder="Enter Description" rows="2" required></textarea>
+        </div>
+      </div>
+      
+  </div>
+      <mat-dialog-actions align="end">
+          <button mat-raised-button (click)="close()"  type="button" style="color: rgb(7, 10, 7); background-color: #e0e0e0;">
+              <mat-icon>cancel</mat-icon> Close
+            </button>
+            <button mat-raised-button class="btn-primary" type="button" (click)="close()">
+              <mat-icon>send</mat-icon><span> Save</span>
+            </button>
+      </mat-dialog-actions>
+  </form>

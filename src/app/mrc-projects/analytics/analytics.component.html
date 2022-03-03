@@ -1,0 +1,163 @@
+<app-project-dashboard></app-project-dashboard>
+
+<div class="row col-12">
+
+  <div class="col-6">
+    <div style="margin-left: 2%;">
+      <div class="chart-header">
+        <p style="font-size: 17px;">Completion Status by Line Items</p>
+      </div>
+      <div class="flex-p"> 
+        <mat-card>
+          <div class="w-100 h-300p">
+            <ngx-charts-pie-chart
+            [scheme]="colorScheme"
+            [results]="single"
+            [legend]="showLegend"
+            [explodeSlices]="explodeSlices"
+            [labels]="showLabels"
+            [doughnut]="doughnut"
+            [gradient]="gradient"
+            >
+          </ngx-charts-pie-chart>                  
+        </div>
+      </mat-card>
+    </div>
+      
+  </div>
+  </div>
+  <div class="col-6">
+     <div style="margin-left: 2%;">
+      <div class="chart-header">
+        <p style="font-size: 17px;">Completion Status by Value</p>
+      </div>
+      <div class="flex-p"> 
+        <mat-card>
+          <div class="w-100 h-300p">
+            <ngx-charts-pie-chart
+            [scheme]="colorScheme"
+            [results]="singles"
+            [legend]="showLegend"
+            [explodeSlices]="explodeSlices"
+            [labels]="showLabels"
+            [doughnut]="doughnut"
+            [gradient]="gradient"
+            >
+          </ngx-charts-pie-chart>                  
+        </div>
+      </mat-card>
+    </div>
+     
+    </div>
+  </div>
+
+</div>
+
+
+
+<div class="row col-12">
+
+  <div class="col-12">
+    <div style="margin-left: 2%;">
+      <div class="chart-header">
+        <p style="font-size: 17px;">Monthly Completion & Billing Trend : Line Items</p>
+      </div>
+      <div style="display: block;">
+        <div style="height: 300px;"  [chart]=" conversationChart"></div>
+      </div>
+      <div align="center">
+  
+        <p><span><i class="fa fa-stop" style="color:black;"></i>Completion</span><span style="margin-left: 10px !important;"><i class="fa fa-stop" style="color: rgb(33, 101, 190);"></i>Billing</span></p>
+        
+      </div>
+      
+  </div>
+  </div>
+ 
+</div>
+
+
+
+<div class="row col-12">
+
+  <div class="col-12">
+    <div style="margin-left: 2%;">
+      <div class="chart-header">
+        <p style="font-size: 17px;">Monthly Completion & Billing Trend : Billing(Rs.Cr)</p>
+      </div>
+      <div style="display: block;">
+        <div style="height: 300px;"  [chart]="conversationChart2"></div>
+      </div>
+      <div align="center">
+        <p><span><i class="fa fa-stop" style="color:black;"></i>Completion</span><span style="margin-left: 10px !important;"><i class="fa fa-stop" style="color: rgb(33, 101, 190);"></i>Billing</span></p>
+      </div>
+      
+  </div>
+  </div>
+ 
+</div>
+
+
+<div class="row col-12">
+
+  <div class="col-6">
+    <div style="margin-left: 2%;">
+      <div class="chart-header">
+        <p style="font-size: 17px;">Collection in last 6 months</p>
+      </div>
+      <div style="display: block;">
+        <div style="height: 300px;"  [chart]="conversationChart3"></div>
+      </div>
+      <div align="center">
+        <p><span><i class="fa fa-stop" style="color: rgb(33, 101, 190);"></i>Collection</span></p>
+      </div>
+  </div>
+  </div>
+  <div class="col-6">
+     <div style="margin-left: 2%;">
+      <div class="chart-header">
+        <p style="font-size: 17px;">Ageing Analysis of Receivables</p>
+      </div>
+      <div style="display: block;">
+        <div style="height: 300px;" [chart]="aeginganalysis"></div>
+      </div>
+      <div align="center">
+        <p><span><i class="fa fa-stop" style="color: rgb(33, 101, 190);"></i>Aeging Analysis of Receivables</span></p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+<div class="row col-12">
+
+  <div class="col-6">
+    <div style="margin-left: 2%;">
+      <div class="chart-header">
+        <p style="font-size: 17px;">Ageing Analysis of Payables</p>
+      </div>
+      <div style="display: block;">
+        <div style="height: 300px;"  [chart]="aeginganalysis2"></div>
+      </div>
+      <div align="center">
+        <p><span><i class="fa fa-stop" style="color: rgb(33, 101, 190);"></i>Ageing Analysis of Payables</span></p>
+      </div>
+  </div>
+  </div>
+  <div class="col-6">
+     <div style="margin-left: 2%;">
+      <div class="chart-header">
+        <p style="font-size: 17px;">Contractor On Time Performance</p>
+      </div>
+      <div style="display: block;">
+        <div style="height: 300px;" [chart]="contractor"></div>
+      </div>
+      <div align="center">
+        <p><span><i class="fa fa-stop" style="color: rgb(33, 101, 190);"></i>Contractor Performance</span></p>
+      </div>
+    </div>
+  </div>
+
+</div>

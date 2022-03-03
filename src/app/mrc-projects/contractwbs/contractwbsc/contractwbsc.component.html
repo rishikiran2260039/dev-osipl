@@ -1,0 +1,456 @@
+<app-project-dashboard></app-project-dashboard>
+<div class="flex-p" style="padding-top: 0px !important;">
+  <div class="row wrap">
+    <div class="col-xs-12" style="margin-top:15px">
+
+      <!-- <button mat-raised-button class="margin-right-10" style="color:white; background:#3b7bb8;"
+        (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button> -->
+      <button mat-raised-button *ngIf="!displayDashboard" (click)="openSiteDailog()" class="btn-primary margin-right-10"
+        style="margin-left: 5px !important;">
+        <mat-icon>add</mat-icon> Add Site
+      </button>
+      <button mat-raised-button *ngIf="!displayDashboard" (click)="openSowDailog()" class="btn-primary margin-right-10">
+        <mat-icon>add</mat-icon> Add Contract
+      </button>
+      <button mat-raised-button *ngIf="!displayDashboard" (click)="openTaskDailog()"
+        class="btn-primary margin-right-10">
+        <mat-icon>add</mat-icon> Add Task
+      </button>
+      <button *ngIf="!displayDashboard" class="btn-primary" mat-raised-button
+        style="color:white; background:#3b7bb8 !important;" (click)="openEditSite()">
+        Manage Sites
+      </button>
+      <button mat-raised-button *ngIf="displayDashboard" class="btn-primary margin-right-10 pull-right"
+        (click)="changeDisplay()">
+        <mat-icon><span class="material-icons-outlined">
+            assignment
+          </span></mat-icon> Setup
+      </button>
+
+      <button mat-raised-button *ngIf="!displayDashboard" class="btn-primary margin-right-10 pull-right"
+        (click)="changeDisplay()">
+        <mat-icon><span class="material-icons-outlined">
+            dashboard
+          </span></mat-icon> Dashboard
+      </button>
+
+      <a *ngIf="!displayDashboard" (click)="dowloadBulkUploadDataTemplate()" class="margin-right-10 pull-right"
+        mat-raised-button style="color:white; background:#7b767c;">
+        <mat-icon>table_view</mat-icon>&nbsp;Worksheet
+      </a>
+
+
+
+
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!displayDashboard" class=" w-100">
+
+  <mat-drawer-container class="custom-sidenav" hasBackdrop="false" class="margin-top-10">
+    <mat-drawer #drawer mode="side" opened="true">
+      <div class="col-sm-12" >
+        <!-- <mat-card class="col-sm-12" style="background: #3b7bb882 !important"> -->
+        <p-tree [value]="files" class="ptreecustom" selectionMode="single" class="ptreecustom" selectionMode="single">
+        </p-tree>
+        <!-- </mat-card> -->
+      </div>
+    </mat-drawer>
+    <mat-drawer-content>
+      <div class="col-sm-12"style="margin-left: 69px;">
+        <mat-card class="col-sm-12" style="background-color: #dbe8f3 !important;width: 1135px;">
+          <div class="col-sm-5">
+            <div class="col-sm-6">
+              <label>Site:</label>
+              <span>&nbsp;&nbsp;Sipcot Industrial Park</span>
+            </div>
+            <div class="col-sm-6">
+              <label>SOW Name:</label>
+              <span>&nbsp;&nbsp; SRPR</span>
+            </div>
+          </div>
+          <div class="col-sm-7">
+
+            <div class="col-sm-4">
+              <label>Budget Hours:</label>
+              <span>&nbsp;&nbsp;
+                47Hrs </span>
+            </div>
+
+            <div class="col-sm-4">
+              <label>Budget Total:</label>
+              <span>&nbsp;&nbsp;
+                $6,845.70</span>
+            </div>
+            <div class="col-sm-3 no-padding">
+              <label>Quoted:</label>
+              <span>&nbsp;&nbsp;0 Hrs
+              </span>
+            </div>
+            <div class="col-sm-1 no-padding">
+              <mat-icon class="pull-right" style="cursor:pointer;color: #2da3ff;" (click)="openEditMatDialog()">
+                edit</mat-icon>
+            </div>
+          </div>
+          <div class="col-sm-5">
+            <div class="col-sm-6">
+              <label>Project Type:</label>
+              <span>&nbsp;&nbsp;Engineering</span>
+            </div>
+            <div class="col-sm-6">
+              <label>Status:</label>
+              <span>&nbsp;&nbsp; Open</span>
+            </div>
+          </div>
+          <div class="col-sm-7">
+
+            <div class="col-sm-4">
+              <label>Contractor :</label>
+              <span>&nbsp;&nbsp;
+                Raheja </span>
+            </div>
+
+            <div class="col-sm-4">
+              <label>Contract Ref:</label>
+              <span>&nbsp;&nbsp;
+                8478BA</span>
+            </div>
+
+            <div class="col-sm-4">
+              <label>Fee Structure:</label>
+              <span>&nbsp;&nbsp;
+                Fixed Rate</span>
+            </div>
+
+          </div>
+
+
+        </mat-card>
+        <mat-card class="col-sm-12 margin-top-10" style="width: 1135px;">
+          <div class="w-100">
+            <div class="row">
+              <div class="col-sm-12" style="padding: 15px !important; margin-top: 10px;margin-bottom: 20px;">
+                <div class="col-sm-12" style="padding: 0px !important; margin-top: 10px;">
+                  <p-accordion class="customAccordian" (onClose)="onTabClose($event)" (onOpen)="onTabOpen($event)">
+                    <p-accordionTab *ngFor="let item of taskData" [selected]="item.selected">
+                      <p-header class="col-sm-11 pull-right" style="padding-left: 0px;">
+                        <div class="col-sm-3">
+                          <label>Task:</label>
+                          <span>&nbsp;
+                            {{item.taskName}}
+                          </span>
+                        </div>
+                        <div class="col-sm-3">
+
+                          <label>BOQ Ref:</label>
+                          <span>&nbsp;
+                            {{item.ref}}
+                          </span>
+                        </div>
+                        <div class="col-sm-3">
+
+                          <label>Target Date:</label>
+                          <span>&nbsp; {{item.target_date}}</span>
+                        </div>
+                        <div class="col-sm-3">
+                          <div *ngIf="item.selected" class="row no-padding " style="margin-top: -0.2em;">
+                            <button (click)="$event.stopPropagation();addJobCodeCustom(item.taskId);" mat-raised-button
+                              matTooltip="Click to Add New Action" class="pull-right"
+                              style="height: 26px;margin-right: 10px;margin-left: auto;">
+                              <span class="accordian-add-span">Add</span>
+                            </button>
+                            <button (click)="openEditDailog()" mat-raised-button matTooltip="Click to Add New Action"
+                              class="pull-right" style="height: 26px;margin-right: 10px;">
+                              <span class="accordian-add-span">Edit</span>
+                            </button>
+                            <!-- <button mat-raised-button class="pull-right"
+                                  style="height: 26px;margin-right: 10px;"
+                                  matTooltip="edit Entry"
+                                  (click)="$event.stopPropagation();editDailog()">
+                                  <i class="fa fa-pencil"></i>
+                              </button>
+                              <button mat-raised-button class="pull-right"
+                                  style="height: 26px;margin-right: 0px;"
+                                  matTooltip="Delete Entry">
+                                  <i class="fa fa-trash"></i>
+                              </button> -->
+
+                          </div>
+
+                        </div>
+
+                      </p-header>
+                      <div class="table-responsive" id="{{item.id}}">
+                        <table id="example2" class="table table-bordered table-striped table-hover no-padding"
+                          style="margin-bottom: 10px !important">
+                          <thead>
+                            <tr _ngcontent-c21="" class="custom-thead-budget">
+                              <th _ngcontent-c21="" style="min-width: 200px;">Action</th>
+                              <th _ngcontent-c21="" style="min-width: 200px;">Job Code
+                                (Title)</th>
+                              <th _ngcontent-c21="" style="min-width: 200px;">Assiged To</th>
+                              <th _ngcontent-c21="" class="text-center" style="min-width: 100px;">Rate</th>
+                              <th _ngcontent-c21="">Planned</th>
+                              <th _ngcontent-c21="" class="text-center" style="min-width: 100px;">Budget</th>
+                              <th _ngcontent-c21="" class="text-center" style="min-width: 80px;">Delete</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr *ngIf="item.Data?.length == 0">
+
+                              <td style="text-align: center;" colspan="7">
+                                No records Found
+                              </td>
+                            </tr>
+                            <tr *ngFor="let tData of item.Data; let i = index">
+                              <td> <input type="number" value="tData.notes" class="form-control"
+                                  placeholder="Enter Action">
+                              </td>
+                              <td>
+                                <mat-select class="form-control" placeholder="Job Code"
+                                  (selectionChange)="jobCodeChange($event.value, item.id, tData.id)">
+                                  <mat-option *ngFor="let item of jobcode" [value]="item.rate">
+                                    {{item.jobcode}}
+                                  </mat-option>
+                                </mat-select>
+                              </td>
+                              <td>
+                                <mat-select class="form-control" placeholder="Assigned To">
+                                  <mat-option>
+                                    John
+                                  </mat-option>
+                                  <mat-option>
+                                    Michael
+                                  </mat-option>
+                                  <mat-option>
+                                    Paul
+                                  </mat-option>
+                                </mat-select>
+                              </td>
+                              <td class="text-center" style="vertical-align: middle">
+                                {{tData.rate | currency}} </td>
+                              <td> <input type="number" [(ngModel)]="tData.quantity"
+                                  (ngModelChange)="getQuantityValue(tData.quantity, item.id, tData.id)"
+                                  class="form-control" placeholder="Enter Planned Hours">
+                              </td>
+                              <td class="text-center" style="vertical-align: middle">
+                                {{tData.total | currency}}</td>
+                              <td class="text-center" style="vertical-align: middle">
+                                <a class="delete-job-code" matTooltip="Delete Entry">
+                                  <i class="fa fa-trash"></i>
+                                </a>
+                              </td>
+                              <!-- <td><input type="text" class="form-control" placeholder="Enter Action" [(ngModel)]="tData.actionName"></td>
+                                                          <td>
+                                                                  <input type="text" placeholder="Enter Due Date" class="form-control" bsDatepicker placement="bottom" [bsConfig]="{containerClass: 'theme-dark-blue',dateInputFormat: 'YYYY-MM-DD'  }">
+                                                              
+                                                          </td>
+                                                          <td>
+                                                                  <input type="text" placeholder="Enter Completion Date" class="form-control" bsDatepicker placement="bottom" [bsConfig]="{containerClass: 'theme-dark-blue',dateInputFormat: 'YYYY-MM-DD'  }">
+                                                          </td>
+                                                           -->
+
+                              <!-- <td> <input type="number" (ngModelChange)="getQuantityValue(tData.quantity, item.id, tData.id)" class="form-control" placeholder="Enter Planned Hours"> </td> -->
+
+
+                              <!-- <td class="text-center" style="vertical-align: middle">
+                                                              <p-fileUpload mode="basic" (onUpload)="onBasicUpload($event)"></p-fileUpload>
+                                                          </td> -->
+
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </p-accordionTab>
+                    <p-accordionTab>
+                      <p-header>
+                        <label class="margin-left-7">Expenses</label>
+                      </p-header>
+                      <table id="example2" class="table table-bordered table-striped table-hover">
+                        <thead>
+                          <tr style="background: #586958 !important; color:#fff !important;">
+                            <th>
+                              Item
+                            </th>
+                            <th class="text-center">
+                              Rate
+                            </th>
+                            <th style="width: 150px !important">
+                              Quantity
+                            </th>
+                            <th class="text-center">
+                              Totals
+                            </th>
+                            <th class="text-center">
+                              Budget Fee
+                            </th>
+
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <!-- <tr>
+                                                              <td>Surveyor Search</td>
+                                                              <td class="text-center">$200</td>
+                                                              <td> <input type="number" [(ngModel)]="quantity1" class="form-control" placeholder="Enter Quantity"> </td>
+                                                              <td class="text-center">$0</td>
+                                                              <td class="text-center" style="vertical-align: middle" rowspan="6">$0</td>
+                                                          </tr>
+                                                          <tr>
+                                                              <td>Mileage</td>
+                                                              <td class="text-center">$0.50</td>
+                                                              <td> <input type="number" [(ngModel)]="quantity1" class="form-control" placeholder="Enter Quantity"> </td>
+                                                              <td class="text-center">$0</td>
+                                                          </tr>
+                                                          <tr>
+                                                              <td>Bars/Spikes/Stakes</td>
+                                                              <td class="text-center">$25</td>
+                                                              <td> <input type="number" [(ngModel)]="quantity1" class="form-control" placeholder="Enter Quantity"> </td>
+                                                              <td class="text-center">$0</td>
+                                                          </tr>
+                                                          <tr>
+                                                              <td>Integration Fee</td>
+                                                              <td class="text-center">$500</td>
+                                                              <td> <input type="number" [(ngModel)]="quantity1" class="form-control" placeholder="Enter Quantity"> </td>
+                                                              <td class="text-center">$0</td>
+                                                          </tr>
+                                                          <tr>
+                                                              <td>RO Fee</td>
+                                                              <td class="text-center">$100</td>
+                                                              <td> <input type="number" [(ngModel)]="quantity1" class="form-control" placeholder="Enter Quantity"> </td>
+                                                              <td class="text-center">$0</td>
+                                                          </tr>
+                                                          <tr>
+                                                              <td><input type="text" [(ngModel)]="quantity1" class="form-control" placeholder="Enter Custom"> </td>
+                                                              <td class="text-center">$100</td>
+                                                              <td> <input type="number" [(ngModel)]="quantity1" class="form-control" placeholder="Enter Quantity"> </td>
+                                                              <td class="text-center">$0</td>
+                                                          </tr> -->
+                          <!-- <tr *ngFor="let item of expenses; let i = index">
+                                                      <td *ngIf="item.name != ''">{{item.name}}</td>
+                                                      <td *ngIf="item.name == ''"> <input type="text"
+                                                              [(ngModel)]="item.name" class="form-control"
+                                                              placeholder="Enter Name">
+                                                      </td>
+                                                      <td class="text-center" *ngIf="item.rate != null">{{item.rate |
+                                                          currency}}</td>
+                                                      <td *ngIf="item.rate == null"> <input type="number"
+                                                              [(ngModel)]="item.rate" class="form-control"
+                                                              placeholder="Enter Rate"> </td>
+                                                      <td> <input type="number" [(ngModel)]="item.quantity"
+                                                              class="form-control" placeholder="Enter Quantity"> </td>
+                                                      <td class="text-center">{{item.totals | currency}}</td>
+                                                      <td *ngIf="i == 0" [attr.rowspan]="expenses.length"
+                                                          style="vertical-align: middle; text-align: center">
+                                                          {{totalBudget | currency}}</td>
+
+                                                  </tr> -->
+                        </tbody>
+                      </table>
+                    </p-accordionTab>
+
+                  </p-accordion>
+                </div>
+              </div>
+            </div>
+            <div class="flex-p">
+            </div>
+          </div>
+        </mat-card>
+      </div>
+    </mat-drawer-content>
+  </mat-drawer-container>
+
+</div>
+
+<div *ngIf="displayDashboard" class="col-sm-12 w-100">
+
+  <div class="row col-12 mt-5">
+
+    <div class="col-6">
+      <div style="margin-left: 2%">
+        <div class="chart-header">
+          <p style="font-size: 17px;">Billing Distribution</p>
+        </div>
+        <div class="flex-p">
+          <mat-card>
+            <div class="w-100 h-300p">
+              <ngx-charts-pie-chart [scheme]="colorScheme" [results]="single" [legend]="showLegend"
+                [explodeSlices]="explodeSlices" [labels]="showLabels" [doughnut]="doughnut" [gradient]="gradient">
+              </ngx-charts-pie-chart>
+            </div>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-6">
+      <div style="margin-left: 2%">
+        <div class="chart-header">
+          <p style="font-size: 17px">Completion trend in last 6 months</p>
+        </div>
+        <div style="display: block">
+          <div style="height: 335px" [chart]="disciplineChartMonthly"></div>
+        </div>
+        <div align="center">
+          <p>
+            <span><i class="fa fa-stop" style="color: rgb(33, 101, 192)"></i>Completed</span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="row my-5">
+    <div class="col-xs-12">
+      <div id="grid-table-container" class="table-responsive">
+        <table matSort id="example2" class="table table-bordered table-hover">
+          <thead class="tbl-head">
+            <tr>
+              <th>Site</th>
+              <th>Contract #</th>
+              <th>Contractor</th>
+              <th class="text-center">Tasks</th>
+              <th>Budget</th>
+              <th>Claimed</th>
+              <th>Invoiced</th>
+              <th>Paid</th>
+              <th>Completion</th>
+              <th class="text-center">Status</th>
+              <th class="text-center">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of items" [ngStyle]="{'font-weight':item.site === 'Total' ? 'bolder' : '' }">
+
+              <td>{{item.site }}</td>
+              <td>{{item.contract }}</td>
+              <td>{{item.contractor }}</td>
+              <td class="text-center"><a style="cursor: pointer; color: blue;">{{item.tasks }}</a></td>
+              <td>{{item.budget }}</td>
+              <td>{{item.claimed }}</td>
+              <td>{{item.invoiced }}</td>
+              <td>{{item.paid }}</td>
+              <td>{{item.completion }}</td>
+              <td class="text-center">Active</td>
+              <td class="text-center editDel">
+                <a style="cursor: pointer;margin-right:10px;" matTooltip="Update Project">
+                  <i class="fa fa-edit" (click)="editWBS()" style="color: blue"></i>
+                </a>
+                <a><i class="fa fa-trash red" matTooltip="Delete Project" style="cursor: pointer;"></i></a>
+              </td>
+
+            </tr>
+
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+  </div>
+
+</div>

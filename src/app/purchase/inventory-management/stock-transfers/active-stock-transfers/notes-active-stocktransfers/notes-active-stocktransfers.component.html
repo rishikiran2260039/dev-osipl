@@ -1,0 +1,131 @@
+<h1 mat-dialog-title class="custom-header" style="background-color:#286ba5 !important;height:50px">{{ data ? 'Update' : 'Add'}} Item</h1>
+<form>
+  <div mat-dialog-content>
+    <div class="col-sm-12">
+      <div class="col-sm-6"> 
+        <div class="form-group" >
+          <label class="control-label col-lg-12 col-md-12 col-sm-12 col-xs-12 add-member-label" style="margin-left: -15px !important;" >Select Category: </label>
+          <mat-select class="form-control" placeholder="Select Item Category">
+            <mat-option [value]="0">
+              Plaster & Boards	
+            </mat-option>
+            <mat-option [value]="1">
+              Steel
+            </mat-option>
+            <mat-option [value]="1">
+              Ply/Boards
+            </mat-option>
+          </mat-select>
+        </div>
+        
+  
+        <div class="form-group" >
+          <label class="control-label col-lg-12 col-md-12 col-sm-12 col-xs-12 add-member-label" style="margin-left: -15px !important;">Select Sub Category: </label>
+          <mat-select class="form-control" placeholder="Select Item Sub Category">
+            <mat-option [value]="0">
+              Commercial	
+            </mat-option>
+            <mat-option [value]="1">
+              BWP
+            </mat-option>
+            <mat-option [value]="0">
+              Laminated	
+            </mat-option>
+            <mat-option [value]="1">
+              Painted
+            </mat-option>
+          </mat-select>
+        </div>
+
+        <div class="form-group" >
+          <label class="control-label col-lg-12 col-md-12 col-sm-12 col-xs-12 add-member-label" style="margin-left: -15px !important;" >Item Name: </label>
+          <mat-select  placeholder="Select Item Name" class="form-control" required>
+            <input class="form-control" (keyup)="onKeyPosition($event.target.value)"  placeholder="Select Item Name">
+             <mat-option *ngFor="let option of selectedPosition" [value]="option.id">{{option.value}}</mat-option>
+          </mat-select>
+        </div>
+  
+        <div class="form-group">
+          <label class="control-label col-lg-12 col-md-12 col-sm-12 col-xs-12 add-member-label" style="margin-left: -15px !important;" >Item Code:</label>
+            <mat-select  placeholder="Select Item Code" class="form-control" required>
+              <input class="form-control" (keyup)="onKeyItemCode($event.target.value)"  placeholder="Select Item Code">
+               <mat-option *ngFor="let option of selectedItemCode" [value]="option.id">{{option.value}}</mat-option>
+            </mat-select>
+        </div>
+        <div class="form-group ">
+          <div class="row">
+            <label class="col-sm-12">Brand</label>
+            <div class="col-sm-12">
+              <mat-select class="form-control" placeholder="Select Brand">
+                <mat-option [value]="0">
+                  IGL	
+                </mat-option>
+                <mat-option [value]="1">
+                  Armstrong
+                </mat-option>
+                <mat-option [value]="0">
+                  VANGYP	
+                </mat-option>
+                <mat-option [value]="1">
+                  GYPROC
+                </mat-option>
+              </mat-select>
+            </div>
+          </div>
+       </div> 
+       <div class="form-group" >
+        <label class="control-label col-lg-12 col-md-12 col-sm-12 col-xs-12 add-member-label" style="margin-left: -15px !important;"> Length:</label>
+        <input type="text" class="form-control" placeholder="Enter Length" >
+      </div>
+      </div>
+      <div class="col-sm-6"> 
+    
+
+      <div class="form-group" >
+        <label class="control-label col-lg-12 col-md-12 col-sm-12 col-xs-12 add-member-label" style="margin-left: -15px !important;"> Width:</label>
+        <input type="text" class="form-control" placeholder="Enter Width" >
+      </div>
+      <div class="form-group" >
+        <label class="control-label col-lg-12 col-md-12 col-sm-12 col-xs-12 add-member-label" style="margin-left: -15px !important;"> Height:</label>
+        <input type="text" class="form-control" placeholder="Enter Height" >
+      </div>
+      <div class="form-group" >
+        <label class="control-label col-lg-12 col-md-12 col-sm-12 col-xs-12 add-member-label" style="margin-left: -15px !important;"> Thickenss:</label>
+        <input type="text" class="form-control" placeholder="Enter Thickenss" >
+      </div>
+
+      <div class="form-group" >
+        <label class="control-label col-lg-12 col-md-12 col-sm-12 col-xs-12 add-member-label" style="margin-left: -15px !important;"> UOM:</label>
+        <input type="text" class="form-control" placeholder="Enter UOM" >
+      </div>
+    
+  
+    
+      
+      
+      <div class="form-group" >
+        <label class="control-label col-lg-12 col-md-12 col-sm-12 col-xs-12 add-member-label" style="margin-left: -15px !important;">Quantity Sent: </label>
+        <input type="text" class="form-control" placeholder="Enter Quantity Sent" required >
+      </div>
+      <div class="form-group" *ngIf="data != null">
+        <label class="control-label col-lg-12 col-md-12 col-sm-12 col-xs-12 add-member-label" style="margin-left: -15px !important;">Quantity Received: </label>
+        <input type="text" class="form-control" placeholder="Enter Quantity Received" required >
+      </div>
+      </div>
+
+      
+    </div>
+      
+
+    </div>
+    <div class="col-sm-12" style="margin-left: -1%;margin-bottom: 3%;">
+    <mat-dialog-actions align="center"  class="pull-right" style="margin-top: 5px;">
+      <button mat-raised-button class="add-hover btn-primary pull-right" type="submit"><mat-icon>send</mat-icon>&nbsp;Save</button>
+      <button mat-raised-button type="button" class="add-dark-hover btn-default pull-right" (click)="close()"><mat-icon>cancel</mat-icon>&nbsp;Cancel</button>
+  </mat-dialog-actions>
+  </div>
+</form>
+
+
+
+

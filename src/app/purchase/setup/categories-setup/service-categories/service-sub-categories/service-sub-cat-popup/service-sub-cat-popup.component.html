@@ -1,0 +1,52 @@
+<h3 class="NewHeader">
+  {{ data ? 'Update' : 'Add' }} Sub Category
+</h3>
+
+<form>
+
+ <div mat-dialog-content>
+
+     <div class="form-group">
+         <label class="control-label col-sm-4 add-member-label"> SubCategory name: </label>
+         <div class="col-sm-8 margin-bottom-15px">
+             <input type="text" class="form-control" formControlName="JobCode" placeholder="Enter Sub Category name">
+         </div>
+     </div>
+
+     <div class="form-group">
+      <label class="control-label col-sm-4 add-member-label"  >Select Category:</label>
+      <div class="col-sm-8 margin-bottom-15px">
+        <mat-select placeholder="Select Category" class="form-control " required >
+          <mat-option value="1">Electrical</mat-option>
+          <mat-option value="2">Plumbing</mat-option>
+          <mat-option value="3">Mechanical</mat-option>
+          <mat-option value="4">Civil</mat-option>
+        </mat-select>
+      </div>
+     </div>
+
+     <div class="form-group">
+         <label class="control-label col-sm-4 add-member-label"> SubCategory Code: </label>
+         <div class="col-sm-8 margin-bottom-15px">
+             <input type="text" class="form-control" formControlName="JobCode" placeholder="Enter Sub Category Code">
+         </div>
+     </div>
+     
+
+ </div>
+
+ <mat-dialog-actions align="end" style="padding-top: 17px !important;">
+     <button 
+       (click)="close()" mat-raised-button style="background: #286ba5 !important" class="add-hover btn-success">
+         <mat-icon>send</mat-icon>
+         <span>&nbsp;Save</span>
+     </button>
+
+     <button (click)="close()" mat-raised-button class="add-dark-hover btn-default">
+         <mat-icon>cancel</mat-icon>
+         <span>&nbsp;Cancel</span>
+     </button>
+
+ </mat-dialog-actions>
+ 
+</form>

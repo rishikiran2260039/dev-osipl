@@ -1,0 +1,87 @@
+<h1 mat-dialog-title class="custom-header" style="background-color:#286ba5 !important;height:50px">{{ data ? 'Update' : 'Add'}} New Stock</h1>
+<form class="p-2">
+  <div mat-dialog-content>
+    <div class="col-sm-12">
+     
+      <div class="form-group">
+        <label class="control-label col-lg-12 col-md-12 col-sm-12 col-xs-12 add-member-label" style="margin-left: -15px !important;">Item Name: </label>
+        <mat-select placeholder=" Select Item Name" class="form-control" required >
+          <mat-option value="1">Volvo</mat-option>
+          <mat-option value="2">Caterpillar</mat-option>
+          <mat-option value="3">Mercedes</mat-option>
+          <mat-option value="4">Tata</mat-option>
+          <mat-option value="5">Volvo</mat-option>
+        </mat-select>
+      </div>
+
+      <!-- <div class="form-group">
+        <label class="control-label col-sm-4 add-member-label">
+         Select Project: </label>
+        <div class="col-sm-8">
+          <mat-select placeholder=" Select Project Code" class="form-control" required >
+            <mat-option value="1">E005KA10012</mat-option>
+            <mat-option value="2">E005KA10013</mat-option>
+            <mat-option value="3">E005KA10014</mat-option>
+            <mat-option value="4">E005KA10015</mat-option>
+            <mat-option value="5">E005KA10016</mat-option>
+          </mat-select>
+        </div>
+      </div> -->
+
+      <div class="form-group">
+        <label class="control-label col-lg-12 col-md-12 col-sm-12 col-xs-12 add-member-label" style="margin-left: -15px !important;">Item Code: </label>
+        <input type="text" disabled class="form-control" placeholder="Enter Item Code" value="FMX480" required >
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-lg-12 col-md-12 col-sm-12 col-xs-12 add-member-label" style="margin-left: -15px !important;">Item Category: </label>
+        <input type="text" disabled class="form-control" placeholder="Enter Item Category" value="Dump Truck" required >
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-lg-12 col-md-12 col-sm-12 col-xs-12 add-member-label" style="margin-left: -15px !important;">Item Sub Category: </label>
+        <input type="text" disabled class="form-control" placeholder="Enter Item Sub Category" value="Breakdown Repairs" required >
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-lg-12 col-md-12 col-sm-12 col-xs-12 add-member-label" style="margin-left: -15px !important;">Brand: </label>
+        <input type="text"  class="form-control" placeholder="Enter Item Brand" value="Volvo" required >
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-lg-12 col-md-12 col-sm-12 col-xs-12 add-member-label" style="margin-left: -15px !important;">Dimensions: </label>
+        <input type="text" disabled class="form-control" placeholder="Enter Dimensions" value="23*25*15" required >
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-lg-12 col-md-12 col-sm-12 col-xs-12 add-member-label" style="margin-left: -15px !important;">Thickness: </label>
+        <input type="text" disabled class="form-control" placeholder="Enter Thickness" value="30mm" required >
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-lg-12 col-md-12 col-sm-12 col-xs-12 add-member-label" style="margin-left: -15px !important;">UoM: </label>
+        <input type="text"  class="form-control" placeholder="Enter UoM" required >
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-lg-12 col-md-12 col-sm-12 col-xs-12 add-member-label" style="margin-left: -15px !important;">Serial Number/ Reference: </label>
+        <input type="text"  class="form-control" placeholder="Enter Serial Number/ Reference"  required >
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-lg-12 col-md-12 col-sm-12 col-xs-12 add-member-label" style="margin-left: -15px !important;">Enter Quantity: </label>
+        <input type="text"  class="form-control" placeholder="Enter Quantity"  required >
+      </div>
+  
+    </div>
+      
+
+  </div>
+
+  <mat-dialog-actions align="center"  class="pull-right" style="margin-bottom: -17px;margin-right: 15px;">
+    <button mat-raised-button class="add-hover btn-primary pull-right" type="submit"><mat-icon>send</mat-icon>&nbsp;Save</button>
+    <button mat-raised-button type="button" class="add-dark-hover btn-default pull-right" (click)="close()"><mat-icon>cancel</mat-icon>&nbsp;Cancel</button>
+</mat-dialog-actions>
+</form>
+
+

@@ -1,0 +1,84 @@
+<div fxLayout="row wrap" #resizedDiv>
+  <div class="flex-p w-100 sizeAlign">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="col-sm-12" style="margin-bottom: 5px;">
+           
+          <div class="col-sm-6">
+            
+          </div>
+              <button mat-raised-button style="cursor: pointer;margin-bottom: 5px;margin-right: -12px;margin-left: 7px;" class="pull-right  btn-default"  routerLink="/purchase/servicecontracts/arn">
+                <mat-icon>chevron_left</mat-icon> Back
+              </button>
+          <!-- <button mat-raised-button style=" color:#fff !important;cursor: pointer;margin-bottom: 5px;" class="pull-right  btn-success" matTooltip="Add Invoice"  (click)="addnewitem()" >
+            <mat-icon>add</mat-icon> Add Invoice
+          </button> -->
+        </div>
+        <div id="grid-table-container" class="table-responsive" style="margin-bottom: 20px;">
+          <table id="example2" class="table table-bordered">
+            <thead class="tbl-head">
+                <tr class="tr-grid-header">
+                    
+                    <th >WO Reference</th>
+                    <th >Invoice Reference</th>
+                    <th class="text-center">View</th>
+                    <th class="text-center">Billed</th>
+                    <th class="text-center">Transport Charges</th>
+                    <th class="text-center">Other Charges</th>
+                    <th class="text-center">Approval</th>
+            
+                    <th class="text-center">Amount</th>
+                    <th class="text-center">Actions</th>  
+                </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of items" >
+                
+                 
+                <td  >{{item.refrence}}</td>
+                <td  >{{item.partnumber}}</td>
+               <td class="text-center" style="cursor: pointer; color: blue"><a target="_blank" href="http://www.africau.edu/images/default/sample.pdf" routerLinkActive="router-link-active"><i class="fa fa-file-pdf-o"  aria-hidden="true"></i></a></td>
+                <td   class="text-center">{{item.invoiced}}</td>
+                <td   class="text-center">{{item.trans}}</td>
+                <td   class="text-center">{{item.others}}</td>
+                <td   class="text-center">{{item.duedate}}</td>
+                <td   class="text-center"><input type="checkbox"></td>
+     
+                <td class="text-center">
+                  <a style="cursor: pointer;margin-right:0px;margin-left: -5px; " matTooltip="Update Invoice">
+                    <i class="fa fa-edit" style="color: cornflowerblue; cursor: pointer;" (click)="addnewitem(item)" ></i>
+                  </a>
+                  <a mwlConfirmationPopover
+                  [popoverTitle]="popoverTitle"
+                  [popoverMessage]="popoverMessage"
+                  placement="left"
+                  (confirm)="deleteUser()"
+                  (cancel)="cancelClicked = true"
+                 >
+                  <i style="cursor: pointer;" title="Delete" class="fa fa-trash red"></i>
+              </a>
+                </td>
+              
+              
+               
+            </tr>
+
+            </tbody>
+        </table>
+
+        </div>
+        <mat-dialog-actions align="end">
+    
+          <button mat-raised-button style="background-color: #cdc8c8;" class=" pull-right"  routerLink="/purchase/servicecontracts/arn"><mat-icon>cancel</mat-icon> Close</button>
+          <button mat-raised-button class="btn-primary pull-right" routerLink="/purchase/servicecontracts/arn/add-ARN/assets" style="margin-right: 10px !important;"><mat-icon>send</mat-icon><span >
+            Save & Next</span>
+          </button>
+          <button mat-raised-button class="btn-primary pull-right" routerLink="/purchase/servicecontracts/arn/add-ARN/jobcodes" style="margin-right: 10px !important;"><mat-icon>chevron_left</mat-icon><span >Previous</span></button>
+          
+        </mat-dialog-actions>
+      </div>
+    </div>
+
+  </div>
+  
+</div>

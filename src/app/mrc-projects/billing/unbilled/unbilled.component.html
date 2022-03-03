@@ -1,0 +1,98 @@
+<div class="w-100">
+  <div class="flex-p">
+    <div class="row wrap">
+      <div class="col-sm-12 no-padding">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="row" style="margin-bottom:24px;">
+              <div class="col-xs-6 ">
+              </div>
+              <div class="col-xs-6 ">
+                <div class="flex-p">
+                  <button mat-raised-button class="pull-right  btn-primary" (click)="lineItemDialog()">
+                    <mat-icon>work_outline</mat-icon> Assign to invoice
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div id="grid-table-container" class="table-responsive">
+              <table matSort id="example2" class="table table-bordered table-hover">
+                <thead class="tbl-head">
+                  <tr>
+                    <th>Select</th>
+                    <th>Site</th>
+                    <th>SOW</th>
+                    <th>
+                      Awarded
+                    </th>
+                    <th>
+                      Fees
+                    </th>
+                    <th>
+                      Task
+                    </th>
+                    <th>
+                      Action
+                    </th>
+                    <th>
+                      Job Code
+                    </th>
+                    <th>
+                      Expense Code
+                    </th>
+                    <th>
+                      Worked
+                    </th>
+                    <th> Total</th>
+
+                    <th> Expense</th>
+                    <th>Budget Total</th>
+                    <th>Quoted Total</th>
+                    <th>Unbilled</th>
+                    <th>User Name</th>
+                    <th> Date</th>
+                    <th class="text-center">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  
+                  <tr *ngFor="let item of items">
+                    <td class="text-center"><input type="checkbox" checked="true"></td>
+                    <td>
+                      {{item.site}}
+                    </td>
+                    <td>
+                      {{item.sow}}
+                    </td>
+                    <td>{{item.awarded }}</td>
+                    <td>{{item.fees }}</td>
+                    <td>{{item.task}}</td>
+                    <td>{{item.action }}</td>
+                    <td>{{item.jobCode}}</td>
+                    <td>{{item.expenseCode }}</td>
+                    <td>{{item.worked }}</td>
+                    <td>{{item.total}}</td>
+                    <td>{{item.expense}}</td>
+                    <td>{{item.budgetTotal }}</td>
+                    <td>{{item.quotedTotal }}</td>
+                    <td>{{item.unbilled}}</td>
+                    <td>{{item.username}}</td>
+                    <td>{{item.date }}</td>
+                    <td>
+                      <a style="cursor: pointer;margin-right:10px; " matTooltip="Update Item" >
+                        <i class="fa fa-edit" style="color: cornflowerblue"></i>
+                      </a>
+                      <a><i class="fa fa-trash red" matTooltip="Delete Item"  style="cursor: pointer;"></i></a>
+                    </td>
+                  </tr>
+
+                </tbody>
+              </table>
+              <mat-paginator [pageSizeOptions]="[5, 10, 25, 50, 100]" showFirstLastButtons></mat-paginator>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

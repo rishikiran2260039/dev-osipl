@@ -1,0 +1,76 @@
+<h3 class="NewHeader">
+ Add Purchase Order
+</h3>
+
+<form>
+
+ <div mat-dialog-content>
+
+     <div class="form-group">
+         <label class="control-label col-sm-4 add-member-label">Select Project: </label>
+         <div class="col-sm-8 margin-bottom-15px">
+          <mat-select  class="form-control"   placeholder="Select Project" >
+            <mat-option>Dr.Reddys</mat-option>
+            <mat-option>Amazon</mat-option>
+            <mat-option>TATA</mat-option>
+            <mat-option>Raheja</mat-option>
+          </mat-select>
+         </div>
+     </div>
+     <div class="form-group">
+      <label class="control-label col-sm-4 add-member-label">Select Vendor: </label>
+      <div class="col-sm-8 margin-bottom-15px">
+       <mat-select  class="form-control"   placeholder="Select Vendor" >
+         <mat-option>Dr.Reddys</mat-option>
+         <mat-option>Amazon</mat-option>
+         <mat-option>TATA</mat-option>
+         <mat-option>Raheja</mat-option>
+       </mat-select>
+      </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-4 add-member-label">PO Reference: </label>
+    <div class="col-sm-8 margin-bottom-15px">
+    <input type="text" class="form-control" placeholder="Enter PO Reference" readonly>
+    </div>
+</div>
+<div class="form-group">
+  <label class="control-label col-sm-4 add-member-label">Select Indents: </label>
+  <div class="col-sm-8 margin-bottom-15px">
+   <mat-select multiple class="form-control"   placeholder="Select Indents" >
+     <mat-option>Dr.Reddys</mat-option>
+     <mat-option>Amazon</mat-option>
+     <mat-option>TATA</mat-option>
+     <mat-option>Raheja</mat-option>
+   </mat-select>
+  </div>
+</div>
+<div class="form-group">
+  <label class="control-label col-sm-4 add-member-label">PO Issued Date: </label>
+  <div class="col-sm-8 margin-bottom-15px">
+  <input type="text" class="form-control" placeholder="Enter PO Issued Date" >
+  </div>
+</div>
+<div class="form-group">
+  <label class="control-label col-sm-4 add-member-label">Default GST Rate (%): </label>
+  <div class="col-sm-8 margin-bottom-15px">
+  <input type="text" class="form-control" placeholder="Enter Default GST Rate (%)" readonly>
+  </div>
+</div>
+ </div>
+
+ <mat-dialog-actions align="end" style="padding-top: 17px !important;">
+     <button 
+       (click)="close()" mat-raised-button style="background: #286ba5 !important" class="add-hover btn-success">
+         <mat-icon>send</mat-icon>
+         <span>&nbsp;Save</span>
+     </button>
+
+     <button (click)="close()" mat-raised-button class="add-dark-hover btn-default">
+         <mat-icon>cancel</mat-icon>
+         <span>&nbsp;Cancel</span>
+     </button>
+
+ </mat-dialog-actions>
+ 
+</form>

@@ -1,0 +1,259 @@
+<div class="w-100">
+  <div class="flex-p">
+      <div class="row wrap">
+          <div class="col-sm-12 no-padding">
+              <div class="row-wrap">
+                  <div class="w-100">
+                      <div class="row">
+                          <div class="col-xs-12" style="margin-bottom: 15px;">
+                              <div class="pills">
+                                  <ul class="nav nav-pills" style="margin-left: 10px;margin-bottom: -25px;">
+                                  
+                                      <li routerLinkActive="active" routerLink="/vendor-mgnt/order-status">
+                                        <a mat-raised-button class="navtabWidth" style="margin-top: 10px;">
+                                          Order Status
+                                        </a>
+                                      </li>
+                                      <li routerLinkActive="active" routerLink="/vendor-mgnt/po-bill-status">
+                                        <a mat-raised-button class="navtabWidth" style="margin-top: 10px;">
+                                          PO / Bill Status
+                                        </a>
+                                      </li>
+                                      <li routerLinkActive="active" routerLink="/vendor-mgnt/payables">
+                                        <a mat-raised-button class="navtabWidth" style="margin-top: 10px;">
+                                          Payables
+                                        </a>
+                                      </li>
+                                   </ul>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<div fxLayout="row wrap" #resizedDiv>
+  <div class="flex-p w-100 sizeAlign">
+    <div class="row" style="margin-bottom:14px;margin-right: -23px;">
+      <div class="col-sm-12"> 
+        <!-- <button mat-raised-button class="pull-right  btn-default margin-right-10"
+        routerLink="/purchase/procurement/rfq">
+           <mat-icon>chevron_left</mat-icon> Back
+        </button> 
+        <button mat-raised-button class="pull-right  btn-primary margin-right-10"
+          (click)="addnewitem()">
+             <mat-icon>add</mat-icon> Add New Item
+        </button> -->
+        <button mat-raised-button class="pull-right  btn-primary" style="margin-right: 8px;"  (click)="openGridColumnsDialog()">
+          <mat-icon>grid_on</mat-icon> Grid Columns
+        </button>
+        <button mat-raised-button color="primary" class="pull-right filters-hover margin-right-10"
+        (click)="filterToggle = !filterToggle">
+        <mat-icon>filter_list</mat-icon> Filter
+      </button>
+        <button mat-raised-button class="pull-right  btn-default margin-right-10" >
+          <mat-icon>cloud_download</mat-icon>  Download CSV
+        </button>
+      </div>
+    </div>
+    <div fxLayout="row wrap" *ngIf="filterToggle" style="margin-bottom: 10px">
+      <div fxFlex="100" fxFlex.gt-sm fxFlex.sm class="flex-p w-100 margins">
+        <mat-card class="filter">
+          <mat-card-content>
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="col-sm-4 newMarginClass">
+                  Select Year :
+                </div>
+                <div class="col-sm-8">
+                  <mat-select class="form-control" placeholder="Select Year">
+                    <mat-option [value]="0">2016</mat-option>
+                    <mat-option [value]="1">2017</mat-option>
+                    <mat-option [value]="2">2018</mat-option>
+                    <mat-option [value]="3">2019</mat-option>
+                    <mat-option [value]="4">2020</mat-option>
+                    <mat-option [value]="5">2021</mat-option>
+                    <mat-option [value]="6">2022</mat-option>
+                  </mat-select>
+                </div>
+              </div>
+              <!-- <div class="col-sm-4">
+                <div class="col-sm-4 newMarginClass">
+                  Project Manager:
+                </div>
+                <div class="col-sm-8">
+                  <mat-select class="form-control" placeholder="Select Client">
+                    <mat-option [value]="0">Raj</mat-option>
+                    <mat-option [value]="1">Teja</mat-option>
+                    <mat-option [value]="2">Krishna</mat-option>
+                    <mat-option [value]="3">Sai</mat-option>
+                    <mat-option [value]="3">Neeraja</mat-option>
+                  </mat-select>
+                </div>
+              </div> -->
+              <!-- <div class="col-sm-4">
+                <div class="col-sm-4 newMarginClass">
+                  Status:
+                </div>
+                <div class="col-sm-8">
+                  <mat-select class="form-control" placeholder="Select Status">
+                    <mat-option [value]="0">Initiated</mat-option>
+                    <mat-option [value]="1">In Progress</mat-option>
+                    <mat-option [value]="2">Awarded</mat-option>
+                    <mat-option [value]="3">Completed</mat-option>
+                    <mat-option [value]="3">On Hold</mat-option>
+                  </mat-select>
+                </div>
+              </div>
+              <div class="col-sm-4" style="margin-top: 4px;">
+                <div class="col-sm-4 newMarginClass">
+                  Date Type:
+                </div>
+                <mat-radio-group aria-label="Select an option">
+                  <mat-radio-button value="2" style="margin-left: 8px;" checked>Start </mat-radio-button>
+                  <mat-radio-button value="3" style="margin-left: 25px;">Target</mat-radio-button>
+                </mat-radio-group>
+                </div>
+            </div>
+
+            <div class="row" style="padding-top:10px !important">
+           
+             
+
+              <div class="col-sm-4">
+                <div class="col-sm-4 newMarginClass">
+                  From Date:
+                </div>
+                <div class="col-sm-8">
+                  <input class="form-control" class="form-control" placeholder="MM/DD/YYYY" (keypress)="false"
+                    [owlDateTimeTrigger]="dt7" [owlDateTime]="dt7" name="dt7">
+                  <owl-date-time [pickerType]="'calendar'" #dt7></owl-date-time>
+                </div>
+              </div> -->
+              <!-- <div class="col-sm-4">
+                <div class="col-sm-4 newMarginClass">
+                  To Date:
+                </div>
+                <div class="col-sm-8">
+                  <input class="form-control" class="form-control" placeholder="MM/DD/YYYY" (keypress)="false"
+                    [owlDateTimeTrigger]="dt6" [owlDateTime]="dt6" name="dt6">
+                  <owl-date-time [pickerType]="'calendar'" #dt6></owl-date-time>
+                </div>
+              </div> -->
+              <div class="col-sm-6">
+                <a (click)="filterToggle = !filterToggle" class="pull-right"
+                style="font-size: 25px; cursor: pointer; margin-left: 5px;">
+                <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+              </a>
+                <button mat-raised-button class="pull-right btn-primary" style="margin-left: 10px;">
+                  <mat-icon>youtube_searched_for</mat-icon> Search
+                </button>
+                <button mat-raised-button class="pull-right" style="background-color:#37474f; color:#fff !important;">
+                  <mat-icon>settings_backup_restore</mat-icon> Clear
+                </button>
+                
+               
+
+              </div>
+            </div>
+         
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <div id="grid-table-container" class="table-responsive p-3" style="margin-bottom: 10px;">
+          <h3 class="text-center">Vendor Management - JANUARY 2022</h3>
+          <h4>MONTHLY PO RAISED VS BILL PROCESSED</h4>
+          <table id="example2" class="table table-bordered">
+            <thead class="tbl-head">
+                <tr class="tr-grid-header">
+                    <th class="text-center" rowspan="2">Sl No</th>
+                    <th class="text-center" rowspan="2">Month</th>
+                    <th class="text-center" rowspan="2">PO Raised Value</th>
+                    <th colspan="11" class="text-center">Bill Processed month wise value</th>
+                    <th rowspan="2" class="text-center">Total Bills Processed</th>
+                </tr>
+                <tr>
+                  <th class="text-center">April-2021</th>
+                  <th class="text-center">May-2021</th>
+                  <th class="text-center">June-2021</th>
+                  <th class="text-center">July-2021</th>
+                  <th class="text-center">August-2021</th>
+                  <th class="text-center">September-2021</th>
+                  <th class="text-center">October-2021</th>
+                  <th class="text-center">November-2021</th>
+                  <th class="text-center">December-2021</th>
+                  <th class="text-center">January-2022</th>
+                  <th class="text-center">February-2022</th>
+                </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of items" >
+                  <td class="text-center">{{item.refrence}}</td>
+                  <td  >{{item.months}}</td>
+                  <td  >{{item.poraised}}</td>
+                  <td class="text-center">{{item.m1}}</td>
+                  <td class="text-center">{{item.m2}}</td>
+                  <td class="text-center">{{item.m3}}</td>
+                  <td class="text-center">{{item.m4}}</td>
+                  <td class="text-center">{{item.m5}}</td>
+                  <td class="text-center">{{item.m6}}</td>
+                  <td class="text-center">{{item.m7}}</td>
+                  <td class="text-center">{{item.m8}}</td>
+                  <td class="text-center">{{item.m9}}</td>
+                  <td class="text-center">{{item.m10}}</td>
+                  <td class="text-center">{{item.m11}}</td>
+                  <td class="text-center">{{item.billprocessed}}</td>
+
+                  <!-- <td   class="text-center">{{item.invoiced}}</td> -->
+                  <!-- <td class="text-center">
+                    <a style="cursor: pointer;margin-right:0px;margin-left: -5px; " matTooltip="Edit ">
+                      <i class="fa fa-edit" style="color: cornflowerblue; cursor: pointer;" (click)="additem()" ></i>
+                    </a>
+                    <a mwlConfirmationPopover
+                    [popoverTitle]="popoverTitle"
+                    [popoverMessage]="popoverMessage"
+                    placement="left"
+                    (confirm)="deleteUser()"
+                    (cancel)="cancelClicked = true"
+                   >
+                      <i class="fa fa-trash red" matTooltip="Delete " style="cursor: pointer;"></i></a>
+                  </td> -->
+              </tr>
+              <!-- <tr>
+                <td class="text-center">22</td>
+                <td class="text-left">Safety Leader</td>
+                <td class="text-left">Incidence Rate (No of Injuries X 1000 / Ave No of Workmen)</td>
+                <td colspan="4">
+                  <textarea style="width: 100%;" rows="2">  0.05</textarea>
+                </td>
+              </tr>
+              <tr>
+                <td class="text-center">23</td>
+                <td colspan="2" class="text-center">Overall Remarks</td>
+                <td colspan="4">
+                  <textarea style="width: 100%;" rows="2">  Done to satisfaction</textarea>
+                </td>
+              </tr> -->
+            </tbody>
+        </table>
+        </div>
+        <!-- <mat-dialog-actions align="end">
+    
+          <button mat-raised-button style="background-color: #cdc8c8;" class=" pull-right"  routerLink="/purchase/servicecontracts/arn" style="margin-bottom: 20px;"><mat-icon>cancel</mat-icon> Close</button>
+          <button mat-raised-button class="btn-primary pull-right" routerLink="/purchase/servicecontracts/arn" style="margin-right: 10px !important;margin-bottom: 20px;"><mat-icon>send</mat-icon><span >
+            Save & Next</span>
+          </button>
+          <button mat-raised-button class="btn-primary pull-right" routerLink="/purchase/servicecontracts/arn/add-ARN/invoicing" style="margin-right: 10px !important;margin-bottom: 20px;"><mat-icon>chevron_left</mat-icon><span >Previous</span></button>
+          
+        </mat-dialog-actions> -->
+      </div>
+    </div>
+
+  </div>
+  
+</div>

@@ -1,0 +1,124 @@
+<div class="container-fluid">
+  <div class="w-100"style="margin-left: -6px;">
+    <div class="row">
+        <div class="col-xs-12" style="margin-bottom: 15px;">
+            <div class="pills">
+                <ul class="nav nav-pills" style="margin-left: 10px;margin-bottom: -25px;">
+                    <li routerLinkActive="active" routerLink="/purchase/servicecontracts/indent">
+                        <a mat-raised-button class="navtabWidth" 
+                        style="margin-top: 10px;">
+                           Indent
+                        </a>
+                    </li>
+                    <li routerLinkActive="active" routerLink="/purchase/servicecontracts/RfqServicecontracts">  
+                        <a mat-raised-button class="navtabWidth" 
+                        style="margin-top: 10px;">
+                            RFQ
+                        </a>
+                    </li>
+                    <li routerLinkActive="active" routerLink="/purchase/servicecontracts/QuotationsServicecontracts">
+                      <a mat-raised-button class="navtabWidth" style="margin-top: 10px;">
+                        Quotations
+                      </a>
+                    </li>
+                   
+                    <li routerLinkActive="active" routerLink="/purchase/servicecontracts/work-orders">
+                        <a mat-raised-button class="navtabWidth" style="margin-top: 10px;">
+                          Work Orders
+                        </a>
+                    </li>
+                    
+                    <li routerLinkActive="active" routerLink="/purchase/servicecontracts/service-challans">
+                        <a mat-raised-button class="navtabWidth" style="margin-top: 10px;">
+                          Service Challans
+                        </a>
+                    </li> 
+                    <li routerLinkActive="active" routerLink="/purchase/servicecontracts/arn">
+                      <a mat-raised-button class="navtabWidth" style="margin-top: 10px;">
+                        ARN
+                      </a>
+                  </li> 
+                        
+                                               
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+  <div fxLayout="row wrap" #resizedDiv>
+    <div class="flex-p w-100 sizeAlign">
+      <div class="row" style="margin-bottom:23px;">
+        <div class="col-sm-12"> 
+          <button mat-raised-button class="pull-right  btn-default margin-right-10"
+          routerLink="/purchase/servicecontracts/indent">
+             <mat-icon>chevron_left</mat-icon> Back
+          </button>
+          <button mat-raised-button class="pull-right  btn-primary margin-right-10"
+            (click)="addnewitem(null)">
+               <mat-icon>add</mat-icon> Add New Job Code
+          </button>
+          <button mat-raised-button class="pull-right  btn-default" style="margin-right: 8px;" (click)="dowloadExcelFile()">
+            <mat-icon>download</mat-icon> Download Sample
+          </button>
+          <button mat-raised-button class="pull-right  btn-default margin-right-10" >
+            Upload CSV
+          </button>
+        </div>
+      </div> 
+    <div class="row" > 
+      <div class="col-xs-12" style="overflow-x: auto">
+        <div id="grid-table-container" class="table-responsive" >
+          <table matSort id="example2" 
+          class="table table-bordered table-hover" style="margin-left: 0px!important;">
+            <thead class="tbl-head">
+              <tr>
+                <th class="text-center">Actions</th>
+                <th class="text-left">Job Code</th>
+                <th class="text-left">Job Name</th>
+                <th class="text-left">Service Category</th>
+                <th class="text-left">UoM</th>
+                <th class="text-left">Quantity Required</th>
+                <th class="text-left">Remarks</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of items">
+                <td class="text-center">
+                  <a style="cursor: pointer;margin-right:0px;margin-left: -5px; " matTooltip="Edit ">
+                    <i class="fa fa-edit" style="color: cornflowerblue; cursor: pointer;" (click)="addnewitem(item)"></i>
+                  </a>
+                  <a mwlConfirmationPopover
+                  [popoverTitle]="popoverTitle"
+                  [popoverMessage]="popoverMessage"
+                  placement="right"
+                  (confirm)="deleteUser()"
+                  (cancel)="cancelClicked = true"
+                 >
+                    <i class="fa fa-trash red" matTooltip="Delete " style="cursor: pointer;"></i></a>
+                </td>
+                <td class="text-left">{{item.ItemCode}}</td> 
+                <td class="text-left">{{item.ItemName }}</td>
+                <td style="text-align: left!important;">{{item.Category }}</td>
+                <td style="text-align: left!important;">{{item.uom }}</td>
+                <td style="text-align: left!important;">{{item.QuantityRequired }}</td>
+                <td style="text-align: left!important;">{{item.remarks }}</td>
+              </tr>
+            </tbody>
+          </table>
+          <button class="mine" mat-fab (click)="scrollGrid('right');" >
+            <mat-icon style="color:#37474f">fast_forward</mat-icon>
+          </button>
+          <button class="mine" mat-fab style="margin-right: 78px !important;" (click)="scrollGrid('left');">
+            <mat-icon style="color:#37474f">fast_rewind</mat-icon>
+          </button>
+         
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+  </div>
+
+      
+
+

@@ -1,0 +1,165 @@
+<div fxLayout="row wrap" #resizedDiv>
+    <div class="flex-p w-100">
+
+        <div class="row" style="margin-bottom:14px;">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <div class="w-100 flex-p">
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <div class="w-100 flex-p">
+                   
+                    <button mat-raised-button class="pull-right btn-primary" (click)="openEditDialog(null)">
+                        <mat-icon>person_add</mat-icon> Add User
+                    </button>
+                    <button mat-raised-button color="primary" class="pull-right filter-hover margin-right-10"
+                        (click)="filterToggle = !filterToggle">
+                        <mat-icon>filter_list</mat-icon> Filter
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div fxLayout="row wrap" *ngIf="filterToggle" style="margin-left: 5px;">
+            <div fxFlex="100" fxFlex.gt-sm fxFlex.sm class="flex-p">
+                <form [formGroup]="filterForm">
+                <mat-card class="filter">
+                    <mat-card-content>
+                        <div class="row col-sm-12">
+                            <div class="col-sm-4">
+                                <div class="col-sm-3 newMarginClass">
+                                    Keyword:
+                                </div>
+                                <div class="col-sm-9">
+                                    <input type="text" formControlName="Keyword" onCopy="return false" onPaste="return false" class="form-control"
+                                        placeholder="Search by Name, Email, Role...">
+                                </div>
+                            </div>
+                      
+                            <div class="col-sm-4">
+                                <div class="col-sm-3 newMarginClass">
+                                   Status:
+                                </div>
+                                <div class="col-sm-8">
+                                  <mat-select placeholder="Select Status" class="form-control" formControlName="Status">
+                                      <mat-option *ngFor="let option of Status" [value]="option.value">
+                                        {{option.name}}
+                                      </mat-option>                      
+                                    </mat-select>                                
+                                </div>
+                            </div>
+                          <div class="col-sm-4">
+                            <a (click)="filterToggle = !filterToggle" class="pull-right"
+                            style="font-size: 25px; cursor: pointer; margin-left: 5px">
+                            <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+                          </a>
+                            <button mat-raised-button class="pull-right btn-primary" (click)="filter()">
+                              <mat-icon>youtube_searched_for</mat-icon> Search
+                            </button>
+                         
+              
+                        
+                            <button mat-raised-button class="pull-right btn-default margin-right-10" (click)="clearFilter()">
+                              <mat-icon>settings_backup_restore</mat-icon> Clear
+                            </button>
+                          </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"></div>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </form>
+            </div>
+        </div>
+      
+        <div fxLayout="row wrap" style="margin-left: 13px;">
+            <div class="table-responsive">
+                <table id="example2" class="table table-bordered table-hover">
+                    <thead class="tbl-head">
+                        <tr class="tr-grid-header">
+                            <th>User Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Role</th>
+
+                            <th class="text-center">Role Permissions</th>
+                            <th class="text-center">Project Permissions</th>    
+                            <th class="text-center">Special Permissions</th>
+                            <th class="text-center">Two Factor</th>
+
+                            <!-- <th>User Type</th> -->
+                            <th class="text-center">Status</th>
+                            <th class="text-center">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngIf="users == null || users.length == 0">
+                            <td colspan="10" class="text-center">No records found</td>
+                        </tr>
+                        <tr *ngFor="let applicant of users">
+                            <td>{{applicant.UserName}}</td>
+                            <td>{{applicant.UserEmail}}
+                                <!-- <i *ngIf="applicant.is_verified" title="User verified" class="fa fa-check Green"
+                                aria-hidden="true"></i>
+                                <i *ngIf="!applicant.is_verified" title="User not verified" class="fa fa-times Red"
+                                aria-hidden="true"></i> -->
+                            </td>
+                            <td >{{applicant.UserPhone}}</td>
+                            <td >{{applicant.RoleName}}</td>
+
+                            <td class="text-center"><a style="cursor: pointer; color: cornflowerblue;"
+                                (click)="onpermclick(applicant)">{{applicant.rolescreens}}/{{applicant.totalscreens}}
+                                </a></td>
+                            <td class="text-center" style="color: blue;"><a routerLink="/admin/manage-users/Projectpermissions">3/5</a></td>
+                            <td class="text-center" style="color: blue;"><a routerLink="/admin/manage-users/splpermission">{{applicant.specialpermission}}</a></td>
+                            <!-- <td>{{applicant.type}}</td> -->
+                            <!-- <td>
+                                <a  [ngStyle]="{'color': applicant.vcStatus? 'blue' : 'red','cursor':'pointer'}"
+                                class="status"
+                                mwlConfirmationPopover
+                                [popoverTitle]="popoverStatusTitle"
+                                [popoverMessage]="popoverStatusMessage"
+                                placement="left"
+                                (confirm)="saveStatus();applicant.vcStatus=!applicant.vcStatus"
+                                (cancel)="cancelClicked = true">
+                                {{applicant.vcStatus?'Active':'Inactive'}}
+                            </a>
+                        </td> -->
+                        <td class="style text-center"><mat-checkbox disabled></mat-checkbox></td>
+                        <td class="text-center" style="text-align: center !important;">
+
+                            <a [ngStyle]="{'color':  applicant.IsActive? 'blue' : 'red','cursor':'pointer'}"
+                           
+                            mwlConfirmationPopover [popoverTitle]="popoverStatusTitle"
+                            [popoverMessage]="popoverStatusMessage" placement="left"
+                            (confirm)="changestatus(applicant)" (cancel)="cancelClicked = true">
+                                  <span *ngIf="!applicant.IsActive" style="color:red">Inactive</span>
+                                  <span *ngIf=" applicant.IsActive">Active</span>
+                            </a>
+                        </td>
+                        <td class=" text-center">
+                            <a style="cursor: pointer;margin-right:10px; " matTooltip="Update Item" (click)="openEditDialog(applicant)">
+                                <i class="fa fa-edit" style="color: cornflowerblue"></i>
+                              </a>
+                            <!-- <a title="Edit User" style="margin-right: 10px; cursor: pointer;" (click)="openUserDialog(applicant)">
+                                <i class="fa fa-edit"></i>
+                            </a> -->
+                            <a mwlConfirmationPopover
+                            [popoverTitle]="popoverTitle"
+                            [popoverMessage]="popoverMessage"
+                            placement="left"
+                            (confirm)="deleteUser(applicant)"
+                            (cancel)="cancelClicked = true">
+                            <i style="cursor: pointer;" title="Delete User" class="fa fa-trash red"></i>
+                        </a>
+                        
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+                <mat-paginator [length]="totalSize" [pageIndex]="currentPage" [pageSize]="pageSize"
+                    [pageSizeOptions]="[5, 10, 25, 50, 100]" showFirstLastButtons>
+                </mat-paginator>
+            </div>
+        </div>
+    </div>
+  </div>

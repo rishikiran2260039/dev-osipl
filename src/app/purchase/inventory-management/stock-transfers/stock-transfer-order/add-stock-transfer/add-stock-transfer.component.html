@@ -1,0 +1,106 @@
+<div class="NewHeader">
+  <h1 mat-dialog-title >
+    {{ data ? 'Update' : 'Add' }} Stock Transfer Request
+  </h1>
+</div>
+<form>
+<div mat-dialog-content  class="change" style="height: 300px;overflow: hidden !important;">
+<div class="col-sm-12">
+  <div class="col-sm-6">
+    <div class="row">
+      <label class="col-sm-12 add-member-label">STN Ref</label>
+      <div class="col-sm-12">
+        <input class="form-control" placeholder="STO/OTP-OM/OCT-19/10001" type="text">
+      </div>
+    </div>
+  
+    <div class="row">
+      <label class="col-sm-12 add-member-label">Date: </label>
+      <div class="col-sm-12">
+        <input type="date" class="form-control" placeholder="dd/mm/yyyy">
+      </div>
+     </div>
+ 
+  </div> 
+  <div class="col-sm-6">
+    <div class="row">
+      <label class="col-sm-12 add-member-label">Source Location(Store):</label>
+      <div class="col-sm-12">
+        <mat-select class=' select-option form-control ' placeholder="Select Source Location">
+            <mat-option >Karnataka</mat-option>
+            <mat-option >Bangalore</mat-option>
+            <mat-option >Chennai</mat-option>
+            <mat-option >Thane</mat-option> 
+            <mat-option >Delhi</mat-option>
+            <mat-option >Kanpur</mat-option>   
+        </mat-select>
+      </div>
+     </div>
+     <div class="row">
+      <label class="col-sm-12 add-member-label">Receiving Project(Store):</label>
+      <div class="col-sm-12">
+        <mat-select class=' select-option form-control ' placeholder="Select Receiving Project">
+            <mat-option >Tata Motors Ltd</mat-option>
+            <mat-option >Rajesh Exports Ltd.</mat-option>
+            <mat-option >Indian Oil Corporation Ltd.</mat-option>
+            <mat-option >NTPC Ltd.</mat-option>
+            <mat-option >Vedanta Ltd</mat-option>
+            <mat-option >Grasim Industries Ltd.</mat-option>   
+        </mat-select>
+      </div>
+     </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="row">
+      <label class="col-sm-12 add-member-label">Request Title:</label>
+      <div class="col-sm-12">
+        <input class="form-control" placeholder="Enter Request Title." type="text">
+      </div>
+    </div>
+    <div class="row">
+      <label class="col-sm-12 add-member-label">Source Project:</label>
+      <div class="col-sm-12">
+        <mat-select class=' select-option form-control ' placeholder="Select Source Project">
+            <mat-option >Singrauli</mat-option>
+            <mat-option >Usha International Ltd</mat-option>
+            <mat-option >Mallikarjuna Rao Ltd</mat-option>
+            <mat-option >BHEL Ltd</mat-option>
+            <mat-option >KTPP</mat-option>
+            <mat-option >Nagarjuna Ltd</mat-option>   
+        </mat-select>
+      </div>
+     </div>
+  
+  </div> 
+  <div class="col-sm-6">
+    <div class="row">
+      <label class="col-sm-12 add-member-label">Destination:</label>
+      <div class="col-sm-12">
+        <mat-select class=' select-option form-control ' placeholder="Select Destination">
+            <mat-option >Hyderabad</mat-option>
+            <mat-option >Kolkata</mat-option>
+            <mat-option >Pune</mat-option>
+            <mat-option >Haridwar</mat-option>
+            <mat-option >Mumbai</mat-option>
+            <mat-option >Srinagar</mat-option>   
+        </mat-select>
+      </div>
+     </div>
+  
+     <div class="row">
+      <label class="col-sm-12 add-member-label">Notes:</label>
+      <div class="col-sm-12">
+        <textarea class="form-control" placeholder="Enter Request Title." rows="2"></textarea>
+      </div>
+    </div>
+  </div> 
+  <div class="col-sm-12">
+    <mat-dialog-actions align="center"  class="pull-right" style="margin-top: 5px;">
+      <button mat-raised-button class="add-hover btn-primary pull-right" type="submit"><mat-icon>send</mat-icon>&nbsp;Save</button>
+      <button mat-raised-button type="button" class="add-dark-hover btn-default pull-right" (click)="close()"><mat-icon>cancel</mat-icon>&nbsp;Cancel</button>
+  </mat-dialog-actions>
+  </div>
+    
+</div>
+</div>
+</form>

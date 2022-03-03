@@ -1,0 +1,71 @@
+<div class="col-sm-12">
+  <mat-card class="col-sm-12" style="background: gray !important; color: #fff;">
+      <div class="col-sm-3 mb-3">
+          <label>Site Name : </label>
+          <span>&nbsp;&nbsp;Sector 56 </span>
+      </div>
+      <div class="col-sm-3 mb-3">
+          <label>Max Limit : </label>
+          <span>&nbsp;&nbsp;$ 120,000</span>
+      </div>
+      <div class="col-sm-3 mb-3">
+          <label>Contracts : </label>
+          <span>&nbsp;&nbsp;3 </span>
+      </div>
+      <div class="col-sm-3 mb-3">
+          <label class="col-sm-6">Budget Utilized : </label>
+          <span>&nbsp;&nbsp;$ 75,000</span>
+      </div>
+      <div class="col-sm-3">
+          <label>Cost Code : </label>
+          <span>&nbsp;&nbsp;M1225-A </span>
+      </div>
+      <div class="col-sm-3">
+          <label>Actual Cost : </label>
+          <span>&nbsp;&nbsp;$ 23,500 </span>
+      </div>
+      <div class="col-sm-3">
+          <label>Hours : </label>
+          <span>&nbsp;&nbsp;560</span>
+      </div>
+      <div class="col-sm-3">
+          <label style="margin-left: 8px;">Expenses : </label>
+          <span>&nbsp;&nbsp;$ 1,500 </span>
+      </div>
+  </mat-card>
+  <mat-card class="col-sm-12 margin-top-10 p-0">
+    <div class="table-responsive w-100 flex-p">
+      <table id="example2" class="table table-bordered table-hover">
+          <thead class="tbl-head">
+              <tr class="tr-grid-header">
+                  
+                  <th class="vert-align-mid">Contract Name</th>
+                  <th class="vert-align-mid">Budget</th>
+                  <th class="vert-align-mid">Tasks</th>
+                  <th class="vert-align-mid">Actions</th>
+                  <th class="vert-align-mid">Plan Hours</th>
+                  <th class="vert-align-mid">Actual Hours</th>
+                  <th class="vert-align-mid">Expenses</th>
+                  <th class="vert-align-mid">Billed</th>
+                  <th class="vert-align-mid">Paid</th>
+                  
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let item of items">
+                  <td>{{item.contractName}}</td>
+                  <td>{{item.budget}}</td>
+                  <td>{{item.task}}</td>
+                  <td>{{item.action}}</td>
+                  <td>{{item.planHours}}</td>
+                  <td>{{item.actualHours}}</td>
+                  <td>{{item.expenses}}</td>
+                  <td>{{item.billed}}</td>
+                  <td>{{item.paid}}</td>
+              </tr>
+          </tbody>
+      </table>
+      <mat-paginator [pageSizeOptions]="[5, 10, 25, 50, 100]" showFirstLastButtons></mat-paginator>
+    </div>
+  </mat-card>
+</div>

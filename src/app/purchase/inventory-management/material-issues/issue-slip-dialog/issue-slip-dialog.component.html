@@ -1,0 +1,69 @@
+<div class="NewHeader" style="background-color:#286ba5 !important; height: 50px;">
+  <h1 mat-dialog-title>
+    {{data ? 'Update' : 'Add'}} Issue Slip
+  </h1>
+</div>
+<div mat-dialog-content>
+  <form class="form-horizontal">
+    <div class="form-group">
+      <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Job Card: </label>
+      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+        <label class="control-label" style="margin-left: 10px;">233333</label>
+      </div>
+  </div>
+
+  <div class="form-group">
+    <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Date: </label>
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+        <label class="control-label">15-Oct-2019</label>
+      </div>
+    </div>
+</div>
+
+<div class="form-group">
+  <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Material Issue No.: </label>
+  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+      <label class="control-label">OM/MI/OCT-19/10005</label>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Material Issue Date: </label>
+  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+      <input type="date" class="form-control" placeholder="Enter Issue Date"  required>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Material Issued By: </label>
+  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+      <input type="text" class="form-control" placeholder="Issued By"  required>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Material Received By: </label>
+  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+      <input type="text" class="form-control" placeholder="Received By"  required>
+    </div>
+  </div>
+</div>
+
+  </form>
+
+
+</div>
+<mat-dialog-actions align="center">
+  <button mat-raised-button class="btn-primary" (click)="close()"><mat-icon>send</mat-icon><span >Save</span></button>
+  <button mat-raised-button class="add-dark-hover btn-default" (click)="close()"><mat-icon>cancel</mat-icon> Close</button>
+</mat-dialog-actions>
+
+

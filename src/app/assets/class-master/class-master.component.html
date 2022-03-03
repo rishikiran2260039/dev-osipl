@@ -1,0 +1,168 @@
+<app-assets-tabs></app-assets-tabs>
+<div class="container-fluid">
+  <div fxLayout="row wrap" #resizedDiv>
+    <div class="flex-p w-100 sizeAlign">
+      <div class="row" style="margin-bottom:23px;">
+        <div class="col-xs-6 ">
+        </div>
+        <div class="col-xs-6 ">
+          <div class="flex-p">
+            <button mat-raised-button class="pull-right  btn-primary margin-right-10" style="margin-left: 10px;"
+            (click)="addnewitem()">
+               <mat-icon>add</mat-icon> Add Asset Class
+            </button>
+            <button mat-raised-button class="pull-right  btn-default" (click)="dowloadExcelFile()">
+              <mat-icon>download</mat-icon> Download Sample Excel
+            </button>
+            <button mat-raised-button class="pull-right  btn-default margin-right-10" >
+              Upload Excel
+            </button> 
+            <button mat-raised-button color="primary" class="pull-right filters-hover margin-right-10"
+              (click)="filterToggle = !filterToggle">
+              <mat-icon>filter_list</mat-icon> Filter
+            </button>
+          </div>
+ 
+        </div>
+      </div>
+
+      <!-- Filter details -->
+      <div fxLayout="row wrap">
+        <div fxFlex="100" fxFlex.gt-sm fxFlex.sm class="flex-p w-100" *ngIf="filterToggle">
+          <mat-card class="filter">
+            <mat-card-content>
+              <div class="row col-sm-12">
+                <div class="col-sm-4">
+                  <div class="col-sm-4 newMarginClass">Search by Keyword:</div>
+                  <div class="col-sm-8">
+                    <input type="text" placeholder="Search by Keyword" class="form-control">
+                  </div>
+                </div>
+
+                <div class="col-sm-4">
+                  <div class="col-sm-5 newMarginClass">Select Item Category:</div>
+                  <div class="col-sm-7">
+                    <mat-select placeholder=" Select Item Category" class="form-control"  required >
+                      <mat-option value="1">Tiles</mat-option>
+                      <mat-option value="2">Wood</mat-option>
+                      <mat-option value="3">Pipes</mat-option>
+                      <mat-option value="4">Wood</mat-option>
+                      <mat-option value="5">Tiles</mat-option>
+                    </mat-select>
+                  </div>
+                </div>
+
+                <div class="col-sm-4">
+                  <div class="col-sm-6 newMarginClass">Select Item Sub Category:</div>
+                  <div class="col-sm-6">
+                    <mat-select placeholder=" Select Sub Category" class="form-control"  required >
+                      <mat-option value="1">Flooring</mat-option>
+                      <mat-option value="2">Plywood</mat-option>
+                      <mat-option value="3">Plastic Pipes</mat-option>
+                      <mat-option value="4">Plywood</mat-option>
+                      <mat-option value="5">Flooring</mat-option>
+                    </mat-select>
+                  </div>
+                </div>
+
+                <div class="col-sm-4" style="margin-top: 7px;">
+                  <div class="col-sm-4 newMarginClass">Select Brand:</div>
+                  <div class="col-sm-8">
+                    <mat-select placeholder=" Select Brand" class="form-control"  required >
+                      <mat-option value="1">Volvo</mat-option>
+                      <mat-option value="2">Caterpillar</mat-option>
+                      <mat-option value="3">Kirlosker</mat-option>
+                      <mat-option value="4">Ashok Layland</mat-option>
+                      <mat-option value="5">Volvo</mat-option>
+                    </mat-select>
+                  </div>
+                </div>
+
+              <div class="col-sm-4">
+                  <!-- <div class="col-sm-4 newMarginClass">Search Availability:</div>
+                  <div class="col-sm-8">
+                    <mat-select class="form-control" placeholder="Select Availability">
+                      <mat-option [value]="0">
+                        Available
+                      </mat-option>
+                      <mat-option [value]="1">
+                        Low stock
+                      </mat-option>
+                      <mat-option [value]="2">
+                        Out of stock
+                      </mat-option>
+                  </mat-select>
+                  </div> -->
+                </div> 
+
+                <div class="col-sm-4" style="margin-top: 7px;">
+                  <div class="col-lg-7" style="margin-left: 36px;">
+                    <button mat-raised-button class="pull-right btn-primary">
+                      <mat-icon>youtube_searched_for</mat-icon> Search
+                    </button>
+
+                  </div>
+                  <div class="col-lg-1">
+                    <button mat-raised-button style="background-color:#37474f; color:#fff !important;">
+                      <mat-icon>settings_backup_restore</mat-icon> Clear
+                    </button>
+
+                  </div>
+                  <a (click)="filterToggle = !filterToggle" class="pull-right"
+                    style="font-size: 25px; cursor: pointer;">
+                    <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+            </mat-card-content>
+          </mat-card>
+
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12" style="overflow-x: auto">
+          <div id="grid-table-container" class="table-responsive">
+            <table matSort id="example2" class="table table-bordered table-hover" style="margin-left: 0px!important;">
+              <thead class="tbl-head">
+                <tr>
+                  <th class="text-center">Actions</th>
+                  <th class="text-center">Class Name</th>
+                  <th class="text-center">Asset Name</th>
+                  <th class="text-center">Asset Category</th>
+                  <th class="text-center">Asset OEM</th>
+                  <th class="text-center">Asset Model</th>
+                  <th class="text-center">Quantity</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of items">
+                  <td class="text-center" style="font-size: 18px;">
+                    <a style="cursor: pointer;margin-right:10px; " matTooltip="Update Item" (click)="uploaddoc()">
+                      <i class="fa fa-edit" style="color: cornflowerblue"></i>
+                    </a>
+                    <a mwlConfirmationPopover
+                    [popoverTitle]="popoverTitle"
+                    [popoverMessage]="popoverMessage"
+                    placement="right"
+                    (confirm)="deleteUser()"
+                    (cancel)="cancelClicked = true"
+                   >
+                      <i class="fa fa-trash red" matTooltip="Delete Item" style="cursor: pointer;"></i></a>
+                  </td>
+                  <td class="text-center">{{item.eqpModel}}</td>
+                  <td class="text-center">{{item.partNo}}</td>
+                  <td class="text-center">{{item.brand}}</td>
+                  <td class="text-center">{{item.partMake}}</td>
+                  <td class="text-center">{{item.qty}}</td>
+                  <td class="text-center" style="color: cornflowerblue;cursor: pointer;">{{item.tItems}}</td>
+                </tr>
+              </tbody>
+            </table>
+            <mat-paginator [pageSizeOptions]="[5, 10, 25, 50, 100]" showFirstLastButtons></mat-paginator>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

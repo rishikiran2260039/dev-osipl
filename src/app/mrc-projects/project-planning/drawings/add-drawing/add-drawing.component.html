@@ -1,0 +1,75 @@
+
+<div class="NewHeader">
+  <h1 mat-dialog-title>
+      {{user ? 'Update' : 'Add'}} Drawing
+    <!-- Add Drawing -->
+  </h1>
+</div>
+<div mat-dialog-content>
+  
+  <form class="form-horizontal">
+    <div class="form-group">
+      <label class="control-label col-sm-4 add-member-label">Drawing Serial #: </label>
+      <div class="col-sm-8">
+        <input type="text" class="form-control" id="step" placeholder="Enter Drawing Serial">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-4 add-member-label">Drawing Name: </label>
+      <div class="col-sm-8">
+        <input type="text" class="form-control" id="step" placeholder="Enter Drawing Name">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-4 add-member-label">Description: </label>
+      <div class="col-sm-8">
+        <input type="text" class="form-control" id="step" placeholder="Enter Description">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-4 add-member-label">BOQ: </label>
+      <div class="col-sm-8">
+        <mat-select class="form-control" placeholder="Select BOQ">
+          <mat-option [value]="0">3.1</mat-option>
+          <mat-option [value]="1">4.1</mat-option>
+          <mat-option [value]="2">5.1</mat-option>
+        </mat-select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-4 add-member-label">Activity: </label>
+      <div class="col-sm-8">
+        <mat-select class="form-control" placeholder="Select Activity">
+          <mat-option [value]="0">3.2</mat-option>
+          <mat-option [value]="1">4.2</mat-option>
+          <mat-option [value]="2">5.2</mat-option>
+        </mat-select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-4 add-member-label">Version: </label>
+      <div class="col-sm-8">
+        <input type="text" class="form-control" id="step" placeholder="Enter Version">
+      </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-4 add-member-label">Prepared: </label>
+        <div class="col-sm-8">
+          <input type="text" class="form-control" id="step" placeholder="Enter Prepared By">
+        </div>
+      </div>
+    <div class="form-group">
+      <label class="control-label col-sm-4 add-member-label">Upload: </label>
+      <div class="col-sm-8">
+        <input type="file">
+      </div>
+    </div>
+    
+    
+  </form>
+</div>
+<mat-dialog-actions align="end">
+  <button mat-raised-button class="btn-primary" (click)="saveStep()" [mat-dialog-close]="'test'"><mat-icon>send</mat-icon><span *ngIf="user"> Save</span><span
+    *ngIf="!user">Update</span></button>
+    <button mat-raised-button class="CancelClass" (click)="close()"><mat-icon>cancel</mat-icon> Close</button>
+  </mat-dialog-actions> 

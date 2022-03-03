@@ -1,0 +1,79 @@
+<div class="container-fluid">
+  <div fxLayout="row wrap" #resizedDiv>
+    <div class="flex-p w-100 sizeAlign">
+      <!-- <div class="row" style="margin-bottom:23px;">
+        <div class="col-sm-12"> 
+          <button mat-raised-button class="pull-right  btn-default margin-right-10"
+          routerLink="/purchase/material-management/requisition">
+             <mat-icon>chevron_left</mat-icon> Back
+          </button>
+          <button mat-raised-button class="pull-right  btn-primary margin-right-10"
+             (click)="openGridColumnsDialog()">
+             <mat-icon>grid_on</mat-icon> Grid Columns
+          </button>
+          <button mat-raised-button class="pull-right  btn-primary margin-right-10"
+            (click)="addnewitem(null)">
+               <mat-icon>add</mat-icon> Add New Item
+          </button>
+        </div>
+      </div> -->
+    <div class="row" >
+      
+      <div class="col-xs-12" style="overflow-x: auto">
+        <button (click)="addparts()" mat-raised-button class="btn-primary pull-right" style=" margin-right: 5px;">Add Parts</button>
+
+        <button mat-raised-button class="pull-right  btn-default margin-right-10" routerLink="/projects/projectdashboard/project-servicecontracts/servicechallans">
+          <mat-icon>chevron_left</mat-icon> Back
+       </button>
+       
+        <div id="grid-table-container" class="table-responsive" style="margin-top: 50px;">
+          
+          <table matSort id="example2" 
+          class="table table-bordered table-hover" 
+          style="margin-left: 0px!important;">
+            <thead class="tbl-head">
+              <tr>
+               
+        
+                <th class="text-center">Part Number	</th>
+                <th class="text-center">Part Name</th>
+                <th class="text-center">Serial Number</th>
+                <th class="text-center">Action</th>
+          
+               
+              </tr>
+
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of items">
+                
+                <td class="text-center">{{item.PartNumberz}}</td>
+                <td class="text-center">{{item.PartNamez}}</td> 
+                <td class="text-center">{{item.Serialnumber}}</td>
+                <td class="text-center">
+                  <a style="cursor: pointer;margin-right:0px;margin-left: -5px; " matTooltip="Edit Part">
+                    <i class="fa fa-edit" style="color: cornflowerblue; cursor: pointer;" (click)="addparts()"></i>
+                  </a>
+                     
+                  <a><i class="fa fa-trash red" matTooltip="Delete Part" 
+                    style="cursor: pointer;"></i></a>
+                </td>
+                <!-- <td class="text-center">{{item.Action}}</td> -->
+<!--                 
+                <td class="text-center">{{item.OrderQty}}</td>
+                <td class="text-center">{{item.AvailQty}}</td>
+                <td class="text-center">{{item.unitprice}}</td>
+                <td class="text-center">{{item.DeliveryDate}}</td> -->
+              </tr>
+
+
+
+            </tbody>
+          </table>
+          
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+ </div>   

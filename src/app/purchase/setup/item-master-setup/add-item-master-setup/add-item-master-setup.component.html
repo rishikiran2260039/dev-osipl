@@ -1,0 +1,162 @@
+<div class="NewHeader">
+  <h1 mat-dialog-title>
+     {{ data ? 'Update' : 'Add'}} Item
+  </h1>
+</div>
+
+<div mat-dialog-content>
+    <form class="form-horizontal">
+  
+    <div class="form-group">
+     <label class="control-label col-sm-4 add-member-label">Item Name : </label>
+     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 margin-bottom-15px">              
+            
+      <input type="text" class="form-control" placeholder="Enter Item Name">
+         
+     </div>
+    </div>
+    <div class="form-group">
+     <label class="control-label col-sm-4 add-member-label">Item Code: </label>
+     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 margin-bottom-15px">              
+            
+      <input type="text" class="form-control" placeholder="Enter Item Code">
+         
+     </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-4 add-member-label">Item Category : </label>
+      <div class="col-sm-8 margin-bottom-15px">
+        <mat-select class="form-control" placeholder="Select Item Category">
+          <mat-option [value]="0">
+            Plaster & Boards	
+          </mat-option>
+          <mat-option [value]="1">
+            Steel
+          </mat-option>
+          <mat-option [value]="1">
+            Ply/Boards
+          </mat-option>
+        </mat-select>
+      </div>
+  </div>
+  <div class="form-group">
+      <label class="control-label col-sm-4 add-member-label">Item Sub Category : </label>
+      <div class="col-sm-8 margin-bottom-15px">
+        <mat-select class="form-control" placeholder="Select Item Sub Category">
+          <mat-option [value]="0">
+            Commercial	
+          </mat-option>
+          <mat-option [value]="1">
+            BWP
+          </mat-option>
+          <mat-option [value]="0">
+            Laminated	
+          </mat-option>
+          <mat-option [value]="1">
+            Painted
+          </mat-option>
+        </mat-select>
+      </div>
+  </div>
+  <!-- <div class="form-group">
+    <label class="control-label col-sm-4 add-member-label">Item Type : </label>
+    <div class="col-sm-8 margin-bottom-15px">
+      <mat-select class="form-control" placeholder="Select Item Type">
+        <mat-option [value]="0">
+          Plain	
+        </mat-option>
+        <mat-option [value]="1">
+          Duraline Board
+        </mat-option>
+        <mat-option [value]="0">
+          ACOUSTICAL	
+        </mat-option>
+        <mat-option [value]="1">
+          Duraline Board
+        </mat-option>
+      </mat-select>
+    </div>
+</div> -->
+    <div class="form-group">
+     <label class="control-label col-sm-4 add-member-label">Brand: </label>
+     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 margin-bottom-15px">              
+            
+      <mat-select class="form-control" placeholder="Select Brand">
+        <mat-option [value]="0">
+          IGL	
+        </mat-option>
+        <mat-option [value]="1">
+          Armstrong
+        </mat-option>
+        <mat-option [value]="0">
+          VANGYP	
+        </mat-option>
+        <mat-option [value]="1">
+          GYPROC
+        </mat-option>
+      </mat-select>
+         
+     </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-4 ">Length : </label>
+      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 margin-bottom-15px">              
+         
+       <input type="text" class="form-control" placeholder="Enter length">
+      </div>
+     </div>
+     <div class="form-group">
+      <label class="control-label col-sm-4 ">Width : </label>
+      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 margin-bottom-15px">              
+         
+       <input type="text" class="form-control" placeholder="Enter Width">
+      </div>
+     </div>
+     <div class="form-group">
+      <label class="control-label col-sm-4 ">Height : </label>
+      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 margin-bottom-15px">              
+         
+       <input type="text" class="form-control" placeholder="Enter Height">
+      </div>
+     </div>
+     <div class="form-group">
+      <label class="control-label col-sm-4 ">Thickness : </label>
+      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 margin-bottom-15px">              
+         
+       <input type="text" class="form-control" placeholder="Enter Thickness">
+      </div>
+     </div>
+     <div class="form-group">
+      <label class="control-label col-sm-4 add-member-label">Uom : </label>
+      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 margin-bottom-15px">              
+         
+       <input type="text" class="form-control" placeholder="Enter Uom">
+      </div>
+     </div>
+     <div class="form-group">
+      <label class="control-label col-sm-4 add-member-label">Unit Rate : </label>
+      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 margin-bottom-15px">              
+         
+       <input type="text" class="form-control" placeholder="Enter Unit Rate">
+      </div>
+     </div>
+     
+    <div class="form-group">
+     <label class="control-label col-sm-4 add-member-label">Lead Time (Days): </label>
+     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 margin-bottom-15px">              
+        
+      <input type="text" class="form-control" placeholder="Enter Lead Time in days">
+     </div>
+    </div>
+    <div class="form-group">
+     <label class="control-label col-sm-4 add-member-label">Remarks: </label>
+     <div class="col-sm-8 margin-bottom-15px">
+         <textarea type="text" class="form-control" placeholder="Enter Remarks"></textarea>
+     </div>
+    </div>
+    </form>
+</div>
+<mat-dialog-actions align="end" style="padding-bottom: 10px;">
+    <button mat-raised-button class="btn-primary"  [mat-dialog-close]="'test'"><mat-icon>send</mat-icon><span>Save</span></button>
+    <button mat-raised-button class="add-dark-hover btn-default" (click)="close()"><mat-icon>cancel</mat-icon>Close</button>
+</mat-dialog-actions> 

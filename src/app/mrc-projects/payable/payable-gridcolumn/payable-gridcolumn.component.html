@@ -1,0 +1,34 @@
+<div class="NewHeader" style="background-color:#286ba5 !important;height:50px">
+  <h1 mat-dialog-title>Grid View Configuration </h1>
+</div>
+<p>Please select the required columns in the grid, to view grid with specific columns</p>
+<div mat-dialog-content style="overflow:hidden!important;">
+  <form class="form-horizontal" novalidate [formGroup]="gridColumnForm" style="margin-top:10px">
+    <mat-checkbox class="col-sm-4" [checked]="true">Vendor</mat-checkbox>
+    <mat-checkbox class="col-sm-4" [checked]="true">Billing Period</mat-checkbox>
+    <mat-checkbox class="col-sm-4" [checked]="true">Invoice Number</mat-checkbox>
+    <mat-checkbox class="col-sm-4" [checked]="true">Invoice Date</mat-checkbox>
+    <mat-checkbox class="col-sm-4" [checked]="true">BIlling Type</mat-checkbox>
+    <mat-checkbox class="col-sm-4" [checked]="true">Invoice Amount</mat-checkbox>
+    <mat-checkbox class="col-sm-4" [checked]="true">GST Amount</mat-checkbox>
+    <mat-checkbox class="col-sm-4" [checked]="true">Total Amount</mat-checkbox>
+    <mat-checkbox class="col-sm-4" [checked]="true">Due Date</mat-checkbox>
+    <mat-checkbox class="col-sm-4" [checked]="true">Payment Received Date</mat-checkbox>
+    <mat-checkbox class="col-sm-4" [checked]="true">Payment Ref No</mat-checkbox>
+    <mat-checkbox class="col-sm-4" [checked]="true">Payment Mode</mat-checkbox>
+    <mat-checkbox class="col-sm-4" [checked]="true">TDS Amount</mat-checkbox>
+    <mat-checkbox class="col-sm-4" [checked]="true">Remarks</mat-checkbox>
+    <mat-checkbox class="col-sm-4" [checked]="true">Pending Amount</mat-checkbox>
+    <mat-checkbox class="col-sm-4" [checked]="true">Doc</mat-checkbox>
+    <mat-checkbox class="col-sm-4" [checked]="true">Actions</mat-checkbox>
+  </form>
+</div>
+<mat-dialog-actions align="end">
+  <button mat-raised-button (click)="close()" style="color: rgb(7, 10, 7); background-color: #e0e0e0;">
+    <mat-icon>cancel</mat-icon> Close
+  </button>
+  <button mat-raised-button class="btn-primary" (click)="saveGridColumns()" [mat-dialog-close]="'test'">
+    <mat-icon>send</mat-icon> Configure
+  </button>
+
+</mat-dialog-actions>

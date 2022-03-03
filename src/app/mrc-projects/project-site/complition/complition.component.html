@@ -1,0 +1,50 @@
+<div class="col-sm-12 mt-4">
+  <mat-card class="col-sm-12 p-0">
+    <div class="table-responsive w-100 p-0">
+      <table id="example2" class="table table-bordered table-hover">
+        <thead class="tbl-head">
+          <tr class="tr-grid-header">
+
+            <th class="vert-align-mid">Task</th>
+            <th class="vert-align-mid">Actions</th>
+            <th class="vert-align-mid">Start</th>
+            <th class="vert-align-mid">End</th>
+            <th class="vert-align-mid">Finish (ETA)</th>
+            <th class="vert-align-mid">Status</th>
+            <th class="vert-align-mid">Progress</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Task 1</td>
+            <td>Action 1</td>
+            <td>1-05-2021</td>
+            <td>10-05-2021</td>
+            <td>-</td>
+            <td>Process</td>
+            <td class="text-center">
+              <mat-progress-bar style="height:20px" class="example-margin" [color]="'blue'" [mode]="mode" [value]="50"
+                [bufferValue]="bufferValue">
+              </mat-progress-bar>
+            </td>
+          </tr>
+          <tr>
+            <td>Task 2</td>
+            <td>Action 2</td>
+            <td>1-05-2021</td>
+            <td>10-05-2021</td>
+            <td>10-05-2021</td>
+            <td>Completed</td>
+            <td class="text-center">
+              <mat-progress-bar style="height:20px" class="example-margin" [color]="color" [mode]="mode" [value]="100"
+                [bufferValue]="bufferValue">
+              </mat-progress-bar>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <mat-paginator [pageSizeOptions]="[5, 10, 25, 50, 100]" showFirstLastButtons></mat-paginator>
+    </div>
+  </mat-card>
+
+</div>

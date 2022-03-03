@@ -1,0 +1,115 @@
+<h1 mat-dialog-title class="custom-header" style="background-color:#286ba5 !important;height:50px">{{ data ? 'Update' : 'Add'}} New Item</h1>
+<form class="p-2">
+  <div mat-dialog-content>
+    <div class="col-sm-12">
+
+<div class="row">
+  <div class="col-6">
+    <div class="form-group" >
+      <label class="control-label col-lg-12 col-md-12 col-sm-12 col-xs-12 add-member-label" style="margin-left: -15px !important;" >Item Name: </label>
+      <mat-select  placeholder="Select Item Name" class="form-control" required>
+        <input class="form-control" (keyup)="onKeyPosition($event.target.value)"  placeholder="Select Item Name">
+         <mat-option *ngFor="let option of selectedPosition" [value]="option.id">{{option.value}}</mat-option>
+      </mat-select>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-lg-12 col-md-12 col-sm-12 col-xs-12 add-member-label" style="margin-left: -15px !important;" >Item Code:</label>
+        <mat-select  placeholder="Select Item Code" class="form-control" required>
+          <input class="form-control" (keyup)="onKeyItemCode($event.target.value)"  placeholder="Select Item Code">
+           <mat-option *ngFor="let option of selectedItemCode" [value]="option.id">{{option.value}}</mat-option>
+        </mat-select>
+    </div>
+         
+    <div class="form-group ">
+      <div class="row">
+        <label class="col-sm-12">Brand</label>
+        <div class="col-sm-12">
+          <mat-select placeholder="Select Brand" class="form-control">
+            <mat-option>volvo</mat-option>
+            <mat-option>Caterpillar</mat-option>
+            <mat-option>Kirloskar</mat-option>
+            <mat-option>Ashok Leyland</mat-option>
+            <mat-option> Tata</mat-option>
+        </mat-select>
+        </div>
+      </div>
+   </div> 
+      
+   <div class="form-group" >
+    <label class="control-label col-lg-12 col-md-12 col-sm-12 col-xs-12 add-member-label" style="margin-left: -15px !important;" >Item Category: </label>
+    <mat-select placeholder="Select Item Category" class="form-control" >
+      <mat-option value="1">Dump Truck</mat-option>
+      <mat-option value="2">Backhoe Loader</mat-option>
+      <mat-option value="3">Backhoe Loader</mat-option>
+      <mat-option value="4">Dump Truck</mat-option>
+      <mat-option value="5">Backhoe Loader</mat-option>
+      
+    </mat-select>
+  </div>
+  
+
+  <div class="form-group" >
+    <label class="control-label col-lg-12 col-md-12 col-sm-12 col-xs-12 add-member-label" style="margin-left: -15px !important;">Item Sub Category: </label>
+    <mat-select placeholder="Select Item Sub Category" class="form-control" required > 
+      <mat-option value="1">Breakdown Repairs</mat-option>
+      <mat-option value="2">Running Maintenance</mat-option>
+      <mat-option value="3">Breakdown Repairs</mat-option>
+      <mat-option value="4">Accident Repairs</mat-option> 
+      <mat-option value="4">Accident Repairs</mat-option>
+    </mat-select>
+  </div>
+
+  <div class="form-group" >
+    <label class="control-label col-lg-12 col-md-12 col-sm-12 col-xs-12 add-member-label" style="margin-left: -15px !important;"> Length:</label>
+    <input type="text" class="form-control" placeholder="Enter Item Name" disabled value="245 CM">
+  </div>
+  </div>
+  <div class="col-6">
+    <div class="form-group" >
+      <label class="control-label col-lg-12 col-md-12 col-sm-12 col-xs-12 add-member-label" style="margin-left: -15px !important;"> Width:</label>
+      <input type="text" class="form-control" placeholder="Enter Item Name" disabled value="50 CM">
+    </div>
+    <div class="form-group" >
+      <label class="control-label col-lg-12 col-md-12 col-sm-12 col-xs-12 add-member-label" style="margin-left: -15px !important;"> Height:</label>
+      <input type="text" class="form-control" placeholder="Enter Item Name" disabled value="100 CM">
+    </div>
+  
+    <div class="form-group" >
+      <label class="control-label col-lg-12 col-md-12 col-sm-12 col-xs-12 add-member-label" style="margin-left: -15px !important;"> Thickness:</label>
+      <input type="text" class="form-control" placeholder="Enter Item Type" disabled value="30mm" >
+    </div>
+  
+    
+  <div class="form-group" >
+    <label class="control-label col-lg-12 col-md-12 col-sm-12 col-xs-12 add-member-label" style="margin-left: -15px !important;"> UOM:</label>
+    <input type="text" class="form-control" placeholder="Enter UOM" >
+  </div>
+  
+  
+  <div class="form-group" >
+    <label class="control-label col-lg-12 col-md-12 col-sm-12 col-xs-12 add-member-label" style="margin-left: -15px !important;">Quantity Required: </label>
+    <input type="text" class="form-control" placeholder="Enter Quantity Required" required >
+  </div>
+  </div>
+</div>
+
+     
+
+</div>
+
+    
+      
+
+    </div>
+
+    <mat-dialog-actions align="center"  class="pull-right" style="margin-bottom: -17px;margin-right: 15px;">
+      <button mat-raised-button class="add-hover btn-primary pull-right" type="submit"><mat-icon>send</mat-icon>&nbsp;Save</button>
+      <button mat-raised-button type="button" class="add-dark-hover btn-default pull-right" (click)="close()"><mat-icon>cancel</mat-icon>&nbsp;Cancel</button>
+  </mat-dialog-actions>
+</form>
+
+
+
+
+

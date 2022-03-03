@@ -1,0 +1,172 @@
+<div class="w-100">
+  <div class="flex-p">
+      <div class="row wrap">
+          <div class="col-sm-12 no-padding">
+              <div class="row-wrap">
+                  <div class="w-100">
+                      <div class="row">
+                          <div class="col-xs-12" style="margin-bottom: 15px;">
+                              <div class="pills">
+                                  <ul class="nav nav-pills" style="margin-left: 10px;margin-bottom: -18px;">
+                                      <li routerLinkActive="active" routerLink="/purchase/inventory-management/grn">
+                                          <a mat-raised-button class="navtabWidth" style="margin-top: 10px;">
+                                              GRN
+                                          </a>
+                                      </li>
+                                      <!-- <li routerLinkActive="active" routerLink="/purchase/inventory-management/gate-passes">
+                                        <a mat-raised-button class="navtabWidth" style="margin-top: 10px;">
+                                          Gate Passes
+                                        </a>
+                                      </li> -->
+                                      <li routerLinkActive="active" routerLink="/purchase/inventory-management/stock-transfers">
+                                          <a mat-raised-button class="navtabWidth" style="margin-top: 10px;">
+                                           Stock Transfers
+                                          </a>
+                                      </li>
+                                      
+                                      <li routerLinkActive="active" routerLink="/purchase/inventory-management/material-issues">
+                                          <a mat-raised-button class="navtabWidth" style="margin-top: 10px;">
+                                            Material Issues
+                                          </a>
+                                      </li>  
+                                      <!-- <li routerLinkActive="active" routerLink="/purchase/inventory-management/inventory-analysis">
+                                          <a mat-raised-button class="navtabWidth" style="margin-top: 10px;">
+                                            inventory analysis
+                                          </a>
+                                      </li>                                  -->
+                                  </ul>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<div class="container-fluid">
+  <div fxLayout="row wrap" #resizedDiv>
+    <div class="flex-p w-100 sizeAlign">
+      <div class="row" style="margin-bottom:23px;">
+        <div class="col-sm-12"> 
+          <button mat-raised-button class="pull-right  btn-default margin-right-10"
+          routerLink="/purchase/inventory-management/stock-transfers/ActiveStockTransfers">
+             <mat-icon>chevron_left</mat-icon> Back
+          </button>
+          <!-- <button mat-raised-button class="pull-right  btn-primary margin-right-10"
+             (click)="openGridColumnsDialog()">
+             <mat-icon>grid_on</mat-icon> Grid Columns
+          </button> -->
+          <button mat-raised-button class="pull-right  btn-primary margin-right-10"
+            (click)="addnewitem(null)">
+               <mat-icon>add</mat-icon> Add New Item
+          </button>
+          <button mat-raised-button class="pull-right  btn-default margin-right-10"
+         >
+             <mat-icon>cloud_download</mat-icon> Download Sample
+        </button>
+        <button mat-raised-button class="pull-right  btn-default margin-right-10"
+        >
+           <mat-icon>cloud_upload</mat-icon> Upload CSV
+      </button>
+        </div>
+      </div>
+    <div class="row" >
+      <div class="col-xs-12" style="overflow-x: auto">
+        <div id="grid-table-container" class="table-responsive" >
+          <table matSort id="example2" class="table table-bordered table-hover" style="margin-left: 0px!important;">
+            <thead class="tbl-head">
+              <tr>
+                <th class="text-center">Actions</th>
+                <th class="text-left">Item Name</th>
+                <th class="text-left">Item Code</th>
+                <th  class="text-left">Item Category</th>
+                <th class="text-left">Item Sub Category</th>
+                <!-- <th class="text-left">Item Type</th> -->
+                <th class="text-left">Brand</th>
+                <th class="text-left" style="width: 100px;">Length</th>
+                <th class="text-left" style="width: 100px;">Width</th>
+                <th class="text-left" style="width: 100px;">Height</th>
+                <th class="text-left">Thickness</th>
+                <th class="text-left">UOM</th>
+                <th class="text-center">Available Qty</th>
+                <th class="text-center">Quantity Sent</th>
+                <th class="text-center">Received</th>
+                <th class="text-center">Quantity Received</th>
+               
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of items">
+                <td class="text-center">
+                  <a style="cursor: pointer;margin-right:0px;margin-left: -5px; " matTooltip="Edit ">
+                    <i class="fa fa-edit" style="color: cornflowerblue; cursor: pointer;" (click)="addnewitem(item)"></i>
+                  </a>
+                  <a mwlConfirmationPopover
+          
+                  [popoverTitle]="popoverTitle"
+                  [popoverMessage]="popoverMessage"
+                  placement="right"
+                  (confirm)="deleteUser()"
+                  (cancel)="cancelClicked = true"
+                 >
+                  <i style="cursor: pointer;" title="Delete BOM" class="fa fa-trash red"></i>
+              </a>
+                </td>
+                <td class="text-left">{{item.ItemName }}</td>
+                <td class="text-left">{{item.ItemCode}}</td>
+                <td class="text-left">{{item.Category}}</td>
+                          <td class="text-left">{{item.SubCategory}}</td>
+                          <!-- <td class="text-left">{{item.type}}</td> -->
+                          <td class="text-left">{{item.Make}}</td>
+                          <td class="text-left" style="width: 100px;">{{item.length}}</td>
+                          <td class="text-left" style="width: 100px;">{{item.width}}</td>
+                          <td class="text-left" style="width: 100px;">{{item.height}}</td>
+                          <td class="text-left">{{item.thick}}</td>
+                <td class="text-left">{{item.uom}}</td>
+               
+                <!-- <td class="text-center" style="color: blue;cursor: pointer;" routerLink="/purchase/availablequantityrequisition" >{{item.avilablestock}}</td> -->
+                <!-- <td class="text-center"  style="color: blue; cursor: pointer;"
+                (click)="AvailbalePopup()"> -->
+                <td class="text-center" >
+
+                {{item.avilablestock}}</td>
+               
+                <td style="text-align: center!important;">
+                  {{item.QuantityRequired}}</td>       
+                  <td style="text-align: center!important;">
+                   <input type="checkbox"></td>       
+                   <td style="text-align: center!important;">
+                    {{item.QuantityRequired}}</td> 
+                <!-- <td class="text-center">{{item.AdjustmentDate}}</td>
+                <td class="text-center">{{item.Doneby}}</td>
+                <td class="text-center">{{item.PartModel}}</td>
+                <td class="text-center">{{item.EqptCode }}</td>
+                <td class="text-center">{{item.EqptName }}</td>
+                <td class="text-center">{{item.PhysicalStock}}</td>
+                <td class="text-center">{{item.PreviousStock }}</td>
+                <td class="text-center">{{item.AdjustmentQty}}</td>
+                <td class="text-center">{{item.RevisedBookStock}}</td> -->
+                
+              </tr>
+            </tbody>
+          </table>
+          
+          <button class="mine" mat-fab (click)="scrollGrid('right');" >
+            <mat-icon style="color:#37474f">fast_forward</mat-icon>
+          </button>
+
+          <button class="mine" mat-fab style="margin-right: 78px !important;" 
+          (click)="scrollGrid('left');">
+            <mat-icon style="color:#37474f">fast_rewind</mat-icon>
+          </button>
+          
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+  </div>
+
+      
+

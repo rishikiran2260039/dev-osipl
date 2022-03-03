@@ -1,0 +1,73 @@
+<div class="NewHeader">
+  <h1 mat-dialog-title>
+     {{ data ? 'Update' : 'Add'}} New Item
+  </h1>
+</div>
+<form>
+  <div mat-dialog-content>
+    <div class="col-sm-12">
+      <div class="col-sm-6"> 
+        <div class="form-group" >
+          <label class="control-label col-lg-12 col-md-12 col-sm-12 col-xs-12 add-member-label" style="margin-left: -15px !important;" >Item Name: </label>
+          <input type="text" class="form-control" placeholder="Enter Item Name" >
+        </div>
+        
+        
+          <div class="form-group ">
+            <div class="row">
+              <label class="col-sm-12 add-member-label">Part Number:</label>
+                <div class="col-sm-12">
+                  <mat-select placeholder="Enter Part Number" class="form-control">
+                    <mat-option value="1">B229900003680</mat-option>
+                    <mat-option value="1">421-60-35170</mat-option>
+                    <mat-option value="1">B229900003680</mat-option>
+                    <mat-option value="1">421-60-35170</mat-option>
+                    <mat-option value="1">521-60-34512</mat-option>
+                 </mat-select>
+                </div>
+            </div>
+         </div>
+          
+          <div class="form-group ">
+              <div class="row">
+                <label class="col-sm-12 add-member-label">Part Make</label>
+                <div class="col-sm-12">
+                  <mat-select placeholder="Enter Part Make" class="form-control">
+                    <mat-option>volvo</mat-option>
+                    <mat-option>Caterpillar</mat-option>
+                    <mat-option>Kirloskar</mat-option>
+                    <mat-option>Ashok Leyland</mat-option>
+                    <mat-option> Tata</mat-option>
+                </mat-select>
+                </div>
+              </div>
+           </div>
+  
+          
+      </div>
+      <div class="col-sm-6"> 
+       <div class="form-group"  >
+        <label class="control-label col-lg-12 col-md-12 col-sm-12 col-xs-12 add-member-label" style="margin-left: -15px !important;"> Required Quantity: </label>
+        <input type="text" class="form-control" placeholder="Enter Quantity Required" required >
+       </div>
+       <div class="form-group"  >
+        <label class="control-label col-lg-12 col-md-12 col-sm-12 col-xs-12 add-member-label" style="margin-left: -15px !important;">Required By: </label>
+        <input type="date" class="form-control" placeholder="Enter Quantity Required" required >
+       </div>
+      </div>
+
+      
+    </div>
+      
+
+    </div>
+
+    <mat-dialog-actions align="end">
+        <button mat-raised-button class="add-hover btn-primary" type="submit" (click)="close()"><mat-icon>send</mat-icon>&nbsp;Save</button>
+        <button mat-raised-button type="button" class="add-dark-hover btn-default" (click)="close()"><mat-icon>cancel</mat-icon>&nbsp;Cancel</button>
+    </mat-dialog-actions>
+</form>
+
+
+
+

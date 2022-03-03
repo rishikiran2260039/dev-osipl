@@ -1,0 +1,91 @@
+<div fxLayout="row wrap" #resizedDiv>
+  <div class="flex-p w-100 sizeAlign">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="col-sm-12" style="margin-bottom: 5px;">
+           
+          <div class="col-sm-6">
+            
+          </div>
+              <button mat-raised-button style="cursor: pointer;margin-bottom: 5px;margin-right: -12px;margin-left: 7px;" class="pull-right  btn-default"  routerLink="/purchase/servicecontracts/arn">
+                <mat-icon>chevron_left</mat-icon> Back
+              </button>
+          <!-- <button mat-raised-button style=" color:#fff !important;cursor: pointer;margin-bottom: 5px;" class="pull-right  btn-success" matTooltip="Add Invoice"  (click)="addnewitem()" >
+            <mat-icon>add</mat-icon> Add Perfomance
+          </button> -->
+        </div>
+        <div id="grid-table-container" class="table-responsive" style="margin-bottom: 10px;">
+          <table id="example2" class="table table-bordered">
+            <thead class="tbl-head">
+                <tr class="tr-grid-header">
+                    <th class="text-center" rowspan="2">Sl No</th>
+                    <th class="text-center" rowspan="2">Scope</th>
+                    <th class="text-center" rowspan="2">Description</th>
+                    <th colspan="4" class="text-center">Grade</th>
+                </tr>
+                <tr>
+                  <th class="text-center">Excellent</th>
+                  <th class="text-center">Good</th>
+                  <th class="text-center">Average</th>
+                  <th class="text-center">Poor</th>
+              
+                </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of items" >
+                  <td class="text-center">{{item.refrence}}</td>
+                  <td  >{{item.partnumber}}</td>
+                  <td  >{{item.desc}}</td>
+                  <td class="text-center"><input type="radio"></td>
+                  <td class="text-center"><input type="radio"></td>
+                  <td class="text-center"><input type="radio"></td>
+                  <td class="text-center"><input type="radio"></td>
+
+                  <!-- <td   class="text-center">{{item.invoiced}}</td> -->
+                  <!-- <td class="text-center">
+                    <a style="cursor: pointer;margin-right:0px;margin-left: -5px; " matTooltip="Edit ">
+                      <i class="fa fa-edit" style="color: cornflowerblue; cursor: pointer;" (click)="additem()" ></i>
+                    </a>
+                    <a mwlConfirmationPopover
+                    [popoverTitle]="popoverTitle"
+                    [popoverMessage]="popoverMessage"
+                    placement="left"
+                    (confirm)="deleteUser()"
+                    (cancel)="cancelClicked = true"
+                   >
+                      <i class="fa fa-trash red" matTooltip="Delete " style="cursor: pointer;"></i></a>
+                  </td> -->
+              </tr>
+              <tr>
+                <td class="text-center">22</td>
+                <td class="text-left">Safety Leader</td>
+                <td class="text-left">Incidence Rate (No of Injuries X 1000 / Ave No of Workmen)</td>
+                <td colspan="4">
+                  <textarea style="width: 100%;" rows="2">  0.05</textarea>
+                </td>
+              </tr>
+              <tr>
+                <td class="text-center">23</td>
+                <td colspan="2" class="text-center">Overall Remarks</td>
+                <td colspan="4">
+                  <textarea style="width: 100%;" rows="2">  Done to satisfaction</textarea>
+                </td>
+              </tr>
+            </tbody>
+        </table>
+        </div>
+        <mat-dialog-actions align="end">
+    
+          <button mat-raised-button style="background-color: #cdc8c8;" class=" pull-right"  routerLink="/purchase/servicecontracts/arn" style="margin-bottom: 20px;"><mat-icon>cancel</mat-icon> Close</button>
+          <button mat-raised-button class="btn-primary pull-right" routerLink="/purchase/servicecontracts/arn" style="margin-right: 10px !important;margin-bottom: 20px;"><mat-icon>send</mat-icon><span >
+            Save & Next</span>
+          </button>
+          <button mat-raised-button class="btn-primary pull-right" routerLink="/purchase/servicecontracts/arn/add-ARN/invoicing" style="margin-right: 10px !important;margin-bottom: 20px;"><mat-icon>chevron_left</mat-icon><span >Previous</span></button>
+          
+        </mat-dialog-actions>
+      </div>
+    </div>
+
+  </div>
+  
+</div>

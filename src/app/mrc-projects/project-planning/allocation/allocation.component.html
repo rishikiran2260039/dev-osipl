@@ -1,0 +1,152 @@
+
+<div fxLayout="row wrap" #resizedDiv>
+  <div class="flex-p w-100 sizeAlign">
+<div class="row" style="margin-bottom:7px;">
+  <div class="col-xs-6 ">
+  </div>
+  <div class="col-xs-6 ">
+      <div class="flex-p">
+        <button mat-raised-button class="pull-right  btn-primary" (click)="opencontactDialog()">
+            <mat-icon>add</mat-icon> Add Allocation
+        </button>
+          
+          <button mat-raised-button color="primary" class="pull-right filters-hover margin-right-10"
+          (click)="filterToggle = !filterToggle">
+          <mat-icon>filter_list</mat-icon> Filter
+      </button>
+      
+  </div>
+  
+</div>
+</div>
+
+
+<div fxLayout="row wrap" *ngIf="filterToggle">
+    <div fxFlex="100" fxFlex.gt-sm fxFlex.sm class="flex-p w-100 margins">
+        <mat-card class="filter">
+            <mat-card-content>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="col-sm-4 newMarginClass">
+                            Keyword: 
+                        </div>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" placeholder="Enter Keyword"  >
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="col-sm-4 newMarginClass">
+                            Resource Type: 
+                        </div>
+                        <div class="col-sm-8">
+                          <mat-select name="" id="" class="form-control" placeholder="Select Resource type">
+                            <mat-option [value]=0>Raw Materials</mat-option>
+                            <mat-option [value]=1>Machinery</mat-option>
+                            <mat-option [value]=2>Plants</mat-option>
+                            <mat-option [value]=3>Tools</mat-option>
+                            <mat-option [value]=4>No. of Workers</mat-option>
+                            <mat-option [value]=5>Subcontractors</mat-option>
+                            <mat-option [value]=6>Agencies</mat-option>
+
+                          </mat-select>                      </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="col-sm-4 newMarginClass">
+                            Resource Name: 
+                        </div>
+                        <div class="col-sm-8">
+                          <mat-select class="form-control" placeholder="Search by Resource name">
+                           <mat-option>Crane</mat-option>
+                           <mat-option>Screws</mat-option>
+                           <mat-option>EarthMover</mat-option>
+                           <mat-option>Concreat Mixer</mat-option>
+                           <mat-option>Power Crane</mat-option>
+                          </mat-select>
+                        </div>
+                    </div>
+                </div>
+                
+               
+                <div class="row" style="padding-top:10px !important">
+                  
+                    <div class="col-lg-1" style="margin-left:80%!important;">
+                        <button mat-raised-button  class="pull-right btn-primary"><mat-icon>youtube_searched_for</mat-icon> Search</button>
+                    </div>
+                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="margin-left: -18px;">
+                        <button mat-raised-button style="background-color:#37474f; color:#fff !important" ><mat-icon>settings_backup_restore</mat-icon> Clear</button>
+                    </div>
+                    <a (click)="filterToggle = !filterToggle" class="pull-right" style="font-size: 25px; cursor: pointer; margin-left: 5px;">
+                        <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+                    </a>
+                    
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+  </div>
+
+
+<div class="row">
+  <div class="col-xs-12">
+      <div id="grid-table-container" class="table-responsive">
+          <table matSort id="example2" class="table table-bordered table-hover">
+              <thead class="tbl-head">
+                  <tr>
+                      
+                      <th class="text-left">Resource Type</th>                      
+                      <th class="text-left">Resource Name</th>
+                      <th class="text-center">Quantity</th>
+                      <th class="text-left">Remarks</th>
+                      <th class="text-left">Issued To</th>
+                      <th class="text-center">Issued Date</th>
+                      <th class="text-center">Return Date</th>
+                      <th >Issued By</th>
+                    
+                      <th class="text-center" style="width: 112px!important;">Actions</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let item of items">
+                      
+                  <!-- <td style="text-align: center!important;">{{item.projectNumber}}</td> -->
+                  
+                  <td style="text-align: left!important;">{{item.resourcetype }}</td>
+                  <td style="text-align: left!important;">{{item.resourcename }}</td>
+                  <td style="text-align: center!important;">{{item.quantity }}</td>
+                  
+                  <td style="text-align: left!important;">{{item.remarks }}</td>
+                  <td style="text-align: left!important;">{{item.issuedto }}</td>
+                  <td style="min-width: 70px !important; text-align: center!important;">
+                    {{item.allocation}}   
+                  </td>
+                  <td style="min-width: 70px !important; text-align: center!important;">
+                    {{item.returnDate}}   
+                  </td>
+                  <td style="min-width: 70px !important;">
+                    {{item.issuedBy}}   
+                  </td>
+         
+                  
+
+
+      <td  class="text-center editDel">
+          <a style="cursor: pointer;margin-right:10px; " matTooltip="Update Item" (click)="opencontactDialog1(item)">
+
+              <i class="fa fa-edit" style="color: cornflowerblue"></i>
+          </a>
+          <a ><i class="fa fa-trash red" matTooltip="Delete Item"  style="cursor: pointer;"></i></a>
+      </td> 
+  </tr>
+ 
+</tbody>
+</table>
+<mat-paginator
+[pageSizeOptions]="[5, 10, 25, 50, 100]"
+showFirstLastButtons></mat-paginator>
+
+</div>
+</div>
+</div>
+
+  </div>
+</div>

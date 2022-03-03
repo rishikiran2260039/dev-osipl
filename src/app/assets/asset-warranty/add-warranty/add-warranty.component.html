@@ -1,0 +1,89 @@
+<h3 class="NewHeader">
+  {{ data ? 'Update' : 'Add' }} Contract
+</h3>
+
+<form>
+
+ <div mat-dialog-content>
+  <form class="form-horizontal">
+  <div class="form-group">
+    <label class="control-label col-sm-4 add-member-label">Asset Class: </label>
+    <div class="col-sm-8 margin-bottom-15px">
+      <mat-select class="form-control" placeholder="Select Asset Class">
+        <mat-option [value]="0">
+          Machines	
+        </mat-option>
+      </mat-select>
+    </div>
+</div>
+<div class="form-group">
+  <label class="control-label col-sm-4 add-member-label">Asset: </label>
+  <div class="col-sm-8 margin-bottom-15px">
+    <mat-select class="form-control" placeholder="Select Asset">
+      <mat-option [value]="0">
+        Drilling Machine	
+      </mat-option>
+    </mat-select>
+  </div>
+</div>
+<div class="form-group">
+  <label class="control-label col-sm-4 add-member-label">Contract Type: </label>
+  <div class="col-sm-8 margin-bottom-15px">
+    <mat-select class="form-control" placeholder="Select Contract Type">
+      <mat-option [value]="0">
+        AMC
+      </mat-option>
+      <mat-option [value]="0">
+        Warranty
+      </mat-option>
+    </mat-select>
+  </div>
+</div>
+     <div class="form-group">
+         <label class="control-label col-sm-4 add-member-label">Upload FIle: </label>
+         <div class="col-sm-8 margin-bottom-15px">
+             <input type="file">
+         </div>
+     </div>
+     <div class="form-group">
+      <label class="control-label col-sm-4 add-member-label">Start Date: </label>
+      <div class="col-sm-8 margin-bottom-15px">
+          <input type="date" class="form-control">
+      </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-4 add-member-label">Expiry Date: </label>
+    <div class="col-sm-8 margin-bottom-15px">
+        <input type="date" class="form-control">
+    </div>
+</div>
+<div class="form-group">
+  <label class="control-label col-sm-4 add-member-label">Service Provider: </label>
+  <div class="col-sm-8 margin-bottom-15px">
+      <input type="text" class="form-control" placeholder="Enter Service Provider">
+  </div>
+</div>
+<!-- <div class="form-group">
+  <label class="control-label col-sm-4 add-member-label">Service History: </label>
+  <div class="col-sm-8 margin-bottom-15px">
+      <input type="text" class="form-control" placeholder="Enter Service History">
+  </div>
+</div> -->
+  </form>
+ </div>
+
+ <mat-dialog-actions align="end" style="padding-top: 17px !important;">
+     <button 
+       mat-raised-button style="background: #286ba5 !important" class="add-hover btn-success">
+         <mat-icon>send</mat-icon>
+         <span>&nbsp;Save</span>
+     </button>
+
+     <button  mat-raised-button class="add-dark-hover btn-default">
+         <mat-icon>cancel</mat-icon>
+         <span>&nbsp;Cancel</span>
+     </button>
+
+ </mat-dialog-actions>
+ 
+</form>

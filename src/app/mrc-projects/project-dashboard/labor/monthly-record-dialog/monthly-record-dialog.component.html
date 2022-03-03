@@ -1,0 +1,74 @@
+<h3 class="custom-header" style="font-weight: 300; margin-bottom: 10px !important;" mat-dialog-title>
+  Monthly Record
+</h3>
+
+<form>
+
+ <div mat-dialog-content>
+
+        <div class="form-group">
+          <label class="control-label col-sm-4 add-member-label">Select Month:</label>
+          <mat-select class='col-sm-8 select-option form-control margin-bottom-15px' placeholder="-- Select Month --">
+              <mat-option [value]="1">January</mat-option>
+              <mat-option [value]="2">February</mat-option>
+              <mat-option [value]="3">March</mat-option>
+              <mat-option [value]="4">April</mat-option>
+              <mat-option [value]="5">May</mat-option>
+              <mat-option [value]="6">June</mat-option>
+              <mat-option [value]="7">July</mat-option>
+              <mat-option [value]="8">August</mat-option>
+              <mat-option [value]="9">September</mat-option>
+              <mat-option [value]="10">October</mat-option>
+              <mat-option [value]="11">November</mat-option>
+              <mat-option [value]="12">December</mat-option>
+          </mat-select>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-sm-4 add-member-label">Select Year:</label>
+        <mat-select class='col-sm-8 select-option form-control margin-bottom-15px' placeholder="-- Select Year --">
+            <mat-option [value]="1">2020</mat-option>
+            <mat-option [value]="2">2021</mat-option>
+            <mat-option [value]="3">2022</mat-option>
+        </mat-select>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-4 add-member-label">Select Skill Category:</label>
+      <mat-select class='col-sm-8 select-option form-control margin-bottom-15px' placeholder="-- Select Skill Category --">
+          <mat-option [value]="1">Plumber</mat-option>
+          <mat-option [value]="2">Electrician</mat-option>
+          <mat-option [value]="3">Painter</mat-option>
+      </mat-select>
+  </div>
+
+     <div class="form-group">
+         <label class="control-label col-sm-4 add-member-label">Requirement: </label>
+         <div class="col-sm-8 margin-bottom-15px p-0">
+             <input type="number" class="form-control" placeholder="Enter Required Number">
+         </div>
+     </div>
+
+     <div class="form-group">
+         <label class="control-label col-sm-4 add-member-label">Remarks: </label>
+         <div class="col-sm-8 margin-bottom-15px p-0">
+             <input type="text" class="form-control" placeholder="Enter Remarks">
+         </div>
+     </div>
+     
+ </div>
+
+ <mat-dialog-actions align="center" style="padding-top: 17px !important;">
+     <button 
+       (click)="close()" mat-raised-button style="background: #286ba5 !important" class="add-hover btn-success">
+         <mat-icon>send</mat-icon>
+         <span>&nbsp;Save</span>
+     </button>
+
+     <button (click)="close()" mat-raised-button class="add-dark-hover btn-default">
+         <mat-icon>cancel</mat-icon>
+         <span>&nbsp;Cancel</span>
+     </button>
+
+ </mat-dialog-actions>
+</form>

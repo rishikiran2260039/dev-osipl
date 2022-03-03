@@ -1,0 +1,70 @@
+<div class="container-fluid" style="margin-top: 10px;">
+  <div fxLayout="row wrap" #resizedDiv>
+    <div class="flex-p w-100 sizeAlign ">
+      <div class="col-xs-12 mt-3 mb-3 mr-0" >
+        <button type="button" class="btn btn-success pull-right " style="margin-top: -15px;" (click)=" NewGatePassPopupIn(null)">
+          New Gate Pass
+         </button>
+      </div>
+      
+      <div class="row">
+        <div class="col-xs-12">
+          <div id="grid-table-container" class="table-responsive">
+            <table matSort id="example2" class="table table-bordered table-hover">
+              <thead class="tbl-head">
+                <tr>
+                  <th class="text-center" style="width: 112px!important;">Actions</th>
+                  <th >Context</th>
+                  <th>Gate Pass Ref </th>
+                  <th>Issued To</th>
+                  <th >Issued By</th>
+                  <th class="text-center">Date Issued </th>
+                  <th>Purpose</th>
+                  <th >Vehicle Number</th>
+                  <th >Driver Name</th>
+                  <th class="text-center">Driver Contact</th>
+                  <th class="text-center">Direction</th>
+                  <th class="text-center">Remarks</th>
+                  
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of items">
+                  <td class="text-center editDel">
+                    <a style="cursor: pointer;margin-right:0px;margin-left: -5px; "
+                        matTooltip="Update " (click)=" NewGatePassPopupIn(item)">
+                        <i class="fa fa-edit" style="color: cornflowerblue"></i>
+                    </a>
+                    <a><i class="fa fa-trash red" matTooltip="Delete "
+                            style="cursor: pointer;"></i></a>
+                    <a matTooltip="Archive"><mat-icon style="color: cornflowerblue;font-size: 18px;" >
+                       move_to_inbox </mat-icon></a>                                    
+                   </td>
+                  <td >{{item.Context}}</td>
+                  <td >{{item.gatepassref}}</td>
+                  <td >{{item.issuedto}}</td>
+                  <td >{{item.issuedby}}</td>
+                  <td class="text-center">{{item.dateissued}}</td>
+                  <td >{{item.purpose}}</td>
+                  <td >{{item.vehiclenumber}}</td>
+                  <td>{{item.drivername}}</td>
+                  <td class="text-center" >{{item.drivercontact}}</td>
+                  <td class="text-center" >{{item.direction}}</td>
+                  <td class="text-center" >{{item.Remarks}}</td>
+                 
+                </tr>
+              </tbody>
+            </table>
+            <button class="mine" mat-fab (click)="scrollGrid('right');" >
+              <mat-icon style="color:#37474f">fast_forward</mat-icon>
+            </button>
+            <button class="mine" mat-fab style="margin-right: 78px !important;" (click)="scrollGrid('left');">
+              <mat-icon style="color:#37474f">fast_rewind</mat-icon>
+            </button>
+            <mat-paginator [pageSizeOptions]="[5, 10, 25, 50, 100]" showFirstLastButtons></mat-paginator>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>

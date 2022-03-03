@@ -1,0 +1,63 @@
+<div class="NewHeader" style="background-color:#286ba5 !important; height: 50px;">
+  <h1 mat-dialog-title>
+    {{ data ? 'Update' : 'Add'}}  Template
+  </h1>
+</div>
+
+
+
+<div mat-dialog-content>
+  <form class="form-horizontal">
+    <div style="padding: 0px 30px !important;">
+      <div class="form-group">
+        <p class="control-label col-sm-4 add-member-label">Type:</p>
+        <div class="col-sm-8">
+          <mat-select class="form-control" placeholder="Select">
+            <mat-option [value]="0">Purchase Order</mat-option>
+            <mat-option [value]="0">Work Order</mat-option>
+          </mat-select>
+        </div>
+      </div>
+      <div class="form-group">
+        <p class="control-label col-sm-4 add-member-label">Subject:</p>
+        <div class="col-sm-8">
+          <mat-select class="form-control" placeholder="Select">
+            <mat-option [value]="0">ACKNOWLEDGEMENT COPY</mat-option>
+            <mat-option [value]="0">DELIVERY DATE</mat-option>
+            <mat-option [value]="0">PAYMENT TERMS</mat-option>
+            <mat-option [value]="0">TAX EXEMPTION</mat-option>
+            <mat-option [value]="0">EXPORT LICENCE</mat-option>
+            <mat-option [value]="0">RISK OF LOSS</mat-option>
+            <mat-option [value]="0">FITNESS OF GOODS/PACKING</mat-option>
+            <mat-option [value]="0">WARRANTY CLAUSE</mat-option>
+            <mat-option [value]="0">FORCE MAJEURE</mat-option>
+            <mat-option [value]="0">INDEMNIFICATION</mat-option>
+            <mat-option [value]="0">ASSIGNMENT AND INSOLVENCY</mat-option>
+            <mat-option [value]="0">USE OF NAME, EMBLEM OR OFFICIAL SEAL OF THE WHO</mat-option>
+            <mat-option [value]="0">ARBITRATION</mat-option>
+            <mat-option [value]="0">PRIVILEGES AND IMMUNITIES</mat-option>
+          </mat-select>
+        </div>
+      </div>
+      <div class="form-group">
+        <p class="control-label col-sm-4 add-member-label">Narration:</p>
+        <div class="col-sm-8">
+          <textarea type="text" maxlength="300" class="form-control" style="height: 150px;" >Purchase Orders: In case of failure by the Vendor to perform under the terms and Conditions of the Purchase Order, including but not limited to failure to obtain necessary export Licence , or to make delivery of all or part of the goods by the agreed delivery date or dates, Option Matrix Ltd may, after giving the Vendor reasonable notice to perform and without prejudice to any other rights or remedies, exercise one or more of the following rights:
+            (a) Procure all or part of the goods from other sources, in which event Option Matrix may
+            hold the Vendor responsible for any excess cost occasioned thereby.
+            (b) Refuse to accept delivery of all or part of the goods.
+            (c) Terminate the Purchase Order. ice to perform
+            and without prejudice to any other rights or remedies, exercise one or more.</textarea>
+        </div>
+      </div>
+      
+    </div>
+  </form>
+</div>
+<mat-dialog-actions align="end">
+
+  <button mat-raised-button class="btn-success" (click)="close()">Submit</button>
+  <button mat-raised-button class="add-dark-hover btn-default" (click)="close()">Cancel</button>
+</mat-dialog-actions>
+
+

@@ -1,0 +1,273 @@
+
+<button mat-raised-button  class="pull-right btn-default margin-right-10"
+(click)="backClicked()">
+       <mat-icon>chevron_left</mat-icon> Back
+    </button>
+   <div class="row-wrap" style="margin-top: 10px;">
+    <div class="w-100">
+            <div style="margin-bottom: 15px;">
+                <div class="pills">
+                    <ul class="nav nav-pills" style="margin-left: 10px;">
+                      
+                       <li routerLinkActive="active">
+                            <a mat-raised-button (click)="daily('daily')" id="daily"  class="navtabWidth" style="margin-top: 10px;" [routerLink]="['/projects/project-reports/'+'daily']">
+                                Daily (4)
+                            </a>
+                        </li> 
+                        <li routerLinkActive="active">
+                          <a mat-raised-button (click)="daily('weekly')" id="weekly"  class="navtabWidth" style="margin-top: 10px;" [routerLink]="['/projects/project-reports/'+'weekly']">
+                            Weekly (6)
+                          </a>
+                        </li>
+                        <li routerLinkActive="active">
+                          <a mat-raised-button (click)="daily('monthly')" id="monthly"  class="navtabWidth" style="margin-top: 10px;" [routerLink]="['/projects/project-reports/'+'monthly']">
+                            Monthly (8)
+                          </a>
+                        </li>
+                      
+                    
+                    </ul>
+                </div>
+                <!-- <button mat-raised-button class="btn-primary" (click)="openEditDialog(null)">
+                  <mat-icon>person_add</mat-icon> Add Report
+              </button> -->
+              <!-- <button (click)="back()" mat-raised-button style="background: #f7f7fc !important;margin-right: 15px;"
+              class="pull-right add-hover">
+              <span>&nbsp;Back</span>
+          </button> -->
+            
+            </div>
+
+
+
+
+    </div>
+</div>
+<div fxLayout="row wrap" #resizedDiv>
+  <div class="flex-p w-100">
+    <!-- <div class="w-100 flex-p" style="margin-left: 86%;"> 
+        <button mat-raised-button color="primary" class="filter-hover margin-right-10" 
+            (click)="filterToggle = !filterToggle">
+            <mat-icon>filter_list</mat-icon> Filter
+        </button>
+        <button mat-raised-button class="btn-primary" style="margin-left: 8px;" (click)="openEditDialog(null)">
+          <mat-icon>person_add</mat-icon> Add Report
+      </button>
+    </div> -->
+    <div class="row" style="margin-bottom:7px;">
+        <div class="col-xs-2 ">
+        </div>
+        <div class="col-xs-10 ">
+            <div class="flex-p">
+                <button mat-raised-button class="pull-right  btn-primary"  (click)="openEditDialog(null)">
+                    <mat-icon>person_add</mat-icon> Add Report
+                </button>
+                <button mat-raised-button class="pull-right  btn-default margin-right-10" href="http://www.africau.edu/images/default/sample.pdf" download>
+    
+                    <mat-icon>download</mat-icon>Download Sample
+                </button>
+              
+                <button mat-raised-button color="primary" class="pull-right filters-hover margin-right-10"
+                    (click)="filterToggle = !filterToggle">
+                    <mat-icon>filter_list</mat-icon> Filter
+                </button> 
+
+            </div>
+
+        </div>
+    </div>
+      <!-- <div class="row" style="margin-bottom:14px;">
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+              <div class="w-100 flex-p">
+              </div>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+              <div class="w-100 flex-p">
+                 
+                  <button mat-raised-button class="pull-right btn-primary" (click)="openEditDialog(null)">
+                      <mat-icon>person_add</mat-icon> Add Report
+                  </button>
+                  <button mat-raised-button color="primary" class="pull-right filter-hover margin-right-10"
+                      (click)="filterToggle = !filterToggle">
+                      <mat-icon>filter_list</mat-icon> Filter
+                  </button>
+              </div>
+          </div>
+      </div> -->
+
+      <div fxLayout="row wrap" *ngIf="filterToggle" style="margin-left: 5px;">
+          <div fxFlex="100" fxFlex.gt-sm fxFlex.sm class="flex-p">
+              <form [formGroup]="filterForm">
+              <mat-card class="filter">
+                  <mat-card-content>
+                      <div class="row col-sm-12">
+                          <div class="col-sm-4">
+                              <div class="col-sm-3 newMarginClass">
+                                  Keyword:
+                              </div>
+                              <div class="col-sm-9">
+                                  <input type="text" formControlName="Keyword" onCopy="return false" onPaste="return false" class="form-control"
+                                      placeholder="Search by keyword">
+                              </div>
+                          </div>
+                          <div class="col-sm-4">
+                            <div class="col-sm-2 newMarginClass">
+                                Date Range:
+                            </div>
+                            <div class="col-sm-5">
+                                <input type="date" class="form-control" placeholder="Select From Date ">
+
+                            </div>
+                            <div class="col-sm-5">
+                                <input type="date" class="form-control" placeholder="Select To Date ">
+
+                            </div>
+                        </div>
+                     <div class="col-sm-4">
+                        <a (click)="filterToggle = !filterToggle" class="pull-right"
+                        style="font-size: 25px; cursor: pointer; margin-left: 5px;">
+                        <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+                      </a>
+                        <button mat-raised-button class="pull-right btn-primary" style="margin-left: 15px;" (click)="filter()">
+                            <mat-icon>youtube_searched_for</mat-icon> Search
+                        </button>
+                        <button mat-raised-button class="pull-right btn-default" 
+                              (click)="clearFilter()">
+                              <mat-icon>settings_backup_restore</mat-icon>  Clear
+                              </button>
+                     </div>
+                     
+                    
+                      </div>
+
+                  </mat-card-content>
+              </mat-card>
+          </form>
+          </div>
+      </div>
+    
+      <div fxLayout="row wrap" style="margin-left: 13px;">
+          <div class="table-responsive">
+              <table id="example2" class="table table-bordered table-hover" *ngIf="ismonthly != true" >
+                  <thead class="tbl-head">
+                      <tr class="tr-grid-header">
+                          <th style="width: 15%;">Date</th>
+                          <th>Report Summary</th>
+                          <th class="text-center" style="width: 15%;">Document</th>
+                          <th class="text-center" style="width: 15%;">Submitted By</th>
+                          <th class="text-center" style="width: 15%;">Actions</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr *ngFor="let applicant of tableList">
+                        <td>{{applicant.date}}
+                      
+                        </td>
+                        <td>{{applicant.subject}}
+                      
+                        </td>
+                        <td class="text-center">
+                            <a style="color: blue;cursor: pointer;" *ngIf="applicant.status == 'View'" target="_blank" href="http://www.africau.edu/images/default/sample.pdf" routerLinkActive="router-link-active" >{{applicant.status}}</a>
+                           
+                            <a mwlConfirmationPopover
+                            *ngIf="applicant.status == 'View'" 
+                            [popoverTitle]="popoverTitle"
+                            [popoverMessage]="popoverMessage"
+                            placement="left"
+                            (confirm)="deleteUser()"
+                            (cancel)="cancelClicked = true"
+                           >
+                            <i style="cursor: pointer;" title="Delete User" class="fa fa-trash red"></i>
+                        </a>
+                        <a style="color: blue;cursor: pointer;" *ngIf="applicant.status == 'Add'" (click)="uploaddoc()"  routerLinkActive="router-link-active" >Add</a>
+                            
+                          </td>
+                          <td class="text-center">{{applicant.subjectby}}
+                      
+                          </td>
+                        
+                         
+                      <td class="editDel text-center">
+                          <a title="Edit User" style="margin-right: 10px; cursor: pointer;" (click)="openEditDialog(applicant.intApplicantId)">
+                              <i class="fa fa-edit"></i>
+                          </a>
+                          <a mwlConfirmationPopover
+                          [popoverTitle]="popoverTitle"
+                          [popoverMessage]="popoverMessage"
+                          placement="left"
+                          (confirm)="deleteUser()"
+                          (cancel)="cancelClicked = true">
+                          <i style="cursor: pointer;" title="Delete User" class="fa fa-trash red"></i>
+                      </a>
+                      
+                  </td>
+              </tr>
+          </tbody>
+      </table>
+      <table id="example2" class="table table-bordered table-hover" *ngIf="ismonthly == true" >
+        <thead class="tbl-head">
+            <tr class="tr-grid-header">
+                <th class="text-center" style="width: 10%;">Month</th>
+                <th class="text-center" style="width: 10%;">Year</th>
+                <th>Report Summary</th>
+                <th class="text-center" style="width: 15%;">Document</th>
+                <th class="text-center" style="width: 15%;">Submitted By</th>
+                <th class="text-center" style="width: 15%;">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let applicant of tableList">
+              <td class="text-center">{{applicant.date1}}
+            
+              </td>
+              <td class="text-center">{{applicant.date2}}
+            
+              </td>
+              <td>{{applicant.subject}}
+            
+              </td>
+              <td class="text-center">
+                  <a style="color: blue;cursor: pointer;" *ngIf="applicant.status == 'View'" target="_blank" href="http://www.africau.edu/images/default/sample.pdf" routerLinkActive="router-link-active" >{{applicant.status}}</a>
+                 
+                  <a mwlConfirmationPopover
+                  *ngIf="applicant.status == 'View'" 
+                  [popoverTitle]="popoverTitle"
+                  [popoverMessage]="popoverMessage"
+                  placement="left"
+                  (confirm)="deleteUser()"
+                  (cancel)="cancelClicked = true"
+                 >
+                  <i style="cursor: pointer;" title="Delete User" class="fa fa-trash red"></i>
+              </a>
+              <a style="color: blue;cursor: pointer;" *ngIf="applicant.status == 'Add'" (click)="uploaddoc()"  routerLinkActive="router-link-active" >Add</a>
+                  
+                </td>
+                <td class="text-center">{{applicant.subjectby}}
+            
+                </td>
+              
+               
+            <td class="editDel text-center">
+                <a title="Edit User" style="margin-right: 10px; cursor: pointer;" (click)="openEditDialog(applicant.intApplicantId)">
+                    <i class="fa fa-edit"></i>
+                </a>
+                <a mwlConfirmationPopover
+                [popoverTitle]="popoverTitle"
+                [popoverMessage]="popoverMessage"
+                placement="left"
+                (confirm)="deleteUser()"
+                (cancel)="cancelClicked = true">
+                <i style="cursor: pointer;" title="Delete User" class="fa fa-trash red"></i>
+            </a>
+            
+        </td>
+    </tr>
+</tbody>
+</table>
+      <mat-paginator [length]="totalSize" [pageIndex]="currentPage" [pageSize]="pageSize" 
+      [pageSizeOptions]="[5, 10, 25, 50, 100]" showFirstLastButtons>
+  </mat-paginator>
+          </div>
+      </div>
+  </div>
+</div>

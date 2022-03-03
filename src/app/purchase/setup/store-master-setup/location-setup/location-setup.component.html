@@ -1,0 +1,24 @@
+<div style="margin-bottom: 15px; margin-left: 15px;">
+  <div class="pills">
+    <ul class="nav nav-pills">
+
+      <li routerLinkActive="active" routerLink="/purchase/setup/location-setup/floor-location-setup">
+        <a mat-raised-button class="navtabWidth" style="margin-top: 10px;">
+          Floor Location
+        </a>
+      </li>
+      <li routerLinkActive="active" routerLink="/purchase/setup/location-setup/rack-setup">
+        <a mat-raised-button class="navtabWidth" style="margin-top: 10px;">
+          Rack / Bin
+        </a>
+      </li>
+      <li>
+        <a mat-raised-button class="navtabWidth pull-right" style="background-color: #dddddd;margin-top: 10px;"
+          (click)=" back()">
+          <mat-icon>keyboard_backspace</mat-icon> Back
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+<router-outlet></router-outlet>

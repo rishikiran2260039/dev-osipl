@@ -1,0 +1,28 @@
+<div class="NewHeader">
+  <h1 mat-dialog-title>Grid View Configuration </h1>
+</div> 
+<p>Please select the required columns in the grid, to view grid with specific columns</p>
+<div mat-dialog-content style="overflow:hidden!important;">
+  <form class="form-horizontal" novalidate  style="margin-top:10px">
+    <mat-checkbox  class="col-sm-4" >RFQ Title</mat-checkbox> 
+    <mat-checkbox  class="col-sm-4" >RFQ Ref</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >RFQ Date</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >Vendor Name</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >Vendor Email Id</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >Contact #</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >Closure Date</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >WO Type</mat-checkbox> 
+    <mat-checkbox  class="col-sm-4" >Project Code</mat-checkbox> 
+    <mat-checkbox  class="col-sm-4" >Job Codes</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >Quotes</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >Remarks</mat-checkbox> 
+    <mat-checkbox  class="col-sm-4" >Status</mat-checkbox>
+  </form>
+</div>
+
+<mat-dialog-actions align="end">
+  <button mat-raised-button class="btn-primary" (click)="close()"><mat-icon>send</mat-icon>Configure</button>
+  <button mat-raised-button class="CancelClass" (click)="close()"><mat-icon>cancel</mat-icon>Cancel</button>
+</mat-dialog-actions>
+
+

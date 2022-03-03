@@ -1,0 +1,177 @@
+
+<div class="NewHeader">
+  <h1 mat-dialog-title> Update Fields</h1>
+</div>
+<div>
+  
+  <form class="form-horizontal">
+
+    <div class="form-group">
+      <label class="control-label col-sm-4 add-member-label">Category: </label>
+      <div class="col-sm-8">
+        <mat-select class="form-control" id="category" placeholder="Select Category">
+          <mat-option [value]=0>Electrical</mat-option>
+          <mat-option [value]=1>Mechanical</mat-option>
+          <mat-option [value]=2>Plumbing</mat-option>
+          <mat-option [value]=3>Earth Work</mat-option>
+        </mat-select>
+      </div>
+    </div>
+   
+    
+
+    <div class="form-group">
+      <label class="control-label col-sm-4 add-member-label">Line Item: </label>
+      <div class="col-sm-8">
+        <mat-select class="form-control" id="lineitem" placeholder="Select Line Item">
+          <mat-option [value]=0>Hydraulic Excavator</mat-option>
+          <mat-option [value]=1>Filling Available excavated earth</mat-option>
+          <mat-option [value]=2>Supplying and Filling Pinch</mat-option>
+          <mat-option [value]=3>Supplying chemical emulsion</mat-option>
+        </mat-select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-4 add-member-label">Action: </label>
+      <div class="col-sm-8">
+        <input type="text" class="form-control" id="activityname" placeholder="Enter Action Name">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-4 add-member-label">Action Type: </label>
+      <div class="col-sm-8">
+        <mat-select class="form-control" id="activitytype" placeholder="Select Action Type">
+          <mat-option [value]=0>Skilled</mat-option>
+          <mat-option [value]=1>Unskilled</mat-option>
+          <mat-option [value]=2>Semi Skilled</mat-option>
+        </mat-select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      
+      <label class="control-label col-sm-4 add-member-label">Allocated Date: </label>
+
+      <div class="col-sm-8">
+          <input class="form-control"   class="form-control" placeholder="MM/DD/YYYY" (keypress)="false" [owlDateTimeTrigger]="dt7" [owlDateTime]="dt7" name="dt7">
+          <owl-date-time [pickerType]="'calendar'" #dt7></owl-date-time>
+      </div>
+    </div>
+
+    <div class="form-group">
+      
+      <label class="control-label col-sm-4 add-member-label">Actual Completion Date: </label>
+
+      <div class="col-sm-8">
+          <input class="form-control"   class="form-control" placeholder="MM/DD/YYYY" (keypress)="false" [owlDateTimeTrigger]="dt9" [owlDateTime]="dt9" name="dt9">
+          <owl-date-time [pickerType]="'calendar'" #dt9></owl-date-time>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-4 add-member-label">Expected Completion Date: </label>
+
+
+      <div class="col-sm-8">
+          <input class="form-control"   class="form-control" placeholder="MM/DD/YYYY" (keypress)="false" [owlDateTimeTrigger]="dt8" [owlDateTime]="dt8" name="dt8">
+          <owl-date-time [pickerType]="'calendar'" #dt8></owl-date-time>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-4 add-member-label">Actual Hours: </label>
+      <div class="col-sm-8">
+        <input type="number" class="form-control" id="step" placeholder="Enter Actual Hours">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-4 add-member-label">Planned Hours: </label>
+      <div class="col-sm-8">
+        <input type="number" class="form-control" id="step" placeholder="Enter Planned Hours">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-4 add-member-label">Assigned To: </label>
+      <div class="col-sm-8">
+        <mat-select class="form-control" id="assigned" placeholder="Select Person">
+          <mat-option [value]=0>Robert</mat-option>
+          <mat-option [value]=1>John</mat-option>
+          <mat-option [value]=2>Parmeet</mat-option>
+        </mat-select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-4 add-member-label">Resource Types: </label>
+      <div class="col-sm-8">
+        <mat-select class="form-control" id="assigned" placeholder="Select Material">
+          <mat-option [value]=0>Raw Materials</mat-option>
+          <mat-option [value]=1>Machinery</mat-option>
+          <mat-option [value]=2>Plants</mat-option>
+          <mat-option [value]=3>Tools</mat-option>
+          <mat-option [value]=4>No. of Workers</mat-option>
+          <mat-option [value]=5>Subcontractors</mat-option>
+          <mat-option [value]=6>Agencies</mat-option>
+
+        </mat-select>
+      </div>
+    </div>
+    
+
+    
+
+    
+
+    <div class="form-group">
+      <label class="control-label col-sm-4 add-member-label">Status : </label>
+      <div class="col-sm-8">
+        <mat-select class="form-control" id="assigned" placeholder="Select Status">
+          <mat-option  [value]=0>Logged</mat-option>
+          <mat-option  [value]=1>Process</mat-option>
+          <mat-option  [value]=2>Done</mat-option>
+          <mat-option  [value]=3>Delayed</mat-option>
+          <mat-option  [value]=4>Hold</mat-option>
+          <mat-option  [value]=5>Cancelled</mat-option>
+        </mat-select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-4 add-member-label">Remarks : </label>
+      <div class="col-sm-8">
+        <textarea class="form-control" rows="2" style="resize: none;" placeholder="Enter Remarks"></textarea>
+      </div>
+    </div>
+
+    <!-- <div class="form-group">
+      <label class="control-label col-sm-4 add-member-label">Status : </label>
+      <div class="col-sm-8">
+        <mat-select class="form-control" id="assigned" placeholder="Select Status">
+          <mat-option style="background: rgba(160,160,160,1);" [value]=0>Logged</mat-option>
+          <mat-option style="background: rgb(51, 102, 255);" [value]=1>Process</mat-option>
+          <mat-option style="background: rgb(0, 153, 51);" [value]=2>Done</mat-option>
+          <mat-option style="background: rgb(230, 0, 0);" [value]=3>Delayed</mat-option>
+          <mat-option style="background: rgba(80,80,80,1);" [value]=3>Hold</mat-option>
+          <mat-option style="background: rgba(120,120,120,1);" [value]=3>Cancelled</mat-option>
+        </mat-select>
+      </div>
+    </div> -->
+
+    
+
+    
+
+
+    
+    
+  </form>
+</div>
+<mat-dialog-actions align="end">
+  <button mat-raised-button class="btn-primary" (click)="close()"><mat-icon>send</mat-icon>Save</button>
+  <button mat-raised-button class="CancelClass" (click)="close()"><mat-icon>close</mat-icon>Close</button>
+</mat-dialog-actions> 
+

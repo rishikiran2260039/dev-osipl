@@ -1,0 +1,223 @@
+<h1 mat-dialog-title class="custom-header" style="background-color:#286ba5 !important;height:50px;font-weight: bold !important;">{{ data ? 'Update' : 'Submit'}} RFQ</h1>
+<mat-horizontal-stepper [linear]="isLinear" #stepper>
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Adjustment Details</ng-template>
+      <form class="form-horizontal">
+       
+        <div class="form-group">
+          <label class="control-label col-sm-4 add-member-label" style="margin-top:10px">Adjustment Date: </label>
+         <div class="col-sm-8">
+          <input type="date" class="form-control" placeholder="Enter Adjustment Date ">
+        </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-4 add-member-label" style="margin-top:10px">Done by</label>
+          <div class="col-sm-8">
+            <input class="form-control" placeholder="Enter Done by" type="text">
+          </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-4 add-member-label" style="margin-top:10px">	Part Name</label>
+  <div class="col-sm-8">
+    <input class="form-control" placeholder="Enter Part Name" type="text">
+  </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-4 add-member-label" style="margin-top:10px">	Part Make</label>
+            <div class="col-sm-8">
+              <input class="form-control" placeholder="Enter Part Make" type="text">
+  </div>
+          </div>
+        <div class="form-group">
+          <label class="control-label col-sm-4 add-member-label" style="margin-top:10px">Part Model</label>
+          <div class="col-sm-8">
+            <input class="form-control" placeholder="Enter Part Model" type="text">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-4 add-member-label" style="margin-top:10px">Eqpt Code</label>
+  <div class="col-sm-8">
+    <input class="form-control" placeholder="Enter Eqpt Code" type="text">
+  </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-4 add-member-label" style="margin-top:10px">Eqpt Name</label>
+   <div class="col-sm-8">
+    <input class="form-control" placeholder="Enter Eqpt Name" type="text">
+  </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-4 add-member-label" style="margin-top:10px">Eqpt Make</label>
+   <div class="col-sm-8">
+    <input class="form-control" placeholder="Enter Eqpt Make" type="text">
+  </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-4 add-member-label" style="margin-top:10px">Eqpt Model</label>
+          <div class="col-sm-8">
+            <input class="form-control" placeholder="Enter Eqpt Model" type="text">
+          </div>
+        </div>
+        
+        
+        
+      </form>
+       <!-- <mat-dialog-actions align="end">
+        <button mat-button matStepperNext  class="btn-success pull-right"><mat-icon>arrow_right_alt</mat-icon> Save</button>
+      </mat-dialog-actions>
+      <mat-dialog-actions align="end">
+        <button mat-button matStepperNext  class="btn-default pull-right" (click)="close()"><mat-icon>cancel</mat-icon> Close</button>
+      </mat-dialog-actions> -->
+      <mat-dialog-actions align="end">
+        <button mat-raised-button matStepperNext class="add-hover btn-success pull-right" type="submit"><mat-icon>save</mat-icon>&nbsp;Save</button>
+        <button mat-raised-button type="button" class="add-dark-hover btn-default pull-right" (click)="close()"><mat-icon>cancel</mat-icon>&nbsp;Close</button>
+     </mat-dialog-actions>
+     
+    </form>
+  </mat-step>
+
+
+  <mat-step [stepControl]="secondFormGroup">
+    <ng-template matStepLabel>Stock Details</ng-template>
+    <form class="form-horizontal">
+       
+      <div class="form-group">
+        <label class="control-label col-sm-4 add-member-label" style="margin-top:10px">Physical Stock</label>
+        <div class="col-sm-8">
+          <input class="form-control" placeholder="Enter Physical Stock" type="text">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-4 add-member-label" style="margin-top:10px">Previous Stock</label>
+        <div class="col-sm-8">
+          <input class="form-control" placeholder="Enter Previous Stock" type="text">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-4 add-member-label" style="margin-top:10px">Adjustment Qty</label>
+        <div class="col-sm-8">
+          <input class="form-control" placeholder="Enter Adjustment Qty" type="text">
+        </div>
+      </div>
+      
+      
+    </form>
+  <mat-dialog-actions align="end">
+    <button mat-raised-button class="add-hover btn-primary pull-right" type="submit" (click)="close()"><mat-icon>send</mat-icon>&nbsp;Submit</button>
+    <button mat-raised-button type="button" class="add-dark-hover btn-default pull-right" (click)="close()"><mat-icon>cancel</mat-icon>&nbsp;Cancel</button>
+ </mat-dialog-actions>
+    
+ 
+  <!-- <mat-dialog-actions align="end">
+    <button  mat-raised-button color="primary" matStepperPrevious><mat-icon>keyboard_backspace</mat-icon> Back</button>
+    
+    <button  mat-raised-button  class="add-dark-hover btn-success" (click)="close()" ><mat-icon>done</mat-icon> Submit</button>
+  </mat-dialog-actions> -->
+   
+  </mat-step>
+     
+  
+
+</mat-horizontal-stepper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div fxLayout="row wrap" #resizedDiv>
+  <div class="flex-p w-100 sizeAlign">
+
+
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="col-sm-12" style="margin-bottom: 5px;">
+          <div class="col-sm-6">
+            <div class="col-sm-5">
+            <label>Select Vendor:</label>
+            </div>
+            <div class="col-sm-7">
+              <mat-select placeholder="Select " class="form-control" required >
+                <mat-option value="1">Usha International Ltd</mat-option>
+                <mat-option value="2">Mallikarjuna Rao</mat-option>
+                <mat-option value="3">Arnold D Cruz	</mat-option>
+                <mat-option value="4">Axel adler</mat-option>
+                <mat-option value="5">Amit Constructions</mat-option>
+              </mat-select>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="col-sm-5">
+            <label>Closure Date:</label>
+            </div>
+            <div class="col-sm-7">
+              <input type="date"  placeholder="Enter RFQ Title" class="form-control" style="width: 235px;">
+            </div>
+          </div>
+          
+        </div>
+        <div class="col-sm-12" style="margin-bottom: 5px;">
+          
+          <div class="col-sm-6">
+            <div class="col-sm-5">
+              <label>RFQ Title:</label>
+            </div>
+            <div class="col-sm-7">
+              <input type="text"  placeholder="Enter RFQ Title" class="form-control">
+            </div>
+          </div>
+          <button mat-raised-button style=" color:#fff !important;cursor: pointer;margin-bottom: 5px;" class="pull-right  btn-success" matTooltip="Add RFQ"  (click)="allFields.push(1)" >
+            <mat-icon>add</mat-icon> 
+          </button>
+        </div>
+        <div id="grid-table-container" class="table-responsive" style="margin-left: 10px;">
+          <table id="example2" class="table table-bordered">
+            <thead class="tbl-head">
+                <tr class="tr-grid-header">
+                    <th class="text-center">Item Name</th>
+                    <th class="text-center" >Item Code</th>
+                    <th class="text-center" >Requisition Ref</th>
+                    <th class="text-center" >Required Qty</th>
+                    <th class="text-center" >Required By</th>
+                    <th class="text-center">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+              
+              <tr *ngFor="let item of allFields;let i = index;">
+                  <ng-container>
+                    <td  ><input type="text"  placeholder="Enter Item Name" class="form-control"></td>
+                      <td  ><input type="text"  placeholder="Enter Item Code" class="form-control"></td>
+                      <td  ><input type="text"  placeholder="Enter Requisition Ref" class="form-control"></td>
+                      <td ><input type="text"  placeholder="Enter Required Qty" class="form-control"></td>
+                      <td ><input type="date"  placeholder="Enter Required By" class="form-control"></td>
+                        <td class="text-center">
+                            <a ><i class="fa fa-save green" matTooltip="Save RFQ" style="cursor: pointer;"  ></i></a>
+                            <a *ngIf="allFields.length > 1"><i class="fa fa-trash red" matTooltip="Delete RFQ" (click)="removeItem(i)" style="cursor: pointer;"></i></a>
+                        </td>
+                  </ng-container> 
+                </tr>
+            </tbody>
+        </table>
+          
+        </div>
+        <mat-dialog-actions align="end">
+          <button mat-raised-button class="add-hover btn-primary pull-right" type="submit" (click)="close()"><mat-icon>send</mat-icon>&nbsp;Submit</button>
+          <button mat-raised-button type="button" class="add-dark-hover btn-default pull-right" (click)="close()"><mat-icon>cancel</mat-icon>&nbsp;Cancel</button>
+      </mat-dialog-actions>
+      </div>
+    </div>
+
+  </div>
+  
+</div>
+ -->

@@ -1,0 +1,132 @@
+<app-project-dashboard></app-project-dashboard>
+<div class="row col-sm- 12" style="margin-left: 3px; margin-right: 3px;margin-top: 10px;margin-bottom: 20px;">
+    <div class="col-6">
+        <div>
+            <div class="chart-header">
+                <p style="font-size: 17px">Total Outstanding</p>
+            </div>
+            <div style="display: block">
+                <mat-card>
+                    <div class="w-100 h-300p">
+                        <div style="height: 300px;" [chart]="tentureOfEmployees"></div>
+                    </div>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-6">
+        <div style="margin-left: 2%">
+            <div class="chart-header">
+                <p style="font-size: 17px">Customers</p>
+            </div>
+            <div style="display: block">
+                <mat-card>
+                    <div class="w-100 h-300p">
+                        <ngx-charts-pie-chart [scheme]="colorScheme" [results]="single" [legend]="showLegend"
+                            [explodeSlices]="explodeSlices" [labels]="showLabels" [doughnut]="doughnut"
+                            [gradient]="gradient">
+                        </ngx-charts-pie-chart>
+                    </div>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="col-sm-12">
+    <div class="col-sm-6 no-padding">
+        <div class="col-sm-6 no-padding" style="margin-left: -20px;">
+            <div class="col-sm-3 no-padding" style="margin-top: 6px !important;">Keyword:</div>
+            <div class="col-sm-9 no-padding">
+                <input class="form-control" class="form-control" placeholder="Search by Keyword">
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <button mat-raised-button class="btn-primary margin-right-10">
+                <mat-icon>youtube_searched_for</mat-icon> Search
+            </button>
+
+            <button mat-raised-button style="background-color:#37474f; color:#fff !important;">
+                <mat-icon>settings_backup_restore</mat-icon> Clear
+            </button>
+        </div>
+    </div>
+
+    <button mat-raised-button class="pull-right  btn-primary">
+        <mat-icon><span class="material-icons-outlined">
+                file_download
+            </span></mat-icon> Download CSV
+    </button>
+    <button mat-raised-button class="pull-right  btn-primary margin-right-10" (click)="openGridColumnsDialog()">
+        <mat-icon>grid_on</mat-icon> Grid Columns
+    </button>
+</div>
+
+<div class="table-responsive w-100 flex-p">
+    <table id="example2" class="table table-bordered table-hover">
+        <thead class="tbl-head">
+
+            <tr class="tr-grid-header">
+                <th class="vert-align-mid" rowspan="2">Vendor</th>
+                <th class="text-center vert-align-mid" colspan="2">Billing Period</th>
+                <th class="vert-align-mid" rowspan="2">Invoice Number</th>
+                <th class="vert-align-mid" rowspan="2">Invoice Date</th>
+                <th class="vert-align-mid" rowspan="2">Billing Type</th>
+                <th class="vert-align-mid" rowspan="2">Invoice Amount</th>
+                <th class="vert-align-mid" rowspan="2">GST Amount</th>
+                <th class="vert-align-mid" rowspan="2">Total Amount</th>
+                <th class="vert-align-mid" rowspan="2">Due Date</th>
+                <th class="vert-align-mid" rowspan="2">Payment Received Date</th>
+                <th class="vert-align-mid" rowspan="2">Payment Ref No</th>
+                <th class="vert-align-mid" rowspan="2">Payment Mode</th>
+                <th class="vert-align-mid" rowspan="2">TDS Amount</th>
+                <th class="vert-align-mid" rowspan="2">Remarks</th>
+                <th class="vert-align-mid" rowspan="2">Pending Amount</th>
+                <th class=" text-center vert-align-mid" rowspan="2">Doc</th>
+                <th class="text-center vert-align-mid" style=" min-width: 100px !important;" rowspan="2">Actions</th>
+            </tr>
+            <tr>
+                <th class="text-center vert-align-mid">From</th>
+                <th class="text-center vert-align-mid">To</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of items">
+                <td>
+                    {{item.vendor}}
+                  </td>
+                  <td>
+                    {{item.billingFrom}}
+                  </td>
+                  <td>{{item.billingTo }}</td>
+                  <td>{{item.invoice}}</td>
+                  <td>{{item.invoiceDate }}</td>
+                  <td>{{item.billingType}}</td>
+                  <td>{{item.inAmt }}</td>
+                  <td>{{item.gstAmt }}</td>
+                  <td>{{item.totalAmt}}</td>
+                  <td>{{item.dueDate}}</td>
+                  <td>{{item.prd }}</td>
+                  <td>{{item.prn }}</td>
+                  <td>{{item.pm}}</td>
+                  <td>{{item.tds}}</td>
+                  <td>{{item.remarks}}</td>
+                  <td>{{item.pending}}</td>
+                <td class="text-center vert-align-mid" style="color:dodgerblue;cursor: pointer;"
+                    (click)="addDocDialog()">5</td>
+                <td class="text-center vert-align-mid">
+                    <a style="cursor: pointer;margin-right:0px; " matTooltip="Update Invoice"
+                        >
+                        <i class="fa fa-edit" style="color: cornflowerblue;font-size:18px"></i>
+                    </a>
+                    <a><i class="fa fa-trash red" matTooltip="Delete Invoice"
+                            style="cursor: pointer;font-size:18px;margin-left:0px"></i></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 50, 100]" showFirstLastButtons></mat-paginator>
+
+
+</div>

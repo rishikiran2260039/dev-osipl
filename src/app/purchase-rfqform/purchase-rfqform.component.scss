@@ -1,0 +1,16 @@
+table{
+    border-collapse:collapse;
+   }
+
+.removeborder
+{
+    border: none;
+}
+
+.td, th {
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  input::placeholder {
+    font-size: 11px;
+  }

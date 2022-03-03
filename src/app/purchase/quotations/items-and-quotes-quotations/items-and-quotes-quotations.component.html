@@ -1,0 +1,292 @@
+
+
+
+                    <div class="w-100">
+                        <div class="row">
+                            <div class="col-xs-12" style="margin-bottom: 15px;">
+                                <div class="pills"style="margin-left: 10px;">
+                                    <ul class="nav nav-pills" style="margin-left: 10px;margin-bottom: -25px;">
+                                        <li routerLinkActive="active" routerLink="/purchase/procurement/indent">
+                                            <a mat-raised-button class="navtabWidth" style="margin-top: 10px;">
+                                                Indent
+                                            </a>
+                                        </li>
+                                        <li routerLinkActive="active" routerLink="/purchase/procurement/rfq">  
+                                            <a mat-raised-button class="navtabWidth" style="margin-top: 10px;">
+                                                RFQ
+                                            </a>
+                                        </li>
+                                        <li routerLinkActive="active" routerLink="/purchase/procurement/quotaions">
+                                          <a mat-raised-button class="navtabWidth" style="margin-top: 10px;">
+                                            Quotations
+                                          </a>
+                                        </li>
+                                        <li routerLinkActive="active" routerLink="/purchase/procurement/purchase-orders">
+                                            <a mat-raised-button class="navtabWidth" style="margin-top: 10px;">
+                                              Purchase Orders
+                                            </a>
+                                        </li>
+                                        <li routerLinkActive="active" routerLink="/purchase/procurement/consignments">
+                                            <a mat-raised-button class="navtabWidth" style="margin-top: 10px;">
+                                              Consignments
+                                            </a>
+                                        </li>  
+                                                                  
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+               
+   
+  
+
+
+
+
+<div class="w-100">
+  <div class="flex-p">
+      <div class="row wrap">
+          <div class="col-sm-12 no-padding">
+              <div class="row-wrap">
+                  <div class="w-100">
+                      <div class="row">
+                          <div class="col-xs-12">
+                            <div class="col-xs-6">
+                              
+                            </div>
+                            <div class="col-xs-6">
+                                <div class="row">
+                                    <div class="col-xs-6 ">
+                                     
+                                    </div>
+                                    <div class="col-xs-6 ">
+                                      <div class="flex-p">
+                                        <button mat-raised-button class="pull-right  btn-default margin-right-10"
+                                        routerLink="/purchase/procurement/quotaions">
+                                           <mat-icon>chevron_left</mat-icon> Back
+                                        </button>
+                                        <button mat-raised-button color="primary" class="pull-right filters-hover margin-right-10"
+                                          (click)="filterToggle = !filterToggle">
+                                          <mat-icon>filter_list</mat-icon> Filter
+                                        </button>
+                                        
+                                      </div>
+                                    </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div fxLayout="row wrap" *ngIf="filterToggle">
+      <div fxFlex="100" fxFlex.gt-sm fxFlex.sm class="flex-p w-100 margins">
+        <mat-card class="filter">
+          <mat-card-content>
+            <div class="row">
+              <div class="col-sm-4">
+                <div class="col-sm-4 newMarginClass">
+                  Vendor Name:
+                </div>
+                <div class="col-sm-8">
+                  <mat-select class="form-control" placeholder="Select Vendor">
+                    <mat-option [value]="0">Usha International Ltd</mat-option>
+                    <mat-option [value]="0">Mallikarjuna Rao</mat-option>
+                    <mat-option [value]="1">Arnold D Cruz</mat-option>
+                    <mat-option [value]="1">Axel adler</mat-option>
+                  </mat-select>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="col-sm-4 newMarginClass">
+                  Quote Date: 
+                </div>
+                <div class="col-sm-8">
+                    <input type="date" class="form-control" placeholder="Enter Requisition Date">
+                </div>
+              </div>
+              
+            </div>
+  
+  
+            <div class="row" style="padding-top:10px !important">
+  
+              <div class="col-lg-1" style="margin-left:80%!important;">
+                <button mat-raised-button class="pull-right btn-primary">
+                  <mat-icon>youtube_searched_for</mat-icon> Search
+                </button>
+              </div>
+              <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="margin-left: -18px;">
+                <button mat-raised-button style="background-color:#37474f; color:#fff !important">
+                  <mat-icon>settings_backup_restore</mat-icon> Clear
+                </button>
+              </div>
+              <a (click)="filterToggle = !filterToggle" class="pull-right"
+                style="font-size: 25px; cursor: pointer; margin-left: 5px;">
+                <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+              </a>
+  
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+  </div>
+  </div>
+
+<div class="w-100" style="margin-left: 10px!important;">
+  <div class="flex-p ">
+  <mat-drawer-container>
+  <mat-drawer-content>
+  <mat-card class="row" style="background-color: #dbe8f3 !important;width: 98.7%">
+    
+    <div class="col-sm-3">
+      <label>Item Name:</label>
+      <span>&nbsp;&nbsp;Gypsum Board
+        </span>
+    </div>
+    <div class="col-sm-3 ">
+      <label>Item Code:</label>
+      <span>&nbsp;&nbsp;FMX480</span>
+    </div>
+    <div class="col-sm-3 ">
+      <label>Item Category:</label>
+      <span>&nbsp;&nbsp;Plaster & Boards
+        </span>
+    </div>
+    <div class="col-sm-3 ">
+      <label>Item Sub category:</label>
+      <span>&nbsp;&nbsp;FLEXIPLY
+        </span>
+    </div>
+    <div class="col-sm-3 ">
+      <label>Item Length:</label>
+      <span>&nbsp;&nbsp; 250 CM
+        </span>
+    </div>
+    <div class="col-sm-3 ">
+      <label>Item Width:</label>
+      <span>&nbsp;&nbsp; 76 CM
+        </span>
+    </div>
+    <div class="col-sm-3 ">
+      <label>Item Height:</label>
+      <span>&nbsp;&nbsp; 233 CM
+        </span>
+    </div>
+    <div class="col-sm-3 ">
+      <label>Thickness:</label>
+      <span>&nbsp;&nbsp;500 MM
+        </span>
+    </div>
+    <div class="col-sm-3 ">
+      <label>Brand:</label>
+      <span>&nbsp;&nbsp;Armstrong</span>
+    </div>
+    <div class="col-sm-3" >
+      <label >Required Qty:</label>
+      <span>&nbsp;&nbsp;500</span>
+    </div>
+    <div class="col-sm-3" >
+      <label >Available Qty:</label>
+      <span>&nbsp;&nbsp;200</span>
+    </div>
+  </mat-card>
+  </mat-drawer-content>
+  </mat-drawer-container>
+  </div>
+</div>
+
+<div class="container-fluid">
+
+<!-- latest code -->
+
+<div class="container-fluid" style="margin-top: 15px;">
+  <div fxLayout="row wrap" #resizedDiv>
+    <div class=" w-100 ">
+     <div class="row">
+        <div class="col-xs-12">
+          <!-- <div class="col-xs-12">
+            <div class="col-xs-10">
+              <div class="col-xs-6">
+
+              </div>
+              <div class="col-xs-6">
+                <div class="form-group ">
+                  <p class="control-label col-sm-4 ">Requisition approval:</p>
+                  <div class="col-sm-8">
+                    <mat-select class="form-control" placeholder="Select">
+                      <mat-option [value]="0">All</mat-option>
+                      <mat-option [value]="0">Approved</mat-option>
+                      <mat-option [value]="1">Declined</mat-option>
+                    </mat-select>
+                  </div>
+                  
+                </div>
+              </div>
+              
+            </div>
+            <div class="col-xs-2">
+                <button mat-raised-button class="pull-right  btn-primary" (click)="addrequisition(null)" style="margin-bottom: 10px;">
+                <mat-icon>add</mat-icon> Add Requisition
+              </button>
+            </div>
+          </div> -->
+          <div id="grid-table-container" class="table-responsive" >
+            <table matSort id="example2" class="table table-bordered table-hover">
+              <thead class="tbl-head">
+                <tr>
+                  <th class="text-left" >Vendor</th> 
+                  <th class="text-center">Quotation Date</th>
+                  <th class="text-center">Validity Date</th>
+                  <th class="text-center" > Unit Price</th>
+                  <th class="text-center">Total Amount</th>
+                  <!-- <th class="text-center" >L1 (Lowest Price)</th> -->
+                  <!-- <th class="text-center">Vendor Rating</th> -->
+                  <th class="text-center" >Last Delivery Date</th>
+                  <!-- <th class="text-center">Open Orders</th> -->
+                  <th class="text-center" >Select Approved Vendor</th>
+                 </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of items">
+                  
+                  <td class="text-left">{{item.VendorName}}</td>
+                  <td class="text-center">{{item.QuoteDate }}</td>
+                  <td class="text-center">{{item.ValidityDate }}</td>
+                  <td class="text-center">{{item.UnitRate }}</td>
+                  <td class="text-center">{{item.totalAmount}}</td>
+                  <!-- <td class="text-center">
+                 
+                      {{item.L1 }}
+                  
+                  </td> -->
+                  <!-- <td class="text-center">{{item.VendorRating }}</td> -->
+                  <td class="text-center">{{item.LastDeliveryDate}}</td>
+                  <!-- <td class="text-center"   style="color:blue;cursor:pointer;" (click)="OpenordersQuotationsPopup()" >{{item.OpenOrders }}</td> -->
+                  <td class="text-center">
+                    <input type="radio" id="html" name="approval">
+                  
+                </tr>
+              </tbody>
+            </table>
+            <button class="mine" mat-fab (click)="scrollGrid('right');" >
+              <mat-icon style="color:#37474f">fast_forward</mat-icon>
+            </button>
+            <button class="mine" mat-fab style="margin-right: 78px !important;" (click)="scrollGrid('left');">
+              <mat-icon style="color:#37474f">fast_rewind</mat-icon>
+            </button>
+            <mat-paginator [pageSizeOptions]="[5, 10, 25, 50, 100]" showFirstLastButtons></mat-paginator>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+

@@ -1,0 +1,751 @@
+<div class="container-fluid" >
+ 
+  <div class="col-xs-6 ">
+    
+  </div>
+
+    
+  <div class="col-xs-6 ">
+   
+    <div class="">
+      <button mat-raised-button color="primary" class="pull-right filters-hover margin-right-10 mt-3"
+        (click)="filterToggle = !filterToggle">
+        <mat-icon>filter_list</mat-icon> Filter
+      </button>
+    </div>
+    <button mat-raised-button class="pull-right btn-success mt-3 margin-right-10" routerLink="/projects/projectdashboard/project-procurement/consignments/add-consignments/overtime" >
+      Add Consignment
+    </button>
+  </div>    
+</div>                            
+  
+<div class="container-fluid" class="col-sm-12">
+  <div fxLayout="row wrap" *ngIf="filterToggle">
+    <div fxFlex="100" fxFlex.gt-sm fxFlex.sm class="flex-p w-100 margins" style="margin-top: 10px;">
+      <mat-card class="filter">
+        <mat-card-content>
+          <div class="row">
+            <div class="col-sm-5">
+              <div class="col-sm-3 newMarginClass">
+                PO Reference#:
+              </div>
+              <div class="col-sm-8">
+                <input type="text" placeholder="Enter PO Reference" class="form-control">
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="col-sm-3 newMarginClass">
+                Vendor:
+              </div>
+              <div class="col-sm-8">
+                <input type="text" id="" class="form-control" placeholder="Enter Vendor">
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="col-lg-1" style="margin-left: 130px;">
+                <button mat-raised-button class="pull-right btn-primary">
+                  <mat-icon>youtube_searched_for</mat-icon> Search
+                </button>
+              </div>
+              <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                <button mat-raised-button style="background-color:#37474f; color:#fff !important">
+                  <mat-icon>settings_backup_restore</mat-icon> Clear
+                </button>
+              </div>
+              <a (click)="filterToggle = !filterToggle" class="pull-right"
+                style="font-size: 25px; cursor: pointer; margin-left: 5px;">
+                <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+ </div>
+</div>
+   
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid pl-2 mb-5">
+
+
+
+  <div class="row ml-1 mr-2 py-4 mt-4" style="border: 1px solid 
+  lightgray; background-color:#8deeb7;">
+
+    <div class="col-sm-3">
+      <div class="row">
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h3 class="text-center">Usha International Ltd</h3>
+        </div>
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h5 class="text-center ">Vendor Allas</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-3">
+      <div class="row">
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h3 class="text-center">12</h3>
+        </div>
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h5 class="text-center ">No. of PO's</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-3">
+      <div class="row">
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h3 class="text-center">166</h3>
+        </div>
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h5 class="text-center ">No. of Items</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-3">
+      <div class="row">
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h3 class="text-center">4</h3>
+        </div>
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h5 class="text-center">Items Qty</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row ml-1 mr-2 pt-3 pb-2" style="background-color: rgb(235, 235, 235);">
+    <div class="col-sm-12">
+      <div *ngIf="tableNumber == 0 || tableNumber == 2 || tableNumber == 3 || tableNumber == 4" class="pull-right align-items-center justify-content-center" style="color: cornflowerblue; cursor: pointer;" (click)="openTable(1)">
+        <mat-icon class="pull-right align-items-center justify-content-center" style="font-size: medium;">keyboard_arrow_down</mat-icon>
+        <h5 class="pull-right align-items-center justify-content-center">Details</h5>
+      </div>
+
+      <div *ngIf="tableNumber == 1" class="pull-right align-items-center justify-content-center" style="color: cornflowerblue; cursor: pointer;" (click)="openTable(0)">
+        <mat-icon class="pull-right align-items-center justify-content-center" style="font-size: medium;">keyboard_arrow_up</mat-icon>
+        <h5 class="pull-right align-items-center justify-content-center">Details</h5>
+      </div>
+    </div>
+
+    <div *ngIf="tableNumber == 1" class="col-xs-12 px-4 py-2" style="overflow-x: auto">
+      <div id="grid-table-container" class="table-responsive" >
+        <table matSort id="example2" class="table table-bordered table-hover" style="margin-left: 0px!important;">
+          <thead class="tbl-head">
+            <tr _ngcontent-c21="" class="custom-thead-budget">
+              <th _ngcontent-c21="" class="text-center" style="min-width: 200px;">Consignment Reference</th>
+              <th _ngcontent-c21="" class="text-center" style="min-width: 200px;">GRN</th>
+              <th _ngcontent-c21="" class="text-center" style="min-width: 200px;">Date Shipped</th>
+              <th _ngcontent-c21="" style="min-width: 100px;" class="text-center" >Items</th>
+
+              <th _ngcontent-c21="" class="text-center" style="min-width: 100px;" >Purchase Orders</th>
+              
+              
+              
+              <th _ngcontent-c21="" style="min-width: 80px;">Delivery Date</th>
+              <th _ngcontent-c21="" class="text-center" style="min-width: 100px;" >Invoice</th>
+              <th _ngcontent-c21="" class="text-center" style="min-width: 80px;">Con. Details</th>
+
+              <th _ngcontent-c21="" class="text-center" style="min-width: 80px;">Status</th>
+              <th _ngcontent-c21="" class="text-center" style="min-width: 80px;">Actions</th>
+              <!-- <th _ngcontent-c21="" style="min-width: 80px;">Actions</th> -->
+              <!-- <th _ngcontent-c21="" style="min-width: 80px;">Approval</th> -->
+            </tr>
+          </thead>
+
+          <tbody class="bg-white">
+
+            <tr *ngFor="let item of items;let i = index">
+              <td class="text-center">{{item.consignment_reference}}</td>
+              <td class="text-center"><input type="checkbox" (change)="grnpopup($event)"></td>
+               <td class="text-center">{{item.Date_Shipped}}</td>
+              <td class="text-center" (click)="Itempop()"  style="color: blue;cursor: pointer;">{{item.con_Items}}</td>
+
+              <td class="text-center"  (click)="Purchasepop()" style="cursor: pointer;color: blue;" >{{item.Purchase_Orders}}</td>
+              <!-- <td class="text-center">13-Feb-2019</td> -->
+              <td class="text-center">{{item.Delivery_Date}}</td>
+              <td class="text-center" (click)="invoicepopup()" style="cursor: pointer; color: blue">1</td>
+              <td class="text-center"  style="color: blue; cursor: pointer;"><a routerLink="/projects/projectdashboard/project-procurement/consignments/view-overtime" style="color: blue;">{{item.Con_Details}}</a></td>
+              
+              <td style="text-align: center!important;">
+                <mat-select [style.background]="item.stageColour" style="min-width: 120px;"
+                    [(value)]="item.Status" 
+                    placeholder="--Select Stage --" class='form-control'>
+                    <ng-container *ngFor='let option of statusOptions'>
+                        <mat-option [style.background]="option.colorCode" class='option'
+                            [value]="option.value" >
+                            {{option.name}}</mat-option>
+                    </ng-container>
+                </mat-select>
+            </td>
+              <td class="text-center"  style="cursor: pointer"  ><mat-icon mat-raised-button matTooltip="Send To Archive"  > move_to_inbox </mat-icon  ></td>
+                <!-- <td class="text-center" (click)="approvaldialog()" style="color: blue;cursor: pointer;" matTooltip="View Approval"></td> -->
+            </tr>
+
+           
+
+          </tbody>
+        </table>
+        
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="row ml-1 mr-2 py-4 mt-4" style="border: 1px solid 
+  lightgray; background-color:#70afee;">
+
+    <div class="col-sm-3">
+      <div class="row">
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h3 class="text-center">Rane Holdings Ltd</h3>
+        </div>
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h5 class="text-center ">Vendor Allas</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-3">
+      <div class="row">
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h3 class="text-center">5</h3>
+        </div>
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h5 class="text-center ">No. of PO's</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-3">
+      <div class="row">
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h3 class="text-center">20</h3>
+        </div>
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h5 class="text-center">No. of Items</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-3">
+      <div class="row">
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h3 class="text-center">60</h3>
+        </div>
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h5 class="text-center ">Items Qty</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row ml-1 mr-2 pt-3 pb-2" style="background-color: rgb(235, 235, 235);">
+    <div class="col-sm-12">
+      <div *ngIf="tableNumber == 0 || tableNumber == 1 || tableNumber == 3 || tableNumber == 4" class="pull-right align-items-center justify-content-center" style="color: cornflowerblue; cursor: pointer;" (click)="openTable(2)">
+        <mat-icon class="pull-right align-items-center justify-content-center" style="font-size: medium;">keyboard_arrow_down</mat-icon>
+        <h5 class="pull-right align-items-center justify-content-center">Details</h5>
+      </div>
+
+      <div *ngIf="tableNumber == 2" class="pull-right align-items-center justify-content-center" style="color: cornflowerblue; cursor: pointer;" (click)="openTable(0)">
+        <mat-icon class="pull-right align-items-center justify-content-center" style="font-size: medium;">keyboard_arrow_up</mat-icon>
+        <h5 class="pull-right align-items-center justify-content-center">Details</h5>
+      </div>
+    </div>
+
+    <div *ngIf="tableNumber == 2" class="col-xs-12 px-4 py-2" style="overflow-x: auto">
+      <div id="grid-table-container" class="table-responsive" >
+        <table matSort id="example2" class="table table-bordered table-hover" style="margin-left: 0px!important;">
+          <thead class="tbl-head">
+            <tr _ngcontent-c21="" class="custom-thead-budget">
+              <th _ngcontent-c21="" class="text-center" style="min-width: 200px;">Consignment Reference</th>
+              <th _ngcontent-c21="" class="text-center" style="min-width: 200px;">GRN</th>
+              <th _ngcontent-c21="" class="text-center" style="min-width: 200px;">Date Shipped</th>
+              <th _ngcontent-c21="" style="min-width: 100px;" class="text-center" >Items</th>
+
+              <th _ngcontent-c21="" class="text-center" style="min-width: 100px;" >Purchase Orders</th>
+             
+              <th _ngcontent-c21="" style="min-width: 80px;">Delivery Date</th>
+              <th _ngcontent-c21="" class="text-center" style="min-width: 100px;" >Invoice</th>
+              <th _ngcontent-c21="" class="text-center" style="min-width: 80px;">Con. Details</th>
+
+              <th _ngcontent-c21="" class="text-center" style="min-width: 80px;">Status</th>
+              <th _ngcontent-c21="" class="text-center" style="min-width: 80px;">Actions</th>
+              <!-- <th _ngcontent-c21="" style="min-width: 80px;">Actions</th> -->
+              <!-- <th _ngcontent-c21="" style="min-width: 80px;">Approval</th> -->
+            </tr>
+          </thead>
+
+          <tbody class="bg-white">
+
+            <tr *ngFor="let item of items;let i = index">
+              <td class="text-center">{{item.consignment_reference}}</td>
+              <td class="text-center"><input type="checkbox" (change)="grnpopup($event)"></td>
+               <td class="text-center">{{item.Date_Shipped}}</td>
+              <td class="text-center" (click)="Itempop()"  style="color: blue;cursor: pointer;">{{item.con_Items}}</td>
+
+              <td class="text-center"  (click)="Purchasepop()" style="cursor: pointer;color: blue;" >{{item.Purchase_Orders}}</td>
+              <!-- <td class="text-center">13-Feb-2019</td> -->
+              <td class="text-center">{{item.Delivery_Date}}</td>
+              <td class="text-center" (click)="invoicepopup()" style="cursor: pointer; color: blue">1</td>
+              <td class="text-center"  style="color: blue; cursor: pointer;"><a routerLink="/projects/projectdashboard/project-procurement/consignments/view-overtime" style="color: blue;">{{item.Con_Details}}</a></td>
+              
+              <td style="text-align: center!important;">
+                <mat-select [style.background]="item.stageColour" style="min-width: 120px;"
+                    [(value)]="item.Status" 
+                    placeholder="--Select Stage --" class='form-control'>
+                    <ng-container *ngFor='let option of statusOptions'>
+                        <mat-option [style.background]="option.colorCode" class='option'
+                            [value]="option.value" >
+                            {{option.name}}</mat-option>
+                    </ng-container>
+                </mat-select>
+            </td>
+              <td class="text-center"  style="cursor: pointer"  ><mat-icon mat-raised-button matTooltip="Send To Archive"  > move_to_inbox </mat-icon  ></td>
+                <!-- <td class="text-center" (click)="approvaldialog()" style="color: blue;cursor: pointer;" matTooltip="View Approval"></td> -->
+            </tr>
+
+           
+
+          </tbody>
+        </table>
+        
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <div class="row ml-1 mr-2 py-4 mt-4" style="border: 1px solid 
+  lightgray; background-color: #95a2af">
+
+    <div class="col-sm-3">
+      <div class="row">
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h3 class="text-center">Minda Industries Ltd</h3>
+        </div>
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h5 class="text-center ">Vendor Allas</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-3">
+      <div class="row">
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h3 class="text-center">12</h3>
+        </div>
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h5 class="text-center ">No. of PO's</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-3">
+      <div class="row">
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h3 class="text-center">38</h3>
+        </div>
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h5 class="text-center ">No. of Items</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-3">
+      <div class="row">
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h3 class="text-center">160</h3>
+        </div>
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h5 class="text-center ">Items Qty</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row ml-1 mr-2 pt-3 pb-2" style="background-color: rgb(235, 235, 235);">
+    <div class="col-sm-12">
+      <div *ngIf="tableNumber == 0 || tableNumber == 1 || tableNumber == 2 || tableNumber == 4" class="pull-right align-items-center justify-content-center" style="color: cornflowerblue; cursor: pointer;" (click)="openTable(3)">
+        <mat-icon class="pull-right align-items-center justify-content-center" style="font-size: medium;">keyboard_arrow_down</mat-icon>
+        <h5 class="pull-right align-items-center justify-content-center">Details</h5>
+      </div>
+
+      <div *ngIf="tableNumber == 3" class="pull-right align-items-center justify-content-center" style="color: cornflowerblue; cursor: pointer;" (click)="openTable(0)">
+        <mat-icon class="pull-right align-items-center justify-content-center" style="font-size: medium;">keyboard_arrow_up</mat-icon>
+        <h5 class="pull-right align-items-center justify-content-center">Details</h5>
+      </div>
+    </div>
+
+    <div *ngIf="tableNumber == 3" class="col-xs-12 px-4 py-2" style="overflow-x: auto">
+      <div id="grid-table-container" class="table-responsive" >
+        <table matSort id="example2" class="table table-bordered table-hover" style="margin-left: 0px!important;">
+          <thead class="tbl-head">
+            <tr _ngcontent-c21="" class="custom-thead-budget">
+              <th _ngcontent-c21="" class="text-center" style="min-width: 200px;">Consignment Reference</th>
+              <th _ngcontent-c21="" class="text-center" style="min-width: 200px;">GRN</th>
+              <th _ngcontent-c21="" class="text-center" style="min-width: 200px;">Date Shipped</th>
+              <th _ngcontent-c21="" style="min-width: 100px;" class="text-center" >Items</th>
+
+              <th _ngcontent-c21="" class="text-center" style="min-width: 100px;" >Purchase Orders</th>
+              
+              <th _ngcontent-c21="" style="min-width: 80px;">Delivery Date</th>
+              <th _ngcontent-c21="" class="text-center" style="min-width: 100px;" >Invoice</th>
+              <th _ngcontent-c21="" class="text-center" style="min-width: 80px;">Con. Details</th>
+
+              <th _ngcontent-c21="" class="text-center" style="min-width: 80px;">Status</th>
+              <th _ngcontent-c21="" class="text-center" style="min-width: 80px;">Actions</th>
+              <!-- <th _ngcontent-c21="" style="min-width: 80px;">Actions</th> -->
+              <!-- <th _ngcontent-c21="" style="min-width: 80px;">Approval</th> -->
+            </tr>
+          </thead>
+
+          <tbody class="bg-white">
+
+            <tr *ngFor="let item of items;let i = index">
+              <td class="text-center">{{item.consignment_reference}}</td>
+              <td class="text-center"><input type="checkbox" (change)="grnpopup($event)"></td>
+               <td class="text-center">{{item.Date_Shipped}}</td>
+              <td class="text-center" (click)="Itempop()"  style="color: blue;cursor: pointer;">{{item.con_Items}}</td>
+
+              <td class="text-center"  (click)="Purchasepop()" style="cursor: pointer;color: blue;" >{{item.Purchase_Orders}}</td>
+              <!-- <td class="text-center">13-Feb-2019</td> -->
+              <td class="text-center">{{item.Delivery_Date}}</td>
+              <td class="text-center" (click)="invoicepopup()" style="cursor: pointer; color: blue">1</td>
+              <td class="text-center"  style="color: blue; cursor: pointer;"><a routerLink="/projects/projectdashboard/project-procurement/consignments/view-overtime" style="color: blue;">{{item.Con_Details}}</a></td>
+              
+              <td style="text-align: center!important;">
+                <mat-select [style.background]="item.stageColour" style="min-width: 120px;"
+                    [(value)]="item.Status" 
+                    placeholder="--Select Stage --" class='form-control'>
+                    <ng-container *ngFor='let option of statusOptions'>
+                        <mat-option [style.background]="option.colorCode" class='option'
+                            [value]="option.value" >
+                            {{option.name}}</mat-option>
+                    </ng-container>
+                </mat-select>
+            </td>
+              <td class="text-center"  style="cursor: pointer"  ><mat-icon mat-raised-button matTooltip="Send To Archive"  > move_to_inbox </mat-icon  ></td>
+                <!-- <td class="text-center" (click)="approvaldialog()" style="color: blue;cursor: pointer;" matTooltip="View Approval"></td> -->
+            </tr>
+
+
+          </tbody>
+        </table>
+        
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <div class="row ml-1 mr-2 py-4 mt-4" style="border: 1px solid 
+  lightgray; background-color: #b49a9a;">
+
+    <div class="col-sm-3">
+      <div class="row">
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h3 class="text-center">Menon Bearings Ltd</h3>
+        </div>
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h5 class="text-center ">Vendor Allas</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-3">
+      <div class="row">
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h3 class="text-center">1</h3>
+        </div>
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h5 class="text-center ">No. of PO's</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-3">
+      <div class="row">
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h3 class="text-center">3</h3>
+        </div>
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h5 class="text-center ">No. of Items</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-3">
+      <div class="row">
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h3 class="text-center">335</h3>
+        </div>
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h5 class="text-center ">Items Qty</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row ml-1 mr-2 pt-3 pb-2" style="background-color: rgb(235, 235, 235);">
+    <div class="col-sm-12">
+      <div *ngIf="tableNumber == 0 || tableNumber == 1 || tableNumber == 2 || tableNumber == 3" class="pull-right align-items-center justify-content-center" style="color: cornflowerblue; cursor: pointer;" (click)="openTable(4)">
+        <mat-icon class="pull-right align-items-center justify-content-center" style="font-size: medium;">keyboard_arrow_down</mat-icon>
+        <h5 class="pull-right align-items-center justify-content-center">Details</h5>
+      </div>
+
+      <div *ngIf="tableNumber == 4" class="pull-right align-items-center justify-content-center" style="color: cornflowerblue; cursor: pointer;" (click)="openTable(0)">
+        <mat-icon class="pull-right align-items-center justify-content-center" style="font-size: medium;">keyboard_arrow_up</mat-icon>
+        <h5 class="pull-right align-items-center justify-content-center">Details</h5>
+      </div>
+    </div>
+
+    <div *ngIf="tableNumber == 4" class="col-xs-12 px-4 py-2" style="overflow-x: auto">
+      <div id="grid-table-container" class="table-responsive" >
+        <table matSort id="example2" class="table table-bordered table-hover" style="margin-left: 0px!important;">
+          <thead class="tbl-head">
+            <tr _ngcontent-c21="" class="custom-thead-budget">
+              <th _ngcontent-c21="" class="text-center" style="min-width: 200px;">Consignment Reference</th>
+              <th _ngcontent-c21="" class="text-center" style="min-width: 200px;">GRN</th>
+              <th _ngcontent-c21="" class="text-center" style="min-width: 200px;">Date Shipped</th>
+              <th _ngcontent-c21="" style="min-width: 100px;" class="text-center" >Items</th>
+
+              <th _ngcontent-c21="" class="text-center" style="min-width: 100px;" >Purchase Orders</th>
+             
+              <th _ngcontent-c21="" style="min-width: 80px;">Delivery Date</th>
+              <th _ngcontent-c21="" class="text-center" style="min-width: 100px;" >Invoice</th>
+              <th _ngcontent-c21="" class="text-center" style="min-width: 80px;">Con. Details</th>
+
+              <th _ngcontent-c21="" class="text-center" style="min-width: 80px;">Status</th>
+              <th _ngcontent-c21="" class="text-center" style="min-width: 80px;">Actions</th>
+              <!-- <th _ngcontent-c21="" style="min-width: 80px;">Actions</th> -->
+              <!-- <th _ngcontent-c21="" style="min-width: 80px;">Approval</th> -->
+            </tr>
+          </thead>
+
+          <tbody class="bg-white">
+
+            <tr *ngFor="let item of items;let i = index">
+              <td class="text-center">{{item.consignment_reference}}</td>
+              <td class="text-center"><input type="checkbox" (change)="grnpopup($event)"></td>
+               <td class="text-center">{{item.Date_Shipped}}</td>
+              <td class="text-center" (click)="Itempop()"  style="color: blue;cursor: pointer;">{{item.con_Items}}</td>
+
+              <td class="text-center"  (click)="Purchasepop()" style="cursor: pointer;color: blue;" >{{item.Purchase_Orders}}</td>
+              <!-- <td class="text-center">13-Feb-2019</td> -->
+              <td class="text-center">{{item.Delivery_Date}}</td>
+              <td class="text-center" (click)="invoicepopup()" style="cursor: pointer; color: blue">1</td>
+              <td class="text-center"  style="color: blue; cursor: pointer;"><a routerLink="/projects/projectdashboard/project-procurement/consignments/view-overtime" style="color: blue;">{{item.Con_Details}}</a></td>
+              
+              <td style="text-align: center!important;">
+                <mat-select [style.background]="item.stageColour" style="min-width: 120px;"
+                    [(value)]="item.Status" 
+                    placeholder="--Select Stage --" class='form-control'>
+                    <ng-container *ngFor='let option of statusOptions'>
+                        <mat-option [style.background]="option.colorCode" class='option'
+                            [value]="option.value" >
+                            {{option.name}}</mat-option>
+                    </ng-container>
+                </mat-select>
+            </td>
+              <td class="text-center"  style="cursor: pointer"  ><mat-icon mat-raised-button matTooltip="Send To Archive"  > move_to_inbox </mat-icon  ></td>
+                <!-- <td class="text-center" (click)="approvaldialog()" style="color: blue;cursor: pointer;" matTooltip="View Approval"></td> -->
+            </tr>
+
+           
+
+          </tbody>
+        </table>
+        
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
+
+
+
+
+
+<!-- <div class="container-fluid"> 
+<div class="row">
+  <div class="col-sm-12" style="padding: 15px !important;margin-bottom: 20px;">
+    <div class="col-sm-12" style="padding: 0px !important;">
+      <p-accordion class="customAccordian" (onClose)="onTabClose($event)" (onOpen)="onTabOpen($event)">
+        <p-accordionTab *ngFor="let item of taskData" [selected]="item.selected">
+          <p-header class="col-sm-11 " style="padding-left: 0px;">
+            <div class="col-sm-4">
+              <label>Vendor Allas:</label>
+              <span>&nbsp;
+                {{item.taskName}}
+              </span>
+            </div>
+            <div class="col-sm-2" style="margin-left: 10px!important;">
+              <label>No. of PO's:</label>
+              <span>&nbsp;
+                {{item.ref}}
+              </span>
+            </div>
+            <div class="col-sm-2" style="margin-left: 10px!important;">
+              <label>No. of Items:</label>
+              <span>&nbsp; {{item.target_date}}</span>
+            </div>
+            <div class="col-sm-2" style="margin-left: 10px!important;">
+              <label>Items Qty:</label>
+              <span>&nbsp; {{item.totalBudgetCostSOW}}</span>
+            </div>
+          </p-header>
+
+          <div class="table-responsive" id="{{item.id}}">
+          
+            <table id="example2" class="table table-bordered table-striped table-hover no-padding"
+              style="margin-bottom: 10px !important">
+              
+              <thead>
+                <tr _ngcontent-c21="" class="custom-thead-budget">
+                  <th _ngcontent-c21="" class="text-center" style="min-width: 200px;">Consignment Reference</th>
+                  <th _ngcontent-c21="" class="text-center" style="min-width: 200px;">GRN Ref</th>
+                  <th _ngcontent-c21="" class="text-center" style="min-width: 200px;">Date Shipped</th>
+                  <th _ngcontent-c21="" style="min-width: 100px;" class="text-center" >Items</th>
+
+                  <th _ngcontent-c21="" class="text-center" style="min-width: 100px;" >Purchase Orders</th>
+                  
+                  <th _ngcontent-c21="" style="min-width: 80px;">Delivery Date</th>
+                  <th _ngcontent-c21="" class="text-center" style="min-width: 80px;">Con. Details</th>
+
+                  <th _ngcontent-c21="" class="text-center" style="min-width: 80px;">Status</th>
+                  <th _ngcontent-c21="" class="text-center" style="min-width: 80px;">Actions</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr *ngIf="item.Data?.length == 0">
+
+                  <td style="text-align: center;" colspan="7">
+                    No records Found
+                  </td>
+                </tr>
+             
+                <tr *ngFor="let tData of item.Data; let i = index">
+                  <td class="text-center">DEL1037272/768</td>
+                  <td class="text-center"   style="color: blue;cursor: pointer;" routerLink="/purchase/inventory-management/grn/store-incharge" >OM/GRN/APR-20/1001</td>
+                  <td class="text-center">16-07-2021</td>
+                  <td class="text-center" (click)="Itempop()"  style="color: blue;cursor: pointer;">5</td>
+
+                  <td class="text-center"  (click)="Purchasepop()" style="cursor: pointer;color: blue;" >3</td>
+                  
+                  <td class="text-center">09-08-2021</td>
+
+                  <td class="text-center"  style="color: blue; cursor: pointer;"><a routerLink="/projects/WayBillRequistionPackingList/ConsignmentWaybill" style="color: blue;">View</a></td>
+                  
+                  <td class="text-center">In Transit</td>
+                  <td class="text-center"  style="cursor: pointer"  ><mat-icon mat-raised-button matTooltip="Send To Archive"  > move_to_inbox </mat-icon  ></td>
+                    
+                </tr>
+
+                <tr *ngFor="let tData of item.Data; let i = index">
+                  <td class="text-center">DEL1037272/786</td>
+                  <td class="text-center"   style="color: blue;cursor: pointer;" routerLink="/purchase/inventory-management/grn/store-incharge" >OM/GRN/APR-20/1003</td>
+                  <td class="text-center">26-07-2021</td>
+                  <td class="text-center" (click)="Itempop()"  style="color: blue;cursor: pointer;">2</td>
+
+
+                  <td class="text-center" (click)="Purchasepop()" style="cursor: pointer;color: blue;">9</td>
+                 
+                  <td class="text-center">04-08-2021</td>
+                  <td class="text-center"  style="color: blue; cursor: pointer;"><a routerLink="/projects/WayBillRequistionPackingList/ConsignmentWaybill" style="color: blue;">View</a></td>
+
+                  <td class="text-center">At Destination</td>
+                  <td class="text-center"  style="cursor: pointer"  ><mat-icon mat-raised-button matTooltip="Send To Archive"  > move_to_inbox </mat-icon  ></td>
+
+                  
+                </tr>
+                
+                <tr *ngFor="let tData of item.Data; let i = index">
+                  <td class="text-center">DEL1037272/732</td>
+                  <td class="text-center"   style="color: blue;cursor: pointer;" routerLink="/purchase/inventory-management/grn/store-incharge" >OM/GRN/APR-20/1004</td>
+                  <td class="text-center">24-07-2021</td>
+                  <td class="text-center" (click)="Itempop()"  style="color: blue;cursor: pointer;">6</td>
+
+                  <td class="text-center" (click)="Purchasepop()" style="cursor: pointer;color: blue;">7</td>
+                 
+                  
+                  <td class="text-center">01-08-2021</td>
+                  <td class="text-center"  style="color: blue; cursor: pointer;"><a routerLink="/projects/WayBillRequistionPackingList/ConsignmentWaybill" style="color: blue;">View</a></td>
+
+
+                  <td class="text-center">Out of Deleivery</td>
+                  <td class="text-center"  style="cursor: pointer"  ><mat-icon mat-raised-button matTooltip="Send To Archive"  > move_to_inbox </mat-icon  ></td>
+
+                  
+                </tr>
+                
+                <tr *ngFor="let tData of item.Data; let i = index">
+                  <td class="text-center">DEL1037272/616</td>
+                  <td class="text-center"   style="color: blue;cursor: pointer;" routerLink="/purchase/inventory-management/grn/store-incharge" >OM/GRN/APR-20/1005</td>
+                  <td class="text-center">09-07-2021</td>
+                  <td class="text-center" (click)="Itempop()" style="cursor: pointer;color: blue;">8</td>
+
+
+                  <td class="text-center" (click)="Purchasepop()" style="cursor: pointer;color: blue;">3</td>
+                 
+                  <td class="text-center">02-08-2021</td>
+                  <td class="text-center"  style="color: blue; cursor: pointer;"><a routerLink="/projects/WayBillRequistionPackingList/ConsignmentWaybill" style="color: blue;">View</a></td>
+
+                  <td class="text-center">Delivered</td>
+                  <td class="text-center"  style="cursor: pointer"  ><mat-icon mat-raised-button matTooltip="Send To Archive"  > move_to_inbox </mat-icon  ></td>
+
+                  
+                </tr>
+
+                <tr *ngFor="let tData of item.Data; let i = index">
+                  <td class="text-center">DEL1037272/321</td>
+                  <td class="text-center"   style="color: blue;cursor: pointer;" routerLink="/purchase/inventory-management/grn/store-incharge" >OM/GRN/APR-20/1006</td>
+                  <td class="text-center">10-07-2021</td>
+                  <td class="text-center" (click)="Itempop()" style="cursor: pointer;color: blue;">9</td>
+
+                  <td class="text-center" (click)="Purchasepop()" style="cursor: pointer;color: blue;">2</td>
+                  
+                  
+                  <td class="text-center">03-08-2021</td>
+                  <td class="text-center"  style="color: blue; cursor: pointer;"><a routerLink="/projects/WayBillRequistionPackingList/ConsignmentWaybill" style="color: blue;">View</a></td>
+
+                  <td class="text-center">Returned</td>
+                                      <td class="text-center"  style="cursor: pointer"  ><mat-icon mat-raised-button matTooltip="Send To Archive"  > move_to_inbox </mat-icon  ></td>
+
+                                      
+                </tr>
+                
+              </tbody>
+            </table>
+          </div>
+        </p-accordionTab>
+      </p-accordion>
+    </div>
+  </div>
+</div>
+</div> -->

@@ -1,0 +1,268 @@
+<div class="container-fluid">
+  <div class="row wrap">
+    <div class="col-xs-12" style="margin-top: 15px;margin-bottom:10px;">
+       
+        <button mat-raised-button color="primary" class="pull-right filters-hover margin-right-10"
+        (click)="filterToggle =! filterToggle">
+        <mat-icon>filter_list</mat-icon> Filter
+      </button>
+    </div>
+  </div>
+  <div fxLayout="row wrap" *ngIf="filterToggle">
+    <div fxFlex="100" fxFlex.gt-sm fxFlex.sm class="flex-p w-100 margins">
+      <mat-card class="filter">
+        <mat-card-content>
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="col-sm-4 newMarginClass">
+                Status:
+              </div>
+              <div class="col-sm-8">
+                <mat-select class="form-control" placeholder="Select Status" required>
+                  <mat-option [value]="0">Any</mat-option>
+                
+        
+                </mat-select>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="col-sm-4 newMarginClass" style="margin-top: 5px;">Select Project:</div>
+              <div class="col-sm-8">
+                <mat-select class="form-control" placeholder="Select Project" required>
+                  <mat-option [value]="0">Raheja Group</mat-option>
+                  <mat-option [value]="1">Manjeera Group</mat-option>
+                  <mat-option [value]="2">Reva Group </mat-option>
+                  <mat-option [value]="3">Asian Group</mat-option>
+        
+                </mat-select>
+                </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="col-sm-4 newMarginClass" style="margin-top: 5px;">From Date:</div>
+              <div class="col-sm-8">
+             <input type="date" class="form-control">
+                </div>
+            </div>
+            <div class="col-sm-4" style="margin-top: 10px;">
+              <div class="col-sm-4 newMarginClass" style="margin-top: 5px;">To Date:</div>
+              <div class="col-sm-8">
+             <input type="date" class="form-control">
+                </div>
+            </div>
+        <div class="col-sm-8">
+          <a (click)="filterToggle = !filterToggle" class="pull-right"
+          style="font-size: 25px; cursor: pointer; margin-left: 5px;">
+          <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+        </a>
+          <button mat-raised-button class="pull-right btn-primary" style="margin-left: 10px;">
+            <mat-icon>youtube_searched_for</mat-icon> Search
+          </button>
+          <button mat-raised-button class="pull-right btn-default">
+            <mat-icon>settings_backup_restore</mat-icon> Clear
+          </button>
+        </div>
+        
+  
+          </div>
+       
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+  <div class="row" >
+    <div class="col-xs-12" style="overflow-x: auto">
+      <div id="grid-table-container" class="table-responsive" >
+        <table matSort id="example2" class="table table-bordered table-hover">
+          <thead class="tbl-head">
+            <tr>
+          
+              <th>Issue Request Ref</th>
+              <th>Project Code</th>
+              <th class="text-center">Issue Date Time</th>
+              <th >Issued To</th>
+              <th class="text-center">Items</th>
+              <th class="text-center">Notes</th>
+              <th class="text-center" style="width: 150px;">Status</th>
+              <th class="text-center">Actions</th>
+             
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of items">
+            
+          
+              <td >{{item.issuerequestref}}</td>
+              <td >{{item.projectcode}}</td>
+              <td class="text-center">{{item.issuedate}}</td>
+              <td >{{item.issuedto}}</td>
+              <td class="text-center" style="cursor: pointer;color: blue" routerLink="/purchase/inventory-management/material-issues/active/items">{{item.items}}</td>
+              <td class="text-center" style="cursor:pointer;color: blue;" (click)="notes()"><mat-icon>info</mat-icon></td>
+              <td style="text-align: center!important;">
+                {{item.status}}
+            </td>
+            <td class="text-center ">
+             
+          
+              <a  style="cursor: pointer;margin-right:10px; " matTooltip="Undo">
+                <mat-icon> move_to_inbox </mat-icon>
+              </a>
+            </td>
+            </tr>
+          </tbody>
+        </table>
+        <mat-paginator [pageSizeOptions]="[5, 10, 25, 50, 100]" showFirstLastButtons></mat-paginator>
+      </div>
+    </div>
+  </div>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- previous code -->
+<!-- <div class="container-fluid">
+  <div class="row wrap">
+    <div class="col-xs-12" style="margin-top: 15px;margin-bottom:10px;">
+
+
+        <button mat-raised-button (click) = "addIssueDialog(null)"
+          class="btn-primary pull-right">Add Issue
+        </button>
+    </div>
+  </div>
+  <div class="row" >
+    <div class="col-xs-12" style="overflow-x: auto">
+      <div id="grid-table-container" class="table-responsive" >
+        <table matSort id="example2" class="table table-bordered table-hover">
+          <thead class="tbl-head">
+            <tr>
+              <th class="text-center">Sl No.</th>
+              <th class="text-center">Job Card#</th>
+              <th class="text-center">Job Card Date</th>
+              <th class="text-center">Maintanance Type</th>
+              <th class="text-center">Equipment Type</th>
+              <th class="text-center">Equipment Make</th>
+              <th class="text-center">Equipment Model</th>
+              <th class="text-center">Door No.</th>
+              <th class="text-center">HMR</th>
+              <th class="text-center">KMR</th>
+              <th class="text-center">Material Issues</th>
+              <th class="text-center">Status</th>
+              <th class="text-cente">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of items">
+              <td class="text-center">{{item.slNo}}</td>
+              <td class="text-center">{{item.jobCard}}</td>
+              <td class="text-center">{{item.jobCardDate}}</td>
+              <td class="text-center">{{item.maintananaceType}}</td>
+              <td class="text-center">{{item.equipmentType}}</td>
+              <td class="text-center">{{item.equipmentMake}}</td>
+              <td class="text-center">{{item.equipmentModel}}</td>
+              <td class="text-center">{{item.doorNo}}</td>
+              <td class="text-center">{{item.hmr}}</td>
+              <td class="text-center">{{item.kmr}}</td>
+              <td class="text-center" style="color: blue; cursor: pointer;" matTooltip="Add/Update Issue" routerLink="/purchase/issue">{{item.issues}}</td>
+              <td class="text-center">{{item.status}}</td>
+              <td class="text-center" style="font-size: 18px;">
+                <a style="cursor: pointer;margin-right:10px; " matTooltip="Update Issue" (click) = "addIssueDialog(item)">
+                  <i class="fa fa-edit" style="color: cornflowerblue"></i>
+                </a>
+                <a><i class="fa fa-trash red" matTooltip="Delete Issue" style="cursor: pointer;"></i></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <mat-paginator [pageSizeOptions]="[5, 10, 25, 50, 100]" showFirstLastButtons></mat-paginator>
+      </div>
+    </div>
+  </div>
+
+  </div> -->

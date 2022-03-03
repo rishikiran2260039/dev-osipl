@@ -1,0 +1,39 @@
+<div class="NewHeader">
+  <h1 mat-dialog-title>
+      <span>Add New Rack</span>
+  </h1>
+</div>
+
+  <form class="form-horizontal">
+      <div mat-dialog-content>
+        <div class="form-group">
+          <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Store Name: </label>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            Backhoe Loader Store
+          </div>
+      </div>
+
+      <div class="form-group">
+          <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Rack Name:
+          </label>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+              <input type="text" class="form-control" placeholder="Enter Rack Name">
+          </div>
+      </div>
+      <div class="form-group">
+          <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label">Rack Code: </label>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+              <input type="email" class="form-control" id="email" placeholder="Enter Rack Code" >
+          </div>
+      </div>
+      
+  </div>
+      <mat-dialog-actions align="end">
+          <button mat-raised-button (click)="close()"  type="button" style="color: rgb(7, 10, 7); background-color: #e0e0e0;">
+              <mat-icon>cancel</mat-icon> Close
+            </button>
+            <button mat-raised-button class="btn-primary" type="button" (click)="close()">
+              <mat-icon>send</mat-icon><span> Save</span>
+            </button>
+      </mat-dialog-actions>
+  </form>

@@ -1,0 +1,74 @@
+<h1 mat-dialog-title class="custom-header" style="background-color:#286ba5 !important;height:50px;font-weight: bold !important;">{{ data ? 'Update' : 'Submit'}} RFQ</h1>
+
+    <form [formGroup]="firstFormGroup" class="p-3">
+      <form class="form-horizontal"> 
+        <div class="form-group">
+          <label class="control-label col-sm-4 add-member-label">
+             Vendor Name: </label>
+          <div class="col-sm-8">
+            <mat-select placeholder=" Select Vendor Name" [(value)]="selected" class="form-control" required >
+              <mat-option value="1">Usha International Ltd</mat-option>
+              <mat-option value="2">Mallikarjuna Rao</mat-option>
+              <mat-option value="3">Arnold D Cruz	</mat-option>
+              <mat-option value="4">Axel adler</mat-option>
+              <mat-option value="5">Amit Constructions</mat-option>
+            </mat-select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-4 add-member-label">
+           Select Project: </label>
+          <div class="col-sm-8">
+            <mat-select placeholder=" Select Project Code" class="form-control" required [(value)]="selected" >
+              <mat-option value="1" >E005KA10012</mat-option>
+              <mat-option value="2">E005KA10013</mat-option>
+              <mat-option value="3">E005KA10014</mat-option>
+              <mat-option value="4">E005KA10015</mat-option>
+              <mat-option value="5">E005KA10016</mat-option>
+            </mat-select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-4 add-member-label">RFQ Ref: </label>
+          <div class="col-sm-8">
+            <mat-select class="form-control" [(value)]="selected" placeholder="Select RFQ Ref">
+              <mat-option value="1">OM/REQ/SPA-FEB-19/1057</mat-option>
+              <mat-option selected >OM/RFQ/Mar-19/R60000443</mat-option>
+              <mat-option>OM/RFQ/Apr-19/R60000444</mat-option>
+              <mat-option>OM/RFQ/May-19/R60000445</mat-option>
+              <mat-option>OM/RFQ/Feb-19/R60000446</mat-option>
+              <mat-option>OM/RFQ/Feb-19/R60000447	</mat-option>
+            </mat-select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-4 add-member-label">RFQ Title: </label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control" id="step" value="Procurement for Civil material items" placeholder="Enter RFQ Title">
+          </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-4 add-member-label">Closure Date: </label>
+            <div class="col-sm-8">
+              <input type="date" class="form-control" value="2013-01-08" id="step" placeholder="Enter Closure Date">
+            </div>
+          </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-4 add-member-label"> Remarks:</label>
+          <div class="col-sm-8">
+            <textarea id="txtid" name="txtname" rows="4" class="form-control" id="step" placeholder="Enter Remarks">Complaince over Material issues - to be delivered on time
+              </textarea>
+          </div>
+        </div>
+        
+        
+      </form>
+
+      <mat-dialog-actions align="end" style="margin-right: -5px;">
+        <button mat-raised-button  class="add-hover btn-success pull-right" type="submit"><mat-icon>save</mat-icon>&nbsp;Save</button>
+        <button mat-raised-button type="button" class="add-dark-hover btn-default pull-right"  (click)="close()"><mat-icon>cancel</mat-icon>&nbsp;Close</button>
+     </mat-dialog-actions>
+     
+    </form>
+

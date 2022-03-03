@@ -1,0 +1,129 @@
+<div class="col-sm-12">
+  <div class="pull-right col-sm-1 no-padding">
+  </div>
+</div>
+<div class="no-padding col-sm-12"> 
+  <form style="width: 1370px;margin-left: -14px;">
+      <div fxLayout="row wrap"  *ngIf="filterToggle">
+          <div fxFlex="100" fxFlex.gt-sm fxFlex.sm class="flex-p w-100">
+              <mat-card class="filter">
+                  <mat-card-content>
+                      <div class="row col-sm-12">
+                          <div class="col-sm-3">
+                              <div class="col-sm-3 no-padding" style="margin-top: 6px !important;">Site:</div>
+                              <div class="col-sm-9 no-padding">
+                                  <mat-select placeholder="--Please Select--" class='form-control'>
+                                      <mat-option class='option'></mat-option>
+                                  </mat-select>
+                              </div>
+                          </div>
+                          <div class="col-sm-3">
+                              <div class="col-sm-3 no-padding" style="margin-top: 6px !important;">SOW:</div>
+                              <div class="col-sm-9 no-padding">
+                                  <mat-select placeholder="--Please Select--" class='form-control'>
+                                      <mat-option class='option'></mat-option>
+                                  </mat-select>
+                              </div>
+                          </div>
+                          <div class="col-sm-3">
+                              <div class="col-sm-3 no-padding" style="margin-top: 6px !important;">Task:</div>
+                              <div class="col-sm-9 no-padding">
+                                  <mat-select multiple placeholder="--Please Select--" class='form-control'>
+                                      <mat-option #allSelectedTasks [value]="0">Select All</mat-option>
+                                      <mat-option class='option'></mat-option>
+                                  </mat-select>
+                              </div>
+                          </div>
+                          <div class="col-sm-3">
+                              <div class="col-sm-3 no-padding" style="margin-top: 6px !important;">Action Type:</div>
+                              <div class="col-sm-9 no-padding">
+                                  <mat-select multiple placeholder="--Please Select--" class='form-control'>
+                                      <mat-option #allSelectedActions [value]="0">Select All</mat-option>
+                                      <mat-option class='option'></mat-option>
+                                  </mat-select>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="row col-sm-12" style="margin-top: 10px;">
+                          <div class="col-sm-3">
+                              <div class="col-sm-3 no-padding" style="margin-top: 6px !important;">User:</div>
+                              <div class="col-sm-9 no-padding">
+                                  <mat-select multiple placeholder="--Please Select--" class='form-control'>
+                                      <mat-option #allSelectedUsers [value]="0">Select All</mat-option>
+                                      <mat-option class='option'></mat-option>
+                                  </mat-select>
+                              </div>
+                          </div>
+                          <div class="col-sm-3">
+                              <div class="col-sm-3 no-padding" style="margin-top: 6px !important;">From Date:</div>
+                              <div class="col-sm-9 no-padding">
+                                <input class="form-control" class="form-control" placeholder="MM/DD/YYYY" (keypress)="false"
+                                [owlDateTimeTrigger]="dt1" [owlDateTime]="dt1" name="dt1">
+                              <owl-date-time [pickerType]="'calendar'" #dt1></owl-date-time>
+                              </div>
+                          </div>
+                          <div class="col-sm-3">
+                              <div class="col-sm-3 no-padding" style="margin-top: 6px !important;">To Date:</div>
+                              <div class="col-sm-9 no-padding">
+                                <input class="form-control" class="form-control" placeholder="MM/DD/YYYY" (keypress)="false"
+                                [owlDateTimeTrigger]="dt2" [owlDateTime]="dt2" name="dt2">
+                              <owl-date-time [pickerType]="'calendar'" #dt2></owl-date-time>
+                              </div>
+                          </div>
+                          <div class="col-sm-3">
+                              <div style="margin-left: 65px;">
+                              <button mat-raised-button color="primary" class="add-hover btn-primary search">
+                                  <mat-icon>youtube_searched_for</mat-icon> Search
+                              </button>
+                              <button mat-raised-button (click)="resetFilter()" class="" style="margin: 0px 10px;">
+                                  <mat-icon>settings_backup_restore</mat-icon> Reset
+                              </button>
+                              <a (click)="filterToggle = !filterToggle" class="pull-right"
+                                style="font-size: 25px; cursor: pointer; margin-left: 5px;">
+                                <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+                              </a>
+                              
+                          </div>
+                          </div>
+                      </div>
+                  </mat-card-content>
+              </mat-card>
+          </div>
+      </div>
+  </form>
+</div>
+
+<div class="table-responsive w-100 flex-p">
+  <table id="example2" class="table table-bordered table-hover">
+      <thead class="tbl-head">
+          <tr class="tr-grid-header">
+              <th class="vert-align-mid" style="min-width: 71px !important;">Az Invoice No.</th>
+              <th class="vert-align-mid" style="width:143px">Official Invoice No.</th>
+              <th class="vert-align-mid" style="width:101px">Invoice Total</th>
+              <th class="vert-align-mid">	Balance Amount</th>
+              <th class="vert-align-mid">Invoice Date</th>
+              <th class="vert-align-mid">	Days Old</th>
+              <th class="vert-align-mid">Invoice Status	</th>
+              <th class="vert-align-mid" style="width:105px">Activity Date	</th>
+              <th>Sent To	</th>
+            <th>
+              Sent Date</th>
+            <th>
+              Sent By</th>
+            <th>
+              Created Date	</th>
+              <th class="vert-align-mid">Actions</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td colspan="18" class="text-center">
+                  No Data Available
+              </td>
+          </tr>
+      </tbody>
+  </table>
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 50, 100]" showFirstLastButtons></mat-paginator>
+
+
+</div>

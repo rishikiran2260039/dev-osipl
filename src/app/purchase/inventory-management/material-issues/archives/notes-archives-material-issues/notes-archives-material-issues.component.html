@@ -1,0 +1,33 @@
+<div class="NewHeader" style="background-color:#286ba5 !important; height: 50px;">
+  <h1 mat-dialog-title>
+    Add Notes
+  </h1>
+</div>
+
+<div mat-dialog-content>
+  <form class="form-horizontal">
+    <div style="padding: 0px 30px !important;">
+      <div class="form-group">
+        <div class="col-sm-12">
+          <label style="font-weight: bold;">
+            Issue Request Ref:
+          </label>
+          <span style="font-weight: bold;">&nbsp;
+            OM/MI/OCT-19/10005
+          </span>
+        </div>
+        <div class="col-sm-12">
+          <textarea type="text" maxlength="300" class="form-control" style="height: 150px;" >
+            Since large sums of money remain blocked in materials, it is essential for the custodian of materials to ensure that the issue of materials are made only under proper authorisation. In fact, authorisation of stores is very vital.</textarea>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<mat-dialog-actions align="end">
+
+  <button mat-raised-button class="btn-success" (click)="close()">Save</button>
+  <button mat-raised-button class="add-dark-hover btn-default" (click)="close()">Cancel</button>
+</mat-dialog-actions> 
+
+

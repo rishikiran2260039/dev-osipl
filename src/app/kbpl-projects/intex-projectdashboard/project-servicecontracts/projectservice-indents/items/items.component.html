@@ -1,0 +1,118 @@
+<div class="container-fluid">
+  <div fxLayout="row wrap" #resizedDiv>
+    <div class="flex-p w-100 sizeAlign">
+      <div class="row" style="margin-bottom:23px;">
+        <div class="col-sm-12"> 
+          <button mat-raised-button class="pull-right  btn-default margin-right-10"
+          routerLink="/projects/projectdashboard/project-servicecontracts/indents">
+             <mat-icon>chevron_left</mat-icon> Back
+          </button>
+          <button mat-raised-button class="pull-right  btn-primary margin-right-10"
+             (click)="openGridColumnsDialog()">
+             <mat-icon>grid_on</mat-icon> Grid Columns
+          </button>
+          <button mat-raised-button class="pull-right  btn-primary margin-right-10"
+            (click)="addnewitem(null)">
+               <mat-icon>add</mat-icon> Add New Item
+          </button>
+        </div>
+      </div>
+    <div class="row" >
+      <div class="col-xs-12" style="overflow-x: auto">
+        <div id="grid-table-container" class="table-responsive" >
+          <table matSort id="example2" class="table table-bordered table-hover" style="margin-left: 0px!important;">
+            <thead class="tbl-head">
+              <tr>
+                <th class="text-center">Actions</th>
+                <th class="text-left">Item Name</th>
+                <th class="text-left">Item Code</th>
+                <th class="text-left">Part #</th>
+                <th class="text-left">Part Name </th>
+                <th class="text-left">Part Make </th>
+                <th class="text-left">Eqpt Make</th>
+                <th class="text-left">Eqpt Model</th>
+                <th class="text-left">Category</th>
+                <th class="text-left">Sub Category</th>
+                <th class="text-left">UOM</th>
+                <th class="text-center">Available Qty</th>
+                <th class="text-center">Qty Required </th>
+                
+
+                <!-- <th class="text-center">Adjustment Date</th> 
+                <th class="text-center">Done by</th>
+                <th class="text-center">Part Model </th>
+                <th class="text-center">Eqpt Code</th>
+                <th  class="text-center">Eqpt Name</th>
+                <th class="text-center">Physical Stock  </th>
+                <th class="text-center">Previous Stock </th>
+                <th class="text-center">Adjustment Qty  </th>
+                <th class="text-center">Revised Book Stock </th>
+                <th class="text-center">Actions</th>
+                <th class="text-left">Quantity Required</th> -->
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of items">
+                <td class="text-center">
+                  <a style="cursor: pointer;margin-right:0px;margin-left: -5px; " matTooltip="Edit ">
+                    <i class="fa fa-edit" style="color: cornflowerblue; cursor: pointer;" (click)="addnewitem(item)"></i>
+                  </a>
+                  <a><i class="fa fa-trash red" matTooltip="Delete " style="cursor: pointer;"></i></a>
+                </td>
+                <td class="text-left">{{item.ItemName }}</td>
+                <td class="text-left">{{item.ItemCode}}</td>
+                <td class="text-left">{{item.Part}}</td>
+                <td class="text-left">{{item.PartName}}</td>
+                <td class="text-left">{{item.PartMake}}</td>
+                <td class="text-left">{{item.EqptMake}}</td>
+                <td class="text-left">{{item.EqptModel}}</td>
+                <td style="text-align: left!important;">{{item.Category }}</td>
+                <td style="text-align: left!important;">{{item.SubCategory}}</td>
+                <td class="text-left">{{item.uom}}</td>
+               
+                <!-- <td class="text-center" style="color: blue;cursor: pointer;" routerLink="/purchase/availablequantityrequisition" >{{item.avilablestock}}</td> -->
+                <!-- <td class="text-center"  style="color: blue; cursor: pointer;"
+                (click)="AvailbalePopup()">
+
+                {{item.avilablestock}}</td>
+                -->
+                <td class="text-center" >
+
+                {{item.avilablestock}}</td>
+               
+                <td style="text-align: center!important;">
+                  {{item.QuantityRequired}}</td>       
+                       
+
+                <!-- <td class="text-center">{{item.AdjustmentDate}}</td>
+                <td class="text-center">{{item.Doneby}}</td>
+                <td class="text-center">{{item.PartModel}}</td>
+                <td class="text-center">{{item.EqptCode }}</td>
+                <td class="text-center">{{item.EqptName }}</td>
+                <td class="text-center">{{item.PhysicalStock}}</td>
+                <td class="text-center">{{item.PreviousStock }}</td>
+                <td class="text-center">{{item.AdjustmentQty}}</td>
+                <td class="text-center">{{item.RevisedBookStock}}</td> -->
+                
+              </tr>
+            </tbody>
+          </table>
+          
+          <button class="mine" mat-fab (click)="scrollGrid('right');" >
+            <mat-icon style="color:#37474f">fast_forward</mat-icon>
+          </button>
+
+          <button class="mine" mat-fab style="margin-right: 78px !important;" 
+          (click)="scrollGrid('left');">
+            <mat-icon style="color:#37474f">fast_rewind</mat-icon>
+          </button>
+          
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+  </div>
+
+      
+

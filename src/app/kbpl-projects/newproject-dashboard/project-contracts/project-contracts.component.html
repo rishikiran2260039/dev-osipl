@@ -1,0 +1,216 @@
+<div class="row" style="margin-bottom:19px; margin-right: -3px;margin-top:10px">
+    <div class="col-xs-5 ">
+    </div>
+    <div class="col-xs-7">
+        <div class="">
+            <button mat-raised-button class="pull-right  btn-primary" (click)="AddContract()">
+                <mat-icon>add</mat-icon> Add Contract
+            </button>
+            <button mat-raised-button class="pull-right  btn-primary margin-right-10" (click)="openGridColumnsDialog()">
+                <mat-icon>grid_on</mat-icon> Grid Columns
+            </button>
+            <button mat-raised-button color="primary" class="pull-right filters-hover margin-right-10"
+                (click)="filterToggle = !filterToggle">
+                <mat-icon>filter_list</mat-icon> Filter
+            </button>
+
+        </div>
+
+    </div>
+</div>
+<!-- Filter toggle -->
+<div fxLayout="row wrap" *ngIf="filterToggle" style="margin-bottom: 10px">
+    <div fxFlex="100" fxFlex.gt-sm fxFlex.sm class="flex-p w-100 margins">
+        <mat-card class="filter">
+            <mat-card-content>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="col-sm-4 newMarginClass">
+                            Keyword:
+                        </div>
+                        <div class="col-sm-8">
+                            <input type="text" placeholder="Search by any record" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="col-sm-4 newMarginClass">
+                            Client Name:
+                        </div>
+                        <div class="col-sm-8">
+                            <mat-select class="form-control" placeholder="Select Client">
+                                <mat-option [value]="0">Amazon</mat-option>
+                                <mat-option [value]="1">Flipkart</mat-option>
+                                <mat-option [value]="2">E-Square</mat-option>
+                                <mat-option [value]="3">Stonefield</mat-option>
+                            </mat-select>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="col-sm-4 newMarginClass">
+                            Status:
+                        </div>
+                        <div class="col-sm-8">
+                            <mat-select class="form-control" placeholder="Select Status">
+                                <mat-option [value]="0">Initiated</mat-option>
+                                <mat-option [value]="1">In Progress</mat-option>
+                                <mat-option [value]="2">Pending</mat-option>
+                                <mat-option [value]="3">Completed</mat-option>
+                            </mat-select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row" style="padding-top:10px !important">
+                    <div class="col-sm-4" style="margin-top: 4px;">
+                        <div class="col-sm-4 newMarginClass">
+                            Date Type:
+                        </div>
+                        <mat-radio-group aria-label="Select an option">
+                            <mat-radio-button value="1" checked style="margin-left: 10px;">Agreement </mat-radio-button>
+                            <mat-radio-button value="2" style="margin-left: 25px;">Start </mat-radio-button>
+                            <mat-radio-button value="3" style="margin-left: 25px;">Target</mat-radio-button>
+                        </mat-radio-group>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="col-sm-4 newMarginClass">
+                            To Date:
+                        </div>
+                        <div class="col-sm-8">
+                            <input class="form-control" class="form-control" placeholder="MM/DD/YYYY" (keypress)="false"
+                                [owlDateTimeTrigger]="dt6" [owlDateTime]="dt6" name="dt6">
+                            <owl-date-time [pickerType]="'calendar'" #dt6></owl-date-time>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div class="col-sm-4 newMarginClass">
+                            From Date:
+                        </div>
+                        <div class="col-sm-8">
+                            <input class="form-control" class="form-control" placeholder="MM/DD/YYYY" (keypress)="false"
+                                [owlDateTimeTrigger]="dt7" [owlDateTime]="dt7" name="dt7">
+                            <owl-date-time [pickerType]="'calendar'" #dt7></owl-date-time>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="padding-top:10px !important">
+
+                    <div class="col-lg-1" style="margin-left:80% !important;">
+                        <button mat-raised-button class="pull-right btn-primary">
+                            <mat-icon>youtube_searched_for</mat-icon> Search
+                        </button>
+
+                    </div>
+                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="margin-left: -18px;">
+                        <button mat-raised-button style="background-color:#37474f; color:#fff !important;">
+                            <mat-icon>settings_backup_restore</mat-icon> Clear
+                        </button>
+
+                    </div>
+                    <a (click)="filterToggle = !filterToggle" class="pull-right"
+                        style="font-size: 25px; cursor: pointer; margin-left: 5px;">
+                        <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+                    </a>
+
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+
+<div class="row" style="margin-right: -3px; margin-left: -6px;">
+    <div class="col-xs-12">
+        <div id="grid-table-container" class="table-responsive">
+            <table matSort id="example2" class="table table-bordered table-hover">
+                <thead class="tbl-head">
+                    <tr>
+                        <th class="text-left">Contract #</th>
+                        <th>Contractor</th>
+                        <th>Contract Type</th>
+                        <th class="text-left" style="width:80px">Contract Ref</th>
+                        <th class="text-center">Site</th>
+                        <th class="text-center">SOW Titles</th>
+                        <th class="text-left" style="width:120px">Consultant</th>
+                        <th class="text-center">BOQ</th>
+                        <th class="text-center">Agreement Date</th>
+                        <th class="text-center" style="width:120px">Start Date</th>
+                        <th class="text-center" style="width:120px">Target Date </th>
+                        <th class="text-center" style="width:30px">Budget</th>
+                        <th class="text-center" style="width:30px">Billed</th>
+                        <th class="text-center" style="width:30px">Paid</th>
+                        <th class="text-center">Balance</th>
+                        <th class="text-center">Status </th>
+                        <th class="text-center">Completion</th>
+                        <th class="text-center" style="min-width: 112px!important;">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of items">
+                        <td style="min-width: 50px !important;"><a matTooltip="View Contract Dashboard"
+                                routerLink="/contracts/project-dashboard/bill-of-quantities/master" target="_blank">
+                                {{item.project_code}}
+                            </a>
+                        </td>
+                        <td>{{item.project}}</td>
+                        <td style="width: 50px;">
+                            External
+                        </td>
+                        <td style="text-align: left!important;">{{item.conRef }}</td>
+                        <td style="text-align: center!important;">{{item.site }}</td>
+                        <td style="text-align: center!important;">{{item.sow }}</td>
+                        <td style="text-align: left!important;">{{item.consultant }}</td>
+                        <td style="min-width: 70px !important;text-align: center!important;"><a style="color: blue;cursor: pointer;"
+                                routerLink="/contracts/project-dashboard/bill-of-quantities/master" target="_blank">
+                                {{item.BOQ_Items}}
+                            </a>
+                        </td>
+                        <td style="text-align: center!important;">{{item.agreement_date }}</td>
+                        <td style="text-align: center!important;">{{item.start_date }}</td>
+                        <td style="text-align: center!important;">{{item.target_date }}</td>
+                        <td style="text-align: center!important;">{{item.total_cost }}</td>
+                        <td style="text-align: center!important;">{{item.billed }}</td>
+                        <td style="text-align: center!important;">{{item.paid }}</td>
+                        <td style="text-align: center!important;">{{item.margin }}</td>
+                        <td style="text-align: center!important;">
+                            <mat-select [style.background]="item.stageColour" style="min-width: 120px;"
+                                [(value)]="item.Status" (selectionChange)="changeStatus($event.value)"
+                                placeholder="--Select Stage --" class='form-control'>
+                                <ng-container *ngFor='let option of statusOptions'>
+                                    <mat-option [style.background]="option.colorCode" class='option'
+                                        [value]="option.value" (click)="openProject(null)">
+                                        {{option.name}}</mat-option>
+                                </ng-container>
+                            </mat-select>
+                        </td>
+
+                        <td style="text-align: center!important;">{{item.Completion }}</td>
+                        <td class="text-center">
+                            <a style="cursor: pointer;margin-right:0px; " matTooltip="Update Contract Details"
+                                (click)="AddContract1(item)">
+                                <i class="fa fa-edit" (click)="editContract(item)" style="color: cornflowerblue;font-size:18px"></i>
+                            </a>
+                            <!-- <a class="anchor" matTooltip="Add Notes" (click)="AddProjectNotes()"
+                                style=" margin-left:0px">
+                                <mat-icon
+                                    style="cursor: pointer;color: #45c136f7;font-size: 20px;vertical-align: middle;">
+                                    rate_review
+                                </mat-icon>
+                            </a> -->
+                            <a><i class="fa fa-trash red" matTooltip="Delete Contract"
+                                    style="cursor: pointer;font-size:18px;margin-left:0px"></i></a>
+
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+            <button class="mine" mat-fab (click)="scrollGrid('right');" >
+                <mat-icon style="color:#37474f">fast_forward</mat-icon>
+              </button>
+              <button class="mine" mat-fab style="margin-right: 78px !important;" (click)="scrollGrid('left');">
+                <mat-icon style="color:#37474f">fast_rewind</mat-icon>
+              </button>
+            <mat-paginator [pageSizeOptions]="[9, 10, 25, 50, 100]" showFirstLastButtons></mat-paginator>
+        </div>
+    </div>
+</div>

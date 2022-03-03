@@ -1,0 +1,89 @@
+<div class="w-100">
+  <div class="flex-p">
+      <div class="row wrap">
+          <div class="col-sm-12 no-padding">
+              <div class="row-wrap">
+                  <div class="w-100">
+                          <div class="col-xs-12" style="margin-bottom: 15px;">
+                              <div class="pills">
+                                  <ul class="nav nav-pills" style="margin-bottom: -25px;">
+                                      <li routerLinkActive="active" routerLink="/purchase/procurement/">
+                                          <a mat-raised-button class="navtabWidth" style="margin-top: 10px;">
+                                              Procurement
+                                          </a>
+                                      </li>
+                                      <li routerLinkActive="active" routerLink="/purchase/inventory-management/">
+                                        <a mat-raised-button class="navtabWidth" style="margin-top: 10px;">
+                                          Store Management
+                                        </a>
+                                      </li>
+                                      <li routerLinkActive="active" routerLink="/purchase/material-requirement/">
+                                          <a mat-raised-button class="navtabWidth" style="margin-top: 10px;">
+                                            Inventory Control
+                                          </a>
+                                      </li>  
+                                      <li routerLinkActive="active" routerLink="/purchase/servicecontracts/">
+                                        <a mat-raised-button class="navtabWidth" style="margin-top: 10px;">
+                                          Service Contracts
+                                        </a>
+                                      </li>  
+                                      <li routerLinkActive="active" routerLink="/purchase/setup/">
+                                        <a mat-raised-button class="navtabWidth" style="margin-top: 10px;">
+                                          Setup
+                                        </a>
+                                      </li>  
+
+                                      <li routerLinkActive="active" routerLink="/purchase/rentals">
+                                        <a mat-raised-button class="navtabWidth" style="margin-top: 10px;">
+                                          Rentals
+                                        </a>
+                                      </li>                              
+                                 
+                                      <!-- <li routerLinkActive="active" routerLink="/purchase/finance/">
+                                        <a mat-raised-button class="navtabWidth" style="margin-top: 10px;">
+                                          Finance
+                                        </a>
+                                      </li> -->
+                                                              
+
+                                      <div class="row col-4"  style="margin-left: auto;position: sticky;">
+                                        <label class="col-4" style="margin-left:auto;margin-top: 27px;text-align: end;">Select Project:</label>&nbsp;
+                                        <mat-select  class="form-control col-4" style="margin-top: 25px;"  placeholder="Select Project Code" >
+                                          <mat-option>GOOG/KA/BLR/2021/017</mat-option>
+                                          <mat-option>TCS0/TS/HYD/2021/012</mat-option>
+                                          <mat-option>WIP/KA/BLR/2021/001</mat-option>
+                                          <mat-option>OMG/TS/HYD/2022/312</mat-option>
+                                        </mat-select>
+                                        <button style="margin-top: 21px;margin-left: 15px;" mat-raised-button  class="btn-success">
+                                          GO
+                                       </button>
+                                      </div>
+
+                                  
+                                      <!-- <li routerLinkActive="active" class="mt-4 ml-5" style="width:29%" >
+                                        <ng-select-dropdown  style="margin-top: 10px;"
+                                            [placeholder]="'Select Project'" 
+                                            [data]="data" 
+                                            [formControl]="f.name" 
+                                            [settings]="settings"
+                                            [disabled]="false"
+                                            (onFilterChange)="onFilterChange($event)"
+                                            (onDropDownClose)="onDropDownClose($event)"
+                                            (onSelect)="onItemSelect($event)" 
+                                            (onDeSelect)="onDeSelect($event)"
+                                            (onSelectAll)="onSelectAll($event)"
+                                            (onDeSelectAll)="onDeSelectAll($event)">
+                                          </ng-select-dropdown>
+                                      </li>                               -->
+
+                                  </ul>
+                              </div>
+                          </div>
+
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

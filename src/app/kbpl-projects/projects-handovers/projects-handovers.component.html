@@ -1,0 +1,73 @@
+<!-- <button mat-raised-button class="pull-right" type="button" color="primary" (click)="backClicked()" style="margin-top: 15px;margin-right: 10px;">
+           Back
+      </button> -->
+ <div class="row-wrap">
+        <button mat-raised-button  class="pull-right btn-default margin-right-10"
+        (click)="backClicked()">
+               <mat-icon>chevron_left</mat-icon> Back
+            </button>
+  
+  <div fxLayout="row wrap" class="w-100" style="margin-top: 40px;">
+  
+    <div class="table-responsive">
+      
+      <h3 style="margin-bottom: 20px;">Completion : 13/23</h3>
+     
+        <table id="example2" class="table table-bordered table-hover">
+          
+            <thead class="tbl-head">
+                <tr class="tr-grid-header">
+                  
+                    <th>Subject</th>
+                    <th class="text-center">Download Template</th>
+                    <th class="text-center">Document</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let applicant of tableList">
+                  
+                    <td>{{applicant.subject}}
+                
+                    </td>
+                  
+                    <td class="text-center">
+                        <mat-icon style="color: blue;cursor: pointer;">download</mat-icon>
+                    </td>
+                  
+                    <td class="text-center">
+                      <a style="color: blue;cursor: pointer;" *ngIf="applicant.status == 'View'" target="_blank" href="http://www.africau.edu/images/default/sample.pdf" routerLinkActive="router-link-active" >{{applicant.status}}</a>
+                     
+                      <a mwlConfirmationPopover
+                      *ngIf="applicant.status == 'View'" 
+                      [popoverTitle]="popoverTitle"
+                      [popoverMessage]="popoverMessage"
+                      placement="left"
+                      (confirm)="deleteUser()"
+                      (cancel)="cancelClicked = true"
+                     >
+                      <i style="cursor: pointer;" title="Delete User" class="fa fa-trash red"></i>
+                  </a>
+                  <a style="color: blue;cursor: pointer;" *ngIf="applicant.status == 'Add'" (click)="uploaddoc()"  routerLinkActive="router-link-active" >Add</a>
+                      
+                    </td>
+                <!-- <td class="editDel text-center">
+                    <a title="Edit User" style="margin-right: 10px; cursor: pointer;" (click)="openEditDialog(applicant.intApplicantId)">
+                        <i class="fa fa-edit"></i>
+                    </a>
+                    <a mwlConfirmationPopover
+                    [popoverTitle]="popoverTitle"
+                    [popoverMessage]="popoverMessage"
+                    placement="left"
+                    (confirm)="deleteUser()"
+                    (cancel)="cancelClicked = true">
+                    <i style="cursor: pointer;" title="Delete User" class="fa fa-trash red"></i>
+                </a>
+                
+            </td> -->
+        </tr>
+    </tbody>
+  </table>
+       
+    </div>
+  </div>
+      </div>

@@ -1,0 +1,73 @@
+<div fxLayout="row wrap" #resizedDiv>
+  <div class="flex-p w-100 sizeAlign">
+
+
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="col-sm-12" style="margin-bottom: 5px;">
+          
+          <div class="col-sm-6">
+            
+          </div>
+        
+        </div>
+        <div id="grid-table-container" class="table-responsive" style="margin-bottom: 20px;">
+          <table id="example2" class="table table-bordered">
+            <thead class="tbl-head">
+                <tr class="tr-grid-header">
+                    
+                    <th >PO Refrence</th>
+                    <th >Invoice Refrence</th>
+                    <th class="text-center">View</th>
+                   
+                    <th class="text-center">Amount</th>
+                    <th class="text-center">Actions</th>
+                   
+                    
+                </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of items" >
+                
+                 
+                  <td  >{{item.refrence}}</td>
+                  <td  >{{item.partnumber}}</td>
+                 <td class="text-center" style="cursor: pointer; color: blue"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></td>
+                  <td   class="text-center">{{item.invoiced}}</td>
+                  <td class="text-center">
+                    <a style="cursor: pointer;margin-right:0px;margin-left: -5px; " matTooltip="Edit ">
+                      <i class="fa fa-edit" style="color: cornflowerblue; cursor: pointer;" (click)="addnewitem()" ></i>
+                    </a>
+                    <a><i class="fa fa-trash red" matTooltip="Delete " style="cursor: pointer;"></i></a>
+                  </td>
+                
+                
+                 
+              </tr>
+              <!-- <tr>
+                <td colspan="10" class="text-right"> Total Amount</td>
+                <td colspan="2">90,240</td>
+              </tr> -->
+            </tbody>
+        </table>
+<!-- 
+        <button class="mine" mat-fab (click)="scrollGrid('right');" >
+          <mat-icon style="color:#37474f">fast_forward</mat-icon>
+        </button>
+
+        <button class="mine" mat-fab style="margin-right: 78px !important;" (click)="scrollGrid('left');">
+          <mat-icon style="color:#37474f">fast_rewind</mat-icon>
+        </button> -->
+          
+        </div>
+        <mat-dialog-actions align="end">
+    
+          <button mat-raised-button style="background-color: #cdc8c8;" class=" pull-right"  routerLink="/purchase/procurement/consignments/active"><mat-icon>cancel</mat-icon> Close</button>
+          
+        </mat-dialog-actions>
+      </div>
+    </div>
+
+  </div>
+  
+</div>

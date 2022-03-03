@@ -1,0 +1,124 @@
+<div class="w-100">
+  <div class="row">
+      <div class="col-xs-12" style="margin-bottom: 15px;">
+          <div class="pills"style="margin-left: 10px;">
+              <ul class="nav nav-pills" style="margin-left: 10px;margin-bottom: -25px;">
+                  <li routerLinkActive="active" routerLink="/purchase/procurement/indent">
+                      <a mat-raised-button class="navtabWidth" style="margin-top: 10px;">
+                          Indent
+                      </a>
+                  </li>
+                  <li routerLinkActive="active" routerLink="/purchase/procurement/rfq">  
+                      <a mat-raised-button class="navtabWidth" style="margin-top: 10px;">
+                          RFQ
+                      </a>
+                  </li>
+                  <li routerLinkActive="active" routerLink="/purchase/procurement/quotaions">
+                    <a mat-raised-button class="navtabWidth" style="margin-top: 10px;">
+                      Quotations
+                    </a>
+                  </li>
+                  <li routerLinkActive="active" routerLink="/purchase/procurement/purchase-orders">
+                      <a mat-raised-button class="navtabWidth" style="margin-top: 10px;">
+                        Purchase Orders
+                      </a>
+                  </li>
+                  <li routerLinkActive="active" routerLink="/purchase/procurement/consignments">
+                      <a mat-raised-button class="navtabWidth" style="margin-top: 10px;">
+                        Consignments
+                      </a>
+                  </li>  
+                                            
+              </ul>
+          </div>
+      </div>
+  </div>
+</div>
+<div class="container-fluid">
+  <div fxLayout="row wrap" #resizedDiv>
+    <div class="flex-p w-100 sizeAlign">
+      <div class="row" style="margin-bottom:23px;">
+        <div class="col-sm-12"> 
+          <button mat-raised-button class="pull-right  btn-default margin-right-10"
+          routerLink="/purchase/procurement/rfq">
+             <mat-icon>chevron_left</mat-icon> Back
+          </button> 
+          <button mat-raised-button class="pull-right  btn-primary margin-right-10"
+            (click)="addnewitem()">
+               <mat-icon>add</mat-icon> Add New Item
+          </button>
+          <button mat-raised-button class="pull-right  btn-default" style="margin-right: 8px;" (click)="dowloadExcelFile()">
+            <mat-icon>download</mat-icon> Download Sample
+          </button>
+          <button mat-raised-button class="pull-right  btn-default margin-right-10" (click)="uploadExcelDialog()">
+            <mat-icon>cloud_download</mat-icon> Upload CSV
+          </button>
+        </div>
+      </div>
+    <div class="row" >
+      <div class="col-xs-12" style="overflow-x: auto">
+        <div id="grid-table-container" class="table-responsive" >
+          <table matSort id="example2" class="table table-bordered table-hover" style="margin-left: 0px!important;">
+            <thead class="tbl-head">
+              <tr>
+               
+                <th class="text-left">Item Name</th>
+                <!-- <th class="text-left">Indent Reference</th> -->
+                <!-- <th class="text-left">Project Code</th> -->
+                <th class="text-left">Item Code</th>
+                <th class="text-left"> Brand</th>
+                <th class="text-left">Item Catagory</th>
+                <th class="text-left">Item Sub Category</th>
+                <th class="text-left">Length</th>
+                <th class="text-left">Width</th>
+                <th class="text-left">Height</th>
+                <th class="text-left">Thickness </th>
+                <th class="text-center">UoM </th>
+                <th class="text-center">Quantity Required</th>
+                <th class="text-center">Actions </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of items">
+               
+                <td class="text-left">{{item.ItemName }}</td>
+                <!-- <td class="text-left">{{item.reference }}</td>
+                <td class="text-left">{{item.projectcode }}</td> -->
+                <td class="text-left">{{item.ItemCode}}</td>
+                <td class="text-left">{{item.PartMake}}</td>  
+                <td class="text-left">{{item.itemCategory}}</td>
+                <td class="text-left">{{item.subcategory}}</td>
+                <td class="text-left">{{item.length}}</td>
+                <td class="text-left">{{item.width}}</td>
+                <td class="text-left">{{item.height}}</td>
+                <td class="text-left">{{item.thickness}}</td> 
+                <td class="text-center">{{item.uom}}</td>          
+                <td style="text-align: center!important;">
+                  {{item.qrequired}}</td> 
+                  <td class="text-center">
+                    <a style="cursor: pointer;margin-right:0px;margin-left: -5px; " matTooltip="Edit ">
+                      <i class="fa fa-edit" style="color: cornflowerblue; cursor: pointer;" (click)="addnewitem(item)"></i>
+                    </a>
+                    <a mwlConfirmationPopover
+                    [popoverTitle]="popoverTitle"
+                    [popoverMessage]="popoverMessage"
+                    placement="left"
+                    (confirm)="deleteUser()"
+                    (cancel)="cancelClicked = true">
+                    <i class="fa fa-trash red" matTooltip="Delete " style="cursor: pointer;"></i></a>
+                  </td>   
+              </tr>
+            </tbody>
+          </table>
+          
+     
+          
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+  </div>
+
+      
+

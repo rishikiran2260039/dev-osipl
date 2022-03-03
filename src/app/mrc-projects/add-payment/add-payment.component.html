@@ -1,0 +1,48 @@
+<h1 mat-dialog-title class="custom-header" style="background-color: rgb(27, 27, 97);">Add Payment</h1>
+<form>
+  <div mat-dialog-content>
+    <div class="col-sm-12">
+      <div class="row">
+        <div class="col-sm-6" style="margin-top: 10px; margin-bottom: 10px;">
+          <label>List of Payements:</label>
+        </div>
+        <div class="col-sm-6" style="margin-top: 10px; margin-bottom: 10px;">
+          <mat-select placeholder="Select Payement" class="form-control">
+            <mat-option>Material</mat-option>
+            <mat-option>Labour</mat-option>
+            <mat-option>Machinery</mat-option>
+            <mat-option>Others</mat-option>
+          </mat-select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6" style="margin-top: 10px; margin-bottom: 10px;">
+          <label>Payement Ref:</label>
+        </div>
+        <div class="col-sm-6">
+          <input class="form-control" style="margin-top: 10px; margin-bottom: 10px;">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6" style="margin-top: 10px; margin-bottom: 10px;">
+          <label>Amount:</label>
+        </div>
+        <div class="col-sm-6" style="margin-top: 10px; margin-bottom: 10px;">
+          <input class="form-control">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6" style="margin-top: 10px; margin-bottom: 10px;">
+          <label>Date:</label>
+        </div>
+        <div class="col-sm-6" style="margin-top: 10px; margin-bottom: 10px;">
+          <input class="form-control">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div mat-dialog-action style="margin-top: 20px;">
+    <button mat-raised-button class="add-hover btn-primary pull-right" style="margin: 1%;" (click)="close()" ><mat-icon>send</mat-icon>Save</button>
+    <button mat-raised-button class="add-hover btn-primary pull-right" style="margin: 1%;" (click)="close()"><mat-icon>cancel</mat-icon>&nbsp;Cancel</button>
+  </div>
+</form>

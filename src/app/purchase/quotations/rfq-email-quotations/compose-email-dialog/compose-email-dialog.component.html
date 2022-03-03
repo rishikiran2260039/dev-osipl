@@ -1,0 +1,107 @@
+
+<div class="NewHeader">
+  <h1 mat-dialog-title>
+    Compose Mail
+  </h1>
+</div>
+<div mat-dialog-content>
+
+<form class="form-horizontal">
+  <div class="col-sm-12" style="margin-bottom: 8px;">
+    <label style="font-weight: bold;" class="add-member-label">Verification Checklist:</label>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+      <label class="form-check-label" for="flexCheckDefault" style="margin-left: 15px;font-weight: normal;">
+        Checklist logic in RFQ stage.
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" >
+      <label class="form-check-label" for="flexCheckDefault" style="margin-left: 15px;font-weight: normal;">
+        Additional Vendors (not suggested by the system) are selected.
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+      <label class="form-check-label" for="flexCheckDefault" style="margin-left: 15px;font-weight: normal;">
+        System suggested vendors are selected. And it is mandatory to select OEM vendors.
+      </label>
+    </div>
+
+  </div>
+  <div class="col-sm-12" style="margin-bottom: 8px;">
+    <label style="font-weight: bold;">Vendors and Branches:</label>
+    <span>&nbsp;
+      Abhi Constructions - Ayyappa Society
+    </span>
+  </div>
+  <div class="col-sm-12" style="margin-bottom: 8px;">
+    <label style="font-weight: bold;" class="add-member-label">Email Content:</label>
+    <p>Dear Vendor Name,</p>
+    
+    <div class="col-sm-12">
+      <div class="form-group">
+        <!-- <textarea rows="3" type="text"  maxlength="200" class="form-control" style="margin-left: 3px;">Thanks for being a valuable supply partner in the OM Mining. Please click the link below to submit or update your quotation for requested items.</textarea> -->
+        <app-ngx-editor formControlName="Description" placeholder="Thanks for being a valuable supply partner in the OM Mining. Please click the link below to submit or update your quotation for requested items" height="120px" minHeight="50px"
+        [spellcheck]="true" [config]='toolBar'></app-ngx-editor>
+      </div>
+    </div>
+    <p>Please ensure that your offer is reached to us latest by closing hours of dd-mm-yyyy</p>
+    <p>Click here to submit quotation</p>
+    <p>Note: Please leave blank and don't enter any details for a Part (Item) if NOT Supplied.</p>
+    <p>Please contact contact@optionmatrix.com for any clarifications or enquiries.</p>
+    <p>
+      Regards,<br>
+      Purchase Department<br>
+      OM Mining,<br>
+      Project Name,<br>
+      Project Address<br>
+    </p>
+    
+  </div>
+
+  <div class="col-sm-12">
+    <div class="form-group">
+      <label class="control-label col-sm-4 add-member-label">Closure Date:</label>
+      <div class="col-sm-8">
+        <input type="date" class="form-control" id="step" placeholder="Enter Date">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-4">Remarks: </label>
+      <div class="col-sm-8">
+          <textarea rows="2" type="text"  maxlength="100" class="form-control"
+            placeholder="Enter Your Remarks">
+          </textarea>
+      </div>
+  </div>
+
+  <div class="form-group">
+    <label class="control-label col-sm-4 add-member-label">OTP: </label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" id="step" placeholder="Enter OTP">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="control-label col-sm-4"></label>
+    <div class="col-sm-8">
+      <label>Generate OTP to <span style="color: blue; cursor:pointer" matTooltip="Send OTP to Mobile"> Mobile (Send)</span> | <span style="color: blue; cursor:pointer" matTooltip="Send OTP to Mail"> Email (Send)</span></label>
+    </div>
+  </div>
+  </div>
+  
+  <!-- <div class="form-group">
+      <label class="control-label col-sm-4 add-member-label">Upload Document: </label>
+      <div class="col-sm-8">
+        <input type="file">
+      </div>
+    </div> -->
+    
+  
+</form>
+</div>
+<mat-dialog-actions align="end">
+<button mat-raised-button class="btn-primary" (click)="close()" [mat-dialog-close]="'test'"><span>Publish</span></button>
+  <button mat-raised-button class="CancelClass" (click)="close()">Cancel</button>
+</mat-dialog-actions> 

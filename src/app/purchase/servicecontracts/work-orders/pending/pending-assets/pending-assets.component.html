@@ -1,0 +1,66 @@
+<div class="col-sm-12 margin-top-10" style="padding-left: 20px; padding-right: 10px;">
+  <div class="table-responsive">
+      <table matSort matSortActive="JobCode" matSortDirection="asc" class="table table-bordered table-hover">
+          <thead class="tbl-head">
+              <tr class="tr-grid-header">
+             
+                 
+                  <th class="text-left" style="width: 200px;">Asset Name</th>
+                  <th class="text-left" style="width: 200px;">Asset Code</th>
+                  <th  class="text-left" style="width: 200px;">Asset OEM</th>
+                  <th class="text-left" style="width: 200px;">Asset Model</th>
+                  <!-- <th class="text-left" style="width: 200px;">Item Type</th> -->
+                  <th class="text-center" style="width: 200px;">Quantity</th>
+                  <th class="text-left" style="width: 200px;">Date of Manufacture</th>
+                  <th class="text-left" style="width: 200px;">Date of Purchase</th>
+                  <th class="text-left" style="width: 200px;">Description</th>
+                  <th class="text-left" style="width: 200px;">PO Ref</th>
+                  <th class="text-left" style="width: 200px;">Vendor Name</th>
+                  <th class="text-left" style="width: 200px;">Condition</th>
+                  <th class="text-center" style="width: 100px;">Actions</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let item of items">
+                 
+                  <td class="text-left">{{item.name}}</td>
+                  <td class="text-left">{{item.no}}</td>
+                  <td class="text-left">{{item.cat}}</td>
+                  <td class="text-left">{{item.subcat}}</td>
+                  <!-- <td class="text-left">{{item.type}}</td> -->
+                  <td class="text-center" style="color:blue;cursor: pointer;" (click)="quantitypopup()">{{item.var}}</td>
+                  <!-- <td class="text-left">{{item.make}}</td> -->
+                  <td class="text-left">{{item.length}}</td>
+                  <td class="text-left">{{item.width}}</td>
+                  <td class="text-left">{{item.height}}</td>
+                  <td class="text-left">{{item.thick}}</td>
+                  <td class="text-left">{{item.pmake}}</td>
+                  <td class="text-left">{{item.rate}}</td>
+
+                  <!-- <td class="text-center">{{item.time}}</td>
+                  <td class="text-left">{{item.remarks}}</td> -->
+
+
+                  <td class="text-center">
+                    <a  class="edit-icon" (click)="openActionTypeDialog(item)">
+                        <i class="fa fa-edit"></i>
+                    </a>
+                    <a mwlConfirmationPopover
+                    [popoverTitle]="popoverTitle"
+                    [popoverMessage]="popoverMessage"
+                    placement="left"
+                    (confirm)="deleteUser()"
+                    (cancel)="cancelClicked = true">
+                    <i style="cursor: pointer;" title="Delete" class="fa fa-trash red"></i>
+                </a>
+                
+
+                </td>
+              </tr>
+              <tr *ngIf="items ==null || items.length ==0">
+                <td colspan="13" class="text-center">No data available</td>
+            </tr>
+          </tbody>
+      </table>
+  </div>
+</div>

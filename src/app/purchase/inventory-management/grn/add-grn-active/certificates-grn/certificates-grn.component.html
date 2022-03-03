@@ -1,0 +1,69 @@
+
+    <div class="col-sm-12" style="margin-bottom: 5px;padding: 0%;">
+          
+      <div class="col-sm-6">
+        
+      </div>
+      <button mat-raised-button  class="pull-right btn-default"
+      [routerLink]="['/purchase/inventory-management/grn/store-incharge']" routerLinkActive="router-link-active">
+   <mat-icon>chevron_left</mat-icon> Back
+</button>
+      <button mat-raised-button style=" color:#fff !important;cursor: pointer;margin-bottom: 5px;" class="pull-right  btn-success margin-right-10" matTooltip="Add Invoice"  (click)="addnewitem()" >
+        <mat-icon>add</mat-icon> Add Certificate
+      </button>
+    </div> 
+
+
+
+<div class="row">
+ 
+  <div class="col-xs-12">
+    <div id="divQuotesGrid" class="table-responsive">
+      <table matSort id="example2" class="table table-bordered table-hover">
+        <thead class="tbl-head">
+          <tr>
+            <th class="text-center">Vendor</th>
+            <th class="text-center">PO Reference</th>
+            <th class="text-center">Description</th>
+           
+            <th class="text-center">Document</th>
+            <th class="text-center">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of items">
+            <td style="text-align: center!important;" *ngIf="isedit != true"> {{item.vendor}}</td>
+            <td style="text-align: center!important;" *ngIf="isedit != true"> {{item.poref}}</td>
+            <td style="text-align: center!important;" *ngIf="isedit != true"> {{item.name}}</td>
+            <td style="text-align: center!important;" *ngIf="isedit == true"><input type="text" class="form-control" value="{{item.name}}"></td>
+            <td style="text-align: center!important;"><a href="../../../../../assets/leedcertificate.pdf" target="_blank">View</a></td>
+            <td  class="text-center">
+              <a style="cursor: pointer;margin-right:10px; " matTooltip="Update Item" (click)="addnewitem(item)">
+                  <i class="fa fa-edit" style="color: cornflowerblue"></i>
+              </a>
+              <a mwlConfirmationPopover
+              [popoverTitle]="popoverTitle"
+              [popoverMessage]="popoverMessage"
+              placement="left"
+              (confirm)="deleteUser()"
+              (cancel)="cancelClicked = true">
+              <i style="cursor: pointer;" title="Delete User" class="fa fa-trash red"></i>
+          </a>
+          </td> 
+          </tr>
+          
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<mat-dialog-actions align="end">
+    
+  <button mat-raised-button style="background-color: #cdc8c8;" class=" pull-right"  routerLink="/purchase/procurement/consignments/active"><mat-icon>cancel</mat-icon> Close</button>
+  <button mat-raised-button class="btn-primary pull-right" routerLink="/purchase/procurement/consignments/AddConsignment/transport-consignment" style="margin-right: 10px !important;"><mat-icon>send</mat-icon><span >
+    Save & Next</span>
+  </button>
+  <button mat-raised-button class="btn-primary pull-right" routerLink="/purchase/procurement/consignments/AddConsignment/invoicing-consignment" style="margin-right: 10px !important;"><mat-icon>chevron_left</mat-icon><span >Previous</span></button>
+  
+</mat-dialog-actions>

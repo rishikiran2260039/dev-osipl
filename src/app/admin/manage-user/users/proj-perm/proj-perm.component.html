@@ -1,0 +1,28 @@
+<div fxLayout="row wrap">
+  <div class="table-responsive flex-p">
+    <button type="button" class="btn btn-default" style="margin-bottom: 5px;margin-left: 5px;float:right" (click)="goBack()"><i class="fa fa-arrow-left"></i>Back</button>
+
+      <button type="button" class="btn btn-success" style="margin-bottom: 5px;margin-left: 5px;float: right"><i class="fa fa-floppy-o"></i>Save</button>
+     
+   
+          <table id="example2" class="table table-bordered table-hover">
+              <thead class="tbl-head">
+                  <tr class="tr-grid-header">
+                      <th>Screen Permissions</th>
+                      <th class="text-center">Allow</th>
+
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr *ngFor="let screenName of screens">
+                          <td>{{screenName.name}}</td>
+                          <td class="text-center"><input type="checkbox" checked></td>
+                      
+                      </tr>
+                      <tr>
+                          
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+      </div>

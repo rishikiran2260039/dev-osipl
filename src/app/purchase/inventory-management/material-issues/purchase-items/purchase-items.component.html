@@ -1,0 +1,97 @@
+
+<div class="container-fluid">
+  <div fxLayout="row wrap" #resizedDiv>
+    <div class="flex-p w-100 sizeAlign">
+      <div class="row" style="margin-bottom:23px;">
+        <div class="col-sm-12"> 
+          <button mat-raised-button  class="pull-right btn-default margin-right-10"
+          [routerLink]="['/purchase/inventory-management/material-issues/active']" routerLinkActive="router-link-active" >
+                 <mat-icon>chevron_left</mat-icon> Back
+              </button>
+          <button mat-raised-button class="pull-right  btn-primary margin-right-10"
+          (click)="additem(null)">
+               <mat-icon>add</mat-icon> Add New Item
+          </button>
+          <button mat-raised-button class="pull-right  btn-default margin-right-10"
+          >
+               <mat-icon>cloud_download</mat-icon> Download Sample
+          </button>
+          <button mat-raised-button class="pull-right  btn-default margin-right-10"
+          >
+               <mat-icon>cloud_upload</mat-icon> Upload CSV
+          </button>
+        </div>
+      </div>
+    <div class="row" >
+    
+      <div class="col-xs-12" style="overflow-x: auto">
+        <div id="grid-table-container" class="table-responsive" >
+          
+          <table matSort id="example2" 
+          class="table table-bordered table-hover" 
+          style="margin-left: 0px!important;">
+            <thead class="tbl-head">
+              <tr>
+               
+        
+                <th class="text-center">Item Code</th>
+                <th class="text-left">Item Name</th>
+                <th class="text-left">Item Category</th>
+                <th class="text-left">Item Sub Category</th>
+                <th class="text-left">Brand</th>
+                <th class="text-left" style="width: 100px;">Length</th>
+                <th class="text-left" style="width: 100px;">Width</th>
+                <th class="text-left" style="width: 100px;">Height</th>
+                <th class="text-left">Thickness</th>
+                <th class="text-center">Quantity Requested</th>
+                <th class="text-center">Quantity Issued</th>
+                <th class="text-center">Remarks</th>
+                <th class="text-center">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of items">
+                
+                <td class="text-center">{{item.no}}</td>
+                <td class="text-left">{{item.name}}</td>
+                <td class="text-left">{{item.cat}}</td>
+                <td class="text-left">{{item.subcat}}</td>
+                <!-- <td class="text-left">{{item.type}}</td> -->
+                <td class="text-left">{{item.make}}</td>
+                <td class="text-left" style="width: 100px;">{{item.length}}</td>
+                <td class="text-left" style="width: 100px;">{{item.width}}</td>
+                <td class="text-left" style="width: 100px;">{{item.height}}</td>
+                <td class="text-left">{{item.thick}}</td>
+                <td class="text-center">{{item.Qty}}</td>
+                <td class="text-center">{{item.Qtyissued}}</td>
+                <td class="text-center">{{item.remarks}}</td>
+                <td class="text-center editDel">
+                  <a style="cursor: pointer;margin-right:0px;margin-left: -5px; "
+                      matTooltip="Update " (click)="additem(item)">
+                      <i class="fa fa-edit" style="color: cornflowerblue"></i>
+                  </a>
+                  <a mwlConfirmationPopover
+              
+                  [popoverTitle]="popoverTitle"
+                  [popoverMessage]="popoverMessage"
+                  placement="left"
+                  (confirm)="deleteUser()"
+                  (cancel)="cancelClicked = true"
+                 >
+                  <i style="cursor: pointer;" title="Delete BOM" class="fa fa-trash red"></i>
+              </a>
+                       
+                 </td>
+              </tr>
+            </tbody>
+          </table>
+          
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+
+
+      
+

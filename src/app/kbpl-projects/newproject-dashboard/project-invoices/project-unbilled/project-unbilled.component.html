@@ -1,0 +1,56 @@
+<div class="col-sm-12">
+  <div class="pull-right col-sm-1 no-padding">
+
+      <button mat-raised-button color="primary" style="position: relative; left: 28px;" class="pull-right filter-hover" (click)="filterToggle = !filterToggle">
+          <mat-icon>add</mat-icon> Assign to Invoice
+      </button>
+  </div>
+</div>
+
+<div class="table-responsive w-100 flex-p">
+  <table id="example2" class="table table-bordered table-hover">
+      <thead class="tbl-head">
+          <tr class="tr-grid-header">
+              <th class="vert-align-mid" style="min-width: 71px !important;">Site</th>
+              <th class="vert-align-mid" style="width:90px">SOW</th>
+              <th class="vert-align-mid" style="width:90px">Awarded	</th>
+              <th class="vert-align-mid">Task</th>
+              <th class="vert-align-mid">Action</th>
+              <th class="vert-align-mid">Job Code</th>
+              <th class="vert-align-mid">Expenses Code</th>
+              <th class="vert-align-mid" style="width:105px">Worked</th>
+              <th>Total</th>
+              <th>Expense</th>
+              <th>Budget Total</th>
+              <th class="vert-align-mid">Quoted Total</th>
+              <th class="vert-align-mid" style="min-width: 57px !important;">	Unbilled</th>
+              <th class="vert-align-mid" style="min-width: 67px;">User Name</th>
+              <th style=" min-width: 100px !important;">Date</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let item of items">
+              <td>{{item.site}}</td>
+              <td>{{item.sow}}</td>
+              <td>{{item.awarded}}</td>
+              <td>{{item.task}}</td>
+              <td>{{item.action}}</td>
+              <td>{{item.jobCode}}</td>
+              <td>{{item.expensesCode}}</td>
+              <td>{{item.worked}}</td>
+              <td>{{item.total}}</td>
+              <td>{{item.expense}}</td>
+              <td class="text-center">{{item.budgetTotal}}</td>
+              <td class="text-center">{{item.quotedTotal}}</td>
+              <td class="text-center">{{item.unbilled}}</td>
+              <td class="text-center">{{item.userName}}</td>
+              <td class="text-center">{{item.date}}</td>
+          </tr>
+          
+          
+      </tbody>
+  </table>
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 50, 100]" showFirstLastButtons></mat-paginator>
+
+
+</div>

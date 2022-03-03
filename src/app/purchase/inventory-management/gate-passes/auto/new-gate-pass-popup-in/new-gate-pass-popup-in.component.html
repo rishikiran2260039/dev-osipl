@@ -1,0 +1,83 @@
+<h1 mat-dialog-title class="custom-header" style="background-color:#286ba5 !important;height:50px">{{ data ? 'Update' : 'Add'}} Gate Pass</h1>
+<form>
+  <div mat-dialog-content>
+    <div class="col-sm-12">
+      <div class="col-sm-6"> 
+        <div class="form-group">
+          <label class="control-label col-lg-12 col-md-12 col-sm-12 col-xs-12 add-member-label" style="margin-left: -15px !important;" >Select Context:</label>
+          <mat-select placeholder="Select Context" class="form-control" required >
+            <mat-option value="1">Purchase Orders</mat-option>
+            <mat-option value="2">Service Challans</mat-option>
+            <mat-option value="3">Miscellaneous</mat-option>
+            </mat-select>
+        </div>
+  
+        <div class="form-group"  >
+          <label class="control-label col-lg-12 col-md-12 col-sm-12 col-xs-12 add-member-label" style="margin-left: -15px !important;">Gate Pass Ref: </label>
+          <input type="text" value="OM/GP/APR-20/10008" class="form-control" placeholder="Enter Gate Pass Ref" required >
+        </div>
+       
+        
+        
+        <div class="form-group"  >
+          <label class="control-label col-lg-12 col-md-12 col-sm-12 col-xs-12 add-member-label" style="margin-left: -15px !important;">	Issued To: </label>
+          <input type="text" class="form-control" placeholder="Enter Issued To" required >
+        </div>
+       
+        <div class="form-group"  >
+          <label class="control-label col-lg-12 col-md-12 col-sm-12 col-xs-12 add-member-label" style="margin-left: -15px !important;">Issued By: </label>
+          <input type="text" class="form-control" placeholder="Enter Issued By" required >
+        </div>
+        
+        <div class="form-group"  >
+          <label class="control-label col-lg-12 col-md-12 col-sm-12 col-xs-12 add-member-label" style="margin-left: -15px !important;">Date Issued: </label>
+          <input type="date" class="form-control" placeholder="Selected Date Issued" required >
+        </div>
+       
+        <div class="form-group"  >
+          <label class="control-label col-lg-12 col-md-12 col-sm-12 col-xs-12 add-member-label" style="margin-left: -15px !important;">Purpose: </label>
+          <input type="text" class="form-control" placeholder="Enter Purpose" required >
+        </div>
+        
+      </div>
+      <div class="col-sm-6"> 
+        <div class="form-group"  >
+          <label class="control-label col-lg-12 col-md-12 col-sm-12 col-xs-12 add-member-label" style="margin-left: -15px !important;">Vehicle Number: </label>
+          <input type="text" class="form-control" placeholder="Enter Vehicle Number" required >
+        </div>
+
+        <div class="form-group"  >
+          <label class="control-label col-lg-12 col-md-12 col-sm-12 col-xs-12 add-member-label" style="margin-left: -15px !important;">Driver Name: </label>
+          <input type="text" class="form-control" placeholder="Enter Driver Name" required >
+        </div>
+
+        <div class="form-group"  >
+          <label class="control-label col-lg-12 col-md-12 col-sm-12 col-xs-12 add-member-label" style="margin-left: -15px !important;">Driver Contact: </label>
+          <input type="number" class="form-control" placeholder="Enter Driver Contact" required >
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-lg-12 col-md-12 col-sm-12 col-xs-12 add-member-label" style="margin-left: -15px !important;" >Select 	Direction:</label>
+          <mat-select placeholder="Select Direction" class="form-control" required >
+            <mat-option value="1">IN</mat-option>
+            <mat-option value="2">Out</mat-option>
+          </mat-select>
+        </div>
+
+        <div class="form-group"  >
+          <label class="control-label col-lg-12 col-md-12 col-sm-12 col-xs-12 add-member-label" style="margin-left: -15px !important;">Remarks: </label>
+          <input style="height: 96px;" type="text" class="form-control" placeholder="Enter Remarks" required >
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <mat-dialog-actions align="end">
+        <button mat-raised-button class="add-hover btn-primary" type="submit" (click)="close()"><mat-icon>send</mat-icon>&nbsp;Save</button>
+        <button mat-raised-button type="button" class="add-dark-hover btn-default" (click)="close()"><mat-icon>cancel</mat-icon>&nbsp;Cancel</button>
+    </mat-dialog-actions>
+</form>
+
+
+
+

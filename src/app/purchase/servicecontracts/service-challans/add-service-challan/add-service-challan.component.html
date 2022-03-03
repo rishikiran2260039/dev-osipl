@@ -1,0 +1,132 @@
+<div class="NewHeader" style="background-color:#286ba5 !important; height: 50px;">
+  <h1 mat-dialog-title>
+    {{data ? 'Update' : 'Add'}} Service Challan
+  </h1>
+</div>
+<div mat-dialog-content>
+  <form class="form-horizontal">
+    <div class="form-group">
+      <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Select Project </label>
+      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+        <mat-select placeholder="Select Project Code" class="form-control">
+          <mat-option >E005KA10012</mat-option>
+          <mat-option >E005KA10013</mat-option>
+          <mat-option >E005KA10014</mat-option>
+          <mat-option >E005KA10015</mat-option> 
+        </mat-select>
+      </div>
+  </div>
+    <div class="form-group">
+      <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Enter Service Challan Ref: </label>
+      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+        <input type="text" class="form-control" placeholder="Enter Service Challan Ref"  required>
+      </div>
+  </div>
+
+  <div class="form-group">
+    <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Select Vendor: </label>
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+      <mat-select placeholder="Select Vendor" class="form-control">
+        <mat-option >TATA HITACHI</mat-option>
+        <mat-option >	GV Contractor</mat-option>
+        <mat-option >	HBVC Systems</mat-option>
+        <mat-option >CaterPillar</mat-option> 
+      </mat-select>
+    </div>
+</div>
+
+<!-- <div class="form-group">
+  <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">
+    Vendor Branch: </label>
+  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+    <mat-select placeholder="Select Vendor Brnach" class="form-control">
+      <mat-option value="1">Default</mat-option>
+    </mat-select>
+  </div>
+</div> -->
+<div class="form-group">
+  <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">
+   Enter Work Order Ref: </label>
+   <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+    <input type="text" class="form-control" placeholder="Enter Work Order Ref"  required>
+  </div>
+</div>
+
+
+      <!-- <div class="form-group">
+          <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Work Order#: </label>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <label class="control-label">--</label>
+          </div>
+      </div>
+       -->
+      <!-- <div class="form-group">
+          <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 ">
+            Purchase Order#: </label>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <mat-select placeholder="Select Purchase Order" class="form-control">
+              <mat-option value="1">BGR/OM/BHL/JAN/18-19/1038/REV1</mat-option>
+              <mat-option value="2">BGR/OM/BHL/JAN/18-19/1022/REV8</mat-option>
+              <mat-option value="3">BGR/OM/BHL/JAN/18-19/1049/REV3</mat-option>
+              <mat-option value="4">BGR/OM/BHL/JAN/18-19/2068/REV5</mat-option>
+              <mat-option value="5">BGR/OM/BHL/JAN/18-19/3014/REV4</mat-option>
+              <mat-option value="6">BGR/OM/BHL/JAN/18-19/1492/REV7</mat-option>
+              <mat-option value="7">BGR/OM/BHL/JAN/18-19/4402/REV2</mat-option>
+              <mat-option value="8">BGR/OM/BHL/JAN/18-19/5918/REV6</mat-option>
+            </mat-select>
+          </div>
+      </div> -->
+      
+      <div class="form-group">
+          <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">
+             Release Date: </label>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <input type="date" class="form-control" placeholder="Enter Return Date"  required>
+          </div>
+      </div>
+
+      <div class="form-group">
+          <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">
+            Expected Arrival Date: </label>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <input type="date" class="form-control" placeholder="Enter Return Date"  required>
+          </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-sm-4 add-member-label"> Description:</label>
+        <div class="col-sm-8">
+          <textarea id="txtid" name="txtname" rows="4" class="form-control" id="step" placeholder="Enter Remarks">
+            </textarea>
+        </div>
+      </div>
+      <!-- <div class="form-group">
+          <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">
+            Item Category: </label>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <input type="date" class="form-control" placeholder="Enter Item Category"  required>
+          </div>
+      </div> -->
+
+      <!-- <div class="form-group">
+        <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">
+          Item Category#: </label>
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+          <mat-select placeholder="Select Item Category" class="form-control">
+            <mat-option value="1">Parts</mat-option>
+            <mat-option value="1">Equipments</mat-option>
+          </mat-select>
+        </div>
+      </div> -->
+
+  
+  </form>
+
+
+</div>
+<mat-dialog-actions align="end">
+  <button mat-raised-button class="btn-primary" (click)="close()"><mat-icon>send</mat-icon><span >Save</span></button>
+  <button mat-raised-button class="add-dark-hover btn-default" (click)="close()"><mat-icon>cancel</mat-icon> Close</button>
+</mat-dialog-actions>
+
+

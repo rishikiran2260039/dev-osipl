@@ -1,0 +1,45 @@
+<div class="NewHeader">
+  <h1 mat-dialog-title>Grid View Configuration </h1>
+</div> 
+<p>Please select the required columns in the grid, to view grid with specific columns</p>
+<div mat-dialog-content style="overflow:hidden!important;">
+  <form class="form-horizontal" novalidate  style="margin-top:10px">
+    <mat-checkbox  class="col-sm-4" >PO.NO</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >PO.Date</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >Vendor Name</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >Type of Contract</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >Particulars</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >Qty</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >Unit</mat-checkbox>
+
+    <mat-checkbox  class="col-sm-4" >Rate</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >Total Amount</mat-checkbox>
+    <mat-checkbox class="col-sm-4" >GST</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >Project Name</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >Project Code</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >Bill No</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >Bill Date</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >Bill Qty</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >Bill Basic Amount</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >Transportation</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >Other Charges</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >GST Claimed</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >Bill Value with tax</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >PO status</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >Balance PO Amount</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >PO Excess</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >PO short close</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >Processed to Directors</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >Processed to Accounts</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >PO Raised Month</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >PO Processed Month</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >Remarks</mat-checkbox>
+  </form>
+</div>
+
+<mat-dialog-actions align="end">
+  <button mat-raised-button class="btn-primary" (click)="close()"><mat-icon>send</mat-icon>Configure</button>
+  <button mat-raised-button class="CancelClass" (click)="close()"><mat-icon>cancel</mat-icon>Cancel</button>
+</mat-dialog-actions>
+
+

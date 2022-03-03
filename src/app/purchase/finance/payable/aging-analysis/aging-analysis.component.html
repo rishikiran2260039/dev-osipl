@@ -1,0 +1,75 @@
+
+
+  <div class="row col-12 mt-5">
+
+    <div class="col-6">
+      <div class="chart-header">
+        <p style="font-size: 17px;background-color: #286ba5">Receivables in due days</p>
+      </div>
+      <div id="grid-table-container" class="table-responsive" style="margin-top:25px">
+        <!-- <table matSort id="example2" class="table table-bordered table-hover">
+          <thead class="tbl-head">
+            <tr>
+              <th>Period</th>
+              <th class="text-center">Amount (AUD)</th>
+              <th class="text-center">Invoices</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of items">
+              
+              <td>{{item.period }}</td>
+              <td class="text-center">{{item.amt }}</td>  
+              <td class="text-center"><a style="color:blue" routerLink="/mrc/accounting/receivables/ageing-invoices" matTooltip="View Invoice">{{item.inv }}</a></td>
+
+            </tr>
+
+          </tbody>
+        </table> -->
+        <table class="table table-bordered">
+          <thead>
+            <tr >
+              <th>Period</th>
+              <th class="text-center">Amount (AUD)</th>
+              <th class="text-center">Invoices</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of items">
+              <td>{{item.period }}</td>
+              <td class="text-center">{{item.amt }}</td>  
+              <td class="text-center"><a style="color:blue" routerLink="/purchase/finance/receivables/aging-analysis" matTooltip="View Invoice">{{item.inv }}</a></td>
+            </tr>
+          </tbody>
+        </table>
+        
+      </div>
+
+    </div>
+
+    <div class="col-6">
+        <div class="chart-header">
+          <p style="font-size: 17px;background-color: #286ba5">Distribution of Receivables</p>
+        </div>
+        <div class="flex-p">
+          <mat-card>
+            <div class="w-100 h-300p">
+              <ngx-charts-pie-chart
+                [scheme]="colorScheme"
+                [results]="single"
+                [legend]="showLegend"
+                [explodeSlices]="explodeSlices"
+                [labels]="showLabels"
+                [doughnut]="doughnut"
+                [gradient]="gradient"
+              >
+              </ngx-charts-pie-chart>
+            </div>
+          </mat-card>
+        </div>
+    </div>
+
+    
+
+  </div>
+

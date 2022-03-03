@@ -1,0 +1,74 @@
+<div class="NewHeader" style="background-color:#286ba5 !important; height: 50px;">
+  <h1 mat-dialog-title>
+    {{data ? 'Update' : 'Add'}} Service Challan
+  </h1>
+</div>
+<div mat-dialog-content>
+  <form class="form-horizontal">
+   
+
+
+<!-- <div class="form-group">
+  <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">
+    Vendor Branch: </label>
+  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+    <mat-select placeholder="Select Vendor Brnach" class="form-control">
+      <mat-option value="1">Default</mat-option>
+    </mat-select>
+  </div>
+</div> --> 
+
+
+
+      <!-- <div class="form-group">
+          <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Work Order#: </label>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <label class="control-label">--</label>
+          </div>
+      </div>
+       -->
+     
+      
+      
+
+     
+
+      <!-- <div class="form-group">
+          <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">
+            Item Category: </label>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <input type="date" class="form-control" placeholder="Enter Item Category"  required>
+          </div>
+      </div> -->
+
+     
+      <div class="form-group">
+        <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Part Number: </label>
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+          <input type="text" class="form-control" id="step" placeholder="Enter Part Number">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Part Name: </label>
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+          <input type="text" class="form-control" id="step" placeholder="Enter part Name">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Serial Number: </label>
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+          <input type="text" class="form-control" id="step" placeholder="Enter Serial Number">
+        </div>
+      </div>
+
+  
+  </form>
+
+
+</div>
+<mat-dialog-actions align="end">
+  <button mat-raised-button class="btn-primary" (click)="close()"><mat-icon>send</mat-icon><span >Save</span></button>
+  <button mat-raised-button class="add-dark-hover btn-default" (click)="close()"><mat-icon>cancel</mat-icon> Close</button>
+</mat-dialog-actions>
+
+

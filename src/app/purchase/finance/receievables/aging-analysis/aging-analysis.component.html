@@ -1,0 +1,177 @@
+
+<div class="row" style="margin-bottom:7px;margin-top: 10px;">
+  <div class="col-sm-6 ">
+
+  </div>
+  <div class="col-sm-6">
+   
+      <button mat-raised-button  color="primary" class="filters-hover pull-right" style="color: #f3f3f3;margin-right: 25px;"
+      (click)="filterToggle = !filterToggle">
+      <mat-icon>filter_list</mat-icon> Filter
+       </button> 
+  </div>
+</div>
+<div class="container-fluid" style="padding: 0% !important;">
+    <div fxLayout="row wrap" *ngIf="filterToggle" class="sizeAlign">
+      <div fxFlex="100" fxFlex.gt-sm fxFlex.sm class="flex-p w-100 margins">
+        <mat-card class="filter">
+          <mat-card-content>
+            <div class="row">
+    
+              <div class="col-sm-4">
+                <div class="col-sm-4 newMarginClass" style="margin-top: 5px;">Select Project:</div>
+                <div class="col-sm-8">
+                  <mat-select class="form-control" placeholder="Select Project" required>
+                    <mat-option [value]="0">Raheja Group</mat-option>
+                    <mat-option [value]="1">Manjeera Group</mat-option>
+                    <mat-option [value]="2">Reva Group </mat-option>
+                    <mat-option [value]="3">Asian Group</mat-option>
+          
+                  </mat-select>
+                  </div>
+              </div>
+    
+              <div class="col-sm-4">
+                <div class="col-sm-4 newMarginClass" style="margin-top: 5px;">Select Vendor:</div>
+                <div class="col-sm-8">
+                  <mat-select class="form-control" placeholder="Select Vendor" required>
+                    <mat-option [value]="0">Raheja</mat-option>
+                    <mat-option [value]="1">Manjeera</mat-option>
+                    <mat-option [value]="2">Reva group</mat-option>
+                    <mat-option [value]="3">Asian</mat-option>
+          
+                  </mat-select>
+                  </div>
+              </div>
+    
+              <div class="col-sm-4">
+    
+           
+                <a (click)="filterToggle = !filterToggle" class="pull-right"
+                  style="font-size: 25px; cursor: pointer; margin-left: 5px">
+                  <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+                </a>
+                  <button mat-raised-button class="pull-right btn-primary">
+                    <mat-icon>youtube_searched_for</mat-icon> Search
+                  </button>
+               
+    
+              
+                  <button mat-raised-button class="pull-right btn-default margin-right-10">
+                    <mat-icon>settings_backup_restore</mat-icon> Clear
+                  </button>
+                
+    
+    
+              </div>
+    
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  
+  </div>
+  <div class="row col-12 mt-5">
+
+    <div class="col-6">
+      <div class="chart-header">
+        <p style="font-size: 17px;background-color: #286ba5">Payables in due days</p>
+      </div>
+      <div id="grid-table-container" class="table-responsive" style="margin-top:25px;width: 95%;margin-left:17px">
+        <!-- <table matSort id="example2" class="table table-bordered table-hover">
+          <thead class="tbl-head">
+            <tr>
+              <th>Period</th>
+              <th class="text-center">Amount (AUD)</th>
+              <th class="text-center">Invoices</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of items">
+              
+              <td>{{item.period }}</td>
+              <td class="text-center">{{item.amt }}</td>  
+              <td class="text-center"><a style="color:blue" routerLink="/mrc/accounting/Payables/ageing-invoices" matTooltip="View Invoice">{{item.inv }}</a></td>
+
+            </tr>
+
+          </tbody>
+        </table> -->
+        <table class="table table-bordered">
+          <thead>
+            <tr >
+              <th>Period</th>
+              <th class="text-center">Amount (INR)</th>
+              <th class="text-center">Invoices</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of items">
+              <td>{{item.period }}</td>
+              <td class="text-center">{{item.amt }}</td>  
+              <td class="text-center"><a style="color:blue" routerLink="/purchase/finance/receivables/ageing-invoices" matTooltip="View Invoice">{{item.inv }}</a></td>
+            </tr>
+          </tbody>
+        </table>
+        
+      </div>
+
+    </div>
+
+    <div class="col-6">
+        <div class="chart-header">
+          <p style="font-size: 17px;background-color: #286ba5">Distribution of Payables</p>
+        </div>
+        <div class="flex-p">
+          <mat-card>
+            <div class="w-100 h-300p">
+              <ngx-charts-pie-chart
+                [scheme]="colorScheme"
+                [results]="single"
+                [legend]="showLegend"
+                [explodeSlices]="explodeSlices"
+                [labels]="showLabels"
+                [doughnut]="doughnut"
+                [gradient]="gradient"
+              >
+              </ngx-charts-pie-chart>
+            </div>
+          </mat-card>
+        </div>
+    </div>
+
+    <div class="row-wrap">
+      <div class="flex-p w-100">
+        <div class="row">
+  
+          <div class="col-sm-12">
+  
+  
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-12">
+      <mat-select class="form-control pull-right" placeholder="Select Year"
+      style="width: 118px;">
+      <mat-option [value]="0">2021</mat-option>
+      <mat-option [value]="1">2020</mat-option>
+      <mat-option [value]="2">2019</mat-option>
+      <mat-option [value]="3">2018</mat-option>
+      <mat-option [value]="4">2017</mat-option>
+      <mat-option [value]="5">2016</mat-option>
+
+    </mat-select>
+      <div class="chart-header" style="margin-top: 52px;">
+        <p style="font-size: 17px;background-color: #286ba5;">Monthly Trend of Payables and Payments (INR)</p>
+      </div>
+      <div style="display: block" style="margin-bottom: 25px;">
+        <div style="height: 300px" [chart]="monthyPulseOfEmployees"></div>
+      </div>
+  
+    </div>
+
+  </div>
+

@@ -1,0 +1,29 @@
+<div class="NewHeader">
+  <h1 mat-dialog-title>Grid View Configuration </h1>
+</div> 
+<p>Please select the required columns in the grid, to view grid with specific columns</p>
+<div mat-dialog-content style="overflow:hidden!important;">
+  <form class="form-horizontal" novalidate  style="margin-top:10px">
+    <mat-checkbox  class="col-sm-4" >Item Name</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >Item Code</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >Part #</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >Part Name</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >Part Make</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >Equipment Make</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >Equipment Model</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >Category</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >Sub Category</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >UOM</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >Qty Required</mat-checkbox>
+    <mat-checkbox  class="col-sm-4" >Actions</mat-checkbox>
+   
+  </form>
+</div>
+
+<mat-dialog-actions align="end">
+  <button mat-raised-button class="btn-primary" (click)="close()"><mat-icon>send</mat-icon>Configure</button>
+  <button mat-raised-button class="CancelClass" (click)="close()"><mat-icon>cancel</mat-icon>Cancel</button>
+</mat-dialog-actions>
+
+
+

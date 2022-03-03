@@ -1,0 +1,192 @@
+<p class="col-sm-12">
+    <span style="font-size: 18px;font-weight: bold; margin-right: 8px">
+      Contract Name:</span>
+    <span style="font-size: 16px; margin-right: 60px">P-12564</span>
+
+    <span style="font-size: 18px;font-weight: bold; margin-right: 8px">Client Name:</span>
+    <span style="font-size: 16px; margin-right: 60px">Gautham Adani</span>
+
+    <span style="font-size: 18px;font-weight: bold; margin-right: 8px">Project Name:</span>
+    <span style="font-size: 16px; margin-right: 60px">Solar Power</span>
+
+    <span style="font-size: 18px;font-weight: bold; margin-right: 8px">Project Status:</span>
+    <span style="font-size: 16px;"> Active</span>
+    
+  </p>
+  <div fxLayout="row" class="super-row" style="padding: 5px 17px 5px 17px">
+  
+    <a routerLinkActive="active-link" routerLink="/contracts/project-dashboard/bill-of-quantities"
+        class="col-sm font-color">BOQ
+    <br /></a>
+  
+    <a routerLinkActive="active-link" routerLink="/contracts/project-dashboard/bill-of-quantities/contract-wb"
+        class="col-sm font-color">WBS
+    <br /></a>
+  
+    <a routerLinkActive="active-link" routerLink="/contracts/project-dashboard/contract-scheduling"
+        class="col-sm font-color">Scheduling
+    <br /></a>
+  
+    <a routerLinkActive="active-link" routerLink="/contracts/project-dashboard/bill-of-quantities/requisitions"
+        class="col-sm font-color">Requisition
+    <br /></a>
+  
+    <a routerLinkActive="active-link" routerLink="/contracts/project-dashboard/bill-of-quantities/issues"
+        class="col-sm font-color">Issues
+    <br /></a>
+  
+    <a routerLinkActive="active-link" routerLink="/contracts/project-dashboard/bill-of-quantities/hours"
+        class="col-sm font-color">Hours
+    <br /></a>
+  
+    <a routerLinkActive="active-link" routerLink="/contracts/project-dashboard/bill-of-quantities/expenses"
+        class="col-sm font-color">Expenses
+    <br /></a>
+  
+    <a routerLinkActive="active-link" routerLink="/contracts/project-dashboard/billing"
+        class="col-sm font-color">Billing 
+    <br /></a>
+  
+    <a routerLinkActive="active-link" routerLink="/contracts/project-dashboard/closure"
+        class="col-sm font-color">Closure
+    </a>
+  
+    <a routerLinkActive="active-link" routerLink="/contracts/project-dashboard/contract-summary"
+        class="col-sm font-color">Summary 
+    <br /></a>
+  
+  </div>
+<div class="row-wrap">
+    <div class="flex-p w-100">
+      <div class="row">
+          <div class="w-100" style="overflow: hidden;">
+            
+<div class="col-sm-12">
+    <div class="pull-right col-sm-1 no-padding">
+
+        <button mat-raised-button color="primary" style="position: relative; left: 7px;margin-bottom:12px" class="pull-right filter-hover" (click)="filterToggle = !filterToggle">
+            <mat-icon>filter_list</mat-icon> Filter
+        </button>
+    </div>
+</div>
+
+<div class="no-padding col-sm-12">
+    <form >
+        <div fxLayout="row wrap" *ngIf="filterToggle">
+            <div fxFlex="100" fxFlex.gt-sm fxFlex.sm class="flex-p w-100">
+                <mat-card class="filter">
+                    <mat-card-content>
+                      <div class="row">
+                        <div class="col-sm-4">
+                          <div class="col-sm-4 newMarginClass">
+                            Select Site:
+                          </div>
+                          <div class="col-sm-8">
+                            <!-- <input type="text" placeholder="Enter Keyword" class="form-control"> -->
+                            <mat-select class="form-control" placeholder="--Please Select Site--">
+                              <mat-option class='option' [value]="0">Sector 56</mat-option>
+                              <mat-option [value]="1">Lansdowne</mat-option>
+                              <mat-option [value]="2">Newton</mat-option>
+                              <!-- <mat-option [value]="3">Kenneth McKee</mat-option> -->
+                            </mat-select>
+                          </div>
+                        </div>
+                        <div class="col-sm-4">
+                          <div class="col-sm-4 newMarginClass">
+                            Select Contract:
+                          </div>
+                          <div class="col-sm-8">
+                            <mat-select class="form-control" placeholder="--Please Select Contract--">
+                              <mat-option class='option' [value]="0"> Landscapin</mat-option>
+                              <mat-option [value]="1">Club House</mat-option>
+                              <mat-option [value]="2">Restaurant</mat-option>
+                              <mat-option [value]="3">Parking Lot</mat-option>
+                            </mat-select>
+                          </div>
+                        </div>
+                      
+                        <div class="col-sm-4">
+                          <div class="col-sm-4 newMarginClass">
+                            Select User:
+                          </div>
+                          <div class="col-sm-8">
+                            <mat-select class="form-control" placeholder="--Please Select User--">
+                              <mat-option class='option' [value]="0">All</mat-option>
+                              <mat-option [value]="1">Mark</mat-option>
+                              <mat-option [value]="2">Binton</mat-option>
+                            </mat-select>
+                          </div>
+                        </div>
+                      </div>
+              
+                      <div class="row" style="padding-top:10px !important">
+                        <div class="col-sm-4">
+                          <div class="col-sm-4 newMarginClass" style="margin-top: 4px;">
+                            Select Task:
+                          </div>
+                          <div class="col-sm-8">
+                            <mat-select class="form-control" placeholder="--Please Select Task--">
+                              <mat-option class='option' [value]="0"> Administration</mat-option>
+                              <mat-option [value]="1">Research</mat-option>
+                              <mat-option [value]="2">Field</mat-option>
+                              <mat-option [value]="3">Drafting</mat-option>
+                            </mat-select>
+                          </div>
+                        </div>
+                        <div class="col-sm-4" style="padding-top:10px !important">
+                            <div class="col-sm-4 newMarginClass" style="margin-top: 4px;">
+                              To Date:
+                            </div>
+                            <div class="col-sm-8">
+                              <input class="form-control" class="form-control" placeholder="MM/DD/YYYY" (keypress)="false"
+                                [owlDateTimeTrigger]="dt1" [owlDateTime]="dt1" name="dt1">
+                              <owl-date-time [pickerType]="'calendar'" #dt1></owl-date-time>
+                            </div>
+                          </div>
+                
+                          <div class="col-sm-4" style="padding-top:10px !important">
+                            <div class="col-sm-4 newMarginClass" style="margin-top: 4px;">
+                              From Date:
+                            </div>
+                            <div class="col-sm-8">
+                              <input class="form-control" class="form-control" placeholder="MM/DD/YYYY" (keypress)="false"
+                                [owlDateTimeTrigger]="dt2" [owlDateTime]="dt2" name="dt2">
+                              <owl-date-time [pickerType]="'calendar'" #dt2></owl-date-time>
+                            </div>
+                          </div>
+                          <div class="col-sm-4" style="padding-top:10px !important;margin-left:892px">
+                            <div class="col-lg-1" style="margin-left:62% !important;">
+                                <button mat-raised-button class="pull-right btn-primary">
+                                  <mat-icon>youtube_searched_for</mat-icon> Search
+                                </button>
+                    
+                              </div>
+                              <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="margin-left: -18px;">
+                                <button mat-raised-button style="background-color:#37474f; color:#fff !important;">
+                                  <mat-icon>settings_backup_restore</mat-icon> Clear
+                                </button>
+                    
+                              </div>
+                              <a class="col-lg-1 col-md-1 col-sm-1 col-xs-1" (click)="filterToggle = !filterToggle" class="pull-right"
+                                style="font-size: 25px; cursor: pointer; margin-left: 5px;">
+                                <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+                              </a>
+                          </div>
+
+              
+                      </div>
+                      
+                    </mat-card-content>
+                  </mat-card>
+            </div>
+        </div>
+    </form>
+</div>
+    <router-outlet></router-outlet>
+</div>
+</div>
+</div>
+</div>
+
+
+

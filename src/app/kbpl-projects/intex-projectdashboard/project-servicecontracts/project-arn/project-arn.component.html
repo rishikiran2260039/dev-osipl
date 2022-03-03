@@ -1,0 +1,968 @@
+
+
+<div class="container-fluid pl-2 mb-5">
+ 
+
+  <div class="w-100">
+    <div class="flex-p">
+        <div class="row wrap">
+            <div class="col-sm-12 no-padding">
+                <div class="row-wrap">
+                    <div class="w-100">
+                        <div class="row">
+                            <div class="col-xs-12">
+                              <div class="col-xs-6">
+                                <!-- <div class="pills">
+                                    <ul class="nav nav-pills" >
+                                        <li routerLinkActive="active"  routerLink="/purchase/inventory-management/grn/store-incharge">
+                                            <a mat-raised-button class="navtabWidth" style="margin-top: 10px;">
+                                                Store Incharge
+                                            </a>
+                                        </li>
+                                        <li routerLinkActive="active" routerLink="/purchase/inventory-management/grn/tech-engineer">
+                                          <a mat-raised-button class="navtabWidth" style="margin-top: 10px;">
+                                            Tech Engineer
+                                          </a>
+                                        </li>                          
+                                    </ul>
+                                    </div> -->
+  
+                              </div>
+                              <div class="col-xs-6">
+                                  <div class="row">
+                                      <div class="col-xs-6 ">
+                                      </div>
+                                      <div class="col-xs-6 ">
+                                        <div class="flex-p">
+                                          <button mat-raised-button color="primary" class="pull-right filters-hover margin-right-10"
+                                            (click)="filterToggle = !filterToggle">
+                                            <mat-icon>filter_list</mat-icon> Filter
+                                          </button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  
+  <div fxLayout="row wrap"  *ngIf="filterToggle"  style="margin-bottom: 10px; padding-top: 10px;"  >
+    <div fxFlex="100" fxFlex.gt-sm fxFlex.sm class="flex-p w-100 margins">
+      <mat-card class="filter">
+        <mat-card-content>
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="col-sm-4 newMarginClass">
+                Vendor:
+              </div>
+              <div class="col-sm-8">
+                <mat-select class="form-control" placeholder="Select Vendor">
+                  <mat-option [value]="0">Dinesh constructions</mat-option>
+                  <mat-option [value]="1">menon Bearings Ltd</mat-option>
+                  <mat-option [value]="2">Minda Industries</mat-option>
+                  <mat-option [value]="3">Rene Holdings Ltd</mat-option>
+                  <mat-option [value]="3">Usha International Ltd</mat-option>
+                </mat-select>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="col-sm-4 newMarginClass">
+                Branch:
+              </div>
+              <div class="col-sm-8">
+                <mat-select class="form-control" placeholder="Select Client">
+                  <mat-option [value]="0">Ayyappa Society Branch</mat-option>
+                  <!-- <mat-option [value]="1">Teja</mat-option>
+                  <mat-option [value]="2">Krishna</mat-option>
+                  <mat-option [value]="3">Sai</mat-option>
+                  <mat-option [value]="3">Neeraja</mat-option> -->
+                </mat-select>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="col-sm-4 newMarginClass">
+                GRN Status:
+              </div>
+              <div class="col-sm-8">
+                <mat-select class="form-control" placeholder="Select Status">
+                  <mat-option [value]="0">Consignment In-Transit</mat-option>
+                  <mat-option [value]="1">Grn Delayed </mat-option>
+                  <mat-option [value]="2">Grn Pending</mat-option>
+                  <mat-option [value]="3">Consignment Revision</mat-option>
+                  <mat-option [value]="3">Consignment Submitted</mat-option>
+                  <mat-option [value]="3">Consignment Revised</mat-option>
+                </mat-select>
+              </div>
+            </div>
+          </div>
+  
+          <div class="row" style="padding-top:10px !important">
+            <div class="col-sm-4" style="margin-top: 4px;">
+              <div class="col-sm-4 newMarginClass">
+                PO Ref. No.:
+              </div>
+              <div class="col-sm-8">
+                <mat-select class="form-control" placeholder="Select Status">
+                  <mat-option [value]="0">ALL</mat-option>
+                </mat-select>
+              </div>
+            </div>
+  
+            
+  
+            <div class="col-sm-6" style="margin-left: 200px;">
+              <div class="col-lg-1" style="margin-left:80% !important;">
+                <button mat-raised-button class="pull-right btn-primary">
+                  Go
+                </button>
+    
+              </div>
+              <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="margin-left: -18px;">
+                <button mat-raised-button style="background-color:#37474f; color:#fff !important;">
+                  Reset
+                </button>
+    
+              </div>
+            </div>
+          </div>
+          <div class="row" >
+            
+            <a (click)="filterToggle = !filterToggle" class="pull-right"
+              style="font-size: 25px; cursor: pointer; margin-left: 5px;">
+              <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+            </a>
+  
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+  
+  
+  
+  
+  <!-- 
+  
+  <div class="container-fluid">
+  <div fxLayout="row wrap" *ngIf="filterToggle">
+      <div fxFlex="100" fxFlex.gt-sm fxFlex.sm class="flex-p w-100 margins">
+        <mat-card class="filter">
+          <mat-card-content>
+            <div class="row">
+              <div class="col-sm-4">
+                <div class="col-sm-4 newMarginClass">
+                  Requisition No.:
+                </div>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" placeholder="Enter Requisition No.">
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="col-sm-4 newMarginClass">
+                  Requisition Date: 
+                </div>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" placeholder="Enter Requisition Date">
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="col-sm-4 newMarginClass">
+                  Status:
+                </div>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" placeholder="Approval Status">
+                </div>
+              </div>
+            </div>
+  
+  
+            <div class="row" style="padding-top:10px !important">
+  
+              <div class="col-lg-1" style="margin-left:80%!important;">
+                <button mat-raised-button class="pull-right btn-primary">
+                  <mat-icon>youtube_searched_for</mat-icon> Search
+                </button>
+              </div>
+              <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="margin-left: -18px;">
+                <button mat-raised-button style="background-color:#37474f; color:#fff !important">
+                  <mat-icon>settings_backup_restore</mat-icon> Clear
+                </button>
+              </div>
+              <a (click)="filterToggle = !filterToggle" class="pull-right"
+                style="font-size: 25px; cursor: pointer; margin-left: 5px;">
+                <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+              </a>
+  
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+  </div>
+  </div>
+  
+  <router-outlet></router-outlet> -->
+
+  <div class="row ml-1 mr-2 py-4 mt-4" style="border: 1px solid lightgray; 
+  background-color:#8deeb7;">
+
+    <div class="col-sm-3">
+      <div class="row">
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h3 class="text-center">
+            Usha International Ltd</h3>
+        </div>
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h5 class="text-center ">Vendor Allas</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-3">
+      <div class="row">
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h3 class="text-center">1</h3>
+        </div>
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h5 class="text-center text-secondary">Consignment Arrived</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-3">
+      <div class="row">
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h3 class="text-center">3</h3>
+        </div>
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h5 class="text-center text-secondary"> No.of WO 's</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-3">
+      <div class="row">
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h3 class="text-center">3</h3>
+        </div>
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h5 class="text-center text-secondary">No.of Invoices</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row ml-1 mr-2 pt-3 pb-2" style="background-color: rgb(235, 235, 235);">
+    <div class="col-sm-12">
+      <div *ngIf="tableNumber == 0 || tableNumber == 2 || tableNumber == 3 || tableNumber == 4" class="pull-right align-items-center justify-content-center" style="color: cornflowerblue; cursor: pointer;" (click)="openTable(1)">
+        <mat-icon class="pull-right align-items-center justify-content-center" style="font-size: medium;">keyboard_arrow_down</mat-icon>
+        <h5 class="pull-right align-items-center justify-content-center">Details</h5>
+      </div>
+
+      <div *ngIf="tableNumber == 1" class="pull-right align-items-center justify-content-center" style="color: cornflowerblue; cursor: pointer;" (click)="openTable(0)">
+        <mat-icon class="pull-right align-items-center justify-content-center" style="font-size: medium;">keyboard_arrow_up</mat-icon>
+        <h5 class="pull-right align-items-center justify-content-center">Details</h5>
+      </div>
+    </div>
+
+
+
+    <div *ngIf="tableNumber == 1" class="col-xs-12 px-4 py-2" style="overflow-x: auto">
+      <div id="grid-table-container" class="table-responsive" >
+        <table matSort id="example2" class="table table-bordered table-hover" style="margin-left: 0px!important;">
+          <thead class="tbl-head">
+            <tr _ngcontent-c21="" class="custom-thead-budget">
+              <th _ngcontent-c21="" class="text-left" style="min-width: 200px;">
+                Store Name</th>
+              <!--  -->
+              <th _ngcontent-c21="" class="text-center" style="min-width: 200px;">ARN Ref. No</th> 
+              <th _ngcontent-c21="" style="min-width: 100px;" class="text-center" >WO  Reference. No</th>
+              <th _ngcontent-c21="" style="min-width: 100px;" class="text-center" >Status</th>
+              <th _ngcontent-c21="" style="min-width: 100px;" class="text-center" >WO orders</th>
+              <th _ngcontent-c21="" class="text-center" style="min-width: 100px;" >WO Date</th> 
+              <th _ngcontent-c21="" style="min-width: 80px;">WO Value</th>
+              <th _ngcontent-c21="" class="text-center" style="min-width: 80px;">WO  Balance Value</th>
+              <th _ngcontent-c21="" class="text-center" style="min-width: 80px;">QA Log</th>
+              <th _ngcontent-c21="" class="text-center" style="min-width: 80px;">Waybill</th>
+              <th _ngcontent-c21="" style="min-width: 80px;">Invoice</th> 
+              <th _ngcontent-c21="" style="min-width: 80px;">Approved</th> 
+          </thead>
+
+          <tbody class="bg-white">
+            <tr>
+              <td class="text-left">Backhoe Loader Store</td>
+              <td class="text-center"   style="color: blue;cursor: pointer;" routerLink="/purchase/procurement/consignments/active" >OM/ARN/APR-20/1001</td>
+              <td class="text-center">OM/ARN/APR-20/2001</td>
+              <td class="text-center">Consigment In-Transit</td>
+              <td class="text-center"  style="color: blue; cursor: pointer;"><a routerLink="/projects/projectdashboard/project-servicecontracts/wo/pending" style="color: blue;">2</a></td> 
+              <td class="text-center">05-Apr-2019</td>
+              <td class="text-center">37,845</td>
+              <td class="text-center">37,845</td>
+              <td class="text-center"  style="color: blue; cursor: pointer;"><a routerLink="/projects/Qalogarn" style="color: blue;">5</a></td> 
+              <td class="text-center"  style="cursor: pointer;" ><mat-icon >file_upload</mat-icon></td>
+              <td  class="text-center" style="cursor: pointer;"><mat-icon>file_upload</mat-icon></td>
+              <td class="text-center"><input type="checkbox"></td>   
+            </tr>
+
+
+            <tr>
+              <td class="text-left">Bulldozer</td>
+              <td class="text-center"   style="color: blue;cursor: pointer;" routerLink="/purchase/procurement/consignments/active" >OM/ARN/APR-20/10012</td>
+              <td class="text-center">OM/ARN/APR-20/2001</td>
+              <td class="text-center">Consigment In-Transit</td>
+              <td class="text-center"  style="color: blue; cursor: pointer;"><a routerLink="/projects/projectdashboard/project-servicecontracts/wo/pending" style="color: blue;">3</a></td> 
+              <td class="text-center">06-jun-2019</td>
+              <td class="text-center">40000</td>
+              <td class="text-center">40000</td>
+              <td class="text-center"  style="color: blue; cursor: pointer;"><a routerLink="/projects/Qalogarn" style="color: blue;">6</a></td> 
+              <td class="text-center"  style="cursor: pointer;" ><mat-icon >file_upload</mat-icon></td>
+              <td  class="text-center" style="cursor: pointer;"><mat-icon>file_upload</mat-icon></td>
+              <td class="text-center"><input type="checkbox"></td>   
+            </tr>
+
+            <tr>
+              <td class="text-left">Crane</td>
+              <td class="text-center"   style="color: blue;cursor: pointer;" routerLink="/purchase/procurement/consignments/active" >OM/ARN/APR-20/1003</td>
+              <td class="text-center">OM/ARN/APR-20/2001</td>
+              <td class="text-center">Consigment In-Transit</td>
+              <td class="text-center"  style="color: blue; cursor: pointer;"><a routerLink="/projects/projectdashboard/project-servicecontracts/wo/pending" style="color: blue;">4</a></td> 
+              <td class="text-center">05-Apr-2020</td>
+              <td class="text-center">45000</td>
+              <td class="text-center">45000</td>
+              <td class="text-center"  style="color: blue; cursor: pointer;"><a routerLink="/projects/Qalogarn" style="color: blue;">7</a></td> 
+              <td class="text-center"  style="cursor: pointer;" ><mat-icon >file_upload</mat-icon></td>
+              <td  class="text-center" style="cursor: pointer;"><mat-icon>file_upload</mat-icon></td>
+              <td class="text-center"><input type="checkbox"></td>   
+            </tr>
+
+
+
+          </tbody>
+        </table>
+        
+      </div>
+    </div>
+  </div>
+
+
+  <!--Second one starts from here -->
+
+
+  <div class="row ml-1 mr-2 py-4 mt-4" style="border: 1px solid 
+  lightgray; background-color: #70afee;">
+
+    <div class="col-sm-3">
+      <div class="row">
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h3 class="text-center">Rane Holdings Ltd</h3>
+        </div>
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h5 class="text-center ">Vendor Allas</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-3">
+      <div class="row">
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h3 class="text-center">0</h3>
+        </div>
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h5 class="text-center text-secondary">Consignment Arrived</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-3">
+      <div class="row">
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h3 class="text-center">3</h3>
+        </div>
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h5 class="text-center text-secondary"> No.of WO 's</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-3">
+      <div class="row">
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h3 class="text-center">4</h3>
+        </div>
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h5 class="text-center text-secondary">No.of Invoices</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row ml-1 mr-2 pt-3 pb-2" style="background-color: rgb(235, 235, 235);">
+    <div class="col-sm-12">
+      <div *ngIf="tableNumber == 0 || tableNumber == 1 || tableNumber == 3 || tableNumber == 4" class="pull-right align-items-center justify-content-center" style="color: cornflowerblue; cursor: pointer;" (click)="openTable(2)">
+        <mat-icon class="pull-right align-items-center justify-content-center" style="font-size: medium;">keyboard_arrow_down</mat-icon>
+        <h5 class="pull-right align-items-center justify-content-center">Details</h5>
+      </div>
+
+      <div *ngIf="tableNumber == 2" class="pull-right align-items-center justify-content-center" style="color: cornflowerblue; cursor: pointer;" (click)="openTable(0)">
+        <mat-icon class="pull-right align-items-center justify-content-center" style="font-size: medium;">keyboard_arrow_up</mat-icon>
+        <h5 class="pull-right align-items-center justify-content-center">Details</h5>
+      </div>
+    </div>
+
+
+<!--Table == 2-->
+    <div *ngIf="tableNumber == 2" class="col-xs-12 px-4 py-2" style="overflow-x: auto">
+      <div id="grid-table-container" class="table-responsive" >
+        <table  matSort id="example2" class="table table-bordered table-hover" style="margin-left: 0px!important;">
+          <thead class="tbl-head">
+            <tr _ngcontent-c21="" class="custom-thead-budget">
+              <th _ngcontent-c21="" class="text-left" style="min-width: 200px;">Strore Name</th>
+              
+              <th _ngcontent-c21="" class="text-center" style="min-width: 200px;">ARN Ref. No</th>
+              <th _ngcontent-c21="" style="min-width: 100px;" class="text-center" >WO  Reference. No</th>
+              <th _ngcontent-c21="" style="min-width: 100px;" class="text-center" >Status</th>
+              <th _ngcontent-c21="" style="min-width: 100px;" class="text-center" >WO orders</th>
+              <th _ngcontent-c21="" class="text-center" style="min-width: 100px;" >WO Date</th> 
+              <th _ngcontent-c21="" style="min-width: 80px;">WO Value</th>
+              <th _ngcontent-c21="" class="text-center" style="min-width: 80px;">WO  Balance Value</th>
+              <th _ngcontent-c21="" class="text-center" style="min-width: 80px;">QA Log</th>
+              <th _ngcontent-c21="" class="text-center" style="min-width: 80px;">Waybill</th>
+              <th _ngcontent-c21="" style="min-width: 80px;">Invoice</th> 
+              <th _ngcontent-c21="" style="min-width: 80px;">Approved</th> 
+          </thead>
+
+          <tbody class="bg-white">
+            <tr>
+              <td class="text-left">Backhoe Loader Store</td>
+              <td class="text-center"   style="color: blue;cursor: pointer;" routerLink="/purchase/procurement/consignments/active" >OM/ARN/APR-20/1001</td>
+              <td class="text-center">OM/ARN/APR-20/2001</td>
+              <td class="text-center">Consigment In-Transit</td>
+              <td class="text-center"  style="color: blue; cursor: pointer;"><a routerLink="/projects/projectdashboard/project-servicecontracts/wo/pending" style="color: blue;">2</a></td> 
+              <td class="text-center">05-Apr-2019</td>
+              <td class="text-center">37,845</td>
+              <td class="text-center">37,845</td>
+              <td class="text-center"  style="color: blue; cursor: pointer;"><a routerLink="/projects/Qalogarn" style="color: blue;">5</a></td> 
+              <td class="text-center"  style="cursor: pointer;" ><mat-icon >file_upload</mat-icon></td>
+              <td  class="text-center" style="cursor: pointer;"><mat-icon>file_upload</mat-icon></td>
+              <td class="text-center"><input type="checkbox"></td>   
+            </tr>
+
+
+            <tr>
+              <td class="text-left">Bulldozer</td>
+              <td class="text-center"   style="color: blue;cursor: pointer;" routerLink="/purchase/procurement/consignments/active" >OM/ARN/APR-20/10012</td>
+              <td class="text-center">OM/ARN/APR-20/2001</td>
+              <td class="text-center">Consigment In-Transit</td>
+              <td class="text-center"  style="color: blue; cursor: pointer;"><a routerLink="/projects/projectdashboard/project-servicecontracts/wo/pending" style="color: blue;">3</a></td> 
+              <td class="text-center">06-jun-2019</td>
+              <td class="text-center">40000</td>
+              <td class="text-center">40000</td>
+              <td class="text-center"  style="color: blue; cursor: pointer;"><a routerLink="/projects/Qalogarn" style="color: blue;">6</a></td> 
+              <td class="text-center"  style="cursor: pointer;" ><mat-icon >file_upload</mat-icon></td>
+              <td  class="text-center" style="cursor: pointer;"><mat-icon>file_upload</mat-icon></td>
+              <td class="text-center"><input type="checkbox"></td>   
+            </tr>
+
+            <tr>
+              <td class="text-left">Crane</td>
+              <td class="text-center"   style="color: blue;cursor: pointer;" routerLink="/purchase/procurement/consignments/active" >OM/ARN/APR-20/1003</td>
+              <td class="text-center">OM/ARN/APR-20/2001</td>
+              <td class="text-center">Consigment In-Transit</td>
+              <td class="text-center"  style="color: blue; cursor: pointer;"><a routerLink="/projects/projectdashboard/project-servicecontracts/wo/pending" style="color: blue;">4</a></td> 
+              <td class="text-center">05-Apr-2020</td>
+              <td class="text-center">45000</td>
+              <td class="text-center">45000</td>
+              <td class="text-center"  style="color: blue; cursor: pointer;"><a routerLink="/projects/Qalogarn" style="color: blue;">7</a></td> 
+              <td class="text-center"  style="cursor: pointer;" ><mat-icon >file_upload</mat-icon></td>
+              <td  class="text-center" style="cursor: pointer;"><mat-icon>file_upload</mat-icon></td>
+              <td class="text-center"><input type="checkbox"></td>   
+            </tr>
+
+
+
+          </tbody>
+        </table>
+        
+      </div>
+    </div>
+  </div>
+
+
+
+  
+  <!--Third one starts from here -->
+
+
+  <div class="row ml-1 mr-2 py-4 mt-4" style="border: 1px solid 
+  lightgray; background-color: #95a2af;">
+
+    <div class="col-sm-3">
+      <div class="row">
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h3 class="text-center">Minda Industries Ltd</h3>
+        </div>
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h5 class="text-center ">Vendor Allas</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-3">
+      <div class="row">
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h3 class="text-center">0</h3>
+        </div>
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h5 class="text-center text-secondary">Consignment Arrived</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-3">
+      <div class="row">
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h3 class="text-center">3</h3>
+        </div>
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h5 class="text-center text-secondary"> No.of WO 's</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-3">
+      <div class="row">
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h3 class="text-center">4</h3>
+        </div>
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h5 class="text-center text-secondary">No.of Invoices</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row ml-1 mr-2 pt-3 pb-2" style="background-color: rgb(235, 235, 235);">
+    <div class="col-sm-12">
+      <div *ngIf="tableNumber == 0 || tableNumber == 1 || tableNumber == 2 || tableNumber == 4" class="pull-right align-items-center justify-content-center" style="color: cornflowerblue; cursor: pointer;" (click)="openTable(3)">
+        <mat-icon class="pull-right align-items-center justify-content-center" style="font-size: medium;">keyboard_arrow_down</mat-icon>
+        <h5 class="pull-right align-items-center justify-content-center">Details</h5>
+      </div>
+
+      <div *ngIf="tableNumber == 3" class="pull-right align-items-center justify-content-center" style="color: cornflowerblue; cursor: pointer;" (click)="openTable(0)">
+        <mat-icon class="pull-right align-items-center justify-content-center" style="font-size: medium;">keyboard_arrow_up</mat-icon>
+        <h5 class="pull-right align-items-center justify-content-center">Details</h5>
+      </div>
+    </div>
+
+
+
+    <div *ngIf="tableNumber == 3" class="col-xs-12 px-4 py-2" style="overflow-x: auto">
+      <div id="grid-table-container" class="table-responsive" >
+        <table matSort id="example2" class="table table-bordered table-hover" style="margin-left: 0px!important;">
+          <thead class="tbl-head">
+            <tr _ngcontent-c21="" class="custom-thead-budget">
+              <th _ngcontent-c21="" class="text-left" style="min-width: 200px;">Strore Name</th>
+              
+              <th _ngcontent-c21="" class="text-center" style="min-width: 200px;">ARN Ref. No</th>
+              <th _ngcontent-c21="" style="min-width: 100px;" class="text-center" >WO  Reference. No</th>
+              <th _ngcontent-c21="" style="min-width: 100px;" class="text-center" >Status</th>
+              <th _ngcontent-c21="" style="min-width: 100px;" class="text-center" >WO orders</th>
+              <th _ngcontent-c21="" class="text-center" style="min-width: 100px;" >WO Date</th> 
+              <th _ngcontent-c21="" style="min-width: 80px;">WO Value</th>
+              <th _ngcontent-c21="" class="text-center" style="min-width: 80px;">WO  Balance Value</th>
+              <th _ngcontent-c21="" class="text-center" style="min-width: 80px;">QA Log</th>
+              <th _ngcontent-c21="" class="text-center" style="min-width: 80px;">Waybill</th>
+              <th _ngcontent-c21="" style="min-width: 80px;">Invoice</th> 
+              <th _ngcontent-c21="" style="min-width: 80px;">Approved</th> 
+          </thead>
+
+          <tbody class="bg-white">
+            <tr>
+              <td class="text-left">Backhoe Loader Store</td>
+              <td class="text-center"   style="color: blue;cursor: pointer;" routerLink="/purchase/procurement/consignments/active" >OM/ARN/APR-20/1001</td>
+              <td class="text-center">OM/ARN/APR-20/2001</td>
+              <td class="text-center">Consigment In-Transit</td>
+              <td class="text-center"  style="color: blue; cursor: pointer;"><a routerLink="/projects/projectdashboard/project-servicecontracts/wo/pending" style="color: blue;">2</a></td> 
+              <td class="text-center">05-Apr-2019</td>
+              <td class="text-center">37,845</td>
+              <td class="text-center">37,845</td>
+              <td class="text-center"  style="color: blue; cursor: pointer;"><a routerLink="/projects/Qalogarn" style="color: blue;">5</a></td> 
+              <td class="text-center"  style="cursor: pointer;" ><mat-icon >file_upload</mat-icon></td>
+              <td  class="text-center" style="cursor: pointer;"><mat-icon>file_upload</mat-icon></td>
+              <td class="text-center"><input type="checkbox"></td>   
+            </tr>
+
+
+            <tr>
+              <td class="text-left">Bulldozer</td>
+              <td class="text-center"   style="color: blue;cursor: pointer;" routerLink="/purchase/procurement/consignments/active" >OM/ARN/APR-20/10012</td>
+              <td class="text-center">OM/ARN/APR-20/2001</td>
+              <td class="text-center">Consigment In-Transit</td>
+              <td class="text-center"  style="color: blue; cursor: pointer;"><a routerLink="/projects/projectdashboard/project-servicecontracts/wo/pending" style="color: blue;">3</a></td> 
+              <td class="text-center">06-jun-2019</td>
+              <td class="text-center">40000</td>
+              <td class="text-center">40000</td>
+              <td class="text-center"  style="color: blue; cursor: pointer;"><a routerLink="/projects/Qalogarn" style="color: blue;">6</a></td> 
+              <td class="text-center"  style="cursor: pointer;" ><mat-icon >file_upload</mat-icon></td>
+              <td  class="text-center" style="cursor: pointer;"><mat-icon>file_upload</mat-icon></td>
+              <td class="text-center"><input type="checkbox"></td>   
+            </tr>
+
+            <tr>
+              <td class="text-left">Crane</td>
+              <td class="text-center"   style="color: blue;cursor: pointer;" routerLink="/purchase/procurement/consignments/active" >OM/ARN/APR-20/1003</td>
+              <td class="text-center">OM/ARN/APR-20/2001</td>
+              <td class="text-center">Consigment In-Transit</td>
+              <td class="text-center"  style="color: blue; cursor: pointer;"><a routerLink="/projects/projectdashboard/project-servicecontracts/wo/pending" style="color: blue;">4</a></td> 
+              <td class="text-center">05-Apr-2020</td>
+              <td class="text-center">45000</td>
+              <td class="text-center">45000</td>
+              <td class="text-center"  style="color: blue; cursor: pointer;"><a routerLink="/projects/Qalogarn" style="color: blue;">7</a></td> 
+              <td class="text-center"  style="cursor: pointer;" ><mat-icon >file_upload</mat-icon></td>
+              <td  class="text-center" style="cursor: pointer;"><mat-icon>file_upload</mat-icon></td>
+              <td class="text-center"><input type="checkbox"></td>   
+            </tr>
+
+
+
+          </tbody>
+        </table>
+        
+      </div>
+    </div>
+  </div>
+
+
+  <!--fourth one starts from here -->
+
+
+  <div class="row ml-1 mr-2 py-4 mt-4" style="border: 1px solid lightgray; 
+  background-color: #95a2af;">
+
+    <div class="col-sm-3">
+      <div class="row">
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h3 class="text-center">Menon Bearings Ltd</h3>
+        </div>
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h5 class="text-center ">Vendor Allas</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-3">
+      <div class="row">
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h3 class="text-center">0</h3>
+        </div>
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h5 class="text-center text-secondary">Consignment Arrived</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-3">
+      <div class="row">
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h3 class="text-center">2</h3>
+        </div>
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h5 class="text-center text-secondary"> No.of WO 's</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-3">
+      <div class="row">
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h3 class="text-center">2</h3>
+        </div>
+        <div class="col-sm-12 align-items-center justify-content-center">
+          <h5 class="text-center text-secondary">No.of Invoices</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row ml-1 mr-2 pt-3 pb-2" style="background-color: rgb(235, 235, 235);">
+    <div class="col-sm-12">
+      <div *ngIf="tableNumber == 0 || tableNumber == 1 || tableNumber == 2 || tableNumber == 3" class="pull-right align-items-center justify-content-center" style="color: cornflowerblue; cursor: pointer;" (click)="openTable(4)">
+        <mat-icon class="pull-right align-items-center justify-content-center" style="font-size: medium;">keyboard_arrow_down</mat-icon>
+        <h5 class="pull-right align-items-center justify-content-center">Details</h5>
+      </div>
+
+      <div *ngIf="tableNumber == 4" class="pull-right align-items-center justify-content-center" style="color: cornflowerblue; cursor: pointer;" (click)="openTable(0)">
+        <mat-icon class="pull-right align-items-center justify-content-center" style="font-size: medium;">keyboard_arrow_up</mat-icon>
+        <h5 class="pull-right align-items-center justify-content-center">Details</h5>
+      </div>
+    </div>
+
+
+
+    <div *ngIf="tableNumber == 4" class="col-xs-12 px-4 py-2" style="overflow-x: auto">
+      <div id="grid-table-container" class="table-responsive" >
+        <table matSort id="example2" class="table table-bordered table-hover" style="margin-left: 0px!important;">
+          <thead class="tbl-head">
+            <tr _ngcontent-c21="" class="custom-thead-budget">
+              <th _ngcontent-c21="" class="text-left" style="min-width: 200px;">Strore Name</th>
+              
+              <th _ngcontent-c21="" class="text-center" style="min-width: 200px;">ARN Ref. No</th>
+              <th _ngcontent-c21="" style="min-width: 100px;" class="text-center" >WO  Reference. No</th>
+              <th _ngcontent-c21="" style="min-width: 100px;" class="text-center" >Status</th>
+              <th _ngcontent-c21="" style="min-width: 100px;" class="text-center" >WO orders</th>
+              <th _ngcontent-c21="" class="text-center" style="min-width: 100px;" >WO Date</th> 
+              <th _ngcontent-c21="" style="min-width: 80px;">WO Value</th>
+              <th _ngcontent-c21="" class="text-center" style="min-width: 80px;">WO  Balance Value</th>
+              <th _ngcontent-c21="" class="text-center" style="min-width: 80px;">QA Log</th>
+              <th _ngcontent-c21="" class="text-center" style="min-width: 80px;">Waybill</th>
+              <th _ngcontent-c21="" style="min-width: 80px;">Invoice</th> 
+              <th _ngcontent-c21="" style="min-width: 80px;">Approved</th> 
+          </thead>
+
+          <tbody class="bg-white">
+            <tr>
+              <td class="text-left">Backhoe Loader Store</td>
+              <td class="text-center"   style="color: blue;cursor: pointer;" routerLink="/purchase/procurement/consignments/active" >OM/ARN/APR-20/1001</td>
+              <td class="text-center">OM/ARN/APR-20/2001</td>
+              <td class="text-center">Consigment In-Transit</td>
+              <td class="text-center"  style="color: blue; cursor: pointer;"><a routerLink="/projects/projectdashboard/project-servicecontracts/wo/pending" style="color: blue;">2</a></td> 
+              <td class="text-center">05-Apr-2019</td>
+              <td class="text-center">37,845</td>
+              <td class="text-center">37,845</td>
+              <td class="text-center"  style="color: blue; cursor: pointer;"><a routerLink="/projects/Qalogarn" style="color: blue;">5</a></td> 
+              <td class="text-center"  style="cursor: pointer;" ><mat-icon >file_upload</mat-icon></td>
+              <td  class="text-center" style="cursor: pointer;"><mat-icon>file_upload</mat-icon></td>
+              <td class="text-center"><input type="checkbox"></td>   
+            </tr>
+
+
+            <tr>
+              <td class="text-left">Bulldozer</td>
+              <td class="text-center"   style="color: blue;cursor: pointer;" routerLink="/purchase/procurement/consignments/active" >OM/ARN/APR-20/10012</td>
+              <td class="text-center">Consigment In-Transit</td>
+              <td class="text-center"  style="color: blue; cursor: pointer;"><a routerLink="/projects/projectdashboard/project-servicecontracts/wo/pending" style="color: blue;">3</a></td> 
+              <td class="text-center">06-jun-2019</td>
+              <td class="text-center">40000</td>
+              <td class="text-center">40000</td>
+              <td class="text-center"  style="color: blue; cursor: pointer;"><a routerLink="/projects/Qalogarn" style="color: blue;">6</a></td> 
+              <td class="text-center"  style="cursor: pointer;" ><mat-icon >file_upload</mat-icon></td>
+              <td  class="text-center" style="cursor: pointer;"><mat-icon>file_upload</mat-icon></td>
+              <td class="text-center"><input type="checkbox"></td>   
+            </tr>
+
+            <tr>
+              <td class="text-left">Crane</td>
+              <td class="text-center"   style="color: blue;cursor: pointer;" routerLink="/purchase/procurement/consignments/active" >OM/ARN/APR-20/1003</td>
+              <td class="text-center">Consigment In-Transit</td>
+              <td class="text-center"  style="color: blue; cursor: pointer;"><a routerLink="/projects/projectdashboard/project-servicecontracts/wo/pending" style="color: blue;">4</a></td> 
+              <td class="text-center">05-Apr-2020</td>
+              <td class="text-center">45000</td>
+              <td class="text-center">45000</td>
+              <td class="text-center"  style="color: blue; cursor: pointer;"><a routerLink="/projects/Qalogarn" style="color: blue;">7</a></td> 
+              <td class="text-center"  style="cursor: pointer;" ><mat-icon >file_upload</mat-icon></td>
+              <td  class="text-center" style="cursor: pointer;"><mat-icon>file_upload</mat-icon></td>
+              <td class="text-center"><input type="checkbox"></td>   
+            </tr>
+
+
+
+          </tbody>
+        </table>
+        
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <!-- <div class="container-fluid"> 
+  <div class="row">
+    <div class="col-sm-12" style="padding: 15px !important;margin-bottom: 20px;">
+      <div class="col-sm-12" style="padding: 0px !important;">
+        <p-accordion class="customAccordian" (onClose)="onTabClose($event)" (onOpen)="onTabOpen($event)">
+          <p-accordionTab *ngFor="let item of taskData" [selected]="item.selected">
+            <p-header class="col-sm-11 " style="padding-left: 0px;">
+              <div class="col-sm-4">
+                <label>Vendor Allas:</label>
+                <span>&nbsp;
+                  {{item.taskName}}
+                </span>
+              </div>
+              <div class="col-sm-2" style="margin-left: 10px!important;">
+                <label>No. of WO 's:</label>
+                <span>&nbsp;
+                  {{item.ref}}
+                </span>
+              </div>
+              <div class="col-sm-2" style="margin-left: 10px!important;">
+                <label>No. of Items:</label>
+                <span>&nbsp; {{item.target_date}}</span>
+              </div>
+              <div class="col-sm-2" style="margin-left: 10px!important;">
+                <label>Items Qty:</label>
+                <span>&nbsp; {{item.totalBudgetCostSOW}}</span>
+              </div>
+            </p-header>
+
+            <div class="table-responsive" id="{{item.id}}">
+            
+              <table id="example2" class="table table-bordered table-striped table-hover no-padding"
+                style="margin-bottom: 10px !important">
+                
+                <thead>
+                  <tr _ngcontent-c21="" class="custom-thead-budget">
+                    <th _ngcontent-c21="" class="text-center" style="min-width: 200px;">Consignment Reference</th>
+                    <th _ngcontent-c21="" class="text-center" style="min-width: 200px;">GRN Ref</th>
+                    <th _ngcontent-c21="" class="text-center" style="min-width: 200px;">Date Shipped</th>
+                    <th _ngcontent-c21="" style="min-width: 100px;" class="text-center" >Items</th>
+
+                    <th _ngcontent-c21="" class="text-center" style="min-width: 100px;" >Purchase Orders</th>
+                    
+                    <th _ngcontent-c21="" style="min-width: 80px;">Delivery Date</th>
+                    <th _ngcontent-c21="" class="text-center" style="min-width: 80px;">Con. Details</th>
+
+                    <th _ngcontent-c21="" class="text-center" style="min-width: 80px;">Status</th>
+                    <th _ngcontent-c21="" class="text-center" style="min-width: 80px;">Actions</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr *ngIf="item.Data?.length == 0">
+
+                    <td style="text-align: center;" colspan="7">
+                      No records Found
+                    </td>
+                  </tr>
+               
+                  <tr *ngFor="let tData of item.Data; let i = index">
+                    <td class="text-center">DEL1037272/768</td>
+                    <td class="text-center"   style="color: blue;cursor: pointer;" routerLink="/purchase/inventory-management/grn/store-incharge" >OM/ARN/APR-20/1001</td>
+                    <td class="text-center">16-07-2021</td>
+                    <td class="text-center" (click)="Itempop()"  style="color: blue;cursor: pointer;">5</td>
+
+                    <td class="text-center"  (click)="Purchasepop()" style="cursor: pointer;color: blue;" >3</td>
+                    
+                    <td class="text-center">09-08-2021</td>
+
+                    <td class="text-center"  style="color: blue; cursor: pointer;"><a routerLink="/purchase/WayBillRequistionPackingList/ConsignmentWaybill" style="color: blue;">View</a></td>
+                    
+                    <td class="text-center">In Transit</td>
+                    <td class="text-center"  style="cursor: pointer"  ><mat-icon mat-raised-button matTooltip="Send To Archive"  > move_to_inbox </mat-icon  ></td>
+                      
+                  </tr>
+
+                  <tr *ngFor="let tData of item.Data; let i = index">
+                    <td class="text-center">DEL1037272/786</td>
+                    <td class="text-center"   style="color: blue;cursor: pointer;" routerLink="/purchase/inventory-management/grn/store-incharge" >OM/ARN/APR-20/1003</td>
+                    <td class="text-center">26-07-2021</td>
+                    <td class="text-center" (click)="Itempop()"  style="color: blue;cursor: pointer;">2</td>
+
+
+                    <td class="text-center" (click)="Purchasepop()" style="cursor: pointer;color: blue;">9</td>
+                   
+                    <td class="text-center">04-08-2021</td>
+                    <td class="text-center"  style="color: blue; cursor: pointer;"><a routerLink="/purchase/WayBillRequistionPackingList/ConsignmentWaybill" style="color: blue;">View</a></td>
+
+                    <td class="text-center">At Destination</td>
+                    <td class="text-center"  style="cursor: pointer"  ><mat-icon mat-raised-button matTooltip="Send To Archive"  > move_to_inbox </mat-icon  ></td>
+
+                    
+                  </tr>
+                  
+                  <tr *ngFor="let tData of item.Data; let i = index">
+                    <td class="text-center">DEL1037272/732</td>
+                    <td class="text-center"   style="color: blue;cursor: pointer;" routerLink="/purchase/inventory-management/grn/store-incharge" >OM/ARN/APR-20/1004</td>
+                    <td class="text-center">24-07-2021</td>
+                    <td class="text-center" (click)="Itempop()"  style="color: blue;cursor: pointer;">6</td>
+
+                    <td class="text-center" (click)="Purchasepop()" style="cursor: pointer;color: blue;">7</td>
+                   
+                    
+                    <td class="text-center">01-08-2021</td>
+                    <td class="text-center"  style="color: blue; cursor: pointer;"><a routerLink="/purchase/WayBillRequistionPackingList/ConsignmentWaybill" style="color: blue;">View</a></td>
+
+
+                    <td class="text-center">Out of Deleivery</td>
+                    <td class="text-center"  style="cursor: pointer"  ><mat-icon mat-raised-button matTooltip="Send To Archive"  > move_to_inbox </mat-icon  ></td>
+
+                    
+                  </tr>
+                  
+                  <tr *ngFor="let tData of item.Data; let i = index">
+                    <td class="text-center">DEL1037272/616</td>
+                    <td class="text-center"   style="color: blue;cursor: pointer;" routerLink="/purchase/inventory-management/grn/store-incharge" >OM/ARN/APR-20/1005</td>
+                    <td class="text-center">09-07-2021</td>
+                    <td class="text-center" (click)="Itempop()" style="cursor: pointer;color: blue;">8</td>
+
+
+                    <td class="text-center" (click)="Purchasepop()" style="cursor: pointer;color: blue;">3</td>
+                   
+                    <td class="text-center">02-08-2021</td>
+                    <td class="text-center"  style="color: blue; cursor: pointer;"><a routerLink="/purchase/WayBillRequistionPackingList/ConsignmentWaybill" style="color: blue;">View</a></td>
+
+                    <td class="text-center">Delivered</td>
+                    <td class="text-center"  style="cursor: pointer"  ><mat-icon mat-raised-button matTooltip="Send To Archive"  > move_to_inbox </mat-icon  ></td>
+
+                    
+                  </tr>
+
+                  <tr *ngFor="let tData of item.Data; let i = index">
+                    <td class="text-center">DEL1037272/321</td>
+                    <td class="text-center"   style="color: blue;cursor: pointer;" routerLink="/purchase/inventory-management/grn/store-incharge" >OM/ARN/APR-20/1006</td>
+                    <td class="text-center">10-07-2021</td>
+                    <td class="text-center" (click)="Itempop()" style="cursor: pointer;color: blue;">9</td>
+
+                    <td class="text-center" (click)="Purchasepop()" style="cursor: pointer;color: blue;">2</td>
+                    
+                    
+                    <td class="text-center">03-08-2021</td>
+                    <td class="text-center"  style="color: blue; cursor: pointer;"><a routerLink="/purchase/WayBillRequistionPackingList/ConsignmentWaybill" style="color: blue;">View</a></td>
+
+                    <td class="text-center">Returned</td>
+                                        <td class="text-center"  style="cursor: pointer"  ><mat-icon mat-raised-button matTooltip="Send To Archive"  > move_to_inbox </mat-icon  ></td>
+
+                                        
+                  </tr>
+                  
+                </tbody>
+              </table>
+            </div>
+          </p-accordionTab>
+        </p-accordion>
+      </div>
+    </div>
+  </div>
+</div> -->
